@@ -1,0 +1,282 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-12-08T06:07:29.764-05:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="oo" />
+  </extension>
+  <url value="http://pchalliance.org/phdfhir/StructureDefinition/PhdCompoundNumericObservation" />
+  <name value="PhdCompoundNumericObservation" />
+  <status value="draft" />
+  <date value="2017-06-02T14:29:52.39367-04:00" />
+  <fhirVersion value="3.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://pchalliance.org/phdfhir/StructureDefinition/PhdBaseObservation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <definition value="The PhdCompoundNumericObservation reports PHD measurements that contain one of either a Compound-Basic-Nu-Observed-Value, Compound-Simple-Nu-Observed-Value, or Compound-Nu-Observed-Value attribute." />
+      <comment value="Used for compound numeric observations from Personal Health Devices" />
+    </element>
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+    <element id="Observation.meta.profile">
+      <path value="Observation.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="PhdCompoundNumericObservation" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedUri value="PhdCompoundNumericObservation" />
+    </element>
+    <element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="value" />
+        </discriminator>
+        <ordered value="true" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.identifier:conditionalCreateIdentifier">
+      <path value="Observation.identifier" />
+      <sliceName value="conditionalCreateIdentifier" />
+      <short value="Unique identifier of this measurment for a given patient and device" />
+      <definition value="An identifier created from a combination of the measurement parameters like sensor time stamp, type code, each compound value, units code, patient and device identifiers, and selected elements of any facet component elements." />
+      <comment value="This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. Temporarily stored data from IEEE 11073 20601 devices, which are required to delete the data after sending, can also be considered real time. Temporarily stored data from Bluetooth Low Energy Health devices may be resent so these cannot be considered as real time. " />
+      <requirements value="Allows observations to be distinguished in a selective enough manner to prevent resource duplication." />
+      <max value="1" />
+    </element>
+    <element id="Observation.identifier:conditionalCreateIdentifier.value">
+      <path value="Observation.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Observation.status">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
+        <valueString value="default: final" />
+      </extension>
+      <path value="Observation.status" />
+      <comment value="The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'" />
+    </element>
+    <element id="Observation.code.coding:11073Type">
+      <path value="Observation.code.coding" />
+      <sliceName value="11073Type" />
+      <comment value="For compound 11073-20601 metric numeric measurements, this code is obtained from the partition and term code of the Type attribute. The 32-bit 11073-10101 code value is given by partition * 2 **16 + term code.&#xD;&#xA;&#xD;&#xA;It is this value that is placed in the code.coding.code element for this 11073Type slice" />
+    </element>
+    <element id="Observation.value[x]">
+      <path value="Observation.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Observation.dataAbsentReason">
+      <path value="Observation.dataAbsentReason" />
+      <definition value="Provides a reason why no measurement compoundComponent elements are present. This situation only happens if the Measurement-Status attribute indicates a generic error and the measurement attribute is a Compound-Basic/Simple-Nu-Observed-Value." />
+      <comment value="Special values reported in the Compound-Basic/Simple-Nu-Observed-Value are handled individually in each compoundComponent element and are not considered generic. The Compound-Nu-Observed-Value has its own status entry and overrides the Measurement-Status attribute so there will always be compoundComponent elements in that case." />
+    </element>
+    <element id="Observation.dataAbsentReason.coding.system">
+      <path value="Observation.dataAbsentReason.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Observation.dataAbsentReason.coding.code">
+      <path value="Observation.dataAbsentReason.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <ordered value="false" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.component:compoundComponent">
+      <path value="Observation.component" />
+      <sliceName value="compoundComponent" />
+      <short value="Compound entry components" />
+      <definition value="Each compoundComponent contains one of the N constituents of the compound measurement. These entries are NOT present if a Measurement-Status attribute indicates an error." />
+      <comment value="A compound measurement is a measurement that requires more than one value to represent it, such as an acceleration which has an x, y, and z components. The Blood pressure is also represented as a compound measurement, containing systolic, diastolic and MAP components. One combines all the compound elements together to describe the measurement. The Metric-Id-List entry n and Compound-Basic/Simple-Nu-Observed-Value entry n are ordered such that the code that describes each entry n is computed from the partition of the Type attribute and the term code of the Metric-Id-List attribute. In the case of the Compound-Nu-Observed-Value, the term code comes from the Compound-Nu-Observed-Value.metric sub-component." />
+      <requirements value="Handles a measurement that needs more than one numeric value to describe it.." />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding">
+      <path value="Observation.component.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <ordered value="true" />
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding:11073Type">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="11073Type" />
+      <short value="The 11073-10101 code for the measurement" />
+      <comment value="For compound 11073-20601 metric numeric measurements, this code is obtained from the partition of the Type attribute and the term code of the nth element of the Metric-Id-List attribute. The 32-bit 11073-10101 code value is given by partition * 2 **16 + term code.  It is this value that is placed in the *.code.coding.code element for this 11073Type slice" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding:11073Type.system">
+      <path value="Observation.component.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:iso:std:iso:11073:10101" />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding:11073Type.code">
+      <path value="Observation.component.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding:LoincCoding">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="LoincCoding" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding:LoincCoding.system">
+      <path value="Observation.component.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Observation.component:compoundComponent.code.coding:LoincCoding.code">
+      <path value="Observation.component.code.coding.code" />
+      <comment value="Required if the measurement is a vital sign" />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.value[x]">
+      <path value="Observation.component.valueQuantity" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Observation.component:compoundComponent.value[x]:valueQuantity.value">
+      <path value="Observation.component.valueQuantity.value" />
+      <definition value="The value of nth element of the compound attribute. The value element for the nth compoundComponent is missing if the attribute sends a special value or the Compound-Nu-Observed-Value status element indicates an error." />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.component.valueQuantity.unit" />
+      <definition value="A human-readable form of the unit which should be the UCUM code" />
+    </element>
+    <element id="Observation.component:compoundComponent.value[x]:valueQuantity.system">
+      <path value="Observation.component.valueQuantity.system" />
+      <definition value="The unit code shall use the MDC system" />
+      <min value="1" />
+      <fixedUri value="urn:iso:std:iso:11073:10101" />
+    </element>
+    <element id="Observation.component:compoundComponent.value[x]:valueQuantity.code">
+      <path value="Observation.component.valueQuantity.code" />
+      <definition value="The MDC code obtained from partition 4 and the term code given by the Unit-Code attribute unless it is a Compound-Nu-Observed-Value in which case the unit code comes from the unit element of the attribute." />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.dataAbsentReason">
+      <path value="Observation.component.dataAbsentReason" />
+      <definition value="Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This could be a NaN (Not a Number), PINF (Positive infinity), NINF (Negative infinity)  or an error condition indicated by the status field of the Compound-Nu-Observed-Value." />
+      <comment value="The current values in the http://hl7.org/fhir/data-absent-reason system do not provide the same detailed set of options reported in the numeric attributes. For example, the PINF, NINF, and not at this resolution special values have no matching codes. In those cases one uses the generic 'error' code." />
+    </element>
+    <element id="Observation.component:compoundComponent.dataAbsentReason.coding.system">
+      <path value="Observation.component.dataAbsentReason.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:compoundComponent.dataAbsentReason.coding.code">
+      <path value="Observation.component.dataAbsentReason.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent">
+      <path value="Observation.component" />
+      <sliceName value="accuracyComponent" />
+      <definition value="This component shall be present if the accuracy attribute is present." />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding">
+      <path value="Observation.component.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <ordered value="true" />
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding:11073Type">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="11073Type" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding:11073Type.system">
+      <path value="Observation.component.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:iso:std:iso:11073:10101" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding:11073Type.code">
+      <path value="Observation.component.code.coding.code" />
+      <definition value="The code for the accuracy attribute is 67914" />
+      <min value="1" />
+      <fixedCode value="67914" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding:11073Type.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.component.code.coding.display" />
+      <definition value="Should include the reference identifier for the Accuracy-Attribute MDC_ATTR_NU_ACCUR_MSMT" />
+    </element>
+    <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
+      <path value="Observation.component.valueQuantity" />
+      <sliceName value="valueQuantity" />
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.value">
+      <path value="Observation.component.valueQuantity.value" />
+      <definition value="This is the value of the accuracy attribute. The value is Mder FLOAT encoded and shall be expressed to the precision indicated by the Mder FLOAT." />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.component.valueQuantity.unit" />
+      <definition value="A human-readable form of the unit. One should put the UCUM code for the units in this display string. It shall match the UCUM code in Observation.valueQuantity.unit if UCUM is used there." />
+    </element>
+    <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.system">
+      <path value="Observation.component.valueQuantity.system" />
+      <definition value="The unit code shall use the MDC system" />
+      <min value="1" />
+      <fixedUri value="urn:iso:std:iso:11073:10101" />
+    </element>
+    <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.code">
+      <path value="Observation.component.valueQuantity.code" />
+      <definition value="The units are given by the units of the measurement so this shall have the code as in Observation.valueQuantity.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.dataAbsentReason">
+      <path value="Observation.component.dataAbsentReason" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
