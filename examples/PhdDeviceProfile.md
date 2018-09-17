@@ -186,8 +186,8 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 
 |Reg-Cert-Data-List|Device Mapping|
 |-
-|Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"|
-|Reg-Cert-Data-List: certified PAN interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PANCode*N*"<br>property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-codes "|
+|Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
+|Reg-Cert-Data-List: certified PAN interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PANCode*N*"<br>property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-codes"<br><br>|
 |Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="placeholder/fhir/IEEE.ASN1"<br>property.type.coding.display="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "<br>property.valueCode.coding.display="Y=unregulated N=regulated"|
 
 Display elements are receommended but optional.

@@ -24,57 +24,13 @@
       <definition value="The PhdNumericObservation reports PHD measurements that contain one of either a Basic-Nu-Observed-Value, Simple-Nu_observed-Value, or Nu_observed-Value attribute." />
       <comment value="Used for non-compound numeric observations from Personal Health Devices" />
     </element>
-    <element id="Observation.meta">
-      <path value="Observation.meta" />
-      <min value="1" />
-    </element>
-    <element id="Observation.meta.profile">
-      <path value="Observation.meta.profile" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="PhdNumericObservation" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
     <element id="Observation.meta.profile:phdProfile">
       <path value="Observation.meta.profile" />
       <sliceName value="phdProfile" />
+	  <short value="The PHD profile URL" />
       <min value="1" />
       <max value="1" />
       <fixedUri value="PhdNumericObservation" />
-    </element>
-    <element id="Observation.identifier">
-      <path value="Observation.identifier" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="value" />
-        </discriminator>
-        <ordered value="true" />
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Observation.identifier:conditionalCreateIdentifier">
-      <path value="Observation.identifier" />
-      <sliceName value="conditionalCreateIdentifier" />
-      <short value="Unique identifier of this measurment for a given patient and device" />
-      <definition value="An identifier created from a combination of the measurement parameters like sensor time stamp, type code, value, units code, patient and device identifiers, and selected elements of any component elements." />
-      <comment value="This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. Temporarily stored data from IEEE 11073 20601 devices, which are required to delete the data after sending, can also be considered real time. Temporarily stored data from Bluetooth Low Energy Health devices may be resent so these cannot be considered as real time. " />
-      <requirements value="Allows observations to be distinguished in a selective enough manner to prevent resource duplication." />
-      <max value="1" />
-    </element>
-    <element id="Observation.identifier:conditionalCreateIdentifier.value">
-      <path value="Observation.identifier.value" />
-      <min value="1" />
-    </element>
-    <element id="Observation.code.coding:MDCType">
-      <path value="Observation.code.coding" />
-      <sliceName value="MDCType" />
-	  <short value="Required MDC code entry" />
-      <comment value="For non-compound 11073-20601 metric numeric measurements, this code is obtained from one or more of the Type, Metric-Id, Nu-Observed-Value, and Metric-Id-Partition attributes. The algorithm to get the 16-bit partition and 16-bit term code is as follows:&#xD;&#xA;&#xD;&#xA;1. The partition and term code are obtained from the Type attribute.&#xD;&#xA;2. If there is a Metric-Id attribute the term code comes from this attribute.&#xD;&#xA;3. If there is a Nu-Observed-Value attribute the term code comes from this attribute.&#xD;&#xA;4. If the term code is NOT from the Type attribute, and there is a Metric-Id-Partition attribute, the partition comes from this attribute.&#xD;&#xA;5. The 32-bit 11073-10101 code value is given by partition * 2 **16 + term code.&#xD;&#xA;&#xD;&#xA;It is this value that is placed in the code.coding.code element for this 11073Type slice" />
     </element>
     <element id="Observation.value[x]">
       <path value="Observation.valueQuantity" />
@@ -123,7 +79,7 @@
       <path value="Observation.component" />
       <sliceName value="accuracyComponent" />
 	  <short value="The accuracy of the measurement" />
-      <definition value="This component shall be present if the accuracy attribute is present." />
+      <definition value="This component shall be present if the Accuracy attribute is present." />
       <max value="1" />
     </element>
     <element id="Observation.component:accuracyComponent.code.coding">
@@ -133,7 +89,6 @@
           <type value="value" />
           <path value="code" />
         </discriminator>
-        <ordered value="true" />
         <rules value="open" />
       </slicing>
       <min value="1" />
@@ -141,6 +96,7 @@
     <element id="Observation.component:accuracyComponent.code.coding:MDCType">
       <path value="Observation.component.code.coding" />
       <sliceName value="MDCType" />
+	  <short value="The required MDC code entry" />
       <min value="1" />
       <max value="1" />
     </element>
@@ -151,16 +107,13 @@
     </element>
     <element id="Observation.component:accuracyComponent.code.coding:MDCType.code">
       <path value="Observation.component.code.coding.code" />
-      <definition value="The code for the accuracy attribute is 67914" />
+      <definition value="The code for the Accuracy attribute is 67914" />
       <min value="1" />
       <fixedCode value="67914" />
     </element>
     <element id="Observation.component:accuracyComponent.code.coding:MDCType.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Observation.component.code.coding.display" />
-      <definition value="Should include the reference identifier for the Accuracy-Attribute MDC_ATTR_NU_ACCUR_MSMT" />
+      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
@@ -175,47 +128,56 @@
       <definition value="This is the value of the accuracy attribute. The value is Mder FLOAT encoded and shall be expressed to the precision indicated by the Mder FLOAT." />
       <min value="1" />
     </element>
-    <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.unit">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Observation.component.valueQuantity.unit" />
-      <definition value="A human-readable form of the unit. One should put the UCUM code for the units in this display string. It shall match the UCUM code in Observation.valueQuantity.unit if UCUM is used there." />
-    </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.system">
       <path value="Observation.component.valueQuantity.system" />
-      <definition value="The unit code shall use the MDC system" />
+      <definition value="The unit code shall use the UCUM system" />
       <min value="1" />
-      <fixedUri value="urn:iso:std:iso:11073:10101" />
+      <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.code">
       <path value="Observation.component.valueQuantity.code" />
-      <definition value="The units are given by the units of the measurement so this shall have the code as in Observation.valueQuantity.code" />
+      <definition value="The units for the Accuracy are given by the units of the measurement so this entry shall have the same code as in Observation.valueQuantity.code" />
       <min value="1" />
     </element>
     <element id="Observation.component:accuracyComponent.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
+	
+	<!-- ALERT-OP-STATE COMPONENT -->
     <element id="Observation.component:alertOpStateComponent">
       <path value="Observation.component" />
       <sliceName value="alertOpStateComponent" />
+	  <short value="The Alert Operations State component" />
       <definition value="This component gives one of the settings reported in the Alert-Op-State attribute. This attribute is used only by the Pulse Oximeter specialization.&#xD;&#xA;The Alert-Op-State attribute is used in conjunction with the Current-Limits and Measurement-Status attributes. The Current-Limits defines upper and lower limit thresholds for a reported measurement value. When the reported measurement value goes below or above these limits, a bit is set in the Measurement-Status attribute is set if the Alert-Op-State attribute indicates that the alert is active for the given threshold. Since it is considered important that if a Current-Limits attribute is present an alert shall be sent went the thresholds are crossed, the Alert-Op-State Bits are only set when the alert is, for some reason, turned OFF for a given threshold.&#xD;&#xA;There shall be one such alertOpStateComponent entry for every bit set in the Alert-Op-State attribute. There may be an entry for the defined cleared components as well." />
       <comment value="Recall that when creating the code for this entry that the code uses the MDER-Bit setting to be reported along with the Alert-Op-State attribute's MDC code. MDER-Bit 0 is the most significant bit of the attribute value. Since the Alert-Op-State attribute is a BITS-16 value, MDER-Bit 0 would have value 0x8000 and MDER-Bit 1 would have value 0x4000. Only bits 0, 1, and 2 are defined for this attribute." />
-      <requirements value="This component indicates if a given alert condition is turned off." />
+      <requirements value="This component indicates if a given alert condition monitoring is turned off." />
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding">
       <path value="Observation.component.code.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <comment value="Normally alternative coding systems are allowed but in this case the value is intimately tied to the code. The code represents the feature indicated by a bit settin in the attribute value. which is either cleared (0) or set (1). Thus the value for this entry is itself a binary 'Y' or 'N' code from http://hl7.org/fhir/v2/0136" />
+      <min value="1" />
+    </element>
+	<element id="Observation.component:accuracyComponent.code.coding:ASN1Type">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="ASN1Type" />
+	  <short value="The required ASN1 code entry" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Observation.component:alertOpStateComponent.code.coding.system">
+    <element id="Observation.component:alertOpStateComponent.code.coding:ASN1Type.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="http://hl7.org/fhir/IEEE.ASN1" />
     </element>
-    <element id="Observation.component:alertOpStateComponent.code.coding.code">
+    <element id="Observation.component:alertOpStateComponent.code.coding:ASN1Type.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="This code, which is an alpha-numeric string, is generated by the attribute MDC code, which is 68746 for the Alert-Op-State, followed by a dot (.) followed by the MDER-bit that was set. Given that only three bits are defined in the Pulse Ox specialization that uses this attribute, the code will be one of 68746.0, 68746.1. or 68746.2" />
       <comment value="Note that this code is an alpha-numeric string and not a decimal number. Think of it like a very-limited OID." />
@@ -230,18 +192,31 @@
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding">
       <path value="Observation.component.valueCodeableConcept.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+	<element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary">
+      <path value="Observation.component.value[x]:valueCodeableConcept.coding" />
+      <sliceName value="V2Binary" />
+	  <short value="The required Version 2 Table 0136 Binary code entry" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding.system">
+    <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary.system">
       <path value="Observation.component.valueCodeableConcept.coding.system" />
-      <definition value="This coding system contains only two entries, 'Y' (yes) and 'N' (no)" />
+      <definition value="This coding system contains only two entries, 'Y' (bit set) and 'N' (bit cleared)" />
       <min value="1" />
       <fixedUri value="http://hl7.org/fhir/v2/0136" />
     </element>
-    <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding.code">
+    <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary.code">
       <path value="Observation.component.valueCodeableConcept.coding.code" />
-      <definition value="If the MDER-Bit is set, the code value is 'Y' otherwise it is 'N'" />
+      <definition value="If the MDER-Bit is set, the code value is 'Y' otherwise it is 'N'. These are 'state' bits thus both the set and cleared states are reported." />
       <comment value="Recall that when the value is 'Y' the alarm or alert is turned off" />
       <min value="1" />
     </element>
@@ -249,12 +224,15 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
+	
+	<!-- CURRENT LIMITS COMPONENT -->
     <element id="Observation.component:currentLimitsComponent">
       <path value="Observation.component" />
       <sliceName value="currentLimitsComponent" />
-      <definition value="The Current-Limits attribute gives upper and lower threshhold values for the triggering of an alert for the measured value being reported in this Observation resource. This attribute is currently used only in the Pulse Oximeter specialization. If the alerting is not turned off, a Measurement-Status attribute bit is set when either threshold is crossed. The Current-Limits attribute value shall be reported if it is present in the measurement." />
+	  <short value="The Current-Limits values" />
+      <definition value="The Current-Limits attribute gives upper and lower threshold values for the triggering of an alert for the measured value being reported in this Observation resource. This attribute is currently used only in the Pulse Oximeter specialization. If the alerting is not turned off, a Measurement-Status attribute bit is set when either threshold is crossed. The Current-Limits attribute value shall be reported if it is present in the measurement." />
       <comment value="The value is expressed as a range. The lower and upper values of the range represent the thresholds." />
-      <requirements value="Allows the downstream signaling of an alert and/or warning situation." />
+      <requirements value="Allows the downstream signalling of an alert and/or warning situation." />
       <max value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent.component.code.coding">
@@ -309,27 +287,20 @@
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.value">
       <path value="Observation.component.valueRange.low.value" />
-      <definition value="Thsi value is given by Current-Limits.lower as an MDER-FLOAT and shall be expressed in the precsion indcated by the MDER-FLOAT construct." />
+      <definition value="This value is given by Current-Limits.lower as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the lower threshold. If the measurement falls below this value, the Measurement-Status attribute is sent with a bit stating the alert is present (if the alerts are not turned off for the lower limits)." />
       <min value="1" />
     </element>
-    <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.unit">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Observation.component.valueRange.low.unit" />
-      <definition value="A human-readable form of the unit. It is suggested that the UCUM code is used in this string with the {} filled should they be present." />
-    </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.system">
       <path value="Observation.component.valueRange.low.system" />
-      <definition value="Indicates the MDC coding system." />
+      <definition value="Indicates the UCUM coding system." />
       <min value="1" />
-      <fixedUri value="urn:iso:std:iso:11073:10101" />
+      <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.value.code">
       <path value="Observation.component.valueRange.low.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
-      <comment value="The MDC units are required to assure no ambiguity in translation. UCUM is optionally placed in the unit element if it is known by the uploader." />
+      <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high">
@@ -340,38 +311,34 @@
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.value">
       <path value="Observation.component.valueRange.high.value" />
-      <definition value="Thsi value is given by Current-Limits.upper as an MDER-FLOAT and shall be expressed in the precsion indcated by the MDER-FLOAT construct." />
+      <definition value="This value is given by Current-Limits.upper as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the upper threshold. If the measurement goes above this value, the Measurement-Status attribute is sent with a bit stating the alert is present (if the alerts are not turned off for the upper limits)." />
       <min value="1" />
-    </element>
-    <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.unit">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Observation.component.valueRange.high.unit" />
-      <definition value="A human-readable form of the unit. It is suggested that the UCUM code is used in this string with the {} filled should they be present." />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.system">
       <path value="Observation.component.valueRange.high.system" />
       <definition value="Indicates the MDC coding system." />
       <min value="1" />
-      <fixedUri value="urn:iso:std:iso:11073:10101" />
+      <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.code">
       <path value="Observation.component.valueRange.high.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
-      <comment value="The MDC units are required to assure no ambiguity in translation. UCUM is optionally placed in the unit element if it is known by the uploader." />
+      <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
+	
+	<!-- ALERT-OP-TEXT COMPONENT -->
     <element id="Observation.component:alertOpTextStringComponent">
       <path value="Observation.component" />
       <sliceName value="alertOpTextStringComponent" />
-      <definition value="This component reports the values in the Alert-Op-Text-String attribute. Reporting the this attribute information is optional." />
-      <comment value="This attribute consists of human readable strings giving further information about the upper and lower limits" />
+	  <short value="The Alert-Op-Text human readable strings" />
+      <definition value="This component reports the values in the Alert-Op-Text-String attribute." />
+      <comment value="This attribute consists of human readable strings giving further information about the upper and lower limits of the Alerts" />
       <max value="1" />
     </element>
     <element id="Observation.component:alertOpTextStringComponent.code.coding">
@@ -404,9 +371,6 @@
       <fixedCode value="68104" />
     </element>
     <element id="Observation.component:alertOpTextStringComponent.code.coding:MDCType.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Observation.component.code.coding.display" />
       <definition value="The reference identifier for the attribute should be included. The Alert-Op-Text-String attribute ref id is MDC_ATTR_AL_OP_TEXT_STRING" />
     </element>
@@ -427,11 +391,13 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
+	
+	<!-- MEASUREMENT-CONFIDENCE-95 COMPONENT -->
     <element id="Observation.component:measurementConfidence95Component">
       <path value="Observation.component" />
       <sliceName value="measurementConfidence95Component" />
+	  <short value="The Measurement-Confidence-95 range" /> 
       <definition value="The Measurement-Confidence-95 attribute defines the lower and upper bounds for a range within which the manufacture is 95% confident that the actual value resides. The unit for the lower bound and upper bound is the same as the measurement. " />
-      <requirements value="Provides a level of confidence for the reported measurement." />
       <max value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component.code.coding">
@@ -449,6 +415,7 @@
     <element id="Observation.component:measurementConfidence95Component.coding:MDCType">
       <path value="Observation.component.code.coding" />
       <sliceName value="MDCType" />
+	  <short value="The required MDC code entry" /> 
       <min value="1" />
       <max value="1" />
     </element>
@@ -466,9 +433,6 @@
       <fixedCode value="526998" />
     </element>
     <element id="Observation.component:measurementConfidence95Component.coding:MDCType.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Observation.component.code.coding.display" />
       <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_MSMT_CONFIDENCE_95" />
     </element>
@@ -487,26 +451,19 @@
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.value">
       <path value="Observation.component.valueRange.low.value" />
       <definition value="Thsi value is given by Measurement-Confidence-95.lower-bound as an MDER-FLOAT and shall be expressed in the precsion indcated by the MDER-FLOAT construct." />
-      <comment value="This gives the lower value for the manufacturer is 95% confident that the measurement reported is that of the real value." />
+      <comment value="This gives the lower bound of the range for which the manufacturer is 95% confident that the measurement reported lies in." />
       <min value="1" />
-    </element>
-    <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.unit">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Observation.component.valueRange.low.unit" />
-      <definition value="A human-readable form of the unit. It is suggested that the UCUM code is used in this string with the {} filled should they be present." />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.system">
       <path value="Observation.component.valueRange.low.system" />
-      <definition value="Indicates the MDC coding system." />
+      <definition value="Indicates the UCUM coding system." />
       <min value="1" />
-      <fixedUri value="urn:iso:std:iso:11073:10101" />
+      <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.value.code">
       <path value="Observation.component.valueRange.low.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
-      <comment value="The MDC units are required to assure no ambiguity in translation. UCUM is optionally placed in the unit element if it is known by the uploader." />
+      <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high">
@@ -517,37 +474,33 @@
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.value">
       <path value="Observation.component.valueRange.high.value" />
-      <definition value="Thsi value is given by Measurement-Confidence-95.upper-bound as an MDER-FLOAT and shall be expressed in the precsion indcated by the MDER-FLOAT construct." />
-      <comment value="This gives the upper value for the manufacturer is 95% confident that the measurement reported is that of the real value." />
+      <definition value="This value is given by Measurement-Confidence-95.upper-bound as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
+      <comment value="This gives the upper bound of the range for which the manufacturer is 95% confident that the measurement reported lies in." />
       <min value="1" />
-    </element>
-    <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.unit">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Observation.component.valueRange.high.unit" />
-      <definition value="A human-readable form of the unit. It is suggested that the UCUM code is used in this string with the {} filled should they be present." />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.system">
       <path value="Observation.component.valueRange.high.system" />
-      <definition value="Indicates the MDC coding system." />
+      <definition value="Indicates the UCUM coding system." />
       <min value="1" />
-      <fixedUri value="urn:iso:std:iso:11073:10101" />
+      <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.code">
       <path value="Observation.component.valueRange.high.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
-      <comment value="The MDC units are required to assure no ambiguity in translation. UCUM is optionally placed in the unit element if it is known by the uploader." />
+      <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
+	
+    <!-- THRESHOLD-NOTIFICATION-TEXT-STRING COMPONENT -->	
     <element id="Observation.component:thresholdNotificationTextStringComponent">
       <path value="Observation.component" />
       <sliceName value="thresholdNotificationTextStringComponent" />
-      <definition value="This component reports the values in the Threshold-Notification-Text-String attribute. Reporting the this attribute information is optional." />
+	  <short value="The Threshold-Notification-Text-String attribute value entry" /> 
+      <definition value="This component reports the values in the Threshold-Notification-Text-String attribute. This attribute is a human readable string describing the threshold met condition." />
       <comment value="This attribute consists of human readable strings giving further information threshold notification(s)" />
       <max value="1" />
     </element>
@@ -566,6 +519,7 @@
     <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding:MDCType">
       <path value="Observation.component.code.coding" />
       <sliceName value="MDCType" />
+	  <short value="The required MDC code entry" /> 
       <min value="1" />
       <max value="1" />
     </element>
@@ -581,9 +535,6 @@
       <fixedCode value="68232" />
     </element>
     <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding:MDCType.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Observation.component.code.coding.display" />
       <definition value="The reference identifier for the attribute should be included. The Threshold-Notification-Text-String attribute ref id is MDC_ATTR_THRES_NOTIF_TEXT_STRING" />
     </element>
