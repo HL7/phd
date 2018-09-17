@@ -32,12 +32,14 @@
       <max value="1" />
       <fixedUri value="PhdNumericObservation" />
     </element>
+	
     <element id="Observation.value[x]">
       <path value="Observation.valueQuantity" />
       <type>
         <code value="Quantity" />
       </type>
     </element>
+
     <element id="Observation.value[x]:valueQuantity.value">
       <path value="Observation.valueQuantity.value" />
       <definition value="The decoded Mder FLOAT or SFLOAT value from a PHD measurement containing either a&#xD;&#xA;Basic-Nu-Observed-Value&#xD;&#xA;Simple-Nu-Observed-Value or&#xD;&#xA;Nu_observed-Value attribute." />
@@ -73,6 +75,7 @@
       <path value="Observation.dataAbsentReason.coding.code" />
       <min value="1" />
     </element>
+
 	
 	<!-- ACCURACY COMPONENT -->
     <element id="Observation.component:accuracyComponent">
