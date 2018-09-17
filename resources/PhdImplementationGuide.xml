@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="PHD"/>
+  <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PHD"/>
+  <version value="0.2.0"/>
+  <!-- <name value="PHDImplementationGuide"/> -->
+  <name value="Personal Health Device Implementation Guide"/>
+  <title value="Personal Health Device Implementation Guide"/>
+  <status value="draft"/>
+  <date value="2018-08-18"/>
+  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
+  <description value="ImplementationGuide for Personal Health Devices (PHD), used in remote patient monitoring (e.g., weight scales, blood pressure cuffs, glucose monitors, pulse-oximeters, etc.)."/>
+  <packageId value="hl7.fhir.uv.phd"/>
+  <fhirVersion value="3.6.0"/>
+  <definition>
+    <resource>
+      <reference>
+	    <!-- I believe the value after the StructureDefinition is the <id> element in a Structure definition -->
+        <reference value="StructureDefinition/PhdDevice"/>
+      </reference>
+      <name value="PhdDevice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <page>
+      <nameUrl value="index.html"/>
+      <title value="Home"/>
+      <generation value="markdown"/>
+    </page>
+  </definition>
+</ImplementationGuide>

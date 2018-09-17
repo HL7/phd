@@ -1,0 +1,109 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-10-16T05:10:41.036-04:00" />
+  </meta>
+  <url value="http://hl7.org/fhir/StructureDefinition/PhdPatient" />
+  <name value="PhdPatient" />
+  <status value="draft" />
+  <date value="2017-08-04T06:04:53.838-04:00" />
+  <description value="The patient information reported from personal health gateways (PHG)" />
+  <purpose value="All PHD related Observation resources reference a Patient resource containing a minimal set of information sufficient to identify the patient. However, it may require additional information to link the patient to a person that is only available to an authorized entity. In this manner, PHMI can be protected." />
+  <fhirVersion value="3.5.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient">
+      <path value="Patient" />
+      <comment value="Note that the only element that is required to be populated is the identifier which can be made opaque to a third party viewer. PCHA also supports a situation where the PHG can be provided a logical id to a Patient Resource out of band. In this case, the PHG never uploads a Patient Resource, but uses the provided logical id in the Observation resources instead. In this manner, not even the opaque identifiers are sent over the wire." />
+    </element>
+    <element id="Patient.meta">
+      <path value="Patient.meta" />
+      <min value="1" />
+    </element>
+    <element id="Patient.meta.profile">
+      <path value="Patient.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="phdPatient" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Patient.meta.profile:phdProfile">
+      <path value="Patient.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedUri value="phdPatient" />
+    </element>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type.coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier">
+      <path value="Patient.identifier" />
+      <sliceName value="phdIdentifier" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.type">
+      <path value="Patient.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.type.coding">
+      <path value="Patient.identifier.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <ordered value="true" />
+        <rules value="open" />
+      </slicing>
+      <comment value="It is highly recommended that this element be populated." />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.type.coding:v2Coding">
+      <path value="Patient.identifier.type.coding" />
+      <sliceName value="v2Coding" />
+      <short value="Code defined by http://www.hl7.org/fhir/v2/0203" />
+      <definition value="A code using the V2 http://www.hl7.org/fhir/v2/0203/ system. " />
+      <comment value="This HL7 V2 coding system identifies that this is the Continua identifier. The V2 system supports many possible types of identifiers. For a local coding system use 'L', for an unknown patient use 'U'" />
+      <max value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.type.coding:v2Coding.system">
+      <path value="Patient.identifier.type.coding.system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code. In this case the system is http://hl7.org/fhir/v2/0203 " />
+      <comment value="HL7 defines several codes that can be used in the http://hl7.org/fhir/v2/0203 system. For a list of the possible codes in this system see http://www.hl7.org/fhir/v2/0203" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/v2/0203 " />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.type.coding:v2Coding.code">
+      <path value="Patient.identifier.type.coding.code" />
+      <short value="a code from http://hl7.org/fhir/v2/0203 " />
+      <definition value="A symbol defined by the http://www.hl7.org/fhir/v2/0203 coding system. For example, the code 'MR' indicates the identifier is a Medical Record Number. 'SS' indicates that the identifier value is a US social security number and 'SR' indicates a state registry id." />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.system">
+      <path value="Patient.identifier.system" />
+	  <comment value="For an unknown patient the system http://www.hl7.org/fhir/v2/0004 can be used with value 'U'" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:phdIdentifier.value">
+      <path value="Patient.identifier.value" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

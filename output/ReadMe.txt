@@ -1,0 +1,1 @@
+Only here so git will create this directory. IG publisher's output goes here.
