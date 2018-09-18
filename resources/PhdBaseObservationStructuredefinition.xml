@@ -19,9 +19,71 @@
       <path value="Observation" />
       <comment value="This variant on the Observation defines a base profile for the PHD Observation profiles. This profile is abstract and does not exist alone." />
     </element>
+	<element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+    <element id="Observation.meta.profile">
+      <path value="Observation.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="Observation.meta.profile" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
     <element id="Observation.identifier">
       <path value="Observation.identifier" />
-      <comment value="For Phd Observations that require conditional creates the create selection criteria will be based upon the information placed in an identifier element. The information will uniquely represent the measurement content. How that information is generated is dependent upon the Phd Observation Profile." />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="value" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+	<!-- Handle measurement status test or demo data -->
+	<element id="Observation.meta.security" >
+	  <path value="Observation.meta.security" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+	</element>
+	<element id="Observation.meta.security:MsmtStatusTestDemo">
+      <path value="Observation.meta.security" />
+      <sliceName value="MsmtStatusTestDemo" />
+      <short value="Security value set to HTEST when measurement status indicates demo or test data" />
+	  <max value="1" />
+	</element>
+	<element id="Observation.meta.security:MsmtStatusTestDemo.system">
+      <path value="Observation.meta.security.system" />
+      <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/ValueSet/security-labels" />
+	</element>
+	<element id="Observation.meta.security:MsmtStatusTestDemo.code">
+      <path value="Observation.meta.security.code" />
+      <min value="1" />
+	  <fixedCode value="HTEST" />
+	</element>
+	
+    <element id="Observation.identifier:conditionalCreateIdentifier">
+      <path value="Observation.identifier" />
+      <sliceName value="conditionalCreateIdentifier" />
+      <short value="Unique identifier of this measurement for a given patient and device" />
+      <definition value="An identifier created from a combination of the measurement parameters like sensor time stamp, type code, value, units code, patient and device identifiers, and selected elements of any component elements." />
+      <comment value="This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073 20601 devices, which are required to delete the data after sending, can also be considered real time. Temporarily stored data from Bluetooth Low Energy Health devices may be resent so these cannot be considered as real time. " />
+      <requirements value="Allows observations to be distinguished in a selective enough manner to prevent resource duplication." />
+      <max value="1" />
+    </element>
+    <element id="Observation.identifier:conditionalCreateIdentifier.value">
+      <path value="Observation.identifier.value" />
+      <min value="1" />
     </element>
     <element id="Observation.status">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
@@ -86,6 +148,8 @@
       <path value="Observation.subject.reference" />
       <min value="1" />
     </element>
+	
+	<!-- Effective: The time stamp -->
     <element id="Observation.effective[x]">
       <path value="Observation.effective[x]" />
       <slicing>
@@ -97,16 +161,29 @@
       </slicing>
       <definition value="The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the time stamp sent by the PHD or the time of reception by the PHG if the PHD sent no time stamp." />
       <min value="1" />
+	  <!-- The base Observation profile specifies that max=1. However, if you do not re-specify it here, you will get a slicing on non-repeating element error unless
+	  you have a constraint that restricts the total number. Here I end up stating both since the constraint makes it clearer to the implementer that not only can
+      only one exist but that has to be at least one. -->
+	  <max value="1" />
 	  <type>
         <code value="dateTime"/>
       </type>
       <type>
         <code value="Period"/>
       </type>
+	  <constraint>
+        <key value="phd-obs-1"/>
+		<!-- Some time stamp SHALL be present -->
+        <severity value="error"/>
+        <human value="Either an effectiveDateTime or effectivePeriod shall be present"/>
+        <expression value="effectiveDateTime.exists() or effectivePeriod.exists().exists()"/>
+      </constraint>
     </element>
-    <element id="Observation.effective[x]:effectiveDateTime">
-      <path value="Observation.effective[x]" />
-      <sliceName value="effectiveDateTime" />
+
+	<!-- Time stamp: Instant -->
+    <element id="Observation.effective[x]:dateTime">
+      <path value="Observation.effectiveDateTime" />
+      <sliceName value="dateTime" />
 	  <short value="The time stamp of the measurement" />
 	  <definition value="The time stamp of the measurement when the measurement is taken at an instance in time" />
       <comment value="A date and time or period shall always be present but not both." />
@@ -114,24 +191,27 @@
         <code value="dateTime" />
       </type>
     </element>
-    <element id="Observation.effective[x].effectivePeriod">
+
+	<!-- Time stamp: Period -->
+    <element id="Observation.effective[x]:period">
       <path value="Observation.effectivePeriod" />
-      <sliceName value="effectivePeriod" />
+      <sliceName value="period" />
 	  <short value="The time period of the measurement" />
       <definition value="The time period of the measurement when the measurement has a duration. The duration of the measurement is reported in a Measure-Active-Period attribute. The difference between the end and start fields is the value of the Measure-Active-Period." />
       <type>
         <code value="Period" />
       </type>
     </element>
-    <element id="Observation.effective[x]:effectivePeriod.start">
+    <element id="Observation.effective[x]:period.effectivePeriod.start">
       <path value="Observation.effectivePeriod.start" />
       <min value="1" />
     </element>
-    <element id="Observation.effective[x]:effectivePeriod.end">
+    <element id="Observation.effective[x]:period.effectivePeriod.end">
       <path value="Observation.effectivePeriod.end" />
       <definition value="The end of the period. It will be the value of the Measure-Active-Period plus the start time." />
       <min value="1" />
     </element>
+	
     <element id="Observation.device">
       <path value="Observation.device" />
       <comment value="This field will reference the PHD Device." />
@@ -144,6 +224,34 @@
       <comment value="This reference points to the Device resource containing information about the sensor device that took the measurement." />
       <min value="1" />
     </element>
+	
+	<!-- INTERPRETATION -->
+	<element id="Observation.interpretation.coding">
+      <path value="Observation.interpretation.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.interpretation.coding:MsmtStatusInterpretation">
+      <path value="Observation.interpretation.coding" />
+	  <sliceName value="MsmtStatusInterpretation" />
+      <short value="Measurement status interpretation when questionable, calibration-ongoing, validated, early-indication, threshold exceeded, alarm inhibited" />
+    </element>
+	<element id="Observation.interpretation.coding:MsmtStatusInterpretation.system">
+      <path value="Observation.interpretation.coding.system" />
+	  <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" />
+    </element>
+	<element id="Observation.interpretation.coding:MsmtStatusInterpretation.code">
+      <path value="Observation.interpretation.coding.code" />
+	  <min value="1" />
+    </element>	
+	
+	<!-- DERIVED FROM: Coincident time stamp and Source Handle Reference -->
     <element id="Observation.derivedFrom">
       <path value="Observation.derivedFrom" />
       <slicing>
@@ -161,6 +269,7 @@
       <definition value="A reference to the Coincident Time Stamp observation. The Coincident Time Stamp indicates how the time stamps from the PHD are corrected, if at all." />
       <comment value="This reference shall be present if the PHD reports a time stamp. The reference shall point to the Coincident Time Stamp observation. The Coincident Time Stamp Observation provides an audit of the time stamp. Whether or not the gateway corrected the time stamp can be determined from the elements in this Observation. If the timestamps were corrected, the elements of the Observation can be used to obtain the actual time stamps reported by the PHD.&#xD;&#xA;&#xD;&#xA;There is no reference to a Coincident Time Stamp Observation when the PHD does not report a time stamp in which case the reported time stamp is the time of reception by the PHG." />
       <requirements value="This Observation allows one to re-create the original time stamp generated by the PHD should it have been modified by the PHG." />
+	  <max value="1" />
     </element>
     <element id="Observation.derivedFrom:coincidentTimeStamp.reference">
       <path value="Observation.derivedFrom.reference" />
@@ -205,7 +314,7 @@
     <element id="Observation.component:supplementalTypesComponent">
       <path value="Observation.component" />
       <sliceName value="supplementalTypesComponent" />
-	  <short value="A further description of the measurement type." />
+	  <short value="Supplemental Type: A further description of the measurement type." />
       <definition value="For each paritition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise.&#xD;&#xA;" />
       <comment value="A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes as partition:term code pairs. Each pair is a code describing something additional about the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average. An MDC_MODALITY_FAST would indicate that a short averaging is used and the result reported regardless of stability." />
     </element>
@@ -412,7 +521,7 @@
         <valueSet value="http://hl7.org/fhir/uv/pocd/ValueSet/11073MDC-object"/> 
       </binding>
     </element>
-    <element id="Observation.component:hiresRelativeTime.code.coding:MDCType.display">
+    <element id="Observation.component:hiresRelativeTimeComponent.code.coding:MDCType.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true" />
       </extension>

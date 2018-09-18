@@ -10,6 +10,7 @@ Other related implementation guides focus on home-based personal health devices,
 ## Differential
 
 {% include StructureDefinition-PhdDevice-diff.xhtml %}
+{% include StructureDefinition-PhdNumericObservation-diff.xhtml %}
 
 ## Snapshot
 

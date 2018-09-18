@@ -22,8 +22,16 @@
   },
   "resources": {
     "StructureDefinition/PhdDevice": {
-      "source": "PhdDeviceStructureDefinition.xml",
-      "base": "PhdDeviceStructureDefinition.html"
+      "source": "PhdDeviceStructuredefinition.xml",
+      "base": "PhdDeviceStructuredefinition.html"
+    },
+	  "StructureDefinition/PhdBaseObservation": {
+      "source": "PhdBaseObservationStructuredefinition.xml",
+      "base": "PhdBaseObservationStructuredefinition.html"
+    },
+      "StructureDefinition/PhdNumericObservation": {
+      "source": "PhdNumericObservationStructuredefinition.xml",
+      "base": "PhdNumericObservationStructuredefinition.html"
     }
   }
 }

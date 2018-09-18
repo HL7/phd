@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="example"/> 
+  <meta> 
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
+  </meta> 
+  <text>
+  </text>
+
+  <version value="20160128"/> 
+
+  <name value="ASN1ToHL7"/> 
+  <status value="draft"/> 
+  <experimental value="true"/> 
+  <date value="2018-09-18"/> 
+  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
+
+  <description value="Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occured when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement."/> 
+  
+  <!-- The codes are strings but consist of only digits and a decimal point. 
+  They do not represent decimal numbers -->
+  <caseSensitive value="true"/> 
+  <content value="complete"/> 
+  
+  <!-- The following code concepts are derived from the MDC_ATTR_POWER_STAT MDS attribute -->
+  <concept> 
+    <code value="67925.0"/> 
+    <display value="Mains power state"/> 
+    <definition value="Indicates whether the PHD is on or off mains power"/> 
+    <property> 
+      <code value="parent" /> 
+	  <valueString value="state" />
+    </property>
+	<property> 
+      <code value="parent" /> 
+	  <valueString value="attribute" />
+    </property>
+  </concept> 
+  <concept> 
+    <code value="67925.1"/> 
+    <display value="Battery state"/> 
+    <definition value="Indicates whether the PHD is on or off Battery power"/> 
+    <property> 
+      <code value="parent" /> 
+	  <valueString value="state" />
+    </property> 
+	<property> 
+      <code value="parent" /> 
+	  <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="67925.8"/> 
+    <display value="Charging at full rate"/> 
+    <definition value="Indicates whether the PHD battery is charging at maximum rate"/> 
+    <property> 
+      <code value="parent" /> 
+	  <valueString value="event" />
+    </property>
+	<property> 
+      <code value="parent" /> 
+	  <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="67925.9"/> 
+    <display value="Charging at trickle rate"/> 
+    <definition value="Indicates whether the PHD battery is charging at a trickle rate"/> 
+    <property> 
+      <code value="parent" /> 
+	  <valueString value="event" />
+    </property> 
+	<property> 
+      <code value="parent" /> 
+	  <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="67925.10"/> 
+    <display value="Charging state"/> 
+    <definition value="Indicates whether the PHD battery charging is on or off"/> 
+    <property> 
+      <code value="parent" /> 
+	  <valueString value="state" />
+    </property> 
+	<property> 
+      <code value="parent" /> 
+	  <valueString value="attribute" />
+    </property>
+  </concept>
+</CodeSystem> 

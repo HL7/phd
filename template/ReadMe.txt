@@ -1,1 +1,0 @@
-Only here so git will create this directory. IG Publisher may use this directory

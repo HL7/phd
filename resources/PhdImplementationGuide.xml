@@ -21,6 +21,20 @@
       <name value="PhdDevice"/>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdBaseObservation"/>
+      </reference>
+      <name value="PhdBaseObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+	<resource>
+      <reference>
+        <reference value="StructureDefinition/PhdNumericObservation"/>
+      </reference>
+      <name value="PhdNumericObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Home"/>
