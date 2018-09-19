@@ -87,6 +87,9 @@
       <definition value="This component shall be present if the Accuracy attribute is present." />
       <max value="1" />
     </element>
+	<element id="Observation.component:accuracyComponent.code">
+      <path value="Observation.component.code" />
+    </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -162,6 +165,9 @@
       <definition value="This component gives one of the settings reported in the Alert-Op-State attribute. This attribute is used only by the Pulse Oximeter specialization.&#xD;&#xA;The Alert-Op-State attribute is used in conjunction with the Current-Limits and Measurement-Status attributes. The Current-Limits defines upper and lower limit thresholds for a reported measurement value. When the reported measurement value goes below or above these limits, a bit is set in the Measurement-Status attribute is set if the Alert-Op-State attribute indicates that the alert is active for the given threshold. Since it is considered important that if a Current-Limits attribute is present an alert shall be sent went the thresholds are crossed, the Alert-Op-State Bits are only set when the alert is, for some reason, turned OFF for a given threshold.&#xD;&#xA;There shall be one such alertOpStateComponent entry for every bit set in the Alert-Op-State attribute. There may be an entry for the defined cleared components as well." />
       <comment value="Recall that when creating the code for this entry that the code uses the MDER-Bit setting to be reported along with the Alert-Op-State attribute's MDC code. MDER-Bit 0 is the most significant bit of the attribute value. Since the Alert-Op-State attribute is a BITS-16 value, MDER-Bit 0 would have value 0x8000 and MDER-Bit 1 would have value 0x4000. Only bits 0, 1, and 2 are defined for this attribute." />
       <requirements value="This component indicates if a given alert condition monitoring is turned off." />
+    </element>
+	<element id="Observation.component:alertOpStateComponent.code">
+      <path value="Observation.component.code" />
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding">
       <path value="Observation.component.code.coding" />
@@ -249,6 +255,9 @@
       <comment value="The value is expressed as a range. The lower and upper values of the range represent the thresholds." />
       <requirements value="Allows the downstream signalling of an alert and/or warning situation." />
       <max value="1" />
+    </element>
+	<element id="Observation.component:currentLimitsComponent.code">
+      <path value="Observation.component.code" />
     </element>
     <element id="Observation.component:currentLimitsComponent.component.code.coding">
       <path value="Observation.component.code.coding" />
@@ -357,6 +366,9 @@
       <comment value="This attribute consists of human readable strings giving further information about the upper and lower limits of the Alerts" />
       <max value="1" />
     </element>
+	<element id="Observation.component:alertOpTextStringComponent.code">
+      <path value="Observation.component.code" />
+    </element>
     <element id="Observation.component:alertOpTextStringComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -419,6 +431,9 @@
 	  <short value="The Measurement-Confidence-95 range" /> 
       <definition value="The Measurement-Confidence-95 attribute defines the lower and upper bounds for a range within which the manufacture is 95% confident that the actual value resides. The unit for the lower bound and upper bound is the same as the measurement. " />
       <max value="1" />
+    </element>
+	<element id="Observation.component:measurementConfidence95Component.code">
+      <path value="Observation.component.code" />
     </element>
     <element id="Observation.component:measurementConfidence95Component.code.coding">
       <path value="Observation.component.code.coding" />
@@ -526,6 +541,9 @@
       <definition value="This component reports the values in the Threshold-Notification-Text-String attribute. This attribute is a human readable string describing the threshold met condition." />
       <comment value="This attribute consists of human readable strings giving further information threshold notification(s)" />
       <max value="1" />
+    </element>
+	<element id="Observation.component:thresholdNotificationTextStringComponent.code">
+      <path value="Observation.component.code" />
     </element>
     <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding">
       <path value="Observation.component.code.coding" />
