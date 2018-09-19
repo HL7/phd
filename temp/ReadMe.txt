@@ -1,0 +1,1 @@
+Only here so git will create this directory. IG Publisher needs this directory present to work.
