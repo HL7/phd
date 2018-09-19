@@ -53,6 +53,14 @@
       "source": "PhdCoincidentTimeStampObservationStructuredefinition.xml",
       "base": "PhdCoincidentTimeStampObservationStructuredefinition.html"
     },
+	  "StructureDefinition/PhgDevice": {
+      "source": "PhgDeviceStructuredefinition.xml",
+      "base": "PhgDeviceStructuredefinition.html"
+    },
+	  "StructureDefinition/PhdPatient": {
+      "source": "PhdPatientStructuredefinition.xml",
+      "base": "PhdPatientStructuredefinition.html"
+    },
     "CodeSystem/ASN1ToHL7": {
       "source": "ASN1_CodeSystem.xml",
       "base": "ASN1_CodeSystem.html"

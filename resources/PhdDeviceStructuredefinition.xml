@@ -234,6 +234,7 @@
 	  <comment value="The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-20601 standard, the version is the 20601 protocol version." />
 	  <min value="1" />
     </element>
+	
 	<!-- VERSION -->
 	<element id="Device.version">
       <path value="Device.version" />
@@ -271,7 +272,7 @@
 	<element id="Device.version.type.coding:MDCType.code">
       <path value="Device.version.type.coding.code" />
 	  <short value="A code indicating the type of version the Device.version.value refers to." />
-	  <comment value="The currently defined version codes used in this element are as shown in the Table. More than one of these versions may be reported by a PHD. Each version reported by the PHG shall be encoded.&#xD;&#xA;&#xD;&#xA;
+	  <comment value="The currently defined version codes used in this element are as shown in the Table. More than one of these versions may be reported by a PHD. Each version reported by the PHD shall be encoded.&#xD;&#xA;&#xD;&#xA;
 	  Description                   CODE             Reference Identifier&#xD;&#xA;
 	  ------------------------------------------------------------------------------------&#xD;&#xA;
 	  Hardware revision            531974            MDC_ID_PROD_SPEC_HW&#xD;&#xA;
@@ -619,7 +620,7 @@
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-	<!-- The currently defined quantity properties reported by the device -->
+	<!-- The currently defined coded list properties reported by the device -->
     <element id="Device.property:codedListProperties.type.coding:MDCType.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
@@ -641,7 +642,7 @@
 	<element id="Device.property:codedListProperties.valueCode">
       <path value="Device.property.valueCode" />
 	  <short value="There shall be one valueCode entry for every item reported by the PHD in the list" />
-      <max value="1" />
+      <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding">
       <path value="Device.property.valueCode.coding" />
@@ -654,21 +655,20 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:MDCType">
+    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType">
       <path value="Device.property.valueCode.coding" />
-      <sliceName value="MDCType" />
-	  <short value="Required MDC code sytem entry" />
+      <sliceName value="ContinuaPANType" />
+	  <short value="Required Continua PANType code sytem entry" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:MDCType.system">
+    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
       <path value="Device.property.valueCode.coding.system" />
       <min value="1" />
-      <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:MDCType.code">
+    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
       <path value="Device.property.valueCode.coding.code" />
-      <definition value="One of the MDC time synchronization codes" />
+      <definition value="The Continua code for the certified PAN interface" />
       <min value="1" />
     </element>
   </differential>

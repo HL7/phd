@@ -72,6 +72,20 @@
     </resource>
 	<resource>
       <reference>
+        <reference value="StructureDefinition/PhgDevice"/>
+      </reference>
+      <name value="PhgDevice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdPatient"/>
+      </reference>
+      <name value="PhdPatient"/>
+      <exampleBoolean value="false"/>
+    </resource>
+	<resource>
+      <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
       <name value="ASN1ToHL7"/>
