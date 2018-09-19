@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CodeSystem xmlns="http://hl7.org/fhir">
-  <id value="example"/> 
+  <id value="ASN1ToHL7"/> 
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
@@ -23,17 +23,29 @@
   <caseSensitive value="true"/> 
   <content value="complete"/> 
   
+  <!-- These properties indicate the type and source of the code -->
+  <property> 
+      <code value="type" /> 
+	  <description value="Indicates that the code type is an event or state" />
+	  <type value="code" />
+  </property>
+  <property> 
+      <code value="source" /> 
+	  <description value="Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device." />
+	  <type value="code" />
+  </property>
+  
   <!-- The following code concepts are derived from the MDC_ATTR_POWER_STAT MDS attribute -->
   <concept> 
     <code value="67925.0"/> 
     <display value="Mains power state"/> 
     <definition value="Indicates whether the PHD is on or off mains power"/> 
     <property> 
-      <code value="parent" /> 
+      <code value="type" /> 
 	  <valueString value="state" />
     </property>
 	<property> 
-      <code value="parent" /> 
+      <code value="source" /> 
 	  <valueString value="attribute" />
     </property>
   </concept> 
@@ -42,11 +54,11 @@
     <display value="Battery state"/> 
     <definition value="Indicates whether the PHD is on or off Battery power"/> 
     <property> 
-      <code value="parent" /> 
+      <code value="type" /> 
 	  <valueString value="state" />
-    </property> 
+    </property>
 	<property> 
-      <code value="parent" /> 
+      <code value="source" /> 
 	  <valueString value="attribute" />
     </property>
   </concept>
@@ -55,11 +67,11 @@
     <display value="Charging at full rate"/> 
     <definition value="Indicates whether the PHD battery is charging at maximum rate"/> 
     <property> 
-      <code value="parent" /> 
+      <code value="type" /> 
 	  <valueString value="event" />
     </property>
 	<property> 
-      <code value="parent" /> 
+      <code value="source" /> 
 	  <valueString value="attribute" />
     </property>
   </concept>
@@ -67,12 +79,12 @@
     <code value="67925.9"/> 
     <display value="Charging at trickle rate"/> 
     <definition value="Indicates whether the PHD battery is charging at a trickle rate"/> 
-    <property> 
-      <code value="parent" /> 
+        <property> 
+      <code value="type" /> 
 	  <valueString value="event" />
-    </property> 
+    </property>
 	<property> 
-      <code value="parent" /> 
+      <code value="source" /> 
 	  <valueString value="attribute" />
     </property>
   </concept>
@@ -81,12 +93,13 @@
     <display value="Charging state"/> 
     <definition value="Indicates whether the PHD battery charging is on or off"/> 
     <property> 
-      <code value="parent" /> 
+      <code value="type" /> 
 	  <valueString value="state" />
-    </property> 
+    </property>
 	<property> 
-      <code value="parent" /> 
+      <code value="source" /> 
 	  <valueString value="attribute" />
     </property>
   </concept>
+  <!-- Next set of entries go here and so on -->
 </CodeSystem> 

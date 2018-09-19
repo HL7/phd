@@ -1,133 +1,138 @@
-## Phd Base Observation Profile
-The Phd Base Observation profile contains the elements that are common to all Phd Observation profiles describing measurements. These element are: 
- - code: what the measurement is, 
- - subject: the patient this measurement refers to,
- - effective[ x ]: the time stamp and perhaps duration of the measurement,
- - device: the PHD taking the measurement, 
- - derivedFrom: references to any coincident time stamp and/or source handle reference, and 
- - components: contains any additional measurement descriptions (supplemental types, relative time stamps, and measurement status
+## Phd Numeric Observation Profile
+The Numeric Observation Profile is used when the PHD metric measurement contains one of the following attributes:
 
-The structure definition is given below:
-{{tree:phd/BaseObservation}}
-
-### PHD Profile Identifier
-The *PHD Profile Identifier* is used to prevent data duplication. It serves as the selection criteria in the conditional create. All measurements that have a timestamp earlier than the current time of connection are required to use the conditional create upload when converted to FHIR. If the uploader knows that the received measurement is a new measurement or the measurement is received with no time stamp, then the identifier is not needed.
-
-Ideally the uploader will implement a duplication detection mechanism and filter out any measurements that have already been uploaded. One possible mechanism is to record the latest time stamp of any measurement received during a connection. Then for a given device and patient and upload destination, on a subsequent connection filter out any measurements with a time stamp earlier than the recorded latest time stamp of the previous connection. The latest time stamp is then updated given the information received during the current connection. The filter not only saves the server from handling the conditional update transaction but saves bandwidth and upload costs.
-
-The identifier is a combined string of elements that contain sufficient information to uniquely identify the measurement for a given patient and device. The identifier is thus a combination of the device identifier, patient identifier, ***PHD*** timestamp of the measurement, measurement type code, measurement value, and the list of Supplemental-Types codes if any. Each entry is separated by a dash (-). It is important to use the time stamp of the PHD and not the potentially modified time stamp placed in the Observation.effective[x] element. Two PHGs may have slightly different times which would allow a duplicate measurement to appear different.
-
-All Continua compliant PHGs must implement this identifier in the same manner. Compliance assures that even if the patient uploads the same measurement to the same server from a different PHG, a duplicate of the measurement will not be generated on the server. Some Bluetooth Low Energy PHDs do not provide a means of deleting stored data and will upload all the old data with each new addition up to the point of the device storage.
-
-The consumer of this Observation resource should ignore the identifier element used for the PHD Profiles.
-
-Generation of the PHD Profile Identifier is PHD Profile specific and is outlined in the respective profiles.
-
-### Obtaining the Type of Measurement
-One obtains the 11073 20601 measurement type for the code element in the same manner for all metric measurments. See the section [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2) for the details of this mapping.
-
-### Subject
-The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'
-
-### Time Stamp: effective[x]
-PHDs report time stamps in one of four methods and may not report time stamps at all. The time clock types are summarized below:
-
-|Time Stamp Type|Description|PHD requirement|PHG conversion|
+|Attribute|Value|Additional Information|
 |-
-|Absolute Time|Local Wall clock time without time zone information|PHD must provide its current absolute time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile) |
-|Base-Offset Time|Time as UTC plus time added in minutes to get the local time|PHD must provide its current base-offset time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile) |
-|Relative time|The number of ticks in units of 1/8th millisecond|PHD must provide its current relative time|PHD obtains the current relative time at its current time and maps all measurement times to UTC plus offset based upon the difference given by the current relative time|
-|Hi-Resolution Relative time|The number of ticks in units of microseconds|PHD must provide its current hi-res time|PHD obtains the current hi-res relative time at its current time and maps all measurement times to UTC plus offset based upon the difference given by the current relative time|
-|No time stamp|||PHG uses time of reception as UTC plus offset|
+|Basic-Nu-Observed-Value|16-bit Mder SFLOAT|12-bit mantissa|
+|Simple-Nu-Observed-Value|32-bit Mder FLOAT|24-bit mantissa|
+|Nu-Observed-Value|32-bit Mder FLOAT|Complex attribute. Also contains<br/> metric-id<br/> measurement status<br/> unit-code|
 
-The PHG maps the 'converted' time stamp to either an Observation.effectiveDateTime element or an Observation.effectivePeriod element. The second situation occurs when the metric measurement includes a Measurement-Active-Period (duration) attribute. Then the time stamp attribute gives the start of the period and the end of the period is obtained by adding the Measurement-Active-Period value to it. If no time stamp is provided, the PHG, using the time of reception of the measurement as its time stamp must then do the reverse; the time of reception is the end time and the start time is given by subtracting the Measurement-Active-Period value from it.
+These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/MderFLOATsandSFLOATs2) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
 
-### Device
-The Observation.device element is a reference to the Device resource representing the PHD that took the measurement.
+The structure definition for this profile is as follows:
+{{tree:phd/NumericObservation}}
 
-### derivedFrom: Coincident time stamp and Source Handle reference
-This element references Observation resources that are in some manner related to this Observation resource. In the PHD use case, this situation occurs whenever the *metric* measurement reported by the PHD has a time stamp and/or the measurement contains a source handle reference attribute.
+### Mapping Numerics to FHIR
+The following table shows how the numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC unit code needs to be mapped to UCUM.
 
-#### Time Stamp case
-When the metric measurement contains a time stamp, there will be a Coincident Time Stamp Observation defining the details of how the Observtion.effective[x] element is generated.
+|Attribute|FHIR coding|
+|-
+|Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
+|Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
+|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2) <br/>handle measurement status see [Phd Base Observation Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile) |
 
-#### Source-Handle-Reference case
-A Source-Handle-Reference attribute points to a previously reported measurement that is important to this measurement. By previously it is meant that the measurement is reported prior to the current measurement but in the same connection. If multiple such measurements have been received, the correct one is that which is most recently received. As an example, the cardiovascular specialization defines a session measurement defining some type of exercise period, such as a run. All measurements taken during that run have a source handle reference attribute pointing to the session measurement. Since Source-Handle-Reference attributes use IEEE 11073 Object handle values and not Logical resource ids to point to measurements, the PHG will need to keep track of the Observation resources created during a connection to identify the correct Observation resource, and thus logical id, the Source-Handle-Reference attribute points to. The latest version of the IEEE 11073 20601 standard also supports a Source-Handle-Reference-List containing a list of handles so there can be more than one entry generated due to these attributes. The references are placed in a derivedFrom element.
+#### Conditional Create Identifier Generation
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile). The table below lists the items that make up the identifier.
 
-### Components
-Component elements are used whenever the metric measurement contains additional information attributes that further describe the measurement. There are four such attributes that can be reported by all three types of metric measurements; the Supplemental-Types, Relative-Time, Hi-Res-Relative-Time, and Measurement-Status.
+|Entry|value|Additional information|
+|-
+|device|"PhdDevice.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
+|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|value|"Observation.valueQuantity.value" or <br/> "Observation.dataAbsentReason.coding.code|The numerical value of the measurement or <br/> the data absent reason if the value is not present|
+|units|"Observation.valueQuantity.code"|The UCUM code for the units|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
-#### Supplemental Types
-The Supplemental Types attribute contains a list of one or more partition-term code pairs. These define MDC codes that describe some property of the measurement. There will be one component element for each entry pair in the list. For example, the code MDC_MODALITY_SPOT used in the pulse oximeter specialization indicates that the measurement reported is a stable average. In contrast there is MDC_MODALITY_FAST and MDC_MODALITY_SLOW. The component elements are as populated as follows:
+The final identifier is made by concatenating the entries above as follows:
+ - "device-patient-type-value-units-reported PHD timestamp-supplemental types"
+
+### Additional Numerical Measurement Information
+11073 20601 numeric metric measurements have some additional optional attributes that are used only for numerics. When they occur, these additional attributes provide further information about the measurement. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement. The accuracy is a measure of the deviation of the actual measurement from the reported measurement. Consequently, 'accuracy' is not a concept that makes any sense in the context of a measurement which is one or more of a finite set of enumerated codes such as a glucose-monitor meal assoication (breakfast, snack, fasting, etc.), and thus the attribute is not used in Enumration metrics.
+
+As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. There are five metric attributes that give extra information about numeric-only measurements.
+
+#### Accuracy
+The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is in the units of the measurement itself. The entries are as populated as follows:
 
 |Observation.component element|entry|Additional Information|
 |-
-|code.coding.code|68193|This is the MDC code for the Supplemental Types attribute|
+|code.coding.code|67914|This is the MDC code for the Accuracy attribute|
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.coding.display|optional but|Should contain the reference id MDC_ATTR_SUPPLEMENTAL_TYPES along with any other additional text|
-|valueCodeableConcept.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|valueCodeableConcept.coding.code|the 32-bit MDC code|(partition) * 2<sup>16</sup> + term code|
-|valueCodeableConcept.coding.display|optional but|Should contain the reference id for the reported code along with any other additional text|
-
-#### Relative Time Stamp
-The Relative-Time-Stamp attribute contains the time stamp of the measurement in units of ticks where each tick is 1/8th of a millisecond. When mapped to FHIR, it is converted to microseconds (multiplied by 125). This attribute is reported to audit the derivation of the Observation.effective[x] time stamp value. The component element is mapped as follows:
-
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|67985|This is the MDC code for the Relative-Time-Stamp attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.coding.display|optional but|Should contain the reference id MDC_ATTR_TIME_STAMP_REL along with any other additional text|
-|valueQuantity.value|the value|This is relative time value scaled to microseconds|
-|valueQuantity.unit|optional||
+|code.coding.display|optional but|Should contain the reference id MDC_ATTR_NU_ACCUR_MSMT along with any other additional text|
+|valueQuantity.value|the value|This is accuracy value|
+|valueQuantity.unit|optional but|Should contain the UCUM string and shall match the UCUM string of the primary measurement|
 |valueQuantity.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueQuantity.code|shall be the code 'us' for microseconds|
+|valueQuantity.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
 
-#### High Resolution Relative Time Stamp
-The Hi-Res-Relative-Time-Stamp attribute contains the time stamp of the measurement in units of ticks where each tick is a microsecond. This attribute is reported as a means to audit the derivation of the Observation.effective[x] time stamp value. The component element is mapped as follows:
+#### Alert Operational State
+The Alert Operational State is currently only used in the Pluse Oximeter specialization. This attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When SET, the alerts are off. This is a state-type measurement and when this attribute is present, both the set and cleared states are reported. Three bits are defined thus there will be three component entries for each of the bits.
 
 |Observation.component element|entry|Additional Information|
 |-
-|code.coding.code|68073|This is the MDC code for the Relative-Time-Stamp attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.coding.display|optional but|Should contain the reference id MDC_ATTR_TIME_STAMP_REL_HI_RES along with any other additional text|
-|valueQuantity.value|the value|This is relative time value scaled to microseconds|
-|valueQuantity.unit|optional ||
-|valueQuantity.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueQuantity.code|shall be the code 'us' for microseconds|
+|.code.coding.code|68746.n|68746 is the MDC code for the Alert Operational State. 'n' is 0, 1, or 2 depending upon which bit is being reported.|
+|code.coding.system|http://hl7.org/fhir/IEEE.ASN1 |Indicates the ASN-1 coding system|
+|code.coding.display|optional but|Should contain the ASN1 name 'lim-alert-off', 'lim-low-off', or 'lim-high-off' for bits 0-2, respectively, along with any other additional text|
+|valueCodeableConcept.coding.code|'Y' or 'N'|'Y' for bit set, 'N' for bit cleared|
+|valueCodeableConcept.coding.system|http://hl7.org/fhir/v2/0136 |Indicates the V2 binary coding system|
 
-### Measurement Status
-The Measurement Status attribute is an ASN.1 16-BITs measurement used to report errors or other special conditions. It defines 11 events. Being events, only set bits are reported. The attribute reports one or more of the following conditions in the indicated Mder bit position:
+#### Alert Operational Text String
+This attributes provides a human readable string describing the lower and upper threshold limits. It is currently used only in the Pulse Oximeter specialization.
 
- - invalid(0),
- - questionable(1),
- - not-available(2),
- - calibration-ongoing(3),
- - test-data(4),
- - demo-data(5),
- - validated-data(8)
- - early-indication(9)
- - msmt-ongoing(10),
- - msmt-value-exceed-boundaries(14),
- - msmt-state-ann-inhibited(15)
-
-Though it is possible to have multiple bits simultaneously set, some combinations of set bits do not make sense and should not occur.
-
-To report these cases in FHIR requires the use of three different elements. The interpretation codes are taken from the measurement status value set defined in the [Point of Care implementation guide](https://build.fhir.org/ig/HL7/uv-pocd/index.html). The mapping is shown in the following table:
-
-|status Mder bit | ASN1 name|Observation element||
+|Observation.component element|entry|Additional Information|
 |-
-|0|invalid|dataAbsentReason.coding.code="error"<br>http://hl7.org/fhir/ValueSet/data-absent-reason |
-|1|questionable|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="questionable"|
-|2|not-available|dataAbsentReason.coding.code="not-performed"<br>dataAbsentReason.coding.system="http://hl7.org/fhir/ValueSet/data-absent-reason |
-|3|calibration-ongoing|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="calibration-ongoing"|
-|4|test-data|meta.security.coding.code="HTEST"<br> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
-|5|demo-data|meta.security.coding.code="HTEST"<br> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
-|8|validated-data|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="validated-data" |
-|9|early-indication|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="early-indication" |
-|10|msmt-ongoing|dataAbsentReason.coding.code="temp-unknown"<br>dataAbsentReason.coding.system="http://hl7.org/fhir/ValueSet/data-absent-reason" |
-|14|msmt-value-exceed-boundaries|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br>interpretation.coding.code="in-alarm" |
-|15|msmt-state-ann-inhibited|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br>interpretation.coding.code="alarm-inhibited"|
+|code.coding.code|68104|This is the MDC code for the Alert-Operational-Text_string attribute|
+|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
+|code.coding.display|optional but|Should contain the reference id MDC_ATTR_AL_OP_TEXT_STRING along with any other additional text|
+|valueString|the strings|These are the lower and upper limit strings|
 
-Note that a status field is reported in the Nu-Observed-Value and Enum-Observed-Value attributes. When these attributes are sent, the status field in the attribute replaces the Measurement-Status attribute should the PHD have sent both (which would seem unlikely).
+#### Current Limits
+The Current-Limits attribute is currently only used in the Pluse Oximeter specialization. It gives the lower and upper threshold limits of whatever measurement is being monitored.
 
-The status field is also reported in the Compound-Nu-Observed-Value. In this case the status field applies only to the Observation.component. An overall Measurement-Status attribute may also be present. The Observation.component has its own dataAbsentReason and interpretation element. However it does not have a meta element. On the other hand it does not make sense to have one sub-value of a compound report test data while another does not. A compound measurement in 20601 is a single measurement taken as a whole. However it is possible that a sub-value fails in the measurement process thus an error can occur on one sub-value while the others succeed.
+|Observation.component element|entry|Additional Information|
+|-
+|code.coding.code|67892|This is the MDC code for the Current-Limits attribute|
+|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
+|code.coding.display|optional but|Should contain the reference id MDC_ATTR_LIMIT_CURR along with any other additional text|
+|valueRange.low.value|the value|This is the lower limit|
+|valueRange.low.unit|optional||
+|valueRange.low.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
+|valueRange.low.code|shall be the code of the primary measurement|The code shall be the MDC unit code|
+|valueRange.high.value|the value|This is the upper limit|
+|valueRange.high.unit|optional ||
+|valueRange.high.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
+|valueRange.high.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
+
+#### Measurement Confidence 95
+The Measurement-Confidence-95 attribute is currently used only in the Continuous Glucose specialization. The attribute gives a lower and upper bound with which the manufacturer is 95%confident that the actual reported measurement is within that bounds.
+
+|Observation.component element|entry|Additional Information|
+|-
+|code.coding.code|526998|This is the MDC code for the Measurement-Confidence-95 attribute|
+|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
+|code.coding.display|optional but|Should contain the reference id MDC_ATTR_MSMT_CONFIDENCE_95 along with any other additional text|
+|valueRange.low.value|the value|This is the lower limit|
+|valueRange.low.unit|optional||
+|valueRange.low.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
+|valueRange.low.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
+|valueRange.high.value|the value|This is the upper limit|
+|valueRange.high.unit|optional ||
+|valueRange.high.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
+|valueRange.high.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
+
+#### Threshold Notification Text String
+The Threshold-Notification-Text-String attribute is currently used only in the Continuous Glucose specialization. It provides a human readable string describing the thresholds. There are separate measurement objects that actually give the thresholds.
+
+|Observation.component element|entry|Additional Information|
+|-
+|code.coding.code|68232|This is the MDC code for the Alert-Operational-Text_string attribute|
+|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
+|code.coding.display|optional but|Should contain the reference id MDC_ATTR_THRES_NOTIF_TEXT_STRING along with any other additional text|
+|valueString|the string|This is a texual description of the thresholds for the given measurement|
+
+### Consumer of the Phd Numeric Observation Profile
+The consumer of this profile does not need to concern itself with the mapping complexities or the phd-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
+
+|Measurement item|element|Additional Information|
+|-
+|measurement type|Observation.code.coding.code|There shall be one coding element using the MDC coding system<br>If a vital sign, there will be an additional coding element using one of the LOINC 'magic' codes.|
+|measurement value|Observation.valueQuantity.value|Value has precision of original measurement|
+|measurement units|Observation.valueQuantity.code|Uses UCUM coding system.|
+|error|Observation.dataAbsentReason|Contains error code. If present no Observation.valueQuantity is present |
+|time stamp|Observation.dateTimeEffective<br/><br/>Observation.period|If the measurement is a point in time.<br/><br/>If the measurement has a duration.|
+|coincident time stamp|Observation.derivedFrom|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. Not present if the sensor provides NO time stamp |
+|related measurement|Observation.derivedFrom|Points to a PHD Observation that is related to this Observation such as a cardio session. Not present if the device did not reference an additional measurement.|
+|additional descriptions|Observation.component|If a component element exists it contains additional information about the measurement|
+|patient|Observation.subject|Points to the Patient resource|
+|sensor device|Observation.device|Points to the Device resource|
+

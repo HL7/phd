@@ -6,7 +6,7 @@
   </meta>
   <url value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1-object"/>
   <version value="0.2.0"/>
-  <name value="ASN1Object"/>
+  <name value="ASN1-object"/>
   <title value="ANS1ToHL7 codes defined for non-measurement attributes"/>
   <status value="draft"/>
   <experimental value="false"/>
@@ -15,11 +15,11 @@
   <description value="ValueSet for the ANS1ToHL7 codes that are not derived from enumeration measurements."/>
   <compose>
     <include>
-	    <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ANS1ToHL7"/>
+	    <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
 	    <filter>
-	      <property value="partition"/>
+	      <property value="source"/>
 		    <op value="="/>
-		    <value value="1"/>
+		    <value value="attribute"/>
 	    </filter>
 	  </include>
   </compose>

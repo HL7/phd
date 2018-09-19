@@ -19,6 +19,7 @@
       <path value="Observation" />
       <comment value="This variant on the Observation defines a base profile for the PHD Observation profiles. This profile is abstract and does not exist alone." />
     </element>
+	
 	<element id="Observation.meta">
       <path value="Observation.meta" />
       <min value="1" />
@@ -34,16 +35,7 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.identifier">
-      <path value="Observation.identifier" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="value" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
+	
 	<!-- Handle measurement status test or demo data -->
 	<element id="Observation.meta.security" >
 	  <path value="Observation.meta.security" />
@@ -72,6 +64,17 @@
 	  <fixedCode value="HTEST" />
 	</element>
 	
+	<element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="value" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+	
     <element id="Observation.identifier:conditionalCreateIdentifier">
       <path value="Observation.identifier" />
       <sliceName value="conditionalCreateIdentifier" />
@@ -85,6 +88,7 @@
       <path value="Observation.identifier.value" />
       <min value="1" />
     </element>
+	
     <element id="Observation.status">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
         <valueString value="default: final" />
@@ -93,6 +97,8 @@
       <definition value="The status of the result value. Either 'final' or 'preliminary'" />
       <comment value="The value shall be set to 'final' unless a Measurement-Status attribute or Nu-Observed-Value attribute status field indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'" />
     </element>
+	
+	<!-- Code: What the measurement is -->
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
       <slicing>

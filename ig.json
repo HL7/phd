@@ -32,6 +32,18 @@
       "StructureDefinition/PhdNumericObservation": {
       "source": "PhdNumericObservationStructuredefinition.xml",
       "base": "PhdNumericObservationStructuredefinition.html"
+    },
+      "StructureDefinition/PhdCompoundNumericObservation": {
+      "source": "PhdCompoundNumericObservationStructuredefinition.xml",
+      "base": "PhdCompoundNumericObservationStructuredefinition.html"
+    },
+    "CodeSystem/ASN1ToHL7": {
+      "source": "ASN1_CodeSystem.xml",
+      "base": "ASN1_CodeSystem.html"
+    },
+    "ValueSet/11073MDC-notObject": {
+      "source": "ValueSet-11073MDC-notObject.xml",
+      "base": "ValueSet-11073MDC-notObject.html"
     }
   }
 }

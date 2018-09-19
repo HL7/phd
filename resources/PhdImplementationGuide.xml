@@ -35,6 +35,27 @@
       <name value="PhdNumericObservation"/>
       <exampleBoolean value="false"/>
     </resource>
+	<resource>
+      <reference>
+        <reference value="StructureDefinition/PhdCompoundNumericObservation"/>
+      </reference>
+      <name value="PhdCompoundNumericObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+	<resource>
+      <reference>
+        <reference value="CodeSystem/ASN1ToHL7"/>
+      </reference>
+      <name value="ASN1ToHL7"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/11073MDC-notObject"/>
+      </reference>
+      <name value="11073MDC-notObject"/>
+      <exampleBoolean value="false"/>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Home"/>
