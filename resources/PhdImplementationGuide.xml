@@ -60,7 +60,14 @@
       <reference>
         <reference value="StructureDefinition/PhdRtsaObservation"/>
       </reference>
-      <name value="PhdBitsRtsaObservation"/>
+      <name value="PhdRtsaObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+	<resource>
+      <reference>
+        <reference value="StructureDefinition/PhdCoincidentTimeStampObservation"/>
+      </reference>
+      <name value="PhdCoincidentTimeStampObservation"/>
       <exampleBoolean value="false"/>
     </resource>
 	<resource>

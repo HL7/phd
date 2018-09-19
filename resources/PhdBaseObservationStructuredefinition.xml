@@ -449,12 +449,10 @@
       </binding>
     </element>
     <element id="Observation.component:relativeTimeComponent.code.coding:MDCType.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Observation.component.code.coding.display" />
       <definition value="The reference identifier should be included in the description. For a Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL" />
     </element>
+	<!-- value[x] is Quantity -->
     <element id="Observation.component:relativeTimeComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
       <sliceName value="valueQuantity" />

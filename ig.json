@@ -49,6 +49,10 @@
       "source": "PhdRtsaObservationStructuredefinition.xml",
       "base": "PhdRtsaObservationStructuredefinition.html"
     },
+	  "StructureDefinition/PhdCoincidentTimeStampObservation": {
+      "source": "PhdCoincidentTimeStampObservationStructuredefinition.xml",
+      "base": "PhdCoincidentTimeStampObservationStructuredefinition.html"
+    },
     "CodeSystem/ASN1ToHL7": {
       "source": "ASN1_CodeSystem.xml",
       "base": "ASN1_CodeSystem.html"
