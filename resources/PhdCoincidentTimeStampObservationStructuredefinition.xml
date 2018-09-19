@@ -57,6 +57,8 @@
       <comment value="The value shall be set to 'final'" />
       <fixedCode value="final" />
     </element>
+	
+	<!-- Code -->
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
       <slicing>
@@ -70,7 +72,7 @@
     </element>
     <element id="Observation.code.coding:MDCType">
       <path value="Observation.code.coding" />
-      <sliceName value="11073Type" />
+      <sliceName value="MDCType" />
       <short value="The required MDC code for the type of time clock used by the PHD" />
       <comment value="PHDs use one of absolute time, base offset time, relative time, or high resolution relative time." />
       <min value="1" />
@@ -81,7 +83,7 @@
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.code.coding:11073Type.code">
+    <element id="Observation.code.coding:MDCType.code">
       <path value="Observation.code.coding.code" />
       <comment value="The code for absolute time is 67975 with reference id MDC_ATTR_TIME_ABS, for base offset time is 68226 with reference id MDC_ATTR_TIME_BO, for relative time is 67983 with reference id MDC_ATTR_TIME_REL, and for high resolution relative time is 68072 with reference id MDC_ATTR_TIME_REL_HI_RES." />
       <min value="1" />
@@ -108,7 +110,6 @@
 	
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />
-	  <short value="Time line of PHD. Absent if a time fault; dataAbsentReason will have 'unknown' " />
       <slicing>
         <discriminator>
           <type value="type" />
@@ -116,6 +117,7 @@
         </discriminator>
         <rules value="open" /> 
       </slicing>
+	  <short value="Time line of PHD. Absent if a time fault; dataAbsentReason will have 'unknown' " />
       <definition value="The current time reported by the PHD unless there is a time fault in which case this element is absent and the dataAbsentReason indicates 'unknown'" />
       <comment value="This observation is a measurement of the PHDs current time at the current time of the PHG and is present to allow a comparison and auditing. PHGs are responsible for assuring the measurement time stamps are correctly aligned to UTC and local offset. If the PHD has superior time synchronization than the PHG (very rare with PHDs) only the current time of the PHD is shown and the effectiveDateTime element is absent. If the PHD has a time fault (the current time line of the PHD cannot be ascertained for the measurements uploaded) the value[x] element is absent. If the PHD reports no time stanps in its measurements, this resource is not needed.  The primary reason for the coincident time stamp is to know the details of any time stamp corrections the PHG may have applied." />
 	  <max value="1" />

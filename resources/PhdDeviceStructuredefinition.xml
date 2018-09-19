@@ -4,7 +4,7 @@
     <lastUpdated value="2017-10-16T05:03:37.38-04:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
-    <valueCode value="dev" />
+    <valueCode value="oo" />
   </extension>
   <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice" />
   <name value="PhdDevice" />

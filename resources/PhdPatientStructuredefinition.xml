@@ -95,7 +95,7 @@
       <definition value="The identification of the code system that defines the meaning of the symbol in the code. In this case the system is http://hl7.org/fhir/v2/0203 " />
       <comment value="HL7 defines several codes that can be used in the http://hl7.org/fhir/v2/0203 system. For a list of the possible codes in this system see http://www.hl7.org/fhir/v2/0203" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/v2/0203 " />
+      <fixedUri value="http://hl7.org/fhir/v2/0203" />
     </element>
     <element id="Patient.identifier:phdIdentifier.type.coding:v2Coding.code">
       <path value="Patient.identifier.type.coding.code" />
