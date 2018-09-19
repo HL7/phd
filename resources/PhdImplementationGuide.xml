@@ -58,6 +58,13 @@
     </resource>
 	<resource>
       <reference>
+        <reference value="StructureDefinition/PhdRtsaObservation"/>
+      </reference>
+      <name value="PhdBitsRtsaObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+	<resource>
+      <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
       <name value="ASN1ToHL7"/>
@@ -75,6 +82,13 @@
         <reference value="ValueSet/ASN1-attribute"/>
       </reference>
       <name value="ASN1-attribute"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ASN1-measurement"/>
+      </reference>
+      <name value="ASN1-measurement"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

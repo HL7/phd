@@ -45,6 +45,10 @@
       "source": "PhdBitsEnumerationObservationStructuredefinition.xml",
       "base": "PhdBitsEnumerationObservationStructuredefinition.html"
     },
+      "StructureDefinition/PhdRtsaObservation": {
+      "source": "PhdRtsaObservationStructuredefinition.xml",
+      "base": "PhdRtsaObservationStructuredefinition.html"
+    },
     "CodeSystem/ASN1ToHL7": {
       "source": "ASN1_CodeSystem.xml",
       "base": "ASN1_CodeSystem.html"
@@ -56,6 +60,10 @@
     "ValueSet/ASN1-attribute": {
       "source": "ValueSet-ASN1-attribute.xml",
       "base": "ValueSet-ASN1-attribute.html"
+    },
+    "ValueSet/ASN1-measurement": {
+      "source": "ValueSet-ASN1-measurement.xml",
+      "base": "ValueSet-ASN1-measurement.html"
     }
   }
 }
