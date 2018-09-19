@@ -37,6 +37,10 @@
       "source": "PhdCompoundNumericObservationStructuredefinition.xml",
       "base": "PhdCompoundNumericObservationStructuredefinition.html"
     },
+      "StructureDefinition/PhdCodedEnumerationObservation": {
+      "source": "PhdCodedEnumerationObservationStructuredefinition.xml",
+      "base": "PhdCodedEnumerationObservationStructuredefinition.html"
+    },
     "CodeSystem/ASN1ToHL7": {
       "source": "ASN1_CodeSystem.xml",
       "base": "ASN1_CodeSystem.html"

@@ -77,6 +77,9 @@
       <definition value="Each compoundComponent contains one of the N constituents of the compound measurement. These entries are NOT present if a Measurement-Status attribute indicates an error." />
       <comment value="A compound measurement is a measurement that requires more than one value to represent it, such as an acceleration which has an x, y, and z components. The Blood pressure is also represented as a compound measurement, containing systolic, diastolic and MAP components. One combines all the compound elements together to describe the measurement. The Metric-Id-List entry n and Compound-Basic/Simple-Nu-Observed-Value entry n are ordered such that the code that describes each entry n is computed from the partition of the Type attribute and the term code of the Metric-Id-List attribute. In the case of the Compound-Nu-Observed-Value, the term code comes from the Compound-Nu-Observed-Value.metric sub-component." />
     </element>
+	<element id="Observation.component:compoundComponent.code">
+      <path value="Observation.component.code" />
+    </element>
     <element id="Observation.component:compoundComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -124,6 +127,7 @@
       <comment value="Required if the measurement is a vital sign" />
       <min value="1" />
     </element>
+	<!-- Component: value[x]:valueQuantity -->
     <element id="Observation.component:compoundComponent.value[x]">
       <path value="Observation.component.valueQuantity" />
       <type>
@@ -146,6 +150,7 @@
       <definition value="The MDC code must be translated to the UCUM code." />
       <min value="1" />
     </element>
+	<!-- Component: Data absent reason -->
     <element id="Observation.component:compoundComponent.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason" />
 	  <short value="Populated when a special value or status in Compound-Nu-Observed-Value indicates invalid, not unavailable, or msmt ongoing" />
@@ -176,7 +181,32 @@
     <element id="Observation.component:compoundComponent.dataAbsentReason.coding:FhirDefault.code">
       <path value="Observation.component.dataAbsentReason.coding.code" />
       <min value="1" />
+	</element>
+	<!-- Component: Interpretation -->
+	<element id="Observation.component.interpretation.coding">
+      <path value="Observation.component.interpretation.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
+    <element id="Observation.component.interpretation.coding:MsmtStatusInterpretation">
+      <path value="Observation.component.interpretation.coding" />
+	  <sliceName value="MsmtStatusInterpretation" />
+      <short value="Measurement status interpretation when questionable, calibration-ongoing, validated, early-indication, threshold exceeded, alarm inhibited" />
+    </element>
+	<element id="Observation.component.interpretation.coding:MsmtStatusInterpretation.system">
+      <path value="Observation.component.interpretation.coding.system" />
+	  <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" />
+    </element>
+	<element id="Observation.component.interpretation.coding:MsmtStatusInterpretation.code">
+      <path value="Observation.interpretation.coding.code" />
+	  <min value="1" />
+    </element>	
 	
 	<!-- ACCURACY COMPONENT -->
     <element id="Observation.component:accuracyComponent">
@@ -186,6 +216,9 @@
       <definition value="This component shall be present if the Accuracy attribute is present." />
 	  <comment value="This attribute is prolblematic in compounds, which can have different units (that cannot be handled)" />
       <max value="1" />
+    </element>
+	<element id="Observation.component:accuracyComponent.code">
+      <path value="Observation.component.code" />
     </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
