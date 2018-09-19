@@ -59,6 +59,7 @@
       <comment value="The UCUM code needs to be translated from  the 11073-10101 code from the device. This translation means that the reporting of units is not future proof." />
       <min value="1" />
     </element>
+	
     <element id="Observation.dataAbsentReason">
       <path value="Observation.dataAbsentReason" />
 	  <short value="Populated when a special value or Measurement-Status indicates invalid, not unavailable, or msmt ongoing" />
