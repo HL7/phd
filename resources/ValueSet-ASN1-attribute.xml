@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="ASN1-object"/>
+  <id value="ASN1-attribute"/>
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1-object"/>
+  <url value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1-attribute"/>
   <version value="0.2.0"/>
-  <name value="ASN1-object"/>
+  <name value="ASN1-attribute"/>
   <title value="ANS1ToHL7 codes defined for non-measurement attributes"/>
   <status value="draft"/>
   <experimental value="false"/>

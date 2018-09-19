@@ -5,8 +5,10 @@
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
-  <text>
+  <text>Hi
   </text>
+  
+  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
 
   <version value="20160128"/> 
 

@@ -41,6 +41,10 @@
       "source": "PhdCodedEnumerationObservationStructuredefinition.xml",
       "base": "PhdCodedEnumerationObservationStructuredefinition.html"
     },
+      "StructureDefinition/PhdBitsEnumerationObservation": {
+      "source": "PhdBitsEnumerationObservationStructuredefinition.xml",
+      "base": "PhdBitsEnumerationObservationStructuredefinition.html"
+    },
     "CodeSystem/ASN1ToHL7": {
       "source": "ASN1_CodeSystem.xml",
       "base": "ASN1_CodeSystem.html"
@@ -48,6 +52,10 @@
     "ValueSet/11073MDC-notObject": {
       "source": "ValueSet-11073MDC-notObject.xml",
       "base": "ValueSet-11073MDC-notObject.html"
+    },
+    "ValueSet/ASN1-attribute": {
+      "source": "ValueSet-ASN1-attribute.xml",
+      "base": "ValueSet-ASN1-attribute.html"
     }
   }
 }
