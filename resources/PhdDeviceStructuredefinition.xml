@@ -625,9 +625,9 @@
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
 	  <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
-	  Description                        CODE            Reference Identifier&#xD;&#xA;
-	  -------------------------------------------------------------------------------------------&#xD;&#xA;
-	  List of certified PAN interfaces  532353           MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST&#xD;&#xA;" />
+	  Description                CODE    Reference Identifier                        Code System&#xD;&#xA;
+	  --------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
+	  Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST    http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN&#xD;&#xA;" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.type.coding:MDCType.display">

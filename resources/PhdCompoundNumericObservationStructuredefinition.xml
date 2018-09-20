@@ -10,7 +10,8 @@
   <name value="PhdCompoundNumericObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
-  <fhirVersion value="3.0.0" />
+  <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is described by a set of numbers such as the x, y, and x components of an acceleration." />
+  <fhirVersion value="3.6.0" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
@@ -109,7 +110,7 @@
       <min value="1" />
 	  <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDC-notObject"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCnotObject"/> 
       </binding>
     </element>
     <element id="Observation.component:compoundComponent.code.coding:LoincCoding">

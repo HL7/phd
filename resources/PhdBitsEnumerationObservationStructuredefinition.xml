@@ -10,7 +10,7 @@
   <name value="PhdBitsEnumerationObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
-  <description value="Base StructureDefinition for Observation Resource representing measurement data coming from a medical device where the measurement is an ASN1 BITS value." />
+  <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is an ASN1 BITS value." />
   <fhirVersion value="3.0.0" />
   <kind value="resource" />
   <abstract value="false" />
@@ -112,7 +112,7 @@
       <min value="1" />
 	  <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1-measurement"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/> 
       </binding>
     </element>
 	<!-- component: value[x]:valueCodeableConcept -->

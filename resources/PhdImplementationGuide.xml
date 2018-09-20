@@ -65,6 +65,13 @@
     </resource>
 	<resource>
       <reference>
+        <reference value="StructureDefinition/PhdStringEnumerationObservation"/>
+      </reference>
+      <name value="PhdStringEnumerationObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+	<resource>
+      <reference>
         <reference value="StructureDefinition/PhdCoincidentTimeStampObservation"/>
       </reference>
       <name value="PhdCoincidentTimeStampObservation"/>
@@ -93,23 +100,23 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/11073MDC-notObject"/>
+        <reference value="ValueSet/11073MDCnotObject"/>
       </reference>
-      <name value="11073MDC-notObject"/>
+      <name value="11073MDCnotObject"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/ASN1-attribute"/>
+        <reference value="ValueSet/ASN1attribute"/>
       </reference>
-      <name value="ASN1-attribute"/>
+      <name value="ASN1attribute"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/ASN1-measurement"/>
+        <reference value="ValueSet/ASN1measurement"/>
       </reference>
-      <name value="ASN1-measurement"/>
+      <name value="ASN1measurement"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

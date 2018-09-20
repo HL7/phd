@@ -300,104 +300,15 @@
 	  <!-- There will, at minimum be a MDC_TIME_SYNC_PROTOCOL entry -->
 	  <min value="1" />
     </element>
-	<!-- The BITS property: Input a 16/32-bit ASN1 BITS field: may need up to 16/32 entrants! -->
-    <element id="Device.property:bitProperties">
-      <path value="Device.property" />
-      <sliceName value="bitProperties" />
-	  <short value="Properties reported in BITs fields" />
-      <definition value="For each bit setting reported a BITs value, a bitProperties element is used." />
-      <comment value="A BITs measurement is a 16 or 32-bit ASN1 BITs value where each bit means something. " />
-    </element>
-	<!-- The bitProperties type: It will contain at least one coding element using the ASN1 system with one of
-	the ASN1 codes. Currently the MdsTimeInfo cpabilities and RegCertDataList regulation status are reported as BITS  -->
-	<element id="Device.property:bitProperties.type">
-      <path value="Device.property.type" />
-	  <short value="Tells what the BITs item is" />
-      <definition value="One of the capabilities reported in the Mds-Time-Info.mds-time-caps-state or Reg-Cert-Data-List.regulation-status field." />
-      <comment value="Only set 'event' types need be reported. Both set and cleared 'state' types need to be reported. The regulation status is as state type. All time capabilities are event types" />
-    </element>
-	<!-- Slice the coding to allow one to express the same concept in another coding system -->
-    <element id="Device.property:bitProperties.type.coding">
-      <path value="Device.property.type.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-	<!-- The ASN1Type slice of the coding element: This element is required -->
-    <element id="Device.property:bitProperties.type.coding:ASN1Type">
-      <path value="Device.property.type.coding" />
-      <sliceName value="ASN1Type" />
-	  <short value="Required ASN1 code sytem entry" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-	<!-- The system value is fixed -->
-    <element id="Device.property:bitProperties.type.coding:ASN1Type.system">
-      <path value="Device.property.type.coding.system" />
-      <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/IEEE.ASN1" />
-    </element>
-    <element id="Device.property:bitProperties.type.coding:ASN1Type.code">
-      <path value="Device.property.type.coding.code" />
-      <definition value="The ASN1 code made from the code and the Mder bit position" />
-	  <comment value="The MDC code for the mds-time-caps-state field is 68219. Thus the ASN1 code for the case 'device supports a relative time clock', Mder bit 2, would be 68219.2. For the regulation status field the MDC code is 532354, and only bit 0 is defined. However, the regulated status is when the bit is cleared and the unregulated status is when the bit is set. That choice can be confusing." />
-      <min value="1" />
-    </element>
-    <element id="Device.property:bitProperties.type.coding:ASN1Type.display">
-      <path value="Device.property.type.coding.display" />
-      <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
-    </element>
-	<!-- No quantity entry when the value is a code! -->
-	<element id="Device.property:bitProperties.valueQuantity">
-      <path value="Device.property.valueQuantity" />
-      <max value="0" />
-    </element>
-	<element id="Device.property:bitProperties.valueCode">
-      <path value="Device.property.valueCode" />
-      <min value="1" />
-	  <max value="1" />
-    </element>
-    <element id="Device.property:bitProperties.valueCode.coding">
-      <path value="Device.property.valueCode.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <element id="Device.property:bitProperties.valueCode.coding:V2Binary">
-      <path value="Device.property.valueCode.coding" />
-      <sliceName value="V2Binary" />
-	  <short value="Required V2 Binary code sytem entry" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Device.property:bitProperties.valueCode.coding:V2Binary.system">
-      <path value="Device.property.valueCode.coding.system" />
-      <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/v2/0136" />
-    </element>
-    <element id="Device.property:bitProperties.valueCode.coding:V2Binary.code">
-      <path value="Device.property.valueCode.coding.code" />
-      <definition value="If bit is set, code contains Y if cleared, N" />
-      <min value="1" />
-    </element>
+	
 	
 	<!-- The quantitiesProperty property gives the clock resolutions, and time synchronization accuracy -->
     <element id="Device.property:quantitiesProperty">
       <path value="Device.property" />
       <sliceName value="quantitiesProperty" />
-	  <short value="The device properties represented by quantities such as clock resolution" />
-      <definition value="This element represents all those time properties that are a quantity such as the various clock resolutions and synchronization accuracy." />
-      <comment value="If the PHD reports that one of these given properties are unknown, this element shall not be populated for that property. " />
+	  <short value="The PHG properties represented by quantities such as time synchronization accuracy" />
+      <definition value="This element represents all those time properties that are a quantity such as the time synchronization accuracy." />
+      <comment value="For a PHG the syncrhonization accuracy should be reported if known. " />
     </element>
 	<element id="Device.property:quantitiesProperty.type">
       <path value="Device.property.type" />
@@ -433,7 +344,7 @@
     <element id="Device.property:quantitiesProperty.type.coding:MDCType.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
-	  <comment value="Currently PHDs support the reporting of the time quantities as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
+	  <comment value="For PHG only the time sync accuracy is of interest.&#xD;&#xA;&#xD;&#xA;
 	  Description                        CODE            Reference Identifier&#xD;&#xA;
 	  ------------------------------------------------------------------------------------&#xD;&#xA;
 	  Absolute clock resolution         68222            MDC_TIME_RES_ABS&#xD;&#xA;
@@ -477,7 +388,7 @@
     </element>
 	
 	<!-- The singleCodedProperties property. At this time there is only one
-    single-coded entry reported by PHDs; the time synchonization 	-->
+    single-coded entry reported by PHGs; the time synchonization 	-->
     <element id="Device.property:singleCodedProperties">
       <path value="Device.property" />
       <sliceName value="singleCodedProperties" />
@@ -614,10 +525,10 @@
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
 	  <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
-	  Description                        CODE            Reference Identifier&#xD;&#xA;
-	  -------------------------------------------------------------------------------------------&#xD;&#xA;
-	  List of certified PAN interfaces  532353           MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST&#xD;&#xA;
-	  List of certified PAN interfaces  532355           MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST&#xD;&#xA;" />
+	  Description                CODE    Reference Identifier                           Code System&#xD;&#xA;
+	  -----------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
+	  Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN&#xD;&#xA;
+	  Certified PAN interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS&#xD;&#xA;" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.type.coding:MDCType.display">

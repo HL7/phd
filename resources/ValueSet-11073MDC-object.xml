@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="11073MDC-object"/>
+  <id value="11073MDCobject"/>
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/pocd/ValueSet/11073MDC-object"/>
+  <url value="http://hl7.org/fhir/uv/pocd/ValueSet/11073MDCobject"/>
   <version value="0.2.0"/>
-  <name value="MdcObject"/>
+  <name value="11073MDCObject"/>
   <title value="11073 MDC Object infrastructure and Device nomenclature"/>
   <status value="draft"/>
   <experimental value="false"/>
