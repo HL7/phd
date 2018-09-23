@@ -122,7 +122,12 @@
     <page>
       <nameUrl value="index.html"/>
       <title value="Home"/>
+      <generation value="html"/>
+	  	<page>
+      <nameUrl value="PhdProfiles.md"/>
+      <title value="Phd Profiles"/>
       <generation value="markdown"/>
+    </page>
     </page>
   </definition>
 </ImplementationGuide>
