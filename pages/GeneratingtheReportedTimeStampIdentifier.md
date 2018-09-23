@@ -1,8 +1,4 @@
----
-title: Generating the PHD Reported Time Stamp Identifier
-layout: default
-active: GeneratingtheReportedTimeStampIdentifier
----
+### Generating the PHD Reported Time Stamp Identifier
 
 This algorithm shows how one generates the time stamp as reported by the PHD for use in the Observation.identifier element. The Observation.identifier element is used in the PHD profiles to perform conditional creates and thus eliminate data duplication.
 
@@ -23,6 +19,3 @@ offset -300.
      - If offset is positive: reported_sensor_timestamp = 3563536440.4884.+300
  - If the sensor reports relative time the string will be the reported value in units of 1/8th seconds as a decimal unsigned integer with no leading zeros. On the wire this value is an Mder sequence of 4 bytes with the MSB to the left.
  - If the sensor reports high resolution relative time, the string will be the number of microseconds as an unsigned integer with no leading zeros. On the wire this value is an Mder sequence of 8 bytes with the MSB to the left.
- 
- - [Next: The Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html)
- - [Previous: The Observation Identifier]({{ output }}TheObservationIdentifier.html)

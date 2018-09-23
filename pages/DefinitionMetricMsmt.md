@@ -1,9 +1,4 @@
----
-title: Definition of a Metric Measurement
-layout: default
-active: DefinitionMetricMsmt
----
-
+### Definition of a Metric Measurement
 The 11073 20601 protocol is not only extensible but self-describing. The PHG does not need to know, in advance, anything about the type of measurements the PHD supports. All this information is provided in the protocol exchanges. That exchange may involve the sending of data that is not a measurement, for example the user may change the units on a weight scale from pounds to kilograms. The scale will inform the PHG of this change. If that change is sent without an accompanying weight, the incidence of the change alone makes no sense to send downstream. Consequently, a measurement is only reported if the PHD sends one of twelve attributes in the metric event (called an Observation Scan in 11073-20601 language). These attributes are:
 
 |Measurement Attribute|Description|
@@ -23,23 +18,7 @@ The 11073 20601 protocol is not only extensible but self-describing. The PHG doe
 
 A metric *measurement* always contains one and only one of the above attributes. If a metric event is sent by the PHD that does NOT contain one of the 12 measurement attributes, the metric event is providing information so the PHG can decode any subsequently sent measurements.
 
-However, some of the attributes represent the same type of measurement such as the Basic-Nu-Observed-Value and Simple-Nu-Observed-Value. The only difference between the two is one of them uses 16 bits (Mder SFLOAT) to represent the measurement and the other 32 bits (Mder FLOAT). That difference is solely for protocol efficiency. In the end, these 12 measurement attributes reduce to 6 different measurement types
-
- - a single number (Basic-, Simple-, and Nu-Observed-Value)
- - a vector (Compound-*-Nu-Observed-Value)
- - a sequence of periodic data (Simple-Sa-Observed-Value)
- - a code (Enum-Observed-Value-Simple-OID)
- - a set of binary states or events (Enum-Observed-Value-*-Bit-Str)
- - a human readable string (Enum-Observed-Value-Simple-Str)
- 
- resulting in the 6 measurement profiles described in this guide. The Enum-Observed-Value can be any one of a code, set of binary events, or a human readable string depending upon parameters.
-
 Again, these details are only of concern to the *encoder* of the FHIR resources, the *consumer* of the FHIR resources is not concerned with the types of attributes delivered by the PHD.
-
- - [Next: Protocol Only Metric Attributes]({{ output }}MetricAttributesofNoInterest.html)
- - [Previous: DIM to FHIR Mapping; Details]({{ output }}DIMtoFHIRMappingDetails.html)
-
- 
 
 
 

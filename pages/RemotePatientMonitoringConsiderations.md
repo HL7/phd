@@ -1,8 +1,4 @@
----
-title: Remote Patient Monitoring Considerations
-layout: default
-active: RemotePatientMonitoringConsiderations
----
+## Remote Patient Monitoring Considerations
 
 The design of this mapping is influenced by the needs of remote patient monitoring. In this case patients are typically at home using personal health devices (PHDs) to take medical measurements on themselves and uploading that data in digitized form with a personal health gateway (PHG) to a repository where the health care provider can examine that data. There are variations on this basic theme but in general it is assumed that
 
@@ -27,9 +23,6 @@ The design of this mapping is influenced by the needs of remote patient monitori
   * Patients may be paying for data rates
 
 Based upon these assumptions it is advantageous to design an infrastructure which needs as little maintenance as possible and a mapping algorithm which handles as many types of PHD specializations as possible including specializations developed in the future.
-
- - [Next: Generic and Extensible Model]({{ output }}GenericModel.html)
- - [Previous: Technical Implementation Guidance]({{ output }}technical implementation guidance.html)
 
 
 

@@ -1,9 +1,10 @@
 ---
-title: PHD Device Profile
+title: Phd Device Profile
 layout: default
 active: PhdDeviceProfile
 ---
 
+## <a name="phddevice"></a> Phd Device Profile
 The properties and specifications of the PHD are reported in the Device resource. These are the static fields of the attributes reported in the PHD MDS object or Bluetooth Low Energy Device Information Service. Dynamic and observational attributes such as the battery level, remaining battery time, and power status are reported using the Observation resource.
 
 There are six MDS attributes that are reported. The Mds-Time-Info attribute has fields that are dynamic and static, and it is only the static entries which are required should the attribute be present. The following table summarizes these attributes and the Device elements to which they are mapped:
@@ -20,11 +21,12 @@ There are six MDS attributes that are reported. The Mds-Time-Info attribute has 
 
 The transport address and friendly name are not provided by the MDS but come from the transport protocols. They may not be available are therefore optional. However, if the PHD does not report a System Id, which may happen if one needs to map non-certified and/or proprietary devices, a transport address should be reported. It is still strongly recommended that the transport address is reported as it is often beneficial to the data consumers. Transport addresses of wireless devices are often printed on the device or the device packaging whereas the system id is not. Most PHD transports provide a means of obtaining a transport address or an equivalent identifier such as a USB VID and PID.
 
-There are several CodeableConcept data types in this mapping where the Coding data type has a 'display' element. It is recommended to put the MDC reference identifier as part of the display element if known. The coding system element is always set to "urn.iso.std.iso:11073:10101 when an MDC code".
+There are several CodeableConcept data types in this mapping where the Coding data type has a 'display' element. It is recommended to put the MDC reference identifier as part of the display element if known and when the system element indicates the MDC coding system "urn.iso.std.iso:11073:10101".
 
 The structure definition for the PHD Device Profile is shown below:
+{{tree:phd/ParentDeviceComponent}}
 
-A JSON example is given in [PHD Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdDeviceJSONExample)
+A JSON example is given in [Phd Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdDeviceJSONExample)
 
 
 ### Meta Data Profile
@@ -62,7 +64,7 @@ The Device.type shall be encoded as follows:
 The display element is optional but highly recommended.
 
 ### System Type Spec List
-The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. The specialization is reported as a 16-bit MDC term code with an assumed partition of INFRA (8) and the version is an integer. In most cases there is just one entry in the list.
+The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. The specialization is reported as a 16-bit MDC term code with an assumed partition of INFRA (8) and the version is an interger. In most cases there is just one entry in the list.
 
 For each entry in the System-Type-Spec-List a specializations entry is encoded as follows: 
 
@@ -77,7 +79,7 @@ The display element is optional but it is highly recommended that it be included
 
 |Specialization|MDC Code partition:term code|Reference Identifier|
 |-
-|Generic 20601 Device|8::4169|MDC_DEV_SPEC_PROFILE_GENERIC|
+|Generic 20601 Device|8:4169|MDC_DEV_SPEC_PROFILE_GENERIC|
 |Pulse Oximeter|8::4100|MDC_DEV_SPEC_PROFILE_PULS_OXIM|
 |Electro cardiograph|8::4102|MDC_DEV_SPEC_PROFILE_MIN_ECG|
 |Blood Pressure Cuff|8::4103|MDC_DEV_SPEC_PROFILE_BP|
@@ -87,7 +89,7 @@ The display element is optional but it is highly recommended that it be included
 |Glucose Monitor|8::4113|MDC_DEV_SPEC_PROFILE_GLUCOSE|
 |Coagulation meter |8::4114|MDC_DEV_SPEC_PROFILE_COAG|
 |Insulin Pump|8::4115|MDC_DEV_SPEC_PROFILE_INSULIN_PUMP|
-|Body Composition Analyzer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
+|Body Composition Analyizer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
 |Peak Flow meter|8::4117|MDC_DEV_SPEC_PROFILE_PEAK_FLOW|
 |Sleep Apnea Breathing Equipment|8::4120| MDC_DEV_SPEC_PROFILE_SABTE|
 |Continuous Glucose Monitor|8::4121|MDC_DEV_SPEC_PROFILE_CGM|
@@ -160,12 +162,28 @@ The Continua version has a major and minor component which are 8-bit unsigned in
 The Continua version code is mapped to a Device.version element.
 
 #### Reg-Cert-Data-List Continua Certified PAN interfaces
-The Reg-Cert-Data-List attribute reports the list of Continua *certified* PAN (Personal Area Network) interfaces as a list of Continua-specified 'PAN' codes. Note there is a difference between certified PAN interfaces and supported PAN interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code, Tcode, and a specialization code which is based on the 16-bit term code of the MDC code for the specialization. See [generating the PANCodes]({{ output }}ContinuaPersonalAreaNetworkCodes.html)
+The Reg-Cert-Data-List attribute reports the list of Continua *certified* PAN (Personal Area Network) interfaces as a list of Continua-specified 'PAN' codes. Note there is a difference between certified PAN interfaces and supported PAN interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code, Tcode, and a specialization code which is based on the 16-bit term code of the MDC code for the specialization. The obtained code was generated from
+  - PANCode = Tcode * 8192 + (specialization term code - 4096)
+
+Consumers of the data will need to know this relationship in order to interpret the code.
+
+The transport 'Tcodes' are as follows:
+
+|Tcode|Transport|
+|-
+|0|Continua version 1.0|
+|1|USB|
+|2|Bluetooth HDP|
+|3|ZigBee|
+|4|Bluetooth Low Energy|
+|5|NFC|
+
+The special Tcode of 0 is for Continua version 1.0 when there was no transport component in the reported certified PAN interface codes.
 
 The PANCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
 
 #### Reg-Cert-Data-List Regulation Status
-The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 Coding Description]({{ output }}ASN1BITsCodeSystem.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
+The regulation status element is a 16-bit ASN1 BITs 'state' value. At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
 
 The regulation status is mapped to an additional Device.property.valueCode element. The Device.property.type element, which identifies the property, is given by 532354.0 following the ASN1 BITs mapping where the code 532354 is the MDC code for the regulation status. Its reference identifier is MDC_REG_CERT_DATA_CONTINUA_REG_STATUS. The '0' appended to the regulation status code indicates Mder bit 0. The Device.property.valueCode will indicate either "Y" (set) or "N" (cleared).
 
@@ -175,13 +193,13 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 |Reg-Cert-Data-List|Device Mapping|
 |-
 |Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
-|Reg-Cert-Data-List: certified PAN interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PANCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN"<br><br>|
-|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.coding.display="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "<br>property.valueCode.coding.display="Y=unregulated N=regulated"|
+|Reg-Cert-Data-List: certified PAN interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PANCode*N*"<br>property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-codes"<br><br>|
+|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="placeholder/fhir/IEEE.ASN1"<br>property.type.coding.display="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "<br>property.valueCode.coding.display="Y=unregulated N=regulated"|
 
-Display elements are recommended but optional.
+Display elements are receommended but optional.
 
 ### Mds-Time-Info
-The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report time stamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a time stamp in any of its measurements, there is no need to report the static time information ***EXCEPT*** that there is no time synchronization.
+The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report time stamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a time stamp in any of its measurements, there is no need to report the static time information.
 
 #### Time Capabilities
 The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabilities. They are mapped as follows:
@@ -206,9 +224,9 @@ The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabiliti
 |15	|68219.15	|mds-time-dst-rules-enabled|yes|property.type.coding.code="68219.15"|
 
 The required remaining property elements in each reported case are as follows:
- - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
+ - property.type.coding.system="placeholder/fhir/IEEE.ASN1"
  - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://hl7.org/fhir/CodeSystem/v2-0136 "
+ - property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "
 
  An optional display element containing at least the ASN.1 name from the above table is encouraged:
  - property.type.coding.display="ASN.1 name + any additional text"
@@ -232,9 +250,6 @@ The Mds-Time-Info.*time-sync-protocol* indicates the method of time synchronizat
 |532231	|MDC_TIME_SYNC_HL7_NCK	|Synchronized via Health Level 7 NCK (network clock)|8::7943|
 |532232	|MDC_TIME_SYNC_CDMA	CDMA |mobile telecommunications synchronization	|8::7944|
 |532233	|MDC_TIME_SYNC_GSM	|GSM - Network Identity and Time Zone (NITZ)	|8::7945|
-|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that is out of scope for IEEE 11073	|8::7948|
-|532237	|MDC_TIME_SYNC_OTHER_MOBILE	|A time sync method based on other mobile network technology that is not listed above	|8::7949|
-|532238	|MDC_TIME_SYNC_GPS	|A time sync method based on GPS information	|8::7950|
 
 If the Mds-Time-Info.*time-sync-protocol* indicates some other value besides 7936 (no time synchronization) the uploader must look at the time capabilities bits 8, 9, 10, or 13 to see if the PHD actually *is* synchronized. If the time capabilities bits indicate that the PHD is synchronized, then the time synchronization method in Mds-Time-Info.*time-sync-protocol* is reported in the Device.property element. Otherwise the uploader reports that the PHD is unsynchronized.
 

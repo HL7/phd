@@ -1,5 +1,5 @@
 ---
-title: PHD Real Time Sample Array (Waveform) Observation Profile
+title: Phd Real Time Sample Array (Waveform) Observation Profile
 layout: default
 active: RtsaObservationProfile
 ---
@@ -14,7 +14,7 @@ This attribute contain a measurement that is a sequence of scaled periodic value
 
 |Support Attribute|Value|Description|
 |-
-|Sample-Period.*period*|integer|Interval between samples in 1/8<sup>th</sup> milliseconds|
+|Sample-Period.*period*|integer|Interval between samples in 1/8<sup>th</sup> millseconds|
 |Sa-Specification.SampleType.*significant-bits*|integer|Number of significant bits in the sample value|
 |Sa-Specification.SampleType.*sample-size*|integer|Number of bits in each sample; gives the *X* value in 'Scale-and-Range-Specification*X*'|
 |Sa-Specification.*array-size* |integer|Number of samples in 'Simple-Sa-Observed-Value'|
@@ -33,7 +33,9 @@ otherwise
 
 The upper and lower ranges represent the upper and lower actual sensor ranges that can be reported. The name 'absolute' in the attribute does not refer to the mathematical definition of an absolute value. The upper and lower values do NOT mean that a given set of samples has those values or that those values are ever reported by the sensor. However, a graphing application could use those values to define the upper and lower ranges of a graph and be assured that the waveform would never go above or below those boundaries. These upper and lower boundaries are placed in the Observation.referenceRange.low and Observation.referenceRange.high elements, respectively.
 
-The structure definition for the PHD Rtsa Observation Profile is shown below:
+The structure definition for the Phd Rtsa Observation Profile is shown below:
+
+{{tree:phd/RtsaObservation}}
 
 ### Mapping RTSA Waveforms To FHIR
 Periodic data is mapped to the SampledData data type in FHIR. The SampledData.data element in this data type is also scaled. If *y*[i] is the i<sup>th</sup> entry of the actual unscaled data from the PHD sensor, *y*[i] is obtained from the SampledData type using the following relation:
@@ -82,20 +84,17 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 
 *noting that other scaling options are allowed.
 
-### Meta Data Profile
-The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdRtsaObservation indicating this resource is generated following the PHD Implementation Guide.
-
-### Conditional Create Identifier Generation
-For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [PHD Base Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
+#### Conditional Create Identifier Generation
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
-|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
+|device|"Phd Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html)|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
 |value|Observation.valueSampledData.period-Observation.valueSampledData.dimensions-Observation.valueSampledData.data[0]|The data absent reason code is used if there is no value|
 |units|"Observation.valueSampledData.origin.code|The units are the same for all data points|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
 |supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:

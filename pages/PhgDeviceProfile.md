@@ -26,9 +26,10 @@ A transport address is not required. It is still strongly recommended that the t
 
 Similar to the PHD case, when CodeableConcept data types are used it is recommended to put the MDC reference identifier as part of the display element when the system element indicates the MDC coding system "urn.iso.std.iso:11073:10101".
 
-The structure definition for the PHG Device Profile is shown below:
+The structure definition for the Phg Device Profile is shown below:
+{{tree:phd/PhgDeviceComponent}}
 
-A JSON example is given in [PHG Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
+A JSON example is given in [Phg Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
 
 ### **Meta Data Profile**
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhgDevice indicating this resource is generated following this PHD Implementation Guide.
@@ -77,7 +78,7 @@ The time synchronization is mapped as follows:
  - Device.property.valueCode.coding.system="urn.iso.std.iso:11073:10101"
  - Device.property.valueCode.coding.display="*the ref id*"  *(optional)*
 
- The 32-bit code for the time synchronization method is given by one of the following values:
+ The 32-bit code for the time synchonization method is given by one of the following values:
 
 |32-bit code|Reference identifier|	description	|partition:term code|
 |-
@@ -93,9 +94,6 @@ The time synchronization is mapped as follows:
 |532231	|MDC_TIME_SYNC_HL7_NCK	|Synchronized via Health Level 7 NCK (network clock)|8::7943|
 |532232	|MDC_TIME_SYNC_CDMA	CDMA |mobile telecommunications synchronization	|8::7944|
 |532233	|MDC_TIME_SYNC_GSM	|GSM - Network Identity and Time Zone (NITZ)	|8::7945|
-|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that is out of scope for IEEE 11073	|8::7948|
-|532237	|MDC_TIME_SYNC_OTHER_MOBILE	|A time sync method based on other mobile network technology that is not listed above	|8::7949|
-|532238	|MDC_TIME_SYNC_GPS	|A time sync method based on GPS information	|8::7950|
 
 ### **Remaining Optional Data**
 The treatment of fields that would be in mock System-Model, Production-Specification, Reg-Cert-Data-List, and Mds-Time-Info attributes is the same as in the Phd Device Profile. However, there is an extra set of information in the mock Reg-Cert-Data-List regarding the certified Health & Fitness Service (H&FS) interfaces. A PHG has both PAN and H&FS interfaces.
@@ -127,7 +125,7 @@ The following table gives a list of the more common specialization codes:
 
 |Specialization|MDC Code partition:term code|Reference Identifier|
 |-
-|Generic 20601|8::4169|MDC_DEV_SPEC_PROFILE_GENERIC|
+|Generic 20601|8:4169|MDC_DEV_SPEC_PROFILE_GENERIC|
 |Pulse Oximeter|8::4100|MDC_DEV_SPEC_PROFILE_PULS_OXIM|
 |Electro cardiograph|8::4102|MDC_DEV_SPEC_PROFILE_MIN_ECG|
 |Blood Pressure Cuff|8::4103|MDC_DEV_SPEC_PROFILE_BP|
@@ -137,7 +135,7 @@ The following table gives a list of the more common specialization codes:
 |Glucose Monitor|8::4113|MDC_DEV_SPEC_PROFILE_GLUCOSE|
 |Coagulation meter |8::4114|MDC_DEV_SPEC_PROFILE_COAG|
 |Insulin Pump|8::4115|MDC_DEV_SPEC_PROFILE_INSULIN_PUMP|
-|Body Composition Analyzer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
+|Body Composition Analyizer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
 |Peak Flow meter|8::4117|MDC_DEV_SPEC_PROFILE_PEAK_FLOW|
 |Sleep Apnea Breathing Equipment|8::4120| MDC_DEV_SPEC_PROFILE_SABTE|
 |Continuous Glucose Monitor|8::4121|MDC_DEV_SPEC_PROFILE_CGM|
@@ -238,7 +236,7 @@ The PANCodes are mapped to a list of property.valueCode elements. The property.t
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="PANCode*N*"
- - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN "
+ - property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-codes "
 
 Note that the property.valueCode element is an array and one can have many of these in a single property element.
 
@@ -262,16 +260,16 @@ The Health and Fitness codes are mapped to a list of property.valueCode elements
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="H&FSCode*N*"
- - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS "
+ - property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-wan-codes "
 
 #### **Regulation Status**
 The PHG regulation status is reported as follows:
 
  - property.type.coding.code="532354.0"
- - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
+ - property.type.coding.system="placeholder/fhir/IEEE.ASN1"
  - property.type.coding.display="regulation-status"
  - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://hl7.org/fhir/CodeSystem/v2-0136 "
+ - property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "
  - property.valueCode.coding.display="Y=unregulated N=regulated"
 
 #### **Time Synchronization Accuracy**
