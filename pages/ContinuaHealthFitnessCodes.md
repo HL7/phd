@@ -1,4 +1,8 @@
-## Continua Health & Fitness Codes
+---
+title: Continua Health & Fitness Codes
+layout: default
+active: ContinuaHealthFitnessCodes
+---
 
 These codes are used to express the Health and Fitness interfaces.
 

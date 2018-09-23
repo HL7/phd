@@ -1,4 +1,8 @@
-## DIM to FHIR Mapping: Basics
+---
+title: DIM to FHIR Mapping; Basics
+layout: default
+active: DIMtoFHIRMapping
+---
 
 There are two classes of 11073 20601 objects that are relevant for uploading; the Medical Device System (MDS) object and the Metric object. The remaining objects assist in the PHD to PHG exchange protocol and are not of interest downstream. The MDS object is used to describe the device features and properties. The Metric object is used to model measurements. A PHD contains a single MDS object and may contain many Metric objects, each one representing a single measurement. There are three sub-classes of Metric objects, Numeric, Real-Time-Sample-Array (RTSA), and Enumeration. Numeric Metric objects are used to describe all measurements that are either scalars or vectors. Enumeration Metric objects are used to describe measurements that are represented by a finite set of items. RTSA Metric objects are used to represent a sequence of periodic numeric scalar measurements. An RTSA *could* be expressed as a sequence of scalar numeric metrics but that would be inefficient.
 

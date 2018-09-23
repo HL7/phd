@@ -1,4 +1,8 @@
-## Continua Personal Area Network Codes
+---
+title: Continua Personal Area Network Codes
+layout: default
+active: ContinuaPersonalAreaNetworkCodes
+---
 
 These codes are used to express the Continua Personal Area Network (PAN) interfaces. The codes express both the transport (Bluetooth, USB, etc.) and specialization (Blood pressure, thermometer, glucose, etc.).
 

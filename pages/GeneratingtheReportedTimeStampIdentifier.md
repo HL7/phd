@@ -1,4 +1,8 @@
-### Generating the PHD Reported Time Stamp Identifier
+---
+title: Generating the PHD Reported Time Stamp Identifier
+layout: default
+active: GeneratingtheReportedTimeStampIdentifier
+---
 
 This algorithm shows how one generates the time stamp as reported by the PHD for use in the Observation.identifier element. The Observation.identifier element is used in the PHD profiles to perform conditional creates and thus eliminate data duplication.
 

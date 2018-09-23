@@ -1,3 +1,9 @@
+---
+title: Generic and Extensible Model
+layout: default
+active: GenericModel
+---
+
 ## Generic and Extensible Model
 To address the list of issues and conditions relevant to remote patient monitoring, Continua requires PHDs and PHGs to be based upon the 11073 20601 data model where measurements and device information are represented in a set of abstract objects. These objects contain attributes that describe the objects. In some sense, the 11073 20601 objects are analogous to FHIR resources, and the attributes are analogous to FHIR resource elements. The attributes, like resource elements, have specified data types. All 11073 20601 device types from thermometers to home ventilators use the same set of objects and associated attributes. The simplest PHDs, like a thermometer, may instantiate only one measurement object whereas more complex PHDs like a home ventilator may have several. The sleep apnea breathing therapy equipment PHD defines more than 80 measurement objects.
 

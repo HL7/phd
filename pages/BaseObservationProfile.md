@@ -29,7 +29,7 @@ The consumer of this Observation resource should ignore the identifier element u
 Generation of the PHD Profile Identifier is PHD Profile specific and is outlined in the respective profiles.
 
 ### Obtaining the Type of Measurement
-One obtains the 11073 20601 measurement type for the code element in the same manner for all metric measurments. See the section [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2) for the details of this mapping.
+One obtains the 11073 20601 measurement type for the code element in the same manner for all metric measurments. See the section [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) for the details of this mapping.
 
 ### Subject
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'
@@ -39,8 +39,8 @@ PHDs report time stamps in one of four methods and may not report time stamps at
 
 |Time Stamp Type|Description|PHD requirement|PHG conversion|
 |-
-|Absolute Time|Local Wall clock time without time zone information|PHD must provide its current absolute time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile) |
-|Base-Offset Time|Time as UTC plus time added in minutes to get the local time|PHD must provide its current base-offset time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile) |
+|Absolute Time|Local Wall clock time without time zone information|PHD must provide its current absolute time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html) |
+|Base-Offset Time|Time as UTC plus time added in minutes to get the local time|PHD must provide its current base-offset time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html) |
 |Relative time|The number of ticks in units of 1/8th millisecond|PHD must provide its current relative time|PHD obtains the current relative time at its current time and maps all measurement times to UTC plus offset based upon the difference given by the current relative time|
 |Hi-Resolution Relative time|The number of ticks in units of microseconds|PHD must provide its current hi-res time|PHD obtains the current hi-res relative time at its current time and maps all measurement times to UTC plus offset based upon the difference given by the current relative time|
 |No time stamp|||PHG uses time of reception as UTC plus offset|

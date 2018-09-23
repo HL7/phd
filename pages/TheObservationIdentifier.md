@@ -1,4 +1,9 @@
-### The Observation Identifier
+---
+title: The Observation Identifier
+layout: default
+active: TheObservationIdentifier
+---
+
 Some PHDs will resend old data repeatedly. To prevent excessive resource duplication on the RESTful FHIR server this IG specifies an Observation.identifier whose sole purpose is to perform a conditional create transaction. The identifier is not to be interpreted by a consumer of the resource.
 
 The idea is that the identifier uniquely describes the measurement such that if the same measurement were resent at a later time, the identifier would be the same. At the same time it needs to be selective enough such that no other newly taken measurement will produce the same identifier.

@@ -1,4 +1,9 @@
-### Metric Protocol-Only Attributes
+---
+title: Metric Protocol-Only Attributes
+layout: default
+active: MetricAttributesofNoInterest
+---
+
 Protocol-Only attributes are **not** mapped to FHIR.
 
 In the 11073 20601 specification, measurements are mapped to Metric Objects. The Metric Object contains several attributes that are used to describe the measurement such as the Type, Unit-Code, and Simple-Nu-Observed-Value. However, it also contains attributes that are only of interest to the PHG for the purposes of decoding the measurement. For the purposes of optimization on the wire, the PHD only sends attributes that have changed when it sends a measurement. The PHG is expected to retain static and dynamic information. There are also techniques used to efficiently encode the data and tell the PHG how big and in what sense this data may come. To accomplish this encoding the PHD sends keys describing the encoding and the PHG uses these keys to decode the data. These keys are not meant for security purposes but just to minimize data transmission size.

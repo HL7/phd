@@ -1,4 +1,9 @@
-### Obtaining the Observation.code
+---
+title: Obtaining the Observation Code
+layout: default
+active: ObtainingObservationCode
+---
+
 Every 11073 20601 metric instance is required to have a Type attribute. In most cases, the Type attribute value maps directly to the Observation.code element. However, the metric object may contain other attributes which modify or change this value. The following algorithm indicates the procedure an encoder can take to obtain the Observation.code entry:
 
 * set *partition* = Type.partition
