@@ -12,7 +12,7 @@ The Numeric Observation Profile is used when the PHD metric measurement contains
 |Simple-Nu-Observed-Value|32-bit Mder FLOAT|24-bit mantissa|
 |Nu-Observed-Value|32-bit Mder FLOAT|Complex attribute. Also contains<br/> metric-id<br/> measurement status<br/> unit-code|
 
-These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/MderFLOATsandSFLOATs2) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
+These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs]({{ output }}MderFLOATsandSFLOATs-2.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
 
 The structure definition for this profile is as follows:
 {{tree:phd/NumericObservation}}
@@ -24,19 +24,19 @@ The following table shows how the numeric attributes are mapped to FHIR. Since t
 |-
 |Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
 |Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
-|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2) <br/>handle measurement status see [Phd Base Observation Profile](./BaseObservationProfile.md) |
+|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) <br/>handle measurement status see [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html) |
 
 #### Conditional Create Identifier Generation
-For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile). The table below lists the items that make up the identifier.
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
 |device|"PhdDevice.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation Code]({{ output }}ObtainingtheObservation-code.html)|
 |value|"Observation.valueQuantity.value" or <br/> "Observation.dataAbsentReason.coding.code|The numerical value of the measurement or <br/> the data absent reason if the value is not present|
 |units|"Observation.valueQuantity.code"|The UCUM code for the units|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)|
 |supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:

@@ -16,10 +16,6 @@ The Enum-Observed-Value-Simple/Basic-Bit-Str attribute is used when the measurem
 
 The Enum-Observed-Value attribute is a complex attribute and can be any one of the three possible enumeration measurements. There is an element in the structure which indicates which type of enumeration it is. If it is a 'BITs' type it reports only the 32-bit version. The attribute also has its own metric-id value telling what it is and status value. The metric-id value replaces the term code given by the Type attribute for the *type* of measurement (*not the measurement!*) and the status value replaces the Measurement-Status attribute.
 
-The structure definition for this profile is
-
-{{tree:phd/BITsEnumerationObservation}}
-
 ### Mapping BITs Enumerations to FHIR
 FHIR has no data type that corresponds to this kind of measurement. Consequently Continua has developed a value set which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 BITS Code System]({{ output }}ASN1BITsCodeSystem.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported.
 
@@ -31,11 +27,11 @@ Recall that only set bits of type 'event' need to be reported. If of type 'state
 |-
 |Enum-Observed-Value-Basic-Bit_str.*bitN* <br/> where 0 <= *N* <= 15|Observation.component*M*.code.coding.code="Type.*N*"<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared|
 |Enum-Observed-Value-Simple-Bit_str.*bitN* <br/> where 0 <= *N* <= 31|Observation.component*M*.code.coding.code<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared|
-|Enum-Observed-Value.*bitN*<br/><br/> where 0 <= *N* <= 31<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.component*N*.code.coding.code="Type.*N*" where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared<br/><br/>effects the Observation.component.code.coding.code "Type" see [Obtaining the Observation.code]({{ output }}ObtainingtheObservationcode2.html) <br/>see Measurement Status in [Phd Base Observation Profile]({{ output }}PhdBaseObservationProfile.html) |
+|Enum-Observed-Value.*bitN*<br/><br/> where 0 <= *N* <= 31<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.component*N*.code.coding.code="Type.*N*" where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared<br/><br/>effects the Observation.component.code.coding.code "Type" see [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) <br/>see Measurement Status in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html) |
 |If reporting an unsupported bit *N*|Observation.component*M*.dataAbsentReason="unsupported"|
 
 #### Conditional Create Identifier Generation
-For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-

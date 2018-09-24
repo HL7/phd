@@ -10,10 +10,11 @@ The Phd Base Observation profile contains the elements that are common to all Ph
  - effective[ x ]: the time stamp and perhaps duration of the measurement,
  - device: the PHD taking the measurement, 
  - derivedFrom: references to any coincident time stamp and/or source handle reference, and 
- - components: contains any additional measurement descriptions (supplemental types, relative time stamps, and measurement status
+ - components: contains any additional measurement descriptions (supplemental types and relative time stamps)
+ - measurement status
 
 The structure definition differential is given below:
-{% include StructureDefinition-PhdDevice-diff.xhtml %}
+{% comment %}{% include StructureDefinition-PhdDevice-diff.xhtml %}{% endcomment %}
 
 ### PHD Profile Identifier
 The *PHD Profile Identifier* is used to prevent data duplication. It serves as the selection criteria in the conditional create. All measurements that have a timestamp earlier than the current time of connection are required to use the conditional create upload when converted to FHIR. If the uploader knows that the received measurement is a new measurement or the measurement is received with no time stamp, then the identifier is not needed.
@@ -43,7 +44,7 @@ PHDs report time stamps in one of four methods and may not report time stamps at
 |Base-Offset Time|Time as UTC plus time added in minutes to get the local time|PHD must provide its current base-offset time|PHG maps UTC plus offset and may correct it as described in the section [Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html) |
 |Relative time|The number of ticks in units of 1/8th millisecond|PHD must provide its current relative time|PHD obtains the current relative time at its current time and maps all measurement times to UTC plus offset based upon the difference given by the current relative time|
 |Hi-Resolution Relative time|The number of ticks in units of microseconds|PHD must provide its current hi-res time|PHD obtains the current hi-res relative time at its current time and maps all measurement times to UTC plus offset based upon the difference given by the current relative time|
-|No time stamp|||PHG uses time of reception as UTC plus offset|
+|No time stamp| | |PHG uses time of reception as UTC plus offset|
 
 The PHG maps the 'converted' time stamp to either an Observation.effectiveDateTime element or an Observation.effectivePeriod element. The second situation occurs when the metric measurement includes a Measurement-Active-Period (duration) attribute. Then the time stamp attribute gives the start of the period and the end of the period is obtained by adding the Measurement-Active-Period value to it. If no time stamp is provided, the PHG, using the time of reception of the measurement as its time stamp must then do the reverse; the time of reception is the end time and the start time is given by subtracting the Measurement-Active-Period value from it.
 
@@ -83,7 +84,7 @@ The Relative-Time-Stamp attribute contains the time stamp of the measurement in 
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
 |code.coding.display|optional but|Should contain the reference id MDC_ATTR_TIME_STAMP_REL along with any other additional text|
 |valueQuantity.value|the value|This is relative time value scaled to microseconds|
-|valueQuantity.unit|optional||
+|valueQuantity.unit|optional| |
 |valueQuantity.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
 |valueQuantity.code|shall be the code 'us' for microseconds|
 
@@ -96,7 +97,7 @@ The Hi-Res-Relative-Time-Stamp attribute contains the time stamp of the measurem
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
 |code.coding.display|optional but|Should contain the reference id MDC_ATTR_TIME_STAMP_REL_HI_RES along with any other additional text|
 |valueQuantity.value|the value|This is relative time value scaled to microseconds|
-|valueQuantity.unit|optional ||
+|valueQuantity.unit|optional | |
 |valueQuantity.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
 |valueQuantity.code|shall be the code 'us' for microseconds|
 
@@ -119,19 +120,19 @@ Though it is possible to have multiple bits simultaneously set, some combination
 
 To report these cases in FHIR requires the use of three different elements. The interpretation codes are taken from the measurement status value set defined in the [Point of Care implementation guide](https://build.fhir.org/ig/HL7/uv-pocd/index.html). The mapping is shown in the following table:
 
-|status Mder bit | ASN1 name|Observation element||
+|status Mder bit | ASN1 name|Observation element|
 |-
-|0|invalid|dataAbsentReason.coding.code="error"<br>http://hl7.org/fhir/ValueSet/data-absent-reason |
-|1|questionable|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="questionable"|
+|0|invalid|dataAbsentReason.coding.code="error"<br/>http://hl7.org/fhir/ValueSet/data-absent-reason |
+|1|questionable|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="questionable"|
 |2|not-available|dataAbsentReason.coding.code="not-performed"<br>dataAbsentReason.coding.system="http://hl7.org/fhir/ValueSet/data-absent-reason |
-|3|calibration-ongoing|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="calibration-ongoing"|
-|4|test-data|meta.security.coding.code="HTEST"<br> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
-|5|demo-data|meta.security.coding.code="HTEST"<br> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
-|8|validated-data|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="validated-data" |
-|9|early-indication|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br> interpretation.coding.code="early-indication" |
+|3|calibration-ongoing|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="calibration-ongoing"|
+|4|test-data|meta.security.coding.code="HTEST"<br/> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
+|5|demo-data|meta.security.coding.code="HTEST"<br/> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
+|8|validated-data|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="validated-data" |
+|9|early-indication|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="early-indication" |
 |10|msmt-ongoing|dataAbsentReason.coding.code="temp-unknown"<br>dataAbsentReason.coding.system="http://hl7.org/fhir/ValueSet/data-absent-reason" |
-|14|msmt-value-exceed-boundaries|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br>interpretation.coding.code="in-alarm" |
-|15|msmt-state-ann-inhibited|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br>interpretation.coding.code="alarm-inhibited"|
+|14|msmt-value-exceed-boundaries|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/>interpretation.coding.code="in-alarm" |
+|15|msmt-state-ann-inhibited|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/>interpretation.coding.code="alarm-inhibited"|
 
 Note that a status field is reported in the Nu-Observed-Value and Enum-Observed-Value attributes. When these attributes are sent, the status field in the attribute replaces the Measurement-Status attribute should the PHD have sent both (which would seem unlikely).
 

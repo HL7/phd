@@ -12,7 +12,7 @@ The Compound Numeric Observation Profile is used when the PHD metric measurement
 |Compound-Simple-Nu-Observed-Value|set of 32-bit Mder FLOATs|24-bit mantissa, 8-bit exponent|
 |Compound-Nu-Observed-Value|set of 32-bit Mder FLOATs|Complex attribute. Also contains<br/> metric-id<br/> measurement status<br/> unit-code|
 
-These attributes contain a measurement value that is described by a set of multiple numbers such as the x, y, and z components of an acceleration. It is NOT used to report an array of measurements but only where the quantity being measured requires more than one number to describe it. Each individual entry of the compound value is reported in an Observation.component element. The Mder SFLOAT and FLOAT encodings of each entry indicate both precision and the number of significant figures. The Observation.component.valueQuantity.value element is required to honor the reported precision as indicated by the Mder S/FLOAT. See the section [Mder FLOATs and SFLOATs](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/MderFLOATsandSFLOATs2) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity.
+These attributes contain a measurement value that is described by a set of multiple numbers such as the x, y, and z components of an acceleration. It is NOT used to report an array of measurements but only where the quantity being measured requires more than one number to describe it. Each individual entry of the compound value is reported in an Observation.component element. The Mder SFLOAT and FLOAT encodings of each entry indicate both precision and the number of significant figures. The Observation.component.valueQuantity.value element is required to honor the reported precision as indicated by the Mder S/FLOAT. See the section [Mder FLOATs and SFLOATs]({{ output }}MderFLOATsandSFLOATs-2.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity.
 
 The Observation.component.code element is obtained from the Metric-Id-List attribute unless the measurement reported is a Compound-Nu-Observed-Value attribute. In that case the attribute itself has the metric type for each entry and that is used instead of the Metric-Id-List entries. The order of the entries in the Metric-Id-List are one-to-one with the order of the compound attribute entries. For example, if the Metric-Id-List in the Blood Pressure measurement has MDC codes for 'systolic", "diastolic" and "mean" in that order, the quantities in the compound attribute are the systolic, diastolic, and mean values, respectively.
 
@@ -33,17 +33,17 @@ The following table shows how the compound numeric attributes are mapped to FHIR
 |Compound-Nu-Observed-Value.*valueN*<br/>Compound-Nu-Observed-Value.*unitN*<br/>Compound-Nu-Observed-Value.*metric-idN*<br/>Compound-Nu-Observed-Value.*statusN*|Observation.component*N*.valueQuantity.value<br/>Observation.component*N*.valueQuantity.code  (as UCUM)<br/> Observation.component*N*.code.coding.code<br/>Observation.component*N*.dataAbsentReason|
 
 #### Conditional Create Identifier Generation
-For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile). The table below lists the items that make up the identifier.
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
 |device|"Phd Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html)|
 |value|"Observation.component*N*.valueQuantity.value" or<br/>"Observation.component*N*.dataAbsentReason.coding.code"|The data absent reason code is used if there is no value|
 |units|"Observation.component*1*.valueQuantity.code"|When not a Compound-Nu-Observed-Value attribute the units are the same for each entry so only one unit code is needed|
 |valueUnits|"Observation.component*N*.valueQuantity.value" or <br/> "Observation.component*N*.dataAbsentReason.coding.code"<br/>followed by the UCUM unit code for each entry|In the Compound-Nu-Observed-Value the unit code can be different for each entry|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)|
 |supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:
