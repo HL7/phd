@@ -25,18 +25,21 @@ The following table shows how the coded enumeration attributes are mapped to FHI
 |Attribute|FHIR coding|
 |-
 |Enum-Observed-Value-Simple-OID.*value*|Observation.valueCodeableConcept.coding.code|
-|Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2) <br/>see Measurement Status in [Phd Base Observation Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile) |
+|Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) <br/>see Measurement Status in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html) |
+
+### Meta Data Profile
+The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdCodedEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
 
 #### Conditional Create Identifier Generation
-For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile). The table below lists the items that make up the identifier.
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
 |device|"Phd Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code)|
 |value|"Observation.valueCodeableConcept.coding.code" or <br/>"Observation.dataAbsentReason.coding.code"|The enumeration 32-bit MDC code of the measurement or <br/>the data absent reason code if there is no value|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/ObtainingtheObservationcode2)|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp]({{ output }}GeneratingthePhdReportedTimeStampIdentifier.html)|
 |supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:

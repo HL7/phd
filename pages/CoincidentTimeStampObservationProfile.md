@@ -4,7 +4,7 @@ layout: default
 active: CoincidentTimeStampObservationProfile
 ---
 
-The Coincident Time Stamp Observation Profile is used to compare the timelines of the PHD with the timeline of the PHG. The primary elements are the Observation.effectiveDateTime which has the current time of the PHG and the Observation.valueDateTime or Observation.valueQuantity which has the current time of the PHD. The valueDateTime is used when the PHD uses either an Absolute or Base-Offset time clock and the valueQuantity is used when the PHD uses a relative time clock. The PHG reports its current time at the time it reads the current time of the PHD. For more details on the interpretation of the Coincident Time Stamp see the section [Coincident Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/CoincidentTimeStamp2).
+The Coincident Time Stamp Observation Profile is used to compare the timelines of the PHD with the timeline of the PHG. The primary elements are the Observation.effectiveDateTime which has the current time of the PHG and the Observation.valueDateTime or Observation.valueQuantity which has the current time of the PHD. The valueDateTime is used when the PHD uses either an Absolute or Base-Offset time clock and the valueQuantity is used when the PHD uses a relative time clock. The PHG reports its current time at the time it reads the current time of the PHD. For more details on the interpretation of the Coincident Time Stamp see the section [Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html).
 
 A Phd Observtion will always reference a Coincident Time Stamp Observation if the measurement reported from the PHD contains a time stamp. It will not reference a Coincident Time Stamp Observation if the measurement contains no time stamp.
 
@@ -14,6 +14,9 @@ The Coincident Time Stamp Observation is created every connection so data duplic
 
 The Structure Definition for the Phd Coincident Time Stamp Observation Profile is as follows:
 {{tree:phd/CoincidentTimeStampObservation}}
+
+### Meta Data Profile
+The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdCoincidentTimeStampObservation indicating this resource is generated following the PHD Implementation Guide.
 
 ### Code
 The code element is used to report the type of time clock used by the PHD. The PHG obtains the type of time clock and its current setting by reading the MDS attributes. There are four types of clocks as follows:
@@ -29,7 +32,7 @@ The code element is used to report the type of time clock used by the PHD. The P
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'
 
 ### Populating the PHG Current Time
-The PHG is required to have the capability to report local time and offset to UTC. The PHG records its current time in the Observation.effectiveDateTime element regardless of the type of time clock used by the PHD unless the PHD has superior time synchronization than the PHG see the section [Coincident Time Stamp](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/CoincidentTimeStamp2) on this topic. In that case, the Observation.effective[x] element is not populated.
+The PHG is required to have the capability to report local time and offset to UTC. The PHG records its current time in the Observation.effectiveDateTime element regardless of the type of time clock used by the PHD unless the PHD has superior time synchronization than the PHG see the section [Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html) on this topic. In that case, the Observation.effective[x] element is not populated.
 
 ### Populating the PHD Current Time
 If the PHD uses an Absolute or Base-Offset time clock, the current time of the PHD is reported in an Observation.valueDateTime element. FHIR requires the presence of an offset to UTC so if the PHD uses an absolute time, the PHG adds its offset to the value. Since all PHDs currently use local transports, the PHD and PHG are logically in the same time zone and thus have the same offset to UTC. However, if the PHD is using Base offset time, the offset reported by the PHD is used even if it is NOT the offset of the PHG.

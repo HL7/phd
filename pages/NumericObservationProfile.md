@@ -26,6 +26,9 @@ The following table shows how the numeric attributes are mapped to FHIR. Since t
 |Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
 |Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) <br/>handle measurement status see [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html) |
 
+### Meta Data Profile
+The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdNumericObservation indicating this resource is generated following the PHD Implementation Guide.
+
 #### Conditional Create Identifier Generation
 For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 

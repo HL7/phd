@@ -30,6 +30,9 @@ Recall that only set bits of type 'event' need to be reported. If of type 'state
 |Enum-Observed-Value.*bitN*<br/><br/> where 0 <= *N* <= 31<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.component*N*.code.coding.code="Type.*N*" where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared<br/><br/>effects the Observation.component.code.coding.code "Type" see [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) <br/>see Measurement Status in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html) |
 |If reporting an unsupported bit *N*|Observation.component*M*.dataAbsentReason="unsupported"|
 
+### Meta Data Profile
+The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdBITSEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
+
 #### Conditional Create Identifier Generation
 For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 

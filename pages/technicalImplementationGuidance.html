@@ -1,0 +1,57 @@
+---
+# jekyll prompt
+title: Technical
+---
+
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    {% include header.html %}
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div id="segment-breadcrumb" class="segment">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li title="{{site.data.fhir.igName}}"><a href="index.html"><b>{{site.data.fhir.igName}}</b></a></li>
+          {% if page.title %}
+          <li><b>{{page.title}}</b></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div id="segment-content" class="segment">
+      <div class="container">
+        <div class="row">
+          <div class="inner-wrapper">
+            <div class="col-9">
+              <a name="{{ site.data.fhir.igId }}"></a>
+              <h2>{{page.title}}</h2>
+              <p>
+                This section gives technical implementation guidance describing the approach taken for the mapping.
+              </p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div id="segment-content" class="segment">
+      <div class="container">
+        <div class="row">
+          <div class="inner-wrapper">
+            <div class="col-9">
+			  <a name="{{ site.data.fhir.igId }}"></a>
+			  <div>
+			    <p>
+				{% capture p1 %}{% include TechnicalGuidance.md %}{% endcapture %}
+				{{ p1 | markdownify }}
+				</p>
+			  </div>
+	        </div>
+		  </div>
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

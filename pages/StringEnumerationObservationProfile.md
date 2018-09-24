@@ -18,6 +18,9 @@ This measurement is just a human readable string and is not designed to support 
 ### Mapping the Enumeration String to FHIR
 The human readable string from the Enum-Observed-Value-Simple-Str attribute is mapped to the Observation.valueString element.
 
+### Meta Data Profile
+The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdStringEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
+
 #### Conditional Create Identifier Generation
 For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Profile](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdBaseObservationProfile). The table below lists the items that make up the identifier.
 
