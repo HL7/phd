@@ -1,6 +1,6 @@
 ---
 # jekyll prompt
-title: Technical
+title: Technical Implementation Guidance
 ---
 
 <!DOCTYPE HTML>
@@ -43,8 +43,8 @@ title: Technical
 			  <a name="{{ site.data.fhir.igId }}"></a>
 			  <div>
 			    <p>
-				{% capture p1 %}{% include TechnicalGuidance.md %}{% endcapture %}
-				{{ p1 | markdownify }}
+				{% capture technical %}{% include TechnicalGuidance.md %}{% endcapture %}
+				{{ technical | markdownify }}
 				</p>
 			  </div>
 	        </div>
