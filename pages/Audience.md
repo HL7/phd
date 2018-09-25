@@ -9,3 +9,6 @@ This Implementation Guide is for developers of both PHD data uploaders and reade
 It is not necessary that the data model specified by this Implementation Guide be used solely in the context of FHIR servers. The Continua Guidelines H-812.5 define two upload scenarios and their security and authentication requirements. One is for the upload to a FHIR server using RESTful FHIR while the second is to non-persisting servers for those endpoints that are interested in receiving the data in the form of FHIR resources but are not interested in supporting the rest of the FHIR infrastructure.
 
 This guide will be of use to anyone who wishes to work with 11073 20601 PHD data in FHIR format.
+
+[Next: Scope]({{ output }}Scope.html)
+[Previous: Purpose]({{ output }}Purpose.html)

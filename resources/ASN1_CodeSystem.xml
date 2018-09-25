@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CodeSystem xmlns="http://hl7.org/fhir">
-  <id value="ASN1ToHL7"/> 
+  <id value="example"/> 
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
-  <text>Hi
+  <text>
   </text>
-  
-  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
 
   <version value="20160128"/> 
 
@@ -18,7 +16,7 @@
   <date value="2018-09-18"/> 
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
 
-  <description value="Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occured when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement."/> 
+  <description value="Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occurred when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement."/> 
   
   <!-- The codes are strings but consist of only digits and a decimal point. 
   They do not represent decimal numbers -->
@@ -103,5 +101,1393 @@
 	  <valueString value="attribute" />
     </property>
   </concept>
-  <!-- Next set of entries go here and so on -->
+<!-- The following code concepts are derived from the MDC_REG_CERT_DATA_CONTINUA_REG_STATUS attribute -->
+  <concept> 
+    <code value="532354.0"/> 
+    <display value="If bit is cleared device is regulated"/> 
+    <definition value="Indicates whether the device is regulated"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_TIME_CAP_STATE attribute -->
+  <concept> 
+    <code value="68219.0"/> 
+    <display value="Real-time clock"/> 
+    <definition value="Indicates real time clock is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.1"/> 
+    <display value="PHG set-time"/> 
+    <definition value="Indicates support for the PHG to set the time"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.2"/> 
+    <display value="Relative Time"/> 
+    <definition value="Indicates Relative Time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.3"/> 
+    <display value="Hi-Res Relative Time"/> 
+    <definition value="Indicates Hi-Res Relative Time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.4"/> 
+    <display value="Sync Absolute Time"/> 
+    <definition value="Indicates that syncing the absolute time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.5"/> 
+    <display value="Sync Relative Time"/> 
+    <definition value="Indicates that syncing the relative time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.6"/> 
+    <display value="Sync Hi-Res Relative Time"/> 
+    <definition value="Indicates that syncing hi-res relative time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.7"/> 
+    <display value="Base Offset Time"/> 
+    <definition value="Indicates that base offset time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="68219.8"/> 
+    <display value="Absolute Time Synced"/> 
+    <definition value="Indicates the absolute time has been synced"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="68219.9"/> 
+    <display value="Relative Time Synced"/> 
+    <definition value="Indicates the relative time has been synced"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<concept> 
+    <code value="68219.10"/> 
+    <display value="Hi-Res Relative Time Synced"/> 
+    <definition value="Indicates the hi-res time has been synced"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="68219.11"/> 
+    <display value="PHG Set-Time Requested"/> 
+    <definition value="PHG Requested to set the time"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="68219.12"/> 
+    <display value="Syncing base-offset time support"/> 
+    <definition value="Indicates that syncing base-offset time is supported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+    <concept> 
+    <code value="68219.13"/> 
+    <display value="Base-Offset Time Synced"/> 
+    <definition value="Indicates that base-offset time has been synced"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="68219.14"/> 
+    <display value="Base-Offset Time UTC Aligned"/> 
+    <definition value="Indicates that base-offset time is aligned with UTC time standard"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="68219.15"/> 
+    <display value="Daylight Savings Time Rules Understood"/> 
+    <definition value="Indicates support for daylight savings time rules"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_ATTR_AL_OP_STAT attribute -->
+  <concept> 
+    <code value="67846.0"/> 
+    <display value="All alerts disabled"/> 
+    <definition value="Indicates both the high and the low limit alerts are disabled"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="67846.1"/> 
+    <display value="Low limit alert disabled"/> 
+    <definition value="Indicates the low limit alert is disabled"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="67846.2"/> 
+    <display value="High limit alert disabled"/> 
+    <definition value="Indicates the high limit alert is disabled"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_PULS_OXIM_DEV_STATUS attribute -->
+  <concept> 
+    <code value="150604.0"/> 
+    <display value="Device not connected to sensor"/> 
+    <definition value="Indicates the device is not connected with the sensor"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.1"/> 
+    <display value="Sensor has malfunctioned"/> 
+    <definition value="Indicates the sensor has malfunctioned"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.2"/> 
+    <display value="Sensor incorrectly placed on user"/> 
+    <definition value="Indicates the sensor is not correctly placed on the user"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.3"/> 
+    <display value="Unsupported sensor"/> 
+    <definition value="Indicates the sensor connected to the device is unsupported"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.4"/> 
+    <display value="Sensor off"/> 
+    <definition value="Indicates the sensor is not connected to the user"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.5"/> 
+    <display value="Sensor interference"/> 
+    <definition value="Indicates the sensor is experiencing interference"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.6"/> 
+    <display value="Searching for signal"/> 
+    <definition value="Indicates the sensor is searching for a signal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.7"/> 
+    <display value="Signal pulse questionable"/> 
+    <definition value="Indicates a questionable pulse has been detected"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.8"/> 
+    <display value="Non pulsatile signal"/> 
+    <definition value="Indicates a non pulsatile signal has been detected"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.9"/> 
+    <display value="Signal erratic"/> 
+    <definition value="Indicates a signal has been discovered, but it is erratic"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.10"/> 
+    <display value="Signal low perfusion"/> 
+    <definition value="Indicates the signal is experiencing low perfusion"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.11"/> 
+    <display value="Signal is poor"/> 
+    <definition value="Indicates the signal has been discovered, but it is poor"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.12"/> 
+    <display value="Signal inadequate"/> 
+    <definition value="Indicates the signal has been discovered, but it is inadequate"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.13"/> 
+    <display value="Signal experiencing processing irregularity"/> 
+    <definition value="Indicates the signal has been discovered, but is experiencing processing irregularity"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.14"/> 
+    <display value="Device malfunction"/> 
+    <definition value="Indicates a device malfunction has occurred"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150604.15"/> 
+    <display value="Device extended update"/> 
+    <definition value="Indicates an extended display update is in progress on device"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_PULS_OXIM_PULS_CHAR attribute -->
+  <concept> 
+    <code value="150605.0"/> 
+    <display value="Pulse quality nominal"/> 
+    <definition value="Indicates no abnormalities have been detected by the sensor"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150605.1"/> 
+    <display value="Pulse quality marginal"/> 
+    <definition value="Indicates the pulse profusion or quality is marginal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150605.2"/> 
+    <display value="Pulse quality minimal"/> 
+    <definition value="Indicates the pulse profusion or quality is minimal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="150605.3"/> 
+    <display value="Pulse quality unacceptable"/> 
+    <definition value="Indicates the pulse profusion or quality is unacceptable"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_ECG_DEV_STAT attribute -->
+  <concept> 
+    <code value="8410584.0"/> 
+    <display value="Lead wire loss"/> 
+    <definition value="Loss of unspecified lead wire or electrode connection"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.1"/> 
+    <display value="Lead signal loss"/> 
+    <definition value="Loss of unspecified lead signal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.2"/> 
+    <display value="Lead wire loss first-lead"/> 
+    <definition value="Loss of 1st lead wire or electrode connection"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.3"/> 
+    <display value="Lead signal loss first-lead"/> 
+    <definition value="Loss of 1st lead signal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.4"/> 
+    <display value="Lead wire loss second-lead"/> 
+    <definition value="Loss of 2nd lead wire or electrode connection"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.5"/> 
+    <display value="Lead signal loss second-lead"/> 
+    <definition value="Loss of 2nd lead signal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.6"/> 
+    <display value="Lead wire loss third-lead"/> 
+    <definition value="Loss of 3rd lead wire or electrode connection"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410584.7"/> 
+    <display value="Lead signal loss third-lead"/> 
+    <definition value="Loss of 3rd lead signal"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_GLU_METER_DEV_STATUS attribute -->
+  <concept> 
+    <code value="8417752.0"/> 
+    <display value="Battery low"/> 
+    <definition value="The device battery is low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.1"/> 
+    <display value="Sensor malfunction"/> 
+    <definition value="The sensor has malfunctioned"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.2"/> 
+    <display value="Not enough blood in sample"/> 
+    <definition value="The sensor's sample size is insufficient"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.3"/> 
+    <display value="Sensor strip insertion"/> 
+    <definition value="The test strip was inserted incorrectly"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.4"/> 
+    <display value="Sensor strip type incorrect"/> 
+    <definition value="The test strip type is incompatable with the sensor"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.5"/> 
+    <display value="Sensor result too high"/> 
+    <definition value="The value reported by the sensor is too high"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.6"/> 
+    <display value="Sensor result too low"/> 
+    <definition value="The value reported by the sensor is too low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.7"/> 
+    <display value="Sensor temp too high"/> 
+    <definition value="The temperature is too high"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.8"/> 
+    <display value="Sensor temp too low"/> 
+    <definition value="The temperature is too low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.9"/> 
+    <display value="Sensor read interrupt"/> 
+    <definition value="The read process was interrupted"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.10"/> 
+    <display value="General Device Fault"/> 
+    <definition value="General Device Fault"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417752.11"/> 
+    <display value="Sensor temp out of range"/> 
+    <definition value="The temperature is out of range"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_INR_METER_DEV_STATUS attribute -->
+  <concept> 
+    <code value="8417909.0"/> 
+    <display value="INR device battery low"/> 
+    <definition value="The INR device battery is low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.1"/> 
+    <display value="Sensor malfunction"/> 
+    <definition value="The INR device sensor has malfunctioned"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.2"/> 
+    <display value="Not enough blood in sample"/> 
+    <definition value="The sample size was insufficient"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.3"/> 
+    <display value="INR sensor strip insertion"/> 
+    <definition value="The test script was inserted incorrectly"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.4"/> 
+    <display value="INR sensor strip type incorrect"/> 
+    <definition value="The test strip used is not compatible with the INR"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.5"/> 
+    <display value="INR sensor result too high"/> 
+    <definition value="The test result is too high"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.6"/> 
+    <display value="INR sensor result too low"/> 
+    <definition value="The test result is too low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.7"/> 
+    <display value="INR sensor temp too high"/> 
+    <definition value="The temperature is too high"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.8"/> 
+    <display value="INR sensor temp too low"/> 
+    <definition value="The temperature is too low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.9"/> 
+    <display value="INR sensor read interrupt"/> 
+    <definition value="The read process was  interrupted"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.10"/> 
+    <display value="INR device general fault"/> 
+    <definition value="General device fault"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8417909.11"/> 
+    <display value="INR sensor calibration due"/> 
+    <definition value="The INR sensor calibration is due"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_PHD_DM_DEV_STAT attribute -->
+  <concept> 
+    <code value="8408608.0"/> 
+    <display value="Undetermined device status"/> 
+    <definition value="Undetermined device status event"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.1"/> 
+    <display value="Device status reset"/> 
+    <definition value="Device reset"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.5"/> 
+    <display value="Device status error"/> 
+    <definition value="Device error"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.6"/> 
+    <display value="Device status error mechanical"/> 
+    <definition value="Mechanical error"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.7"/> 
+    <display value="Device status error electronic"/> 
+    <definition value="Electronic error"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.8"/> 
+    <display value="Device status error software/> 
+    <definition value="Software error"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.9"/> 
+    <display value="Device status error battery"/> 
+    <definition value="Battery error"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.15"/> 
+    <display value="Device status service"/> 
+    <definition value="Undetermined device status event"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.16"/> 
+    <display value="Device status service time-sync required"/> 
+    <definition value="Time sync service required"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.17"/> 
+    <display value="Device status service calibration required"/> 
+    <definition value="Calibration required"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.18"/> 
+    <display value="Device status service replentishment required"/> 
+    <definition value="Replentishment required"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.25"/> 
+    <display value="Device status battery low"/> 
+    <definition value="Battery power is too low"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.26"/> 
+    <display value="Device status battery depleted"/> 
+    <definition value="Battery is depleted"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.27"/> 
+    <display value="Device status battery replaced"/> 
+    <definition value="Battery has been replaced"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.28"/> 
+    <display value="Device status battery interrupted"/> 
+    <definition value="Battery was interrupted"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+<!-- The following code concepts are derived from the MDC_CGM_DEV_STAT attribute -->
+  <concept> 
+    <code value="8408608.0"/> 
+    <display value="Sensor session stopped"/> 
+    <definition value="Session stopped"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.2"/> 
+    <display value="Sensor type incorrect"/> 
+    <definition value="Sensor type incorrect for device"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.3"/> 
+    <display value="Sensor malfunction"/> 
+    <definition value="The sensor malfunctioned"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.4"/> 
+    <display value="Device specific alert"/> 
+    <definition value="Device specific alert"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.7"/> 
+    <display value="Sensor calibration not allowed"/> 
+    <definition value="Calibrating the sensor is not allowed"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.8"/> 
+    <display value="Sensor calibration recommended"/> 
+    <definition value="Calibrating the sensor is recommended"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.9"/> 
+    <display value="Sensor calibration required"/> 
+    <definition value="Calibrating the sensor is required"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.10"/> 
+    <display value="Sensor temp too high"/> 
+    <definition value="Temperature is too high for a valid result"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.11"/> 
+    <display value="Sensor temp too low"/> 
+    <definition value="Temperature is too low for a valid result"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.12"/> 
+    <display value="Sensor result below patient level"/> 
+    <definition value="Sensor result below the Patient Low level"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.13"/> 
+    <display value="Sensor result above patient level"/> 
+    <definition value="Sensor result above the Patient High level"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.14"/> 
+    <display value="Sensor low hypo"/> 
+    <definition value="Sensor result below the Hypo level"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.15"/> 
+    <display value="Sensor result hyper"/> 
+    <definition value="Sensor result above the Hyper level"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.16"/> 
+    <display value="Sensor rate decrease exceeded"/> 
+    <definition value="The sensor rate of decrease has been exceeded"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.17"/> 
+    <display value="Sensor rate increase exceeded"/> 
+    <definition value="The sensor rate of increase has been exceeded"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.0"/> 
+    <display value="Sensor session stopped"/> 
+    <definition value="Session stopped"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.18"/> 
+    <display value="Sensor result too low"/> 
+    <definition value="Sensor result is lower than the device can process"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.19"/> 
+    <display value="Sensor result too high"/> 
+    <definition value="Sensor result is higher than the device can process"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8408608.20"/> 
+    <display value="Sensor com out of range"/> 
+    <definition value="The sensor communication is out of range"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="attribute" />
+    </property>
+  </concept>
 </CodeSystem> 
+

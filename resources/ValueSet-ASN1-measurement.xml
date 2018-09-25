@@ -7,7 +7,7 @@
   <url value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/>
   <version value="0.2.0"/>
   <name value="ASN1measurement"/>
-  <title value="ANS1ToHL7 codes defined for non-measurement attributes"/>
+  <title value="ANS1ToHL7 codes defined for measurement attributes"/>
   <status value="draft"/>
   <experimental value="false"/>
   <date value="2018-09-17"/>
