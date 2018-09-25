@@ -98,6 +98,13 @@
       <name value="ASN1ToHL7"/>
       <exampleBoolean value="false"/>
     </resource>
+	<resource>
+      <reference>
+        <reference value="CodeSystem/ContinuaHFS"/>
+      </reference>
+      <name value="ContinuaHFS"/>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <reference>
         <reference value="ValueSet/11073MDCnotObject"/>

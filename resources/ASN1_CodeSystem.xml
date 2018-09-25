@@ -210,7 +210,7 @@
     <concept> 
     <code value="68219.7"/> 
     <display value="Base Offset Time"/> 
-    <definition value="Indicates that base offset time is supported"/> 
+    <definition value="Indicates that the real-time clock supports base offset time"/> 
     <property> 
       <code value="type" /> 
       <valueString value="state" />
@@ -331,7 +331,7 @@
     <definition value="Indicates both the high and the low limit alerts are disabled"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -344,7 +344,7 @@
     <definition value="Indicates the low limit alert is disabled"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -357,7 +357,7 @@
     <definition value="Indicates the high limit alert is disabled"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -371,7 +371,7 @@
     <definition value="Indicates the device is not connected with the sensor"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -384,7 +384,7 @@
     <definition value="Indicates the sensor has malfunctioned"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -397,7 +397,7 @@
     <definition value="Indicates the sensor is not correctly placed on the user"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -410,7 +410,7 @@
     <definition value="Indicates the sensor connected to the device is unsupported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -423,7 +423,7 @@
     <definition value="Indicates the sensor is not connected to the user"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -436,7 +436,7 @@
     <definition value="Indicates the sensor is experiencing interference"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -449,7 +449,7 @@
     <definition value="Indicates the sensor is searching for a signal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -462,7 +462,7 @@
     <definition value="Indicates a questionable pulse has been detected"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -475,7 +475,7 @@
     <definition value="Indicates a non pulsatile signal has been detected"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -488,7 +488,7 @@
     <definition value="Indicates a signal has been discovered, but it is erratic"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -501,7 +501,7 @@
     <definition value="Indicates the signal is experiencing low perfusion"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -514,7 +514,7 @@
     <definition value="Indicates the signal has been discovered, but it is poor"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -527,7 +527,7 @@
     <definition value="Indicates the signal has been discovered, but it is inadequate"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -540,7 +540,7 @@
     <definition value="Indicates the signal has been discovered, but is experiencing processing irregularity"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -553,7 +553,7 @@
     <definition value="Indicates a device malfunction has occurred"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -566,7 +566,7 @@
     <definition value="Indicates an extended display update is in progress on device"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -580,7 +580,7 @@
     <definition value="Indicates no abnormalities have been detected by the sensor"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -593,7 +593,7 @@
     <definition value="Indicates the pulse profusion or quality is marginal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -606,7 +606,7 @@
     <definition value="Indicates the pulse profusion or quality is minimal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -619,7 +619,7 @@
     <definition value="Indicates the pulse profusion or quality is unacceptable"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -633,7 +633,7 @@
     <definition value="Loss of unspecified lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -646,7 +646,7 @@
     <definition value="Loss of unspecified lead signal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -659,7 +659,7 @@
     <definition value="Loss of 1st lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -672,7 +672,7 @@
     <definition value="Loss of 1st lead signal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -685,7 +685,7 @@
     <definition value="Loss of 2nd lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -698,7 +698,7 @@
     <definition value="Loss of 2nd lead signal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -711,7 +711,7 @@
     <definition value="Loss of 3rd lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -724,7 +724,7 @@
     <definition value="Loss of 3rd lead signal"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -738,7 +738,7 @@
     <definition value="The device battery is low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -751,7 +751,7 @@
     <definition value="The sensor has malfunctioned"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -764,7 +764,7 @@
     <definition value="The sensor's sample size is insufficient"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -777,7 +777,7 @@
     <definition value="The test strip was inserted incorrectly"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -790,7 +790,7 @@
     <definition value="The test strip type is incompatable with the sensor"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -803,7 +803,7 @@
     <definition value="The value reported by the sensor is too high"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -816,7 +816,7 @@
     <definition value="The value reported by the sensor is too low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -829,7 +829,7 @@
     <definition value="The temperature is too high"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -842,7 +842,7 @@
     <definition value="The temperature is too low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -855,7 +855,7 @@
     <definition value="The read process was interrupted"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -868,7 +868,7 @@
     <definition value="General Device Fault"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -881,7 +881,7 @@
     <definition value="The temperature is out of range"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -895,7 +895,7 @@
     <definition value="The INR device battery is low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -908,7 +908,7 @@
     <definition value="The INR device sensor has malfunctioned"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -921,7 +921,7 @@
     <definition value="The sample size was insufficient"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -934,7 +934,7 @@
     <definition value="The test script was inserted incorrectly"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -947,7 +947,7 @@
     <definition value="The test strip used is not compatible with the INR"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -960,7 +960,7 @@
     <definition value="The test result is too high"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -973,7 +973,7 @@
     <definition value="The test result is too low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -986,7 +986,7 @@
     <definition value="The temperature is too high"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -999,7 +999,7 @@
     <definition value="The temperature is too low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1012,7 +1012,7 @@
     <definition value="The read process was  interrupted"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1025,7 +1025,7 @@
     <definition value="General device fault"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1038,7 +1038,7 @@
     <definition value="The INR sensor calibration is due"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1052,7 +1052,7 @@
     <definition value="Undetermined device status event"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1065,7 +1065,7 @@
     <definition value="Device reset"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1078,7 +1078,7 @@
     <definition value="Device error"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1091,7 +1091,7 @@
     <definition value="Mechanical error"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1104,7 +1104,7 @@
     <definition value="Electronic error"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1113,11 +1113,11 @@
   </concept>
   <concept> 
     <code value="8408608.8"/> 
-    <display value="Device status error software/> 
+    <display value="Device status error software"/> 
     <definition value="Software error"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1130,7 +1130,7 @@
     <definition value="Battery error"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1143,7 +1143,7 @@
     <definition value="Undetermined device status event"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1156,7 +1156,7 @@
     <definition value="Time sync service required"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1169,7 +1169,7 @@
     <definition value="Calibration required"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1182,7 +1182,7 @@
     <definition value="Replentishment required"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1195,7 +1195,7 @@
     <definition value="Battery power is too low"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1208,7 +1208,7 @@
     <definition value="Battery is depleted"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1221,7 +1221,7 @@
     <definition value="Battery has been replaced"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1234,7 +1234,7 @@
     <definition value="Battery was interrupted"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1248,7 +1248,7 @@
     <definition value="Session stopped"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1261,7 +1261,7 @@
     <definition value="Sensor type incorrect for device"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1274,7 +1274,7 @@
     <definition value="The sensor malfunctioned"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1287,7 +1287,7 @@
     <definition value="Device specific alert"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1300,7 +1300,7 @@
     <definition value="Calibrating the sensor is not allowed"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1313,7 +1313,7 @@
     <definition value="Calibrating the sensor is recommended"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1326,7 +1326,7 @@
     <definition value="Calibrating the sensor is required"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1339,7 +1339,7 @@
     <definition value="Temperature is too high for a valid result"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1352,7 +1352,7 @@
     <definition value="Temperature is too low for a valid result"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1365,7 +1365,7 @@
     <definition value="Sensor result below the Patient Low level"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1378,7 +1378,7 @@
     <definition value="Sensor result above the Patient High level"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1391,7 +1391,7 @@
     <definition value="Sensor result below the Hypo level"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1404,7 +1404,7 @@
     <definition value="Sensor result above the Hyper level"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1417,7 +1417,7 @@
     <definition value="The sensor rate of decrease has been exceeded"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1430,7 +1430,7 @@
     <definition value="The sensor rate of increase has been exceeded"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1443,7 +1443,7 @@
     <definition value="Session stopped"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1456,7 +1456,7 @@
     <definition value="Sensor result is lower than the device can process"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1469,7 +1469,7 @@
     <definition value="Sensor result is higher than the device can process"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -1482,7 +1482,7 @@
     <definition value="The sensor communication is out of range"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
