@@ -7,7 +7,9 @@
   </meta> 
   <text>
   </text>
-
+  
+  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
+  
   <version value="20160128"/> 
 
   <name value="ASN1ToHL7"/> 
@@ -122,7 +124,7 @@
     <definition value="Indicates real time clock is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -135,7 +137,7 @@
     <definition value="Indicates support for the PHG to set the time"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -148,7 +150,7 @@
     <definition value="Indicates Relative Time is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -161,7 +163,7 @@
     <definition value="Indicates Hi-Res Relative Time is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -174,7 +176,7 @@
     <definition value="Indicates that syncing the absolute time is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -187,7 +189,7 @@
     <definition value="Indicates that syncing the relative time is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -200,7 +202,7 @@
     <definition value="Indicates that syncing hi-res relative time is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -213,7 +215,7 @@
     <definition value="Indicates that the real-time clock supports base offset time"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -226,7 +228,7 @@
     <definition value="Indicates the absolute time has been synced"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -239,7 +241,7 @@
     <definition value="Indicates the relative time has been synced"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -252,7 +254,7 @@
     <definition value="Indicates the hi-res time has been synced"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -265,7 +267,7 @@
     <definition value="PHG Requested to set the time"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -278,7 +280,7 @@
     <definition value="Indicates that syncing base-offset time is supported"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -291,7 +293,7 @@
     <definition value="Indicates that base-offset time has been synced"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -304,7 +306,7 @@
     <definition value="Indicates that base-offset time is aligned with UTC time standard"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -317,7 +319,7 @@
     <definition value="Indicates support for daylight savings time rules"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="state" />
+      <valueString value="event" />
     </property>
     <property> 
       <code value="source" /> 
@@ -331,7 +333,7 @@
     <definition value="Indicates both the high and the low limit alerts are disabled"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="event" />
+      <valueString value="state" />
     </property>
     <property> 
       <code value="source" /> 
@@ -344,7 +346,7 @@
     <definition value="Indicates the low limit alert is disabled"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="event" />
+      <valueString value="state" />
     </property>
     <property> 
       <code value="source" /> 
@@ -357,7 +359,7 @@
     <definition value="Indicates the high limit alert is disabled"/> 
     <property> 
       <code value="type" /> 
-      <valueString value="event" />
+      <valueString value="state" />
     </property>
     <property> 
       <code value="source" /> 

@@ -28,22 +28,22 @@
   <concept> 
     <code value="0"/> 
     <display value="observation-upload-soap"/> 
-    <definition value="Indicates the PHG has been Continua certfied for the PCD-01 upload using Web services"/> 
+    <definition value="Indicates the PHG has been Continua certified for the PCD-01 upload using Web services"/> 
   </concept> 
   <concept> 
     <code value="1"/> 
     <display value="consent-enabled-soap"/> 
-    <definition value="Indicates the PHG has been Continua certfied for the PCD-01 upload using Web services with patient consent"/> 
+    <definition value="Indicates the PHG has been Continua certified for the PCD-01 upload using Web services with patient consent"/> 
   </concept>
   <concept> 
     <code value="2"/> 
     <display value="capabilities"/> 
-    <definition value="Indicates the PHG has been Continua certfied for Capabilities Exchange"/> 
+    <definition value="Indicates the PHG has been Continua certified for Capabilities Exchange"/> 
   </concept>
   <concept> 
     <code value="3"/> 
     <display value="observation-upload-hdata"/> 
-    <definition value="Indicates the PHG has been Continua certfied for PCD-01 upload using HDATA"/> 
+    <definition value="Indicates the PHG has been Continua certified for PCD-01 upload using HDATA"/> 
   </concept>
   <concept> 
     <code value="4"/> 

@@ -64,9 +64,13 @@
       "source": "PhdPatientStructuredefinition.xml",
       "base": "PhdPatientStructuredefinition.html"
     },
-    "CodeSystem/ASN1ToHL7": {
+      "CodeSystem/ASN1ToHL7": {
       "source": "ASN1_CodeSystem.xml",
       "base": "ASN1_CodeSystem.html"
+    },
+	  "CodeSystem/ContinuaHFS": {
+      "source": "ContinuaHFS_CodeSystem.xml",
+      "base": "ContinuaHFS_CodeSystem.html"
     },
     "ValueSet/11073MDCnotObject": {
       "source": "ValueSet-11073MDC-notObject.xml",
