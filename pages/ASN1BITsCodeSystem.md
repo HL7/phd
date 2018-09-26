@@ -4,7 +4,7 @@ layout: default
 active: ASN1BITsCodeSystem
 ---
 
-11073 PHDs report some measurements as a 16- or 32-bit integer where each bit in the integer may mean something. There is no HL7 data type that treats this kind of measurement. Continua has created a value set where each of the possible bit settings in a given measurement is mapped to a code. The code can be reported in a CodeableConcept data type.
+11073 PHDs report some measurements as a 16- or 32-bit integer where each bit in the integer may mean something. There is no HL7 data type that treats this kind of measurement. Continua has created a code system where each of the possible bit settings in a given measurement is mapped to a code. The code can be reported in a CodeableConcept data type.
 
 The uploader can generate the code from the data received from the PHD. No external information is necessary unless the uploader wants to populate the 'display' element of the CodeableConcept data type. It is recommended that the uploader populate the display element with at least the 11073 specialization ASN1 name for the bit setting. It is not required because it is desired to have an uploader that can still work with future specializations and in that case, it is not possible for the uploader to know what the 11073 specialization ASN1 name is as it is not sent over the wire; it is only available from the specialization documents.
 
@@ -102,5 +102,7 @@ The mapped codes reported in the FHIR Observation.component.coding.code elements
 |150604.14|	device-equipment-malfunction|event|
 |150604.15|	device-extended-update|event|
 
+ - [Next: The Observation Identifier]({{ output }}TheObservationIdentifier.html)
+ - [Previous: Obtaining the Unit code]({{ output }}ObtainUnitCode.html)
 
 

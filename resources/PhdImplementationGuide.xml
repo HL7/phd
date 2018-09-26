@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="PHD"/>
-  <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PHD"/>
+  <url value="http://hl7.org/fhir/uv/phd"/>
   <version value="0.2.0"/>
   <!-- <name value="PHDImplementationGuide"/> -->
-  <name value="Personal Health Device Implementation Guide"/>
-  <title value="Personal Health Device Implementation Guide"/>
+  <name value="Continua Personal Health Device Implementation Guide"/>
+  <title value="Continua Personal Health Device Implementation Guide"/>
   <status value="draft"/>
   <date value="2018-08-18"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>

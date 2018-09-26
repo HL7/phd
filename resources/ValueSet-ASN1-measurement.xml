@@ -12,7 +12,7 @@
   <experimental value="false"/>
   <date value="2018-09-17"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
-  <description value="ValueSet for the ANS1ToHL7 codes that are not derived from enumeration measurements."/>
+  <description value="ValueSet for the ANS1ToHL7 codes that are derived from enumeration measurements."/>
   <compose>
     <include>
 	    <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>

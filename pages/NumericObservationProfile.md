@@ -1,5 +1,5 @@
 ---
-title: Phd Numeric Observation Profile
+title: PHD Numeric Observation Profile
 layout: default
 active: NumricObservationProfile
 ---
@@ -12,10 +12,9 @@ The Numeric Observation Profile is used when the PHD metric measurement contains
 |Simple-Nu-Observed-Value|32-bit Mder FLOAT|24-bit mantissa|
 |Nu-Observed-Value|32-bit Mder FLOAT|Complex attribute. Also contains<br/> metric-id<br/> measurement status<br/> unit-code|
 
-These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs]({{ output }}MderFLOATsandSFLOATs-2.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
+These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs]({{ output }}MderFLOATsandSFLOATs.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
 
 The structure definition for this profile is as follows:
-{{tree:phd/NumericObservation}}
 
 ### Mapping Numerics to FHIR
 The following table shows how the numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC unit code needs to be mapped to UCUM.
@@ -24,13 +23,13 @@ The following table shows how the numeric attributes are mapped to FHIR. Since t
 |-
 |Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
 |Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
-|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) <br/>handle measurement status see [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html) |
+|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html) <br/>handle measurement status see [PHD Base Observation Profile]({{ output }}BaseObservationProfile.html) |
 
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdNumericObservation indicating this resource is generated following the PHD Implementation Guide.
 
 #### Conditional Create Identifier Generation
-For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [Phd Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
+For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [PHD Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
@@ -46,7 +45,7 @@ The final identifier is made by concatenating the entries above as follows:
  - "device-patient-type-value-units-reported PHD timestamp-supplemental types"
 
 ### Additional Numerical Measurement Information
-11073 20601 numeric metric measurements have some additional optional attributes that are used only for numerics. When they occur, these additional attributes provide further information about the measurement. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement. The accuracy is a measure of the deviation of the actual measurement from the reported measurement. Consequently, 'accuracy' is not a concept that makes any sense in the context of a measurement which is one or more of a finite set of enumerated codes such as a glucose-monitor meal assoication (breakfast, snack, fasting, etc.), and thus the attribute is not used in Enumration metrics.
+11073 20601 numeric metric measurements have some additional optional attributes that are used only for numerics. When they occur, these additional attributes provide further information about the measurement. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement. The accuracy is a measure of the deviation of the actual measurement from the reported measurement. Consequently, 'accuracy' is not a concept that makes any sense in the context of a measurement which is one or more of a finite set of enumerated codes such as a glucose-monitor meal association (breakfast, snack, fasting, etc.), and thus the attribute is not used in Enumeration metrics.
 
 As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. There are five metric attributes that give extra information about numeric-only measurements.
 
@@ -64,7 +63,7 @@ The Accuracy attribute gives the maximum deviation as an absolute value of the r
 |valueQuantity.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
 
 #### Alert Operational State
-The Alert Operational State is currently only used in the Pluse Oximeter specialization. This attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When SET, the alerts are off. This is a state-type measurement and when this attribute is present, both the set and cleared states are reported. Three bits are defined thus there will be three component entries for each of the bits.
+The Alert Operational State is currently only used in the Pulse Oximeter specialization. This attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When SET, the alerts are off. This is a state-type measurement and when this attribute is present, both the set and cleared states are reported. Three bits are defined thus there will be three component entries for each of the bits.
 
 |Observation.component element|entry|Additional Information|
 |-
@@ -85,7 +84,7 @@ This attributes provides a human readable string describing the lower and upper 
 |valueString|the strings|These are the lower and upper limit strings|
 
 #### Current Limits
-The Current-Limits attribute is currently only used in the Pluse Oximeter specialization. It gives the lower and upper threshold limits of whatever measurement is being monitored.
+The Current-Limits attribute is currently only used in the Pulse Oximeter specialization. It gives the lower and upper threshold limits of whatever measurement is being monitored.
 
 |Observation.component element|entry|Additional Information|
 |-
@@ -126,10 +125,10 @@ The Threshold-Notification-Text-String attribute is currently used only in the C
 |code.coding.code|68232|This is the MDC code for the Alert-Operational-Text_string attribute|
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
 |code.coding.display|optional but|Should contain the reference id MDC_ATTR_THRES_NOTIF_TEXT_STRING along with any other additional text|
-|valueString|the string|This is a texual description of the thresholds for the given measurement|
+|valueString|the string|This is a textual description of the thresholds for the given measurement|
 
-### Consumer of the Phd Numeric Observation Profile
-The consumer of this profile does not need to concern itself with the mapping complexities or the phd-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
+### Consumer of the PHD Numeric Observation Profile
+The consumer of this profile does not need to concern itself with the mapping complexities or the PHD-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
 
 |Measurement item|element|Additional Information|
 |-

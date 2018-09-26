@@ -26,10 +26,9 @@ A transport address is not required. It is still strongly recommended that the t
 
 Similar to the PHD case, when CodeableConcept data types are used it is recommended to put the MDC reference identifier as part of the display element when the system element indicates the MDC coding system "urn.iso.std.iso:11073:10101".
 
-The structure definition for the Phg Device Profile is shown below:
-{{tree:phd/PhgDeviceComponent}}
+The structure definition for the PHG Device Profile is shown below:
 
-A JSON example is given in [Phg Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
+A JSON example is given in [PHG Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
 
 ### **Meta Data Profile**
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhgDevice indicating this resource is generated following this PHD Implementation Guide.
@@ -78,7 +77,7 @@ The time synchronization is mapped as follows:
  - Device.property.valueCode.coding.system="urn.iso.std.iso:11073:10101"
  - Device.property.valueCode.coding.display="*the ref id*"  *(optional)*
 
- The 32-bit code for the time synchonization method is given by one of the following values:
+ The 32-bit code for the time synchronization method is given by one of the following values:
 
 |32-bit code|Reference identifier|	description	|partition:term code|
 |-
@@ -135,7 +134,7 @@ The following table gives a list of the more common specialization codes:
 |Glucose Monitor|8::4113|MDC_DEV_SPEC_PROFILE_GLUCOSE|
 |Coagulation meter |8::4114|MDC_DEV_SPEC_PROFILE_COAG|
 |Insulin Pump|8::4115|MDC_DEV_SPEC_PROFILE_INSULIN_PUMP|
-|Body Composition Analyizer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
+|Body Composition Analyzer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
 |Peak Flow meter|8::4117|MDC_DEV_SPEC_PROFILE_PEAK_FLOW|
 |Sleep Apnea Breathing Equipment|8::4120| MDC_DEV_SPEC_PROFILE_SABTE|
 |Continuous Glucose Monitor|8::4121|MDC_DEV_SPEC_PROFILE_CGM|

@@ -16,12 +16,15 @@ Attributes are also used for these keys. Once the measurement has been reconstru
 |Metric-Spec-Small|Gives info about the delivery and nature of the metric events|
 |Attribute-Value-Map|Provides a means to compact attribute values|
 |Metric-Structure-Small|Gives info about the number of entries in compound attributes|
-|Capability-Mask-Basic|Inicates which of the 16-bit ASN1 BITs are supported by PHD|
-|Capability-Mask-Simple|Inicates which of the 32-bit ASN1 BITs are supported by PHD|
-|State-Flag-Basic|Inicates whether the 16-bit ASN1 BITs are a 'state' or an 'event'|
-|State-Flag-Simple|Inicates whether the 32-bit ASN1 BITs are a 'state' or an 'event'|
+|Capability-Mask-Basic|Indicates which of the 16-bit ASN1 BITs are supported by PHD|
+|Capability-Mask-Simple|Indicates which of the 32-bit ASN1 BITs are supported by PHD|
+|State-Flag-Basic|Indicates whether the 16-bit ASN1 BITs are a 'state' or an 'event'|
+|State-Flag-Simple|Indicates whether the 32-bit ASN1 BITs are a 'state' or an 'event'|
 
 The last four attributes are essential for the decoder to properly map ASN1 BITS measurements to FHIR using the ASN1 coding system but the attributes themselves are not of interest once mapped. For example, the Capability-Mask-* attribute tells which bits are supported by the PHD. The encoder needs to know which bits these are but once known, the attribute value itself is no longer of interest. The State-Flag-* indicates to the decoder whether the bit is an event or a state. If an event, only the set case (event occurred) needs to be recorded, for example, 'sensor malfunctioned' in the sensor status measurement of several specializations. If a 'state' both the set or cleared case needs to be reported, for example 'patient in room' or 'patient not in room' in the independent living case.
+
+ - [Next: Mder FLOATs and SFLOATs]({{ output }}MderFLOATsandSFLOATs.html)
+ - [Previous: Definition of a Metric Measurement]({{ output }}DefinitionMetricMsmt.html)
 
 
 

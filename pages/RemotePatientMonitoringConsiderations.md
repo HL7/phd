@@ -28,6 +28,9 @@ The design of this mapping is influenced by the needs of remote patient monitori
 
 Based upon these assumptions it is advantageous to design an infrastructure which needs as little maintenance as possible and a mapping algorithm which handles as many types of PHD specializations as possible including specializations developed in the future.
 
+ - [Next: Generic and Extensible Model]({{ output }}GenericModel.html)
+ - [Previous: Technical Implementation Guidance]({{ output }}technical implementation guidance.html)
+
 
 
 

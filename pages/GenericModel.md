@@ -8,8 +8,11 @@ To address the list of issues and conditions relevant to remote patient monitori
 
 In addition, the only PHD information that is required to be mapped is information provided by protocol; the patient is not expected to provide PHD data. For example, the software revision will be mapped if provided in the production specification attribute transmitted by the PHD. If the data is not provided in the attribute but IS, nevertheless, printed on the device, the patient is not expected to enter it so it can be mapped.
 
-Generic measurement modelling and extensibility are not easy concepts to understand but they make implementation and maintenance easier for the uploading and reading applications.
+Generic measurement modeling and extensibility are not easy concepts to understand but they make implementation and maintenance easier for the uploading and reading applications.
 
 This Implementation Guide specifies how one maps the 11073 20601 objects and their concomitant attributes to FHIR resources and resource elements. Using this approach, all PHDs based upon the 11073 20601 model, regardless of what it measures, can be handled by the PHG without requiring the PHG to view the values of the attributes; only the type of the attribute is used. Thus, a numeric attribute is always mapped the same way regardless of whether it is a temperature value or pulse rate value. In addition, if the 11073 20601 model PHDs are based upon does not change, PHD device types made in the future can also be mapped by current PHG implementations.
 
 In the 11073 20601 Domain Information Model (DIM), 11073 10101 nomenclature codes are used to indicate what the items are. Thus, a reader of FHIR resources mapped from these DIM objects can decode any of these resources if it knows what the codes are. If a future device is deployed the reader will only need an update of its code dictionary to interpret the resource. A PHG uploader will not even need to update its dictionary to perform the mapping to FHIR as the codes are provided by the PHD through protocol. Furthermore, PHDs and PHGs following the 11073 20601 exchange protocol self-configure, so the PHG does not need to be pre-programmed with any information about the PHD specialization. These two features eliminate the need for remote updating and/or servicing of PHGs when new 11073 20601 PHDs are used.
+
+ - [Next: DIM to FHIR Mapping; Basics]({{ output }}DIMtoFHIRMapping.html)
+ - [Previous: Remote Patient Monitoring Considerations]({{ output }}RemotePatientMonitoringConsiderations.html)

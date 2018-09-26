@@ -1,10 +1,10 @@
 ---
-title: Phd Device Profile
+title: PHD Device Profile
 layout: default
 active: PhdDeviceProfile
 ---
 
-## <a name="phddevice"></a> Phd Device Profile
+## <a name="phddevice"></a> PHD Device Profile
 The properties and specifications of the PHD are reported in the Device resource. These are the static fields of the attributes reported in the PHD MDS object or Bluetooth Low Energy Device Information Service. Dynamic and observational attributes such as the battery level, remaining battery time, and power status are reported using the Observation resource.
 
 There are six MDS attributes that are reported. The Mds-Time-Info attribute has fields that are dynamic and static, and it is only the static entries which are required should the attribute be present. The following table summarizes these attributes and the Device elements to which they are mapped:
@@ -24,9 +24,8 @@ The transport address and friendly name are not provided by the MDS but come fro
 There are several CodeableConcept data types in this mapping where the Coding data type has a 'display' element. It is recommended to put the MDC reference identifier as part of the display element if known and when the system element indicates the MDC coding system "urn.iso.std.iso:11073:10101".
 
 The structure definition for the PHD Device Profile is shown below:
-{{tree:phd/ParentDeviceComponent}}
 
-A JSON example is given in [Phd Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdDeviceJSONExample)
+A JSON example is given in [PHD Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdDeviceJSONExample)
 
 
 ### Meta Data Profile
@@ -64,7 +63,7 @@ The Device.type shall be encoded as follows:
 The display element is optional but highly recommended.
 
 ### System Type Spec List
-The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. The specialization is reported as a 16-bit MDC term code with an assumed partition of INFRA (8) and the version is an interger. In most cases there is just one entry in the list.
+The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. The specialization is reported as a 16-bit MDC term code with an assumed partition of INFRA (8) and the version is an integer. In most cases there is just one entry in the list.
 
 For each entry in the System-Type-Spec-List a specializations entry is encoded as follows: 
 
@@ -89,7 +88,7 @@ The display element is optional but it is highly recommended that it be included
 |Glucose Monitor|8::4113|MDC_DEV_SPEC_PROFILE_GLUCOSE|
 |Coagulation meter |8::4114|MDC_DEV_SPEC_PROFILE_COAG|
 |Insulin Pump|8::4115|MDC_DEV_SPEC_PROFILE_INSULIN_PUMP|
-|Body Composition Analyizer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
+|Body Composition Analyzer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
 |Peak Flow meter|8::4117|MDC_DEV_SPEC_PROFILE_PEAK_FLOW|
 |Sleep Apnea Breathing Equipment|8::4120| MDC_DEV_SPEC_PROFILE_SABTE|
 |Continuous Glucose Monitor|8::4121|MDC_DEV_SPEC_PROFILE_CGM|
@@ -196,7 +195,7 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 |Reg-Cert-Data-List: certified PAN interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PANCode*N*"<br>property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-codes"<br><br>|
 |Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="placeholder/fhir/IEEE.ASN1"<br>property.type.coding.display="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "<br>property.valueCode.coding.display="Y=unregulated N=regulated"|
 
-Display elements are receommended but optional.
+Display elements are recommended but optional.
 
 ### Mds-Time-Info
 The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report time stamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a time stamp in any of its measurements, there is no need to report the static time information.

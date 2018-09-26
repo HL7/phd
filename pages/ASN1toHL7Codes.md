@@ -8,7 +8,7 @@ The ASN1 to HL7 code system is the result of mapping 11073 20601 BITs measuremen
 
 The following tables gives the codes, names, and event or state type for the currently specified BITs measurements and values. The HL7 ASN1 Code is the code entered into the FHIR code elements. The ASN1 name is standardized and is analogous to the reference identifier for the nomenclature codes. If the state type is an event, only the 'set' meaning is displayed.
 
-### MDS and other Non-Measurment Attributes
+### MDS and other Non-Measurement Attributes
 
 #### MDS Power Status Attribute
 Partition:Term Code: 1:2389     32-bit value 67925
@@ -34,7 +34,7 @@ Note that the *cleared* state is the *regulated* state. This choice is probably 
 |-
 |0|532354.0|regulation-status|Device is *unregulated*|Device is *regulated*|state|
 
-#### MDS Time capablities state from the Mds-Time-Info Attribute
+#### MDS Time capabilities state from the Mds-Time-Info Attribute
 Partition:Term Code 1:2683      32-bit code 68219
 Reference Identifier: MDC_TIME_CAP_STATE
 

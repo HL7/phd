@@ -1,10 +1,10 @@
 ---
-title: Phd Base Observation Profile
+title: PHD Base Observation Profile
 layout: default
 active: BaseObservationProfile
 ---
 
-The Phd Base Observation profile contains the elements that are common to all Phd Observation profiles describing measurements. These element are: 
+The PHD Base Observation profile contains the elements that are common to all PHD Observation profiles describing measurements. These element are: 
  - code: what the measurement is, 
  - subject: the patient this measurement refers to,
  - effective[ x ]: the time stamp and perhaps duration of the measurement,
@@ -30,7 +30,7 @@ The consumer of this Observation resource should ignore the identifier element u
 Generation of the PHD Profile Identifier is PHD Profile specific and is outlined in the respective profiles.
 
 ### Obtaining the Type of Measurement
-One obtains the 11073 20601 measurement type for the code element in the same manner for all metric measurments. See the section [Obtaining the Observation.code]({{ output }}ObtainingtheObservation-code.html) for the details of this mapping.
+One obtains the 11073 20601 measurement type for the code element in the same manner for all metric measurements. See the section [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html) for the details of this mapping.
 
 ### Subject
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'
@@ -55,7 +55,7 @@ The Observation.device element is a reference to the Device resource representin
 This element references Observation resources that are in some manner related to this Observation resource. In the PHD use case, this situation occurs whenever the *metric* measurement reported by the PHD has a time stamp and/or the measurement contains a source handle reference attribute.
 
 #### Time Stamp case
-When the metric measurement contains a time stamp, there will be a Coincident Time Stamp Observation defining the details of how the Observtion.effective[x] element is generated.
+When the metric measurement contains a time stamp, there will be a Coincident Time Stamp Observation defining the details of how the Observation.effective[x] element is generated.
 
 #### Source-Handle-Reference case
 A Source-Handle-Reference attribute points to a previously reported measurement that is important to this measurement. By previously it is meant that the measurement is reported prior to the current measurement but in the same connection. If multiple such measurements have been received, the correct one is that which is most recently received. As an example, the cardiovascular specialization defines a session measurement defining some type of exercise period, such as a run. All measurements taken during that run have a source handle reference attribute pointing to the session measurement. Since Source-Handle-Reference attributes use IEEE 11073 Object handle values and not Logical resource ids to point to measurements, the PHG will need to keep track of the Observation resources created during a connection to identify the correct Observation resource, and thus logical id, the Source-Handle-Reference attribute points to. The latest version of the IEEE 11073 20601 standard also supports a Source-Handle-Reference-List containing a list of handles so there can be more than one entry generated due to these attributes. The references are placed in a derivedFrom element.

@@ -1,19 +1,18 @@
 ---
-title: Phd Coincident Time Stamp Observation Profile
+title: PHD Coincident Time Stamp Observation Profile
 layout: default
 active: CoincidentTimeStampObservationProfile
 ---
 
 The Coincident Time Stamp Observation Profile is used to compare the timelines of the PHD with the timeline of the PHG. The primary elements are the Observation.effectiveDateTime which has the current time of the PHG and the Observation.valueDateTime or Observation.valueQuantity which has the current time of the PHD. The valueDateTime is used when the PHD uses either an Absolute or Base-Offset time clock and the valueQuantity is used when the PHD uses a relative time clock. The PHG reports its current time at the time it reads the current time of the PHD. For more details on the interpretation of the Coincident Time Stamp see the section [Coincident Time Stamp]({{ output }}CoincidentTimeStamp.html).
 
-A Phd Observtion will always reference a Coincident Time Stamp Observation if the measurement reported from the PHD contains a time stamp. It will not reference a Coincident Time Stamp Observation if the measurement contains no time stamp.
+A PHD Observation will always reference a Coincident Time Stamp Observation if the measurement reported from the PHD contains a time stamp. It will not reference a Coincident Time Stamp Observation if the measurement contains no time stamp.
 
-If a PHD has its time clock altered, a Date-Time-Adjustment attribute is sent to the PHG. The attribute can come in a live measurement, come by itself, or be part of the PM Segment information in perisitently stored data. When a Date-Time-Adjustment occurs by itself, a new Coincident Time Stamp Observation is generated and all data sent after the adjustment will reference the new Coincident Time Stamp Observation. If it comes as part of the data, the Date-Time-Adjustment tells how much one has to adjust the time stamp of the measurement to bring it to the current time line of the agent.
+If a PHD has its time clock altered, a Date-Time-Adjustment attribute is sent to the PHG. The attribute can come in a live measurement, come by itself, or be part of the PM Segment information in persistently stored data. When a Date-Time-Adjustment occurs by itself, a new Coincident Time Stamp Observation is generated and all data sent after the adjustment will reference the new Coincident Time Stamp Observation. If it comes as part of the data, the Date-Time-Adjustment tells how much one has to adjust the time stamp of the measurement to bring it to the current time line of the agent.
 
 The Coincident Time Stamp Observation is created every connection so data duplication is not an issue. Therefore the identifier element of this resource is not used in this profile.
 
-The Structure Definition for the Phd Coincident Time Stamp Observation Profile is as follows:
-{{tree:phd/CoincidentTimeStampObservation}}
+The Structure Definition for the PHD Coincident Time Stamp Observation Profile is as follows:
 
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdCoincidentTimeStampObservation indicating this resource is generated following the PHD Implementation Guide.
