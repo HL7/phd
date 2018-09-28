@@ -165,7 +165,7 @@ The Reg-Cert-Data-List attribute reports the list of Continua *certified* PAN (P
 The PANCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
 
 #### Reg-Cert-Data-List Regulation Status
-The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 Coding Description]({{ output }ASN1BITsCodeSystem.html). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
+The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 Coding Description]({{ output }}ASN1BITsCodeSystem.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
 
 The regulation status is mapped to an additional Device.property.valueCode element. The Device.property.type element, which identifies the property, is given by 532354.0 following the ASN1 BITs mapping where the code 532354 is the MDC code for the regulation status. Its reference identifier is MDC_REG_CERT_DATA_CONTINUA_REG_STATUS. The '0' appended to the regulation status code indicates Mder bit 0. The Device.property.valueCode will indicate either "Y" (set) or "N" (cleared).
 

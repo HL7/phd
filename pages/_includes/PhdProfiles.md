@@ -11,6 +11,7 @@
  - [Phd BITs Enumeration Observation Profile]({{ output }}BITsEnumerationObservationProfile.html)
  - [Phd Real Time Sample Array Observation Profile]({{ output }}RtsaObservationProfile.html)
  - [Phd String Enumeration Observation Profile]({{ output }}StringEnumerationObservationProfile.html)
+ - [Phd Coincident Time Stamp Observation Profile]({{ output }}CoincidentTimeStampObservationProfile.html)
  
  - [Phd Device Profile]({{ output }}PhdDeviceProfile.html)
  - [Phg Device Profile]({{ output }}PhgDeviceProfile.html)
