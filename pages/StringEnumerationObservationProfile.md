@@ -21,7 +21,7 @@ The human readable string from the Enum-Observed-Value-Simple-Str attribute is m
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdStringEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
 
-#### Conditional Create Identifier Generation
+### Conditional Create Identifier Generation
 For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [PHD Base Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|

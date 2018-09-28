@@ -23,12 +23,12 @@ The following table shows how the coded enumeration attributes are mapped to FHI
 |Attribute|FHIR coding|
 |-
 |Enum-Observed-Value-Simple-OID.*value*|Observation.valueCodeableConcept.coding.code|
-|Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainObservation.html) <br/>see Measurement Status in [PHD Base Observation Profile]({{ output }}BaseObservationProfile.html) |
+|Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html) <br/>see Measurement Status in [PHD Base Observation Profile]({{ output }}BaseObservationProfile.html) |
 
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdCodedEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
 
-#### Conditional Create Identifier Generation
+### Conditional Create Identifier Generation
 For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [PHD Base Observation Profile]({{ output }}BaseObservationProfile.html The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
@@ -37,7 +37,7 @@ For a general description of the PHD Profile Identifier see the "PHD Profile Ide
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
 |type|"Observation.code.coding.code"|See [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html)|
 |value|"Observation.valueCodeableConcept.coding.code" or <br/>"Observation.dataAbsentReason.coding.code"|The enumeration 32-bit MDC code of the measurement or <br/>the data absent reason code if there is no value|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp]({{ output }}GeneratingthePhdReportedTimeStampIdentifier.html)|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)|
 |supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:

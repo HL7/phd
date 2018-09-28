@@ -93,6 +93,9 @@ The time synchronization is mapped as follows:
 |532231	|MDC_TIME_SYNC_HL7_NCK	|Synchronized via Health Level 7 NCK (network clock)|8::7943|
 |532232	|MDC_TIME_SYNC_CDMA	CDMA |mobile telecommunications synchronization	|8::7944|
 |532233	|MDC_TIME_SYNC_GSM	|GSM - Network Identity and Time Zone (NITZ)	|8::7945|
+|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that is out of scope for IEEE 11073	|8::7948|
+|532237	|MDC_TIME_SYNC_OTHER_MOBILE	|A time sync method based on other mobile network technology that is not listed above	|8::7949|
+|532238	|MDC_TIME_SYNC_GPS	|A time sync method based on GPS information	|8::7950|
 
 ### **Remaining Optional Data**
 The treatment of fields that would be in mock System-Model, Production-Specification, Reg-Cert-Data-List, and Mds-Time-Info attributes is the same as in the Phd Device Profile. However, there is an extra set of information in the mock Reg-Cert-Data-List regarding the certified Health & Fitness Service (H&FS) interfaces. A PHG has both PAN and H&FS interfaces.
@@ -124,7 +127,7 @@ The following table gives a list of the more common specialization codes:
 
 |Specialization|MDC Code partition:term code|Reference Identifier|
 |-
-|Generic 20601|8:4169|MDC_DEV_SPEC_PROFILE_GENERIC|
+|Generic 20601|8::4169|MDC_DEV_SPEC_PROFILE_GENERIC|
 |Pulse Oximeter|8::4100|MDC_DEV_SPEC_PROFILE_PULS_OXIM|
 |Electro cardiograph|8::4102|MDC_DEV_SPEC_PROFILE_MIN_ECG|
 |Blood Pressure Cuff|8::4103|MDC_DEV_SPEC_PROFILE_BP|

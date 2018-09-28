@@ -34,7 +34,7 @@ The following table shows how the compound numeric attributes are mapped to FHIR
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdCompoundNumericObservation indicating this resource is generated following the PHD Implementation Guide.
 
-#### Conditional Create Identifier Generation
+### Conditional Create Identifier Generation
 For a general description of the PHD Profile Identifier see the "PHD Profile Identifier" section in [PHD Base Observation Profile]({{ output }}BaseObservationProfile.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
