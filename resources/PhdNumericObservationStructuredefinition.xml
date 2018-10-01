@@ -191,7 +191,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-      <comment value="Normally alternative coding systems are allowed but in this case the value is intimately tied to the code. The code represents the feature indicated by a bit settin in the attribute value. which is either cleared (0) or set (1). Thus the value for this entry is itself a binary 'Y' or 'N' code from http://hl7.org/fhir/v2/0136" />
+      <comment value="Normally alternative coding systems are allowed but in this case the value is intimately tied to the code. The code represents the feature indicated by a bit settin in the attribute value. which is either cleared (0) or set (1). Thus the value for this entry is itself a binary 'Y' or 'N' code from http://hl7.org/fhir/CodeSystem/v2-0136" />
       <min value="1" />
     </element>
 	<element id="Observation.component:alertOpStateComponent.code.coding:ASN1Type">
@@ -245,7 +245,7 @@
       <path value="Observation.component.valueCodeableConcept.coding.system" />
       <definition value="This coding system contains only two entries, 'Y' (bit set) and 'N' (bit cleared)" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/v2/0136" />
+      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-0136" />
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary.code">
       <path value="Observation.component.valueCodeableConcept.coding.code" />

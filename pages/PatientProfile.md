@@ -17,7 +17,7 @@ When a Patient resource for a known patient is to be created by the PHG the foll
 |-
 |patient identifier|Patient.identifier.value|Generally a code from the health care provider identifying the patient|
 |health care provider identifier|Patient.identifier.system|Generally a code identifying the health care provider|
-|code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/v2/0203 "
+|code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/CodeSystem/v2-0203 "
 |code system code|Patient.identifier.type.coding.code|The code system identifier code such as 'MR' (medical record) or 'L' (local)|
 
 <br>
@@ -26,7 +26,7 @@ When a Patient is unknown the following mapping is used:
 |patient information|FHIR mapping|Description|
 |-
 |patient identifier|Patient.identifier.value|'U'|
-|health care provider identifier|Patient.identifier.system|"http://hl7.org/fhir/v2/0004 "
-|code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/v2/0203 "
+|health care provider identifier|Patient.identifier.system|"http://hl7.org/fhir/CodeSystem/v2-0004 "
+|code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/CodeSystem/v2-0203 "
 |code system code|Patient.identifier.type.coding.code|'U'|
 

@@ -351,7 +351,7 @@
     <element id="Device.property:bitProperties.type.coding:ASN1Type.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/IEEE.ASN1" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
     </element>
     <element id="Device.property:bitProperties.type.coding:ASN1Type.code">
       <path value="Device.property.type.coding.code" />
@@ -394,7 +394,7 @@
     <element id="Device.property:bitProperties.valueCode.coding:V2Binary.system">
       <path value="Device.property.valueCode.coding.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/v2/0136" />
+      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-00136" />
     </element>
     <element id="Device.property:bitProperties.valueCode.coding:V2Binary.code">
       <path value="Device.property.valueCode.coding.code" />
@@ -658,13 +658,15 @@
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType">
       <path value="Device.property.valueCode.coding" />
       <sliceName value="ContinuaPANType" />
-	  <short value="Required Continua PANType code sytem entry" />
+	  <short value="Required Continua PANType code system entry" />
       <min value="1" />
       <max value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
       <path value="Device.property.valueCode.coding.system" />
+	  <definition value="The Code System for the certified PAN interface" />
       <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
       <path value="Device.property.valueCode.coding.code" />

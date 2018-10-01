@@ -68,10 +68,10 @@ The Alert Operational State is currently only used in the Pulse Oximeter special
 |Observation.component element|entry|Additional Information|
 |-
 |.code.coding.code|68746.n|68746 is the MDC code for the Alert Operational State. 'n' is 0, 1, or 2 depending upon which bit is being reported.|
-|code.coding.system|http://hl7.org/fhir/IEEE.ASN1 |Indicates the ASN-1 coding system|
+|code.coding.system|http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7 |Indicates the ASN-1 coding system|
 |code.coding.display|optional but|Should contain the ASN1 name 'lim-alert-off', 'lim-low-off', or 'lim-high-off' for bits 0-2, respectively, along with any other additional text|
 |valueCodeableConcept.coding.code|'Y' or 'N'|'Y' for bit set, 'N' for bit cleared|
-|valueCodeableConcept.coding.system|http://hl7.org/fhir/v2/0136 |Indicates the V2 binary coding system|
+|valueCodeableConcept.coding.system|http://hl7.org/fhir/CodeSystem/v2-0136 |Indicates the V2 binary coding system|
 
 #### Alert Operational Text String
 This attributes provides a human readable string describing the lower and upper threshold limits. It is currently used only in the Pulse Oximeter specialization.

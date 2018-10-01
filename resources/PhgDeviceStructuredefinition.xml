@@ -528,7 +528,7 @@
 	  Description                CODE    Reference Identifier                           Code System&#xD;&#xA;
 	  -----------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
 	  Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN&#xD;&#xA;
-	  Certified PAN interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS&#xD;&#xA;" />
+	  Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS&#xD;&#xA;" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.type.coding:MDCType.display">
@@ -560,17 +560,18 @@
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType">
       <path value="Device.property.valueCode.coding" />
       <sliceName value="ContinuaInterfacesType" />
-	  <short value="Required Continua interfaces code sytem entry" />
+	  <short value="One of the required Continua interfaces code system entries" />
       <min value="1" />
       <max value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
       <path value="Device.property.valueCode.coding.system" />
+	  <definition value="Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS code systems" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
       <path value="Device.property.valueCode.coding.code" />
-      <definition value="One of the Coninua interface certification codes" />
+      <definition value="One of the Continua interface certification codes" />
       <min value="1" />
     </element>
 	

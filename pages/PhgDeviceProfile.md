@@ -238,7 +238,7 @@ The PANCodes are mapped to a list of property.valueCode elements. The property.t
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="PANCode*N*"
- - property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-codes "
+ - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN "
 
 Note that the property.valueCode element is an array and one can have many of these in a single property element.
 
@@ -262,16 +262,16 @@ The Health and Fitness codes are mapped to a list of property.valueCode elements
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.coding.display="MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="H&FSCode*N*"
- - property.valueCode*N*.coding.system="placeholder/fhir/reg-cert-wan-codes "
+ - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS "
 
 #### **Regulation Status**
 The PHG regulation status is reported as follows:
 
  - property.type.coding.code="532354.0"
- - property.type.coding.system="placeholder/fhir/IEEE.ASN1"
+ - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
  - property.type.coding.display="regulation-status"
  - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "
+ - property.valueCode.coding.system="http://hl7.org/fhir/CodeSystem/v2-0136 "
  - property.valueCode.coding.display="Y=unregulated N=regulated"
 
 #### **Time Synchronization Accuracy**
