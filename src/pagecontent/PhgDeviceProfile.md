@@ -25,7 +25,7 @@ The structure definition for the PHG Device Profile is shown below:
 A JSON example is given in [PHG Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
 
 ### **Meta Data Profile**
-The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhgDevice indicating this resource is generated following this PHD Implementation Guide.
+The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice indicating this resource is generated following this PHD Implementation Guide.
 
 ### **System Identifier**
 All 11073 20601 PHGs are required to have a system identifier.  It is an EUI-64 consisting of 8 bytes. The system id is mapped to the Device.identifier.value element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. It shall be reported.

@@ -13,7 +13,7 @@ This measurement is just a human readable string and is not designed to support 
 The human readable string from the Enum-Observed-Value-Simple-Str attribute is mapped to the Observation.valueString element.
 
 ### Meta Data Profile
-The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdStringEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
+The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
 
 ### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.

@@ -20,7 +20,7 @@ The following table shows how the coded enumeration attributes are mapped to FHI
 |Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>see Measurement Status in [PHD Base Observation Profile](BaseObservationProfile.html) |
 
 ### Meta Data Profile
-The uploader shall populate the Device.meta.profile with http://pchalliance.org/phdfhir/StructureDefinition/PhdCodedEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
+The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
 
 ### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html The table below lists the items that make up the identifier.
