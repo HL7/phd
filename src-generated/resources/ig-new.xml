@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="PhdImplementationGuide"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD-IG\src-generated\resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD-IG\src\resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD-IG\src\vocabulary"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD-IG\src\examples"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD-IG\src\images"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD-IG\src-generated\pages"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
+  <version value="0.2.0"/>
+  <name value="Continua Personal Health Device Implementation Guide"/>
+  <title value="Continua Personal Health Device Implementation Guide"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
+  <description value="ImplementationGuide for Personal Health Devices (PHD), used in remote patient monitoring (e.g., weight scales, blood pressure cuffs, glucose monitors, pulse-oximeters, etc.)."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.fhir.uv.phd"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="3.6.0"/>
+  <fhirVersion value="3.6.0"/>
+  <definition>
+    <grouping id="hl7.fhir.uv.phd">
+      <name value="PHD Profiles"/>
+      <description value="Profiles for mapping 11073 20601 Personal Health Devices to FHIR resources"/>
+    </grouping>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdDevice"/>
+      </reference>
+      <name value="PhdDevice"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdBaseObservation"/>
+      </reference>
+      <name value="PhdBaseObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdNumericObservation"/>
+      </reference>
+      <name value="PhdNumericObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdCompoundNumericObservation"/>
+      </reference>
+      <name value="PhdCompoundNumericObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdCodedEnumerationObservation"/>
+      </reference>
+      <name value="PhdCodedEnumerationObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdBitsEnumerationObservation"/>
+      </reference>
+      <name value="PhdBitsEnumerationObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdRtsaObservation"/>
+      </reference>
+      <name value="PhdRtsaObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdStringEnumerationObservation"/>
+      </reference>
+      <name value="PhdStringEnumerationObservation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdCoincidentTimeStampObservation"/>
+      </reference>
+      <name value="PhdCoincidentTimeStampObservation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhgDevice"/>
+      </reference>
+      <name value="PhgDevice"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdPatient"/>
+      </reference>
+      <name value="PhdPatient"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ASN1ToHL7"/>
+      </reference>
+      <name value="ASN1ToHL7"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ContinuaHFS"/>
+      </reference>
+      <name value="ContinuaHFS"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/11073MDCobject"/>
+      </reference>
+      <name value="11073MDCobject"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/11073MDCnotObject"/>
+      </reference>
+      <name value="11073MDCnotObject"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ASN1attribute"/>
+      </reference>
+      <name value="ASN1attribute"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ASN1measurement"/>
+      </reference>
+      <name value="ASN1measurement"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/phdServerCapabilityStatement"/>
+      </reference>
+      <name value="phdServerCapabilityStatement"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/1540337338319"/>
+      </reference>
+      <name value="Example upload from Pulse Oximeter"/>
+      <description value="Example contains an unknown patient, the PHG and PHD Device resources, Battery Level, Oxygen Saturation, and Pulse Rate Numeric Observations, and a Coincident Time Stamp Observation. The example is packaged into a transaction Bundle."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="Continua PHD Implementation guide Home Page"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="overview.html"/>
+          <title value="Overview"/>
+          <generation value="markdown"/>
+          <page>
+            <nameUrl value="Purpose.html"/>
+            <title value="Purpose"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="Audience.html"/>
+            <title value="Audience"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="Scope.html"/>
+            <title value="Scope"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="UseCases.html"/>
+            <title value="Use Cases"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <nameUrl value="TechnicalImplementationGuidance.html"/>
+          <title value="Technical Implementation Guidance"/>
+          <generation value="markdown"/>
+          <page>
+            <nameUrl value="RemotePatientMonitoringConsiderations.html"/>
+            <title value="Remote Patient Monitoring Considerations"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="GenericModel.html"/>
+            <title value="Generic and Extensible Model"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="DIMtoFHIRMapping.html"/>
+            <title value="DIM to FHIR Mapping: Basics"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="GeneralNotestoConsumers.html"/>
+            <title value="General Notes to Consumers of FHIR Data"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="DIMtoFHIRMappingDetails.html"/>
+            <title value="DIM to FHIR Mapping: Details"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="DefinitionMetricMsmt.html"/>
+              <title value="Definition of a Metric Measurement"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="MetricAttributesofNoInterest.html"/>
+              <title value="Metric Protocol-Only Attributes"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="MderFLOATsandSFLOATs.html"/>
+              <title value="Mder FLOATs and SFLOATs"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="Nomenclaturecodes.html"/>
+              <title value="Nomenclature codes"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="CodeableConcepts.html"/>
+              <title value="Codeable Concepts"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="ObtainObservationCode.html"/>
+              <title value="Obtaining the Observation Code"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="ObtainUnitCode.html"/>
+              <title value="Obtaining the Unit Code"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="ASN1BITsCodeSystem.html"/>
+              <title value="ASN1 BITs Code System"/>
+              <generation value="markdown"/>
+              <page>
+                <nameUrl value="ASN1toHL7Codes.html"/>
+                <title value="ASN1 BITs Codes"/>
+                <generation value="markdown"/>
+              </page>
+            </page>
+            <page>
+              <nameUrl value="ObservationIdentifier.html"/>
+              <title value="The Observation Identifier"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
+              <title value="Generating the PHD Reported Time Stamp Identifier"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="CoincidentTimeStamp.html"/>
+            <title value="Coincident Time Stamp"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="Non1107320601Devices.html"/>
+            <title value="Non 11073 20601 Devices"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <nameUrl value="profiles.html"/>
+          <title value="Profiles"/>
+          <generation value="markdown"/>
+          <page>
+            <nameUrl value="ProfilesOverview.html"/>
+            <title value="Profiles Overview"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="BaseObservationProfile.html"/>
+            <title value="Base Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="NumericObservationProfile.html"/>
+            <title value="PHD Numeric Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="CompoundNumericObservationProfile.html"/>
+            <title value="PHD Compound Numeric Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="CodedEnumerationObservationProfile.html"/>
+            <title value="PHD Coded Enumeration Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="BITsEnumerationObservationProfile.html"/>
+            <title value="PHD BITs Coded Enumeration Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="RtsaObservationProfile.html"/>
+            <title value="PHD Real Time Sample Array Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="StringEnumerationObservationProfile.html"/>
+            <title value="PHD String Enumeration Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
+            <title value="PHD Coincident Time Stamp Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="PhdDeviceProfile.html"/>
+            <title value="PHD Device Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="PhgDeviceProfile.html"/>
+            <title value="PHG (Personal Health Gateway) Device Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="PhdPatientProfile.html"/>
+            <title value="PHD Patient Profile"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <nameUrl value="terminology.html"/>
+          <title value="Terminology"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="resources.html"/>
+          <title value="Resources"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="downloads.html"/>
+          <title value="Downloads"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="artifacts.html"/>
+        <title value="Artifact List"/>
+        <generation value="html"/>
+        <page>
+          <nameUrl value="PhdDevice.html"/>
+          <title value="PhdDevice"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdBaseObservation.html"/>
+          <title value="PhdBaseObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdNumericObservation.html"/>
+          <title value="PhdNumericObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdCompoundNumericObservation.html"/>
+          <title value="PhdCompoundNumericObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdCodedEnumerationObservation.html"/>
+          <title value="PhdCodedEnumerationObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdBitsEnumerationObservation.html"/>
+          <title value="PhdBitsEnumerationObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdRtsaObservation.html"/>
+          <title value="PhdRtsaObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdStringEnumerationObservation.html"/>
+          <title value="PhdStringEnumerationObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdCoincidentTimeStampObservation.html"/>
+          <title value="PhdCoincidentTimeStampObservation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhgDevice.html"/>
+          <title value="PhgDevice"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="PhdPatient.html"/>
+          <title value="PhdPatient"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="ASN1ToHL7.html"/>
+          <title value="ASN1ToHL7"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="ContinuaHFS.html"/>
+          <title value="ContinuaHFS"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-11073MDCobject.html"/>
+          <title value="11073MDCobject"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-11073MDCnotObject.html"/>
+          <title value="11073MDCnotObject"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-ASN1attribute.html"/>
+          <title value="ASN1attribute"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-ASN1measurement.html"/>
+          <title value="ASN1measurement"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="phdServerCapabilityStatement.html"/>
+          <title value="phdServerCapabilityStatement"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="1540337338319.html"/>
+          <title value="Example upload from Pulse Oximeter"/>
+          <generation value="generated"/>
+        </page>
+      </page>
+    </page>
+    <parameter>
+      <code value="apply"/>
+      <value value="version"/>
+    </parameter>
+    <parameter>
+      <code value="html-template"/>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code value="generate-json"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="generate-xml"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="generate-turtle"/>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

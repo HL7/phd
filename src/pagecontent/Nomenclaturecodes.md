@@ -6,5 +6,7 @@ Units are also encoded using nomenclature codes. In the first version of this im
 
 In FHIR, the 32-bit value of the code is always used. In the PHD to PHG exchange, the 16-bit code is used when the partition can be inferred from the attribute to decrease bandwidth. The encoder must be sure to convert the 16-bit value to the appropriate 32-bit value.
 
+More information describing the MDC codeing system can be found here http://build.fhir.org/mdc.html
+
  - [Next: FHIR’s Codeable Concepts](CodeableConcepts.html)
  - [Previous: Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html)
