@@ -1,4 +1,2 @@
-# PHD
-Personal Healthcare Devices Implementation Guide
-
-This guide explains how to map measurements taken by Personal Health Devices and map them to FHIR resources.
+# PHD Impelementation Guide
+The source repository for the HL7 DoF/HCD/Continua PHD FHIR implementation guide

@@ -1,0 +1,187 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhdBitsEnumerationObservation" />
+  <meta>
+    <lastUpdated value="2017-12-14T04:24:35.475-05:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="oo" />
+  </extension>
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" />
+  <name value="PhdBitsEnumerationObservation" />
+  <status value="draft" />
+  <date value="2017-06-02T14:29:52.39367-04:00" />
+  <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is an ASN1 BITS value." />
+  <fhirVersion value="3.6.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <definition value="The PhdBitsEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Bit-Str or Enum-Observed-Value-Basic-Bit-Str attribute." />
+      <comment value="This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073 10101 BITs value. This measurement is a complex representation where each bit means something. In many cases only certain bits are defined and it is generally true that the significant case is when the bit has been set. Given that measurement could result in up to 32 component entries (one for each bit) only set bits are required to be reported. Some specializations have used this measurement type when they should have used IEEE 10101 codes." />
+    </element>
+	
+	<!-- Meta profile -->
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+	  <short value="The PHD profile URL" />
+      <min value="1" />
+      <max value="1" />
+      <fixedUri value="PhdBitsEnumerationObservation" />
+    </element>
+	
+<!-- No value[x] in a BITs meansurement; Values in components  -->
+    <element id="Observation.value[x]">
+      <path value="Observation.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Observation.dataAbsentReason">
+      <path value="Observation.dataAbsentReason" />
+      <definition value="Provides a reason why no measurement BITs Component elements are present. This situation only happens if the Measurement-Status attribute or Enum-Observed-Value status field indicates a generic error." />
+    </element>
+    <element id="Observation.dataAbsentReason.coding">
+      <path value="Observation.dataAbsentReason.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+	<element id="Observation.dataAbsentReason.coding:FhirDefault">
+      <path value="Observation.dataAbsentReason.coding" />
+	  <sliceName value="FhirDefault" />
+      <min value="1" />
+	  <max value="1" />
+    </element>
+    <element id="Observation.dataAbsentReason.coding:FhirDefault.system">
+      <path value="Observation.dataAbsentReason.coding.system" />
+      <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/ValueSet/data-absent-reason" />
+    </element>
+    <element id="Observation.dataAbsentReason.coding:FhirDefault.code">
+      <path value="Observation.dataAbsentReason.coding.code" />
+      <min value="1" />
+    </element>
+	
+	<!-- COMPONENTS FOR ASN1 BITS -->
+    <element id="Observation.component:bitsComponent">
+      <path value="Observation.component" />
+      <sliceName value="compoundComponent" />
+      <short value="BITs measurements entry components" />
+      <definition value="Each ANS1 component entrant contains one of the reported BITs settings. These entries are NOT present if a Measurement-Status attribute or Enum-Observed-Value status field indicates an error." />
+    </element>
+	<!-- component: code -->
+	<element id="Observation.component:bitsComponent.code">
+      <path value="Observation.component.code" />
+    </element>
+    <element id="Observation.component:bitsComponent.code.coding">
+      <path value="Observation.component.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.component:bitsComponent.code.coding:ASN1Type">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="ASN1Type" />
+      <short value="The ANS1 BITs code for the measurement" />
+      <comment value="For BITs measurements, this code is an alpha-numeric string created from the code reported in the Observation.code.coding:11073Type.code followed by a dot (.) followed by the MDER bit being reported. For example, the CGM Device status measurement code is 8418060. If the value reported in the BITs field is 0001 1000 0000 0000 the MDER bits set are bits 3 and 4. Note that MDER bit 0 is the HIGH order bit. Bit 3 means 'sensor malfunction' and bit 4 means 'device specific alert'. This measurement would require two component elements and one would be 8418060.3 and the other would be 8418060.4. Note these are alphas-numeric strings and not decimal numbers. If one took the code 8418060.3 and looked it up in the ASN1 Bits vocabulary one would find it meant 'sensor malfunctioned'." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:bitsComponent.code.coding:ASN1Type.system">
+      <path value="Observation.component.code.coding.system" />
+      <comment value="This value is a placeholder until the correct reference URL is registered." />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
+    </element>
+    <element id="Observation.component:bitsComponent.code.coding:ASN1Type.code">
+      <path value="Observation.component.code.coding.code" />
+      <definition value="A symbol in syntax defined by the IEEE ASN1 system. " />
+      <min value="1" />
+	  <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/> 
+      </binding>
+    </element>
+	<!-- component: value[x]:valueCodeableConcept -->
+    <element id="Observation.component:bitsComponent.value[x]">
+      <path value="Observation.component.valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding">
+      <path value="Observation.component.valueCodeableConcept.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <ordered value="true" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding:v2BinaryValue">
+      <path value="Observation.component.valueCodeableConcept.coding" />
+      <sliceName value="v2BinaryValue" />
+      <min value="1" />
+	  <max value="1" />
+    </element>
+    <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding:v2BinaryValue.system">
+      <path value="Observation.component.valueCodeableConcept.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-0136" />
+    </element>
+    <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding:v2BinaryValue.code">
+      <path value="Observation.component.valueCodeableConcept.coding.code" />
+      <definition value="If the bit is set this code is 'Y' and 'N' if the bit is cleared. If an 'event' bit only the set case needs to be reported. If the bit is unsupported, the dataAbsentReason code &quot;unsupported' is used. Unsupported bits are optional to report. If a state bit is supported both states shall be reported." />
+      <min value="1" />
+    </element>	
+	
+    <element id="Observation.component:bitsComponent.dataAbsentReason">
+      <path value="Observation.component.dataAbsentReason" />
+	  <short value="For the optional reporting of unsupported bits" />
+      <definition value="Provides a reason why the expected value in the element Observation.component.value[x] is missing. In this profile for this component that happens if the PHD does not support this bit and the uploader wishes to report that situation." />
+    </element>
+	<element id="Observation.component:bitsComponent.dataAbsentReason.coding">
+      <path value="Observation.component.dataAbsentReason.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+	<element id="Observation.component:bitsComponent.dataAbsentReason.coding:FhirDefault">
+      <path value="Observation.component.dataAbsentReason.coding" />
+	  <sliceName value="FhirDefault" />
+	  <short value="FHIR default code system for reporting 'unsupported'" />
+      <min value="1" />
+	  <max value="1" />
+    </element>
+    <element id="Observation.component:bitsComponent.dataAbsentReason.coding:FhirDefault.system">
+      <path value="Observation.component.dataAbsentReason.coding.system" />
+      <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/ValueSet/data-absent-reason" />
+    </element>
+    <element id="Observation.component:bitsComponent.dataAbsentReason.coding:FhirDefault.code">
+      <path value="Observation.component.dataAbsentReason.coding.code" />
+      <min value="1" />
+	  <fixedCode value="unsupported" />
+    </element>
+  </differential>
+</StructureDefinition>

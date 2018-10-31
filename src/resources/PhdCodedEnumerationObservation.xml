@@ -1,0 +1,106 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhdCodedEnumerationObservation" />
+  <meta>
+    <lastUpdated value="2017-12-08T05:24:29.234-05:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="oo" />
+  </extension>
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation" />
+  <name value="PhdCodedEnumerationObservation" />
+  <status value="draft" />
+  <date value="2017-06-02T14:29:52.39367-04:00" />
+  <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated code." />
+  <fhirVersion value="3.6.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+	  <short value="Reports measurements that are enumeration MDC codes" />
+      <definition value="The PhdCodedEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-OID attribute." />
+      <comment value="This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073 10101 code. An example would be the most recent meal context associated with a glucose measurement such as 'breakfast', 'fasting', 'snack', etc. The list of codes for these meal options is finite." />
+    </element>
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+	
+	<!-- Meta profile -->
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+	  <short value="The PHD profile URL" />
+      <min value="1" />
+      <max value="1" />
+      <fixedUri value="PhdCodedEnumerationObservation" />
+    </element>
+	
+	<!-- value[x] which is a valueCodeableConcept  -->
+	<element id="Observation.value[x]">
+      <path value="Observation.valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+	
+    <element id="Observation.value[x]:valueCodeableConcept.coding">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept.coding:MDCType">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <sliceName value="MDCType" />
+	  <short value="Required MDC code entry" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.valueCodeableConcept.coding:MDCType.system">
+      <path value="Observation.valueCodeableConcept.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:iso:std:iso:11073:10101" />
+    </element>
+    <element id="Observation.dataAbsentReason">
+      <path value="Observation.dataAbsentReason" />
+	  <short value="Populated when the Measurement-Status or an Enum-Observed-Value status indicates invalid, not unavailable, or msmt ongoing" />
+      <definition value="Provides a reason why the expected value in the element Observation.valueCodeableConcept is missing." />
+      <comment value="Only the Measurement-Status/status flags indicating invalid, not unavailable, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element." />
+    </element>
+    <element id="Observation.dataAbsentReason.coding">
+      <path value="Observation.dataAbsentReason.coding" />
+	  <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+	<element id="Observation.dataAbsentReason.coding:FhirDefault">
+      <path value="Observation.dataAbsentReason.coding" />
+	  <sliceName value="FhirDefault" />
+      <min value="1" />
+	  <max value="1" />
+    </element>
+    <element id="Observation.dataAbsentReason.coding:FhirDefault.system">
+      <path value="Observation.dataAbsentReason.coding.system" />
+      <min value="1" />
+	  <fixedUri value="http://hl7.org/fhir/ValueSet/data-absent-reason" />
+    </element>
+    <element id="Observation.dataAbsentReason.coding:FhirDefault.code">
+      <path value="Observation.dataAbsentReason.coding.code" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

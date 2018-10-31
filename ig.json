@@ -1,29 +1,4 @@
 {
-  "source": "PhdImplementationGuide.xml",
-  "canonicalBase": "http://hl7.org/fhir/uv/phd",
-  "fixed-business-version": "0.0.1",
-  "npm-name": "hl7.fhir.uv.phd",
-  "license": "CC0-1.0",
-  "sct-edition": "http://snomed.info/sct/900000000000207008",
-  "template": "https://github.com/FHIR/test-template",
-  "paths": {
-    "resources": [
-      "resources",
-      "examples"
-    ],
-    "pages": "pages",
-    "temp": "temp",
-    "output": "output",
-    "qa": "qa",
-    "specification": "http://build.fhir.org/"
-  },
-  "defaults": {
-    
-  },
-  "resources": {
-    "StructureDefinition/PhdDevice": {
-      "source": "PhdDeviceStructureDefinition.xml",
-      "base": "PhdDeviceStructureDefinition.html"
-    }
-  }
+  "redirect": "src-generated/PhdImplementationGuide.json",
+  "comments": "The IG-configuration file is generated from the IG xml file in src using framework/xslt/igToConfig.xslt.  It should never be edited directly"
 }

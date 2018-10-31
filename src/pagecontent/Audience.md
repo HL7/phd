@@ -1,0 +1,8 @@
+This Implementation Guide is for developers of both PHD data uploaders and readers of FHIR resources needing measurement data provided by PHDs. Specifically, the implementers of Continua-certified Personal Health Gateways (PHGs) can use this Implementation Guide to encode PHD information into FHIR resources that can be stored on FHIR servers for further processing or analysis. 95% of this guide is dedicated to the uploader which has to work with the complexities of 11073 20601. Once mapped to FHIR resources, the major challenge facing the reader is understanding the 11073-10101 nomenclature codes. This binary code system is as simple as one can get but familiarity with it in the HL7 community is still lacking.  Ultimately, the Implementation Guide will help personal health device and service providers to map measurement and device data into a FHIR-based information system.
+
+It is not necessary that the data model specified by this Implementation Guide be used solely in the context of FHIR servers. The Continua Guidelines H-812.5 define two upload scenarios and their security and authentication requirements. One is for the upload to a FHIR server using RESTful FHIR while the second is to non-persisting servers for those endpoints that are interested in receiving the data in the form of FHIR resources but are not interested in supporting the rest of the FHIR infrastructure.
+
+This guide will be of use to anyone who wishes to work with 11073 20601 PHD data in FHIR format.
+
+ - [Next: Scope](Scope.html)
+ - [Previous: Purpose](Purpose.html)
