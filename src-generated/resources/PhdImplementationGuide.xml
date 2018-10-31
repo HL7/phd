@@ -161,9 +161,9 @@
     </resource>
 	<resource>
       <reference>
-        <reference value="StructureDefinition/phdServerCapabilityStatement"/>
+        <reference value="StructureDefinition/PhdServerCapabilityStatement"/>
       </reference>
-      <name value="phdServerCapabilityStatement"/>
+      <name value="PhdServerCapabilityStatement"/>
       <exampleBoolean value="false"/>
 	  <groupingId value="hl7.fhir.uv.phd"/>
     </resource>
@@ -484,8 +484,8 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="phdServerCapabilityStatement.html"/>
-<ns17:title xmlns:ns17="http://hl7.org/fhir" value="phdServerCapabilityStatement"/>
+<nameUrl value="PhdServerCapabilityStatement.html"/>
+<ns17:title xmlns:ns17="http://hl7.org/fhir" value="PhdServerCapabilityStatement"/>
 <generation value="generated"/>
 </page>
 <page>

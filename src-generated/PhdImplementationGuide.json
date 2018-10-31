@@ -134,7 +134,7 @@
     },
     "ValueSet/ASN1measurement":{
     },
-    "StructureDefinition/phdServerCapabilityStatement":{
+    "StructureDefinition/PhdServerCapabilityStatement":{
     },
     "Bundle/1540337338319":{
     }

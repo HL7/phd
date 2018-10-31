@@ -186,9 +186,9 @@
     },
     {
       "reference" : {
-        "reference" : "StructureDefinition/phdServerCapabilityStatement"
+        "reference" : "StructureDefinition/PhdServerCapabilityStatement"
       },
-      "name" : "phdServerCapabilityStatement",
+      "name" : "PhdServerCapabilityStatement",
       "exampleBoolean" : false,
       "groupingId" : "hl7.fhir.uv.phd"
     },
@@ -500,8 +500,8 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "phdServerCapabilityStatement.html",
-          "title" : "phdServerCapabilityStatement",
+          "nameUrl" : "PhdServerCapabilityStatement.html",
+          "title" : "PhdServerCapabilityStatement",
           "generation" : "generated"
         },
         {
