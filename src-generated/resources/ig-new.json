@@ -3,27 +3,27 @@
   "id" : "PhdImplementationGuide",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD-IG\\src-generated\\resources"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD-IG\\src\\resources"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD-IG\\src\\vocabulary"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD-IG\\src\\examples"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD-IG\\src\\images"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD-IG\\src-generated\\pages"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide",
   "version" : "0.2.0",

@@ -250,7 +250,7 @@ The Continua *certified* Health and Fitness interfaces are represented as a list
 |Authenticated Persistent Sessions|	6|	aps|
 |FHIR resource upload|	7|	observation-upload-fhir|
 
-The Health and Fitness codes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532355. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
+The Health and Fitness codes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532355. Its reference id is MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST. 
 
  - property.type.coding.code="532355"
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
