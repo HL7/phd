@@ -394,7 +394,7 @@
     <element id="Device.property:bitProperties.valueCode.coding:V2Binary.system">
       <path value="Device.property.valueCode.coding.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-00136" />
+      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-0136" />
     </element>
     <element id="Device.property:bitProperties.valueCode.coding:V2Binary.code">
       <path value="Device.property.valueCode.coding.code" />
