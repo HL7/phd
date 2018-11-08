@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Nov 5, 2018 08:13+0000 for FHIR v3.6.0 
+  Generated on Wed, Nov 7, 2018 23:35+0000 for FHIR v3.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -474,8 +474,6 @@
       <xs:element ref="Practitioner"/>
       <xs:element ref="PractitionerRole"/>
       <xs:element ref="Procedure"/>
-      <xs:element ref="ProcessRequest"/>
-      <xs:element ref="ProcessResponse"/>
       <xs:element ref="Provenance"/>
       <xs:element ref="Questionnaire"/>
       <xs:element ref="QuestionnaireResponse"/>
@@ -6240,12 +6238,12 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="processing" type="BiologicallyDerivedProduct.Processing" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Any processing of the product during collection.</xs:documentation>
+              <xs:documentation xml:lang="en">Any processing of the product during collection that does not change the fundamental nature of the product. For example adding anti-coagulants during the collection of Peripheral Blood Stem Cells.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="manipulation" type="BiologicallyDerivedProduct.Manipulation" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Any manipulation of product post-collection.</xs:documentation>
+              <xs:documentation xml:lang="en">Any manipulation of product post-collection that is intended to alter the product.  For example a buffy-coat enrichment or CD8 reduction of Peripheral Blood Stem Cells to make it more suitable for infusion.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="storage" type="BiologicallyDerivedProduct.Storage" minOccurs="0" maxOccurs="unbounded">
@@ -6267,7 +6265,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="collector" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Healthcare professional, patient or related person who is performing  the collection.</xs:documentation>
+              <xs:documentation xml:lang="en">Healthcare professional who is performing the collection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="source" minOccurs="0" maxOccurs="1" type="Reference">
@@ -14080,7 +14078,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">A unique identifier assigned to this coverage eligiblity request.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="FinancialResourceStatusCodes">
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="FinancialResourceStatusCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
@@ -14095,7 +14093,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="patient" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.</xs:documentation>
            </xs:annotation>
@@ -14107,7 +14105,7 @@ into another (possibly the same) biological entity.</xs:documentation>
             <xs:element name="servicedDate" type="date"/>
             <xs:element name="servicedPeriod" type="Period"/>
           </xs:choice>
-          <xs:element name="created" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:element name="created" minOccurs="1" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date when this resource was created.</xs:documentation>
            </xs:annotation>
@@ -14122,7 +14120,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The provider which is responsible for the request.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="insurer" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="insurer" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The Insurer who issued the coverage in question and is the recipient of the request.</xs:documentation>
            </xs:annotation>
@@ -16384,12 +16382,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:element name="DocumentReference" type="DocumentReference">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="DocumentReference">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -16481,7 +16479,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="DocumentReference.RelatesTo">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -16502,7 +16500,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="DocumentReference.Content">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -16523,7 +16521,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="DocumentReference.Context">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -16535,7 +16533,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type code, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act.</xs:documentation>
+              <xs:documentation xml:lang="en">This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type Code, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -19719,26 +19717,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="fr">Procédure</xs:documentation>
           <xs:documentation xml:lang="zh">操作项目</xs:documentation>
           <xs:documentation xml:lang="es">Procedimiento</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ProcessRequest">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">ProcessRequest</xs:documentation>
-          <xs:documentation xml:lang="en">ProcessRequest</xs:documentation>
-          <xs:documentation xml:lang="it">RichiestaProcesso</xs:documentation>
-          <xs:documentation xml:lang="fr">DemandeProcessus</xs:documentation>
-          <xs:documentation xml:lang="es">SolicitudDeProceso</xs:documentation>
-          <xs:documentation xml:lang="zh">处理请求</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ProcessResponse">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">ProcessResponse</xs:documentation>
-          <xs:documentation xml:lang="en">ProcessResponse</xs:documentation>
-          <xs:documentation xml:lang="it">RispostaProcesso</xs:documentation>
-          <xs:documentation xml:lang="fr">RéponseProcessus</xs:documentation>
-          <xs:documentation xml:lang="es">RespuestaDeProceso</xs:documentation>
-          <xs:documentation xml:lang="zh">处理响应</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Provenance">
@@ -32341,22 +32319,22 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="validCodedValueSet" minOccurs="0" maxOccurs="1" type="uri">
+          <xs:element name="validCodedValueSet" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The set of valid coded results for the observations  conforming to this ObservationDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="normalCodedValueSet" minOccurs="0" maxOccurs="1" type="uri">
+          <xs:element name="normalCodedValueSet" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The set of normal coded results for the observations conforming to this ObservationDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="abnormalCodedValueSet" minOccurs="0" maxOccurs="1" type="uri">
+          <xs:element name="abnormalCodedValueSet" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The set of abnormal coded results for the observation conforming to this ObservationDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="criticalCodedValueSet" minOccurs="0" maxOccurs="1" type="uri">
+          <xs:element name="criticalCodedValueSet" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The set of critical coded results for the observation conforming to this ObservationDefinition.</xs:documentation>
            </xs:annotation>
@@ -33788,12 +33766,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A human readable description of the status of the request for the reconciliation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="paymentDate" minOccurs="0" maxOccurs="1" type="date">
+          <xs:element name="paymentDate" minOccurs="1" maxOccurs="1" type="date">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date of payment as indicated on the financial instrument.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="paymentAmount" minOccurs="0" maxOccurs="1" type="Money">
+          <xs:element name="paymentAmount" minOccurs="1" maxOccurs="1" type="Money">
             <xs:annotation>
               <xs:documentation xml:lang="en">Total payment amount as indicated on the financial instrument.</xs:documentation>
            </xs:annotation>
@@ -35211,272 +35189,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
            </xs:annotation>
           </xs:element>
         </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProcessRequest" type="ProcessRequest">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">This resource provides the target, request and response, and action details for an action to be performed by the target on or about existing resources.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="ProcessRequest">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">This resource provides the target, request and response, and action details for an action to be performed by the target on or about existing resources.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The ProcessRequest business identifier.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="FinancialResourceStatusCodes">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="action" minOccurs="0" maxOccurs="1" type="ActionList">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The type of processing action being requested, for example Reversal, Readjudication, StatusRequest, PendedRequest.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="target" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The organization which is the target of the request.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="created" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date when this resource was created.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="provider" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner who is responsible for the action specified in this request.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="request" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Reference of resource which is the target or subject of this action.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="response" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Reference of a prior response to resource which is the target or subject of this action.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="nullify" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">If true remove all history excluding audit.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reference" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to supply which authenticates the process.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="item" type="ProcessRequest.Item" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">List of top level items to be re-adjudicated, if none specified then the entire submission is re-adjudicated.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="include" minOccurs="0" maxOccurs="unbounded" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Names of resource types to include.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exclude" minOccurs="0" maxOccurs="unbounded" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Names of resource types to exclude.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A period of time during which the fulfilling resources would have been created.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ProcessRequest.Item">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">This resource provides the target, request and response, and action details for an action to be performed by the target on or about existing resources.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="sequenceLinkId" minOccurs="1" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A service line number.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="ActionList-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="cancel">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Cancel, Reverse or Nullify</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="poll">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Poll</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="reprocess">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Re-Process</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="status">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Status Check</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ActionList">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">List of allowable action which this resource can request.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="ActionList-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProcessResponse" type="ProcessResponse">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">This resource provides processing status, errors and notes from the processing of a resource.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="ProcessResponse">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">This resource provides processing status, errors and notes from the processing of a resource.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The Response business identifier.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="FinancialResourceStatusCodes">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="created" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date when the enclosed suite of services were performed or completed.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="organization" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The organization who produced this adjudicated response.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="request" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Original request resource reference.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="outcome" minOccurs="0" maxOccurs="1" type="ProcessOutcomeCodes">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Transaction status: error, complete, held.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="disposition" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the status of the adjudication or processing.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="requestProvider" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner who is responsible for the services rendered to the patient.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="form" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The form to be used for printing the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="processNote" type="ProcessResponse.ProcessNote" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Suite of processing notes or additional requirements if the processing has been held.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="error" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Processing errors.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="communicationRequest" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Request for additional supporting or authorizing information, such as: documents, images or resources.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ProcessResponse.ProcessNote">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">This resource provides processing status, errors and notes from the processing of a resource.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="NoteType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The note purpose: Print/Display.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="text" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The note text.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="ProcessOutcomeCodes-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="complete">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Complete</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="pended">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Pended</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="error">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Error</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ProcessOutcomeCodes">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Local status of outcome codes.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="ProcessOutcomeCodes-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
