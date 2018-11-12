@@ -346,7 +346,12 @@
           {
             "nameUrl" : "NumericObservationProfile.html",
             "title" : "PHD Numeric Observation Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "NumericNaN.html",
+              "title" : "NaN Example",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "CompoundNumericObservationProfile.html",

@@ -148,6 +148,11 @@
       <short value="Indicates the device is a PHD." /> 
       <min value="1" />	  
     </element>
+	<element id="Device.type.text">
+      <path value="Device.type.text" />
+      <definition value="A human readable display describing the meaning of the MDC code." />
+      <comment value="It is suggested that this element contain the reference identfier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'." />
+    </element>
     <element id="Device.type.coding">
       <path value="Device.type.coding" />
       <slicing>
@@ -180,11 +185,6 @@
       <definition value="The code for a Simple MDS indicating that this unit is a personal health device" />
       <min value="1" />
 	  <fixedUri value="65573" />
-    </element>
-    <element id="Device.type.coding:MDCType.display">
-      <path value="Device.type.coding.display" />
-      <definition value="A human readable display descrbing the meaning of the code." />
-      <comment value="It is suggested that this element contain the reference identfier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'." />
     </element>
 	<!-- SPECIALIZATIONS -->
 	<element id="Device.specialization">
@@ -327,6 +327,10 @@
       <definition value="One of the capabilities reported in the Mds-Time-Info.mds-time-caps-state or Reg-Cert-Data-List.regulation-status field." />
       <comment value="Only set 'event' types need be reported. Both set and cleared 'state' types need to be reported. The regulation status is as state type. All time capabilities are event types" />
     </element>
+	<element id="Device.property:bitProperties.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
+    </element>
 	<!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:bitProperties.type.coding">
       <path value="Device.property.type.coding" />
@@ -359,10 +363,6 @@
 	  <comment value="The MDC code for the mds-time-caps-state field is 68219. Thus the ASN1 code for the case 'device supports a relative time clock', Mder bit 2, would be 68219.2. For the regulation status field the MDC code is 532354, and only bit 0 is defined. However, the regulated status is when the bit is cleared and the unregulated status is when the bit is set. That choice can be confusing." />
       <min value="1" />
     </element>
-    <element id="Device.property:bitProperties.type.coding:ASN1Type.display">
-      <path value="Device.property.type.coding.display" />
-      <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
-    </element>
 	<!-- No quantity entry when the value is a code! -->
 	<element id="Device.property:bitProperties.valueQuantity">
       <path value="Device.property.valueQuantity" />
@@ -394,7 +394,7 @@
     <element id="Device.property:bitProperties.valueCode.coding:V2Binary.system">
       <path value="Device.property.valueCode.coding.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-0136" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
     </element>
     <element id="Device.property:bitProperties.valueCode.coding:V2Binary.code">
       <path value="Device.property.valueCode.coding.code" />
@@ -413,6 +413,10 @@
 	<element id="Device.property:quantitiesProperty.type">
       <path value="Device.property.type" />
 	  <short value="The type of time quantity" />
+    </element>
+	<element id="Device.property:quantitiesProperty.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the MDC reference identifier for the MDC code" />
     </element>
 	<!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:quantitiesProperty.type.coding">
@@ -454,10 +458,6 @@
 	  Time sync accuracy                68221            MDC_TIME_SYNC_ACCURACY&#xD;&#xA;" />
       <min value="1" />
     </element>
-    <element id="Device.property:quantitiesProperty.type.coding:ieeeType.display">
-      <path value="Device.property.type.coding.display" />
-      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
-    </element>
 	<!-- No code entry when the value is a quantity! -->
 	<element id="Device.property:quantitiesProperty.valueCode">
       <path value="Device.property.valueCode" />
@@ -488,7 +488,7 @@
     </element>
 	
 	<!-- The singleCodedProperties property. At this time there is only one
-    single-coded entry reported by PHDs; the time synchonization 	-->
+    single-coded entry reported by PHDs; the time synchronization 	-->
     <element id="Device.property:singleCodedProperties">
       <path value="Device.property" />
       <sliceName value="singleCodedProperties" />
@@ -537,9 +537,9 @@
 	  Time synchronization              68220            MDC_TIME_SYNC_PROTOCOL&#xD;&#xA;" />
       <min value="1" />
     </element>
-    <element id="Device.property:singleCodedProperties.type.coding:MDCType.display">
-      <path value="Device.property.type.coding.display" />
-      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
+    <element id="Device.property:singleCodedProperties.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the MDC reference identifier for the MDC code" />
     </element>
 	<!-- No quantity entry when the value is a code! -->
 	<element id="Device.property:singleCodedProperties.valueQuantity">
@@ -594,6 +594,10 @@
       <path value="Device.property.type" />
 	  <short value="What the coded list is" />
     </element>
+	<element id="Device.property:codedListProperties.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
+    </element>
 	<!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:codedListProperties.type.coding">
       <path value="Device.property.type.coding" />
@@ -629,10 +633,6 @@
 	  --------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
 	  Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST    http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN&#xD;&#xA;" />
       <min value="1" />
-    </element>
-    <element id="Device.property:codedListProperties.type.coding:MDCType.display">
-      <path value="Device.property.type.coding.display" />
-      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
     </element>
 	<!-- No quantity entry when the value is a code! -->
 	<element id="Device.property:codedListProperties.valueQuantity">

@@ -142,7 +142,7 @@
     <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding:v2BinaryValue.system">
       <path value="Observation.component.valueCodeableConcept.coding.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-0136" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
     </element>
     <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding:v2BinaryValue.code">
       <path value="Observation.component.valueCodeableConcept.coding.code" />

@@ -341,6 +341,11 @@
             <nameUrl value="NumericObservationProfile.html"/>
             <title value="PHD Numeric Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="NumericNaN.html"/>
+              <title value="NaN Example"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="CompoundNumericObservationProfile.html"/>

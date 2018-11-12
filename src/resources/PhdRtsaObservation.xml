@@ -34,6 +34,47 @@
       <fixedUri value="PhdRtsaObservation" />
     </element>
 	
+		<!-- The vital Signs category 	-->
+    <element id="Observation.category:vitalSignsCategory">
+      <path value="Observation.category" />
+      <sliceName value="vitalSignsCategory" />
+	  <short value="Required by the FHIR specification if the measurement value is a vital sign" /> 
+      <comment value="Vitals signs are not too common in waveforms but one might have pulse rates"/>	  
+    </element>
+	<!-- Slice the coding to allow one to express the same concept in another coding system -->
+    <element id="Observation.category:vitalSignsCategory.coding">
+      <path value="Observation.category.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+	<!-- The vitalSigns slice of the coding element: This element is required -->
+    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns">
+      <path value="Observation.category.coding" />
+      <sliceName value="vitalSigns" />
+	  <short value="Required Vital Signs category code system entry" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+	<!-- The system value is fixed -->
+    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.system">
+      <path value="Observation.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category" />
+    </element>
+	<!-- The currently defined single-coded properties reported by the device -->
+    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.code">
+      <path value="Observation.category.coding.code" />
+      <definition value="The 'vital-signs' category code" />
+	  <min value="1" />
+	  <fixedCode value="vital-signs" />
+    </element>
+	
 	<!-- value[x] which is a valueSampledData  -->
     <element id="Observation.value[x]">
       <path value="Observation.valueSampledData" />

@@ -202,7 +202,7 @@ The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabiliti
 The required remaining property elements in each reported case are as follows:
  - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
  - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://hl7.org/fhir/CodeSystem/v2-0136 "
+ - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0203 "
 
  An optional text element containing at least the ASN.1 name from the above table is encouraged:
  - property.type.text="ASN.1 name + any additional text"

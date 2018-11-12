@@ -64,7 +64,7 @@ The Alert Operational State is currently only used in the Pulse Oximeter special
 |code.coding.system|http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7 |Indicates the ASN-1 coding system|
 |code.text|optional but|Should contain the ASN1 name 'lim-alert-off', 'lim-low-off', or 'lim-high-off' for bits 0-2, respectively, along with any other additional text|
 |valueCodeableConcept.coding.code|'Y' or 'N'|'Y' for bit set, 'N' for bit cleared|
-|valueCodeableConcept.coding.system|http://hl7.org/fhir/CodeSystem/v2-0136 |Indicates the V2 binary coding system|
+|valueCodeableConcept.coding.system|http://terminology.hl7.org/CodeSystem/v2-0203 |Indicates the V2 binary coding system|
 
 #### Alert Operational Text String
 This attributes provides a human readable string describing the lower and upper threshold limits. It is currently used only in the Pulse Oximeter specialization.
@@ -119,6 +119,9 @@ The Threshold-Notification-Text-String attribute is currently used only in the C
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
 |code.text|optional but|Should contain the reference id MDC_ATTR_THRES_NOTIF_TEXT_STRING along with any other additional text|
 |valueString|the string|This is a textual description of the thresholds for the given measurement|
+
+### Examples
+An example of a NaN (not a number) measurement is shown in [NaN Example](NumericNaN.html). Note that the value element is absent and replaced by a dataAbsentReason element.
 
 ### Consumer of the PHD Numeric Observation Profile
 The consumer of this profile does not need to concern itself with the mapping complexities or the PHD-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:

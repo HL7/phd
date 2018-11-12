@@ -120,15 +120,15 @@ To report these cases in FHIR requires the use of three different elements. The 
 
 |status Mder bit | ASN1 name|Observation element|
 |-
-|0|invalid|dataAbsentReason.coding.code="error"<br/>http://hl7.org/fhir/ValueSet/data-absent-reason |
+|0|invalid|dataAbsentReason.coding.code="error"<br/>http://terminology.hl7.org/CodeSystem/data-absent-reason version |
 |1|questionable|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="questionable"|
-|2|not-available|dataAbsentReason.coding.code="not-performed"<br>dataAbsentReason.coding.system="http://hl7.org/fhir/ValueSet/data-absent-reason |
+|2|not-available|dataAbsentReason.coding.code="not-performed"<br>dataAbsentReason.coding.system="http://terminology.hl7.org/CodeSystem/data-absent-reason |
 |3|calibration-ongoing|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="calibration-ongoing"|
-|4|test-data|meta.security.coding.code="HTEST"<br/> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
-|5|demo-data|meta.security.coding.code="HTEST"<br/> meta.security.coding.system="http://hl7.org/fhir/ValueSet/security-labels" |
+|4|test-data|meta.security.coding.code="HTEST"<br/> meta.security.coding.system="http://terminology.hl7.org/CodeSystem/v3-ActReason" |
+|5|demo-data|meta.security.coding.code="HTEST"<br/> meta.security.coding.system="http://terminology.hl7.org/CodeSystem/v3-ActReason" |
 |8|validated-data|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="validated-data" |
 |9|early-indication|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="early-indication" |
-|10|msmt-ongoing|dataAbsentReason.coding.code="temp-unknown"<br>dataAbsentReason.coding.system="http://hl7.org/fhir/ValueSet/data-absent-reason" |
+|10|msmt-ongoing|dataAbsentReason.coding.code="temp-unknown"<br>dataAbsentReason.coding.system="http://terminology.hl7.org/CodeSystem/data-absent-reason" |
 |14|msmt-value-exceed-boundaries|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/>interpretation.coding.code="in-alarm" |
 |15|msmt-state-ann-inhibited|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/>interpretation.coding.code="alarm-inhibited"|
 

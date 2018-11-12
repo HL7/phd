@@ -32,6 +32,46 @@
       <max value="1" />
       <fixedUri value="PhdCompoundNumericObservation" />
     </element>
+	
+	<!-- The vital Signs category 	-->
+    <element id="Observation.category:vitalSignsCategory">
+      <path value="Observation.category" />
+      <sliceName value="vitalSignsCategory" />
+	  <short value="Required by the FHIR specification if the measurement value is a vital sign" />      
+    </element>
+	<!-- Slice the coding to allow one to express the same concept in another coding system -->
+    <element id="Observation.category:vitalSignsCategory.coding">
+      <path value="Observation.category.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+	<!-- The vitalSigns slice of the coding element: This element is required -->
+    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns">
+      <path value="Observation.category.coding" />
+      <sliceName value="vitalSigns" />
+	  <short value="Required Vital Signs category code system entry" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+	<!-- The system value is fixed -->
+    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.system">
+      <path value="Observation.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category" />
+    </element>
+	<!-- The currently defined single-coded properties reported by the device -->
+    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.code">
+      <path value="Observation.category.coding.code" />
+      <definition value="The 'vital-signs' category code" />
+	  <min value="1" />
+	  <fixedCode value="vital-signs" />
+    </element>
  
     <!-- No value[x] in a compound  -->
     <element id="Observation.value[x]">
@@ -63,7 +103,7 @@
     <element id="Observation.dataAbsentReason.coding:FhirDefault.system">
       <path value="Observation.dataAbsentReason.coding.system" />
       <min value="1" />
-	  <fixedUri value="http://hl7.org/fhir/ValueSet/data-absent-reason" />
+	  <fixedUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason" />
     </element>
     <element id="Observation.dataAbsentReason.coding:FhirDefault.code">
       <path value="Observation.dataAbsentReason.coding.code" />
@@ -155,7 +195,7 @@
     <element id="Observation.component:compoundComponent.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason" />
 	  <short value="Populated when a special value or status in Compound-Nu-Observed-Value indicates invalid, not unavailable, or msmt ongoing" />
-      <definition value="Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This could be a NaN (Not a Number), PINF (Positive infinity), NINF (Negative infinity) or the reserved and not-at-this-resolution special values. It can also be indicated by the (measurement) status field of the Compound-Nu-Observed-Value." />
+      <definition value="Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This could be a NaN (Not a Number), PINF (Positive infinity), NINF (Negative infinity) or the reserved and not-at-this-resolution special values. It can also be indicated by the (measurement) status field of the Compound-Nu-Observed-Value. Note that the FHIR codes for NAN are no longer 'NAN' but 'not-a-number'. Similar changes have been made for NINF and PINF." />
     </element>
     <element id="Observation.component:compoundComponent.dataAbsentReason.coding">
       <path value="Observation.component.dataAbsentReason.coding" />
@@ -177,7 +217,7 @@
     <element id="Observation.component:compoundComponent.dataAbsentReason.coding:FhirDefault.system">
       <path value="Observation.component.dataAbsentReason.coding.system" />
       <min value="1" />
-	  <fixedUri value="http://hl7.org/fhir/ValueSet/data-absent-reason" />
+	  <fixedUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason" />
     </element>
     <element id="Observation.component:compoundComponent.dataAbsentReason.coding:FhirDefault.code">
       <path value="Observation.component.dataAbsentReason.coding.code" />
@@ -221,6 +261,10 @@
 	<element id="Observation.component:accuracyComponent.code">
       <path value="Observation.component.code" />
     </element>
+    <element id="Observation.component:accuracyComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
+    </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -253,10 +297,6 @@
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCobject"/> 
       </binding>
-    </element>
-    <element id="Observation.component:accuracyComponent.code.coding:MDCType.display">
-      <path value="Observation.component.code.coding.display" />
-      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
