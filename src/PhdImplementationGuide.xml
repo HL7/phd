@@ -209,7 +209,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleBoolean value="false"/>
 	  <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	
+	<!--
 	<resource>
       <reference>
         <reference value="Bundle/bundle-continuousnonin"/>
@@ -218,8 +218,8 @@ In this example there are only xml structure definitions, value sets, code syste
 	  <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
       <exampleBoolean value="true"/>
 	  <groupingId value="hl7.fhir.uv.phd" />
-    </resource>
-	<!--
+    </resource> -->
+
 	<resource>
       <reference>
         <reference value="Observation/nan-1.0.0.42"/>
@@ -228,7 +228,7 @@ In this example there are only xml structure definitions, value sets, code syste
 	  <description value="Example contains a NaN (not a number) measurement." />
       <exampleBoolean value="true"/>
 	  <groupingId value="hl7.fhir.uv.phd" />
-    </resource> -->
+    </resource>
 
 	<!-- The 'toc' or table of contents is required and must appear first in the pages list
 	and it must have the name toc.html. The toc.html is generated and its contents are determined
