@@ -52,3 +52,7 @@ The final identifier is made by concatenating the entries above as follows:
 ### Additional Enumeration Measurement Information
 There are no additional descriptive attributes that are unique to the Enumeration type of measurement.
 
+### Examples:
+
+A BITs observation example from a pulse oximeter is shown in [Device Sensor Issues](BITsDevSensor.html). This observation results when the pulse oximeter is having difficulty obtaining the measurement, perhaps due to motion or position of the finger in the sensor, a bad signal, etc.
+

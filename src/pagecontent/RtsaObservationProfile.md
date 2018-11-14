@@ -11,6 +11,8 @@ padding: 6px;}</style>
 
 This attribute contain a measurement that is a sequence of scaled periodic values. It is typically used when reporting waveforms. The values are scaled to reduced bandwidth. The bandwidth reduction can be significant in cases where the actual values are small fluctuations about a large average value. The scale factors, number of bits in each sample, the period, and the number of data elements in the sequence are given by a set of support attributes.
 
+11073 20601 does not support the concept of compound arrays, so the sampled data is always one dimensional in time only. Reporting a sequence of x, y, z acceleration components from a PHD would require three RTSA objects. FHIR, on the other hand, does support the concept of two-dimensional arrays. It would be possible for the PHG to map the x, y, and z components of an acceleration to a single two-dimensional valueSampledData element. However, doing this task requires pre-existing knowledge about each specialization and cannot be done generically. Therefore this IG does not support such a mapping.
+
 |Support Attribute|Value|Description|
 |-
 |Sample-Period.*period*|integer|Interval between samples in 1/8<sup>th</sup> milliseconds|
@@ -73,7 +75,7 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 |See calculation of 'b' above|Observation.valueSampledData.origin.value = b*|
 |See calculation of 's' above|Observation.valueSampledData.scaleFactor = s*|
 |Sample-Period.*period*/8|Observation.valueSampledData.period (milliseconds)|
-|Sa-Specification.SampleType.*sample-size*|Observation.valueSampledData.dimensions|
+|Concept not supported in 20601.|Observation.valueSampledData.dimensions = 1|
 |Scale-and-Range-SpecificationX.*upper-absolute-value*|Observation.referenceRange.high.value|
 |Unit-Code.*code*|Observation.referenceRange.high.code (as UCUM)|
 |Scale-and-Range-SpecificationX.*lower-absolute-value*|Observation.referenceRange.low.value|
@@ -112,7 +114,7 @@ About the only work a consumer of this profile needs to do is to back-scale the 
 |-
 |Type of measurement|code.coding.code|
 |Time at the start of the waveform|effectiveDateTime|
-|Number of samples|valueSampledData.dimension|
+|Fixed at one|valueSampledData.dimension = 1|
 |Time between samples in milliseconds|valueSampledData.period|
 |Units of samples|valueSampledData.origin.code|
 |Upper range of values|referenceRange.high.value|

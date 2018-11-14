@@ -125,7 +125,10 @@ The Threshold-Notification-Text-String attribute is currently used only in the C
 |code.text|optional but|Should contain the reference id MDC_ATTR_THRES_NOTIF_TEXT_STRING along with any other additional text|
 |valueString|the string|This is a textual description of the thresholds for the given measurement|
 
-### Examples
+### Examples:
+
+A basic simple numeric observation with a time stamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](spotNumeric.html). Simple numeric measurements are common in PHDs.
+
 An example of a NaN (not a number) measurement is shown in [NaN Example](NumericNaN.html). Note that the value element is absent and replaced by a dataAbsentReason element.
 
 ### Consumer of the PHD Numeric Observation Profile
