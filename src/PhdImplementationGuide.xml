@@ -209,7 +209,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleBoolean value="false"/>
 	  <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<!--
+	<!-- b
 	<resource>
       <reference>
         <reference value="Bundle/bundle-continuousnonin"/>
