@@ -6,7 +6,12 @@ If a PHD has its time clock altered, a Date-Time-Adjustment attribute is sent to
 
 The Coincident Time Stamp Observation is created every connection so data duplication is not an issue. Therefore the identifier element of this resource is not used in this profile.
 
-The Structure Definition for the PHD Coincident Time Stamp Observation Profile is as follows:
+The Structure Definition for the PHD Coincident Time Stamp Observation Profile is given [here](PhdCoincidentTimeStampObservation.html)
+
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
 
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation indicating this resource is generated following the PHD Implementation Guide.

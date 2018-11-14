@@ -2,6 +2,11 @@ The properties and specifications of the PHD are reported in the Device resource
 
 There are six MDS attributes that are reported. The Mds-Time-Info attribute has fields that are dynamic and static, and it is only the static entries which are required should the attribute be present. The following table summarizes these attributes and the Device elements to which they are mapped:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |MDS attribute|Device element|
 |-
 |System-Id|identifier 1|
@@ -16,7 +21,7 @@ The transport address and friendly name are not provided by the MDS but come fro
 
 There are several CodeableConcept data types in this mapping where the Coding data type has a 'display' element. It is recommended to put the MDC reference identifier as part of the display element if known. The coding system element is always set to "urn.iso.std.iso:11073:10101 when an MDC code".
 
-The structure definition for the PHD Device Profile is shown below:
+The structure definition for the PHD Device Profile is given [here](PhdDevice.html)
 
 A JSON example is given in [PHD Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdDeviceJSONExample)
 
@@ -271,8 +276,7 @@ The encoding is as follows:
 |-
 |Device.property.type.coding.code|"68222" (absolute time)<br/>"68226" (base-offset time)<br/>"68223" (relative time)<br/>"68224" (hi-res relative time)|
 |Device.property.type.coding.system|"urn.iso.std.iso:11073:10101"|
-|Device.property.type.text (*optional*)|"MDC_TIME_RES_ABS"<br/>"MDC_TIME_RES_BO"<br/>"MDC_TIME_RES_REL"<br/>"MDC_TIME_RES_REL_HI_RES"
-*(optional)*|
+|Device.property.type.text (*optional*)|"MDC_TIME_RES_ABS"<br/>"MDC_TIME_RES_BO"<br/>"MDC_TIME_RES_REL"<br/>"MDC_TIME_RES_REL_HI_RES"|
 |Device.property.valueQuantity.value|"10000 x Mds-Time-Info.*time-resolution-abs-time*"<br/>"1000000 x Mds-Time-Info.*time-resolution-abs-time*/65536"<br/>"125 x Mds-Time-Info.*time-resolution-rel-time*"<br/>"Mds-Time-Info.*time-resolution-hi-res-relative-time*"<br/>|
 |Device.property.valueQuantity.system|"http://unitsofmeasure.org" |
 |Device.property.valueQuantity.code|"us"  (UCUM code for microseconds)|

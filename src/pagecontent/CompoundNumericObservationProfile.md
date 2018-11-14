@@ -1,5 +1,10 @@
 The Compound Numeric Observation Profile is used when the PHD metric measurement contains one of the following attributes:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|Value|Additional Information|
 |-
 |Compound-Basic-Nu-Observed-Value|set of 16-bit Mder SFLOATs|12-bit mantissa, 4-bit exponent|
@@ -12,7 +17,7 @@ The Observation.component.code element is obtained from the Metric-Id-List attri
 
 The Observation.code element comes from the Type attribute and gives the general type of measurement. For example, the Type attribute might indicate "acceleration" or "non-invasive blood pressure". There is no Observation.value[x] entry. There may still be an Observation.dataAbsentReason element if, say, the Measurement-Status attribute indicates an invalid or otherwise overall failure value. If there is such an overall failure of the measurement, then there is no need to report the components.
 
-The structure definition is as follows:
+The structure definition is given [here](PhdCompoundNumericObservation.html)
 
 A JSON example is given in [PHD Compound Numeric Observation JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdCompoundNumericObservationJSONExample)
 

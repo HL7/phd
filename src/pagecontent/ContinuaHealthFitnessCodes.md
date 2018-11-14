@@ -1,5 +1,10 @@
 These codes are used to express the Health and Fitness interfaces.
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Health & Fitness Device Class| Health and Fitness interface code|  Reference name|
 |-
 |PCD-01 web services|   0   |observation-upload-soap|

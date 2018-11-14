@@ -4,6 +4,11 @@ In the 11073 20601 specification, measurements are mapped to Metric Objects. The
 
 Attributes are also used for these keys. Once the measurement has been reconstructed using these keys and the retained static and dynamic data, the attributes providing these keys are no longer of interest. This guide will refer to these attributes as 'Protocol-Only' attributes.
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Protocol-Only Attribute|Description|
 |-
 |Handle|Provides the PHG with a key to access the static and dynamic information associated with this metric|

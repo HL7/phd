@@ -2,6 +2,11 @@ The properties and specifications of the PHG are reported in a Device resource. 
 
 Unlike the PHD where one reports the information if delivered, in the PHG case far fewer fields are required to be reported. The following table summarizes the required 'MDS' fields and their mappings:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |'PHG MDS' field|Device element|
 |-
 |System Identifier|identifier|
@@ -20,7 +25,7 @@ A transport address is not required. It is still strongly recommended that the t
 
 Similar to the PHD case, when CodeableConcept data types are used it is recommended to put the MDC reference identifier as part of the text element when the system element indicates the MDC coding system "urn.iso.std.iso:11073:10101".
 
-The structure definition for the PHG Device Profile is shown below:
+The structure definition for the PHG Device Profile is given [here](PhgDevice.html)
 
 A JSON example is given in [PHG Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
 
@@ -177,7 +182,7 @@ The table blow provides codes and reference identifiers used in mapping the prod
  - partNumber="*part number*"
 
  #### **Hardware, Software, Firmware, Protocol, and Continua Versions**
- - hardware
+ - hardware 
  - version.type.coding.code="531974"
  - version.type.coding.system="urn.iso.std.iso:11073:10101"
  - version.type.text="MDC_ID_PROD_SPEC_HW + optional text"

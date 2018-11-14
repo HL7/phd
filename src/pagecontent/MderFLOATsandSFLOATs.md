@@ -6,6 +6,11 @@ Thus, it is possible in this encoding to distinguish between the value 2, 2.0, 2
 
 The table below gives some examples of SFLOAT values and how they shall be encoded into the FHIR valueQuantity.value:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |SFLOAT Hex|SFLOAT decimal|exponent|mantissa|FHIR encoding|
 |-
 |0x0002|2|0|2|2|

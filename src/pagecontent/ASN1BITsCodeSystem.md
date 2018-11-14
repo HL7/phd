@@ -18,6 +18,11 @@ However, these attributes are not present in the versions of the 11073-20601 spe
 ## Mder Bit Position
 To generate this code, the uploader needs to understand that Mder Bit position 0 is the ***most*** significant bit of the 16- or 32-bit integer and the Mder Bit position 15 or 31 is the ***least*** significant bit of the 16- or 32-bit integer, respectively. The following table shows the Mder bit position and the corresponding integer value representing it when that bit is set.
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Mder Bit Position|16-bit integer value|32-bit integer value|
 |-
 |0|0x8000|0x80000000|

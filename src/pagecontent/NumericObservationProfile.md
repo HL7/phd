@@ -1,5 +1,10 @@
 The Numeric Observation Profile is used when the PHD metric measurement contains one of the following attributes:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|Value|Additional Information|
 |-
 |Basic-Nu-Observed-Value|16-bit Mder SFLOAT|12-bit mantissa|
@@ -8,7 +13,7 @@ The Numeric Observation Profile is used when the PHD metric measurement contains
 
 These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
 
-The structure definition for this profile is as follows:
+The structure definition for this profile is given [here](PhdNumericObservation.html)
 
 ### Mapping Numerics to FHIR
 The following table shows how the numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC unit code needs to be mapped to UCUM.

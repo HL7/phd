@@ -1,5 +1,10 @@
 The BITs Enumeration Observation Profile is used when the PHD metric measurement contains one of the following attributes:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|Value|Additional Information|
 |-
 |Enum-Observed-Value-Simple-Bit-Str|32-bit value|Each bit in the 32-bit integer signifies some item|
@@ -9,6 +14,8 @@ The BITs Enumeration Observation Profile is used when the PHD metric measurement
 The Enum-Observed-Value-Simple/Basic-Bit-Str attribute is used when the measurement reports one or more events or states. Each bit in the 16 or 32-bit number may represent some state or event. The most common use of this type of measurement is for reporting device status events that influence the measurement. It is also used extensively in the Independent Living specialization to report states such as 'door open', 'door closed' or 'patient in room', 'patient out of room', etc. The measurement is generally used when there is the potential for more than one event or state to be set at the same time.
 
 The Enum-Observed-Value attribute is a complex attribute and can be any one of the three possible enumeration measurements. There is an element in the structure which indicates which type of enumeration it is. If it is a 'BITs' type it reports only the 32-bit version. The attribute also has its own metric-id value telling what it is and status value. The metric-id value replaces the term code given by the Type attribute for the *type* of measurement and the status value replaces the Measurement-Status attribute.
+
+The structure definition for this profile is given [here](PhdBITsEnumerationObservation.html)
 
 ### Mapping BITs Enumerations to FHIR
 FHIR has no data type that corresponds to this kind of measurement. Consequently Continua has developed a code system which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 BITS Code System](ASN1BITsCodeSystem.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported.

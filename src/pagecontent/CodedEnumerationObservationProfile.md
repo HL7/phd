@@ -1,5 +1,10 @@
 The Coded Enumeration Observation Profile is used when the PHD metric measurement contains one of the following attributes:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|Value|Additional Information|
 |-
 |Enum-Observed-Value-Simple-OID|16-bit term code|The partition is obtained from the Type attribute or the Enum-Observed-Value-Partition attribute|
@@ -9,7 +14,7 @@ The Enum-Observed-Value-Simple-OID attribute is used when the measurement is its
 
 The Enum-Observed-Value attribute is a complex attribute and can be any one of the three possible enumeration measurements. There is an element in the structure which indicates which type of enumeration it is. If it is an 'OID' type it has an MDC term code. The attribute also has its own metric-id value telling what it is and status value. The metric-id value replaces the term code given by the Type attribute for the *type* of measurement (*not the measurement!*) and the status value replaces the Measurement-Status attribute.
 
-The structure definition for this profile is
+The structure definition for this profile is given [here](PhdCodedEnumerationObservation.html)
 
 ### Mapping Coded Enumerations to FHIR
 The following table shows how the coded enumeration attributes are mapped to FHIR.

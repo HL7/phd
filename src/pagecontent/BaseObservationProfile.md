@@ -8,8 +8,12 @@ The PHD Base Observation profile contains the elements that are common to all PH
  - components: contains any additional measurement descriptions (supplemental types and relative time stamps)
  - measurement status
 
-The structure definition differential is given below:
-{% comment %}{% include StructureDefinition-PhdDevice-diff.xhtml %}{% endcomment %}
+The structure definition is given [here](PhdBaseObservation.html)
+
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
 
 ### PHD Observation Gateway Device extension
 HL7 has predefined an extension for the Observation resource to reference a gateway device. This extension is used in this profile to reference the Device resource representing the Personal Health Gateway (PHG) device.

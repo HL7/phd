@@ -1,5 +1,10 @@
 The Real Time Sample Array (RTSA) Observation Profile is used when the PHD metric measurement contains the following attribute:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|Value|Additional Information|
 |-
 |Simple-Sa-Observed-Value|A sequence of scaled 8, 16, or 32-bit numbers|Other attributes give scale factors, number of entries, period, and bit-size|
@@ -27,7 +32,7 @@ otherwise
 
 The upper and lower ranges represent the upper and lower actual sensor ranges that can be reported. The name 'absolute' in the attribute does not refer to the mathematical definition of an absolute value. The upper and lower values do NOT mean that a given set of samples has those values or that those values are ever reported by the sensor. However, a graphing application could use those values to define the upper and lower ranges of a graph and be assured that the waveform would never go above or below those boundaries. These upper and lower boundaries are placed in the Observation.referenceRange.low and Observation.referenceRange.high elements, respectively.
 
-The structure definition for the PHD Rtsa Observation Profile is shown below:
+The structure definition for the PHD Rtsa Observation Profile is shown [here](PhdRtsaObservation.html)
 
 ### Mapping RTSA Waveforms To FHIR
 Periodic data is mapped to the SampledData data type in FHIR. The SampledData.data element in this data type is also scaled. If *y*[i] is the i<sup>th</sup> entry of the actual unscaled data from the PHD sensor, *y*[i] is obtained from the SampledData type using the following relation:

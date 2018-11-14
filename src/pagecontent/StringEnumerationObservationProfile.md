@@ -1,5 +1,10 @@
 The String Enumeration Observation Profile is used when the PHD metric measurement contains one of the following attributes:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|Value|
 |-
 |Enum-Observed-Value-Simple-Str|Human readable string|
@@ -7,7 +12,7 @@ The String Enumeration Observation Profile is used when the PHD metric measureme
 
 This measurement is just a human readable string and is not designed to support generic interpretation by machine. To date it is used in only the Cardiovascular specialization to report the name of some exercise program option.
 
-//TODO: Structure definition for this profile
+Structure definition for this profile is defined [here](PhdStringEnumerationObservation.html)
 
 ### Mapping the Enumeration String to FHIR
 The human readable string from the Enum-Observed-Value-Simple-Str attribute is mapped to the Observation.valueString element.

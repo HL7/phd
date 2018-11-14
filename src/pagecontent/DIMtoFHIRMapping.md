@@ -30,6 +30,11 @@ The Metric Object contains a set of optional attributes that provide additional 
 
 The examples below show the most common basic measurement types where the PHD provides one of the wall-clock type time stamps.
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 ### Scalar Numeric Metric Object Mapping Example
 
 The simplest example of a mapping of a Numeric Metric object to a FHIR Observation resource is as follows

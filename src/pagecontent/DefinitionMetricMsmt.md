@@ -1,5 +1,10 @@
 The 11073 20601 protocol is not only extensible but self-describing. The PHG does not need to know, in advance, anything about the type of measurements the PHD supports. All this information is provided in the protocol exchanges. That exchange may involve the sending of data that is not a measurement, for example the user may change the units on a weight scale from pounds to kilograms. The scale will inform the PHG of this change. If that change is sent without an accompanying weight, the incidence of the change alone makes no sense to send downstream. Consequently, a measurement is only reported if the PHD sends one of twelve attributes in the metric event (called an Observation Scan in 11073-20601 language). These attributes are:
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Measurement Attribute|Description|
 |-
 |Basic-Nu-Observed-Value|Contains a single number encoded as an Mder SFLOAT|

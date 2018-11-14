@@ -2,9 +2,14 @@ In Continua uploads the patient information is the only content that is not prov
 
 Otherwise, if the PHG is to create the Patient Resource, this profile requires that only the Patient.identifier.system, Patient.identifier.value, Patient.identifier.type.coding.code and Patient.identifier.type.coding.system be populated. The Patient.name element is optional. This approach still affords Patient Health Information protection since the values in the required fields cannot be associated to a person without some kind of dictionary.
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 The profile in the meta element shall be http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient
 
-The structure definition for the Phd Patient Profile is shown below:
+The structure definition for the Phd Patient Profile is given [here](PhdPatient.html)
 
 ### Mapping
 When a Patient resource for a known patient is to be created by the PHG the following mapping is used:
