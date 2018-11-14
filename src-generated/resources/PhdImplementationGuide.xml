@@ -170,13 +170,23 @@
 	
 	<resource>
       <reference>
-        <reference value="Bundle/1540337338319"/>
+        <reference value="Bundle/bundle-continuousnonin"/>
       </reference> 
 	  <name value="Example upload from Pulse Oximeter"/>
-	  <description value="Example contains an unknown patient, the PHG and PHD Device resources, Battery Level, Oxygen Saturation, and Pulse Rate Numeric Observations, and a Coincident Time Stamp Observation. The example is packaged into a transaction Bundle."/>
+	  <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded."/>
       <exampleBoolean value="true"/>
 	  <groupingId value="hl7.fhir.uv.phd"/>
     </resource>
+	<!--
+	<resource>
+      <reference>
+        <reference value="Observation/nan-1.0.0.42"/>
+      </reference> 
+	  <name value="Example upload from Pulse Oximeter"/>
+	  <description value="Example contains a NaN (not a number) measurement." />
+      <exampleBoolean value="true"/>
+	  <groupingId value="hl7.fhir.uv.phd" />
+    </resource> -->
 
 	<!-- The 'toc' or table of contents is required and must appear first in the pages list
 	and it must have the name toc.html. The toc.html is generated and its contents are determined
@@ -494,7 +504,7 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="1540337338319.html"/>
+<nameUrl value="bundle-continuousnonin.html"/>
 <ns18:title xmlns:ns18="http://hl7.org/fhir" value="Example upload from Pulse Oximeter"/>
 <generation value="generated"/>
 </page>

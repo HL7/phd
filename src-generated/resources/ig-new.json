@@ -194,10 +194,10 @@
     },
     {
       "reference" : {
-        "reference" : "Bundle/1540337338319"
+        "reference" : "Bundle/bundle-continuousnonin"
       },
       "name" : "Example upload from Pulse Oximeter",
-      "description" : "Example contains an unknown patient, the PHG and PHD Device resources, Battery Level, Oxygen Saturation, and Pulse Rate Numeric Observations, and a Coincident Time Stamp Observation. The example is packaged into a transaction Bundle.",
+      "description" : "This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded.",
       "exampleBoolean" : true,
       "groupingId" : "hl7.fhir.uv.phd"
     }],
@@ -510,7 +510,7 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "1540337338319.html",
+          "nameUrl" : "bundle-continuousnonin.html",
           "title" : "Example upload from Pulse Oximeter",
           "generation" : "generated"
         }]
