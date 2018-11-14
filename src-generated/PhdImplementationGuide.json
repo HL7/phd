@@ -137,6 +137,8 @@
     "StructureDefinition/PhdServerCapabilityStatement":{
     },
     "Bundle/bundle-continuousnonin":{
+    },
+    "Observation/nan-1.0.0.42":{
     }
   }
 }

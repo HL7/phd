@@ -196,8 +196,17 @@
       "reference" : {
         "reference" : "Bundle/bundle-continuousnonin"
       },
-      "name" : "Example upload from Pulse Oximeter",
+      "name" : "Example Bundled upload",
       "description" : "This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/nan-1.0.0.42"
+      },
+      "name" : "Example of a NaN case",
+      "description" : "Example contains a NaN (not a number) measurement.",
       "exampleBoolean" : true,
       "groupingId" : "hl7.fhir.uv.phd"
     }],
@@ -511,7 +520,12 @@
         },
         {
           "nameUrl" : "bundle-continuousnonin.html",
-          "title" : "Example upload from Pulse Oximeter",
+          "title" : "Example Bundled upload",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "nan-1.0.0.42.html",
+          "title" : "Example of a NaN case",
           "generation" : "generated"
         }]
       }]

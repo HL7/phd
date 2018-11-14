@@ -131,9 +131,16 @@
 <tr>
 <td style="column-width:30%">
 <a href="bundle-continuousnonin.html">
-                        •  Example upload from Pulse Oximeter</a>
+                        •  Example Bundled upload</a>
 </td>
 <td>This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded.</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="nan-1.0.0.42.html">
+                        •  Example of a NaN case</a>
+</td>
+<td>Example contains a NaN (not a number) measurement.</td>
 </tr>
 </tbody>
 </table>
