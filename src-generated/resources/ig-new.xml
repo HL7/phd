@@ -197,10 +197,28 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Observation/spotnumeric-1.0.0.3"/>
+      </reference>
+      <name value="Example of a numeric."/>
+      <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average)."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Observation/nan-1.0.0.42"/>
       </reference>
       <name value="Example of a NaN case"/>
       <description value="Example contains a NaN (not a number) measurement."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/bits-1.0.0.40"/>
+      </reference>
+      <name value="Example of a ASN1 BITs measurement"/>
+      <description value="This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc."/>
       <exampleBoolean value="true"/>
       <groupingId value="hl7.fhir.uv.phd"/>
     </resource>
@@ -351,6 +369,11 @@
             <title value="PHD Numeric Observation Profile"/>
             <generation value="markdown"/>
             <page>
+              <nameUrl value="spotNumeric.html"/>
+              <title value="Simple numeric with supplemental types"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
               <nameUrl value="NumericNaN.html"/>
               <title value="NaN Example"/>
               <generation value="markdown"/>
@@ -370,6 +393,11 @@
             <nameUrl value="BITsEnumerationObservationProfile.html"/>
             <title value="PHD BITs Coded Enumeration Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="BITsDevSensor.html"/>
+              <title value="BITs measurement; Device-Sensor status"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="RtsaObservationProfile.html"/>
@@ -518,8 +546,18 @@
           <generation value="generated"/>
         </page>
         <page>
+          <nameUrl value="spotnumeric-1.0.0.3.html"/>
+          <title value="Example of a numeric."/>
+          <generation value="generated"/>
+        </page>
+        <page>
           <nameUrl value="nan-1.0.0.42.html"/>
           <title value="Example of a NaN case"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="bits-1.0.0.40.html"/>
+          <title value="Example of a ASN1 BITs measurement"/>
           <generation value="generated"/>
         </page>
       </page>

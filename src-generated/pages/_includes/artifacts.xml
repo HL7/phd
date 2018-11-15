@@ -137,10 +137,24 @@
 </tr>
 <tr>
 <td style="column-width:30%">
+<a href="spotnumeric-1.0.0.3.html">
+                        •  Example of a numeric.</a>
+</td>
+<td>This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average).</td>
+</tr>
+<tr>
+<td style="column-width:30%">
 <a href="nan-1.0.0.42.html">
                         •  Example of a NaN case</a>
 </td>
 <td>Example contains a NaN (not a number) measurement.</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="bits-1.0.0.40.html">
+                        •  Example of a ASN1 BITs measurement</a>
+</td>
+<td>This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc.</td>
 </tr>
 </tbody>
 </table>
