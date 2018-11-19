@@ -215,7 +215,16 @@
         "reference" : "Observation/nan-1.0.0.42"
       },
       "name" : "Example of a NaN case",
-      "description" : "Example contains a NaN (not a number) measurement.",
+      "description" : "This example contains a NaN (not a number) measurement.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/glucose-1.0.0.4"
+      },
+      "name" : "Example of coded enumeration",
+      "description" : "This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner.",
       "exampleBoolean" : true,
       "groupingId" : "hl7.fhir.uv.phd"
     },
@@ -393,7 +402,12 @@
           {
             "nameUrl" : "CodedEnumerationObservationProfile.html",
             "title" : "PHD Coded Enumeration Observation Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "glucoseEnum.html",
+              "title" : "Coded Enumeration ",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "BITsEnumerationObservationProfile.html",
@@ -559,6 +573,11 @@
         {
           "nameUrl" : "nan-1.0.0.42.html",
           "title" : "Example of a NaN case",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "glucose-1.0.0.4.html",
+          "title" : "Example of coded enumeration",
           "generation" : "generated"
         },
         {

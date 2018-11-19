@@ -209,7 +209,16 @@
         <reference value="Observation/nan-1.0.0.42"/>
       </reference>
       <name value="Example of a NaN case"/>
-      <description value="Example contains a NaN (not a number) measurement."/>
+      <description value="This example contains a NaN (not a number) measurement."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/glucose-1.0.0.4"/>
+      </reference>
+      <name value="Example of coded enumeration"/>
+      <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner."/>
       <exampleBoolean value="true"/>
       <groupingId value="hl7.fhir.uv.phd"/>
     </resource>
@@ -388,6 +397,11 @@
             <nameUrl value="CodedEnumerationObservationProfile.html"/>
             <title value="PHD Coded Enumeration Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="glucoseEnum.html"/>
+              <title value="Coded Enumeration "/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="BITsEnumerationObservationProfile.html"/>
@@ -553,6 +567,11 @@
         <page>
           <nameUrl value="nan-1.0.0.42.html"/>
           <title value="Example of a NaN case"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="glucose-1.0.0.4.html"/>
+          <title value="Example of coded enumeration"/>
           <generation value="generated"/>
         </page>
         <page>

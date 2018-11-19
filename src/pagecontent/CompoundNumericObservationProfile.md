@@ -19,8 +19,6 @@ The Observation.code element comes from the Type attribute and gives the general
 
 The structure definition is given [here](PhdCompoundNumericObservation.html)
 
-A JSON example is given in [PHD Compound Numeric Observation JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdCompoundNumericObservationJSONExample)
-
 ### Mapping Compound Numerics to FHIR
 The following table shows how the compound numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC units need to be mapped to UCUM when used in FHIR.
 

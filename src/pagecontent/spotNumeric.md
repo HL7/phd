@@ -1,6 +1,6 @@
 This example shows a basic numeric observation. It does have a single component element as the measurement also contained a Supplemental Types attribute indicating the measurement is a SPOT (stable average).
 
-Note there is no logical id in this resource as this resource is being uploaded to the server in a create operation. The server will create the logical id and return it to the sender in the response. Pulse oximeters reporting a SPOT measurement have a time stamp thus there is a reference to the coincident time stamp.
+Note there is no logical id in this resource as this resource is being uploaded to the server in a conditional create operation. The server will use the identifier to check that no other Observation resource exists on the server with the same identfier. If there is not such resource present, the server will create the logical id and return it to the sender in the response. Pulse oximeters reporting a SPOT measurement have a time stamp thus there is a reference to the coincident time stamp.
 
 <pre>
 {
@@ -23,6 +23,8 @@ Note there is no logical id in this resource as this resource is being uploaded 
 					// measurement on a given server for a given patient and device.
 		{
 			"value": "sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-74E8FFFEFF051C00-149530-20181113175902-48.0-2720-150588"
+			// Identifier contains (patient info, PHD system id, type code, time stamp from PHD,
+			// measurement value, MDC term code for the units, and the supplemental types 32-bit MDC code.
 		}
 	],
 	"status": "final",
@@ -48,10 +50,12 @@ Note there is no logical id in this resource as this resource is being uploaded 
 				"code": "8867-4"
 			}
 		],
-		"text": "MDC_PULS_OXIM_PULS_RATE"
+		"text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate determined from a pulse oximeter"
 	},
 	"subject": {
 		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		// Patient resource was originally uploaded in an update transaction and the logical id was
+		// specified to be generated from the Patient.identifer.value and Patient.identifier.system elements.
 	},
 	"effectiveDateTime": "2018-11-13T17:59:02-05:00",
 	"valueQuantity": {
@@ -61,6 +65,9 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	},
 	"device": {
 		"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+		// The PHD resource was originally uploaded in an update tranaction and the logical id was
+		// specified to be the Device.identifier.value elements for the system id and transport address
+		// elements.
 	},
 	"derivedFrom": [	// Pointer to the Coincident Time Stamps Observation
 		{
