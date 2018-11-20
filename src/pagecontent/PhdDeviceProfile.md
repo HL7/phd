@@ -281,6 +281,9 @@ The encoding is as follows:
 |Device.property.valueQuantity.system|"http://unitsofmeasure.org" |
 |Device.property.valueQuantity.code|"us"  (UCUM code for microseconds)|
 
+### Examples:
+An example of a PHD Blood Pressure cuff mapping is given [here](phdExample.html)
+
 ### Consumer of the PHD Device Profile
 For the Consumer of this profile the following table gives a quick guide to the main features
 

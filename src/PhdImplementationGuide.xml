@@ -16,19 +16,19 @@ You need a 'jurisdiction' element or it will not build. Not sure how it is used 
 Resources:
 The names of the files must follow a certain structure. There are certain options. Here is one that works
     1. For structure definitions *.structuredefinition.xml where '*' is your choice (no spaces). Make sure the 'id' and 'name' values are the same as '*'
-	   For example I have PhdNumericObservation.structuredefinition.xml with <id value="PhdNumericObservation" /> and <name value="PhdNumericObservation" /> 
-	2. For value sets *.valueset.xml where '*' is your choice (no spaces). Make sure the 'id' and 'name' values are the same as '*'
-	3. For code systems *.codesystem.xml where '*' is your choice (no spaces). Make sure the 'id' and 'name' values are the same as '*'
-	4. These resources will not be listed by the Artifacts page unless one specifies a 'grouping' under the 'definition' element and then references
-	   it in each resource with groupingId.
+       For example I have PhdNumericObservation.structuredefinition.xml with <id value="PhdNumericObservation" /> and <name value="PhdNumericObservation" /> 
+    2. For value sets *.valueset.xml where '*' is your choice (no spaces). Make sure the 'id' and 'name' values are the same as '*'
+    3. For code systems *.codesystem.xml where '*' is your choice (no spaces). Make sure the 'id' and 'name' values are the same as '*'
+    4. These resources will not be listed by the Artifacts page unless one specifies a 'grouping' under the 'definition' element and then references
+       it in each resource with groupingId.
 Pages:
 For md (markdown) pages (the only pages I know how to do)
     1. No spaces in the name
-	2. No YAML headers to cause the publisher to convert them to html
-	3. No Jekyll liquid syntax to link to other pages.
-	4. All references to your pages are 'pageName.html' even though they are written in md.
-	5. Don't put a title in your md file as it is taken from the 'title' tag in the <page> entry of this file, for example
-	    <title value="Technical Implementation Guidance"/>. If you do you will have two titles.
+    2. No YAML headers to cause the publisher to convert them to html
+    3. No Jekyll liquid syntax to link to other pages.
+    4. All references to your pages are 'pageName.html' even though they are written in md.
+    5. Don't put a title in your md file as it is taken from the 'title' tag in the <page> entry of this file, for example
+        <title value="Technical Implementation Guidance"/>. If you do you will have two titles.
 In your structure definition the first page SHALL be toc.html. This page is auto generated, you do not need to create it
     Under this page every page you want included in the table of contents will appear as a sub page.
 The next primary page is 'artifacts.html'. This is auto-generated. You need no sub-pages. This topic will cause a list of all your resources to appear
@@ -65,14 +65,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PHD Profiles"/>
       <description value="Profiles for mapping 11073 20601 Personal Health Devices to FHIR resources"/>
     </grouping>
-	<resource>
+    <resource>
       <reference>
-	    <!-- I believe the value after the StructureDefinition is the <id> element in a Structure definition -->
+        <!-- I believe the value after the StructureDefinition is the <id> element in a Structure definition -->
         <reference value="StructureDefinition/PhdDevice"/>
       </reference>
       <name value="PhdDevice"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
     <resource>
       <reference>
@@ -80,70 +80,70 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference>
       <name value="PhdBaseObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdNumericObservation"/>
       </reference>
       <name value="PhdNumericObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdCompoundNumericObservation"/>
       </reference>
       <name value="PhdCompoundNumericObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdCodedEnumerationObservation"/>
       </reference>
       <name value="PhdCodedEnumerationObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdBitsEnumerationObservation"/>
       </reference>
       <name value="PhdBitsEnumerationObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdRtsaObservation"/>
       </reference>
       <name value="PhdRtsaObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdStringEnumerationObservation"/>
       </reference>
       <name value="PhdStringEnumerationObservation"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdCoincidentTimeStampObservation"/>
       </reference>
       <name value="PhdCoincidentTimeStampObservation"/>
       <exampleBoolean value="false"/>
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhgDevice"/>
       </reference>
       <name value="PhgDevice"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
     <resource>
       <reference>
@@ -151,31 +151,31 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference>
       <name value="PhdPatient"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
       <name value="ASN1ToHL7"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="CodeSystem/ContinuaHFS"/>
       </reference>
       <name value="ContinuaHFS"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="ValueSet/11073MDCobject"/>
       </reference>
       <name value="11073MDCobject"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
     <resource>
       <reference>
@@ -183,7 +183,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference>
       <name value="11073MDCnotObject"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
     <resource>
       <reference>
@@ -191,7 +191,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference>
       <name value="ASN1attribute"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
     <resource>
       <reference>
@@ -199,303 +199,408 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference>
       <name value="ASN1measurement"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	<resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/PhdServerCapabilityStatement"/>
       </reference>
       <name value="PhdServerCapabilityStatement"/>
       <exampleBoolean value="false"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	
-	<resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/nonin-hdp-1542718631721"/>
+      </reference> 
+      <name value="Example of a first time Bundle upload"/>
+      <description value="This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present." />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+
+    <resource>
       <reference>
         <reference value="Bundle/bundle-continuousnonin"/>
       </reference> 
-	  <name value="Example Bundled upload"/>
-	  <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
+      <name value="Example Bundled upload"/>
+      <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
       <exampleBoolean value="true"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	
-	<resource>
+    
+    <resource>
       <reference>
         <reference value="Observation/spotnumeric-1.0.0.3"/>
       </reference> 
-	  <name value="Example of a numeric."/>
-	  <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average)." />
+      <name value="Example of a numeric."/>
+      <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average)." />
       <exampleBoolean value="true"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
 
-	<resource>
+    <resource>
       <reference>
         <reference value="Observation/nan-1.0.0.42"/>
       </reference> 
-	  <name value="Example of a NaN case"/>
-	  <description value="This example contains a NaN (not a number) measurement." />
+      <name value="Example of a NaN case"/>
+      <description value="This example contains a NaN (not a number) measurement." />
       <exampleBoolean value="true"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	
-	<resource>
+    
+    <resource>
       <reference>
         <reference value="Observation/glucose-1.0.0.4"/>
       </reference> 
-	  <name value="Example of coded enumeration"/>
-	  <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner." />
+      <name value="Example of coded enumeration"/>
+      <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner." />
       <exampleBoolean value="true"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
-	
-	<resource>
+    
+    <resource>
       <reference>
         <reference value="Observation/bits-1.0.0.40"/>
       </reference> 
-	  <name value="Example of a ASN1 BITs measurement"/>
-	  <description value="This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc." />
+      <name value="Example of a ASN1 BITs measurement"/>
+      <description value="This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc." />
       <exampleBoolean value="true"/>
-	  <groupingId value="hl7.fhir.uv.phd" />
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/bloodPress-1.0.1"/>
+      </reference> 
+      <name value="Example of Compound measurement"/>
+      <description value="This example is from a Blood Pressure cuff." />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/coin-20181119202022"/>
+      </reference> 
+      <name value="Example of a Coincident Time Stamp"/>
+      <description value="This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD. This situation is the most prevalent." />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/coin-fault20"/>
+      </reference> 
+      <name value="Example of a Coincident Time Stamp with a Time Fault"/>
+      <description value="This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements." />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/phd-711000FEFF5F49B0.B0495F001071"/>
+      </reference> 
+      <name value="Example of a PHD"/>
+      <description value="This example maps the MDS data from a Blood Pressure PHD" />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
     </resource>
 
-	<!-- The 'toc' or table of contents is required and must appear first in the pages list
-	and it must have the name toc.html. The toc.html is generated and its contents are determined
-	by all the pages contained in the hierarchy underneath it. The first page underneath it
-	is the home page index.html which shall be named 'index'. In this guide it is an md file
-	that I have written. The second 'primary' page SHALL be artifacts.html and it has no sub-pages. -->
+    <resource>
+      <reference>
+        <reference value="Observation/phg-ecde3d4e58532d31.000000000000"/>
+      </reference> 
+      <name value="Example of a Gateway"/>
+      <description value="This example maps an Android Gateway" />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/sisansarahId.1.2.3.4.5.6.7.8.10"/>
+      </reference> 
+      <name value="Example of a Patient"/>
+      <description value="This example maps a patient where an optional patient name is included" />
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd" />
+    </resource>
+
+    <!-- The 'toc' or table of contents is required and must appear first in the pages list
+    and it must have the name toc.html. The toc.html is generated and its contents are determined
+    by all the pages contained in the hierarchy underneath it. The first page underneath it
+    is the home page index.html which shall be named 'index'. In this guide it is an md file
+    that I have written. The second 'primary' page SHALL be artifacts.html and it has no sub-pages. -->
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
       <generation value="html"/>
-	  <!-- Now for the structure of the table of contents -->
+      <!-- Now for the structure of the table of contents -->
       <page>
         <nameUrl value="index.html"/>
         <title value="Continua PHD Implementation guide Home Page"/>
         <generation value="markdown"/>
-		<page>
+        <page>
           <nameUrl value="overview.html"/>
           <title value="Overview"/>
           <generation value="markdown"/>
-		  <page>
-			<nameUrl value="Purpose.html"/>
-			<title value="Purpose"/>
-			<generation value="markdown"/>
-		  </page>
-		  <page>
-			  <nameUrl value="Audience.html"/>
-			  <title value="Audience"/>
-			  <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="Scope.html"/>
-		    <title value="Scope"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="UseCases.html"/>
-		    <title value="Use Cases"/>
-		    <generation value="markdown"/>
-		  </page>
-		</page>
-		<page>
+          <page>
+            <nameUrl value="Purpose.html"/>
+            <title value="Purpose"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+              <nameUrl value="Audience.html"/>
+              <title value="Audience"/>
+              <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="Scope.html"/>
+            <title value="Scope"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="UseCases.html"/>
+            <title value="Use Cases"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
           <nameUrl value="TechnicalImplementationGuidance.html"/>
           <title value="Technical Implementation Guidance"/>
           <generation value="markdown"/>
-		  <page>
-		    <nameUrl value="RemotePatientMonitoringConsiderations.html"/>
-		    <title value="Remote Patient Monitoring Considerations"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="GenericModel.html"/>
-		    <title value="Generic and Extensible Model"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="DIMtoFHIRMapping.html"/>
-		    <title value="DIM to FHIR Mapping: Basics"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="GeneralNotestoConsumers.html"/>
-		    <title value="General Notes to Consumers of FHIR Data"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="DIMtoFHIRMappingDetails.html"/>
-		    <title value="DIM to FHIR Mapping: Details"/>
-		    <generation value="markdown"/>
-			<page>
-		      <nameUrl value="DefinitionMetricMsmt.html"/>
-		      <title value="Definition of a Metric Measurement"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="MetricAttributesofNoInterest.html"/>
-		      <title value="Metric Protocol-Only Attributes"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="MderFLOATsandSFLOATs.html"/>
-		      <title value="Mder FLOATs and SFLOATs"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="Nomenclaturecodes.html"/>
-		      <title value="Nomenclature codes"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="CodeableConcepts.html"/>
-		      <title value="Codeable Concepts"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="ObtainObservationCode.html"/>
-		      <title value="Obtaining the Observation Code"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="ObtainUnitCode.html"/>
-		      <title value="Obtaining the Unit Code"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="ASN1BITsCodeSystem.html"/>
-		      <title value="ASN1 BITs Code System"/>
-		      <generation value="markdown"/>
-			  <page>
-		        <nameUrl value="ASN1toHL7Codes.html"/>
-		        <title value="ASN1 BITs Codes"/>
-		        <generation value="markdown"/>
-		      </page>
-		    </page>
-			<page>
-		      <nameUrl value="ObservationIdentifier.html"/>
-		      <title value="The Observation Identifier"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
-		      <title value="Generating the PHD Reported Time Stamp Identifier"/>
-		      <generation value="markdown"/>
-		    </page>
-		  </page>
-		  <page>
-		    <nameUrl value="CoincidentTimeStamp.html"/>
-		    <title value="Coincident Time Stamp"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="Non1107320601Devices.html"/>
-		    <title value="Non 11073 20601 Devices"/>
-		    <generation value="markdown"/>
-		  </page>
-		</page>
-		<page>
+          <page>
+            <nameUrl value="RemotePatientMonitoringConsiderations.html"/>
+            <title value="Remote Patient Monitoring Considerations"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="GenericModel.html"/>
+            <title value="Generic and Extensible Model"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="DIMtoFHIRMapping.html"/>
+            <title value="DIM to FHIR Mapping: Basics"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="GeneralNotestoConsumers.html"/>
+            <title value="General Notes to Consumers of FHIR Data"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="DIMtoFHIRMappingDetails.html"/>
+            <title value="DIM to FHIR Mapping: Details"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="DefinitionMetricMsmt.html"/>
+              <title value="Definition of a Metric Measurement"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="MetricAttributesofNoInterest.html"/>
+              <title value="Metric Protocol-Only Attributes"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="MderFLOATsandSFLOATs.html"/>
+              <title value="Mder FLOATs and SFLOATs"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="Nomenclaturecodes.html"/>
+              <title value="Nomenclature codes"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="CodeableConcepts.html"/>
+              <title value="Codeable Concepts"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="ObtainObservationCode.html"/>
+              <title value="Obtaining the Observation Code"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="ObtainUnitCode.html"/>
+              <title value="Obtaining the Unit Code"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="ASN1BITsCodeSystem.html"/>
+              <title value="ASN1 BITs Code System"/>
+              <generation value="markdown"/>
+              <page>
+                <nameUrl value="ASN1toHL7Codes.html"/>
+                <title value="ASN1 BITs Codes"/>
+                <generation value="markdown"/>
+              </page>
+            </page>
+            <page>
+              <nameUrl value="ObservationIdentifier.html"/>
+              <title value="The Observation Identifier"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
+              <title value="Generating the PHD Reported Time Stamp Identifier"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="CoincidentTimeStamp.html"/>
+            <title value="Coincident Time Stamp"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="Non1107320601Devices.html"/>
+            <title value="Non 11073 20601 Devices"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
           <nameUrl value="profiles.html"/>
           <title value="Profiles"/>
           <generation value="markdown"/>
-		  <page>
-		    <nameUrl value="ProfilesOverview.html"/>
-		    <title value="Profiles Overview"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="BaseObservationProfile.html"/>
-		    <title value="Base Observation Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="NumericObservationProfile.html"/>
-		    <title value="PHD Numeric Observation Profile"/>
-		    <generation value="markdown"/>
-			<page>
-		      <nameUrl value="spotNumeric.html"/>
-		      <title value="Simple numeric with supplemental types"/>
-		      <generation value="markdown"/>
-		    </page>
-			<page>
-		      <nameUrl value="NumericNaN.html"/>
-		      <title value="NaN Example"/>
-		      <generation value="markdown"/>
-		    </page>
-		  </page>
-		  <page>
-		    <nameUrl value="CompoundNumericObservationProfile.html"/>
-		    <title value="PHD Compound Numeric Observation Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="CodedEnumerationObservationProfile.html"/>
-		    <title value="PHD Coded Enumeration Observation Profile"/>
-		    <generation value="markdown"/>
-			<page>
-		      <nameUrl value="glucoseEnum.html"/>
-		      <title value="Coded Enumeration "/>
-		      <generation value="markdown"/>
-		    </page>
-		  </page>
-		  <page>
-		    <nameUrl value="BITsEnumerationObservationProfile.html"/>
-		    <title value="PHD BITs Coded Enumeration Observation Profile"/>
-		    <generation value="markdown"/>
-			<page>
-		      <nameUrl value="BITsDevSensor.html"/>
-		      <title value="BITs measurement; Device-Sensor status"/>
-		      <generation value="markdown"/>
-		    </page>
-		  </page>
-		  <page>
-		    <nameUrl value="RtsaObservationProfile.html"/>
-		    <title value="PHD Real Time Sample Array Observation Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="StringEnumerationObservationProfile.html"/>
-		    <title value="PHD String Enumeration Observation Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
-		    <title value="PHD Coincident Time Stamp Observation Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="PhdDeviceProfile.html"/>
-		    <title value="PHD Device Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="PhgDeviceProfile.html"/>
-		    <title value="PHG (Personal Health Gateway) Device Profile"/>
-		    <generation value="markdown"/>
-		  </page>
-		  <page>
-		    <nameUrl value="PhdPatientProfile.html"/>
-		    <title value="PHD Patient Profile"/>
-		    <generation value="markdown"/>
-		  </page>
+          <page>
+            <nameUrl value="ProfilesOverview.html"/>
+            <title value="Profiles Overview"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="bundleExample.html"/>
+              <title value="Bundled upload of Patient, Device, and Observation resources"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="BaseObservationProfile.html"/>
+            <title value="Base Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="NumericObservationProfile.html"/>
+            <title value="PHD Numeric Observation Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="spotNumeric.html"/>
+              <title value="Simple numeric with supplemental types"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="NumericNaN.html"/>
+              <title value="NaN Example"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="CompoundNumericObservationProfile.html"/>
+            <title value="PHD Compound Numeric Observation Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="bloodPress.html"/>
+              <title value="Compound Measurement "/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="CodedEnumerationObservationProfile.html"/>
+            <title value="PHD Coded Enumeration Observation Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="glucoseEnum.html"/>
+              <title value="Coded Enumeration "/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="BITsEnumerationObservationProfile.html"/>
+            <title value="PHD BITs Coded Enumeration Observation Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="BITsDevSensor.html"/>
+              <title value="BITs measurement; Device-Sensor status"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="RtsaObservationProfile.html"/>
+            <title value="PHD Real Time Sample Array Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="StringEnumerationObservationProfile.html"/>
+            <title value="PHD String Enumeration Observation Profile"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
+            <title value="PHD Coincident Time Stamp Observation Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="coincidentTime.html"/>
+              <title value="Coincident Time Stamp: PHG best synchronized"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="coinFault.html"/>
+              <title value="Coincident Time Stamp with a time fault"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="PhdDeviceProfile.html"/>
+            <title value="PHD Device Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="phdExample.html"/>
+              <title value="Device example from a Blood Pressure PHD"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="PhgDeviceProfile.html"/>
+            <title value="PHG (Personal Health Gateway) Device Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="phgExample.html"/>
+              <title value="Android Gateway example"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="PhdPatientProfile.html"/>
+            <title value="PHD Patient Profile"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="patientExample.html"/>
+              <title value="Patient example containing optional patient name"/>
+              <generation value="markdown"/>
+            </page>
+          </page>
         </page>
-		<page>
-		  <nameUrl value="terminology.html"/>
-		  <title value="Terminology"/>
-		  <generation value="markdown"/>
-		</page>
-		<page>
-		  <nameUrl value="resources.html"/>
-		  <title value="Resources"/>
-		  <generation value="markdown"/>
-		</page>
-		<page>
-		  <nameUrl value="downloads.html"/>
-		  <title value="Downloads"/>
-		  <generation value="markdown"/>
-		</page>
-	  </page>
-	  <!-- Required element. Second 'primary' top-level page. It is generated -->
+        <page>
+          <nameUrl value="terminology.html"/>
+          <title value="Terminology"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="resources.html"/>
+          <title value="Resources"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="downloads.html"/>
+          <title value="Downloads"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <!-- Required element. Second 'primary' top-level page. It is generated -->
       <page>
         <nameUrl value="artifacts.html"/>
         <title value="Artifact List"/>

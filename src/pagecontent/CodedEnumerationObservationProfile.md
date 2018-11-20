@@ -46,7 +46,7 @@ The final identifier is made by concatenating the entries above as follows:
 There are no additional descriptive attributes that are unique to the Enumeration type of measurement.
 
 ### Examples:
-The[Glucose Meal Context](glucoseEnum.html) example shows a glucose meal context measurment. The meal context is a limited set of coded values indicating when the measurment was taken relative to a meal. The measurement SHOULD have a derivedFrom entry pointing to the glucose concentration measurement to which it refers. The fact it does not was a miss in the Glucose specialization standard and has since been corrected, but the device that reported this measurement was made before the change in the standard.
+The [Glucose Meal Context](glucoseEnum.html) example shows a glucose meal context measurement. The meal context is a limited set of coded values indicating when the measurement was taken relative to a meal. The measurement SHOULD have an Observation.derivedFrom entry pointing to the glucose concentration measurement to which it refers. The fact it does not was a miss in the Glucose specialization standard and has since been corrected, but the device that reported this measurement was made before the change in the standard.
 
 
 

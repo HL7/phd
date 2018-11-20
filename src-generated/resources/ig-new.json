@@ -3,27 +3,27 @@
   "id" : "PhdImplementationGuide",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Ruby24-x64\\PHD\\src-generated\\resources"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\resources"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\vocabulary"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\examples"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\images"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Ruby24-x64\\PHD\\src-generated\\pages"
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PHD\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide",
   "version" : "0.2.0",
@@ -194,6 +194,15 @@
     },
     {
       "reference" : {
+        "reference" : "Observation/nonin-hdp-1542718631721"
+      },
+      "name" : "Example of a first time Bundle upload",
+      "description" : "This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
         "reference" : "Bundle/bundle-continuousnonin"
       },
       "name" : "Example Bundled upload",
@@ -234,6 +243,60 @@
       },
       "name" : "Example of a ASN1 BITs measurement",
       "description" : "This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/bloodPress-1.0.1"
+      },
+      "name" : "Example of Compound measurement",
+      "description" : "This example is from a Blood Pressure cuff.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/coin-20181119202022"
+      },
+      "name" : "Example of a Coincident Time Stamp",
+      "description" : "This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD. This situation is the most prevalent.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/coin-fault20"
+      },
+      "name" : "Example of a Coincident Time Stamp with a Time Fault",
+      "description" : "This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/phd-711000FEFF5F49B0.B0495F001071"
+      },
+      "name" : "Example of a PHD",
+      "description" : "This example maps the MDS data from a Blood Pressure PHD",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/phg-ecde3d4e58532d31.000000000000"
+      },
+      "name" : "Example of a Gateway",
+      "description" : "This example maps an Android Gateway",
+      "exampleBoolean" : true,
+      "groupingId" : "hl7.fhir.uv.phd"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/sisansarahId.1.2.3.4.5.6.7.8.10"
+      },
+      "name" : "Example of a Patient",
+      "description" : "This example maps a patient where an optional patient name is included",
       "exampleBoolean" : true,
       "groupingId" : "hl7.fhir.uv.phd"
     }],
@@ -372,7 +435,12 @@
           "page" : [{
             "nameUrl" : "ProfilesOverview.html",
             "title" : "Profiles Overview",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "bundleExample.html",
+              "title" : "Bundled upload of Patient, Device, and Observation resources",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "BaseObservationProfile.html",
@@ -397,7 +465,12 @@
           {
             "nameUrl" : "CompoundNumericObservationProfile.html",
             "title" : "PHD Compound Numeric Observation Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "bloodPress.html",
+              "title" : "Compound Measurement ",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "CodedEnumerationObservationProfile.html",
@@ -432,22 +505,47 @@
           {
             "nameUrl" : "CoincidentTimeStampObservationProfile.html",
             "title" : "PHD Coincident Time Stamp Observation Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "coincidentTime.html",
+              "title" : "Coincident Time Stamp: PHG best synchronized",
+              "generation" : "markdown"
+            },
+            {
+              "nameUrl" : "coinFault.html",
+              "title" : "Coincident Time Stamp with a time fault",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "PhdDeviceProfile.html",
             "title" : "PHD Device Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "phdExample.html",
+              "title" : "Device example from a Blood Pressure PHD",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "PhgDeviceProfile.html",
             "title" : "PHG (Personal Health Gateway) Device Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "phgExample.html",
+              "title" : "Android Gateway example",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "PhdPatientProfile.html",
             "title" : "PHD Patient Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "patientExample.html",
+              "title" : "Patient example containing optional patient name",
+              "generation" : "markdown"
+            }]
           }]
         },
         {
@@ -561,6 +659,11 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "nonin-hdp-1542718631721.html",
+          "title" : "Example of a first time Bundle upload",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "bundle-continuousnonin.html",
           "title" : "Example Bundled upload",
           "generation" : "generated"
@@ -583,6 +686,36 @@
         {
           "nameUrl" : "bits-1.0.0.40.html",
           "title" : "Example of a ASN1 BITs measurement",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "bloodPress-1.0.1.html",
+          "title" : "Example of Compound measurement",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "coin-20181119202022.html",
+          "title" : "Example of a Coincident Time Stamp",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "coin-fault20.html",
+          "title" : "Example of a Coincident Time Stamp with a Time Fault",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "phd-711000FEFF5F49B0.B0495F001071.html",
+          "title" : "Example of a PHD",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "phg-ecde3d4e58532d31.000000000000.html",
+          "title" : "Example of a Gateway",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "sisansarahId.1.2.3.4.5.6.7.8.10.html",
+          "title" : "Example of a Patient",
           "generation" : "generated"
         }]
       }]

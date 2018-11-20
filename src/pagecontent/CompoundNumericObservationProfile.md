@@ -71,6 +71,9 @@ The entries are as populated as follows:
 |valueQuantity.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
 |valueQuantity.code|shall be the UCUM code of the primary measurement|Assumes the units are the same for all components|
 
+### Examples:
+This example shows a [blood pressure](bloodPress.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
+
 
 
 

@@ -181,7 +181,7 @@ The table blow provides codes and reference identifiers used in mapping the prod
  - serialNumber="*serial number*"
  - partNumber="*part number*"
 
- #### **Hardware, Software, Firmware, Protocol, and Continua Versions**
+#### **Hardware, Software, Firmware, Protocol, and Continua Versions**
  - hardware 
  - version.type.coding.code="531974"
  - version.type.coding.system="urn.iso.std.iso:11073:10101"
@@ -282,5 +282,8 @@ The time synchronization accuracy is reported in microseconds as follows:
  - Device.property.valueQuantity.value="*time-sync-accuracy*"
  - Device.property.valueQuantity.system="http://unitsofmeasure.org"
  - Device.property.valueQuantity.code="us"  (UCUM code for microseconds)
+ 
+### Examples:
+An example of an Android PHG mapping is given [here](phgExample.html)
 
 

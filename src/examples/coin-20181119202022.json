@@ -1,0 +1,21 @@
+{
+	"resourceType": "Observation",
+	"id":"coin-20181119202022",
+	"meta": {
+		"profile": [
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
+		]
+	},
+	"status": "final",
+	"code": {
+		"coding": [
+			{
+				"system": "urn:iso:std:iso:11073:10101",
+				"code": "67975"
+			}
+		],
+		"text": "MDC_ATTR_TIME_ABS: Absolute time"
+	},
+	"effectiveDateTime": "2018-11-11T19:07:36-05:00",
+	"valueDateTime": "2018-11-11T19:07:35-05:00"
+}

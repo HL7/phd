@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="PhdImplementationGuide"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src-generated\resources"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src-generated\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src\resources"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src\vocabulary"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src\examples"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Ruby24-x64\PHD\src\images"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Ruby24-x64\PHD\src-generated\pages"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src-generated\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
   <version value="0.2.0"/>
@@ -188,6 +188,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Observation/nonin-hdp-1542718631721"/>
+      </reference>
+      <name value="Example of a first time Bundle upload"/>
+      <description value="This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/bundle-continuousnonin"/>
       </reference>
       <name value="Example Bundled upload"/>
@@ -228,6 +237,60 @@
       </reference>
       <name value="Example of a ASN1 BITs measurement"/>
       <description value="This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/bloodPress-1.0.1"/>
+      </reference>
+      <name value="Example of Compound measurement"/>
+      <description value="This example is from a Blood Pressure cuff."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/coin-20181119202022"/>
+      </reference>
+      <name value="Example of a Coincident Time Stamp"/>
+      <description value="This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD. This situation is the most prevalent."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/coin-fault20"/>
+      </reference>
+      <name value="Example of a Coincident Time Stamp with a Time Fault"/>
+      <description value="This example is a Coincident Time stamp where the PHD has a time fault; it&#39;s current time line is unknown and it reported time stamps in its measurements."/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/phd-711000FEFF5F49B0.B0495F001071"/>
+      </reference>
+      <name value="Example of a PHD"/>
+      <description value="This example maps the MDS data from a Blood Pressure PHD"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/phg-ecde3d4e58532d31.000000000000"/>
+      </reference>
+      <name value="Example of a Gateway"/>
+      <description value="This example maps an Android Gateway"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="hl7.fhir.uv.phd"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/sisansarahId.1.2.3.4.5.6.7.8.10"/>
+      </reference>
+      <name value="Example of a Patient"/>
+      <description value="This example maps a patient where an optional patient name is included"/>
       <exampleBoolean value="true"/>
       <groupingId value="hl7.fhir.uv.phd"/>
     </resource>
@@ -367,6 +430,11 @@
             <nameUrl value="ProfilesOverview.html"/>
             <title value="Profiles Overview"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="bundleExample.html"/>
+              <title value="Bundled upload of Patient, Device, and Observation resources"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="BaseObservationProfile.html"/>
@@ -392,6 +460,11 @@
             <nameUrl value="CompoundNumericObservationProfile.html"/>
             <title value="PHD Compound Numeric Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="bloodPress.html"/>
+              <title value="Compound Measurement "/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="CodedEnumerationObservationProfile.html"/>
@@ -427,21 +500,46 @@
             <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
             <title value="PHD Coincident Time Stamp Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="coincidentTime.html"/>
+              <title value="Coincident Time Stamp: PHG best synchronized"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="coinFault.html"/>
+              <title value="Coincident Time Stamp with a time fault"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="PhdDeviceProfile.html"/>
             <title value="PHD Device Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="phdExample.html"/>
+              <title value="Device example from a Blood Pressure PHD"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="PhgDeviceProfile.html"/>
             <title value="PHG (Personal Health Gateway) Device Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="phgExample.html"/>
+              <title value="Android Gateway example"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="PhdPatientProfile.html"/>
             <title value="PHD Patient Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="patientExample.html"/>
+              <title value="Patient example containing optional patient name"/>
+              <generation value="markdown"/>
+            </page>
           </page>
         </page>
         <page>
@@ -555,6 +653,11 @@
           <generation value="generated"/>
         </page>
         <page>
+          <nameUrl value="nonin-hdp-1542718631721.html"/>
+          <title value="Example of a first time Bundle upload"/>
+          <generation value="generated"/>
+        </page>
+        <page>
           <nameUrl value="bundle-continuousnonin.html"/>
           <title value="Example Bundled upload"/>
           <generation value="generated"/>
@@ -577,6 +680,36 @@
         <page>
           <nameUrl value="bits-1.0.0.40.html"/>
           <title value="Example of a ASN1 BITs measurement"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="bloodPress-1.0.1.html"/>
+          <title value="Example of Compound measurement"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="coin-20181119202022.html"/>
+          <title value="Example of a Coincident Time Stamp"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="coin-fault20.html"/>
+          <title value="Example of a Coincident Time Stamp with a Time Fault"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="phd-711000FEFF5F49B0.B0495F001071.html"/>
+          <title value="Example of a PHD"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="phg-ecde3d4e58532d31.000000000000.html"/>
+          <title value="Example of a Gateway"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="sisansarahId.1.2.3.4.5.6.7.8.10.html"/>
+          <title value="Example of a Patient"/>
           <generation value="generated"/>
         </page>
       </page>

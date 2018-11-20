@@ -97,14 +97,9 @@
     <resource> 
       <type value="Observation"/> 
       <interaction> 
-        <code value="update"/> 
-      </interaction>
-      <interaction> 
         <code value="create"/> 
       </interaction> 
-	  <updateCreate value="true" />
 	  <conditionalCreate value="true" />
-	  <conditionalUpdate value="true" />
     </resource> 
     <interaction> 
       <code value="transaction"/> 

@@ -51,3 +51,6 @@ The Observation.device element is a reference to the Device resource representin
 
 ### Additional information
 There is no additional information reported in component elements in this profile.
+
+### Examples:
+An example of a coincident time stamp observation where the PHG is better synchronized to NTP time than the PHD is given [here](coincidentTime.html). An example where the PHD has a time fault is given [here](coinFault.html).

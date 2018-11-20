@@ -31,3 +31,6 @@ When a Patient is unknown the following mapping is used:
 |code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/CodeSystem/v2-0203 "
 |code system code|Patient.identifier.type.coding.code|'U'|
 
+### Examples:
+An example of a PHD patient mapping is given [here](patientExample.html). The example contains an optional name element.
+

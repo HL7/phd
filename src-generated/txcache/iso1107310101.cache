@@ -123,3 +123,193 @@ e: {
   "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "150020"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150020) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "150021"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150021) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "150022"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150022) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "150023"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150023) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "67975"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#67975) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "65573"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#65573) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "528391"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#528391) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "531976"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#531976) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "531975"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#531975) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "531974"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#531974) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "532353"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532353) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "68220"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68220) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "532224"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532224) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "531981"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#531981) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "532352"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532352) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "532226"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532226) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "532355"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532355) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "528388"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#528388) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:11073:10101",
+  "code" : "68222"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68222) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
