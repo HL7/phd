@@ -6,6 +6,8 @@
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
   <text>
+    <status value="additional" />
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing 11073 ASN1 BITs measurements.</p></div>
   </text>
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
@@ -1245,7 +1247,7 @@
   </concept>
 <!-- The following code concepts are derived from the MDC_CGM_DEV_STAT attribute -->
   <concept> 
-    <code value="8408608.0"/> 
+    <code value="8418060.0"/> 
     <display value="Sensor session stopped"/> 
     <definition value="Session stopped"/> 
     <property> 
@@ -1258,7 +1260,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.2"/> 
+    <code value="8418060.2"/> 
     <display value="Sensor type incorrect"/> 
     <definition value="Sensor type incorrect for device"/> 
     <property> 
@@ -1271,7 +1273,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.3"/> 
+    <code value="8418060.3"/> 
     <display value="Sensor malfunction"/> 
     <definition value="The sensor malfunctioned"/> 
     <property> 
@@ -1284,7 +1286,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.4"/> 
+    <code value="8418060.4"/> 
     <display value="Device specific alert"/> 
     <definition value="Device specific alert"/> 
     <property> 
@@ -1297,7 +1299,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.7"/> 
+    <code value="8418060.7"/> 
     <display value="Sensor calibration not allowed"/> 
     <definition value="Calibrating the sensor is not allowed"/> 
     <property> 
@@ -1310,7 +1312,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.8"/> 
+    <code value="8418060.8"/> 
     <display value="Sensor calibration recommended"/> 
     <definition value="Calibrating the sensor is recommended"/> 
     <property> 
@@ -1323,7 +1325,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.9"/> 
+    <code value="8418060.9"/> 
     <display value="Sensor calibration required"/> 
     <definition value="Calibrating the sensor is required"/> 
     <property> 
@@ -1336,7 +1338,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.10"/> 
+    <code value="8418060.10"/> 
     <display value="Sensor temp too high"/> 
     <definition value="Temperature is too high for a valid result"/> 
     <property> 
@@ -1349,7 +1351,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.11"/> 
+    <code value="8418060.11"/> 
     <display value="Sensor temp too low"/> 
     <definition value="Temperature is too low for a valid result"/> 
     <property> 
@@ -1362,7 +1364,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.12"/> 
+    <code value="8418060.12"/> 
     <display value="Sensor result below patient level"/> 
     <definition value="Sensor result below the Patient Low level"/> 
     <property> 
@@ -1375,7 +1377,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.13"/> 
+    <code value="8418060.13"/> 
     <display value="Sensor result above patient level"/> 
     <definition value="Sensor result above the Patient High level"/> 
     <property> 
@@ -1388,7 +1390,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.14"/> 
+    <code value="8418060.14"/> 
     <display value="Sensor low hypo"/> 
     <definition value="Sensor result below the Hypo level"/> 
     <property> 
@@ -1401,7 +1403,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.15"/> 
+    <code value="8418060.15"/> 
     <display value="Sensor result hyper"/> 
     <definition value="Sensor result above the Hyper level"/> 
     <property> 
@@ -1414,7 +1416,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.16"/> 
+    <code value="8418060.16"/> 
     <display value="Sensor rate decrease exceeded"/> 
     <definition value="The sensor rate of decrease has been exceeded"/> 
     <property> 
@@ -1427,7 +1429,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.17"/> 
+    <code value="8418060.17"/> 
     <display value="Sensor rate increase exceeded"/> 
     <definition value="The sensor rate of increase has been exceeded"/> 
     <property> 
@@ -1440,20 +1442,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.0"/> 
-    <display value="Sensor session stopped"/> 
-    <definition value="Session stopped"/> 
-    <property> 
-      <code value="type" /> 
-      <valueString value="event" />
-    </property>
-    <property> 
-      <code value="source" /> 
-      <valueString value="measurement" />
-    </property>
-  </concept>
-  <concept> 
-    <code value="8408608.18"/> 
+    <code value="8418060.18"/> 
     <display value="Sensor result too low"/> 
     <definition value="Sensor result is lower than the device can process"/> 
     <property> 
@@ -1466,7 +1455,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.19"/> 
+    <code value="8418060.19"/> 
     <display value="Sensor result too high"/> 
     <definition value="Sensor result is higher than the device can process"/> 
     <property> 
@@ -1479,7 +1468,7 @@
     </property>
   </concept>
   <concept> 
-    <code value="8408608.20"/> 
+    <code value="8418060.20"/> 
     <display value="Sensor com out of range"/> 
     <definition value="The sensor communication is out of range"/> 
     <property> 

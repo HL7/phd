@@ -48,7 +48,8 @@ This example maps a Blood Pressure PHD unit to a Device Resource. All the inform
                     }
                 ],
                 "text": "MDC_DEV_SPEC_PROFILE_BP: Blood Pressure Cuff"
-            }
+            },
+            "version":"1"
         }
     ],
     "version": [

@@ -9,6 +9,18 @@ This example shows a coincident time stamp in the case where the PHD has a time 
 		]
 	},
 	"status": "final",
+	"code": {
+		"coding": [
+			{
+				"system": "urn:iso:std:iso:11073:10101",
+				"code": "67975"
+			}
+		],
+		"text": "MDC_ATTR_TIME_ABS: Absolute time"
+	},
+	"subject": {
+		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+	},
 	"effectiveDateTime": "2018-11-20T04:50:47-05:00",
 	"dataAbsentReason": {
 		"coding": [
@@ -18,6 +30,9 @@ This example shows a coincident time stamp in the case where the PHD has a time 
 			}
 		],
 		"text": "Sensor Time Fault"
+	},
+	"device": {
+		"reference": "Device/711000FEFF5F49B0.B0495F001071"
 	}
 }
 </pre>

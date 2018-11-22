@@ -263,7 +263,8 @@ This example is a transaction bundle where the Patient and Device resources are 
                                 }
                             ],
                             "text": "MDC_DEV_SPEC_PROFILE_PULS_OXIM: Pulse Oximeter"
-                        }
+                        },
+                        "version":"1"
                     }
                 ],
                 "version": [

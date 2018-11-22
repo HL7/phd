@@ -34,7 +34,7 @@ For a general description of the PHD Observation Identifier see the "PHD Observa
 |-
 |device|"PhdDevice.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation Code](ObtainingtheObservation-code.html)|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation Code](ObtainObservationCode.html)|
 |value|"Observation.valueQuantity.value" or <br/> "Observation.dataAbsentReason.coding.code|The numerical value of the measurement or <br/> the data absent reason if the value is not present|
 |units|"Observation.valueQuantity.code"|The UCUM code for the units|
 |reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|

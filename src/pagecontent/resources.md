@@ -17,6 +17,7 @@ This page provides a list of the FHIR artifacts defined as part of this Implemen
 <ul>{% include list-simple-devices.xhtml %}</ul>
 <ul>{% include list-simple-devicemetrics.xhtml %}</ul>
 <ul>{% include list-simple-observations.xhtml %}</ul>
+
 ### References
 IEEE 11073-20601 Part 20601: Application profile—Optimized Exchange Protocol
 IEEE 11073-10101 Draft Standard for Health Informatics—Point-of-Care Medical Device Communication—Nomenclature

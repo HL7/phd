@@ -8,7 +8,7 @@ In this section the details of the mapping of the 11073 20601 Metric objects to 
  - [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html)
  - [Obtaining the Unit code]({{ output }}ObtainUnitCode.html)
  - [ASN1 BITS Code System]({{ output }}ASN1BITsCodeSystem.html)
- - [The Observation Identifier]({{ output }}TheObservationIdentifier.html)
+ - [The Observation Identifier]({{ output }}ObservationIdentifier.html)
  - [Generating the Reported Time Stamp Observation Identifier]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)
  
  - [Previous: General Notes to Consumers of FHIR Data]({{ output }}GeneralNotestoConsumers.html)

@@ -7,7 +7,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	"resourceType": "Observation",
 	"meta": {
 		"profile": [
-			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 		]
 	},
 	"extension": [

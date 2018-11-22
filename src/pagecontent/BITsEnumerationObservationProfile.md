@@ -15,7 +15,7 @@ The Enum-Observed-Value-Simple/Basic-Bit-Str attribute is used when the measurem
 
 The Enum-Observed-Value attribute is a complex attribute and can be any one of the three possible enumeration measurements. There is an element in the structure which indicates which type of enumeration it is. If it is a 'BITs' type it reports only the 32-bit version. The attribute also has its own metric-id value telling what it is and status value. The metric-id value replaces the term code given by the Type attribute for the *type* of measurement and the status value replaces the Measurement-Status attribute.
 
-The structure definition for this profile is given [here](PhdBITsEnumerationObservation.html)
+The structure definition for this profile is given [here](PhdBitsEnumerationObservation.html)
 
 ### Mapping BITs Enumerations to FHIR
 FHIR has no data type that corresponds to this kind of measurement. Consequently Continua has developed a code system which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 BITS Code System](ASN1BITsCodeSystem.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported.
@@ -32,7 +32,7 @@ Recall that only set bits of type 'event' need to be reported. If of type 'state
 |If reporting an unsupported bit *N*|Observation.component*M*.dataAbsentReason="unsupported"|
 
 ### Meta Data Profile
-The uploader shall populate the Device.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.
+The uploader shall populate the Device.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.
 
 #### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.

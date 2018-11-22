@@ -31,3 +31,24 @@ v: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "68193"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "filter" : [{
+        "property" : "partition",
+        "op" : "=",
+        "value" : "1"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------

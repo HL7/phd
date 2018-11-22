@@ -161,16 +161,16 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/PhdServerCapabilityStatement"/>
+        <reference value="CapabilityStatement/PhdServerCapabilityStatement"/>
       </reference>
       <name value="PhdServerCapabilityStatement"/>
       <exampleBoolean value="false"/>
       <groupingId value="hl7.fhir.uv.phd"/>
     </resource>
-    
+
     <resource>
       <reference>
-        <reference value="Observation/nonin-hdp-1542718631721"/>
+        <reference value="Bundle/nonin-hdp-1542718631721"/>
       </reference> 
       <name value="Example of a first time Bundle upload"/>
       <description value="This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present."/>
@@ -260,7 +260,7 @@
     
     <resource>
       <reference>
-        <reference value="Observation/phd-711000FEFF5F49B0.B0495F001071"/>
+        <reference value="Device/phd-711000FEFF5F49B0.B0495F001071"/>
       </reference> 
       <name value="Example of a PHD"/>
       <description value="This example maps the MDS data from a Blood Pressure PHD"/>
@@ -270,7 +270,7 @@
 
     <resource>
       <reference>
-        <reference value="Observation/phg-ecde3d4e58532d31.000000000000"/>
+        <reference value="Device/phg-ecde3d4e58532d31.000000000000"/>
       </reference> 
       <name value="Example of a Gateway"/>
       <description value="This example maps an Android Gateway"/>
@@ -280,7 +280,7 @@
     
     <resource>
       <reference>
-        <reference value="Observation/sisansarahId.1.2.3.4.5.6.7.8.10"/>
+        <reference value="Patient/sisansarahId.1.2.3.4.5.6.7.8.10"/>
       </reference> 
       <name value="Example of a Patient"/>
       <description value="This example maps a patient where an optional patient name is included"/>
@@ -395,7 +395,7 @@
               <title value="ASN1 BITs Code System"/>
               <generation value="markdown"/>
               <page>
-                <nameUrl value="ASN1toHL7Codes.html"/>
+                <nameUrl value="ASN1ToHL7Codes.html"/>
                 <title value="ASN1 BITs Codes"/>
                 <generation value="markdown"/>
               </page>
@@ -515,6 +515,11 @@
             <nameUrl value="PhdDeviceProfile.html"/>
             <title value="PHD Device Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
+              <title value="Generating the PAN codes"/>
+              <generation value="markdown"/>
+            </page>
             <page>
               <nameUrl value="phdExample.html"/>
               <title value="Device example from a Blood Pressure PHD"/>

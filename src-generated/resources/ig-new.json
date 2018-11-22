@@ -186,7 +186,7 @@
     },
     {
       "reference" : {
-        "reference" : "StructureDefinition/PhdServerCapabilityStatement"
+        "reference" : "CapabilityStatement/PhdServerCapabilityStatement"
       },
       "name" : "PhdServerCapabilityStatement",
       "exampleBoolean" : false,
@@ -194,7 +194,7 @@
     },
     {
       "reference" : {
-        "reference" : "Observation/nonin-hdp-1542718631721"
+        "reference" : "Bundle/nonin-hdp-1542718631721"
       },
       "name" : "Example of a first time Bundle upload",
       "description" : "This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present.",
@@ -275,7 +275,7 @@
     },
     {
       "reference" : {
-        "reference" : "Observation/phd-711000FEFF5F49B0.B0495F001071"
+        "reference" : "Device/phd-711000FEFF5F49B0.B0495F001071"
       },
       "name" : "Example of a PHD",
       "description" : "This example maps the MDS data from a Blood Pressure PHD",
@@ -284,7 +284,7 @@
     },
     {
       "reference" : {
-        "reference" : "Observation/phg-ecde3d4e58532d31.000000000000"
+        "reference" : "Device/phg-ecde3d4e58532d31.000000000000"
       },
       "name" : "Example of a Gateway",
       "description" : "This example maps an Android Gateway",
@@ -293,7 +293,7 @@
     },
     {
       "reference" : {
-        "reference" : "Observation/sisansarahId.1.2.3.4.5.6.7.8.10"
+        "reference" : "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
       },
       "name" : "Example of a Patient",
       "description" : "This example maps a patient where an optional patient name is included",
@@ -401,7 +401,7 @@
               "title" : "ASN1 BITs Code System",
               "generation" : "markdown",
               "page" : [{
-                "nameUrl" : "ASN1toHL7Codes.html",
+                "nameUrl" : "ASN1ToHL7Codes.html",
                 "title" : "ASN1 BITs Codes",
                 "generation" : "markdown"
               }]
@@ -522,6 +522,11 @@
             "title" : "PHD Device Profile",
             "generation" : "markdown",
             "page" : [{
+              "nameUrl" : "ContinuaPersonalAreaNetworkCodes.html",
+              "title" : "Generating the PAN codes",
+              "generation" : "markdown"
+            },
+            {
               "nameUrl" : "phdExample.html",
               "title" : "Device example from a Blood Pressure PHD",
               "generation" : "markdown"

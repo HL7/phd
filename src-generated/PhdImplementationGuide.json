@@ -134,9 +134,9 @@
     },
     "ValueSet/ASN1measurement":{
     },
-    "StructureDefinition/PhdServerCapabilityStatement":{
+    "CapabilityStatement/PhdServerCapabilityStatement":{
     },
-    "Observation/nonin-hdp-1542718631721":{
+    "Bundle/nonin-hdp-1542718631721":{
     },
     "Bundle/bundle-continuousnonin":{
     },
@@ -154,11 +154,11 @@
     },
     "Observation/coin-fault20":{
     },
-    "Observation/phd-711000FEFF5F49B0.B0495F001071":{
+    "Device/phd-711000FEFF5F49B0.B0495F001071":{
     },
-    "Observation/phg-ecde3d4e58532d31.000000000000":{
+    "Device/phg-ecde3d4e58532d31.000000000000":{
     },
-    "Observation/sisansarahId.1.2.3.4.5.6.7.8.10":{
+    "Patient/sisansarahId.1.2.3.4.5.6.7.8.10":{
     }
   }
 }

@@ -23,25 +23,25 @@
       <definition value="The PhdRtsaObservation reports PHD measurements that contain a Simple-Sa-Observed-Value attribute." />
       <comment value="Used for RTSA (waveform) observations from Personal Health Devices" />
     </element>
-	
+    
     <!-- Meta profile -->
     <element id="Observation.meta.profile:phdProfile">
       <path value="Observation.meta.profile" />
       <sliceName value="phdProfile" />
-	  <short value="The PHD profile URL" />
+      <short value="The PHD profile URL" />
       <min value="1" />
       <max value="1" />
       <fixedUri value="PhdRtsaObservation" />
     </element>
-	
-		<!-- The vital Signs category 	-->
+    
+        <!-- The vital Signs category     -->
     <element id="Observation.category:vitalSignsCategory">
       <path value="Observation.category" />
       <sliceName value="vitalSignsCategory" />
-	  <short value="Required by the FHIR specification if the measurement value is a vital sign" /> 
-      <comment value="Vitals signs are not too common in waveforms but one might have pulse rates"/>	  
+      <short value="Required by the FHIR specification if the measurement value is a vital sign" /> 
+      <comment value="Vitals signs are not too common in waveforms but one might have pulse rates"/>      
     </element>
-	<!-- Slice the coding to allow one to express the same concept in another coding system -->
+    <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Observation.category:vitalSignsCategory.coding">
       <path value="Observation.category.coding" />
       <slicing>
@@ -53,32 +53,32 @@
       </slicing>
       <min value="1" />
     </element>
-	<!-- The vitalSigns slice of the coding element: This element is required -->
+    <!-- The vitalSigns slice of the coding element: This element is required -->
     <element id="Observation.category:vitalSignsCategory.coding:vitalSigns">
       <path value="Observation.category.coding" />
       <sliceName value="vitalSigns" />
-	  <short value="Required Vital Signs category code system entry" />
+      <short value="Required Vital Signs category code system entry" />
       <min value="1" />
       <max value="1" />
     </element>
-	<!-- The system value is fixed -->
+    <!-- The system value is fixed -->
     <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.system">
       <path value="Observation.category.coding.system" />
       <min value="1" />
       <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category" />
     </element>
-	<!-- The currently defined single-coded properties reported by the device -->
+    <!-- The currently defined single-coded properties reported by the device -->
     <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.code">
       <path value="Observation.category.coding.code" />
       <definition value="The 'vital-signs' category code" />
-	  <min value="1" />
-	  <fixedCode value="vital-signs" />
+      <min value="1" />
+      <fixedCode value="vital-signs" />
     </element>
-	
-	<!-- value[x] which is a valueSampledData  -->
+    
+    <!-- value[x] which is a valueSampledData  -->
     <element id="Observation.value[x]">
       <path value="Observation.valueSampledData" />
-	  <definition value="The information determined as a result of making the observation, when the observation consists of a periodic sample of numeric measurements." />
+      <definition value="The information determined as a result of making the observation, when the observation consists of a periodic sample of numeric measurements." />
       <comment value="The RTSA metric is typically used for reporting waveform type data such as an ECG trace, spirometer exhalation rates, pulse oximetry pleth waves, etc., though it can be used to report any set of numric measurements that are periodic. The periodicity is important as the time stamps of each individual entry is known from the start time and the period. Since the amount of data to be transmitted can be large, the data is scaled in such a way to minimize the number of bits taken up by each entry (though the minimization is restricted to 8, 16, or 32 bits). This scaling information is sent along with the start time and period in order for the receiver to recover the original data and to obtain the time stamp of each data point. In theory, this data could be sent using countless phdNumericObservation type resources at a great cost in bandwidth!" />
       <type>
         <code value="SampledData" />
@@ -89,7 +89,7 @@
       <short value="Scaling intecept value and units" />
       <definition value="The 'origin' data type contains the 'y-intercept' for the equation that relates the scaled data to the actual data. If valueSampledData.data[i] is the array of sampled scaled data, the actual data is obtained by:&#xD;&#xA;x[i] =valueSampledData.data[i] * valueSampledData.factor + valueSampledData.origin.value" />
       <comment value="The data sent in the Sa-Simple-Observation-Value array is also scaled. Thus with the proper setting of the valueSampledData.origin.value and valueSampledData.factor, the data from the IEEE device can be placed into the data[i] array without modification." />
-	  <min value="1" />
+      <min value="1" />
     </element>
     <element id="Observation.value[x]:valueSampledData.origin.value">
       <path value="Observation.valueSampledData.origin.value" />
@@ -112,7 +112,7 @@
     </element>
     <element id="Observation.value[x]:valueSampledData.factor">
       <path value="Observation.valueSampledData.factor" />
-	  <short value="The scale factor" />
+      <short value="The scale factor" />
       <min value="1" />
     </element>
     <element id="Observation.value[x]:valueSampledData.dimensions">
@@ -126,16 +126,16 @@
       <definition value="A series of data points which are decimal values separated by a single space (character u20). The special values &quot;E&quot; (error), &quot;L&quot; (below detection limit) and &quot;U&quot; (above detection limit) are not used. The device does not provide such individual values. " />
       <comment value="One is strongly encouraged to use the scaling from the 11073 device as it is likely the scaling was chosen to optimize transmission. If&#xD;&#xA;A = Scale-and-Range-SpecificationX.lower-absolute-value as an Mder FLOAT&#xD;&#xA;B = Scale-and-Range-SpecificationX.upper-absolute-value as an Mder FLOAT&#xD;&#xA;I = Scale-and-Range-SpecificationX.lower-scaled-value as a X-bit integer&#xD;&#xA;J = Scale-and-Range-SpecificationX.upper-scaled-value as a X-bit integer&#xD;&#xA;&#xD;&#xA;valueSampledData.factor is given by (A-B)/(I-J)&#xD;&#xA;and&#xD;&#xA;valueSampledData.origin.value = A – (A-B)*I/(I-J)&#xD;&#xA;and &#xD;&#xA;valueSampledData.data[i] = Sa-Simple-Observed-Value.values[i]" />
     </element>
-	<!-- DATA ABSENT REASON -->
+    <!-- DATA ABSENT REASON -->
     <element id="Observation.dataAbsentReason">
       <path value="Observation.dataAbsentReason" />
-	  <short value="Populated when the Measurement-Status indicates invalid, not unavailable, or msmt ongoing" />
+      <short value="Populated when the Measurement-Status indicates invalid, not unavailable, or msmt ongoing" />
       <definition value="Provides a reason why the expected value in the element Observation.valueSampledData is missing." />
       <comment value="Thre are no special values sent in RTSA data." />
     </element>
     <element id="Observation.dataAbsentReason.coding">
       <path value="Observation.dataAbsentReason.coding" />
-	  <slicing>
+      <slicing>
         <discriminator>
           <type value="value" />
           <path value="system" />
@@ -144,23 +144,23 @@
       </slicing>
       <min value="1" />
     </element>
-	<element id="Observation.dataAbsentReason.coding:FhirDefault">
+    <element id="Observation.dataAbsentReason.coding:FhirDefault">
       <path value="Observation.dataAbsentReason.coding" />
-	  <sliceName value="FhirDefault" />
+      <sliceName value="FhirDefault" />
       <min value="1" />
-	  <max value="1" />
+      <max value="1" />
     </element>
     <element id="Observation.dataAbsentReason.coding:FhirDefault.system">
       <path value="Observation.dataAbsentReason.coding.system" />
       <min value="1" />
-	  <fixedUri value="http://hl7.org/fhir/ValueSet/data-absent-reason" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason" />
     </element>
     <element id="Observation.dataAbsentReason.coding:FhirDefault.code">
       <path value="Observation.dataAbsentReason.coding.code" />
       <min value="1" />
     </element>
-	
-	<!-- Reference Range for scale factors -->
+    
+    <!-- Reference Range for scale factors -->
     <element id="Observation.referenceRange">
       <path value="Observation.referenceRange" />
       <slicing>
@@ -175,7 +175,7 @@
     <element id="Observation.referenceRange:scaleAndReferenceRange">
       <path value="Observation.referenceRange" />
       <sliceName value="scaleAndReferenceRange" />
-	  <short value="Provides the scale factors as sent by the 20601 device" />
+      <short value="Provides the scale factors as sent by the 20601 device" />
       <min value="1" />
       <max value="1" />
     </element>

@@ -45,7 +45,8 @@
 					}
 				],
 				"text": "MDC_DEV_SPEC_PROFILE_BP: Blood Pressure Cuff"
-			}
+			},
+			"version":"1"
 		}
 	],
 	"version": [

@@ -384,7 +384,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -651,7 +651,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -938,7 +938,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -1225,7 +1225,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -1512,7 +1512,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -1799,7 +1799,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -2086,7 +2086,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -2373,7 +2373,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -2660,7 +2660,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [
@@ -2967,7 +2967,7 @@
 				"resourceType": "Observation",
 				"meta": {
 					"profile": [
-						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBITsEnumerationObservation"
+						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 					]
 				},
 				"extension": [

@@ -20,7 +20,7 @@
       <comment value="This variant on the Observation defines a base profile for the PHD Observation profiles. This profile is abstract and does not exist alone." />
     </element>
 
-	<element id="Observation.meta">
+    <element id="Observation.meta">
       <path value="Observation.meta" />
       <min value="1" />
     </element>
@@ -28,74 +28,74 @@
       <path value="Observation.meta.profile" />
       <slicing>
         <discriminator>
-          <type value="value" />
+          <type value="exists" />
           <path value="Observation.meta.profile" />
         </discriminator>
         <rules value="open" />
       </slicing>
       <min value="1" />
     </element>
-	
-	<!-- For PHG reference -->
-	<element id="Observation.extension">
-      <path value="Observation.extension" />
-	  <short value="Extension for the PHG" />
-      <min value="0"/>
-	  <max value="1"/>
-    </element>
-	<element id="Observation.extension.url">
-      <path value="Observation.extension.url" />
-	  <short value="Url indicating this is the gateway device extension" />
-	  <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" />
-    </element>
-    <element id="Observation.extension.value[x]">
-      <path value="Observation.extension.valueReference" />
-	  <short value="Reference to the Personal Health Gateway (PHG) Device" />
-	  <min value="1" />
-      <type>
-        <code value="Reference" />
-      </type>
-    </element>
-	
-	<!-- Handle measurement status test or demo data -->
-	<element id="Observation.meta.security" >
-	  <path value="Observation.meta.security" />
-	  <slicing>
+
+    <!-- Handle measurement status test or demo data -->
+    <element id="Observation.meta.security" >
+      <path value="Observation.meta.security" />
+      <slicing>
         <discriminator>
           <type value="value" />
           <path value="system" />
         </discriminator>
         <rules value="open" />
       </slicing>
-	</element>
-	<element id="Observation.meta.security:MsmtStatusTestDemo">
+    </element>
+    <element id="Observation.meta.security:MsmtStatusTestDemo">
       <path value="Observation.meta.security" />
       <sliceName value="MsmtStatusTestDemo" />
       <short value="Security value set to HTEST when measurement status indicates demo or test data" />
-	  <max value="1" />
-	</element>
-	<element id="Observation.meta.security:MsmtStatusTestDemo.system">
+      <max value="1" />
+    </element>
+    <element id="Observation.meta.security:MsmtStatusTestDemo.system">
       <path value="Observation.meta.security.system" />
       <min value="1" />
-	  <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActReason" />
-	</element>
-	<element id="Observation.meta.security:MsmtStatusTestDemo.code">
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActReason" />
+    </element>
+    <element id="Observation.meta.security:MsmtStatusTestDemo.code">
       <path value="Observation.meta.security.code" />
       <min value="1" />
-	  <fixedCode value="HTEST" />
-	</element>
-	
-	<element id="Observation.identifier">
+      <fixedCode value="HTEST" />
+    </element>
+
+    <!-- For PHG reference -->
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <short value="Extension for the PHG" />
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Observation.extension.url">
+      <path value="Observation.extension.url" />
+      <short value="Url indicating this is the gateway device extension" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" />
+    </element>
+    <element id="Observation.extension.value[x]">
+      <path value="Observation.extension.valueReference" />
+      <short value="Reference to the Personal Health Gateway (PHG) Device" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+
+    <element id="Observation.identifier">
       <path value="Observation.identifier" />
       <slicing>
         <discriminator>
-          <type value="value" />
+          <type value="exists" />
           <path value="value" />
         </discriminator>
         <rules value="open" />
       </slicing>
     </element>
-	
+    
     <element id="Observation.identifier:conditionalCreateIdentifier">
       <path value="Observation.identifier" />
       <sliceName value="conditionalCreateIdentifier" />
@@ -109,7 +109,7 @@
       <path value="Observation.identifier.value" />
       <min value="1" />
     </element>
-	
+    
     <element id="Observation.status">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
         <valueString value="default: final" />
@@ -118,9 +118,9 @@
       <definition value="The status of the result value. Either 'final' or 'preliminary'" />
       <comment value="The value shall be set to 'final' unless a Measurement-Status attribute or Nu-Observed-Value attribute status field indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'" />
     </element>
-	
-	<!-- Code: What the measurement is -->
-	<element id="Observation.code.text">
+    
+    <!-- Code: What the measurement is -->
+    <element id="Observation.code.text">
       <path value="Observation.code.text" />
       <short value="It is recommended to display at least the reference identifier for the MDC code" />
     </element>
@@ -139,7 +139,7 @@
       <path value="Observation.code.coding" />
       <sliceName value="MDCType" />
       <short value="The 11073-10101 MDC code for the measurement" />
-	  <definition value="This MDC code expresses what the measurement is" />
+      <definition value="This MDC code expresses what the measurement is" />
       <comment value="For non-compound 11073-20601 metric numeric measurements, this code is obtained from one or more of the Type, Metric-Id, Nu-Observed-Value, and Metric-Id-Partition attributes. The algorithm to get the 16-bit partition and 16-bit term code is as follows:  1. The partition and term code are obtained from the Type attribute. 2. If there is a Metric-Id attribute the term code comes from this attribute. 3. If there is a Nu-Observed-Value attribute the term code comes from this attribute. 4. If the term code is NOT from the Type attribute, and there is a Metric-Id-Partition attribute, the partition comes from this attribute. 5. The 32-bit 11073-10101 code value is given by partition * 2 **16 + term code.  It is this value that is placed in the code.coding.code element for this MDCType slice.&#xD;&#xA;For compound numeric measurements, the code comes from the Type attribute." />
       <min value="1" />
       <max value="1" />
@@ -156,8 +156,8 @@
     <element id="Observation.code.coding:LoincCoding">
       <path value="Observation.code.coding" />
       <sliceName value="LoincCoding" />
-	  <short value="The LOINC code for the measurement" />
-	  <definition value="This LOINC code expresses what the measurement is" />
+      <short value="The LOINC code for the measurement" />
+      <definition value="This LOINC code expresses what the measurement is" />
       <comment value="If the measurement is one of the magic vital signs, the Magic LOINC code for that vital sign as specified by FHIR appears here." />
       <max value="1" />
     </element>
@@ -179,70 +179,21 @@
       <path value="Observation.subject.reference" />
       <min value="1" />
     </element>
-	
-	<!-- Effective: The time stamp -->
+    
+    <!-- Effective: The time stamp -->
     <element id="Observation.effective[x]">
       <path value="Observation.effective[x]" />
-      <slicing>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <definition value="The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the time stamp sent by the PHD or the time of reception by the PHG if the PHD sent no time stamp." />
       <min value="1" />
-	  <!-- The base Observation profile specifies that max=1. However, if you do not re-specify it here, you will get a slicing on non-repeating element error unless
-	  you have a constraint that restricts the total number. Here I end up stating both since the constraint makes it clearer to the implementer that not only can
-      only one exist but that has to be at least one. -->
-	  <max value="1" />
-	  <type>
-        <code value="dateTime"/>
-      </type>
-      <type>
-        <code value="Period"/>
-      </type>
-	  <constraint>
+      <constraint>
         <key value="phd-obs-1"/>
-		<!-- Some time stamp SHALL be present -->
+        <!-- Some time stamp SHALL be present -->
         <severity value="error"/>
         <human value="Either an effectiveDateTime or effectivePeriod shall be present"/>
         <expression value="effectiveDateTime.exists() or effectivePeriod.exists().exists()"/>
       </constraint>
     </element>
 
-	<!-- Time stamp: Instant -->
-    <element id="Observation.effective[x]:dateTime">
-      <path value="Observation.effectiveDateTime" />
-      <sliceName value="dateTime" />
-	  <short value="The time stamp of the measurement" />
-	  <definition value="The time stamp of the measurement when the measurement is taken at an instance in time" />
-      <comment value="A date and time or period shall always be present but not both." />
-      <type>
-        <code value="dateTime" />
-      </type>
-    </element>
-
-	<!-- Time stamp: Period -->
-    <element id="Observation.effective[x]:period">
-      <path value="Observation.effectivePeriod" />
-      <sliceName value="period" />
-	  <short value="The time period of the measurement" />
-      <definition value="The time period of the measurement when the measurement has a duration. The duration of the measurement is reported in a Measure-Active-Period attribute. The difference between the end and start fields is the value of the Measure-Active-Period." />
-      <type>
-        <code value="Period" />
-      </type>
-    </element>
-    <element id="Observation.effective[x]:period.effectivePeriod.start">
-      <path value="Observation.effectivePeriod.start" />
-      <min value="1" />
-    </element>
-    <element id="Observation.effective[x]:period.effectivePeriod.end">
-      <path value="Observation.effectivePeriod.end" />
-      <definition value="The end of the period. It will be the value of the Measure-Active-Period plus the start time." />
-      <min value="1" />
-    </element>
-	
     <element id="Observation.device">
       <path value="Observation.device" />
       <comment value="This field will reference the PHD Device." />
@@ -255,11 +206,11 @@
       <comment value="This reference points to the Device resource containing information about the sensor device that took the measurement." />
       <min value="1" />
     </element>
-	
-	<!-- INTERPRETATION -->
-	<element id="Observation.interpretation.coding">
+    
+    <!-- INTERPRETATION -->
+    <element id="Observation.interpretation.coding">
       <path value="Observation.interpretation.coding" />
-	  <slicing>
+      <slicing>
         <discriminator>
           <type value="value" />
           <path value="system" />
@@ -269,119 +220,73 @@
     </element>
     <element id="Observation.interpretation.coding:MsmtStatusInterpretation">
       <path value="Observation.interpretation.coding" />
-	  <sliceName value="MsmtStatusInterpretation" />
+      <sliceName value="MsmtStatusInterpretation" />
       <short value="Measurement status interpretation when questionable, calibration-ongoing, validated, early-indication, threshold exceeded, alarm inhibited" />
     </element>
-	<element id="Observation.interpretation.coding:MsmtStatusInterpretation.system">
+    <element id="Observation.interpretation.coding:MsmtStatusInterpretation.system">
       <path value="Observation.interpretation.coding.system" />
-	  <min value="1" />
-	  <fixedUri value="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" />
     </element>
-	<element id="Observation.interpretation.coding:MsmtStatusInterpretation.code">
+    <element id="Observation.interpretation.coding:MsmtStatusInterpretation.code">
       <path value="Observation.interpretation.coding.code" />
-	  <min value="1" />
-    </element>	
-	
-	<!-- DERIVED FROM: Coincident time stamp and Source Handle Reference -->
+      <min value="1" />
+    </element>    
+    
+    <!-- DERIVED FROM: Coincident time stamp and Source Handle Reference -->
     <element id="Observation.derivedFrom">
       <path value="Observation.derivedFrom" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="Observation.derivedFrom.type" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
+      <short value="Reference to the Coincident Time Stamp Observation and/or Source-Handle-Reference Observation"/>
+      <comment value="When the PHD reports a time stamp a reference to the Coincident Time Stamp Observation is placed here. When the PHD reports a Source-Handle-Reference/-List attribute the Observation(s) pointed to by that Source-Handle-Reference/-List is (are) placed here. One may end up with several Observation.derivedFrom elements." />
     </element>
-    <element id="Observation.derivedFrom:coincidentTimeStamp">
-      <path value="Observation.derivedFrom" />
-      <sliceName value="coincidentTimeStamp" />
-      <short value="Pointer to the Coincident Time Stamp" />
-      <definition value="A reference to the Coincident Time Stamp observation. The Coincident Time Stamp indicates how the time stamps from the PHD are corrected, if at all." />
-      <comment value="This reference shall be present if the PHD reports a time stamp. The reference shall point to the Coincident Time Stamp observation. The Coincident Time Stamp Observation provides an audit of the time stamp. Whether or not the gateway corrected the time stamp can be determined from the elements in this Observation. If the timestamps were corrected, the elements of the Observation can be used to obtain the actual time stamps reported by the PHD.&#xD;&#xA;&#xD;&#xA;There is no reference to a Coincident Time Stamp Observation when the PHD does not report a time stamp in which case the reported time stamp is the time of reception by the PHG." />
-      <requirements value="This Observation allows one to re-create the original time stamp generated by the PHD should it have been modified by the PHG." />
-	  <max value="1" />
-    </element>
-    <element id="Observation.derivedFrom:coincidentTimeStamp.reference">
-      <path value="Observation.derivedFrom.reference" />
-      <min value="1" />
-    </element>
-	<element id="Observation.derivedFrom:coincidentTimeStamp.type">
-      <path value="Observation.derivedFrom.type" />
-      <min value="1" />
-	  <fixedCode value="CoincidentTimeStampObservation" />
-    </element>
-    <element id="Observation.derivedFrom:sourceHandleReference">
-      <path value="Observation.derivedFrom" />
-      <sliceName value="sourceHandleReference" />
-	  <short value="Pointer an Observation that is important to this Observation" />
-	  <definition value="A Source-Handle-Reference attribute points to another Observation resource which is in some manner relevant to this Observation. For example, a heart rate average taken during an exercise session. The referenced Observation is the excercise session." />
-      <comment value="A measurement may have one or more source handle references which point to measurements that this measurement is related to in some way. When one of these attributes are present in the measurement, these values point to other measurements. In this case these measurements will be previously generated Observation resources which are then referenced here. Note that the previously received measurement must be received in the same connection as the current measurement. The application does not need to keep record of all measurements from the given PHD." />
-      <requirements value="Points to a measurement that this measurement is related to or dependent upon, for example a BMI which is calculated from a weight and height measurement or a heart rate taken during a running session." />
-    </element>
-    <element id="Observation.derivedFrom:sourceHandleReference.reference">
-      <path value="Observation.derivedFrom.reference" />
-      <min value="1" />
-    </element>
-    <element id="Observation.derivedFrom:sourceHandleReference.type">
-      <path value="Observation.derivedFrom.type" />
-      <min value="1" />
-	  <fixedCode value="Observation" />
-    </element>
-	
-	<!-- COMPONENT -->
+
+    <!-- COMPONENT -->
     <element id="Observation.component">
       <path value="Observation.component" />
       <slicing>
         <discriminator>
-          <type value="value" />
+          <type value="pattern" />
           <path value="code.coding.code" />
         </discriminator>
         <rules value="open" />
       </slicing>
     </element>
-	
-	<!-- SUPPLEMENTAL TYPES COMPONENT -->
+    
+    <!-- SUPPLEMENTAL TYPES COMPONENT -->
     <element id="Observation.component:supplementalTypesComponent">
       <path value="Observation.component" />
       <sliceName value="supplementalTypesComponent" />
-	  <short value="Supplemental Type: A further description of the measurement type." />
-      <definition value="For each paritition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise.&#xD;&#xA;" />
+      <short value="Supplemental Type: A further description of the measurement type." />
+      <definition value="For each partition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise." />
       <comment value="A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes as partition:term code pairs. Each pair is a code describing something additional about the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average. An MDC_MODALITY_FAST would indicate that a short averaging is used and the result reported regardless of stability." />
+      <patternCodeableConcept>
+        <code>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101"/>
+            <code value="68198"/>
+          </coding>
+        </code>
+      </patternCodeableConcept>
     </element>
-	<element id="Observation.component:supplementalTypesComponent.code.text">
+    <element id="Observation.component:supplementalTypesComponent.code.text">
       <path value="Observation.component.code.text" />
       <definition value="It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES" />
     </element>
     <element id="Observation.component:supplementalTypesComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:supplementalTypesComponent.code.coding:MDCType">
-      <path value="Observation.component.code.coding" />
-      <sliceName value="MDCType" />
-	  <short value="Required MDC code entry." />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Observation.component:supplementalTypesComponent.code.coding:MDCType.system">
+    <element id="Observation.component:supplementalTypesComponent.code.coding.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:supplementalTypesComponent.code.coding:MDCType.code">
+    <element id="Observation.component:supplementalTypesComponent.code.coding.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="68193 is the 32-bit nomenclature code indicating a 'Supplemental-Types' value" />
       <min value="1" />
       <fixedCode value="68193" />
-	  <binding> 
+      <binding> 
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCobject"/> 
       </binding> 
@@ -409,7 +314,7 @@
     <element id="Observation.component:supplementalTypesComponent.value[x]:valueCodeableConcept.coding:MDCType">
       <path value="Observation.component.valueCodeableConcept.coding" />
       <sliceName value="MDCType" />
-	  <short value="Required MDC code entry." />
+      <short value="Required MDC code entry." />
       <min value="1" />
       <max value="1" />
     </element>
@@ -427,15 +332,23 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-	
-	<!-- RELATIVE TIME COMPONENT -->
+    
+    <!-- RELATIVE TIME COMPONENT -->
     <element id="Observation.component:relativeTimeComponent">
       <path value="Observation.component" />
       <sliceName value="relativeTimeComponent" />
-	  <short value="Relative time stamp of the measurement reported by the PHD." />
+      <short value="Relative time stamp of the measurement reported by the PHD." />
       <definition value="This component shall be present if the measurement contains a Relative-Time-Stamp." />
       <comment value="Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also provided a higher time resolution than permitted by the effective[x] time stamp should it be needed.&#xD;&#xA;The Relative-Time-Stamp is a 32-bit unsigned integer in units of 1/8th ms. It is reported here scaled to microseconds." />
       <max value="1" />
+      <patternCodeableConcept>
+        <code>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101"/>
+            <code value="67985"/>
+          </coding>
+        </code>
+      </patternCodeableConcept>
     </element>
     <element id="Observation.component:relativeTimeComponent.code.text">
       <path value="Observation.component.code.text" />
@@ -443,38 +356,24 @@
     </element>
     <element id="Observation.component:relativeTimesComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="code" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:relativeTimeComponent.code.coding:MDCType">
-      <path value="Observation.component.code.coding" />
-      <sliceName value="MDCType" />
-	  <short value="Required MDC code entry." />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Observation.component:relativeTimeComponent.code.coding:MDCType.system">
+    <element id="Observation.component:relativeTimeComponent.code.coding.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:relativeTimeComponent.code.coding:MDCType.code">
+    <element id="Observation.component:relativeTimeComponent.code.coding.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="The MDC code of the Relative-Time-Stamp attribute" />
       <min value="1" />
       <fixedCode value="67985" />
-	  <binding> 
+      <binding> 
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCobject"/> 
       </binding>
     </element>
-	<!-- value[x] is Quantity -->
+    <!-- value[x] is Quantity -->
     <element id="Observation.component:relativeTimeComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
       <sliceName value="valueQuantity" />
@@ -488,7 +387,7 @@
       <definition value="The value of the relative time attribute which is in units of 1/8th milliseconds scaled to microseconds." />
       <min value="1" />
     </element>
-	<element id="Observation.component:relativeTimeComponent.value[x]:valueQuantity.system">
+    <element id="Observation.component:relativeTimeComponent.value[x]:valueQuantity.system">
       <path value="Observation.component.valueQuantity.system" />
       <definition value="The unit code shall use the UCUM system" />
       <min value="1" />
@@ -504,15 +403,23 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-	
-	<!-- HI_RES RELATIVE TIME COMPONENT -->
+    
+    <!-- HI_RES RELATIVE TIME COMPONENT -->
     <element id="Observation.component:hiresRelativeTimeComponent">
       <path value="Observation.component" />
       <sliceName value="hiresRelativeTimeComponent" />
-	  <short value="Hi-Resolution Relative time stamp of the measurement reported by the PHD." />
+      <short value="Hi-Resolution Relative time stamp of the measurement reported by the PHD." />
       <definition value="This component shall be present if the measurement contains Hi-Res-Relative-Time-Stamp." />
       <comment value="Hi Res Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also allows much higher time resolution than permitted in the effective{x] element should it be needed.&#xD;&#xA;The Hi-Res-Relative-Time-Stamp is a 64-bit unsigned interger in units of microseconds." />
       <max value="1" />
+      <patternCodeableConcept>
+        <code>
+          <coding>
+            <system value="urn:iso:std:iso:11073:10101"/>
+            <code value="68073"/>
+          </coding>
+        </code>
+      </patternCodeableConcept>
     </element>
     <element id="Observation.component:hiresRelativeTimeComponent.code.text">
       <path value="Observation.component.code.text" />
@@ -520,33 +427,19 @@
     </element>
     <element id="Observation.component:hiresRelativeTimeComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="code" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:hiresRelativeTimeComponent.code.coding:MDCType">
-      <path value="Observation.component.code.coding" />
-      <sliceName value="MDCType" />
-	  <short value="Required MDC code entry." />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Observation.component:hiresRelativeTimeComponent.code.coding:MDCType.system">
+    <element id="Observation.component:hiresRelativeTimeComponent.code.coding.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:hiresRelativeTimeComponent.code.coding:MDCType.code">
+    <element id="Observation.component:hiresRelativeTimeComponent.code.coding.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="The MDC code for the Hi-Res-Relative-Time-Stamp attribute" />
       <min value="1" />
       <fixedCode value="68073" />
-	  <binding> 
+      <binding> 
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCobject"/> 
       </binding>

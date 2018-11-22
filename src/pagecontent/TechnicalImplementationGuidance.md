@@ -16,7 +16,7 @@ These sections provide background on the concepts behind the technical mapping a
    - [Obtaining the Observation.code](ObtainObservationCode.html)
    - [Obtaining the Unit code](ObtainUnitCode.html)
    - [ASN1 BITS Code System](ASN1BITsCodeSystem.html)
-   - [The Observation Identifier](TheObservationIdentifier.html)
+   - [The Observation Identifier](ObservationIdentifier.html)
    - [Generating the Reported Time Stamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
  - [Coincident Time Stamp](CoincidentTimeStamp.html) 
  - [Non-11073 20601 Devices](Non1107320601Devices.html)
