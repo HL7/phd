@@ -52,3 +52,61 @@ v: {
   "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150021"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8480-6"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "filter" : [{
+        "property" : "partition",
+        "op" : "not-in",
+        "value" : "1"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150022"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8462-4"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "filter" : [{
+        "property" : "partition",
+        "op" : "not-in",
+        "value" : "1"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------

@@ -117,14 +117,13 @@
       <short value="Compound numeric measurement entry components" />
       <definition value="Each compoundComponent contains one of the N constituents of the compound measurement. These entries are NOT present if a Measurement-Status attribute indicates an error." />
       <comment value="A compound measurement is a measurement that requires more than one value to represent it, such as an acceleration which has an x, y, and z components. The Blood pressure is also represented as a compound measurement, containing systolic, diastolic and MAP components. One combines all the compound elements together to describe the measurement. The Metric-Id-List entry n and Compound-Basic/Simple-Nu-Observed-Value entry n are ordered such that the code that describes each entry n is computed from the partition of the Type attribute and the term code of the Metric-Id-List attribute. In the case of the Compound-Nu-Observed-Value, the term code comes from the Compound-Nu-Observed-Value.metric sub-component." />
-      <patternCodeableConcept>
-
-          <coding>
-            <system value="urn:iso:std:iso:11073:10101"/>
-            <code><min value="1"/></code>
-          </coding>
-
-      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:compound.code">
+      <path value="Observation.component.code" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCnotObject"/> 
+      </binding>
     </element>
     <element id="Observation.component:compound.code.text">
       <path value="Observation.component.code.text" />
@@ -142,10 +141,6 @@
     <element id="Observation.component:compound.code.coding.code">
       <path value="Observation.component.code.coding.code" />
       <min value="1" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCnotObject"/> 
-      </binding>
     </element>
 	<!--
     <element id="Observation.component.code.coding:LoincCoding">
@@ -251,17 +246,13 @@
       <short value="The accuracy of the measurement" />
       <definition value="This component shall be present if the Accuracy attribute is present." />
       <max value="1" />
-      <patternCodeableConcept>
-
-          <coding>
-            <system value="urn:iso:std:iso:11073:10101"/>
-            <code value="67914"/>
-          </coding>
-
-      </patternCodeableConcept>
     </element>
     <element id="Observation.component:accuracyComponent.code">
       <path value="Observation.component.code" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
+      </binding>
     </element>
     <element id="Observation.component:accuracyComponent.code.text">
       <path value="Observation.component.code.text" />
@@ -281,10 +272,6 @@
       <definition value="The code for the Accuracy attribute is 67914" />
       <min value="1" />
       <fixedCode value="67914" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCobject"/> 
-      </binding>
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />

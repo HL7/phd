@@ -76,18 +76,14 @@
       <sliceName value="bitsComponent" />
       <short value="BITs measurements entry components" />
       <definition value="Each ANS1 component entrant contains one of the reported BITs settings. These entries are NOT present if a Measurement-Status attribute or Enum-Observed-Value status field indicates an error." />
-      <patternCodeableConcept>
-
-          <coding>
-            <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
-            <code><min value="1"/></code>
-          </coding>
-
-      </patternCodeableConcept>
     </element>
     <!-- component: code -->
     <element id="Observation.component:bitsComponent.code">
       <path value="Observation.component.code" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/> 
+      </binding>
     </element>
     <element id="Observation.component:bitsComponent.code.coding">
       <path value="Observation.component.code.coding" />
@@ -105,10 +101,6 @@
       <path value="Observation.component.code.coding.code" />
       <definition value="A symbol in syntax defined by the IEEE ASN1 system. " />
       <min value="1" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/> 
-      </binding>
     </element>
     <!-- component: value[x]:valueCodeableConcept -->
     <element id="Observation.component:bitsComponent.value[x]">

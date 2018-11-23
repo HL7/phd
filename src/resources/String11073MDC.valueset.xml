@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="String11073MDC"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <url value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/>
+  <version value="0.2.0"/>
+  <name value="String11073MDC"/>
+  <title value="String 11073 Attributes"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2018-11-23"/>
+  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
+  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing attributes whose values are Strings."/>
+  <compose>
+    <include>
+      <system value="urn:iso:std:iso:11073:10101"/>
+      <concept>
+        <!-- ALERT-OP-TEXT -->
+        <code value="68104"/>
+        <!-- THRESHOLD-NOTIFICATION-TEXT-STRING -->
+        <code value="68232"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

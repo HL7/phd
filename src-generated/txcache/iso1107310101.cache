@@ -313,3 +313,53 @@ e: {
   "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "attribute"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150023"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "filter" : [{
+        "property" : "partition",
+        "op" : "not-in",
+        "value" : "1"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------

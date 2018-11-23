@@ -33,3 +33,128 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+    "code" : "150604.7"
+  }],
+  "text" : "signal-pulse-questionable"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "measurement"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+    "code" : "150604.11"
+  }],
+  "text" : "signal-poor"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "measurement"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+    "code" : "150604.12"
+  }],
+  "text" : "signal-inadequate"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "measurement"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+    "code" : "150604.2"
+  }],
+  "text" : "sensor-displaced"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "measurement"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+    "code" : "150604.10"
+  }],
+  "text" : "signal-low-perfusion"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "measurement"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------

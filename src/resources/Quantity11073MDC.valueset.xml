@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="Quantity11073MDC"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <url value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/>
+  <version value="0.2.0"/>
+  <name value="Quantity11073MDC"/>
+  <title value="Quantity 11073 Attributes"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2018-11-23"/>
+  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
+  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing attributes whose values are Quantities."/>
+  <compose>
+    <include>
+      <system value="urn:iso:std:iso:11073:10101"/>
+      <concept>
+        <!-- Current Limits -->
+        <code value="67985"/>
+        <!-- Hi-Res Relative Time -->
+        <code value="68073"/>
+        <!-- Accuracy -->
+        <code value="67914"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>
