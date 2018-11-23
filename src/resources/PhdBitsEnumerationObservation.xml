@@ -73,15 +73,16 @@
     <!-- COMPONENTS FOR ASN1 BITS -->
     <element id="Observation.component:bitsComponent">
       <path value="Observation.component" />
-      <sliceName value="compoundComponent" />
+      <sliceName value="bitsComponent" />
       <short value="BITs measurements entry components" />
       <definition value="Each ANS1 component entrant contains one of the reported BITs settings. These entries are NOT present if a Measurement-Status attribute or Enum-Observed-Value status field indicates an error." />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
+            <code><min value="1"/></code>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <!-- component: code -->

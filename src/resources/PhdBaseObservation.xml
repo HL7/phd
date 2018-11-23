@@ -260,12 +260,12 @@
       <definition value="For each partition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise." />
       <comment value="A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes as partition:term code pairs. Each pair is a code describing something additional about the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average. An MDC_MODALITY_FAST would indicate that a short averaging is used and the result reported regardless of stability." />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="68198"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:supplementalTypesComponent.code.text">
@@ -289,7 +289,7 @@
       <binding> 
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCobject"/> 
-      </binding> 
+      </binding>
     </element>
     <element id="Observation.component:supplementalTypesComponent.value[x]:valueCodeableConcept">
       <path value="Observation.component.valueCodeableConcept" />
@@ -342,12 +342,12 @@
       <comment value="Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also provided a higher time resolution than permitted by the effective[x] time stamp should it be needed.&#xD;&#xA;The Relative-Time-Stamp is a 32-bit unsigned integer in units of 1/8th ms. It is reported here scaled to microseconds." />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="67985"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:relativeTimeComponent.code.text">
@@ -413,12 +413,12 @@
       <comment value="Hi Res Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also allows much higher time resolution than permitted in the effective{x] element should it be needed.&#xD;&#xA;The Hi-Res-Relative-Time-Stamp is a 64-bit unsigned interger in units of microseconds." />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="68073"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:hiresRelativeTimeComponent.code.text">

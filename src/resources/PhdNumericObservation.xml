@@ -142,12 +142,12 @@
       <definition value="This component shall be present if the Accuracy attribute is present." />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="67914"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:accuracyComponent.code">
@@ -213,11 +213,12 @@
       <definition value="This component gives one of the settings reported in the Alert-Op-State attribute. This attribute is used only by the Pulse Oximeter specialization.&#xD;&#xA;The Alert-Op-State attribute is used in conjunction with the Current-Limits and Measurement-Status attributes. The Current-Limits defines upper and lower limit thresholds for a reported measurement value. When the reported measurement value goes below or above these limits, a bit is set in the Measurement-Status attribute is set if the Alert-Op-State attribute indicates that the alert is active for the given threshold. Since it is considered important that if a Current-Limits attribute is present an alert shall be sent went the thresholds are crossed, the Alert-Op-State Bits are only set when the alert is, for some reason, turned OFF for a given threshold.&#xD;&#xA;There shall be one such alertOpStateComponent entry for every bit set in the Alert-Op-State attribute. There may be an entry for the defined cleared components as well." />
       <comment value="Recall that when creating the code for this entry that the code uses the MDER-Bit setting to be reported along with the Alert-Op-State attribute's MDC code. MDER-Bit 0 is the most significant bit of the attribute value. Since the Alert-Op-State attribute is a BITS-16 value, MDER-Bit 0 would have value 0x8000 and MDER-Bit 1 would have value 0x4000. Only bits 0, 1, and 2 are defined for this attribute. This component indicates if a given alert condition monitoring is turned off." />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
+            <code><min value="1"/></code>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:alertOpStateComponent.code">
@@ -292,15 +293,15 @@
       <short value="The Current-Limits values" />
       <definition value="The Current-Limits attribute gives upper and lower threshold values for the triggering of an alert for the measured value being reported in this Observation resource. This attribute is currently used only in the Pulse Oximeter specialization. If the alerting is not turned off, a Measurement-Status attribute bit is set when either threshold is crossed. The Current-Limits attribute value shall be reported if it is present in the measurement." />
       <comment value="The value is expressed as a range. The lower and upper values of the range represent the thresholds." />
-      <requirements value="Allows the downstream signalling of an alert and/or warning situation." />
+      <requirements value="Allows the downstream signaling of an alert and/or warning situation." />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="67892"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:currentLimitsComponent.code">
@@ -401,12 +402,12 @@
       <comment value="This attribute consists of human readable strings giving further information about the upper and lower limits of the Alerts" />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="68104"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:alertOpTextStringComponent.code">
@@ -463,12 +464,12 @@
       <definition value="The Measurement-Confidence-95 attribute defines the lower and upper bounds for a range within which the manufacture is 95% confident that the actual value resides. The unit for the lower bound and upper bound is the same as the measurement. " />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="68236"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:measurementConfidence95Component.code">
@@ -568,12 +569,12 @@
       <comment value="This attribute consists of human readable strings giving further information threshold notification(s)" />
       <max value="1" />
       <patternCodeableConcept>
-        <code>
+
           <coding>
             <system value="urn:iso:std:iso:11073:10101"/>
             <code value="68232"/>
           </coding>
-        </code>
+
       </patternCodeableConcept>
     </element>
     <element id="Observation.component:thresholdNotificationTextStringComponent.code">
