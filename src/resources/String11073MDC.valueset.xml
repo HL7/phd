@@ -4,7 +4,7 @@
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/>
+  <url value="http://hl7.org/fhir/uv/PHD/ValueSet/String11073MDC"/>
   <version value="0.2.0"/>
   <name value="String11073MDC"/>
   <title value="String 11073 Attributes"/>
@@ -19,6 +19,8 @@
       <concept>
         <!-- ALERT-OP-TEXT -->
         <code value="68104"/>
+      </concept>
+      <concept>
         <!-- THRESHOLD-NOTIFICATION-TEXT-STRING -->
         <code value="68232"/>
       </concept>

@@ -4,7 +4,7 @@
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/>
+  <url value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/>
   <version value="0.2.0"/>
   <name value="Quantity11073MDC"/>
   <title value="Quantity 11073 Attributes"/>
@@ -19,8 +19,12 @@
       <concept>
         <!-- Current Limits -->
         <code value="67985"/>
+      </concept>
+      <concept>
         <!-- Hi-Res Relative Time -->
         <code value="68073"/>
+      </concept>
+      <concept>
         <!-- Accuracy -->
         <code value="67914"/>
       </concept>

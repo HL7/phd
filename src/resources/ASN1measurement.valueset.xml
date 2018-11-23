@@ -4,7 +4,7 @@
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/>
+  <url value="http://hl7.org/fhir/uv/PHD/ValueSet/ASN1measurement"/>
   <version value="0.2.0"/>
   <name value="ASN1measurement"/>
   <title value="ANS1ToHL7 codes defined for measurement attributes"/>
@@ -15,7 +15,7 @@
   <description value="ValueSet for the ANS1ToHL7 codes that are derived from enumeration measurements."/>
   <compose>
     <include>
-	    <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
+	    <system value="http://hl7.org/fhir/uv/PHD/CodeSystem/ASN1ToHL7"/>
 	    <filter>
 	      <property value="source"/>
 		    <op value="="/>

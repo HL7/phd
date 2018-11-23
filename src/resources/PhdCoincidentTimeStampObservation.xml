@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
+  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdCoincidentTimeStampObservation" />
   <name value="PhdCoincidentTimeStampObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
@@ -30,24 +30,11 @@
     </element>
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="PhdCoincidentTimeStampObservation" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <definition value="A list of profiles (references to [StructureDefinition](structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](). At least one entry must be PhdCoincidentTimeStampObservation" />
-      <min value="1" />
-    </element>
-    <element id="Observation.meta.profile:phdProfile">
-      <path value="Observation.meta.profile" />
-      <sliceName value="phdProfile" />
       <short value="Element that contains the coincident time stamp profile" />
-      <min value="1" />
-      <max value="1" />
-      <fixedUri value="PhdCoincidentTimeStampObservation" />
+      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdCoincidentTimeStampObservation" />
     </element>
+
     <element id="Observation.status">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
         <valueString value="default: final" />

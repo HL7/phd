@@ -3,7 +3,7 @@
   <meta>
     <lastUpdated value="2017-12-14T04:17:26.671-05:00" />
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
+  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBaseObservation" />
   <name value="PhdBaseObservation" />
   <status value="draft" />
   <date value="2017-11-24T15:17:35.385-05:00" />
@@ -24,41 +24,19 @@
       <path value="Observation.meta" />
       <min value="1" />
     </element>
-    <element id="Observation.meta.profile">
-      <path value="Observation.meta.profile" />
-      <slicing>
-        <discriminator>
-          <type value="exists" />
-          <path value="Observation.meta.profile" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
 
     <!-- Handle measurement status test or demo data -->
     <element id="Observation.meta.security" >
       <path value="Observation.meta.security" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Observation.meta.security:MsmtStatusTestDemo">
-      <path value="Observation.meta.security" />
-      <sliceName value="MsmtStatusTestDemo" />
       <short value="Security value set to HTEST when measurement status indicates demo or test data" />
       <max value="1" />
     </element>
-    <element id="Observation.meta.security:MsmtStatusTestDemo.system">
+    <element id="Observation.meta.security.system">
       <path value="Observation.meta.security.system" />
       <min value="1" />
       <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActReason" />
     </element>
-    <element id="Observation.meta.security:MsmtStatusTestDemo.code">
+    <element id="Observation.meta.security.code">
       <path value="Observation.meta.security.code" />
       <min value="1" />
       <fixedCode value="HTEST" />
@@ -265,7 +243,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/CodeableConcept11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:supplementalTypesComponent.code.text">
@@ -337,13 +315,13 @@
       <definition value="This component shall be present if the measurement contains a Relative-Time-Stamp." />
       <comment value="Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also provided a higher time resolution than permitted by the effective[x] time stamp should it be needed.&#xD;&#xA;The Relative-Time-Stamp is a 32-bit unsigned integer in units of 1/8th ms. It is reported here scaled to microseconds." />
       <max value="1" />
+    </element>
     <element id="Observation.component:relativeTimeComponent.code">
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/> 
       </binding>
-    </element>
     </element>
     <element id="Observation.component:relativeTimeComponent.code.text">
       <path value="Observation.component.code.text" />
@@ -404,11 +382,11 @@
       <comment value="Hi Res Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also allows much higher time resolution than permitted in the effective{x] element should it be needed.&#xD;&#xA;The Hi-Res-Relative-Time-Stamp is a 64-bit unsigned interger in units of microseconds." />
       <max value="1" />
     </element>
-    <element id="Observation.component:relativeTimeComponent.code">
+    <element id="Observation.component:hiresRelativeTimeComponent.code">
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:hiresRelativeTimeComponent.code.text">

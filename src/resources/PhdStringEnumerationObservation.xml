@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation" />
+  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdStringEnumerationObservation" />
   <name value="PhdStringEnumerationObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
@@ -15,7 +15,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
+  <baseDefinition value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBaseObservation" />
   <derivation value="constraint" />
   <differential>
     <element id="Observation">
@@ -30,13 +30,10 @@
     </element>
     
     <!-- Meta profile -->
-    <element id="Observation.meta.profile:phdProfile">
+    <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <sliceName value="phdProfile" />
-      <short value="The PHD profile URL" />
-      <min value="1" />
-      <max value="1" />
-      <fixedUri value="PhdStringEnumerationObservation" />
+      <short value="The PHD String Enum profile URL" />
+      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdStringEnumerationObservation" />
     </element>
     
     <!-- value[x] which is a valueString  -->

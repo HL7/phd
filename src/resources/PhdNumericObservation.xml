@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" />
+  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdNumericObservation" />
   <name value="PhdNumericObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
@@ -15,7 +15,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
+  <baseDefinition value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBaseObservation" />
   <derivation value="constraint" />
   <differential>
     <element id="Observation">
@@ -26,13 +26,10 @@
     </element>
 
     <!-- Meta profile -->
-    <element id="Observation.meta.profile:phdProfile">
+    <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <sliceName value="phdProfile" />
       <short value="The PHD profile URL" />
-      <min value="1" />
-      <max value="1" />
-      <fixedUri value="PhdNumericObservation" />
+      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdNumericObservation" />
     </element>
     
     <!-- The vital Signs category     -->
@@ -146,7 +143,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:accuracyComponent.code.text">
@@ -209,7 +206,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/ASN1attribute"/> 
       </binding>
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding">
@@ -220,7 +217,7 @@
     <element id="Observation.component:alertOpStateComponent.code.coding.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
+      <fixedUri value="http://hl7.org/fhir/uv/PHD/CodeSystem/ASN1ToHL7" />
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding.code">
       <path value="Observation.component.code.coding.code" />
@@ -284,7 +281,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Range11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:currentLimitsComponent.code.text">
@@ -379,7 +376,7 @@
       <max value="1" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/String11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:alertOpTextStringComponent.code">
@@ -436,7 +433,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Range11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:measurementConfidence95Component.code.text">
@@ -533,7 +530,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/String11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:thresholdNotificationTextStringComponent.code.text">

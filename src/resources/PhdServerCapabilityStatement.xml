@@ -21,9 +21,9 @@
         <li> Bundle</li> 
     
       </ul> 
-	  
-	  <p> using create, conditional create, update, update-create, and conditional update in either a transaction Bundle or with individual resources.</p> 
-	  <p> A server may refuse the upload of a Patient resource in the special case where the service administrator provides the logical id of the Patient resource to the uploader so it may be used in the uploaded Observation resources. This option gives extra protection of Personal Health Information.</p> 
+      
+      <p> using create, conditional create, update, update-create, and conditional update in either a transaction Bundle or with individual resources.</p> 
+      <p> A server may refuse the upload of a Patient resource in the special case where the service administrator provides the logical id of the Patient resource to the uploader so it may be used in the uploaded Observation resources. This option gives extra protection of Personal Health Information.</p> 
     
     </div> 
   </text> 
@@ -51,36 +51,38 @@
   <rest> 
     <mode value="server"/> 
     <documentation value="Continua FHIR Observation Server requirements"/> 
-    <security> 
-      <coding> 
-        <system value="http://terminology.hl7.org/CodeSystem/restful-security-service"/> 
-        <code value="OAuth"/> 
-      </coding> 
-	  <coding> 
-        <system value="http://terminology.hl7.org/CodeSystem/restful-security-service"/> 
-        <code value="Basic"/> 
-      </coding> 
+    <security>
+      <service>
+        <coding> 
+          <system value="http://terminology.hl7.org/CodeSystem/restful-security-service"/> 
+          <code value="OAuth"/> 
+        </coding> 
+        <coding> 
+          <system value="http://terminology.hl7.org/CodeSystem/restful-security-service"/> 
+          <code value="Basic"/> 
+      </coding>
+      </service>
       <description value="Describe the oauth model ..."/> 
     </security> 
     <resource> 
       <type value="Bundle"/> 
-	  <documentation value="The server is required to support the transaction Bundle and the resolution of temporary logical ids." />
+      <documentation value="The server is required to support the transaction Bundle and the resolution of temporary logical ids." />
       <interaction> 
         <code value="create"/> 
       </interaction> 
     </resource> 
     <resource> 
       <type value="Patient"/>
-	  <documentation value="A server may refuse the upload of a Patient resource to protect Personal Health Information (PHI). Administrators of such servers provide the uploader the logical id of the Patient resource by an unspecified means. The client uses the logical id in its Observation resources as needed. The Patient resource may or may not exist on the server but the Observation resource shall not be rejected by the server due to a resource not found error if it uses the provided logical id. In those situations where the Patient resource is uploaded by the client the resource is only required to contain an opaque identifier. In this manner, PHI is still protected as only the service provider has the key linking the identifier to an actual patient."/>
+      <documentation value="A server may refuse the upload of a Patient resource to protect Personal Health Information (PHI). Administrators of such servers provide the uploader the logical id of the Patient resource by an unspecified means. The client uses the logical id in its Observation resources as needed. The Patient resource may or may not exist on the server but the Observation resource shall not be rejected by the server due to a resource not found error if it uses the provided logical id. In those situations where the Patient resource is uploaded by the client the resource is only required to contain an opaque identifier. In this manner, PHI is still protected as only the service provider has the key linking the identifier to an actual patient."/>
       <interaction> 
         <code value="update"/> 
       </interaction>
       <interaction> 
         <code value="create"/> 
       </interaction> 
-	  <updateCreate value="true" />
-	  <conditionalCreate value="true" />
-	  <conditionalUpdate value="true" />
+      <updateCreate value="true" />
+      <conditionalCreate value="true" />
+      <conditionalUpdate value="true" />
     </resource>
     <resource> 
       <type value="Device"/> 
@@ -90,16 +92,16 @@
       <interaction> 
         <code value="create"/> 
       </interaction> 
-	  <updateCreate value="true" />
-	  <conditionalCreate value="true" />
-	  <conditionalUpdate value="true" />
+      <updateCreate value="true" />
+      <conditionalCreate value="true" />
+      <conditionalUpdate value="true" />
     </resource>
     <resource> 
       <type value="Observation"/> 
       <interaction> 
         <code value="create"/> 
       </interaction> 
-	  <conditionalCreate value="true" />
+      <conditionalCreate value="true" />
     </resource> 
     <interaction> 
       <code value="transaction"/> 

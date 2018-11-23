@@ -3,7 +3,7 @@
   <meta>
     <lastUpdated value="2017-10-16T05:10:41.036-04:00" />
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" />
+  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdPatient" />
   <name value="PhdPatient" />
   <status value="draft" />
   <date value="2017-08-04T06:04:53.838-04:00" />
@@ -20,34 +20,20 @@
       <path value="Patient" />
       <comment value="Note that the only element that is required to be populated is the identifier which can be made opaque to a third party viewer. PCHA also supports a situation where the PHG can be provided a logical id to a Patient Resource out of band. In this case, the PHG never uploads a Patient Resource, but uses the provided logical id in the Observation resources instead. In this manner, not even the opaque identifiers are sent over the wire." />
     </element>
-	<!-- META DATA PROFILE -->
-	<!-- This is for the profile entry More than one profile can be present. The Continua profile is identified by the value of the profile -->
+    <!-- META DATA PROFILE -->
+    <!-- This is for the profile entry More than one profile can be present. The Continua profile is identified by the value of the profile -->
     <element id="Patient.meta">
       <path value="Patient.meta" />
       <min value="1" />
     </element>
-	<!-- Indicate that we are slicing the profile element -->
+    <!-- Indicate that we are slicing the profile element -->
     <element id="Patient.meta.profile">
       <path value="Patient.meta.profile" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="phdPatient" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
+      <short value="PhdPatient Profile entry" />
       <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdPatient" />
     </element>
-	<!-- Give the Continua slice a name. -->
-    <element id="Patient.meta.profile:phdProfile">
-      <path value="Patient.meta.profile" />
-      <sliceName value="phdProfile" />
-	  <short value="PhdPatient Profile entry" />
-      <min value="1" />
-      <max value="1" />
-      <fixedUri value="PhdPatient" />
-    </element>
-	
+    
     <element id="Patient.identifier">
       <path value="Patient.identifier" />
       <slicing>
@@ -62,7 +48,7 @@
     <element id="Patient.identifier:phdIdentifier">
       <path value="Patient.identifier" />
       <sliceName value="phdIdentifier" />
-	  <short value="The Phd identifier entry" />
+      <short value="The Phd identifier entry" />
       <min value="1" />
       <max value="1" />
     </element>
@@ -105,13 +91,13 @@
     </element>
     <element id="Patient.identifier:phdIdentifier.system">
       <path value="Patient.identifier.system" />
-	  <short value="The system associated with the value. For XDSb this would be the enterprise identifier (an OID). For unknown patient 'http://www.hl7.org/fhir/CodeSystem/v2-0004'" />
-	  <comment value="For an unknown patient the system http://www.hl7.org/fhir/CodeSystem/v2-0004 can be used with value 'U'" />
+      <short value="The system associated with the value. For XDSb this would be the enterprise identifier (an OID). For unknown patient 'http://www.hl7.org/fhir/CodeSystem/v2-0004'" />
+      <comment value="For an unknown patient the system http://www.hl7.org/fhir/CodeSystem/v2-0004 can be used with value 'U'" />
       <min value="1" />
     </element>
     <element id="Patient.identifier:phdIdentifier.value">
       <path value="Patient.identifier.value" />
-	  <short value="The patient identfier under the jurisdiction indicated by the system element. For unknown patient this would be 'U'." />
+      <short value="The patient identfier under the jurisdiction indicated by the system element. For unknown patient this would be 'U'." />
       <min value="1" />
     </element>
   </differential>
