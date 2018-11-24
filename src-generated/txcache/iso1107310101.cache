@@ -363,3 +363,1088 @@ v: {
   "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67892"
+      },
+      {
+        "code" : "68236"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68104"
+      },
+      {
+        "code" : "68232"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67892"
+      },
+      {
+        "code" : "68236"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set Range11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68104"
+      },
+      {
+        "code" : "68232"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set String11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150023"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150023, (MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150023"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150023, (MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67892"
+      },
+      {
+        "code" : "68236"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68104"
+      },
+      {
+        "code" : "68232"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/PHD/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "attribute"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150023"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150023, (MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150023"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150023, (MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68220"
+  }],
+  "text" : "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68220, (MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "532353"
+  }],
+  "text" : "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532353, (MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "532355"
+  }],
+  "text" : "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: certified Upload classes"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532355, (MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: certified Upload classes)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68220"
+  }],
+  "text" : "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68220, (MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "532353"
+  }],
+  "text" : "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532353, (MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "532355"
+  }],
+  "text" : "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: certified Upload classes"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#532355, (MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: certified Upload classes)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "532353"
+  }],
+  "text" : "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "attribute"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68220"
+  }],
+  "text" : "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "attribute"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68222"
+  }],
+  "text" : "MDC_TIME_RES_ABS: Time resolution"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+      "filter" : [{
+        "property" : "source",
+        "op" : "=",
+        "value" : "attribute"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68222"
+  }],
+  "text" : "MDC_TIME_RES_ABS: Time resolution"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68222, (MDC_TIME_RES_ABS: Time resolution)) is not  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68222"
+  }],
+  "text" : "MDC_TIME_RES_ABS: Time resolution"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68222, (MDC_TIME_RES_ABS: Time resolution)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "68193"
+  }],
+  "text" : "MDC_ATTR_SUPPLEMENTAL_TYPES"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#68193, (MDC_ATTR_SUPPLEMENTAL_TYPES)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150023"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; The code provided (urn:iso:std:iso:11073:10101#150023, (MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure)) is not  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101"
+}
+-------------------------------------------------------------------------------------

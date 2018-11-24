@@ -3,7 +3,7 @@
   <meta>
     <lastUpdated value="2017-10-16T05:10:41.036-04:00" />
   </meta>
-  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdPatient" />
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" />
   <name value="PhdPatient" />
   <status value="draft" />
   <date value="2017-08-04T06:04:53.838-04:00" />
@@ -31,7 +31,7 @@
       <path value="Patient.meta.profile" />
       <short value="PhdPatient Profile entry" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdPatient" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" />
     </element>
     
     <element id="Patient.identifier">
@@ -72,20 +72,20 @@
       <path value="Patient.identifier.type.coding" />
       <sliceName value="v2Coding" />
       <short value="Code defined by http://www.hl7.org/fhir/CodeSystem/v2-0203" />
-      <definition value="A code using the V2 http://www.hl7.org/fhir/CodeSystem/v2-0203/ system. " />
+      <definition value="A code using the V2 http://www.hl7.org/fhir/CodeSystem/v2-0203/ system." />
       <comment value="This HL7 V2 coding system identifies that this is the Continua identifier. The V2 system supports many possible types of identifiers. For a local coding system use 'L', for an unknown patient use 'U'" />
       <max value="1" />
     </element>
     <element id="Patient.identifier:phdIdentifier.type.coding:v2Coding.system">
       <path value="Patient.identifier.type.coding.system" />
-      <definition value="The identification of the code system that defines the meaning of the symbol in the code. In this case the system is http://hl7.org/fhir/CodeSystem/v2-0203 " />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code. In this case the system is http://hl7.org/fhir/CodeSystem/v2-0203" />
       <comment value="HL7 defines several codes that can be used in the http://hl7.org/fhir/CodeSystem/v2-0203 system. For a list of the possible codes in this system see http://www.hl7.org/fhir/CodeSystem/v2-0203" />
       <min value="1" />
       <fixedUri value="http://hl7.org/fhir/CodeSystem/v2-0203" />
     </element>
     <element id="Patient.identifier:phdIdentifier.type.coding:v2Coding.code">
       <path value="Patient.identifier.type.coding.code" />
-      <short value="a code from http://hl7.org/fhir/CodeSystem/v2-0203 " />
+      <short value="a code from http://hl7.org/fhir/CodeSystem/v2-0203" />
       <definition value="A symbol defined by the http://www.hl7.org/fhir/CodeSystem/v2-0203 coding system. For example, the code 'MR' indicates the identifier is a Medical Record Number. 'SS' indicates that the identifier value is a US social security number and 'SR' indicates a state registry id." />
       <min value="1" />
     </element>

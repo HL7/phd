@@ -27,7 +27,7 @@
   }],
   "url" : "http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide",
   "version" : "0.2.0",
-  "name" : "Continua Personal Health Device Implementation Guide",
+  "name" : "PhdImplementationGuide",
   "title" : "Continua Personal Health Device Implementation Guide",
   "status" : "draft",
   "experimental" : false,
@@ -45,9 +45,29 @@
   "3.6.0"],
   "definition" : {
     "grouping" : [{
-      "id" : "hl7.fhir.uv.phd",
+      "id" : "profiles",
       "name" : "PHD Profiles",
       "description" : "Profiles for mapping 11073 20601 Personal Health Devices to FHIR resources"
+    },
+    {
+      "id" : "valueSets",
+      "name" : "Value Sets",
+      "description" : "Value Sets used and defined in this Implementation Guide"
+    },
+    {
+      "id" : "codeSystems",
+      "name" : "Code Systems",
+      "description" : "Code Systems defined in this Implementation Guide"
+    },
+    {
+      "id" : "capabilities",
+      "name" : "Capability Statements",
+      "description" : "Capability Statements defined in this Implementation Guide"
+    },
+    {
+      "id" : "examples",
+      "name" : "Examples",
+      "description" : "Examples of resources following the Implementation Guide Profiles"
     }],
     "resource" : [{
       "reference" : {
@@ -55,7 +75,7 @@
       },
       "name" : "PhdDevice",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -63,7 +83,7 @@
       },
       "name" : "PhdBaseObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -71,7 +91,7 @@
       },
       "name" : "PhdNumericObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -79,7 +99,7 @@
       },
       "name" : "PhdCompoundNumericObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -87,7 +107,7 @@
       },
       "name" : "PhdCodedEnumerationObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -95,7 +115,7 @@
       },
       "name" : "PhdBitsEnumerationObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -103,7 +123,7 @@
       },
       "name" : "PhdRtsaObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -111,14 +131,15 @@
       },
       "name" : "PhdStringEnumerationObservation",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
         "reference" : "StructureDefinition/PhdCoincidentTimeStampObservation"
       },
       "name" : "PhdCoincidentTimeStampObservation",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -126,7 +147,7 @@
       },
       "name" : "PhgDevice",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -134,7 +155,7 @@
       },
       "name" : "PhdPatient",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "profiles"
     },
     {
       "reference" : {
@@ -142,7 +163,7 @@
       },
       "name" : "ASN1ToHL7",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "codeSystems"
     },
     {
       "reference" : {
@@ -150,15 +171,39 @@
       },
       "name" : "ContinuaHFS",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "codeSystems"
     },
     {
       "reference" : {
-        "reference" : "ValueSet/11073MDCobject"
+        "reference" : "ValueSet/CodeableConcept11073MDC"
       },
-      "name" : "11073MDCobject",
+      "name" : "CodeableConcept11073MDC",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "valueSets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/Quantity11073MDC"
+      },
+      "name" : "Quantity11073MDC",
+      "exampleBoolean" : false,
+      "groupingId" : "valueSets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/Range11073MDC"
+      },
+      "name" : "Range11073MDC",
+      "exampleBoolean" : false,
+      "groupingId" : "valueSets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/String11073MDC"
+      },
+      "name" : "String11073MDC",
+      "exampleBoolean" : false,
+      "groupingId" : "valueSets"
     },
     {
       "reference" : {
@@ -166,7 +211,7 @@
       },
       "name" : "11073MDCnotObject",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "valueSets"
     },
     {
       "reference" : {
@@ -174,7 +219,7 @@
       },
       "name" : "ASN1attribute",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "valueSets"
     },
     {
       "reference" : {
@@ -182,7 +227,7 @@
       },
       "name" : "ASN1measurement",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "valueSets"
     },
     {
       "reference" : {
@@ -190,7 +235,7 @@
       },
       "name" : "PhdServerCapabilityStatement",
       "exampleBoolean" : false,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "capabilities"
     },
     {
       "reference" : {
@@ -199,7 +244,7 @@
       "name" : "Example of a first time Bundle upload",
       "description" : "This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -208,7 +253,7 @@
       "name" : "Example Bundled upload",
       "description" : "This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -217,7 +262,7 @@
       "name" : "Example of a numeric.",
       "description" : "This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average).",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -226,7 +271,7 @@
       "name" : "Example of a NaN case",
       "description" : "This example contains a NaN (not a number) measurement.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -235,7 +280,7 @@
       "name" : "Example of coded enumeration",
       "description" : "This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -244,7 +289,7 @@
       "name" : "Example of a ASN1 BITs measurement",
       "description" : "This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -253,7 +298,7 @@
       "name" : "Example of Compound measurement",
       "description" : "This example is from a Blood Pressure cuff.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -262,7 +307,7 @@
       "name" : "Example of a Coincident Time Stamp",
       "description" : "This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD. This situation is the most prevalent.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -271,7 +316,7 @@
       "name" : "Example of a Coincident Time Stamp with a Time Fault",
       "description" : "This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements.",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -280,7 +325,7 @@
       "name" : "Example of a PHD",
       "description" : "This example maps the MDS data from a Blood Pressure PHD",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -289,7 +334,7 @@
       "name" : "Example of a Gateway",
       "description" : "This example maps an Android Gateway",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -298,7 +343,7 @@
       "name" : "Example of a Patient",
       "description" : "This example maps a patient where an optional patient name is included",
       "exampleBoolean" : true,
-      "groupingId" : "hl7.fhir.uv.phd"
+      "groupingId" : "examples"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -468,7 +513,7 @@
             "generation" : "markdown",
             "page" : [{
               "nameUrl" : "bloodPress.html",
-              "title" : "Compound Measurement ",
+              "title" : "Compound Measurement",
               "generation" : "markdown"
             }]
           },
@@ -478,7 +523,7 @@
             "generation" : "markdown",
             "page" : [{
               "nameUrl" : "glucoseEnum.html",
-              "title" : "Coded Enumeration ",
+              "title" : "Coded Enumeration",
               "generation" : "markdown"
             }]
           },
@@ -559,11 +604,6 @@
           "generation" : "markdown"
         },
         {
-          "nameUrl" : "resources.html",
-          "title" : "Resources",
-          "generation" : "markdown"
-        },
-        {
           "nameUrl" : "downloads.html",
           "title" : "Downloads",
           "generation" : "markdown"
@@ -639,8 +679,23 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "valueset-11073MDCobject.html",
-          "title" : "11073MDCobject",
+          "nameUrl" : "valueset-CodeableConcept11073MDC.html",
+          "title" : "CodeableConcept11073MDC",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-Quantity11073MDC.html",
+          "title" : "Quantity11073MDC",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-Range11073MDC.html",
+          "title" : "Range11073MDC",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-String11073MDC.html",
+          "title" : "String11073MDC",
           "generation" : "generated"
         },
         {

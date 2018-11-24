@@ -10,7 +10,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by Health and Fitness Server.</p></div>
   </text>
   
-  <url value="http://hl7.org/fhir/uv/PHD/CodeSystem/ContinuaHFS" />
+  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS" />
 
   <version value="0.2.0"/> 
 

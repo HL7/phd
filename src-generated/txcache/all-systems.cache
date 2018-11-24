@@ -110,3 +110,357 @@ v: {
   "error" : "Access violation at address 0000000000B9CF8F in module 'FHIRServer.exe'. Read of address 0000000000000000"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150021"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8480-6"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150021, http://loinc.org#8480-6, (MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure)) are  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150022"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8462-4"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150022, http://loinc.org#8462-4, (MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure)) are  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150021"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8480-6"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150021, http://loinc.org#8480-6, (MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure)) are  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150022"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8462-4"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150022, http://loinc.org#8462-4, (MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure)) are  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150021"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8480-6"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150021, http://loinc.org#8480-6, (MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure)) are  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150022"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8462-4"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150022, http://loinc.org#8462-4, (MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure)) are  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150021"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8480-6"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150021, http://loinc.org#8480-6, (MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure)) are  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150022"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8462-4"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "67985"
+      },
+      {
+        "code" : "68073"
+      },
+      {
+        "code" : "67914"
+      },
+      {
+        "code" : "68222"
+      },
+      {
+        "code" : "68226"
+      },
+      {
+        "code" : "68223"
+      },
+      {
+        "code" : "68224"
+      },
+      {
+        "code" : "68224"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150022, http://loinc.org#8462-4, (MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure)) are  valid in the value set Quantity11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150021"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8480-6"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150021, http://loinc.org#8480-6, (MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure)) are  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:11073:10101",
+    "code" : "150022"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "8462-4"
+  }],
+  "text" : "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:11073:10101",
+      "concept" : [{
+        "code" : "68193"
+      },
+      {
+        "code" : "68220"
+      },
+      {
+        "code" : "532353"
+      },
+      {
+        "code" : "532355"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"urn:iso:std:iso:11073:10101\" is not known; None of the codes provided (urn:iso:std:iso:11073:10101#150022, http://loinc.org#8462-4, (MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure)) are  valid in the value set CodeableConcept11073MDC"
+}
+-------------------------------------------------------------------------------------

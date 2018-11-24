@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdCoincidentTimeStampObservation" />
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
   <name value="PhdCoincidentTimeStampObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
@@ -30,9 +30,9 @@
     </element>
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <definition value="A list of profiles (references to [StructureDefinition](structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](). At least one entry must be PhdCoincidentTimeStampObservation" />
       <short value="Element that contains the coincident time stamp profile" />
-      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdCoincidentTimeStampObservation" />
+      <definition value="A list of profiles (references to [StructureDefinition](structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](). At least one entry must be PhdCoincidentTimeStampObservation" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
     </element>
 
     <element id="Observation.status">
@@ -85,7 +85,7 @@
       <min value="1" />
     </element>
     
-    <element id="Observation.effective[x]:effectiveDateTime">
+    <element id="Observation.effective[x]">
       <path value="Observation.effectiveDateTime" />
       <short value="The current time of the PHG at the current time of the PHD. Absent if PHD is better synchronized" />
       <definition value="The time of the PHG at the time the current time of the PHD is ascertained." />
@@ -104,22 +104,22 @@
         </discriminator>
         <rules value="open" /> 
       </slicing>
-      <short value="Time line of PHD. Absent if a time fault; dataAbsentReason will have 'unknown' " />
+      <short value="Time line of PHD. Absent if a time fault; dataAbsentReason will have 'unknown'" />
       <definition value="The current time reported by the PHD unless there is a time fault in which case this element is absent and the dataAbsentReason indicates 'unknown'" />
       <comment value="This observation is a measurement of the PHDs current time at the current time of the PHG and is present to allow a comparison and auditing. PHGs are responsible for assuring the measurement time stamps are correctly aligned to UTC and local offset. If the PHD has superior time synchronization than the PHG (very rare with PHDs) only the current time of the PHD is shown and the effectiveDateTime element is absent. If the PHD has a time fault (the current time line of the PHD cannot be ascertained for the measurements uploaded) the value[x] element is absent. If the PHD reports no time stanps in its measurements, this resource is not needed.  The primary reason for the coincident time stamp is to know the details of any time stamp corrections the PHG may have applied." />
       <max value="1" />
       <type>
-        <code value="dateTime"/>
+        <code value="dateTime" />
       </type>
       <type>
-        <code value="Quantity"/>
+        <code value="Quantity" />
       </type>
     </element>
     
     <!-- Wall clock time -->
-    <element id="Observation.value[x]:dateTime">
+    <element id="Observation.value[x]:wallClockTime">
       <path value="Observation.valueDateTime" />
-      <sliceName value="dateTime" />
+      <sliceName value="wallClockTime" />
       <short value="Value when PHD reports an absolute or base offset time." />
       <definition value="This reports the current time of the PHD when the real time clock uses either absolute time or base offset time" />
       <type>

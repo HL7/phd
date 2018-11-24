@@ -10,7 +10,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing 11073 ASN1 BITs measurements.</p></div>
   </text>
   
-  <url value="http://hl7.org/fhir/uv/PHD/CodeSystem/ASN1ToHL7" />
+  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
   
   <version value="0.2.0"/> 
 

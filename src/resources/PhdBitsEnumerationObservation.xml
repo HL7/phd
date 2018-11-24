@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBitsEnumerationObservation" />
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" />
   <name value="PhdBitsEnumerationObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
@@ -15,7 +15,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBaseObservation" />
+  <baseDefinition value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
   <derivation value="constraint" />
   <differential>
     <element id="Observation">
@@ -28,7 +28,7 @@
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
       <short value="The PHD BITs profile URL" />
-      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBitsEnumerationObservation" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" />
     </element>
     
 <!-- No value[x] in a BITs meansurement; Values in components  -->
@@ -79,7 +79,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/ASN1measurement"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/> 
       </binding>
     </element>
     <element id="Observation.component:bitsComponent.code.coding">
@@ -92,7 +92,7 @@
       <path value="Observation.component.code.coding.system" />
       <comment value="This value is a placeholder until the correct reference URL is registered." />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/PHD/CodeSystem/ASN1ToHL7" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
     </element>
     <element id="Observation.component:bitsComponent.code.coding.code">
       <path value="Observation.component.code.coding.code" />

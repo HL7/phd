@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhgDevice" />
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice" />
   <name value="PhgDevice" />
   <status value="draft" />
   <date value="2017-07-07T11:39:51.3383228-04:00" />
@@ -34,7 +34,7 @@
     <element id="Device.meta.profile">
       <path value="Device.meta.profile" />
     <short value="PhgDevice Profile entry" />
-      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhgDevice" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice" />
     </element>
     
         <!-- IDENTIFIER -->
@@ -74,7 +74,7 @@
     <element id="Device.identifier:systemIdentifier.value">
       <path value="Device.identifier.value" />
       <short value="System id value from System-Id attribute" />
-      <definition value="The System id from the System-Id attribute as an 8-byte HEX string where each byte is separated by dashes, for example FE-ED-AB-EE-DE-AD-77-C3. " />
+      <definition value="The System id from the System-Id attribute as an 8-byte HEX string where each byte is separated by dashes, for example FE-ED-AB-EE-DE-AD-77-C3." />
       <comment value="The formatting is specified in the IEEE document Guidelines for 64-bit Global Identifier." />
       <min value="1" />
     </element>
@@ -129,7 +129,7 @@
     <element id="Device.type.text">
       <path value="Device.type.text" />
       <definition value="A human readable display descrbing the meaning of the code." />
-      <comment value="It is suggested that this element contain the reference identfier for a PHG 'MDC_MOC_VMS_MDS_AHD'." />
+      <comment value="It is suggested that this element contain the reference identifier for a PHG 'MDC_MOC_VMS_MDS_AHD'." />
     </element>
     <element id="Device.type.coding">
       <path value="Device.type.coding" />
@@ -274,11 +274,7 @@
         will have the same fixed 10101-url with either a single-coded, multiple-coded, or quantity entry. -->
         <discriminator>
           <type value="value" />
-          <path value="type.coding.system" />
-        </discriminator>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
+          <path value="type" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -298,6 +294,10 @@
     <element id="Device.property:quantitiesProperty.type">
       <path value="Device.property.type" />
       <short value="The type of time quantity" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
+      </binding>
     </element>
     <element id="Device.property:quantitiesProperty.type.text">
       <path value="Device.property.type.text" />
@@ -306,31 +306,17 @@
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:quantitiesProperty.type.coding">
       <path value="Device.property.type.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <!-- The MDCType slice of the coding element: This element is required -->
-    <element id="Device.property:quantitiesProperty.type.coding:MDCType">
-      <path value="Device.property.type.coding" />
-      <sliceName value="MDCType" />
       <short value="Required MDC code system entry" />
       <min value="1" />
-      <max value="1" />
     </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:quantitiesProperty.type.coding:MDCType.system">
+    <element id="Device.property:quantitiesProperty.type.coding.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined quantity properties reported by the device -->
-    <element id="Device.property:quantitiesProperty.type.coding:MDCType.code">
+    <element id="Device.property:quantitiesProperty.type.coding.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="For PHG only the time sync accuracy is of interest.&#xD;&#xA;&#xD;&#xA;
@@ -374,18 +360,22 @@
     </element>
     
     <!-- The singleCodedProperties property. At this time there is only one
-    single-coded entry reported by PHGs; the time synchonization     -->
+    single-coded entry reported by PHGs; the time synchronization -->
     <element id="Device.property:singleCodedProperties">
       <path value="Device.property" />
       <sliceName value="singleCodedProperties" />
       <short value="The device properties represented by a single code such as the time synchronization" />
       <definition value="This element represents all those time properties that are a single code. At the moment there is only the synchronization type." />
-      <comment value="If the PHD does not report a time synchronization or use a time stamp or is not synchronized, one reports MDC_TIME_SYNC_NONE. " />
+      <comment value="If the PHD does not report a time synchronization or use a time stamp or is not synchronized, one reports MDC_TIME_SYNC_NONE." />
       <min value="1" />
     </element>
     <element id="Device.property:singleCodedProperties.type">
       <path value="Device.property.type" />
       <short value="What the time code is" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
+      </binding>
     </element>
     <element id="Device.property:singleCodedProperties.type.text">
       <path value="Device.property.type.text" />
@@ -394,31 +384,17 @@
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:singleCodedProperties.type.coding">
       <path value="Device.property.type.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <!-- The MDCType slice of the coding element: This element is required -->
-    <element id="Device.property:singleCodedProperties.type.coding:MDCType">
-      <path value="Device.property.type.coding" />
-      <sliceName value="MDCType" />
       <short value="Required MDC code system entry" />
       <min value="1" />
-      <max value="1" />
     </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:singleCodedProperties.type.coding:MDCType.system">
+    <element id="Device.property:singleCodedProperties.type.coding.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined single-coded properties reported by the device -->
-    <element id="Device.property:singleCodedProperties.type.coding:MDCType.code">
+    <element id="Device.property:singleCodedProperties.type.coding.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting one of the time codes as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
@@ -473,12 +449,15 @@
       <sliceName value="codedListProperties" />
       <short value="The device properties represented by a list of codes such as the list of certified PAN or H-FS interfaces" />
       <definition value="This element represents all those properties that are a list of codes. At the moment there is only certified PAN interfaces." />
-      <comment value="Continua certified PHDs are required to have these entries. " />
-      <min value="1" />
+      <comment value="Continua certified PHDs are required to have these entries." />
     </element>
     <element id="Device.property:codedListProperties.type">
       <path value="Device.property.type" />
       <short value="What the coded list is" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
+      </binding>
     </element>
     <element id="Device.property:codedListProperties.type.text">
       <path value="Device.property.type.text" />
@@ -487,38 +466,24 @@
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:codedListProperties.type.coding">
       <path value="Device.property.type.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <!-- The MDCType slice of the coding element: This element is required -->
-    <element id="Device.property:codedListProperties.type.coding:MDCType">
-      <path value="Device.property.type.coding" />
-      <sliceName value="MDCType" />
       <short value="Required MDC code system entry" />
       <min value="1" />
-      <max value="1" />
     </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:codedListProperties.type.coding:MDCType.system">
+    <element id="Device.property:codedListProperties.type.coding.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined coded list properties reported by the device -->
-    <element id="Device.property:codedListProperties.type.coding:MDCType.code">
+    <element id="Device.property:codedListProperties.type.coding.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
       Description                CODE    Reference Identifier                           Code System&#xD;&#xA;
       -----------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
-      Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/PHD/CodeSystem/ContinuaPAN&#xD;&#xA;
-      Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/PHD/CodeSystem/ContinuaHFS&#xD;&#xA;" />
+      Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN&#xD;&#xA;
+      Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS&#xD;&#xA;" />
       <min value="1" />
     </element>
     
@@ -552,7 +517,7 @@
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
       <path value="Device.property.valueCode.coding.system" />
-      <definition value="Either the http://hl7.org/fhir/uv/PHD/CodeSystem/ContinuaPAN or http://hl7.org/fhir/uv/PHD/CodeSystem/ContinuaHFS code systems" />
+      <definition value="Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS code systems" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">

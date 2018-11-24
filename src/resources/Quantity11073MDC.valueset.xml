@@ -4,7 +4,7 @@
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/>
+  <url value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/>
   <version value="0.2.0"/>
   <name value="Quantity11073MDC"/>
   <title value="Quantity 11073 Attributes"/>
@@ -27,6 +27,26 @@
       <concept>
         <!-- Accuracy -->
         <code value="67914"/>
+      </concept>
+      <concept>
+        <!-- Absolute clock resolution MDC_TIME_RES_ABS -->
+        <code value="68222"/>
+      </concept>
+      <concept>
+        <!-- Base-offset clock resolution MDC_TIME_RES_BO -->
+        <code value="68226"/>
+      </concept>
+      <concept>
+        <!-- Relative time resolution MDC_TIME_RES_REL -->
+        <code value="68223"/>
+      </concept>
+      <concept>
+        <!-- Hi res relative time resolution MDC_TIME_RES_REL_HI_RES -->
+        <code value="68224"/>
+      </concept>
+      <concept>
+        <!-- Time Sync accuracy MDC_TIME_SYNC_ACCURACY -->
+        <code value="68224"/>
       </concept>
     </include>
   </compose>

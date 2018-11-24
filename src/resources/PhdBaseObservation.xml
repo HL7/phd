@@ -3,7 +3,7 @@
   <meta>
     <lastUpdated value="2017-12-14T04:17:26.671-05:00" />
   </meta>
-  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBaseObservation" />
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
   <name value="PhdBaseObservation" />
   <status value="draft" />
   <date value="2017-11-24T15:17:35.385-05:00" />
@@ -98,6 +98,9 @@
     </element>
     
     <!-- Code: What the measurement is -->
+    <element id="Observation.code">
+      <path value="Observation.code" />
+    </element>
     <element id="Observation.code.text">
       <path value="Observation.code.text" />
       <short value="It is recommended to display at least the reference identifier for the MDC code" />
@@ -243,7 +246,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/CodeableConcept11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:supplementalTypesComponent.code.text">
@@ -320,7 +323,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:relativeTimeComponent.code.text">
@@ -386,7 +389,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:hiresRelativeTimeComponent.code.text">

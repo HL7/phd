@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="oo" />
   </extension>
-  <url value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdCompoundNumericObservation" />
+  <url value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" />
   <name value="PhdCompoundNumericObservation" />
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
@@ -15,7 +15,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />
-  <baseDefinition value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdBaseObservation" />
+  <baseDefinition value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" />
   <derivation value="constraint" />
   <differential>
     <element id="Observation">
@@ -27,7 +27,7 @@
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
       <short value="The PHD Compound numeric profile URL" />
-      <fixedUri value="http://hl7.org/fhir/uv/PHD/StructureDefinition/PhdCompoundNumericObservation" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" />
     </element>
     
     <!-- The vital Signs category     -->
@@ -119,7 +119,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/11073MDCnotObject"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCnotObject"/> 
       </binding>
     </element>
     <element id="Observation.component:compound.code.text">
@@ -248,7 +248,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/PHD/ValueSet/Quantity11073MDC"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
     <element id="Observation.component:accuracyComponent.code.text">

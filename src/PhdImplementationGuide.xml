@@ -42,7 +42,7 @@ In this example there are only xml structure definitions, value sets, code syste
 
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
   <id value="PhdImplementationGuide"/>
-  <url value="http://hl7.org/fhir/uv/PHD/ImplementationGuide/PhdImplementationGuide"/>
+  <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
   <name value="PhdImplementationGuide"/>
   <title value="Continua Personal Health Device Implementation Guide"/>
   <status value="draft"/>
@@ -635,11 +635,11 @@ In this example there are only xml structure definitions, value sets, code syste
           <title value="Terminology"/>
           <generation value="markdown"/>
         </page>
-        <page>
+        <!--<page>
           <nameUrl value="resources.html"/>
           <title value="Resources"/>
           <generation value="markdown"/>
-        </page>
+        </page> -->
         <page>
           <nameUrl value="downloads.html"/>
           <title value="Downloads"/>
