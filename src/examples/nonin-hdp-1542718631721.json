@@ -562,7 +562,7 @@
 				},
 				"derivedFrom": [
 					{
-						"reference": "Observation/urn:oid:3.14159.20181120075654"
+						"reference": "urn:oid:3.14159.20181120075654"
 					}
 				],
 				"component": [
@@ -655,7 +655,7 @@
 				},
 				"derivedFrom": [
 					{
-						"reference": "Observation/urn:oid:3.14159.20181120075654"
+						"reference": "urn:oid:3.14159.20181120075654"
 					}
 				],
 				"component": [
@@ -748,7 +748,7 @@
 				},
 				"derivedFrom": [
 					{
-						"reference": "Observation/urn:oid:3.14159.20181120075654"
+						"reference": "urn:oid:3.14159.20181120075654"
 					}
 				],
 				"component": [
@@ -841,7 +841,7 @@
 				},
 				"derivedFrom": [
 					{
-						"reference": "Observation/urn:oid:3.14159.20181120075654"
+						"reference": "urn:oid:3.14159.20181120075654"
 					}
 				],
 				"component": [

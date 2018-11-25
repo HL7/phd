@@ -51,7 +51,9 @@
       <short value="Information that uniquely describes the personal health device" />
       <definition value="The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHGs the systemIdentifier is required. The transportAddressIdentifier is not as important for PHGs as it is for PHDs but its inclusion may be helpful." />
       <alias value="11073-20601 System id, transport address, etc." />
+      <min value="1" />
     </element>
+
     <!-- Give the Continua system id slice a name. This slice shall exist -->
     <element id="Device.identifier:systemIdIdentifier">
       <path value="Device.identifier" />
