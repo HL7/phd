@@ -613,6 +613,11 @@
               "generation" : "markdown"
             },
             {
+              "nameUrl" : "DeviceIdentifierCodes.html",
+              "title" : "Device Identifier codes",
+              "generation" : "markdown"
+            },
+            {
               "nameUrl" : "phdExample.html",
               "title" : "Device example from a Blood Pressure PHD",
               "generation" : "markdown"

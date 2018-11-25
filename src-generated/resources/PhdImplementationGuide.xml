@@ -606,6 +606,11 @@
               <generation value="markdown"/>
             </page>
             <page>
+              <nameUrl value="DeviceIdentifierCodes.html"/>
+              <title value="Device Identifier codes"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
               <nameUrl value="phdExample.html"/>
               <title value="Device example from a Blood Pressure PHD"/>
               <generation value="markdown"/>

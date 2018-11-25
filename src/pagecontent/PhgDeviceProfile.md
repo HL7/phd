@@ -48,14 +48,15 @@ The identifier for the system id:
 
  - identifier.value=*system id formatted as above*
  - identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"
- - identifier.use="official"
- - identifier.assigner.display="EUI-64
+ - identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
+ - identifier.type.coding.code="SYSID"
 
 The identifier for the Bluetooth Address: 
 
  - identifier.value=*formatted as above*
  - identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"
- - identifier.assigner.display="EUI-48
+ - identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
+ - identifier.type.coding.code="BTMAC"
 
 #### **Device type**
 The PHG Device.type is given by the MDC code 531981. The reference identifier for this code is MDC_MOC_VMS_MDS_AHD. "AHD" is the previous name Continua gave to what is now known as the PHG. However, reference identifiers are normative and once accepted, they cannot change. It shall be encoded as follows:

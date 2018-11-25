@@ -11,19 +11,28 @@ This example maps a Blood Pressure PHD unit to a Device Resource. All the inform
     },
     "identifier": [
         {
-            "use": "official",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+                        "code": "SYSID"
+                    }
+                ]
+            },
             "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-            "value": "71-10-00-FE-FF-5F-49-B0",    // System Id
-            "assigner": {
-                "display": "EUI-64"
-            }
+            "value": "71-10-00-FE-FF-5F-49-B0"    // System Id
         },
         {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+                        "code": "BTMAC"
+                    }
+                ]
+            },
             "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-            "value": "B0-49-5F-00-10-71",    // Bluetooth Address
-            "assigner": {
-                "display": "EUI-48"
-            }
+            "value": "B0-49-5F-00-10-71"    // Bluetooth Address
         }
     ],
     "manufacturer": "OMRONHEALTHCARE",
