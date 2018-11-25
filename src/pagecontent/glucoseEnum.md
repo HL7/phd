@@ -13,7 +13,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31.000000000000"
+				"reference": "Device/ecde3d4e58532d31.000000000000" // Resource is already on the server
 			}
 		}
 	],
@@ -33,7 +33,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		"text": "MDC_CTXT_GLU_MEAL: Meal context"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10" // Resource is already on the server
 	},
 	"effectiveDateTime": "2017-06-02T15:02:35-04:00",
 	"valueCodeableConcept": {
@@ -46,11 +46,11 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		"text": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL: After lunch/dinner"
 	},
 	"device": {
-		"reference": "Device/00601900010E9234.F45EABA80832"
+		"reference": "Device/00601900010E9234.F45EABA80832" // Resource is already on the server
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/coin-1234"
+			"reference": "Observation/coin-1234" // Resource is already on the server
 		}
 	]
 }

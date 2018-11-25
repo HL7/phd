@@ -149,6 +149,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ContinuaDeviceIdentifiers"/>
+      </reference>
+      <name value="ContinuaDeviceIdentifiers"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="codeSystems"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
       <name value="ASN1ToHL7"/>
@@ -170,6 +178,22 @@
       <name value="ContinuaPAN"/>
       <exampleBoolean value="false"/>
       <groupingId value="codeSystems"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/DeviceSystemIdIdentifier"/>
+      </reference>
+      <name value="DeviceSystemIdIdentifier"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="valueSets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/DeviceTransportIdentifiers"/>
+      </reference>
+      <name value="DeviceTransportIdentifiers"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="valueSets"/>
     </resource>
     <resource>
       <reference>
@@ -249,7 +273,7 @@
         <reference value="Device/phd-74E8FFFEFF051C00.001C05FFE874"/>
       </reference>
       <name value="Example of PHD Device"/>
-      <description value="This example the Device resource referenced by other examples."/>
+      <description value="This example PHD Device resource is referenced by other examples and is present for the validator."/>
       <exampleBoolean value="true"/>
       <groupingId value="examples"/>
     </resource>
@@ -676,6 +700,11 @@
           <generation value="generated"/>
         </page>
         <page>
+          <nameUrl value="ContinuaDeviceIdentifiers.html"/>
+          <title value="ContinuaDeviceIdentifiers"/>
+          <generation value="generated"/>
+        </page>
+        <page>
           <nameUrl value="ASN1ToHL7.html"/>
           <title value="ASN1ToHL7"/>
           <generation value="generated"/>
@@ -688,6 +717,16 @@
         <page>
           <nameUrl value="ContinuaPAN.html"/>
           <title value="ContinuaPAN"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-DeviceSystemIdIdentifier.html"/>
+          <title value="DeviceSystemIdIdentifier"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-DeviceTransportIdentifiers.html"/>
+          <title value="DeviceTransportIdentifiers"/>
           <generation value="generated"/>
         </page>
         <page>

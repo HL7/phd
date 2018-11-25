@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="ContinuaDeviceIdentifiers"/> 
+  <meta> 
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
+  </meta> 
+  <text>
+    <status value="additional" />
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system specifying the types of device identifiers.</p></div>
+  </text>
+  
+  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" />
+
+  <version value="0.2.0"/> 
+
+  <name value="ContinuaDeviceIdentifiers"/> 
+  <status value="draft"/> 
+  <experimental value="true"/> 
+  <date value="2018-11-25"/> 
+  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
+
+  <description value="Codes used to describe the Device (PHD or PHG) Identifiers, such as the system id or Bluetooth Address."/> 
+
+  <caseSensitive value="true"/> 
+  <content value="complete"/> 
+
+  <concept> 
+    <code value="SYSID"/> 
+    <display value="IEEE 11073 System Identifier"/> 
+    <definition value="This code indicates that the identifier is the IEEE 11073 SystemId from the equivalent of the System-Id attribute"/> 
+  </concept> 
+  <concept> 
+    <code value="BTMAC"/> 
+    <display value="Bluetooth MAC address"/> 
+    <definition value="This code indicates that the identifier is the Bluetooth MAC address, either classic or low energy"/> 
+  </concept>
+  <concept> 
+    <code value="USB"/> 
+    <display value="USB PID and VID designators"/> 
+    <definition value="This code indicates that the identifier is the USB Pid and Vid values"/> 
+  </concept>
+  <concept> 
+    <code value="ZIGBEE"/> 
+    <display value="ZigBee MAC address"/> 
+    <definition value="This code indicates that the identifier is the ZigBee MAC address"/> 
+  </concept>
+</CodeSystem> 

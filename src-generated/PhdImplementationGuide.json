@@ -122,11 +122,17 @@
     },
     "StructureDefinition/PhdPatient":{
     },
+    "CodeSystem/ContinuaDeviceIdentifiers":{
+    },
     "CodeSystem/ASN1ToHL7":{
     },
     "CodeSystem/ContinuaHFS":{
     },
     "CodeSystem/ContinuaPAN":{
+    },
+    "ValueSet/DeviceSystemIdIdentifier":{
+    },
+    "ValueSet/DeviceTransportIdentifiers":{
     },
     "ValueSet/CodeableConcept11073MDC":{
     },

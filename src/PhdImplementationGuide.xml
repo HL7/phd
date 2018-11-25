@@ -170,6 +170,15 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleBoolean value="false"/>
       <groupingId value="profiles" />
     </resource>
+
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ContinuaDeviceIdentifiers"/>
+      </reference>
+      <name value="ContinuaDeviceIdentifiers"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="codeSystems" />
+    </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
@@ -193,6 +202,23 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ContinuaPAN"/>
       <exampleBoolean value="false"/>
       <groupingId value="codeSystems" />
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="ValueSet/DeviceSystemIdIdentifier"/>
+      </reference>
+      <name value="DeviceSystemIdIdentifier"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="valueSets" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/DeviceTransportIdentifiers"/>
+      </reference>
+      <name value="DeviceTransportIdentifiers"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="valueSets" />
     </resource>
     <resource>
       <reference>
@@ -274,7 +300,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Device/phd-74E8FFFEFF051C00.001C05FFE874"/>
       </reference> 
       <name value="Example of PHD Device"/>
-      <description value="This example the Device resource referenced by other examples." />
+      <description value="This example PHD Device resource is referenced by other examples and is present for the validator." />
       <exampleBoolean value="true"/>
       <groupingId value="examples" />
     </resource>

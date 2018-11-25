@@ -14,7 +14,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31"
+				"reference": "Device/ecde3d4e58532d31.000000000000"	// Resource already on the server
 			}
 		}
 	],
@@ -29,12 +29,14 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		"text": "MDC_PULS_OXIM_DEV_STATUS: Measuring process issues"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"	// Resource already on the server
 	},
 	"effectiveDateTime": "2018-11-11T19:07:48-05:00",
 	"device": {
-		"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+		"reference": "Device/74E8FFFEFF051C00.001C05FFE874"	// Resource already on the server
 	},
+	// The PHD does not send time stamps with its measurements therefore the time stamp is the
+	// time of reception by the PHG and there is no coincident time stamp Observation
 	"component": [
 		{
 			"code": {

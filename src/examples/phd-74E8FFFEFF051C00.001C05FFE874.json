@@ -8,19 +8,28 @@
     },
     "identifier": [
         {
-            "use": "official",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+                        "code": "SYSID"
+                    }
+                ]
+            },
             "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-            "value": "74-E8-FF-FE-FF-05-1C-00",
-            "assigner": {
-                "display": "EUI-64"
-            }
+            "value": "74-E8-FF-FE-FF-05-1C-00"
         },
         {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+                        "code": "BTMAC"
+                    }
+                ]
+            },
             "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-            "value": "00-1C-05-FF-E8-74",
-            "assigner": {
-                "display": "EUI-48"
-            }
+            "value": "00-1C-05-FF-E8-74"
         }
     ],
     "manufacturer": "Nonin_Medical_Inc.",
@@ -161,7 +170,7 @@
                             "code": "532224"
                         }
                     ],
-                    "text": "MDC_TIME_SYNC_NONE: "
+                    "text": "MDC_TIME_SYNC_NONE:"
                 }
             ]
         }

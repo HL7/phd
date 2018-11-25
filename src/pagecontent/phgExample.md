@@ -154,7 +154,7 @@ This example shows the mapping of an Android gateway to the Device resource.
 					"coding": [
 						{
 							"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-							"code": "Y"
+							"code": "Y" // Confusing, correct? A 'Yes' means NOT regulated!
 						}
 					],
 					"text": "Device is not regulated"

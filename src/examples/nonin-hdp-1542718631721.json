@@ -43,10 +43,10 @@
 			}
 		},
 		{
-			"fullUrl": "Device/phg-001C050400007825.001C05007825",
+			"fullUrl": "Device/phg-ecde3d4e58532d31.000000000000",
 			"resource": {
 				"resourceType": "Device",
-				"id": "phg-001C050400007825.001C05007825",
+				"id": "phg-ecde3d4e58532d31.000000000000",
 				"meta": {
 					"profile": [
 						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"
@@ -54,12 +54,16 @@
 				},
 				"identifier": [
 					{
-						"use": "official",
+						"type": {
+							"coding": [
+								{
+									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+									"code": "SYSID"
+								}
+							]
+						},
 						"system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-						"value": "ec-de-3d-4e-58-53-2d-31",
-						"assigner": {
-							"display": "EUI-64"
-						}
+						"value": "ec-de-3d-4e-58-53-2d-31"
 					}
 				],
 				"type": {
@@ -208,7 +212,7 @@
 			},
 			"request": {
 				"method": "PUT",
-				"url": "Device/phg-001C050400007825.001C05007825"
+				"url": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
 		},
 		{
@@ -223,19 +227,28 @@
 				},
 				"identifier": [
 					{
-						"use": "official",
+						"type": {
+							"coding": [
+								{
+									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+									"code": "SYSID"
+								}
+							]
+						},
 						"system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
 						"value": "00-1C-05-04-00-00-78-25",
-						"assigner": {
-							"display": "EUI-64"
-						}
 					},
 					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+									"code": "BTMAC"
+								}
+							]
+						},
 						"system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-						"value": "00-1C-05-00-78-25",
-						"assigner": {
-							"display": "EUI-48"
-						}
+						"value": "00-1C-05-00-78-25"
 					}
 				],
 				"manufacturer": "Nonin Medical, Inc.",
@@ -352,7 +365,7 @@
 										"code": "532224"
 									}
 								],
-								"text": "MDC_TIME_SYNC_NONE: "
+								"text": "MDC_TIME_SYNC_NONE:"
 							}
 						]
 					},
@@ -460,7 +473,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/phg-001C050400007825.001C05007825"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -501,7 +514,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/phg-001C050400007825.001C05007825"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -594,7 +607,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/phg-001C050400007825.001C05007825"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -687,7 +700,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/phg-001C050400007825.001C05007825"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -780,7 +793,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/phg-001C050400007825.001C05007825"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],

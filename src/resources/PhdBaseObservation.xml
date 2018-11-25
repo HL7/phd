@@ -65,33 +65,27 @@
 
     <element id="Observation.identifier">
       <path value="Observation.identifier" />
-      <slicing>
-        <discriminator>
-          <type value="exists" />
-          <path value="value" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    
-    <element id="Observation.identifier:conditionalCreateIdentifier">
-      <path value="Observation.identifier" />
-      <sliceName value="conditionalCreateIdentifier" />
+      <sliceName value="conditionalCreate" />
       <short value="Unique identifier of this measurement for a given patient and device" />
       <definition value="An identifier created from a combination of the measurement parameters like sensor time stamp, type code, value, units code, patient and device identifiers, and selected elements of any component elements." />
       <comment value="This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073 20601 devices, which are required to delete the data after sending, can also be considered real time. Temporarily stored data from Bluetooth Low Energy Health devices may be resent so these cannot be considered as real time. " />
       <requirements value="Allows observations to be distinguished in a selective enough manner to prevent resource duplication." />
       <max value="1" />
     </element>
-    <element id="Observation.identifier:conditionalCreateIdentifier.value">
+    <element id="Observation.identifier:conditionalCreate.type">
+      <path value="Observation.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Observation.identifier:conditionalCreate.system">
+      <path value="Observation.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="Observation.identifier:conditionalCreate.value">
       <path value="Observation.identifier.value" />
       <min value="1" />
     </element>
     
     <element id="Observation.status">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
-        <valueString value="default: final" />
-      </extension>
       <path value="Observation.status" />
       <definition value="The status of the result value. Either 'final' or 'preliminary'" />
       <comment value="The value shall be set to 'final' unless a Measurement-Status attribute or Nu-Observed-Value attribute status field indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'" />

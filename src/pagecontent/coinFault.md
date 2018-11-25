@@ -8,6 +8,14 @@ This example shows a coincident time stamp in the case where the PHD has a time 
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 		]
 	},
+	"extension": [
+		{
+			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
+			"valueReference": {
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"  // Resource is already on the server
+			}
+		}
+	],
 	"status": "final",
 	"code": {
 		"coding": [
@@ -19,7 +27,7 @@ This example shows a coincident time stamp in the case where the PHD has a time 
 		"text": "MDC_ATTR_TIME_ABS: Absolute time"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"  // Resource is already on the server
 	},
 	"effectiveDateTime": "2018-11-20T04:50:47-05:00",
 	"dataAbsentReason": {
@@ -32,7 +40,7 @@ This example shows a coincident time stamp in the case where the PHD has a time 
 		"text": "Sensor Time Fault"
 	},
 	"device": {
-		"reference": "Device/711000FEFF5F49B0.B0495F001071"
+		"reference": "Device/711000FEFF5F49B0.B0495F001071" // Resource is already on the server
 	}
 }
 </pre>

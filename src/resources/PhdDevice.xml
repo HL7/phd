@@ -45,7 +45,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="system" />
+          <path value="type" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -63,6 +63,27 @@
       <alias value="11073-20601 System id" />
       <min value="1" />
       <max value="1" />
+    </element>
+    <element id="Device.identifier:systemIdIdentifier.type">
+      <path value="Device.identifier.type" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/DeviceSystemIdIdentifier"/> 
+      </binding>
+    </element>
+    <element id="Device.identifier:systemIdIdentifier.type.coding">
+      <path value="Device.identifier.type.coding" />
+      <short value="Indicates this is the IEEE 11073 System Id identifier" />
+    </element>
+    <element id="Device.identifier:systemIdIdentifier.type.coding.system">
+      <path value="Device.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" />
+    </element>
+    <element id="Device.identifier:systemIdIdentifier.type.coding.code">
+      <path value="Device.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="SYSID" />
     </element>
     <!-- The system element of the systemIdentifier slice shall indicate the EUI  -->
     <element id="Device.identifier:systemIdentifier.system">
@@ -88,6 +109,26 @@
       <definition value="This entry contains the transport address, for example the Bluetooth, ZigBee, USB, or mac address." />
       <comment value="USB does not have an 'address' as it is a point to point wired protocol. However, it does have a Vendor identification and Production identification number which together uniquely define the unit. For USB transports, the VID.PID in HEX is used as the transport identifier." />
       <alias value="Transport address" />
+    </element>
+    <element id="Device.identifier:transportAddressIdentifier.type">
+      <path value="Device.identifier.type" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/DeviceTransportIdentifiers"/> 
+      </binding>
+    </element>
+    <element id="Device.identifier:transportAddressIdentifier.type.coding">
+      <path value="Device.identifier.type.coding" />
+      <short value="Indicates this is the IEEE 11073 System Id identifier" />
+    </element>
+    <element id="Device.identifier:transportAddressIdentifier.type.coding.system">
+      <path value="Device.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" />
+    </element>
+    <element id="Device.identifier:transportAddressIdentifier.type.coding.code">
+      <path value="Device.identifier.type.coding.code" />
+      <min value="1" />
     </element>
     <element id="Device.identifier:transportAddressIdentifier.system">
       <path value="Device.identifier.system" />
@@ -385,7 +426,6 @@
       <short value="The device properties represented by quantities such as clock resolution" />
       <definition value="This element represents all those time properties that are a quantity such as the various clock resolutions and synchronization accuracy." />
       <comment value="If the PHD reports that one of these given properties are unknown, this element shall not be populated for that property." />
-      <min value="1" />
     </element>
     <element id="Device.property:quantitiesProperty.type">
       <path value="Device.property.type" />
@@ -462,6 +502,7 @@
       <short value="The device properties represented by a single code such as the time synchronization" />
       <definition value="This element represents all those time properties that are a single code. At the moment there is only the synchronization type." />
       <comment value="If the PHD does not report a time synchronization or use a time stamp or is not synchronized, one reports MDC_TIME_SYNC_NONE." />
+      <min value="1" />
     </element>
     <element id="Device.property:singleCodedProperties.type">
       <path value="Device.property.type" />

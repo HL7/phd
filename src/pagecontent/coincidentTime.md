@@ -8,6 +8,14 @@ This example shows a standard coincident time stamp where the PHG has superior t
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 		]
 	},
+	"extension": [
+		{
+			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
+			"valueReference": {
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"		// Resource already on the server
+			}
+		}
+	],
 	"status": "final",
 	"code": {
 		"coding": [
@@ -19,12 +27,12 @@ This example shows a standard coincident time stamp where the PHG has superior t
 		"text": "MDC_ATTR_TIME_ABS: Absolute time"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10" 	// Resource already on the server
 	},
 	"effectiveDateTime": "2018-11-11T19:07:36-05:00",
 	"valueDateTime": "2018-11-11T19:07:35-05:00",
 	"device": {
-		"reference": "Device/711000FEFF5F49B0.B0495F001071"
+		"reference": "Device/711000FEFF5F49B0.B0495F001071" 	// Resource already on the server
 	}
 }
 </pre>

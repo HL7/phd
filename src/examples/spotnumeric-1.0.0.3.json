@@ -58,7 +58,7 @@
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/urn:oid:3.14159.20181114065522"
+			"reference": "Observation/coin-20181119202022"
 		}
 	],
 	"component": [

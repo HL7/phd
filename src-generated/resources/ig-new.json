@@ -159,6 +159,14 @@
     },
     {
       "reference" : {
+        "reference" : "CodeSystem/ContinuaDeviceIdentifiers"
+      },
+      "name" : "ContinuaDeviceIdentifiers",
+      "exampleBoolean" : false,
+      "groupingId" : "codeSystems"
+    },
+    {
+      "reference" : {
         "reference" : "CodeSystem/ASN1ToHL7"
       },
       "name" : "ASN1ToHL7",
@@ -180,6 +188,22 @@
       "name" : "ContinuaPAN",
       "exampleBoolean" : false,
       "groupingId" : "codeSystems"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/DeviceSystemIdIdentifier"
+      },
+      "name" : "DeviceSystemIdIdentifier",
+      "exampleBoolean" : false,
+      "groupingId" : "valueSets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/DeviceTransportIdentifiers"
+      },
+      "name" : "DeviceTransportIdentifiers",
+      "exampleBoolean" : false,
+      "groupingId" : "valueSets"
     },
     {
       "reference" : {
@@ -259,7 +283,7 @@
         "reference" : "Device/phd-74E8FFFEFF051C00.001C05FFE874"
       },
       "name" : "Example of PHD Device",
-      "description" : "This example the Device resource referenced by other examples.",
+      "description" : "This example PHD Device resource is referenced by other examples and is present for the validator.",
       "exampleBoolean" : true,
       "groupingId" : "examples"
     },
@@ -686,6 +710,11 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "ContinuaDeviceIdentifiers.html",
+          "title" : "ContinuaDeviceIdentifiers",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "ASN1ToHL7.html",
           "title" : "ASN1ToHL7",
           "generation" : "generated"
@@ -698,6 +727,16 @@
         {
           "nameUrl" : "ContinuaPAN.html",
           "title" : "ContinuaPAN",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-DeviceSystemIdIdentifier.html",
+          "title" : "DeviceSystemIdIdentifier",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-DeviceTransportIdentifiers.html",
+          "title" : "DeviceTransportIdentifiers",
           "generation" : "generated"
         },
         {

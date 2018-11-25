@@ -14,7 +14,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31.000000000000"
+				"reference": "Device/ecde3d4e58532d31.000000000000"	// Resource already on the server
 			}
 		}
 	],
@@ -44,7 +44,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		"text": "MDC_PRESS_BLD_NONINV: Blood pressure"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"	// Resource already on the server
 	},
 	"effectiveDateTime": "2018-11-11T11:38:15-05:00",
 	"device": {
@@ -52,7 +52,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/coin-20181119174911"
+			"reference": "Observation/coin-20181119174911"	// Resource already on the server
 		}
 	],
 	"component": [

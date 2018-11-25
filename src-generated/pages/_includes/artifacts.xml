@@ -97,6 +97,20 @@
 <tbody>
 <tr>
 <td style="column-width:30%">
+<a href="valueset-DeviceSystemIdIdentifier.html">
+                        •  DeviceSystemIdIdentifier</a>
+</td>
+<td/>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="valueset-DeviceTransportIdentifiers.html">
+                        •  DeviceTransportIdentifiers</a>
+</td>
+<td/>
+</tr>
+<tr>
+<td style="column-width:30%">
 <a href="valueset-CodeableConcept11073MDC.html">
                         •  CodeableConcept11073MDC</a>
 </td>
@@ -155,6 +169,13 @@
 <tbody>
 <tr>
 <td style="column-width:30%">
+<a href="ContinuaDeviceIdentifiers.html">
+                        •  ContinuaDeviceIdentifiers</a>
+</td>
+<td/>
+</tr>
+<tr>
+<td style="column-width:30%">
 <a href="ASN1ToHL7.html">
                         •  ASN1ToHL7</a>
 </td>
@@ -211,7 +232,7 @@
 <a href="phd-74E8FFFEFF051C00.001C05FFE874.html">
                         •  Example of PHD Device</a>
 </td>
-<td>This example the Device resource referenced by other examples.</td>
+<td>This example PHD Device resource is referenced by other examples and is present for the validator.</td>
 </tr>
 <tr>
 <td style="column-width:30%">

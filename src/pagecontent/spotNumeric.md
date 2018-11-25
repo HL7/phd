@@ -15,7 +15,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 							// case a Continua PHG
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31"
+				"reference": "Device/ecde3d4e58532d31.000000000000" // This resource is already on the server
 			}
 		}
 	],
@@ -55,7 +55,8 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	"subject": {
 		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
 		// Patient resource was originally uploaded in an update transaction and the logical id was
-		// specified to be generated from the Patient.identifer.value and Patient.identifier.system elements.
+		// specified to be generated from the Patient.identifier.value and Patient.identifier.system elements.
+		// This resource is already on the server
 	},
 	"effectiveDateTime": "2018-11-13T17:59:02-05:00",
 	"valueQuantity": {
@@ -65,13 +66,13 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	},
 	"device": {
 		"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
-		// The PHD resource was originally uploaded in an update tranaction and the logical id was
+		// The PHD resource was originally uploaded in an update transaction and the logical id was
 		// specified to be the Device.identifier.value elements for the system id and transport address
-		// elements.
+		// elements. It is already on the server
 	},
 	"derivedFrom": [	// Pointer to the Coincident Time Stamps Observation
 		{
-			"reference": "Observation/urn:oid:3.14159.20181114065522"
+			"reference": "Observation/coin-20181114065522"	// This resource already on the server
 		}
 	],				// Supplemental types further description of measurement
 	"component": [
