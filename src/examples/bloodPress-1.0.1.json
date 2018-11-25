@@ -10,7 +10,7 @@
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31.000000000000"
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
 		}
 	],

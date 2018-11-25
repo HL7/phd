@@ -10,7 +10,7 @@
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31.000000000000"
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
 		}
 	],
@@ -43,7 +43,7 @@
 		"text": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL: After lunch/dinner"
 	},
 	"device": {
-		"reference": "Device/00601900010E9234.F45EABA80832"
+		"reference": "Device/phd-00601900010E9234.F45EABA80832"
 	},
 	"derivedFrom": [
 		{

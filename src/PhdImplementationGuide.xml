@@ -188,6 +188,14 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ContinuaPAN"/>
+      </reference>
+      <name value="ContinuaPAN"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="codeSystems" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/CodeableConcept11073MDC"/>
       </reference>
       <name value="CodeableConcept11073MDC"/>
@@ -257,6 +265,16 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of a first time Bundle upload"/>
       <description value="This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present." />
+      <exampleBoolean value="true"/>
+      <groupingId value="examples" />
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Device/phd-74E8FFFEFF051C00.001C05FFE874"/>
+      </reference> 
+      <name value="Example of PHD Device"/>
+      <description value="This example the Device resource referenced by other examples." />
       <exampleBoolean value="true"/>
       <groupingId value="examples" />
     </resource>

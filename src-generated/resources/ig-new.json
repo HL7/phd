@@ -175,6 +175,14 @@
     },
     {
       "reference" : {
+        "reference" : "CodeSystem/ContinuaPAN"
+      },
+      "name" : "ContinuaPAN",
+      "exampleBoolean" : false,
+      "groupingId" : "codeSystems"
+    },
+    {
+      "reference" : {
         "reference" : "ValueSet/CodeableConcept11073MDC"
       },
       "name" : "CodeableConcept11073MDC",
@@ -243,6 +251,15 @@
       },
       "name" : "Example of a first time Bundle upload",
       "description" : "This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present.",
+      "exampleBoolean" : true,
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Device/phd-74E8FFFEFF051C00.001C05FFE874"
+      },
+      "name" : "Example of PHD Device",
+      "description" : "This example the Device resource referenced by other examples.",
       "exampleBoolean" : true,
       "groupingId" : "examples"
     },
@@ -679,6 +696,11 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "ContinuaPAN.html",
+          "title" : "ContinuaPAN",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "valueset-CodeableConcept11073MDC.html",
           "title" : "CodeableConcept11073MDC",
           "generation" : "generated"
@@ -721,6 +743,11 @@
         {
           "nameUrl" : "nonin-hdp-1542718631721.html",
           "title" : "Example of a first time Bundle upload",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "phd-74E8FFFEFF051C00.001C05FFE874.html",
+          "title" : "Example of PHD Device",
           "generation" : "generated"
         },
         {

@@ -35,6 +35,27 @@
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
     </element>
 
+    <!-- For PHG reference -->
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <short value="Extension for the PHG" />
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Observation.extension.url">
+      <path value="Observation.extension.url" />
+      <short value="Url indicating this is the gateway device extension" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" />
+    </element>
+    <element id="Observation.extension.value[x]">
+      <path value="Observation.extension.valueReference" />
+      <short value="Reference to the Personal Health Gateway (PHG) Device" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+
     <element id="Observation.status">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
         <valueString value="default: final" />

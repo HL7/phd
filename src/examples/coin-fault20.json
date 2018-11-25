@@ -6,6 +6,14 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 		]
 	},
+	"extension": [
+		{
+			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
+			"valueReference": {
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+			}
+		}
+	],
 	"status": "final",
 	"code": {
 		"coding": [
@@ -30,6 +38,6 @@
 		"text": "Sensor Time Fault"
 	},
 	"device": {
-		"reference": "Device/711000FEFF5F49B0.B0495F001071"
+		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
 	}
 }

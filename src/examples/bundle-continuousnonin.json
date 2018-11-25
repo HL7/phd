@@ -16,7 +16,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -40,7 +40,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -61,7 +61,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -100,7 +100,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -121,7 +121,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -160,7 +160,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -181,7 +181,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -205,7 +205,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -226,7 +226,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -265,7 +265,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -286,7 +286,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -325,7 +325,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -346,7 +346,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -370,7 +370,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -391,7 +391,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -410,7 +410,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:39-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -493,7 +493,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -532,7 +532,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -553,7 +553,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -592,7 +592,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -613,7 +613,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -637,7 +637,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -658,7 +658,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -677,7 +677,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:40-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -780,7 +780,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -819,7 +819,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -840,7 +840,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -879,7 +879,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -900,7 +900,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -924,7 +924,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -945,7 +945,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -964,7 +964,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:41-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -1067,7 +1067,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1106,7 +1106,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1127,7 +1127,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1166,7 +1166,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1187,7 +1187,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1211,7 +1211,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1232,7 +1232,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1251,7 +1251,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:42-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -1354,7 +1354,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1393,7 +1393,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1414,7 +1414,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1453,7 +1453,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1474,7 +1474,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1498,7 +1498,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1519,7 +1519,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1538,7 +1538,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:43-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -1641,7 +1641,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1680,7 +1680,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1701,7 +1701,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1740,7 +1740,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1761,7 +1761,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1785,7 +1785,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1806,7 +1806,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1825,7 +1825,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:44-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -1928,7 +1928,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -1967,7 +1967,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -1988,7 +1988,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2027,7 +2027,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2048,7 +2048,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2072,7 +2072,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2093,7 +2093,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2112,7 +2112,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:45-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -2215,7 +2215,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2254,7 +2254,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2275,7 +2275,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2314,7 +2314,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2335,7 +2335,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2359,7 +2359,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2380,7 +2380,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2399,7 +2399,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:46-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -2502,7 +2502,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2541,7 +2541,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2562,7 +2562,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2601,7 +2601,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2622,7 +2622,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2646,7 +2646,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2667,7 +2667,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2686,7 +2686,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:47-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -2809,7 +2809,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2848,7 +2848,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2869,7 +2869,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2908,7 +2908,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2929,7 +2929,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2953,7 +2953,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -2974,7 +2974,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -2993,7 +2993,7 @@
 				},
 				"effectiveDateTime": "2018-11-11T19:07:48-05:00",
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				},
 				"component": [
 					{
@@ -3116,7 +3116,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -3155,7 +3155,7 @@
 					"code": "%"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -3176,7 +3176,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -3215,7 +3215,7 @@
 					"code": "{beat}/min"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {
@@ -3236,7 +3236,7 @@
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
-							"reference": "Device/ecde3d4e58532d31"
+							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 						}
 					}
 				],
@@ -3264,7 +3264,7 @@
 					"text": "not-a-number (Not a number)"
 				},
 				"device": {
-					"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 				}
 			},
 			"request": {

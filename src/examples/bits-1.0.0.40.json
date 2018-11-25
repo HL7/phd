@@ -10,7 +10,7 @@
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31"
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
 		}
 	],
@@ -29,7 +29,7 @@
 	},
 	"effectiveDateTime": "2018-11-11T19:07:48-05:00",
 	"device": {
-		"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+		"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 	},
 	"component": [
 		{

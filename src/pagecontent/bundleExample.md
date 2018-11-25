@@ -436,7 +436,7 @@ This example is a transaction bundle where the Patient and Device resources are 
                             ],
                             "text": "MDC_TIME_RES_ABS: Time resolution"
                         },
-                        "valueQuanity": [
+                        "valueQuantity": [
                             {
                                 "value": 1000000,
                                 "system": "http://unitsofmeasure.org",

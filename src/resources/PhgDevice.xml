@@ -499,28 +499,14 @@
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding">
       <path value="Device.property.valueCode.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="1" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType">
-      <path value="Device.property.valueCode.coding" />
-      <sliceName value="ContinuaInterfacesType" />
-      <short value="One of the required Continua interfaces code system entries" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
+    <element id="Device.property:codedListProperties.valueCode.coding.system">
       <path value="Device.property.valueCode.coding.system" />
       <definition value="Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS code systems" />
       <min value="1" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
+    <element id="Device.property:codedListProperties.valueCode.coding.code">
       <path value="Device.property.valueCode.coding.code" />
       <definition value="One of the Continua interface certification codes" />
       <min value="1" />

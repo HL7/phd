@@ -10,7 +10,7 @@
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31.000000000000"
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
 		}
 	],
@@ -54,7 +54,7 @@
 		"code": "{beat}/min"
 	},
 	"device": {
-		"reference": "Device/74E8FFFEFF051C00.001C05FFE874"
+		"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
 	},
 	"derivedFrom": [
 		{
