@@ -132,7 +132,6 @@
     </element>
     <element id="Device.identifier:transportAddressIdentifier.system">
       <path value="Device.identifier.system" />
-      <min value="1" />
     </element>
     <element id="Device.identifier:transportAddressIdentifier.value">
       <path value="Device.identifier.value" />

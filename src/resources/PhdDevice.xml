@@ -67,6 +67,7 @@
     </element>
     <element id="Device.identifier:systemIdIdentifier.type">
       <path value="Device.identifier.type" />
+	  <min value="1" />
       <binding> 
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/DeviceSystemIdIdentifier"/> 
@@ -75,6 +76,7 @@
     <element id="Device.identifier:systemIdIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
       <short value="Indicates this is the IEEE 11073 System Id identifier" />
+	  <min value="1" />
     </element>
     <element id="Device.identifier:systemIdIdentifier.type.coding.system">
       <path value="Device.identifier.type.coding.system" />
@@ -133,7 +135,6 @@
     </element>
     <element id="Device.identifier:transportAddressIdentifier.system">
       <path value="Device.identifier.system" />
-      <min value="1" />
     </element>
     <element id="Device.identifier:transportAddressIdentifier.value">
       <path value="Device.identifier.value" />
