@@ -37,19 +37,19 @@
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice" />
     </element>
     
-        <!-- IDENTIFIER -->
+    <!-- IDENTIFIER -->
     <!-- The identifier is used for the system id and transport addresses. There can be many such identifiers. The Contina slices shall be identified by the system element value -->
     <element id="Device.identifier">
       <path value="Device.identifier" />
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="type" />
+          <path value="system" />
         </discriminator>
         <rules value="open" />
       </slicing>
       <short value="Information that uniquely describes the personal health device" />
-      <definition value="The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHGs the systemIdentifier is required. The transportAddressIdentifier is not as important for PHGs as it is for PHDs but its inclusion may be helpful." />
+      <definition value="The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is required and the transportAddressIdentifier is highly recommended as this is what most end users see and can obtain from the device itself or device packaging." />
       <alias value="11073-20601 System id, transport address, etc." />
       <min value="1" />
     </element>
@@ -64,8 +64,9 @@
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Device.identifier:systemIdIdentifier.type">
+<!--    <element id="Device.identifier:systemIdIdentifier.type">
       <path value="Device.identifier.type" />
+	  <min value="1" />
       <binding> 
         <strength value="required"/> 
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/DeviceSystemIdIdentifier"/> 
@@ -74,6 +75,7 @@
     <element id="Device.identifier:systemIdIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
       <short value="Indicates this is the IEEE 11073 System Id identifier" />
+	  <min value="1" />
     </element>
     <element id="Device.identifier:systemIdIdentifier.type.coding.system">
       <path value="Device.identifier.type.coding.system" />
@@ -84,8 +86,8 @@
       <path value="Device.identifier.type.coding.code" />
       <min value="1" />
       <fixedCode value="SYSID" />
-    </element>
-    <!-- The system element of the systemIdIdentifier slice shall indicate the EUI  -->
+    </element> -->
+    <!-- The system element of the systemIdentifier slice shall indicate the EUI  -->
     <element id="Device.identifier:systemIdIdentifier.system">
       <path value="Device.identifier.system" />
       <short value="EUI-64 system identifier" />
@@ -93,24 +95,23 @@
       <min value="1" />
       <fixedUri value="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" />
     </element>
-    <!-- The value element of the systemIdIdentifier slice shall have the system id attribute value  -->
+    <!-- The value element of the systemIdentifier slice shall have the system id attribute value  -->
     <element id="Device.identifier:systemIdIdentifier.value">
       <path value="Device.identifier.value" />
       <short value="System id value from System-Id attribute" />
-      <definition value="The System id from the System-Id attribute as an 8-byte HEX string where each byte is separated by dashes, for example FE-ED-AB-EE-DE-AD-77-C3." />
-      <comment value="The formatting is specified in the IEEE document Guidelines for 64-bit Global Identifier." />
+      <definition value="The System id from the System-Id attribute as an 8-byte HEX string where each byte is separated by dashes, for example FE-ED-AB-EE-DE-AD-77-C3. " />
+      <comment value="The formatting is specified in the IEEE document Guidelines for 64-bit Global Identifier.&#xD;&#xA;&#xD;&#xA;To allow the mapping of non-compliant proprietary devices that do not provide a system id, the value is set to all zeros in the same format, 00-00-00-00-00-00-00-00" />
       <min value="1" />
     </element>
 
-    <element id="Device.identifier:transportAddressIdentifier">
+    <element id="Device.identifier:bluetoothAddressIdentifier">
       <path value="Device.identifier" />
-      <sliceName value="transportAddressIdentifier" />
-      <short value="Transport address identifier" />
-      <definition value="This entry contains the transport address, for example the Bluetooth, ZigBee, USB, or mac address." />
-      <comment value="USB does not have an 'address' as it is a point to point wired protocol. However, it does have a Vendor identification and Production identification number which together uniquely define the unit. For USB transports, the VID.PID in HEX is used as the transport identifier." />
-      <alias value="Transport address" />
+      <sliceName value="bluetoothAddressIdentifier" />
+      <short value="Bluetooth Transport address identifier" />
+      <definition value="This entry contains the Bluetooth transport address." />
+      <alias value="Bluetooth Transport address" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.type">
+ <!--   <element id="Device.identifier:transportAddressIdentifier.type">
       <path value="Device.identifier.type" />
       <binding> 
         <strength value="required"/> 
@@ -129,13 +130,15 @@
     <element id="Device.identifier:transportAddressIdentifier.type.coding.code">
       <path value="Device.identifier.type.coding.code" />
       <min value="1" />
-    </element>
-    <element id="Device.identifier:transportAddressIdentifier.system">
+    </element> -->
+    <element id="Device.identifier:bluetoothAddressIdentifier.system">
       <path value="Device.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/sid/eui-48/BTMAC" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.value">
+    <element id="Device.identifier:bluetoothAddressIdentifier.value">
       <path value="Device.identifier.value" />
-      <definition value="The transport address. If Bluetooth, use an EUI-48 such as 00-E5-DE-AD-77-C3. If a USB device use the VID.PID as HEX such as 0043.F90D. If a ZigBee address use an EUI-64 as with the system id." />
+      <definition value="The Bluetooth as an EUI-48 such as 00-E5-DE-AD-77-C3. " />
       <comment value="Transport addresses are supposed to be unique for a given device." />
       <min value="1" />
     </element>

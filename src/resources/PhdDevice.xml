@@ -45,7 +45,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="type" />
+          <path value="system" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -67,11 +67,6 @@
     </element>
     <element id="Device.identifier:systemIdIdentifier.type">
       <path value="Device.identifier.type" />
-	  <min value="1" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/DeviceSystemIdIdentifier"/> 
-      </binding>
     </element>
     <element id="Device.identifier:systemIdIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
@@ -105,20 +100,15 @@
       <min value="1" />
     </element>
 
-    <element id="Device.identifier:transportAddressIdentifier">
+    <element id="Device.identifier:bluetoothAddressIdentifier">
       <path value="Device.identifier" />
-      <sliceName value="transportAddressIdentifier" />
-      <short value="Transport address identifier" />
-      <definition value="This entry contains the transport address, for example the Bluetooth, ZigBee, USB, or mac address." />
-      <comment value="USB does not have an 'address' as it is a point to point wired protocol. However, it does have a Vendor identification and Production identification number which together uniquely define the unit. For USB transports, the VID.PID in HEX is used as the transport identifier." />
-      <alias value="Transport address" />
+      <sliceName value="bluetoothAddressIdentifier" />
+      <short value="Bluetooth Transport address identifier" />
+      <definition value="This entry contains the Bluetooth transport address." />
+      <alias value="Bluetooth Transport address" />
     </element>
     <element id="Device.identifier:transportAddressIdentifier.type">
       <path value="Device.identifier.type" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/DeviceTransportIdentifiers"/> 
-      </binding>
     </element>
     <element id="Device.identifier:transportAddressIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
@@ -132,13 +122,16 @@
     <element id="Device.identifier:transportAddressIdentifier.type.coding.code">
       <path value="Device.identifier.type.coding.code" />
       <min value="1" />
-    </element>
-    <element id="Device.identifier:transportAddressIdentifier.system">
+      <fixedCode value="BTMAC" />
+    </element> -->
+    <element id="Device.identifier:bluetoothAddressIdentifier.system">
       <path value="Device.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/sid/eui-48/BTMAC" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.value">
+    <element id="Device.identifier:bluetoothAddressIdentifier.value">
       <path value="Device.identifier.value" />
-      <definition value="The transport address. If Bluetooth, use an EUI-48 such as 00-E5-DE-AD-77-C3. If a USB device use the VID.PID as HEX such as 0043.F90D. If a ZigBee address use an EUI-64 as with the system id." />
+      <definition value="The Bluetooth as an EUI-48 such as 00-E5-DE-AD-77-C3. " />
       <comment value="Transport addresses are supposed to be unique for a given device." />
       <min value="1" />
     </element>

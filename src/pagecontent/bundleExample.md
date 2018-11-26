@@ -57,12 +57,8 @@ This example is a transaction bundle where the Patient and Device resources are 
                 },
                 "identifier": [
                     {
-                        "use": "official",
                         "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-                        "value": "ec-de-3d-4e-58-53-2d-31",
-                        "assigner": {
-                            "display": "EUI-64"
-                        }
+                        "value": "ec-de-3d-4e-58-53-2d-31"
                     }
                 ],
                 "type": {
@@ -226,18 +222,12 @@ This example is a transaction bundle where the Patient and Device resources are 
                 },
                 "identifier": [
                     {
-                        "use": "official",
                         "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-                        "value": "00-1C-05-04-00-00-78-25",
-                        "assigner": {
-                            "display": "EUI-64"
-                        }
+                        "value": "00-1C-05-04-00-00-78-25"
                     },
                     {
-                        "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-                        "value": "00-1C-05-00-78-25",
-                        "assigner": {
-                            "display": "EUI-48"
+                        "system": "http://hl7.org/fhir/sid/eui-48/BTMAC",
+                        "value": "00-1C-05-00-78-25"
                         }
                     }
                 ],

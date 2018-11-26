@@ -204,7 +204,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <groupingId value="codeSystems" />
     </resource>
 
-    <resource>
+<!--    <resource>
       <reference>
         <reference value="ValueSet/DeviceSystemIdIdentifier"/>
       </reference>
@@ -219,7 +219,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="DeviceTransportIdentifiers"/>
       <exampleBoolean value="false"/>
       <groupingId value="valueSets" />
-    </resource>
+    </resource> -->
     <resource>
       <reference>
         <reference value="ValueSet/CodeableConcept11073MDC"/>

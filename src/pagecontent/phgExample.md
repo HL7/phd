@@ -11,14 +11,6 @@ This example shows the mapping of an Android gateway to the Device resource.
     },
     "identifier": [
         {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
-                        "code": "SYSID"
-                    }
-                ]
-            },
             "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
             "value": "ec-de-3d-4e-58-53-2d-31"
         }
