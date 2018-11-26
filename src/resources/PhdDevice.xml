@@ -89,7 +89,7 @@
       <fixedCode value="SYSID" />
     </element>
     <!-- The system element of the systemIdentifier slice shall indicate the EUI  -->
-    <element id="Device.identifier:systemIdentifier.system">
+    <element id="Device.identifier:systemIdIdentifier.system">
       <path value="Device.identifier.system" />
       <short value="EUI-64 system identifier" />
       <definition value="Identifies the system as an IEEE EUI." />
@@ -97,7 +97,7 @@
       <fixedUri value="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" />
     </element>
     <!-- The value element of the systemIdentifier slice shall have the system id attribute value  -->
-    <element id="Device.identifier:systemIdentifier.value">
+    <element id="Device.identifier:systemIdIdentifier.value">
       <path value="Device.identifier.value" />
       <short value="System id value from System-Id attribute" />
       <definition value="The System id from the System-Id attribute as an 8-byte HEX string where each byte is separated by dashes, for example FE-ED-AB-EE-DE-AD-77-C3. " />
@@ -142,6 +142,7 @@
       <comment value="Transport addresses are supposed to be unique for a given device." />
       <min value="1" />
     </element>
+
     <!-- UDI - For future use; PHDs do not have electronic UDIs yet -->
     <!-- MANUFACTURER -->    
     <element id="Device.manufacturer">
