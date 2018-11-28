@@ -123,7 +123,7 @@
       <path value="Device.identifier.type.coding.code" />
       <min value="1" />
       <fixedCode value="BTMAC" />
-    </element> -->
+    </element>
     <element id="Device.identifier:bluetoothAddressIdentifier.system">
       <path value="Device.identifier.system" />
       <min value="1" />
