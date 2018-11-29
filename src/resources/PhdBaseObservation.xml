@@ -224,6 +224,7 @@
           <type value="value" />
           <path value="code" />
         </discriminator>
+
         <rules value="open" />
       </slicing>
     </element>

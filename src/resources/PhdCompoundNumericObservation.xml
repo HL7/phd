@@ -128,21 +128,35 @@
     </element>
     <element id="Observation.component:compound.code.coding">
       <path value="Observation.component.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:compound.code.coding.system">
+    <element id="Observation.component:compound.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MDCType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
+      <definition value="This MDC code expresses what the measurement is" />
+    </element>
+    <element id="Observation.component:compound.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:compound.code.coding.code">
+    <element id="Observation.component:compound.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <min value="1" />
     </element>
-    <!--
-    <element id="Observation.component.code.coding:LoincCoding">
+
+    <element id="Observation.component:compound.code.coding:LoincCoding">
       <path value="Observation.component.code.coding" />
       <sliceName value="LoincCoding" />
+      <short value="The LOINC code for the measurement if a vital sign" />
       <max value="1" />
     </element>
     <element id="Observation.component.code.coding:LoincCoding.system">
@@ -154,7 +168,8 @@
       <path value="Observation.component.code.coding.code" />
       <comment value="Required if the measurement is a vital sign" />
       <min value="1" />
-    </element> -->
+    </element>
+
     <!-- Component: value[x]:valueQuantity -->
     <element id="Observation.component:compound.value[x]">
       <path value="Observation.component.valueQuantity" />
