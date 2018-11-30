@@ -97,20 +97,6 @@
 <tbody>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-DeviceSystemIdIdentifier.html">
-                        •  DeviceSystemIdIdentifier</a>
-</td>
-<td/>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="valueset-DeviceTransportIdentifiers.html">
-                        •  DeviceTransportIdentifiers</a>
-</td>
-<td/>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="valueset-CodeableConcept11073MDC.html">
                         •  CodeableConcept11073MDC</a>
 </td>

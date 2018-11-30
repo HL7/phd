@@ -44,7 +44,7 @@ In this example there are only xml structure definitions, value sets, code syste
   <id value="PhdImplementationGuide"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
   <name value="PhdImplementationGuide"/>
-  <title value="Continua Personal Health Device Implementation Guide"/>
+  <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>

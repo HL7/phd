@@ -130,10 +130,6 @@
     },
     "CodeSystem/ContinuaPAN":{
     },
-    "ValueSet/DeviceSystemIdIdentifier":{
-    },
-    "ValueSet/DeviceTransportIdentifiers":{
-    },
     "ValueSet/CodeableConcept11073MDC":{
     },
     "ValueSet/Quantity11073MDC":{

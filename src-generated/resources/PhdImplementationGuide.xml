@@ -2,7 +2,7 @@
   <id value="PhdImplementationGuide"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
   <name value="PhdImplementationGuide"/>
-  <title value="Continua Personal Health Device Implementation Guide"/>
+  <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
@@ -162,13 +162,13 @@
       <groupingId value="codeSystems"/>
     </resource>
 
-    <resource>
+<!--    <resource>
       <reference>
         <reference value="ValueSet/DeviceSystemIdIdentifier"/>
       </reference>
       <name value="DeviceSystemIdIdentifier"/>
       <exampleBoolean value="false"/>
-      <groupingId value="valueSets"/>
+      <groupingId value="valueSets" />
     </resource>
     <resource>
       <reference>
@@ -176,8 +176,8 @@
       </reference>
       <name value="DeviceTransportIdentifiers"/>
       <exampleBoolean value="false"/>
-      <groupingId value="valueSets"/>
-    </resource>
+      <groupingId value="valueSets" />
+    </resource> -->
     <resource>
       <reference>
         <reference value="ValueSet/CodeableConcept11073MDC"/>
@@ -734,118 +734,108 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="valueset-DeviceSystemIdIdentifier.html"/>
-<ns15:title xmlns:ns15="http://hl7.org/fhir" value="DeviceSystemIdIdentifier"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="valueset-DeviceTransportIdentifiers.html"/>
-<ns16:title xmlns:ns16="http://hl7.org/fhir" value="DeviceTransportIdentifiers"/>
-<generation value="generated"/>
-</page>
-<page>
 <nameUrl value="valueset-CodeableConcept11073MDC.html"/>
-<ns17:title xmlns:ns17="http://hl7.org/fhir" value="CodeableConcept11073MDC"/>
+<ns15:title xmlns:ns15="http://hl7.org/fhir" value="CodeableConcept11073MDC"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-Quantity11073MDC.html"/>
-<ns18:title xmlns:ns18="http://hl7.org/fhir" value="Quantity11073MDC"/>
+<ns16:title xmlns:ns16="http://hl7.org/fhir" value="Quantity11073MDC"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-Range11073MDC.html"/>
-<ns19:title xmlns:ns19="http://hl7.org/fhir" value="Range11073MDC"/>
+<ns17:title xmlns:ns17="http://hl7.org/fhir" value="Range11073MDC"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-String11073MDC.html"/>
-<ns20:title xmlns:ns20="http://hl7.org/fhir" value="String11073MDC"/>
+<ns18:title xmlns:ns18="http://hl7.org/fhir" value="String11073MDC"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-11073MDCnotObject.html"/>
-<ns21:title xmlns:ns21="http://hl7.org/fhir" value="11073MDCnotObject"/>
+<ns19:title xmlns:ns19="http://hl7.org/fhir" value="11073MDCnotObject"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-ASN1attribute.html"/>
-<ns22:title xmlns:ns22="http://hl7.org/fhir" value="ASN1attribute"/>
+<ns20:title xmlns:ns20="http://hl7.org/fhir" value="ASN1attribute"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-ASN1measurement.html"/>
-<ns23:title xmlns:ns23="http://hl7.org/fhir" value="ASN1measurement"/>
+<ns21:title xmlns:ns21="http://hl7.org/fhir" value="ASN1measurement"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="PhdServerCapabilityStatement.html"/>
-<ns24:title xmlns:ns24="http://hl7.org/fhir" value="PhdServerCapabilityStatement"/>
+<ns22:title xmlns:ns22="http://hl7.org/fhir" value="PhdServerCapabilityStatement"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="nonin-hdp-1542718631721.html"/>
-<ns25:title xmlns:ns25="http://hl7.org/fhir" value="Example of a first time Bundle upload"/>
+<ns23:title xmlns:ns23="http://hl7.org/fhir" value="Example of a first time Bundle upload"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phd-74E8FFFEFF051C00.001C05FFE874.html"/>
-<ns26:title xmlns:ns26="http://hl7.org/fhir" value="Example of PHD Device"/>
+<ns24:title xmlns:ns24="http://hl7.org/fhir" value="Example of PHD Device"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="bundle-continuousnonin.html"/>
-<ns27:title xmlns:ns27="http://hl7.org/fhir" value="Example Bundled upload"/>
+<ns25:title xmlns:ns25="http://hl7.org/fhir" value="Example Bundled upload"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="spotnumeric-1.0.0.3.html"/>
-<ns28:title xmlns:ns28="http://hl7.org/fhir" value="Example of a numeric."/>
+<ns26:title xmlns:ns26="http://hl7.org/fhir" value="Example of a numeric."/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="nan-1.0.0.42.html"/>
-<ns29:title xmlns:ns29="http://hl7.org/fhir" value="Example of a NaN case"/>
+<ns27:title xmlns:ns27="http://hl7.org/fhir" value="Example of a NaN case"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="glucose-1.0.0.4.html"/>
-<ns30:title xmlns:ns30="http://hl7.org/fhir" value="Example of coded enumeration"/>
+<ns28:title xmlns:ns28="http://hl7.org/fhir" value="Example of coded enumeration"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="bits-1.0.0.40.html"/>
-<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Example of a ASN1 BITs measurement"/>
+<ns29:title xmlns:ns29="http://hl7.org/fhir" value="Example of a ASN1 BITs measurement"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="bloodPress-1.0.1.html"/>
-<ns32:title xmlns:ns32="http://hl7.org/fhir" value="Example of Compound measurement"/>
+<ns30:title xmlns:ns30="http://hl7.org/fhir" value="Example of Compound measurement"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coin-20181119202022.html"/>
-<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example of a Coincident Time Stamp"/>
+<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Example of a Coincident Time Stamp"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coin-fault20.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example of a Coincident Time Stamp with a Time Fault"/>
+<ns32:title xmlns:ns32="http://hl7.org/fhir" value="Example of a Coincident Time Stamp with a Time Fault"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phd-711000FEFF5F49B0.B0495F001071.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example of a PHD"/>
+<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example of a PHD"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phg-ecde3d4e58532d31.000000000000.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example of a Gateway"/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example of a Gateway"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="sisansarahId.1.2.3.4.5.6.7.8.10.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example of a Patient"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example of a Patient"/>
 <generation value="generated"/>
 </page>
 </page>

@@ -23,7 +23,7 @@
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
   <version value="0.2.0"/>
   <name value="PhdImplementationGuide"/>
-  <title value="Continua Personal Health Device Implementation Guide"/>
+  <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
@@ -178,22 +178,6 @@
       <name value="ContinuaPAN"/>
       <exampleBoolean value="false"/>
       <groupingId value="codeSystems"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/DeviceSystemIdIdentifier"/>
-      </reference>
-      <name value="DeviceSystemIdIdentifier"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="valueSets"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/DeviceTransportIdentifiers"/>
-      </reference>
-      <name value="DeviceTransportIdentifiers"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="valueSets"/>
     </resource>
     <resource>
       <reference>
@@ -722,16 +706,6 @@
         <page>
           <nameUrl value="ContinuaPAN.html"/>
           <title value="ContinuaPAN"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="valueset-DeviceSystemIdIdentifier.html"/>
-          <title value="DeviceSystemIdIdentifier"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="valueset-DeviceTransportIdentifiers.html"/>
-          <title value="DeviceTransportIdentifiers"/>
           <generation value="generated"/>
         </page>
         <page>

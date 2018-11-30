@@ -28,7 +28,7 @@
   "url" : "http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide",
   "version" : "0.2.0",
   "name" : "PhdImplementationGuide",
-  "title" : "Continua Personal Health Device Implementation Guide",
+  "title" : "Personal Health Device Implementation Guide",
   "status" : "draft",
   "experimental" : false,
   "publisher" : "Health Level Seven International (Health Care Devices Work Group)",
@@ -188,22 +188,6 @@
       "name" : "ContinuaPAN",
       "exampleBoolean" : false,
       "groupingId" : "codeSystems"
-    },
-    {
-      "reference" : {
-        "reference" : "ValueSet/DeviceSystemIdIdentifier"
-      },
-      "name" : "DeviceSystemIdIdentifier",
-      "exampleBoolean" : false,
-      "groupingId" : "valueSets"
-    },
-    {
-      "reference" : {
-        "reference" : "ValueSet/DeviceTransportIdentifiers"
-      },
-      "name" : "DeviceTransportIdentifiers",
-      "exampleBoolean" : false,
-      "groupingId" : "valueSets"
     },
     {
       "reference" : {
@@ -732,16 +716,6 @@
         {
           "nameUrl" : "ContinuaPAN.html",
           "title" : "ContinuaPAN",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "valueset-DeviceSystemIdIdentifier.html",
-          "title" : "DeviceSystemIdIdentifier",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "valueset-DeviceTransportIdentifiers.html",
-          "title" : "DeviceTransportIdentifiers",
           "generation" : "generated"
         },
         {

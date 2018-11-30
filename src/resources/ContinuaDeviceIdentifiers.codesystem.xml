@@ -36,6 +36,11 @@
     <definition value="This code indicates that the identifier is the Bluetooth MAC address, either classic or low energy"/> 
   </concept>
   <concept> 
+    <code value="ETHMAC"/> 
+    <display value="Ethernet MAC address"/> 
+    <definition value="This code indicates that the identifier is the Ethernet MAC address"/> 
+  </concept>
+  <concept> 
     <code value="USB"/> 
     <display value="USB PID and VID designators"/> 
     <definition value="This code indicates that the identifier is the USB Pid and Vid values"/> 

@@ -39,7 +39,7 @@
     </element>
 
     <!-- IDENTIFIER -->
-    <!-- The identifier is used for the system id and transport addresses. There can be many such identifiers. The Contina slices shall be identified by the system element value -->
+    <!-- The identifier is used for the system id and transport addresses. There can be many such identifiers. The Continua slices shall be identified by the system element value -->
     <element id="Device.identifier">
       <path value="Device.identifier" />
       <slicing>
@@ -67,11 +67,12 @@
     </element>
     <element id="Device.identifier:systemIdIdentifier.type">
       <path value="Device.identifier.type" />
+      <min value="1" />
     </element>
     <element id="Device.identifier:systemIdIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
       <short value="Indicates this is the IEEE 11073 System Id identifier" />
-	  <min value="1" />
+      <min value="1" />
     </element>
     <element id="Device.identifier:systemIdIdentifier.type.coding.system">
       <path value="Device.identifier.type.coding.system" />
@@ -100,38 +101,40 @@
       <min value="1" />
     </element>
 
-    <element id="Device.identifier:bluetoothAddressIdentifier">
+    <element id="Device.identifier:macAddressIdentifier">
       <path value="Device.identifier" />
-      <sliceName value="bluetoothAddressIdentifier" />
-      <short value="Bluetooth Transport address identifier" />
-      <definition value="This entry contains the Bluetooth transport address." />
-      <alias value="Bluetooth Transport address" />
+      <sliceName value="macAddressIdentifier" />
+      <short value="MAC Transport address identifier" />
+      <definition value="This entry contains the MAC transport address." />
+      <alias value="MAC Transport address" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.type">
+    <element id="Device.identifier:macAddressIdentifier.type">
       <path value="Device.identifier.type" />
+      <min value="1" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.type.coding">
+    <element id="Device.identifier:macAddressIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
       <short value="Indicates this is the IEEE 11073 System Id identifier" />
+      <min value="1" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.type.coding.system">
+    <element id="Device.identifier:macAddressIdentifier.type.coding.system">
       <path value="Device.identifier.type.coding.system" />
       <min value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" />
     </element>
-    <element id="Device.identifier:transportAddressIdentifier.type.coding.code">
+    <element id="Device.identifier:macAddressIdentifier.type.coding.code">
       <path value="Device.identifier.type.coding.code" />
+      <short value="Code for a particular type of MAC address, one of BTMAC or ETHMAC" />
       <min value="1" />
-      <fixedCode value="BTMAC" />
     </element>
-    <element id="Device.identifier:bluetoothAddressIdentifier.system">
+    <element id="Device.identifier:macAddressIdentifier.system">
       <path value="Device.identifier.system" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/sid/eui-48/BTMAC" />
+      <fixedUri value="http://hl7.org/fhir/sid/eui-48" />
     </element>
-    <element id="Device.identifier:bluetoothAddressIdentifier.value">
+    <element id="Device.identifier:macAddressIdentifier.value">
       <path value="Device.identifier.value" />
-      <definition value="The Bluetooth as an EUI-48 such as 00-E5-DE-AD-77-C3. " />
+      <definition value="The MAC as an EUI-48 such as 00-E5-DE-AD-77-C3. " />
       <comment value="Transport addresses are supposed to be unique for a given device." />
       <min value="1" />
     </element>
