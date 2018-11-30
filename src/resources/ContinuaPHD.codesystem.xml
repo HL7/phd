@@ -5,10 +5,11 @@
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
+  <!--
   <text>
     <status value="additional" />
-    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by the PHD interface.</p></div>
-  </text>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by the PHD interface (communication between the PHD and the Gateway). The three most-significant bits of the codes in this system indicate the transport certification(one of PHDC USB, HDP Bluetooth, ZigBee, Bluetooth Low Energy, and NFC). There is also a case for no transport indication (upper three bits 000) which is used to cover Continua version 1. The remaining 13 bits indicate the device specialization. The device specialization can be converted to the MDC term code for that specialization by adding 4096 to the value.  </p></div>
+  </text> -->
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
 

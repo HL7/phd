@@ -4,11 +4,12 @@
   <id value="ASN1ToHL7"/> 
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
-  </meta> 
+  </meta>
+<!--   Remove this. A LOT better. Doesn't cause an error any more
   <text>
     <status value="additional" />
     <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing 11073 ASN1 BITs measurements.</p></div>
-  </text>
+  </text> -->
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
   

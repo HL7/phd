@@ -5,10 +5,19 @@
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
+  <!--
   <text>
     <status value="additional" />
-    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by Health and Fitness Server.</p></div>
-  </text>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by Health and Fitness Server. At the current time this code system defines the following codes:</p><ul>
+  <li>0: Upload of PCD-01 messages over SAML-authenticated Web Services</li>
+  <li>1: Consent enabled upload using Web services</li>
+  <li>2: Capability Exchange</li>
+  <li>3: Upload of PCD-01 using a 'RESTful POST' transaction authenticated by oAuth2</li>
+  <li>4: Consent enabled upload PDC-01 uploads using RESTful POST </li>
+  <li>5: CDA based Questionnaire using XDSb</li>
+  <li>6: Authenticated Persistent Sessions</li>
+  <li>7: FHIR uploads authenticated by oAuth2</li></ul></div>
+  </text> -->
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS" />
 

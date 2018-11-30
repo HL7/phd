@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Nov 30, 2018 06:05+0000 for FHIR v3.6.0 
+  Generated on Fri, Nov 30, 2018 20:04+0000 for FHIR v3.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -36410,17 +36410,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The kind of condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A brief, natural language description of the condition that effectively communicates the intended semantics.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="language" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The media type of the language for the expression.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether or not the condition is satisfied.</xs:documentation>
            </xs:annotation>
