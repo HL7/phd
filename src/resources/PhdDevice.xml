@@ -319,7 +319,7 @@
     </element>
     
     <!-- PROPERTY: This element is going to be sliced for time capabilities, clock resolution, time synchronization,
-    synchronization accuracy, PAN certification lists, and regulations status. There can be many property elements
+    synchronization accuracy, PHD certification lists, and regulations status. There can be many property elements
     for PHDs. -->
     <element id="Device.property">
       <path value="Device.property" />
@@ -577,12 +577,12 @@
     </element>
     
     <!-- The codedListProperties property. At this time there is only one
-    coded list entry reported by PHDs; the list of certified PAN interfaces     -->
+    coded list entry reported by PHDs; the list of certified PHD interfaces     -->
     <element id="Device.property:codedListProperties">
       <path value="Device.property" />
       <sliceName value="codedListProperties" />
-      <short value="The device properties represented by a list of codes such as the list of certified PAN interfaces" />
-      <definition value="This element represents all those properties that are a list of codes. At the moment there is only certified PAN interfaces." />
+      <short value="The device properties represented by a list of codes such as the list of certified PHD interfaces" />
+      <definition value="This element represents all those properties that are a list of codes. At the moment there is only certified PHD interfaces." />
       <comment value="Continua certified PHDs are required to have this entry. " />
     </element>
     <element id="Device.property:codedListProperties.type">
@@ -615,7 +615,7 @@
       <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
       Description                CODE    Reference Identifier                        Code System&#xD;&#xA;
       --------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
-      Certified PAN interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST    http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN&#xD;&#xA;" />
+      Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST    http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD&#xD;&#xA;" />
       <min value="1" />
     </element>
     <!-- No quantity entry when the value is a code! -->
@@ -641,20 +641,20 @@
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType">
       <path value="Device.property.valueCode.coding" />
-      <sliceName value="ContinuaPANType" />
-      <short value="Required Continua PANType code system entry" />
+      <sliceName value="ContinuaPHDType" />
+      <short value="Required Continua PHDType code system entry" />
       <min value="1" />
       <max value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
       <path value="Device.property.valueCode.coding.system" />
-      <definition value="The Code System for the certified PAN interface" />
+      <definition value="The Code System for the certified PHD interface" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
       <path value="Device.property.valueCode.coding.code" />
-      <definition value="The Continua code for the certified PAN interface" />
+      <definition value="The Continua code for the certified PHD interface" />
       <min value="1" />
     </element>
   </differential>

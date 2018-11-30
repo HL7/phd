@@ -75,7 +75,7 @@ This example shows the mapping of an Android gateway to the Device resource.
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
                             "code": "4"
                         }
                     ]

@@ -183,9 +183,9 @@
     },
     {
       "reference" : {
-        "reference" : "CodeSystem/ContinuaPAN"
+        "reference" : "CodeSystem/ContinuaPHD"
       },
-      "name" : "ContinuaPAN",
+      "name" : "ContinuaPHD",
       "exampleBoolean" : false,
       "groupingId" : "codeSystems"
     },
@@ -347,7 +347,7 @@
       "reference" : {
         "reference" : "Device/phd-711000FEFF5F49B0.B0495F001071"
       },
-      "name" : "Example of a PHD",
+      "name" : "Example of a Blood Pressure PHD",
       "description" : "This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information.",
       "exampleBoolean" : true,
       "groupingId" : "examples"
@@ -356,7 +356,7 @@
       "reference" : {
         "reference" : "Device/phd-00601900010E9234.F45EABA80832"
       },
-      "name" : "Example of a PHD ",
+      "name" : "Example of a Glucose Monitor PHD ",
       "description" : "This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation",
       "exampleBoolean" : true,
       "groupingId" : "examples"
@@ -374,7 +374,7 @@
       "reference" : {
         "reference" : "Observation/coin-1234"
       },
-      "name" : "Example of a Coincident Time Stamp ",
+      "name" : "Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation ",
       "description" : "This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation",
       "exampleBoolean" : true,
       "groupingId" : "examples"
@@ -620,7 +620,7 @@
             "generation" : "markdown",
             "page" : [{
               "nameUrl" : "ContinuaPersonalAreaNetworkCodes.html",
-              "title" : "Generating the PAN codes",
+              "title" : "Generating the PHD codes",
               "generation" : "markdown"
             },
             {
@@ -741,8 +741,8 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "ContinuaPAN.html",
-          "title" : "ContinuaPAN",
+          "nameUrl" : "ContinuaPHD.html",
+          "title" : "ContinuaPHD",
           "generation" : "generated"
         },
         {
@@ -837,12 +837,12 @@
         },
         {
           "nameUrl" : "phd-711000FEFF5F49B0.B0495F001071.html",
-          "title" : "Example of a PHD",
+          "title" : "Example of a Blood Pressure PHD",
           "generation" : "generated"
         },
         {
           "nameUrl" : "phd-00601900010E9234.F45EABA80832.html",
-          "title" : "Example of a PHD ",
+          "title" : "Example of a Glucose Monitor PHD ",
           "generation" : "generated"
         },
         {
@@ -852,7 +852,7 @@
         },
         {
           "nameUrl" : "coin-1234.html",
-          "title" : "Example of a Coincident Time Stamp ",
+          "title" : "Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation ",
           "generation" : "generated"
         },
         {

@@ -154,7 +154,7 @@ The mapping is as follows:
 **The text elements are optional but it is encouraged to include them and populate them with at least the reference identifier.
 
 ### Reg-Cert-Data-List ###
-The Reg-Cert-Data-List contains the Continua version, list of certified PAN interfaces, and the regulation status. The Continua version is mapped to an additional Device.version element and the other two fields are mapped to a Device.property element.
+The Reg-Cert-Data-List contains the Continua version, list of certified PHD interfaces, and the regulation status. The Continua version is mapped to an additional Device.version element and the other two fields are mapped to a Device.property element.
 
 #### Reg-Cert-Data-List Continua version
 
@@ -162,10 +162,10 @@ The Continua version has a major and minor component which are 8-bit unsigned in
 
 The Continua version code is mapped to a Device.version element.
 
-#### Reg-Cert-Data-List Continua Certified PAN interfaces
-The Reg-Cert-Data-List attribute reports the list of Continua *certified* PAN (Personal Area Network) interfaces as a list of Continua-specified 'PAN' codes. Note there is a difference between certified PAN interfaces and supported PAN interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code, Tcode, and a specialization code which is based on the 16-bit term code of the MDC code for the specialization. See [generating the PANCodes](ContinuaPersonalAreaNetworkCodes.html)
+#### Reg-Cert-Data-List Continua Certified PHD interfaces
+The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified 'PHD' codes. Note there is a difference between certified PHD interfaces and supported PHD interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code, Tcode, and a specialization code which is based on the 16-bit term code of the MDC code for the specialization. See [generating the PHDCodes](ContinuaPersonalAreaNetworkCodes.html)
 
-The PANCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
+The PHDCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
 
 #### Reg-Cert-Data-List Regulation Status
 The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 Coding Description](ASN1BITsCodeSystem.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
@@ -178,7 +178,7 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 |Reg-Cert-Data-List|Device Mapping|
 |-
 |Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
-|Reg-Cert-Data-List: certified PAN interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PANCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN"<br><br>|
+|Reg-Cert-Data-List: certified PHD interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PHDCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD"<br><br>|
 |Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.text="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "<br>property.valueCode.text="Y=unregulated N=regulated"|
 
 Text elements are recommended but optional.
@@ -281,7 +281,7 @@ Though not a part of the MdsTimeInfo attribute the Tick resolution attribute use
 |Device.property.type.coding.code|"68229" (Tick Resolution)|
 |Device.property.type.coding.system|"urn.iso.std.iso:11073:10101"|
 Device.property.type.text (*optional*)|"MDC_ATTR_TICK_RES"|
-|Device.property.valueQuantity.value|Tick_Resolution.*value*|
+|Device.property.valueQuantity.value|Tick-Resolution.*value*|
 |Device.property.valueQuantity.system|"http://unitsofmeasure.org" |
 |Device.property.valueQuantity.code|"Hz"  (UCUM code for Hertz)|
 

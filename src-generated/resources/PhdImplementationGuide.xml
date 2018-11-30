@@ -155,9 +155,9 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ContinuaPAN"/>
+        <reference value="CodeSystem/ContinuaPHD"/>
       </reference>
-      <name value="ContinuaPAN"/>
+      <name value="ContinuaPHD"/>
       <exampleBoolean value="false"/>
       <groupingId value="codeSystems"/>
     </resource>
@@ -347,7 +347,7 @@
       <reference>
         <reference value="Device/phd-711000FEFF5F49B0.B0495F001071"/>
       </reference> 
-      <name value="Example of a PHD"/>
+      <name value="Example of a Blood Pressure PHD"/>
       <description value="This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information."/>
       <exampleBoolean value="true"/>
       <groupingId value="examples"/>
@@ -357,7 +357,7 @@
       <reference>
         <reference value="Device/phd-00601900010E9234.F45EABA80832"/>
       </reference> 
-      <name value="Example of a PHD "/>
+      <name value="Example of a Glucose Monitor PHD "/>
       <description value="This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation"/>
       <exampleBoolean value="true"/>
       <groupingId value="examples"/>
@@ -377,7 +377,7 @@
       <reference>
         <reference value="Observation/coin-1234"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp "/>
+      <name value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation "/>
       <description value="This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation"/>
       <exampleBoolean value="true"/>
       <groupingId value="examples"/>
@@ -632,7 +632,7 @@
             <generation value="markdown"/>
             <page>
               <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
-              <title value="Generating the PAN codes"/>
+              <title value="Generating the PHD codes"/>
               <generation value="markdown"/>
             </page>
             <page>
@@ -759,8 +759,8 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="ContinuaPAN.html"/>
-<ns14:title xmlns:ns14="http://hl7.org/fhir" value="ContinuaPAN"/>
+<nameUrl value="ContinuaPHD.html"/>
+<ns14:title xmlns:ns14="http://hl7.org/fhir" value="ContinuaPHD"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -855,12 +855,12 @@
 </page>
 <page>
 <nameUrl value="phd-711000FEFF5F49B0.B0495F001071.html"/>
-<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example of a PHD"/>
+<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example of a Blood Pressure PHD"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phd-00601900010E9234.F45EABA80832.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example of a PHD "/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example of a Glucose Monitor PHD "/>
 <generation value="generated"/>
 </page>
 <page>
@@ -870,7 +870,7 @@
 </page>
 <page>
 <nameUrl value="coin-1234.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example of a Coincident Time Stamp "/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation "/>
 <generation value="generated"/>
 </page>
 <page>

@@ -27,9 +27,9 @@
         <display value="Time synchronization method" />
       </concept>
       <concept>
-        <!-- Certified PAN interfaces MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST -->
+        <!-- Certified PHD interfaces MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST -->
         <code value="532353"/>
-        <display value="Continua certified PAN interfaces" />
+        <display value="Continua certified PHD interfaces" />
       </concept>
       <concept>
         <!-- Certified H&FS interfaces MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST -->

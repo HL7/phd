@@ -176,8 +176,8 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="ContinuaPAN.html">
-                        •  ContinuaPAN</a>
+<a href="ContinuaPHD.html">
+                        •  ContinuaPHD</a>
 </td>
 <td/>
 </tr>
@@ -279,14 +279,14 @@
 <tr>
 <td style="column-width:30%">
 <a href="phd-711000FEFF5F49B0.B0495F001071.html">
-                        •  Example of a PHD</a>
+                        •  Example of a Blood Pressure PHD</a>
 </td>
 <td>This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information.</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="phd-00601900010E9234.F45EABA80832.html">
-                        •  Example of a PHD </a>
+                        •  Example of a Glucose Monitor PHD </a>
 </td>
 <td>This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation</td>
 </tr>
@@ -300,7 +300,7 @@
 <tr>
 <td style="column-width:30%">
 <a href="coin-1234.html">
-                        •  Example of a Coincident Time Stamp </a>
+                        •  Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation </a>
 </td>
 <td>This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation</td>
 </tr>

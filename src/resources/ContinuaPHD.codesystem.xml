@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CodeSystem xmlns="http://hl7.org/fhir">
-  <id value="ContinuaPAN"/> 
+  <id value="ContinuaPHD"/> 
   <meta> 
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/> 
   </meta> 
   <text>
     <status value="additional" />
-    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by the PAN interface.</p></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system representing the certified transactions supported by the PHD interface.</p></div>
   </text>
   
-  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN" />
+  <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
 
   <version value="0.2.0"/> 
 
-  <name value="ContinuaPAN"/> 
+  <name value="ContinuaPHD"/> 
   <status value="draft"/> 
   <experimental value="true"/> 
   <date value="2018-11-24"/> 
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
 
-  <description value="Codes used to describe the Continua Personal Area Network (PAN) interfaces supported by a Personal Health Gateway."/> 
+  <description value="Codes used to describe the Continua Personal Area Network (PHD) interfaces supported by a Personal Health Gateway."/> 
 
   <caseSensitive value="true"/> 
   <content value="complete"/> 

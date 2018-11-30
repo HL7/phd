@@ -6,7 +6,7 @@ urn:iso:std:iso:11073:10101
 http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7
  - This URL identifies the IEEE ASN.1 BITs field codes
 
-http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN
+http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD
  - This URL identifies the Continua certified device and transports interface codes
 
 http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS

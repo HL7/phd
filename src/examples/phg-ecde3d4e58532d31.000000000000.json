@@ -104,7 +104,7 @@
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
                             "code": "4"
                         }
                     ]
