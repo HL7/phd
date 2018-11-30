@@ -274,7 +274,18 @@ The sensor may additionally support both relative time clocks or just one or bot
 
 All time resolution values shall be scaled to units of microseconds. When supporting absolute time, the Mds-Time-Info.time-resolution-abs-time is in units of 1/100th of a second. When supporting base-offset time, the Mds-Time-Info.time-resolution-abs-time is in units of 1/65536th of a second. In the base-offset case, the special value of 0xFFFF means one second. The Mds-Time-Info.time-resolution-rel-time is in units of 1/8th millisecond and the Mds-Time-Info.time-resolution-hi-res-relative-time is in units of microseconds.
 
-The encoding is as follows:
+Though not a part of the MdsTimeInfo attribute the Tick resolution attribute used for RR-intervals in the ECG specialization is also encoded as a property in this group. However its units are in cycles per second, such that a value as 1024 indicates 1024 cycles per second.
+
+|Device.property element|value|
+|-
+|Device.property.type.coding.code|"68229" (Tick Resolution)|
+|Device.property.type.coding.system|"urn.iso.std.iso:11073:10101"|
+Device.property.type.text (*optional*)|"MDC_ATTR_TICK_RES"|
+|Device.property.valueQuantity.value|Tick_Resolution.*value*|
+|Device.property.valueQuantity.system|"http://unitsofmeasure.org" |
+|Device.property.valueQuantity.code|"Hz"  (UCUM code for Hertz)|
+
+The encoding for the resolution values is as follows:
 
 |Device.property element|value|
 |-

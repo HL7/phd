@@ -51,6 +51,11 @@
         <code value="68224"/>
         <display value="Time synchronization accuracy" />
       </concept>
+      <concept>
+        <!-- Tick Resolution MDC_ATTR_TICK_RESOLUTION -->
+        <code value="68229"/>
+        <display value="Tick Resolution" />
+      </concept>
     </include>
   </compose>
 </ValueSet>

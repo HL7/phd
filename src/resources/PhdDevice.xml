@@ -461,7 +461,8 @@
       Base-offset clock resolution      68226            MDC_TIME_RES_BO&#xD;&#xA;
       Relative time resolution          68223            MDC_TIME_RES_REL&#xD;&#xA;
       Hi Res relative time resolution   68224            MDC_TIME_RES_REL_HI_RES&#xD;&#xA;
-      Time sync accuracy                68221            MDC_TIME_SYNC_ACCURACY&#xD;&#xA;" />
+      Time sync accuracy                68221            MDC_TIME_SYNC_ACCURACY&#xD;&#xA;
+      Tick Resolution                   68229            MDC_ATTR_TICK_RES&#xD;&#xA;"/>
       <min value="1" />
     </element>
     <!-- No code entry when the value is a quantity! -->
