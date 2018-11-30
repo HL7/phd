@@ -54,9 +54,13 @@ The identifier for the system id:
 The identifier for the Bluetooth Address: 
 
  - identifier.value=*formatted as above*
- - identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"
+ - identifier.system="http://hl7.org/fhir/sid/eui-48"
  - identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
  - identifier.type.coding.code="BTMAC"
+ 
+ There is actually a problem at the moment as there is no defined system for the transport addresses. Given that the Bluetooth and Ethernet MAC addresses are an EUI-48, the system value 'http://hl7.org/fhir/sid/eui-48' represents a placeholder until an actual system value is created. The MAC address placeholder has been floated in the Zulip discussions so it is a reasonable choice at this time. There are no proposals for ZigBee or USB and the placeholders (see PhdProfile page) are completely artificial.
+ 
+ An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](phg-ecde3d4e58532d31.000000000000.html)
 
 #### **Device type**
 The PHG Device.type is given by the MDC code 531981. The reference identifier for this code is MDC_MOC_VMS_MDS_AHD. "AHD" is the previous name Continua gave to what is now known as the PHG. However, reference identifiers are normative and once accepted, they cannot change. It shall be encoded as follows:

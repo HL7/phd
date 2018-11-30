@@ -12,21 +12,19 @@
   <experimental value="false"/>
   <date value="2018-11-23"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
-  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing attributes whose values are Ranges."/>
+  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-20601 attributes whose values are Ranges."/>
   <compose>
     <include>
       <system value="urn:iso:std:iso:11073:10101"/>
       <concept>
-        <!-- Relative Time -->
+        <!-- Current Limits -->
         <code value="67892"/>
+        <display value="Current limits" />
       </concept>
       <concept>
         <!-- Measurement Confidence 95 -->
         <code value="68236"/>
-      </concept>
-      <concept>
-        <!-- Accuracy -->
-        <code value="67914"/>
+        <display value="Measurement confidence 95% range" />
       </concept>
     </include>
   </compose>

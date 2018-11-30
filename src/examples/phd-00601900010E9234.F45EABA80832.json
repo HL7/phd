@@ -1,6 +1,6 @@
 {
     "resourceType": "Device",
-    "id": "phd-711000FEFF5F49B0.B0495F001071",
+    "id": "phd-00601900010E9234.F45EABA80832",
     "meta": {
         "profile": [
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
@@ -17,7 +17,7 @@
                 ]
             },
             "system": "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
-            "value": "71-10-00-FE-FF-5F-49-B0"
+            "value": "00-60-19-00-01-0E-92-34"
         },
         {
             "type": {
@@ -29,12 +29,12 @@
                 ]
             },
             "system": "http://hl7.org/fhir/sid/eui-48",
-            "value": "B0-49-5F-00-10-71"
+            "value": "F4-5E-AB-A8-08-32"
         }
     ],
-    "manufacturer": "OMRONHEALTHCARE",
-    "serialNumber": "20150200002A",
-    "modelNumber": "HEM-9200T",
+    "manufacturer": "Diabetes Care",
+    "serialNumber": "20130200002A",
+    "modelNumber": "Gluc-23",
     "type": {
         "coding": [
             {
@@ -50,10 +50,10 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "528391"
+                        "code": "528405"
                     }
                 ],
-                "text": "MDC_DEV_SPEC_PROFILE_BP: Blood Pressure Cuff"
+                "text": "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"
             },
             "version":"1"
         }
@@ -69,7 +69,7 @@
                 ],
                 "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
             },
-            "value": "C.00.7AJ-02"
+            "value": "GLU.7AJ-02"
         },
         {
             "type": {
@@ -81,7 +81,7 @@
                 ],
                 "text": "MDC_ID_PROD_SPEC_SW: Software revision"
             },
-            "value": "0000000000000101"
+            "value": "3.55.6"
         },
         {
             "type": {
@@ -93,10 +93,31 @@
                 ],
                 "text": "MDC_ID_PROD_SPEC_HW: Hardware revision"
             },
-            "value": "0000000000000100"
+            "value": "5.4.2"
         }
     ],
     "property": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532353"
+                    }
+                ],
+                "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+            },
+            "valueCode": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                            "code": "16401"
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "type": {
                 "coding": [

@@ -12,17 +12,19 @@
   <experimental value="false"/>
   <date value="2018-11-23"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
-  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing attributes whose values are Strings."/>
+  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-20601 attributes whose values are Strings."/>
   <compose>
     <include>
       <system value="urn:iso:std:iso:11073:10101"/>
       <concept>
         <!-- ALERT-OP-TEXT -->
         <code value="68104"/>
+        <display value="Alert options text message" />
       </concept>
       <concept>
         <!-- THRESHOLD-NOTIFICATION-TEXT-STRING -->
         <code value="68232"/>
+        <display value="Threshold met notification text message" />
       </concept>
     </include>
   </compose>

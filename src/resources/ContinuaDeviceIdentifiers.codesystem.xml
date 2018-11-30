@@ -7,7 +7,13 @@
   </meta> 
   <text>
     <status value="additional" />
-    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system specifying the types of device identifiers.</p></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Code system specifying the types of device identifiers. Currently defined at this time are:</p><ul>
+  <li>SYSID: IEEE 11073 system id EUI-64 value</li>
+  <li>BTMAC: Bluetooth MAC address (EUI-48)</li>
+  <li>ETHMAC: Ethernet MAC address (EUI-48)</li>
+  <li>USB: USB identifier PID.VID</li>
+  <li>ZIGBEE: 64-bit ZigBee address</li>
+</ul></div>
   </text>
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" />

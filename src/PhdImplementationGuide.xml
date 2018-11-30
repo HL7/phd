@@ -340,7 +340,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Observation/glucose-1.0.0.4"/>
       </reference> 
       <name value="Example of coded enumeration"/>
-      <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner." />
+      <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner. It is also known as the meal context." />
       <exampleBoolean value="true"/>
       <groupingId value="examples" />
     </resource>
@@ -390,7 +390,37 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Device/phd-711000FEFF5F49B0.B0495F001071"/>
       </reference> 
       <name value="Example of a PHD"/>
-      <description value="This example maps the MDS data from a Blood Pressure PHD" />
+      <description value="This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information." />
+      <exampleBoolean value="true"/>
+      <groupingId value="examples" />
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Device/phd-00601900010E9234.F45EABA80832"/>
+      </reference> 
+      <name value="Example of a PHD "/>
+      <description value="This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation" />
+      <exampleBoolean value="true"/>
+      <groupingId value="examples" />
+    </resource>
+	
+    <resource>
+      <reference>
+        <reference value="Observation/coin-20181119174911"/>
+      </reference> 
+      <name value="Example of a Coincident Time Stamp "/>
+      <description value="This Coincident Time Stamp observation is referenced by the Blood Pressure Observation" />
+      <exampleBoolean value="true"/>
+      <groupingId value="examples" />
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Observation/coin-1234"/>
+      </reference> 
+      <name value="Example of a Coincident Time Stamp "/>
+      <description value="This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation" />
       <exampleBoolean value="true"/>
       <groupingId value="examples" />
     </resource>

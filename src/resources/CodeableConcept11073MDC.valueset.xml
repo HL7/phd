@@ -12,25 +12,29 @@
   <experimental value="false"/>
   <date value="2018-11-23"/>
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
-  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing attributes whose values are Codeable Concepts."/>
+  <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-20601 attributes whose values are codes and thus represented as Codeable Concepts."/>
   <compose>
     <include>
       <system value="urn:iso:std:iso:11073:10101"/>
       <concept>
         <!-- Supplemental Types -->
         <code value="68193"/>
+        <display value="Supplemental types" />
       </concept>
       <concept>
         <!-- Time sync method -->
         <code value="68220"/>
+        <display value="Time synchronization method" />
       </concept>
       <concept>
         <!-- Certified PAN interfaces MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST -->
         <code value="532353"/>
+        <display value="Continua certified PAN interfaces" />
       </concept>
       <concept>
         <!-- Certified H&FS interfaces MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST -->
         <code value="532355"/>
+        <display value="Continua certified Health and Fitness interfaces" />
       </concept>
     </include>
   </compose>

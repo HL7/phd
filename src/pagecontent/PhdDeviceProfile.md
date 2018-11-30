@@ -47,9 +47,11 @@ The identifier is encoded as follows:
 |Source|Device Encoding|
 |-
 |System-Id.value|identifier.value=*formatted as above*<br>identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="SYSID"|
-|Bluetooth Address|identifier.value=*formatted as above*<br>identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="BTMAC"|
-|ZigBee Address|identifier.value=*formatted as above*|
-|USB Address|identifier.value=*formatted as above*|
+|Bluetooth Address|identifier.value=*formatted as above*<br>identifier.system="http://hl7.org/fhir/sid/eui-48"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="BTMAC"|
+|ZigBee Address|identifier.value=*formatted as above*<br>identifier.system="http://hl7.org/fhir/sid/eui-64"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="ZIGBEE"|
+|USB Address|identifier.value=*formatted as above*<br>identifier.system="http://hl7.org/fhir/sid/usb"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="USB"|
+
+There is actually a problem at the moment as there is no defined system for the transport addresses. Given that the Bluetooth and Ethernet MAC addresses are an EUI-48, the system value 'http://hl7.org/fhir/sid/eui-48' represents a placeholder until an actual system value is created. The MAC address placeholder has been floated in the Zulip discussions so it is a reasonable choice at this time. There are no proposals for ZigBee or USB and the placeholders are completely artificial.
 
 ### Device.type ###
 The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the Device.specializations element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In 11073-10201 this code is described as indicating "a single-purpose medical device". The code is also used in 11073-20601 to identify the MDS object, but there is no particular description as to its interpretation.
@@ -284,7 +286,7 @@ The encoding is as follows:
 |Device.property.valueQuantity.code|"us"  (UCUM code for microseconds)|
 
 ### Examples:
-An example of a PHD Blood Pressure cuff mapping is given [here](phdExample.html)
+An example of a PHD Blood Pressure cuff Device mapping is given [here](phdExample.html)
 
 ### Consumer of the PHD Device Profile
 For the Consumer of this profile the following table gives a quick guide to the main features

@@ -246,7 +246,7 @@
 <a href="glucose-1.0.0.4.html">
                         •  Example of coded enumeration</a>
 </td>
-<td>This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner.</td>
+<td>This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner. It is also known as the meal context.</td>
 </tr>
 <tr>
 <td style="column-width:30%">
@@ -281,7 +281,28 @@
 <a href="phd-711000FEFF5F49B0.B0495F001071.html">
                         •  Example of a PHD</a>
 </td>
-<td>This example maps the MDS data from a Blood Pressure PHD</td>
+<td>This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information.</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="phd-00601900010E9234.F45EABA80832.html">
+                        •  Example of a PHD </a>
+</td>
+<td>This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="coin-20181119174911.html">
+                        •  Example of a Coincident Time Stamp </a>
+</td>
+<td>This Coincident Time Stamp observation is referenced by the Blood Pressure Observation</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="coin-1234.html">
+                        •  Example of a Coincident Time Stamp </a>
+</td>
+<td>This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation</td>
 </tr>
 <tr>
 <td style="column-width:30%">
