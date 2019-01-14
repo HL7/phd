@@ -9,7 +9,7 @@
   <date value="2017-08-04T06:04:53.838-04:00" />
   <description value="The patient information reported from personal health gateways (PHG)" />
   <purpose value="All PHD related Observation resources reference a Patient resource containing a minimal set of information sufficient to identify the patient. However, it may require additional information to link the patient to a person that is only available to an authorized entity. In this manner, PHMI can be protected." />
-  <fhirVersion value="3.6.0" />
+  <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Patient" />

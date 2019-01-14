@@ -11,7 +11,7 @@
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
   <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is number." />
-  <fhirVersion value="3.6.0" />
+  <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />

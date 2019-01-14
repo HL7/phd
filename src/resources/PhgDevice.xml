@@ -12,7 +12,7 @@
   <date value="2017-07-07T11:39:51.3383228-04:00" />
   <description value="Base StructureDefinition for the Device Resource for a PHG" />
   <purpose value="This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any 11073 Objects or attributes though it is required to have an IEEE EUI-64 system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it has an MDS with attributes. For PCHA, the quantities that are required to be reported is the EUI-64 system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), the regulation status, and the PCHA certified interfaces." />
-  <fhirVersion value="3.6.0" />
+  <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Device" />

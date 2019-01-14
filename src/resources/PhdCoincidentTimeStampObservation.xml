@@ -11,7 +11,7 @@
   <status value="draft" />
   <date value="2017-06-02T14:29:52.39367-04:00" />
   <description value="StructureDefinition for Observation Resources representing the coincident time stamp. This report is a measurement of the current time of the sensor at the current time of the PHG. The purpose of this observation is to record the difference in the time lines between the PHG and PHD and to be able to recover the original measurement time stamps reported by the PHD should the PHG correct them because the sensor clock is in error." />
-  <fhirVersion value="3.6.0" />
+  <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Observation" />

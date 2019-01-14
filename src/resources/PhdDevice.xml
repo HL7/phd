@@ -12,7 +12,7 @@
   <date value="2017-07-07T11:39:51.3383228-04:00" />
   <description value="Base StructureDefinition for the Device Resource for a PHD" />
   <purpose value="This resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD." />
-  <fhirVersion value="3.6.0" />
+  <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Device" />
