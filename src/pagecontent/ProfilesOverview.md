@@ -1,3 +1,8 @@
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 This Implementation Guide utilizes 10 profiles. The PHD Numeric, Compound Numeric, Coded Enumeration, BITs Enumeration, String Enumeration, and Rtsa Observation Profiles are used to report one of the six possible measurement types or classes sent by PHDs. The PHD Coincident Time Stamp Observation Profile is present for time auditing purposes. The PHD Device Profile is used to report the PHD features and properties. The PHG Device Profile is used to report the PHG properties and the PHD Patient Profile is used to report the patient data. In the Continua use case the Patient resource may contain only keys to identify the patient that only the health care provider can match to a person. It is also possible in the Continua architecture that the Patient resource is never sent on the wire by the uploader. In that case the logical id to a Patient resource on the destination server must be provided to the uploader by out-of-band means.
 
 ### Notes on Examples
@@ -41,6 +46,19 @@ A transaction Bundle may prove useful in that case. A bundled upload will contai
 
 On the other hand, if the use case only involves PHDs that do not emit source-handle-references and do not need a Coincident Time Stamp, the single upload approach may prove to be much more efficient. It is also permissible to mix and match, using both single and Bundled uploads.
 
+### The Profiles
+
+ - [Base Observation Profile](BaseObservationProfile.html)
+ - [Numeric Observation Profile](NumericObservationProfile.html)
+ - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+ - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+ - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+ - [Rtsa Observation Profile](RtsaObservationProfile.html)
+ - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html)
+ - [Phg Device Profile](PhgDeviceProfile.html)
+ - [Patient Profile](PhdPatientProfile.html)
 
 
 

@@ -147,3 +147,17 @@ The consumer of this profile does not need to concern itself with the mapping co
 |patient|Observation.subject|Points to the Patient resource|
 |sensor device|Observation.device|Points to the Device resource|
 
+### The Other Profiles
+
+ - [Profiles Overview](ProfilesOverview.html)
+ - [Base Observation Profile](BaseObservationProfile.html)
+ - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+ - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+ - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+ - [Rtsa Observation Profile](RtsaObservationProfile.html)
+ - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html)
+ - [Phg Device Profile](PhgDeviceProfile.html)
+ - [Patient Profile](PhdPatientProfile.html)
+

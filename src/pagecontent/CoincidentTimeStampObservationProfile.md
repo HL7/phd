@@ -54,3 +54,17 @@ There is no additional information reported in component elements in this profil
 
 ### Examples:
 An example of a coincident time stamp observation where the PHG is better synchronized to NTP time than the PHD is given [here](coincidentTime.html). An example where the PHD has a time fault is given [here](coinFault.html).
+
+### The Other Profiles
+
+ - [Profiles Overview](ProfilesOverview.html)
+ - [Base Observation Profile](BaseObservationProfile.html)
+ - [Numeric Observation Profile](NumericObservationProfile.html)
+ - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+ - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+ - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+ - [Rtsa Observation Profile](RtsaObservationProfile.html)
+ - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html)
+ - [Phg Device Profile](PhgDeviceProfile.html)
+ - [Patient Profile](PhdPatientProfile.html)

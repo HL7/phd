@@ -139,3 +139,17 @@ To report these cases in FHIR requires the use of three different elements. The 
 Note that a status field is reported in the Nu-Observed-Value and Enum-Observed-Value attributes. When these attributes are sent, the status field in the attribute replaces the Measurement-Status attribute should the PHD have sent both (which would seem unlikely).
 
 The status field is also reported in the Compound-Nu-Observed-Value. In this case the status field applies only to the Observation.component. An overall Measurement-Status attribute may also be present. The Observation.component has its own dataAbsentReason and interpretation element. However it does not have a meta element. On the other hand it does not make sense to have one sub-value of a compound report test data while another does not. A compound measurement in 20601 is a single measurement taken as a whole. However it is possible that a sub-value fails in the measurement process thus an error can occur on one sub-value while the others succeed.
+
+### The Other Profiles
+
+ - [Profiles Overview](ProfilesOverview.html)
+ - [Numeric Observation Profile](NumericObservationProfile.html)
+ - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+ - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+ - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+ - [Rtsa Observation Profile](RtsaObservationProfile.html)
+ - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html)
+ - [Phg Device Profile](PhgDeviceProfile.html)
+ - [Patient Profile](PhdPatientProfile.html)

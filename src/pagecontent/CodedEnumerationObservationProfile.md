@@ -48,5 +48,17 @@ There are no additional descriptive attributes that are unique to the Enumeratio
 ### Examples:
 The [Glucose Meal Context](glucoseEnum.html) example shows a glucose meal context measurement. The meal context is a limited set of coded values indicating when the measurement was taken relative to a meal. The measurement SHOULD have an Observation.derivedFrom entry pointing to the glucose concentration measurement to which it refers. The fact it does not was a miss in the Glucose specialization standard and has since been corrected, but the device that reported this measurement was made before the change in the standard.
 
+### The Other Profiles
 
+ - [Profiles Overview](ProfilesOverview.html)
+ - [Base Observation Profile](BaseObservationProfile.html)
+ - [Numeric Observation Profile](NumericObservationProfile.html)
+ - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+ - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+ - [Rtsa Observation Profile](RtsaObservationProfile.html)
+ - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html)
+ - [Phg Device Profile](PhgDeviceProfile.html)
+ - [Patient Profile](PhdPatientProfile.html)
 

@@ -74,6 +74,20 @@ The entries are as populated as follows:
 ### Examples:
 This example shows a [blood pressure](bloodPress.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
 
+### The Other Profiles
+
+ - [Profiles Overview](ProfilesOverview.html)
+ - [Base Observation Profile](BaseObservationProfile.html)
+ - [Numeric Observation Profile](NumericObservationProfile.html)
+ - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+ - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+ - [Rtsa Observation Profile](RtsaObservationProfile.html)
+ - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html)
+ - [Phg Device Profile](PhgDeviceProfile.html)
+ - [Patient Profile](PhdPatientProfile.html)
+
 
 
 

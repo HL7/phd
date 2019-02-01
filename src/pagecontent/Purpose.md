@@ -7,6 +7,6 @@ Patient information, such as demographic and administrative information about th
 The purpose of this Implementation Guide is to specify the mapping of PHD information to FHIR components. For consumers (readers) of FHIR data, this Implementation Guide specifies the FHIR components that contain the PHD information.
 
  - [Next: Audience](Audience.html)
- - [Previous: Overview](overview.html)
+ - [Previous: Organization](Organization.html)
 
 HL7 GitHub location: https://github.com/HL7/PHD
