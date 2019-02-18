@@ -422,6 +422,11 @@
           <title value="Overview"/>
           <generation value="markdown"/>
           <page>
+            <nameUrl value="Organization.html"/>
+            <title value="Organization"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
             <nameUrl value="Purpose.html"/>
             <title value="Purpose"/>
             <generation value="markdown"/>

@@ -1,3 +1,5 @@
+Note that this time stamp identifier is part of the Observation.identifier whose sole purpose is to perform a conditional create transaction. The identifier is not to be interpreted by a consumer of the resource and it should not be used for informational content.
+
 This algorithm shows how one generates the time stamp as reported by the PHD for use in the Observation.identifier element. The Observation.identifier element is used in the PHD profiles to perform conditional creates and thus eliminate data duplication.
 
  - If the sensor reports absolute time this string will be encoded as an HL7 DTM YYYYMMDDTHHMMSS.ss.

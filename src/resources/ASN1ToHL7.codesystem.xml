@@ -21,7 +21,7 @@
   <date value="2018-09-18"/> 
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
 
-  <description value="Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occurred when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement."/> 
+  <description value="Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occurred when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement. More codes maybe added to this list in the future."/> 
   
   <!-- The codes are strings but consist of only digits and a decimal point. 
   They do not represent decimal numbers -->

@@ -9,12 +9,14 @@ A consumer of the PHD profile resources will find most of the mapping is as expe
 |Observation|.valueQuantity.value|Gives the value of the measurement if a number|
 ||.valueCodeableConcept|Gives the value of the measurement if a code|
 ||.valueSampledData|Gives the values when the measurements are a periodic sequence|
-||*absent with dataAbsentReason*|value has an error|
-||*absent with no dataAbsentReason*|indicates the measurement is a vector or set of binary (set/cleared) events or states and is found in component elements|
+||*value absent with* dataAbsentReason|value has an error|
+||*value absent with* no dataAbsentReason|indicates the measurement is a vector or set of binary (set/cleared) events or states and is found in component elements|
+|Observation|.interpretation.value|Gives some special conditions about the overall measurement that are not 'complete' errors such as 'questionable'. Infrequent.|
 |Observation|.component.code|Tells what the individual vector sub-value is or event/state is|
-|Observation|.component.valueQuantity|gives the sub value when the measurement is a vector|
-||.valueCodeableConcept|gives whether the event or state is set or cleared|
-||*absent*|a dataAbsentReason indicates the sub value is in error or the event/state is unsupported|
+||.component.valueQuantity|gives the sub value when the measurement is a vector|
+||component.valueCodeableConcept|gives whether the event or state is set or cleared|
+||*sub-value absent*|a dataAbsentReason is present indicating the sub value is in error or the event/state is unsupported|
+||component.interpretation|Gives some special conditions about the measurement sub-value that are not 'complete' errors such as 'questionable'. Infrequent.|
 
  - [Next: DIM to FHIR Mapping Details](DIMtoFHIRMappingDetails.html)
  - [Previous: DIM to FHIR Mapping; Basics](DIMtoFHIRMapping.html)

@@ -21,7 +21,7 @@
   <date value="2018-11-24"/> 
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
 
-  <description value="Codes used to describe the Continua Personal Area Network (PHD) interfaces supported by a Personal Health Gateway."/> 
+  <description value="Codes used to describe the Continua Personal Area Network (PHD) interfaces supported by a Personal Health Gateway. More codes maybe added to this list in the future."/> 
 
   <caseSensitive value="true"/> 
   <content value="complete"/> 

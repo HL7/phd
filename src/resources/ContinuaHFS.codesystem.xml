@@ -29,7 +29,7 @@
   <date value="2018-09-18"/> 
   <publisher value="Health Level Seven International (Health Care Devices Work Group)"/> 
 
-  <description value="Codes used to describe the Continua Health and Fitness interfaces supported by a Personal Health Gateway."/> 
+  <description value="Codes used to describe the Continua Health and Fitness interfaces supported by a Personal Health Gateway. More codes maybe added to this list in the future."/> 
   
   <!-- The codes are strings but consist of only digits, they do not represent integers -->
   <caseSensitive value="true"/> 
