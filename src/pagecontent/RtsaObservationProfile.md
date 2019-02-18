@@ -1,4 +1,6 @@
-The Real Time Sample Array (RTSA) Observation Profile is used when the PHD metric measurement contains the following attribute:
+The Real Time Sample Array (RTSA) Observation Profile is used when the PHD metric measurement is a periodic sequences of scalars in time, typically waveforms. In theory, this measurement could be split up into a sequence of Numeric Observations but that would be inefficient especially if one is talking about a 1000 samples per second or more. Waveforms are used for spirometry, ECG, pulse oximeter pleth wave traces, etc. These measurement types are quite rare.
+
+The measurement is a waveform when the PHD metric contains the following attribute:
 
 <style>table, th, td {
 border: 1px solid black;

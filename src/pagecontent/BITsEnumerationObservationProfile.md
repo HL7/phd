@@ -1,4 +1,6 @@
-The BITs Enumeration Observation Profile is used when the PHD metric measurement contains one of the following attributes:
+The BITs Enumeration Observation Profile is used when the PHD metric measurement is an integer where each bit represents an event or a state. PHDs typically send this kind of measurement when more than one event or state can occur simultaneously. If the event or states are mutually exclusive, the coded form of the measurement is typically used instead.
+
+The measurement is a BITs state and/or event set when the PHD metric contains one of the following attributes:
 
 <style>table, th, td {
 border: 1px solid black;

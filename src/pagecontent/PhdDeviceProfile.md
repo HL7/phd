@@ -179,7 +179,7 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 |-
 |Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
 |Reg-Cert-Data-List: certified PHD interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PHDCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD"<br><br>|
-|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.text="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://hl7.org/fhir/v2/0136 "<br>property.valueCode.text="Y=unregulated N=regulated"|
+|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.text="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "<br>property.valueCode.text="Y=unregulated N=regulated"|
 
 Text elements are recommended but optional.
 

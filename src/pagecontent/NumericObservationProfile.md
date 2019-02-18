@@ -1,4 +1,6 @@
-The Numeric Observation Profile is used when the PHD metric measurement contains one of the following attributes:
+The Numeric Observation Profile is used when the PHD metric measurement is a scalar that may be dimensionless. Examples would be weight, body temperature, glucose concentration, pulse rate, oxygen saturation, steps take, calories burned, etc. Scalar measurements are the most common type of PHD measurement. 
+
+The measurement is a scalar when the PHD metric contains one of the following attributes:
 
 <style>table, th, td {
 border: 1px solid black;

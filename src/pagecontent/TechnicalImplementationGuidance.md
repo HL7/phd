@@ -1,5 +1,5 @@
 
-These sections provide background on the concepts behind the technical mapping approach and how PHD 11073 20601 objects are related to FHIR Observation and Device resources. The normative details of the mapping are given in the Profiles sections. Implementers who are familiar with the concepts behind the 11073 20601 model can skip these sections and proceed directly to the [Profile Details sections](ProfilesOverview.html).
+These sections provide background on the concepts behind the technical mapping approach and how the PHD's IEEE 11073 20601 Objects, which represent the measurements and device data, are related to FHIR Observation and Device resources. The normative details of the mapping are given in the Profiles sections. Implementers who are familiar with the concepts behind the IEEE 11073 20601 Object model can skip these sections and proceed directly to the [Profile Details sections](ProfilesOverview.html).
 <!-- https://stackoverflow.com/questions/27977078/how-do-i-reference-the-root-directory-of-my-site-and-why-wont-jekyll-render-so -->
 
  - [Remote Patient Monitoring Considerations](RemotePatientMonitoringConsiderations.html)

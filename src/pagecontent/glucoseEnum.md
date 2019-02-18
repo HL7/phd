@@ -2,6 +2,7 @@ This example shows a coded enumeration Observation. Coded enumerations are used 
 
 Note there is no logical id in this resource as this resource is being uploaded to the server in a conditional create operation. The server will use the identifier to check that no other Observation resource exists on the server with the same identfier. If there is not such resource present, the server will create the logical id and return it to the sender in the response.
 
+<pre>
 {
 	"resourceType": "Observation",
 	"meta": {
@@ -54,3 +55,4 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		}
 	]
 }
+</pre>

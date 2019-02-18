@@ -20,7 +20,7 @@ When a Patient resource for a known patient is to be created by the PHG the foll
 |-
 |patient identifier|Patient.identifier.value|Generally a code from the health care provider identifying the patient|
 |health care provider identifier|Patient.identifier.system|Generally a code identifying the health care provider|
-|code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/CodeSystem/v2-0203 "
+|code system|Patient.identifier.type.coding.system|"http://terminology.hl7.org/CodeSystem/v2-0203 "
 |code system code|Patient.identifier.type.coding.code|The code system identifier code such as 'MR' (medical record) or 'L' (local)|
 
 <br>

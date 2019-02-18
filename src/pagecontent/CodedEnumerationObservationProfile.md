@@ -1,4 +1,6 @@
-The Coded Enumeration Observation Profile is used when the PHD metric measurement contains one of the following attributes:
+The Coded Enumeration Observation Profile is used when the PHD metric measurement represented by one of a limited set of codes. Examples of a coded measurement would be the Glucose Monitor meal context associated with a glucose concentration measurement. The code would indicate one of fasting, preprandial, postprandial, bedtime, etc. Coded measurements are often associated with other measurements.
+
+The measurement is a code when the PHD metric contains one of the following attributes:
 
 <style>table, th, td {
 border: 1px solid black;

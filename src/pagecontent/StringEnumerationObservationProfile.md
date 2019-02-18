@@ -1,4 +1,6 @@
-The String Enumeration Observation Profile is used when the PHD metric measurement contains one of the following attributes:
+The String Enumeration Observation Profile is used when the PHD metric measurement is a human readable string. These types of measurements have the disadvantage of being unprocessable by machine without out-of-band information. Codes are often used instead where the end user can display them appropriately based upon locale.
+
+The measurement is a human reable string when the PHD metric measurement contains one of the following attributes:
 
 <style>table, th, td {
 border: 1px solid black;
