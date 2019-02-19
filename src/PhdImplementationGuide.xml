@@ -457,7 +457,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <!-- Now for the structure of the table of contents -->
       <page>
         <nameUrl value="index.html"/>
-        <title value="Continua PHD Implementation guide Home Page"/>
+        <title value="Personal Health Device Implementation Guide Home Page"/>
         <generation value="markdown"/>
         <page>
           <nameUrl value="overview.html"/>
