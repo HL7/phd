@@ -40,6 +40,10 @@ The final identifier is made by concatenating the entries above as follows:
 ### Additional Enumeration Measurement Information
 There are no additional descriptive attributes that are unique to the Enumeration type of measurement.
 
+### Examples:
+
+String enumeration measurements are very rare. This example shows an example from a glucose meter explaining why a measurement failed. There is no such measurement type defined in the Glucose specialization so this manufacturer used a private attribute. [Enumeration String measurement](EnumString.html).
+
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)

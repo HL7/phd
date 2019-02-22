@@ -285,6 +285,16 @@
 
     <resource>
       <reference>
+        <reference value="Observation/rtsa-1234"/>
+      </reference> 
+      <name value="Example of an Rtsa."/>
+      <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
         <reference value="Observation/nan-1.0.0.42"/>
       </reference> 
       <name value="Example of a NaN case"/>
@@ -320,6 +330,16 @@
       <name value="Example of Compound measurement"/>
       <description value="This example is from a Blood Pressure cuff."/>
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Observation/stringenum-1234"/>
+      </reference> 
+      <name value="Example of String measurement"/>
+      <description value="This example is some arbitrary text from a Glucose meter explaining the failure of the measurement."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -610,11 +630,21 @@
             <nameUrl value="RtsaObservationProfile.html"/>
             <title value="PHD Real Time Sample Array Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="Rtsa.html"/>
+              <title value="Real Time Sample Array; Pleth wave"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="StringEnumerationObservationProfile.html"/>
             <title value="PHD String Enumeration Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="EnumString.html"/>
+              <title value="A measurement that is a human readable string (Enumeration String)"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
@@ -829,63 +859,73 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="rtsa-1234.html"/>
+<ns27:title xmlns:ns27="http://hl7.org/fhir" value="Example of an Rtsa."/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="nan-1.0.0.42.html"/>
-<ns27:title xmlns:ns27="http://hl7.org/fhir" value="Example of a NaN case"/>
+<ns28:title xmlns:ns28="http://hl7.org/fhir" value="Example of a NaN case"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="glucose-1.0.0.4.html"/>
-<ns28:title xmlns:ns28="http://hl7.org/fhir" value="Example of coded enumeration"/>
+<ns29:title xmlns:ns29="http://hl7.org/fhir" value="Example of coded enumeration"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="bits-1.0.0.40.html"/>
-<ns29:title xmlns:ns29="http://hl7.org/fhir" value="Example of a ASN1 BITs measurement"/>
+<ns30:title xmlns:ns30="http://hl7.org/fhir" value="Example of a ASN1 BITs measurement"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="bloodPress-1.0.1.html"/>
-<ns30:title xmlns:ns30="http://hl7.org/fhir" value="Example of Compound measurement"/>
+<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Example of Compound measurement"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="stringenum-1234.html"/>
+<ns32:title xmlns:ns32="http://hl7.org/fhir" value="Example of String measurement"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coin-20181119202022.html"/>
-<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Example of a Coincident Time Stamp"/>
+<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example of a Coincident Time Stamp"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coin-fault20.html"/>
-<ns32:title xmlns:ns32="http://hl7.org/fhir" value="Example of a Coincident Time Stamp with a Time Fault"/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example of a Coincident Time Stamp with a Time Fault"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phd-711000FEFF5F49B0.B0495F001071.html"/>
-<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example of a Blood Pressure PHD"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example of a Blood Pressure PHD"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phd-00601900010E9234.F45EABA80832.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example of a Glucose Monitor PHD "/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example of a Glucose Monitor PHD "/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coin-20181119174911.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example of a Coincident Time Stamp "/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example of a Coincident Time Stamp "/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coin-1234.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation "/>
+<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation "/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="phg-ecde3d4e58532d31.000000000000.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example of a Gateway"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example of a Gateway"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="sisansarahId.1.2.3.4.5.6.7.8.10.html"/>
-<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example of a Patient"/>
+<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example of a Patient"/>
 <generation value="generated"/>
 </page>
 </page>

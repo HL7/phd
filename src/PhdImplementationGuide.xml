@@ -377,6 +377,16 @@ In this example there are only xml structure definitions, value sets, code syste
 
     <resource>
       <reference>
+        <reference value="Observation/stringenum-1234"/>
+      </reference> 
+      <name value="Example of String measurement"/>
+      <description value="This example is some arbitrary text from a Glucose meter explaining the failure of the measurement." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
+      <groupingId value="examples" />
+    </resource>
+
+    <resource>
+      <reference>
         <reference value="Observation/coin-20181119202022"/>
       </reference> 
       <name value="Example of a Coincident Time Stamp"/>
@@ -672,6 +682,11 @@ In this example there are only xml structure definitions, value sets, code syste
             <nameUrl value="StringEnumerationObservationProfile.html"/>
             <title value="PHD String Enumeration Observation Profile"/>
             <generation value="markdown"/>
+            <page>
+              <nameUrl value="EnumString.html"/>
+              <title value="A measurement that is a human readable string (Enumeration String)"/>
+              <generation value="markdown"/>
+            </page>
           </page>
           <page>
             <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
