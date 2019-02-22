@@ -32,6 +32,7 @@
       <path value="Observation.meta.profile" />
       <short value="Element that contains the coincident time stamp profile" />
       <definition value="A list of profiles (references to [StructureDefinition](structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](). At least one entry must be PhdCoincidentTimeStampObservation" />
+      <min value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
     </element>
 

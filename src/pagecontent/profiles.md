@@ -12,7 +12,7 @@ Each profile defines constraints, extensions, and terminology requirements for a
 
 <!-- https://stackoverflow.com/questions/27977078/how-do-i-reference-the-root-directory-of-my-site-and-why-wont-jekyll-render-so -->
 
-# <a name="back"></a> Profile Details
+# <a name="back"></a> Profile Implementation Details
 
  - [Profiles Overview](ProfilesOverview.html)
  - [Base Observation Profile](BaseObservationProfile.html)

@@ -29,6 +29,7 @@
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
       <short value="The PHD profile URL" />
+      <min value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" />
     </element>
     
