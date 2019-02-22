@@ -107,7 +107,9 @@ The final identifier is made by concatenating the entries above as follows:
 ### Additional RTSA Measurement Information
 All additional attributes that may be reported in a numerical metric measurement may also be present in an RTSA metric measurement. See the section 'Additional Note that one could report a waveform by reporting each value in the sequence as a sequence of single numeric metric measurements. Of course that would be costly in terms of bandwidth.
 
+### Examples:
 
+A short RTSA observation with a time stamp is shown in [RTSA example](Rtsa.html). Note the valueSampledData.
 
 ## Consumers of the RTSA Profile
 About the only work a consumer of this profile needs to do is to back-scale the valueSampledData.data[] values to the original values reported by the sensor. The following table summarizes where a reader can obtain the most pertinent information.
