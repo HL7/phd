@@ -268,7 +268,7 @@
       },
       "name" : "Example of PHD Device",
       "description" : "This example PHD Device resource is referenced by other examples and is present for the validator.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice",
       "groupingId" : "examples"
     },
     {
@@ -277,7 +277,7 @@
       },
       "name" : "Example Bundled upload",
       "description" : "This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation",
       "groupingId" : "examples"
     },
     {
@@ -286,7 +286,16 @@
       },
       "name" : "Example of a numeric.",
       "description" : "This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average).",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/rtsa-1234"
+      },
+      "name" : "Example of an Rtsa.",
+      "description" : "This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element.",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation",
       "groupingId" : "examples"
     },
     {
@@ -295,7 +304,7 @@
       },
       "name" : "Example of a NaN case",
       "description" : "This example contains a NaN (not a number) measurement.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation",
       "groupingId" : "examples"
     },
     {
@@ -304,7 +313,7 @@
       },
       "name" : "Example of coded enumeration",
       "description" : "This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner. It is also known as the meal context.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation",
       "groupingId" : "examples"
     },
     {
@@ -313,7 +322,7 @@
       },
       "name" : "Example of a ASN1 BITs measurement",
       "description" : "This example is a device and sensor status measurement from a pulse oximeter. This measurement indicates one or more issues the sensor had attempting to take the measurement, for example, finger poorly positioned, cannot get a sufficiently strong signal, etc.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation",
       "groupingId" : "examples"
     },
     {
@@ -322,7 +331,16 @@
       },
       "name" : "Example of Compound measurement",
       "description" : "This example is from a Blood Pressure cuff.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/stringenum-1234"
+      },
+      "name" : "Example of String measurement",
+      "description" : "This example is some arbitrary text from a Glucose meter explaining the failure of the measurement.",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation",
       "groupingId" : "examples"
     },
     {
@@ -331,7 +349,7 @@
       },
       "name" : "Example of a Coincident Time Stamp",
       "description" : "This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD. This situation is the most prevalent.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation",
       "groupingId" : "examples"
     },
     {
@@ -340,7 +358,7 @@
       },
       "name" : "Example of a Coincident Time Stamp with a Time Fault",
       "description" : "This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation",
       "groupingId" : "examples"
     },
     {
@@ -349,7 +367,7 @@
       },
       "name" : "Example of a Blood Pressure PHD",
       "description" : "This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information.",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation",
       "groupingId" : "examples"
     },
     {
@@ -358,7 +376,7 @@
       },
       "name" : "Example of a Glucose Monitor PHD ",
       "description" : "This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation",
       "groupingId" : "examples"
     },
     {
@@ -367,7 +385,7 @@
       },
       "name" : "Example of a Coincident Time Stamp ",
       "description" : "This Coincident Time Stamp observation is referenced by the Blood Pressure Observation",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation",
       "groupingId" : "examples"
     },
     {
@@ -376,7 +394,7 @@
       },
       "name" : "Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation ",
       "description" : "This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation",
       "groupingId" : "examples"
     },
     {
@@ -385,7 +403,7 @@
       },
       "name" : "Example of a Gateway",
       "description" : "This example maps an Android Gateway",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice",
       "groupingId" : "examples"
     },
     {
@@ -394,7 +412,7 @@
       },
       "name" : "Example of a Patient",
       "description" : "This example maps a patient where an optional patient name is included",
-      "exampleBoolean" : true,
+      "exampleCanonical" : "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient",
       "groupingId" : "examples"
     }],
     "page" : {
@@ -403,7 +421,7 @@
       "generation" : "html",
       "page" : [{
         "nameUrl" : "index.html",
-        "title" : "Continua PHD Implementation guide Home Page",
+        "title" : "Personal Health Device Implementation Guide Home Page",
         "generation" : "markdown",
         "page" : [{
           "nameUrl" : "overview.html",
@@ -597,12 +615,22 @@
           {
             "nameUrl" : "RtsaObservationProfile.html",
             "title" : "PHD Real Time Sample Array Observation Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "Rtsa.html",
+              "title" : "Real Time Sample Array; Pleth wave",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "StringEnumerationObservationProfile.html",
             "title" : "PHD String Enumeration Observation Profile",
-            "generation" : "markdown"
+            "generation" : "markdown",
+            "page" : [{
+              "nameUrl" : "EnumString.html",
+              "title" : "A measurement that is a human readable string (Enumeration String)",
+              "generation" : "markdown"
+            }]
           },
           {
             "nameUrl" : "CoincidentTimeStampObservationProfile.html",
@@ -811,6 +839,11 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "rtsa-1234.html",
+          "title" : "Example of an Rtsa.",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "nan-1.0.0.42.html",
           "title" : "Example of a NaN case",
           "generation" : "generated"
@@ -828,6 +861,11 @@
         {
           "nameUrl" : "bloodPress-1.0.1.html",
           "title" : "Example of Compound measurement",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "stringenum-1234.html",
+          "title" : "Example of String measurement",
           "generation" : "generated"
         },
         {

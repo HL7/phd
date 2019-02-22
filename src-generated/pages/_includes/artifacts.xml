@@ -236,6 +236,13 @@
 </tr>
 <tr>
 <td style="column-width:30%">
+<a href="rtsa-1234.html">
+                        •  Example of an Rtsa.</a>
+</td>
+<td>This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element.</td>
+</tr>
+<tr>
+<td style="column-width:30%">
 <a href="nan-1.0.0.42.html">
                         •  Example of a NaN case</a>
 </td>
@@ -261,6 +268,13 @@
                         •  Example of Compound measurement</a>
 </td>
 <td>This example is from a Blood Pressure cuff.</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="stringenum-1234.html">
+                        •  Example of String measurement</a>
+</td>
+<td>This example is some arbitrary text from a Glucose meter explaining the failure of the measurement.</td>
 </tr>
 <tr>
 <td style="column-width:30%">

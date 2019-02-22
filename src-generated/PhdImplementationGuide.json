@@ -154,6 +154,8 @@
     },
     "Observation/spotnumeric-1.0.0.3":{
     },
+    "Observation/rtsa-1234":{
+    },
     "Observation/nan-1.0.0.42":{
     },
     "Observation/glucose-1.0.0.4":{
@@ -161,6 +163,8 @@
     "Observation/bits-1.0.0.40":{
     },
     "Observation/bloodPress-1.0.1":{
+    },
+    "Observation/stringenum-1234":{
     },
     "Observation/coin-20181119202022":{
     },

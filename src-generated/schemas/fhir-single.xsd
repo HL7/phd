@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Feb 18, 2019 14:54+0000 for FHIR v4.0.0 
+  Generated on Wed, Feb 20, 2019 06:06+0000 for FHIR v4.0.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.0.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -21418,6 +21418,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="procedure" type="FamilyMemberHistory.Procedure" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The significant Procedures (or procedure) that the family member had. This is a repeating section to allow a system to represent more than one procedure per resource, though there is nothing stopping multiple resources - one per procedure.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -21456,6 +21461,47 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
               <xs:documentation xml:lang="en">An area where general notes can be placed about this specific condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FamilyMemberHistory.Procedure">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Significant health conditions for a person related to the patient relevant in the context of care for the patient.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The actual procedure specified. Could be a coded procedure or a less specific string depending on how much is known about the procedure and the capabilities of the creating system.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="outcome" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates what happened following the procedure. If the procedure resulted in death, deceased date is captured on the relation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contributedToDeath" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This procedure contributed to the cause of death of the related person. If contributedToDeath is not populated, then it is unknown.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Estimated or actual date, date-time, period, or age when the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="performedAge" type="Age"/>
+            <xs:element name="performedRange" type="Range"/>
+            <xs:element name="performedPeriod" type="Period"/>
+            <xs:element name="performedString" type="string"/>
+            <xs:element name="performedDateTime" type="dateTime"/>
+          </xs:choice>
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An area where general notes can be placed about this specific procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -27864,7 +27910,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">A code indicating why the administration was not performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates where the medication is expected to be consumed or administered.</xs:documentation>
            </xs:annotation>
@@ -28041,7 +28087,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
             <xs:element name="statusReasonCodeableConcept" type="CodeableConcept"/>
             <xs:element name="statusReasonReference" type="Reference"/>
           </xs:choice>
-          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).</xs:documentation>
            </xs:annotation>
@@ -28115,7 +28161,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="receiver" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies the person who picked up the medication or the location of where the medication was delivered.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional or a location.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -28190,7 +28236,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Indicates the reason for the substitution (or lack of substitution) from what was prescribed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="responsibleParty" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="responsibleParty" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The person or organization that has primary responsibility for the substitution.</xs:documentation>
            </xs:annotation>
@@ -28798,7 +28844,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="supportingInformation" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Include additional information (for example, patient height and weight) that supports the ordering of the medication.</xs:documentation>
+              <xs:documentation xml:lang="en">Include additional information (for example, patient height and weight, a medicationStatement for the patient) that supports the ordering of the medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="authoredOn" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -28858,7 +28904,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="courseOfTherapyType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The description of the overall patte3rn of the administration of the medication to the patient.</xs:documentation>
+              <xs:documentation xml:lang="en">The description of the overall pattern of the administration of the medication to the patient.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="insurance" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -29137,7 +29183,7 @@ The primary difference between a medication statement and a medication administr
               <xs:documentation xml:lang="en">A larger event of which this particular event is a component or step.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="MedicationStatusCodes">
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="MedicationStatementStatusCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">A code representing the patient or other source's judgment about the state of the medication used that this statement is about.  Generally, this will be active or completed.</xs:documentation>
            </xs:annotation>
@@ -29147,7 +29193,7 @@ The primary difference between a medication statement and a medication administr
               <xs:documentation xml:lang="en">Captures the reason for the current state of the MedicationStatement.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates where the medication is expected to be consumed or administered.</xs:documentation>
            </xs:annotation>
@@ -29212,6 +29258,61 @@ The primary difference between a medication statement and a medication administr
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="MedicationStatementStatusCodes-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="active">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Completed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered-in-error">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intended">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Intended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stopped">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Stopped</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="on-hold">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">On Hold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="not-taken">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not Taken</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MedicationStatementStatusCodes">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A coded concept indicating the current status of a MedicationStatement.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="MedicationStatementStatusCodes-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
