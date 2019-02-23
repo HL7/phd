@@ -83,7 +83,7 @@
       <!-- the conditional create slice is distinguished by having a value element, no system and no type -->
       <slicing>
         <discriminator>
-          <type value="value" />
+          <type value="exists" />
           <path value="value" />
         </discriminator>
         <discriminator>

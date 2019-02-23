@@ -21,10 +21,10 @@ This attribute contain a measurement that is a sequence of scaled periodic value
 |Sa-Specification.SampleType.*significant-bits*|integer|Number of significant bits in the sample value|
 |Sa-Specification.SampleType.*sample-size*|integer|Number of bits in each sample; gives the *X* value in 'Scale-and-Range-Specification*X*'|
 |Sa-Specification.*array-size* |integer|Number of samples in 'Simple-Sa-Observed-Value'|
-|Scale-and-Range-Specification*X*.*upper-absolute-value*|Mder FLOAT|Highest unscaled value PHD will report|
-|Scale-and-Range-Specification*X*.*lower-absolute-value*|Mder FLOAT|Lowest unscaled value PHD will report|
-|Scale-and-Range-SpecificationX.*upper-scaled-value*|*X*-bit integer|The upper range scaled|
-|Scale-and-Range-SpecificationX.*lower-scaled-value*|*X*-bit integer|The lower range scaled|
+|Scale-and-Range-Specification*X*.*upper-absolute-value*|Mder FLOAT|Highest unscaled value PHD will report *(Optional)*|
+|Scale-and-Range-Specification*X*.*lower-absolute-value*|Mder FLOAT|Lowest unscaled value PHD will report *(Optional)*|
+|Scale-and-Range-SpecificationX.*upper-scaled-value*|*X*-bit integer|The upper range scaled *(Optional)*|
+|Scale-and-Range-SpecificationX.*lower-scaled-value*|*X*-bit integer|The lower range scaled *(Optional)*|
 
 If (*significantBits* < *sampleSize*)
  - the most significant (*sampleSize* - *significantBits*) bits of the sample *i* are zeroed and are treated as unsigned integers
@@ -34,7 +34,7 @@ If *significantBits* equals 255
 otherwise
  - the samples are treated as unsigned integers.
 
-The upper and lower ranges represent the upper and lower actual sensor ranges that can be reported. The name 'absolute' in the attribute does not refer to the mathematical definition of an absolute value. The upper and lower values do NOT mean that a given set of samples has those values or that those values are ever reported by the sensor. However, a graphing application could use those values to define the upper and lower ranges of a graph and be assured that the waveform would never go above or below those boundaries. These upper and lower boundaries are placed in the Observation.referenceRange.low and Observation.referenceRange.high elements, respectively.
+The upper and lower ranges represent the upper and lower actual sensor ranges that can be reported. The name 'absolute' in the attribute does not refer to the mathematical definition of an absolute value. The upper and lower values do NOT mean that a given set of samples has those values or that those values are ever reported by the sensor. However, a graphing application could use those values to define the upper and lower ranges of a graph and be assured that the waveform would never go above or below those boundaries. These upper and lower boundaries are placed in the Observation.referenceRange.low and Observation.referenceRange.high elements, respectively. For a representation of the waveform, the offset and scale factors are sufficient. Reporting the Scale-and-Range-SpecificationX attributes is optional, though they will be needed in deriving the values reported in the valueSampledData element.
 
 The structure definition for the PHD Rtsa Observation Profile is shown [here](PhdRtsaObservation.html)
 

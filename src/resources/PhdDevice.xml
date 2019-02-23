@@ -395,7 +395,6 @@
         <rules value="open" />
       </slicing>
       <!-- There will, at minimum be a MDC_TIME_SYNC_PROTOCOL entry -->
-      <min value="1" />
     </element>
 
     <!-- The BITS property: Input a 16/32-bit ASN1 BITS field: may need up to 16/32 entrants! -->
@@ -422,11 +421,12 @@
       <path value="Device.property.type.text" />
       <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
     </element>
-    <!-- Slice the coding to allow one to express the same concept in another coding system -->
+    <!-- THis is an ASN1 BITS code, tied to value. Use only one coding system -->
     <element id="Device.property:bitProperties.type.coding">
       <path value="Device.property.type.coding" />
       <short value="Required ASN1 code system entry" />
       <min value="1" />
+      <max value="1" />
     </element>
     <!-- The system value is fixed -->
     <element id="Device.property:bitProperties.type.coding.system">
@@ -502,17 +502,30 @@
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:quantitiesProperty.type.coding">
       <path value="Device.property.type.coding" />
-      <short value="Required MDC code system entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
+    <element id="Device.property:quantitiesProperty.type.coding:MDCType">
+      <path value="Device.property.type.coding" />
+      <sliceName value="MDCType" />
+      <short value="The 11073-10101 MDC code for the type" />
+      <min value="1" />
+      <max value="1" />
+    </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:quantitiesProperty.type.coding.system">
+    <element id="Device.property:quantitiesProperty.type.coding:MDCType.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined quantity properties reported by the device -->
-    <element id="Device.property:quantitiesProperty.type.coding.code">
+    <element id="Device.property:quantitiesProperty.type.coding:MDCType.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting of the time quantities as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
@@ -576,16 +589,30 @@
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:singleCodedProperties.type.coding">
       <path value="Device.property.type.coding" />
-      <short value="Required MDC code system entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Device.property:singleCodedProperties.type.coding:MDCType">
+      <path value="Device.property.type.coding" />
+      <sliceName value="MDCType" />
+      <short value="The 11073-10101 MDC code for the type" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:singleCodedProperties.type.coding.system">
+    <element id="Device.property:singleCodedProperties.type.coding:MDCType.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined single-coded properties reported by the device -->
-    <element id="Device.property:singleCodedProperties.type.coding.code">
+    <element id="Device.property:singleCodedProperties.type.coding:MDCType.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting one of the time codes as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
@@ -659,18 +686,32 @@
       <definition value="It is recommended to display at least the MDC reference identifier for the code" />
     </element>
     <!-- The MDCType slice of the coding element: This element is required -->
+    <element id="Device.property:codedListProperties.type.coding">
+      <path value="Device.property.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
     <element id="Device.property:codedListProperties.type.coding:MDCType">
       <path value="Device.property.type.coding" />
-      <short value="Required MDC code system entry" />
+      <sliceName value="MDCType" />
+      <short value="The 11073-10101 MDC code for the type" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:codedListProperties.type.coding.system">
+    <element id="Device.property:codedListProperties.type.coding:MDCType.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined coded list properties reported by the device -->
-    <element id="Device.property:codedListProperties.type.coding.code">
+    <element id="Device.property:codedListProperties.type.coding:MDCType.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;

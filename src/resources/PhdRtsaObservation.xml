@@ -184,13 +184,11 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-      <min value="1" />
     </element>
     <element id="Observation.referenceRange:scaleAndReferenceRange">
       <path value="Observation.referenceRange" />
       <sliceName value="scaleAndReferenceRange" />
       <short value="Provides the scale factors as sent by the 20601 device" />
-      <min value="1" />
       <max value="1" />
     </element>
     <element id="Observation.referenceRange:scaleAndReferenceRange.low">
