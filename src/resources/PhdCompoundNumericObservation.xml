@@ -23,11 +23,28 @@
       <definition value="The PhdCompoundNumericObservation reports PHD measurements that contain one of either a Compound-Basic-Nu-Observed-Value, Compound-Simple-Nu-Observed-Value, or Compound-Nu-Observed-Value attribute." />
       <comment value="Used for compound numeric observations from Personal Health Devices" />
     </element>
-    
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+
+    <!-- meta profile -->
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <short value="The PHD Compound numeric profile URL" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+    </element>
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" />
     </element>
     
@@ -143,6 +160,8 @@
       <sliceName value="MDCType" />
       <short value="The 11073-10101 MDC code for the measurement" />
       <definition value="This MDC code expresses what the measurement is" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="Observation.component:compound.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
@@ -241,6 +260,8 @@
       <path value="Observation.component.interpretation.coding" />
       <sliceName value="MsmtStatusInterpretation" />
       <short value="Measurement status interpretation when questionable, calibration-ongoing, validated, early-indication, threshold exceeded, alarm inhibited" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="Observation.component:compound.interpretation.coding:MsmtStatusInterpretation.system">
       <path value="Observation.component.interpretation.coding.system" />
@@ -273,14 +294,28 @@
     </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:accuracyComponent.code.coding.system">
+    <element id="Observation.component:accuracyComponent.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MdcType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:accuracyComponent.code.coding.code">
+    <element id="Observation.component:accuracyComponent.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="The code for the Accuracy attribute is 67914" />
       <min value="1" />

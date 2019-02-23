@@ -25,11 +25,28 @@
       <comment value="Used for non-compound numeric observations from Personal Health Devices" />
     </element>
 
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+
     <!-- Meta profile -->
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <short value="The PHD profile URL" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+    </element>
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" />
     </element>
     
@@ -153,14 +170,28 @@
     </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:accuracyComponent.code.coding.system">
+    <element id="Observation.component:accuracyComponent.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MdcType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:accuracyComponent.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:accuracyComponent.code.coding.code">
+    <element id="Observation.component:accuracyComponent.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="The code for the Accuracy attribute is 67914" />
       <min value="1" />
@@ -212,8 +243,10 @@
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <comment value="Normally alternative coding systems are allowed but in this case the value is intimately tied to the code. The code represents the feature indicated by a bit settin in the attribute value. which is either cleared (0) or set (1). Thus the value for this entry is itself a binary 'Y' or 'N' code from http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <short value="Only the ASN1 to HL7 coding for this item." />
+      <comment value="Normally alternative coding systems are allowed but in this case the value is intimately tied to the code. The code represents the feature indicated by a bit setting in the attribute value. which is either cleared (0) or set (1). Thus the value for this entry is itself a binary 'Y' or 'N' code from http://terminology.hl7.org/CodeSystem/v2-0203" />
       <min value="1" />
+      <max value="1" />
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding.system">
       <path value="Observation.component.code.coding.system" />
@@ -289,20 +322,32 @@
       <path value="Observation.component.code.text" />
       <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_LIMIT_CURR" />
     </element>
-    <element id="Observation.component:currentLimitsComponent.code.coding">
+     <element id="Observation.component:currentLimitsComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <short value="Required MDC code entry." />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.component:currentLimitsComponent.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MdcType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Observation.component:currentLimitsComponent.code.coding.system">
+    <element id="Observation.component:currentLimitsComponent.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <definition value="Indicates the MDC coding system" />
       <comment value="The code is that of the Current-Limits attribute" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:currentLimitsComponent.code.coding.code">
+    <element id="Observation.component:currentLimitsComponent.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="Shall be the code of the Current-Limits attribute." />
       <min value="1" />
@@ -387,16 +432,30 @@
       <path value="Observation.component.code.text" />
       <definition value="The reference identifier for the attribute should be included. The Alert-Op-Text-String attribute ref id is MDC_ATTR_AL_OP_TEXT_STRING" />
     </element>
-    <element id="Observation.component:alertOpTextStringComponent.code.coding">
+     <element id="Observation.component:alertOpTextStringComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <short value="Required MDC code entry." />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
     </element>
-    <element id="Observation.component:alertOpTextStringComponent.code.coding.system">
+    <element id="Observation.component:alertOpTextStringComponent.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MdcType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:alertOpTextStringComponent.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:alertOpTextStringComponent.code.coding.code">
+    <element id="Observation.component:alertOpTextStringComponent.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="The MDC code for the Alert-Op-Text-String attribute" />
       <min value="1" />
@@ -439,19 +498,32 @@
       <path value="Observation.component.code.text" />
       <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_MSMT_CONFIDENCE_95" />
     </element>
-    <element id="Observation.component:measurementConfidence95Component.code.coding">
+     <element id="Observation.component:measurementConfidence95Component.code.coding">
       <path value="Observation.component.code.coding" />
-      <short value="The required MDC code entry" /> 
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:measurementConfidence95Component.code.coding.system">
+    <element id="Observation.component:measurementConfidence95Component.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MdcType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:measurementConfidence95Component.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <definition value="Indicates the MDC coding system" />
       <comment value="The code is that of the Current-Limits attribute" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:measurementConfidence95Component.code.coding.code">
+    <element id="Observation.component:measurementConfidence95Component.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="Shall be the code of the Current-Limits attribute." />
       <min value="1" />
@@ -471,7 +543,7 @@
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.value">
       <path value="Observation.component.valueRange.low.value" />
-      <definition value="Thsi value is given by Measurement-Confidence-95.lower-bound as an MDER-FLOAT and shall be expressed in the precsion indcated by the MDER-FLOAT construct." />
+      <definition value="Thsi value is given by Measurement-Confidence-95.lower-bound as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the lower bound of the range for which the manufacturer is 95% confident that the measurement reported lies in." />
       <min value="1" />
     </element>
@@ -536,17 +608,30 @@
       <path value="Observation.component.code.text" />
       <definition value="The reference identifier for the attribute should be included. The Threshold-Notification-Text-String attribute ref id is MDC_ATTR_THRES_NOTIF_TEXT_STRING" />
     </element>
-    <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding">
+     <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding">
       <path value="Observation.component.code.coding" />
-      <short value="The required MDC code entry" /> 
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding.system">
+    <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding:MdcType">
+      <path value="Observation.component.code.coding" />
+      <sliceName value="MdcType" />
+      <short value="The 11073-10101 MDC code for the measurement" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding:MdcType.system">
       <path value="Observation.component.code.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding.code">
+    <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding:MdcType.code">
       <path value="Observation.component.code.coding.code" />
       <definition value="The MDC code for the Threshold-Notification-Text-String attribute" />
       <min value="1" />

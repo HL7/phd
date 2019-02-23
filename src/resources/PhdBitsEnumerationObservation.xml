@@ -23,15 +23,31 @@
       <definition value="The PhdBitsEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Bit-Str or Enum-Observed-Value-Basic-Bit-Str attribute." />
       <comment value="This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073 10101 BITs value. This measurement is a complex representation where each bit means something. In many cases only certain bits are defined and it is generally true that the significant case is when the bit has been set. Given that measurement could result in up to 32 component entries (one for each bit) only set bits are required to be reported. Some specializations have used this measurement type when they should have used IEEE 10101 codes." />
     </element>
-    
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+
     <!-- Meta profile -->
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <short value="The PHD BITs profile URL" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+    </element>
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" />
     </element>
-    
+
 <!-- No value[x] in a BITs meansurement; Values in components  -->
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />

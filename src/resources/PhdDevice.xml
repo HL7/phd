@@ -30,11 +30,24 @@
       <path value="Device.meta" />
       <min value="1" />
     </element>
-    <!-- Indicate that we are slicing the profile element -->
+
+    <!-- Meta profile -->
     <element id="Device.meta.profile">
       <path value="Device.meta.profile" />
-      <short value="PhdDevice Profile entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+    </element>
+    <element id="Device.meta.profile:phdProfile">
+      <path value="Device.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice" />
     </element>
 
@@ -45,7 +58,11 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="system" />
+          <path value="type.coding.system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="type.coding.code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -72,7 +89,9 @@
     <element id="Device.identifier:systemIdIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
       <short value="Indicates this is the IEEE 11073 System Id identifier" />
+      <!-- by not slicing on the coding we are not allowing other code systems to express the SYSID. This is considered ok here-->
       <min value="1" />
+      <max value="1" />
     </element>
     <element id="Device.identifier:systemIdIdentifier.type.coding.system">
       <path value="Device.identifier.type.coding.system" />
@@ -101,12 +120,53 @@
       <min value="1" />
     </element>
 
+    <element id="Device.identifier:btmacAddressIdentifier">
+      <path value="Device.identifier" />
+      <sliceName value="btmacAddressIdentifier" />
+      <short value="Bluetooth MAC Transport address identifier" />
+      <definition value="This entry contains the Bluetooth MAC transport address." />
+      <alias value="Bluetooth MAC Transport address" />
+      <max value="1" />
+    </element>
+    <element id="Device.identifier:btmacAddressIdentifier.type">
+      <path value="Device.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Device.identifier:btmacAddressIdentifier.type.coding">
+      <path value="Device.identifier.type.coding" />
+      <short value="Indicates this is the Bluetooth Mac address identifier" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Device.identifier:btmacAddressIdentifier.type.coding.system">
+      <path value="Device.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" />
+    </element>
+    <element id="Device.identifier:btmacAddressIdentifier.type.coding.code">
+      <path value="Device.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="BTMAC" />
+    </element>
+    <element id="Device.identifier:btmacAddressIdentifier.system">
+      <path value="Device.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/sid/eui-48" />
+    </element>
+    <element id="Device.identifier:btmacAddressIdentifier.value">
+      <path value="Device.identifier.value" />
+      <definition value="The Bluetooth MAC as an EUI-48 such as 00-E5-DE-AD-77-C3. " />
+      <comment value="Transport addresses are supposed to be unique for a given device." />
+      <min value="1" />
+    </element>
+
     <element id="Device.identifier:macAddressIdentifier">
       <path value="Device.identifier" />
       <sliceName value="macAddressIdentifier" />
       <short value="MAC Transport address identifier" />
       <definition value="This entry contains the MAC transport address." />
       <alias value="MAC Transport address" />
+      <max value="1" />
     </element>
     <element id="Device.identifier:macAddressIdentifier.type">
       <path value="Device.identifier.type" />
@@ -114,8 +174,9 @@
     </element>
     <element id="Device.identifier:macAddressIdentifier.type.coding">
       <path value="Device.identifier.type.coding" />
-      <short value="Indicates this is the IEEE 11073 System Id identifier" />
+      <short value="Indicates this is the Mac address identifier" />
       <min value="1" />
+      <max value="1" />
     </element>
     <element id="Device.identifier:macAddressIdentifier.type.coding.system">
       <path value="Device.identifier.type.coding.system" />
@@ -124,8 +185,8 @@
     </element>
     <element id="Device.identifier:macAddressIdentifier.type.coding.code">
       <path value="Device.identifier.type.coding.code" />
-      <short value="Code for a particular type of MAC address, one of BTMAC or ETHMAC" />
       <min value="1" />
+      <fixedCode value="ETHMAC" />
     </element>
     <element id="Device.identifier:macAddressIdentifier.system">
       <path value="Device.identifier.system" />
@@ -134,7 +195,7 @@
     </element>
     <element id="Device.identifier:macAddressIdentifier.value">
       <path value="Device.identifier.value" />
-      <definition value="The MAC as an EUI-48 such as 00-E5-DE-AD-77-C3. " />
+      <definition value="The MAC as an EUI-48 such as 00-E5-DE-AD-77-C8. " />
       <comment value="Transport addresses are supposed to be unique for a given device." />
       <min value="1" />
     </element>

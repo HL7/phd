@@ -26,11 +26,24 @@
       <path value="Patient.meta" />
       <min value="1" />
     </element>
-    <!-- Indicate that we are slicing the profile element -->
+
+    <!-- Meta profile -->
     <element id="Patient.meta.profile">
       <path value="Patient.meta.profile" />
-      <short value="PhdPatient Profile entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+    </element>
+    <element id="Patient.meta.profile:phdProfile">
+      <path value="Patient.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" />
     </element>
     
@@ -59,7 +72,8 @@
       <sliceName value="v2Coding" />
       <short value="Code defined by http://www.hl7.org/fhir/CodeSystem/v2-0203" />
       <definition value="A code using the V2 http://www.hl7.org/fhir/CodeSystem/v2-0203/ system." />
-      <comment value="This HL7 V2 coding system identifies that this is the Continua identifier. The V2 system supports many possible types of identifiers. For a local coding system use 'L', for an unknown patient use 'U'" />
+      <comment value="This HL7 V2 coding system identifies that this is the Continua identifier. The V2 system supports many possible types of identifiers. For a local coding system use 'L', for an unknown identifier, for example with an unknown patient, use 'U'" />
+      <min value="1" />
       <max value="1" />
     </element>
     <element id="Patient.identifier.type.coding:v2Coding.system">
@@ -83,7 +97,7 @@
     </element>
     <element id="Patient.identifier.value">
       <path value="Patient.identifier.value" />
-      <short value="The patient identfier under the jurisdiction indicated by the system element. For unknown patient this would be 'U'." />
+      <short value="The patient identifier under the jurisdiction indicated by the system element. For unknown patient this would be 'U'." />
       <min value="1" />
     </element>
   </differential>

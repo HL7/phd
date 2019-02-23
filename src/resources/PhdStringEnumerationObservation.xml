@@ -28,12 +28,24 @@
       <path value="Observation.meta" />
       <min value="1" />
     </element>
-    
+
     <!-- Meta profile -->
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
-      <short value="The PHD String Enum profile URL" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+    </element>
+    <element id="Observation.meta.profile:phdProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="phdProfile" />
+      <min value="1" />
+      <max value="1" />
       <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation" />
     </element>
     
