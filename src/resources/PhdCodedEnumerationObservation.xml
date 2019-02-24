@@ -35,7 +35,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="$this" />
+          <path value="value" />
         </discriminator>
         <rules value="open" />
       </slicing>

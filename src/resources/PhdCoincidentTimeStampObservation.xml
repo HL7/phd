@@ -34,7 +34,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="$this" />
+          <path value="value" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -124,9 +124,6 @@
       <short value="The current time of the PHG at the current time of the PHD. Absent if PHD is better synchronized" />
       <definition value="The time of the PHG at the time the current time of the PHD is ascertained." />
       <comment value="This element is absent if the PHD has superior time synchronization relative to the PHG. Wnen this element is absent it indicates that the PHG reported the measurement time stamps of the PHD without modification." />
-      <type>
-        <code value="dateTime" />
-      </type>
     </element>
     
     <element id="Observation.value[x]">

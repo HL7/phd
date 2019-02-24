@@ -373,7 +373,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="type" />
+          <path value="type.coding.system" />
         </discriminator>
         <rules value="open" />
       </slicing>
