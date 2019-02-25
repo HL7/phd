@@ -15,12 +15,12 @@
   <description value="ValueSet for the ANS1ToHL7 codes that are not derived from enumeration measurements."/>
   <compose>
     <include>
-	    <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
-	    <filter>
-	      <property value="source"/>
-		    <op value="="/>
-		    <value value="attribute"/>
-	    </filter>
-	  </include>
+        <system value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"/>
+        <filter>
+          <property value="source"/>
+            <op value="="/>
+            <value value="attribute"/>
+        </filter>
+      </include>
   </compose>
 </ValueSet>
