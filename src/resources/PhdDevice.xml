@@ -37,7 +37,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="$this" />
+          <path value="value" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -379,7 +379,8 @@
       <min value="1" />
     </element>
     
-    <!-- PROPERTY: This element is going to be sliced for time capabilities, clock resolution, time synchronization,
+    <!-- =================================PROPERTY:====================================
+    This element is going to be sliced for time capabilities, clock resolution, time synchronization,
     synchronization accuracy, PHD certification lists, and regulations status. There can be many property elements
     for PHDs. -->
     <element id="Device.property">
@@ -421,7 +422,7 @@
       <path value="Device.property.type.text" />
       <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
     </element>
-    <!-- THis is an ASN1 BITS code, tied to value. Use only one coding system -->
+    <!-- This is an ASN1 BITS code, tied to value. Use only one coding system -->
     <element id="Device.property:bitProperties.type.coding">
       <path value="Device.property.type.coding" />
       <short value="Required ASN1 code system entry" />
