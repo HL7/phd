@@ -37,7 +37,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="$this" />
+          <path value="value" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -48,7 +48,7 @@
       <sliceName value="phdProfile" />
       <min value="1" />
       <max value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice" />
     </element>
     
     <!-- IDENTIFIER -->
@@ -373,7 +373,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="type.coding.system" />
+          <path value="type" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -458,8 +458,8 @@
       <fixedCode value="us" />
     </element>
     
-    <!-- The singleCodedProperties property. At this time there is only one
-    single-coded entry reported by PHGs; the time synchronization -->
+<!--    <!{1}** The singleCodedProperties property. At this time there is only one
+    single-coded entry reported by PHGs; the time synchronization **{1}>
     <element id="Device.property:singleCodedProperties">
       <path value="Device.property" />
       <sliceName value="singleCodedProperties" />
@@ -480,29 +480,29 @@
       <path value="Device.property.type.text" />
       <definition value="It is recommended to display at least the MDC reference identifier for the code" />
     </element>
-    <!-- Slice the coding to allow one to express the same concept in another coding system -->
+    <!{1}** Slice the coding to allow one to express the same concept in another coding system **{1}>
     <element id="Device.property:singleCodedProperties.type.coding">
       <path value="Device.property.type.coding" />
       <short value="Required MDC code system entry" />
       <min value="1" />
     </element>
-    <!-- The system value is fixed -->
+    <!{1}** The system value is fixed **{1}>
     <element id="Device.property:singleCodedProperties.type.coding.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <!-- The currently defined single-coded properties reported by the device -->
+    <!{1}** The currently defined single-coded properties reported by the device **{1}>
     <element id="Device.property:singleCodedProperties.type.coding.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting one of the time codes as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
       Description                        CODE            Reference Identifier&#xD;&#xA;
-      ------------------------------------------------------------------------------------&#xD;&#xA;
+      =========================================================================================&#xD;&#xA;
       Time synchronization              68220            MDC_TIME_SYNC_PROTOCOL&#xD;&#xA;" />
       <min value="1" />
     </element>
-    <!-- No quantity entry when the value is a code! -->
+    <!{1}** No quantity entry when the value is a code! **{1}>
     <element id="Device.property:singleCodedProperties.valueQuantity">
       <path value="Device.property.valueQuantity" />
       <max value="0" />
@@ -539,7 +539,7 @@
       <path value="Device.property.valueCode.coding.code" />
       <definition value="One of the MDC time synchronization codes" />
       <min value="1" />
-    </element>
+    </element>-->
     
     <!-- The codedListProperties property. At this time there is are two
     coded list entries for PHGs; the list of certified PHD and H&FS interfaces     -->

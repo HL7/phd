@@ -569,8 +569,8 @@
       <fixedCode value="us" />
     </element>
     
-    <!-- The singleCodedProperties property. At this time there is only one
-    single-coded entry reported by PHDs; the time synchronization     -->
+<!--    <!{1}** The singleCodedProperties property. At this time there is only one
+    single-coded entry reported by PHDs; the time synchronization     **{1}>
     <element id="Device.property:singleCodedProperties">
       <path value="Device.property" />
       <sliceName value="singleCodedProperties" />
@@ -587,7 +587,7 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
       </binding>
     </element>
-    <!-- Slice the coding to allow one to express the same concept in another coding system -->
+    <!{1}** Slice the coding to allow one to express the same concept in another coding system **{1}>
     <element id="Device.property:singleCodedProperties.type.coding">
       <path value="Device.property.type.coding" />
       <slicing>
@@ -606,19 +606,19 @@
       <min value="1" />
       <max value="1" />
     </element>
-    <!-- The system value is fixed -->
+    <!{1}** The system value is fixed **{1}>
     <element id="Device.property:singleCodedProperties.type.coding:MDCType.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <!-- The currently defined single-coded properties reported by the device -->
+    <!{1}** The currently defined single-coded properties reported by the device **{1}>
     <element id="Device.property:singleCodedProperties.type.coding:MDCType.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting one of the time codes as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
       Description                        CODE            Reference Identifier&#xD;&#xA;
-      ------------------------------------------------------------------------------------&#xD;&#xA;
+      |===================================================================================&#xD;&#xA;
       Time synchronization              68220            MDC_TIME_SYNC_PROTOCOL&#xD;&#xA;" />
       <min value="1" />
     </element>
@@ -626,7 +626,7 @@
       <path value="Device.property.type.text" />
       <definition value="It is recommended to display at least the MDC reference identifier for the MDC code" />
     </element>
-    <!-- No quantity entry when the value is a code! -->
+    <!{1}** No quantity entry when the value is a code! **{1}>
     <element id="Device.property:singleCodedProperties.valueQuantity">
       <path value="Device.property.valueQuantity" />
       <max value="0" />
@@ -663,7 +663,7 @@
       <path value="Device.property.valueCode.coding.code" />
       <definition value="One of the MDC time synchronization codes" />
       <min value="1" />
-    </element>
+    </element>-->
     
     <!-- The codedListProperties property. At this time there is only one
     coded list entry reported by PHDs; the list of certified PHD interfaces     -->
@@ -753,7 +753,7 @@
       <path value="Device.property.valueCode.coding.system" />
       <definition value="The Code System for the certified PHD interface" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
+      <!--<fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />-->
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
       <path value="Device.property.valueCode.coding.code" />
