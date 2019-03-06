@@ -100,8 +100,6 @@
   "spreadsheets": [
   ],
   "resources": {
-    "StructureDefinition/PhdDevice":{
-    },
     "StructureDefinition/PhdBaseObservation":{
     },
     "StructureDefinition/PhdNumericObservation":{
@@ -117,6 +115,8 @@
     "StructureDefinition/PhdStringEnumerationObservation":{
     },
     "StructureDefinition/PhdCoincidentTimeStampObservation":{
+    },
+    "StructureDefinition/PhdDevice":{
     },
     "StructureDefinition/PhgDevice":{
     },
