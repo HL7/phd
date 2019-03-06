@@ -4,6 +4,8 @@ Each profile defines constraints, extensions, and terminology requirements for a
 
 ### List of Profile Structure Definitions used in this Guide
 
+These structure definition profiles, along with all the resources used by this Guide, are also found in the Artifacts page.
+
 <table class="table-striped" style="width:100%">
 <col style="width:40%"/>
 <col style="width:60%"/>
