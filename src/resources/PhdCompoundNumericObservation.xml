@@ -124,6 +124,19 @@
       <path value="Observation.dataAbsentReason.coding.code" />
       <min value="1" />
     </element>
+
+    <!-- COMPONENT -->
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+
+        <rules value="open" />
+      </slicing>
+    </element>
     
     <!-- COMPONENTS FOR COMPOUNDs -->
     <element id="Observation.component:compound">
