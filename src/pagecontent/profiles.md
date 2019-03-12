@@ -2,19 +2,7 @@
 This Implementation Guide specifies profiles on the FHIR <a href="http://hl7.org/fhir/patient.html">Patient</a>, <a href="http://hl7.org/fhir/device.html">Device</a>, and <a href="http://hl7.org/fhir/observation.html">Observation</a> resources. 
 Each profile defines constraints, extensions, and terminology requirements for an implementation that claims conformance to this guide.
 
-### List of Profile Structure Definitions used in this Guide
-
-These structure definition profiles, along with all the resources used by this Guide, are also found in the Artifacts page.
-
-<table class="table-striped" style="width:100%">
-<col style="width:40%"/>
-<col style="width:60%"/>
-{% include table-structuredefinitions.xhtml %}
-</table>
-
-<!-- https://stackoverflow.com/questions/27977078/how-do-i-reference-the-root-directory-of-my-site-and-why-wont-jekyll-render-so -->
-
-# <a name="back"></a> Profile Implementation Details
+### <a name="back"></a> Profile Implementation Details
 
  - [Profiles Overview](ProfilesOverview.html)
  - [Base Observation Profile](BaseObservationProfile.html)
@@ -29,3 +17,16 @@ These structure definition profiles, along with all the resources used by this G
  - [Phd Device Profile](PhdDeviceProfile.html)
  - [Phg Device Profile](PhgDeviceProfile.html)
  - [Phd Patient Profile](PhdPatientProfile.html)
+
+### List of Profile Structure Definitions used in this Guide
+
+These structure definition profiles, along with all the resources used by this Guide, are also found in the Artifacts page.
+
+<table class="table-striped" style="width:100%">
+<col style="width:40%"/>
+<col style="width:60%"/>
+{% include table-structuredefinitions.xhtml %}
+</table>
+
+<!-- https://stackoverflow.com/questions/27977078/how-do-i-reference-the-root-directory-of-my-site-and-why-wont-jekyll-render-so -->
+
