@@ -129,7 +129,8 @@
     <!-- value[x]: The PHD time stamp -->
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />
-      <definition value="The current time of the PHD. It will be either a valueDateTime if a wallclock time or a valueQuantity if a relative time or a dataAbsentReason if there is a time fault." />
+	  <short value="The current time of the PHD as a wallclock time (dateTime), relative time (Quantity), or if a time fault a dataAbsentReason" />
+      <definition value="The current time of the PHD. It will be either a valueDateTime if a wallclock time or a valueQuantity if a relative time or a dataAbsentReason if there is a time fault. The relative time is expressed in microseconds" />
       <type>
         <code value="dateTime"/>
       </type>
