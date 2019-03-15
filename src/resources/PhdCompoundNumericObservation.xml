@@ -150,7 +150,7 @@
       <path value="Observation.component.code" />
       <binding> 
         <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCnotObject"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"/> 
       </binding>
     </element>
     <element id="Observation.component:compound.code.text">

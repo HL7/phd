@@ -195,13 +195,20 @@
       <path value="Observation.effective[x]" />
       <definition value="The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the time stamp sent by the PHD or the time of reception by the PHG if the PHD sent no time stamp." />
       <min value="1" />
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <type>
+        <code value="Period"/>
+      </type>
+     <!--
       <constraint>
         <key value="phd-obs-1"/>
-        <!-- Some time stamp SHALL be present -->
+        
         <severity value="error"/>
         <human value="Either an effectiveDateTime or effectivePeriod shall be present"/>
         <expression value="effectiveDateTime.exists() or effectivePeriod.exists().exists()"/>
-      </constraint>
+      </constraint> -->
     </element>
 
     <element id="Observation.device">

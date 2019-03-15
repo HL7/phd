@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="11073MDCnotObject"/>
+  <id value="MDCnotObject"/>
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <url value="http://hl7.org/fhir/uv/phd/ValueSet/11073MDCnotObject"/>
+  <url value="http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"/>
   <version value="0.2.0"/>
-  <name value="11073MDCnotObject"/>
+  <name value="MDCnotObject"/>
   <title value="11073 MDC Non-Object codes"/>
   <status value="draft"/>
   <experimental value="false"/>
@@ -15,12 +15,12 @@
   <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclature excluding Object partition."/>
   <compose>
     <include>
-	    <system value="urn:iso:std:iso:11073:10101"/>
-	    <filter>
-	      <property value="partition"/>
-		    <op value="not-in"/>
-		    <value value="1"/>
-	    </filter>
-	  </include>
+        <system value="urn:iso:std:iso:11073:10101"/>
+        <filter>
+          <property value="partition"/>
+            <op value="not-in"/>
+            <value value="1"/>
+        </filter>
+      </include>
   </compose>
 </ValueSet>

@@ -125,7 +125,26 @@
       <definition value="The time of the PHG at the time the current time of the PHD is ascertained." />
       <comment value="This element is absent if the PHD has superior time synchronization relative to the PHG. Wnen this element is absent it indicates that the PHG reported the measurement time stamps of the PHD without modification." />
     </element>
-    
+
+    <!-- value[x]: The PHD time stamp -->
+    <element id="Observation.value[x]">
+      <path value="Observation.value[x]" />
+      <definition value="The current time of the PHD. It will be either a valueDateTime if a wallclock time or a valueQuantity if a relative time or a dataAbsentReason if there is a time fault." />
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <type>
+        <code value="Quantity"/>
+      </type>
+      <!--
+      <constraint>
+        <key value="phd-obs-2"/>
+        <severity value="error"/>
+        <human value="Either a valueDateTime if a wallclock time or valueQuantity if a relative time shall be present"/>
+        <expression value="valueDateTime.exists() or valueQuantity.exists().exists() or dataAbsentReason.exists()"/>
+      </constraint> -->
+    </element>
+    <!--
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />
       <slicing>
@@ -145,9 +164,10 @@
       <type>
         <code value="Quantity" />
       </type>
-    </element>
+    </element> -->
     
     <!-- Wall clock time -->
+	<!--
     <element id="Observation.value[x]:wallClockTime">
       <path value="Observation.valueDateTime" />
       <sliceName value="wallClockTime" />
@@ -156,9 +176,10 @@
       <type>
         <code value="dateTime" />
       </type>
-    </element>
+    </element> -->
     
     <!-- Relative time -->
+	<!--
     <element id="Observation.value[x]:relativeTime">
       <path value="Observation.valueQuantity" />
       <sliceName value="relativeTime" />
@@ -185,7 +206,7 @@
       <comment value="The MDC code is translated to UCUM." />
       <min value="1" />
       <fixedCode value="us" />
-    </element>
+    </element> -->
     
     <element id="Observation.dataAbsentReason">
       <path value="Observation.dataAbsentReason" />
