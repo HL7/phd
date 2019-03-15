@@ -232,10 +232,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/11073MDCnotObject"/>
+        <reference value="ValueSet/MDCnotObject"/>
       </reference>
-      <name value="11073MDCnotObject"/>
-      <description value="Value set for those MDC attributes that are mapped directly to Observation component elements. These attributes all come from the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the supplemental types would give an extra description about the measurement such as &#39;duration average&#39; whereas the measurement itself might be acceleration values."/>
+      <name value="MDCnotObject"/>
+      <description value="Value set for those Observation component elements that come from compound and BITs measurements. These attributes come from several partitions but NOT the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the supplemental types would give an extra description about the measurement such as &#39;duration average&#39; whereas the measurement itself might be acceleration values."/>
       <exampleBoolean value="false"/>
       <groupingId value="valueSets"/>
     </resource>
@@ -387,7 +387,7 @@
       <reference>
         <reference value="Device/phd-00601900010E9234.F45EABA80832"/>
       </reference>
-      <name value="Example of a Glucose Monitor PHD "/>
+      <name value="Example of a Glucose Monitor PHD"/>
       <description value="This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation"/>
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
       <groupingId value="examples"/>
@@ -396,7 +396,7 @@
       <reference>
         <reference value="Observation/coin-20181119174911"/>
       </reference>
-      <name value="Example of a Coincident Time Stamp "/>
+      <name value="Example of a Coincident Time Stamp"/>
       <description value="This Coincident Time Stamp observation is referenced by the Blood Pressure Observation"/>
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
       <groupingId value="examples"/>
@@ -405,7 +405,7 @@
       <reference>
         <reference value="Observation/coin-1234"/>
       </reference>
-      <name value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation "/>
+      <name value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation"/>
       <description value="This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation"/>
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
       <groupingId value="examples"/>
@@ -812,8 +812,8 @@
           <generation value="generated"/>
         </page>
         <page>
-          <nameUrl value="valueset-11073MDCnotObject.html"/>
-          <title value="11073MDCnotObject"/>
+          <nameUrl value="valueset-MDCnotObject.html"/>
+          <title value="MDCnotObject"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -898,17 +898,17 @@
         </page>
         <page>
           <nameUrl value="phd-00601900010E9234.F45EABA80832.html"/>
-          <title value="Example of a Glucose Monitor PHD "/>
+          <title value="Example of a Glucose Monitor PHD"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="coin-20181119174911.html"/>
-          <title value="Example of a Coincident Time Stamp "/>
+          <title value="Example of a Coincident Time Stamp"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="coin-1234.html"/>
-          <title value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation "/>
+          <title value="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation"/>
           <generation value="generated"/>
         </page>
         <page>

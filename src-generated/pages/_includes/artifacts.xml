@@ -125,10 +125,10 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-11073MDCnotObject.html">
-                        •  11073MDCnotObject</a>
+<a href="valueset-MDCnotObject.html">
+                        •  MDCnotObject</a>
 </td>
-<td>Value set for those MDC attributes that are mapped directly to Observation component elements. These attributes all come from the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the supplemental types would give an extra description about the measurement such as 'duration average' whereas the measurement itself might be acceleration values.</td>
+<td>Value set for those Observation component elements that come from compound and BITs measurements. These attributes come from several partitions but NOT the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the supplemental types would give an extra description about the measurement such as 'duration average' whereas the measurement itself might be acceleration values.</td>
 </tr>
 <tr>
 <td style="column-width:30%">
@@ -300,21 +300,21 @@
 <tr>
 <td style="column-width:30%">
 <a href="phd-00601900010E9234.F45EABA80832.html">
-                        •  Example of a Glucose Monitor PHD </a>
+                        •  Example of a Glucose Monitor PHD</a>
 </td>
 <td>This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="coin-20181119174911.html">
-                        •  Example of a Coincident Time Stamp </a>
+                        •  Example of a Coincident Time Stamp</a>
 </td>
 <td>This Coincident Time Stamp observation is referenced by the Blood Pressure Observation</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="coin-1234.html">
-                        •  Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation </a>
+                        •  Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation</a>
 </td>
 <td>This Coincident Time Stamp observation is referenced by the the Glucose meal context Observation</td>
 </tr>
