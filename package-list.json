@@ -1,0 +1,39 @@
+{
+  "package-id": "hl7.fhir.uv.phd",
+  "title": "Personal Health Device Implementation Guide",
+  "canonical": "http://hl7.org/fhir/uv/phd",
+  "introduction": "The PHD Implementation Guide was developed in order to have a consistent representation of device and measurement data in FHIR.",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "http://build.fhir.org/ig/HL7/PHD",
+      "status": "ci-build",
+      "current": true
+    },
+    {
+      "version": "0.3.0",
+      "date": "xxx",
+      "desc": "STU #1 2nd Ballot",
+      "path": "http://hl7.org/fhir/uv/phd",
+      "status": "ballot",
+      "sequence": "STU1"
+    },
+    {
+      "version": "0.2.0",
+      "date": "2018-12-04",
+      "desc": "STU #1 1st Ballot",
+      "path": "http://hl7.org/fhir/uv/phd",
+      "status": "ballot",
+      "sequence": "STU1"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2018-01-01",
+      "desc": "STU #1 draft for comment",
+      "path": "http://hl7.org/fhir/uv/phd",
+      "status": "draft for comment",
+      "sequence": "STU1"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
   <url value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"/>
-  <version value="0.2.0"/>
+  <version value="0.3.0"/>
   <name value="ASN1attribute"/>
   <title value="ANS1ToHL7 codes defined for non-measurement attributes"/>
   <status value="draft"/>

@@ -13,7 +13,7 @@
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
 
-  <version value="0.2.0"/> 
+  <version value="0.3.0"/> 
 
   <name value="ContinuaPHD"/> 
   <status value="draft"/> 

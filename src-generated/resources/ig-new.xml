@@ -3,25 +3,25 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="PhdImplementationGuide"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\PHD\src-generated\resources"/>
+    <valueString value="C:\Ruby24-x64\PHD\src-generated\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\PHD\src\resources"/>
+    <valueString value="C:\Ruby24-x64\PHD\src\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\PHD\src\vocabulary"/>
+    <valueString value="C:\Ruby24-x64\PHD\src\vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\PHD\src\examples"/>
+    <valueString value="C:\Ruby24-x64\PHD\src\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\work\org.hl7.fhir.igs\PHD\src\images"/>
+    <valueString value="C:\Ruby24-x64\PHD\src\images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\work\org.hl7.fhir.igs\PHD\src-generated\pages"/>
+    <valueString value="C:\Ruby24-x64\PHD\src-generated\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
-  <version value="0.2.0"/>
+  <version value="0.3.0"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>

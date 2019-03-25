@@ -5,7 +5,7 @@
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
   <url value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/>
-  <version value="0.2.0"/>
+  <version value="0.3.0"/>
   <name value="Range11073MDC"/>
   <title value="Range 11073 Attributes"/>
   <status value="draft"/>

@@ -3,30 +3,30 @@
   "id" : "PhdImplementationGuide",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\PHD\\src-generated\\resources"
+    "valueString" : "C:\\Ruby24-x64\\PHD\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\PHD\\src\\resources"
+    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\PHD\\src\\vocabulary"
+    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\PHD\\src\\examples"
+    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\PHD\\src\\images"
+    "valueString" : "C:\\Ruby24-x64\\PHD\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\PHD\\src-generated\\pages"
+    "valueString" : "C:\\Ruby24-x64\\PHD\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "PhdImplementationGuide",
   "title" : "Personal Health Device Implementation Guide",
   "status" : "draft",

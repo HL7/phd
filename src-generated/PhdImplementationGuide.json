@@ -3,7 +3,7 @@
   "tool": "jekyll",
   "logging": ["html"],
   "version": "4.0.0",
-  "fixed-business-version": "0.2.0",
+  "fixed-business-version": "0.3.0",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",
@@ -14,7 +14,7 @@
     "temp": "../temp/pages",
     "output": "../output",
     "txCache": "txcache",
-    "history" : "history.html",
+    "history" : "http://hl7.org/fhir/uv/phd/history.cfml",
     "qa": "../temp/qa",
     "specification": "http://build.fhir.org/"
   },
