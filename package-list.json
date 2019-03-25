@@ -15,7 +15,7 @@
       "version": "0.3.0",
       "date": "xxx",
       "desc": "STU #1 2nd Ballot",
-      "path": "http://hl7.org/fhir/uv/phd",
+      "path": "http://hl7.org/fhir/uv/phd/2019May",
       "status": "ballot",
       "sequence": "STU1"
     },
