@@ -3,6 +3,7 @@ guidename=PhdImplementationGuide
 copyrightyear=2017+
 license=CC0-1.0
 version=0.3.0
+ballotstatus=STU 1 (2nd ballot)
 fhirspec=http://build.fhir.org/
 #excludexml=Yes
 #excludejson=Yes
