@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="PhdImplementationGuide"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src-generated\resources"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src-generated\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src\resources"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src\vocabulary"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Ruby24-x64\PHD\src\examples"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Ruby24-x64\PHD\src\images"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src\images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Ruby24-x64\PHD\src-generated\pages"/>
+    <valueString value="E:\Ruby25-x64\IG_Publisher\PHD\src-generated\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
   <version value="0.3.0"/>

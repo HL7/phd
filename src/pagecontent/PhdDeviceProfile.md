@@ -263,7 +263,7 @@ The time synchronization accuracy is given by the Mds-Time-Info.*time-sync-accur
  - Device.property.valueQuantity.system="http://unitsofmeasure.org"
  - Device.property.valueQuantity.code="us"  (UCUM code for microseconds)
 
- #### Time Resolution
+#### Time Resolution
 The Mds-Time-Info attribute has three fields that report the resolution of its time clocks. 
 
 The Mds-Time-Info.time-resolution-abs-time represents the resolution of the absolute-time clock when the sensor supports an absolute time clock. If the sensor supports a base-offset time clock it represents the resolution of the base-offset time clock. The sensor is not allowed to support both time clocks simultaneously during an association. Which time clock is supported is indicated by the settings of the Mder 0 and 7 bits of the time capabilities (Mds-Time-Info.mds-time-caps-state).

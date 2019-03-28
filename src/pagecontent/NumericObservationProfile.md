@@ -134,7 +134,7 @@ A basic simple numeric observation with a time stamp and a supplemental types at
 An example of a NaN (not a number) measurement is shown in [NaN Example](NumericNaN.html). Note that the value element is absent and replaced by a dataAbsentReason element.
 
 ### Consumer of the PHD Numeric Observation Profile
-The consumer of this profile does not need to concern itself with the mapping complexities or the PHD-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
+The consumer of this profile does not need to concern itself with the mapping complexities or the PHD-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile except for the HL7 gateway extension so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
 
 |Measurement item|element|Additional Information|
 |-
