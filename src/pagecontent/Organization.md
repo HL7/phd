@@ -10,7 +10,7 @@ Table of Contents
 #### Overview
 This chapter describes the purpose of these guidelines, its scope, what it is meant to do as well as what it is not meant to do, who it is of interest for, and some use cases. 
 #### Technical Implementation Guidance
-This informative chapter provides an introduction and overview of the IEEE 11073 20601 topics used in the profile mappings, such as the 20601 Device Information Model (DIM), DIM objects and attributes, nomenclature codes, Mder FLOATs and SFLOATs, among others. This chapter also discusses some of the reasons behind the generic modelling approach used by this guide. 
+This informative chapter provides an introduction and overview of the IEEE 11073 20601 topics used in the profile mappings, such as the 20601 Domain Information Model (DIM), DIM objects and attributes, nomenclature codes, Mder FLOATs and SFLOATs, among others. This chapter also discusses some of the reasons behind the generic modelling approach used by this guide. 
 #### Profiles
 This chapter contains the normative content of the guide. It provides the Structure Definitions for each of the eleven profiles as well as sections giving the mapping details. It is here where the PHG implementer needs to go to develop the software. For convenience, there are links back to sections in the Technical Implementation Guidance in the Profile Details sections when some of the trickier topics come up.
 #### Artifact Index
