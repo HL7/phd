@@ -34,7 +34,7 @@ Recall that only set bits of type 'event' need to be reported. If of type 'state
 |If reporting an unsupported bit *N*|Observation.component*M*.dataAbsentReason="unsupported"|
 
 ### Meta Data Profile
-The uploader shall populate the Device.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.
+The uploader shall populate the Observation.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.
 
 #### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.

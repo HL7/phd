@@ -4,6 +4,7 @@
   <li><a href="overview.html">Overview</a></li>
   <li><a href="TechnicalImplementationGuidance.html">Technical Implementation Guidance</a></li>
   <li><a href="profiles.html">Profiles</a></li>
+  <li><a href="ProfileConsumers.html">Profile Consumers</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
   <li><a href="http://hl7.org/fhir/uv/phd/history.html">History</a></li>
   <li><a href="{{site.data.fhir.path}}index.html">FHIR Spec</a></li>

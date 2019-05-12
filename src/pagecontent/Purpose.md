@@ -6,7 +6,7 @@ Patient information, such as demographic and administrative information about th
 
 The purpose of this Implementation Guide is to specify the mapping of PHD information to FHIR components. *No interpretations of the data or assumptions about what data is important are specified*. Implementations following this guide map **all** viable data provided by the PHDs. The receiver may handle the data as it sees fit for its use case. For example, a consumer may only be interested in the Observation and Patient resources and therefore discards the Device resources. For this reason, there is no use of the must-support criteria made by this IG.
 
-For consumers (readers) of FHIR data, this Implementation Guide specifies the FHIR resources that contain the PHD information and what elements contain what fields.
+For consumers (readers) of FHIR data, this Implementation Guide specifies the FHIR resources that contain the PHD information and what elements contain what fields. Readers interested in using the FHIR resources specified by this IG can read the  [Profile Consumers](ProfileConsumers.html) chapter.
 
  - [Next: Audience](Audience.html)
  - [Previous: Organization](Organization.html)

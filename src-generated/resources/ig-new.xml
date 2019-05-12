@@ -713,6 +713,11 @@
         </page>
       </page>
       <page>
+        <nameUrl value="ProfileConsumers.html"/>
+        <title value="Consuming the PHD Profile FHIR Resources"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <nameUrl value="artifacts.html"/>
         <title value="Artifact List"/>
         <generation value="html"/>

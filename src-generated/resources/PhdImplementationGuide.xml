@@ -720,6 +720,11 @@
           <generation value="markdown"/>
         </page>
       </page>
+       <page>
+        <nameUrl value="ProfileConsumers.html"/>
+        <title value="Consuming the PHD Profile FHIR Resources"/>
+        <generation value="markdown"/>
+      </page>
       <!-- Required element. Second 'primary' top-level page. It is generated -->
       <page>
         <nameUrl value="artifacts.html"/>

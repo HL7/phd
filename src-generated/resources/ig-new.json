@@ -723,6 +723,11 @@
         }]
       },
       {
+        "nameUrl" : "ProfileConsumers.html",
+        "title" : "Consuming the PHD Profile FHIR Resources",
+        "generation" : "markdown"
+      },
+      {
         "nameUrl" : "artifacts.html",
         "title" : "Artifact List",
         "generation" : "html",

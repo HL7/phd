@@ -38,6 +38,8 @@ The other entries are up to you BUT there is a catch. When putting in your pages
 even though the file names are 'pageName.md'. But the <generation value="markdown" />.
 Make sure the version in the src/properties.txt file is the same as the versions in you value sets and code systems
 
+The 'menu.xml' file in src/includes contains the headers or sections displayed across the top.
+
 In this example there are only xml structure definitions, value sets, code systems, and markdown pages that are all text. -->
 
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
@@ -761,6 +763,11 @@ In this example there are only xml structure definitions, value sets, code syste
           <title value="Downloads"/>
           <generation value="markdown"/>
         </page>
+      </page>
+       <page>
+        <nameUrl value="ProfileConsumers.html"/>
+        <title value="Consuming the PHD Profile FHIR Resources"/>
+        <generation value="markdown"/>
       </page>
       <!-- Required element. Second 'primary' top-level page. It is generated -->
       <page>
