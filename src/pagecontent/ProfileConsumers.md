@@ -69,10 +69,21 @@ A comprehensive list of MDC codes is available using the [NIST RTMSS Rosetta](ht
 For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, there is a mapping from MDC to LOINC available for download [here](https://loinc.org/file-access/download-id/9385/). One may freely download and use this table as needed in an implementation license free, but it does require that one create a (free) login account. At the time of this writing there is no comprehensive mapping of MDC to other code systems such as SNOMED CT. A mapping from MDC to SNOMED CT for some of the more common codes is available in the 2017 Continua Design Guidelines [H.813 HIS Interface](https://www.pchalliance.org/continua-design-guidelines) document. The guidelines are freely available for download, however it is not known what the licensing requirements are for use of the SNOMED CT code system.
 
 ##### Vital Signs
-FHIR requires that a LOINC 'magic' code be present if the measurement is one of the vital signs given [here](http://build.fhir.org/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic code. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC magic code (8867-4). In addition to the LOINC magic code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. Outside of this special case FHIR requirement, the PHD measurement profiles do not use the Observation.category element.
+FHIR requires that a LOINC 'magic' code be present if the measurement is one of the vital signs given [here](http://build.fhir.org/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic code. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC magic code (8867-4). In addition to the LOINC magic code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. When the measurement is not a vital sign, the PHD measurement profiles do not require an Observation.category element.
 
-Below is a snippet showing a code element for a measurement type that is a vital sign (body temperature):
+Below is a snippet showing a code element for a measurement type that is a vital sign (body temperature) along with the FHIR-required 'vital signs' category element:
 
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                }
+            ]
+        }
+    ],
     "code": {
         "coding": [
             {
@@ -224,7 +235,97 @@ The value of the relative time is reported as a valueQuantity in units of micros
     ]
 
 ##### Accuracy
+Accuracy information is indicated by the Observation.component.code.coding.code element having the value 67914. The accuracy applies only to measurement values that are quantities. It gives the maximum deviation as an absolute value of the reported measurement value from the actual measurement over the entire range of the measurement. It is reported in the units of the measurement itself. Though the IEEE 11073 specializations encourage providing this value it is not mandatory and few market PHDs implement it. An example of an accuracy entry for a thermometer is shown below:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "67914"
+                    }
+                ],
+                "text": "MDC_ATTR_NU_ACCUR_MSMT: Measurement accuracy"
+            },
+            "valueQuantity": {
+                "value": 0.1,
+                "system": "http://unitsofmeasure.org",
+                "code": "Cel"
+            }
+        }
+    ]
+
 ##### Alert Operational State
+The Alert Operational State is identified by an Observation.component.coding.code containing one of three possible [ASN1ToHL7](ASN1ToHL7.html) codes 67846.n where n is 0, 1, or 2. When reported, there will be a component entry for all three states. The Alert Operational state is used in the Pulse Oximeter specialization, but currently there is no market pulse oximeter that implements it.
+
+The value of the component entry is a CodeableConcept using the V2 binary code system of "Y" or "N". The entry indicates whether the alerts as a whole or that a given limit (low value or high value) is disabled or active. *When the value is "Y", the condition is disabled which maybe contrary to expectation*. This is a state-type measurement so if the PHD reports it, both the Y and N states are reported. If one does not find this entry in the component elements, it means the PHD did not report it.
+
+An example of an entry where the high alert entry is active is as follows:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                        "code": "67846.0"
+                    }
+                ],
+                "text": "lim-alert-off: Alerts limits state"
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "N"
+                    }
+                ],
+                "text": "At least one alert limit is active"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                        "code": "67846.1"
+                    }
+                ],
+                "text": "lim-low-off: Alerts lower limit state"
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "Y"
+                    }
+                ],
+                "text": "The lower alert limit is off"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                        "code": "67846.2"
+                    }
+                ],
+                "text": "lim-high-off: Alert high limit state"
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "N"
+                    }
+                ],
+                "text": "The high alert limit is active"
+            }
+        }
+    ]
+
 ##### Alert Operational Text String
 ##### Current Limits
 ##### Measurement Confidence 95
