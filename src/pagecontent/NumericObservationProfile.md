@@ -22,9 +22,9 @@ The following table shows how the numeric attributes are mapped to FHIR. Since t
 
 |Attribute|FHIR coding|
 |-
-|Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
-|Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)|
-|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>handle measurement status see [PHD Base Observation Profile](BaseObservationProfile.html) |
+|Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"|
+|Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"|
+|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>handle measurement status see [PHD Base Observation Profile](BaseObservationProfile.html) |
 
 ### Meta Data Profile
 The uploader shall populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation indicating this resource is generated following the PHD Implementation Guide.
@@ -105,7 +105,7 @@ The Measurement-Confidence-95 attribute is currently used only in the Continuous
 
 |Observation.component element|entry|Additional Information|
 |-
-|code.coding.code|526998|This is the MDC code for the Measurement-Confidence-95 attribute|
+|code.coding.code|68236|This is the MDC code for the Measurement-Confidence-95 attribute|
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
 |code.text|optional but|Should contain the reference id MDC_ATTR_MSMT_CONFIDENCE_95 along with any other additional text|
 |valueRange.low.value|the value|This is the lower limit|

@@ -66,7 +66,7 @@ The measurement type tells what the measurement is. In HL7 such information is t
 
 A comprehensive list of MDC codes is available using the [NIST RTMSS Rosetta](https://rtmms.nist.gov/rtmms/index.htm).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. The Rosetta is still a work in progress and one may find the user interface a little hard to navigate. One can find more information about the MDC code system [here](http://build.fhir.org/mdc.html).
 
-For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, there is a mapping from MDC to LOINC available for download [here](https://loinc.org/file-access/download-id/9385/). One may freely download and use this table as needed in an implementation license free, but it does require that one create a (free) login account. At the time of this writing there is no comprehensive mapping of MDC to other code systems such as SNOMED CT. A mapping from MDC to SNOMED CT for some of the more common codes is available in the 2017 Continua Design Guidelines [H.813 HIS Interface](https://www.pchalliance.org/continua-design-guidelines) document. The guidelines are freely available for download, however it is not known what the licensing requirements are for use of the SNOMED CT code system.
+For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, there is a mapping from MDC to LOINC available [here](https://loinc.org/collaboration/ieee/) with a direct link to the download [here](https://loinc.org/file-access/download-id/9385/). The FHIR MDC to LOINC concept map is available [here](https://fhir.loinc.org/ConceptMap/?url=http://loinc.org/cm/loinc-to-ieee-device-codes). One may freely download and use this material as needed in an implementation license free, but it does require that one create a (free) login account. At the time of this writing there is no comprehensive mapping of MDC to other code systems such as SNOMED CT. A mapping from MDC to SNOMED CT for some of the more common codes is available in the 2017 Continua Design Guidelines [H.813 HIS Interface](https://www.pchalliance.org/continua-design-guidelines) document. The guidelines are freely available for download, however it is not known what the licensing requirements are for use of the SNOMED CT code system.
 
 ##### Vital Signs
 FHIR requires that a LOINC 'magic' code be present if the measurement is one of the vital signs given [here](http://build.fhir.org/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic code. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC magic code (8867-4). In addition to the LOINC magic code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. When the measurement is not a vital sign, the PHD measurement profiles do not require an Observation.category element.
@@ -164,7 +164,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 |Alert operational state|68746.n (ASN1ToHL7 code where n = 0, 1, or 2)|Only Quantities|valueCodeableConcept (V2 binary 'Y' or 'N')| Determines whether an alert threshold is off or on.|
 |Alert operational text string|68104 (MDC code)|Only Quantities|valueString| A human readable string describing the lower and upper alert thresholds in that order.|
 |Current Limits|67892 (MDC code)|Only Quantities|valueRange| The lower and upper threshold values in the units of the reported measurement quantity|
-|Measurement Confidence 95|526998 (MDC code)|Only Quantities|valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
+|Measurement Confidence 95|68236 (MDC code)|Only Quantities|valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
 |Threshold notification string|68232 (MDC code)|Only Quantities|valueString| Human readable string describing thresholds. Similar to the Alert operational text string|
 
 At the time of this writing, only the supplemental types and the high resolution relative time stamp 'additional descriptions' are used by market PHDs. Some of the text string descriptions are unlikely to ever be used given that the IEEE 11073 20601 specification only allows ASCII 127 and consumers of the data are likely to provide their own descriptions customized to their locale.
@@ -256,12 +256,51 @@ Accuracy information is indicated by the Observation.component.code.coding.code 
         }
     ]
 
+##### Current Limits
+The Current Limits component is currently only used in the Pulse Oximeter specialization. It gives the low and high threshold limit values of the primary measurement being monitored. The Current Limits  applies only to measurement values that are quantities. When either threshold limit is met an alarm event is triggered if the alarm for the given threshold limit be enabled. If this component is present, an Alert Operational State component shall also be present which indicates the disabled/enabled state of the alarms.
+
+The entry is indicated by the Observation.component.code.coding.code element having the value 67892. The value is encoded in an Observation.component.valueRange element. The units have the same units as the primary measurement. An example of a Current Limits entry is shown below:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "67892"
+                    }
+                ],
+                "text": "MDC_ATTR_LIMIT_CURR: Current lower and upper alarm threshold values"
+            },
+            "valueRange": {
+                "low": {
+                    "value": 88,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "%"
+                },
+                "high": {
+                    "value": 100,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "%"
+                }
+            }
+        }
+    ]
+
 ##### Alert Operational State
-The Alert Operational State is identified by an Observation.component.coding.code containing one of three possible [ASN1ToHL7](ASN1ToHL7.html) codes 67846.n where n is 0, 1, or 2. When reported, there will be a component entry for all three states. The Alert Operational state is used in the Pulse Oximeter specialization, but currently there is no market pulse oximeter that implements it.
+The Alert Operational State is identified by an Observation.component.coding.code containing one of three possible [ASN1ToHL7](ASN1ToHL7.html) codes 67846.n where n is 0, 1, or 2. When reported, there will be a component entry for all three states. The Alert Operational state is used in the Pulse Oximeter specialization, but currently there is no market pulse oximeter that implements it. The Alert Operational State applies only to measurement values that are quantities. 
 
-The value of the component entry is a CodeableConcept using the V2 binary code system of "Y" or "N". The entry indicates whether the alerts as a whole or that a given limit (low value or high value) is disabled or active. *When the value is "Y", the condition is disabled which maybe contrary to expectation*. This is a state-type measurement so if the PHD reports it, both the Y and N states are reported. If one does not find this entry in the component elements, it means the PHD did not report it.
+The Alert Operational State is a state and not en event. It indicates that the PHD supports an alert mechanism for the primary measurement. It does not indicate that the alert has been triggered. What these alert thresholds might be are indicated in the Current Limits component. A PHD that reports this state shall also report the Current Limits values.
 
-An example of an entry where the high alert entry is active is as follows:
+The value of the component entry is a CodeableConcept using the V2 binary code system of "Y" or "N". *When the value is "Y", the condition is disabled which maybe contrary to expectation*. The three entries are as follows:
+
+|ASN1ToHL7 Code|Description|
+|-
+|67846.0|Indicates both the high and the low limit alerts are *disabled* when "Y"|
+|67846.1|Indicates the low limit alert is *disabled* when "Y"|
+|67846.2|Indicates the high limit alert is *disabled* when "Y"|
+
+An example of an entry where the low alert alarm is enabled is as follows:
 
     "component": [
         {
@@ -281,7 +320,7 @@ An example of an entry where the high alert entry is active is as follows:
                         "code": "N"
                     }
                 ],
-                "text": "At least one alert limit is active"
+                "text": "At least one alert limit is enabled"
             }
         },
         {
@@ -298,10 +337,10 @@ An example of an entry where the high alert entry is active is as follows:
                 "coding": [
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "Y"
+                        "code": "N"
                     }
                 ],
-                "text": "The lower alert limit is off"
+                "text": "The lower alert limit is enabled"
             }
         },
         {
@@ -318,18 +357,91 @@ An example of an entry where the high alert entry is active is as follows:
                 "coding": [
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "N"
+                        "code": "Y"
                     }
                 ],
-                "text": "The high alert limit is active"
+                "text": "The high alert limit is disabled"
             }
         }
     ]
 
 ##### Alert Operational Text String
-##### Current Limits
+The Alert Operational Text String provides a human readable string describing the lower and upper threshold limits expressed in the Current Limits component. It is currently used only in the Pulse Oximeter specialization. The Alert Operational Text String applies only to measurement values that are quantities.
+
+The entry is indicated by the Observation.component.code.coding.code element having the value 68104. The text string is limited to US ASCII. The value is encoded in the Observation.component.valueString element. Both the 'low' and 'high' strings are encoded into a single valureString entry in an application-dependent manner. The strings are not machine processable.
+
+An example of a component entry is as follows:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "678104"
+                    }
+                ],
+                "text": "MDC_ATTR_AL_OP_TEXT_STRING: PHD provided threshold descriptions"
+            },
+            "valueString": "Low limit for SpO2 - High limit for SpO2"
+        }
+    ]
+
 ##### Measurement Confidence 95
+The Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization. The compoent gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. 
+
+The entry is indicated by the Observation.component.code.coding.code element having the value 68236. The value is encoded in an Observation.component.valueRange element. The ranges have the same units as the primary measurement. An example of a Measurement Confidence 95 entry is shown below:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "68236"
+                    }
+                ],
+                "text": "MDC_ATTR_MSMT_CONFIDENCE_95: Current lower and upper alarm threshold values"
+            },
+            "valueRange": {
+                "low": {
+                    "value": 98,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg/dL"
+                },
+                "high": {
+                    "value": 100,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg/dL"
+                }
+            }
+        }
+    ]
+
+The above states that the Continuous Glucose Monitor PHG is 95% sure that the reported measurement of (say 99 mg/dL) lies between 98 and 100 mg/dL.
+
 ##### Threshold Notification String
+This component contains a human readable string regarding the various threshold settings a PHD might have. Currently, only the Continuous Glucose Monitor speocialization defines the use of this string with respect to its threhold settings. The Threshold Notification String applies only to measurement values that are quantities. 
+
+The entry is indicated by the Observation.component.code.coding.code element having the value 68232. The text string is limited to US ASCII. The value is encoded in the Observation.component.valueString element.
+
+An example of a component entry is as follows:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "68232"
+                    }
+                ],
+                "text": " MDC_ATTR_THRES_NOTIF_TEXT_STRING: PHD provided information about the threshold"
+            },
+            "valueString": "Glucose concentration has gone under the minimum"
+        }
+    ]
+
 
 ### Measurement Status
 Every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG will report any measurement it receives from the PHD including error states and let the end user decide what to do with it.
@@ -356,8 +468,36 @@ The table below lists the special conditions reported and in what elements they 
 
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
+### Scalar Numeric Measurements
+Scalar numeric measurements are the most common type of measurement reported by PHDs. Temperature, weight, height, miles run, pulse rate, etc. are examples. Scalar numeric measurements are reported in Observation resources following the Phd Numeric Observation Profile. The scalar values are reported in the Observation.valueQuantity element. If the PHD reports a special value; Not a number, Positive infinity, Negative infinity, and two other possible values unknown to FHIR, an Observation.dataAbsentReason element replaces the valueQuantity and there is no value[x] element.
 
-### The Profile Structure Definitions
+An Observation resource following the Phd Numeric Observation Profile will have an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation".
+
+When there is no special value the Observation.valueQuantity is populated with the scalar value, the units, and the system. The units and system are UCUM unless the PHG does not know the UCUM translation for the MDC unit code. The latter can happen if a new specialization, written after the PHG was implemented, introduces a new MDC unit code not previously used in PHDs. The scalar value is reported with the precision indicated by the PHD. Thus 2 and 2.00 represent the same value but measured to a different precision.
+
+|item|FHIR coding|
+|-
+|scalar value: It will have the precision reported by the PHD, thus one could have, for example, 2, 2.0, or 2.00 depending upon the precision|Observation.valueQuantity.value|
+|units|Observation.valueQuantity.code|
+|code system|Observation.valueQuantity.system="http://unitsofmeasure.org"|
+
+If a special value is reported an Observation.dataAbsentReason replaces the valueQuantity. The dataAbsentReason is a CodeableConcept and will have the following possible codes from the data absent reason coding system "http://terminology.hl7.org/CodeSystem/data-absent-reason":
+
+ - Observation.dataAbsentReason.coding.code="not-a-number"
+ - Observation.dataAbsentReason.coding.code="positive-infinity"
+ - Observation.dataAbsentReason.coding.code="negative-infinity"
+ - Observation.dataAbsentReason.coding.code="error"
+
+The system in the above cases is
+
+ - Observation.dataAbsentReason.coding.system="http://terminology.hl7.org/CodeSystem/data-absent-reason"
+
+IEEE 11073 20601 defines two other special values that are not translated to FHIR which are encoded as errors. To date, there has been no market PHD which reports the other two special values.
+
+### Vector or Compound Numeric Measurements
+
+
+### Links to the Profile Structure Definitions
 
  - [Base Observation Profile](PhdBaseObservation.html)
  - [Numeric Observation Profile](PhdNumericObservation.html)
