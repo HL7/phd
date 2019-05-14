@@ -124,7 +124,7 @@ To report these cases in FHIR requires the use of three different elements. The 
 
 |status Mder bit | ASN1 name|Observation element|
 |-
-|0|invalid|dataAbsentReason.coding.code="error"<br/>http://terminology.hl7.org/CodeSystem/data-absent-reason version |
+|0|invalid|dataAbsentReason.coding.code="error"<br/>http://terminology.hl7.org/CodeSystem/data-absent-reason|
 |1|questionable|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="questionable"|
 |2|not-available|dataAbsentReason.coding.code="not-performed"<br>dataAbsentReason.coding.system="http://terminology.hl7.org/CodeSystem/data-absent-reason |
 |3|calibration-ongoing|interpretation.coding.system="http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" <br/> interpretation.coding.code="calibration-ongoing"|
