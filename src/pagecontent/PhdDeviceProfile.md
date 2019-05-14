@@ -23,9 +23,6 @@ There are several CodeableConcept data types in this mapping where the Coding da
 
 The structure definition for the PHD Device Profile is given [here](PhdDevice.html)
 
-A JSON example is given in [PHD Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhdDeviceJSONExample)
-
-
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice indicating this resource is generated following the PHD Implementation Guide.
 
