@@ -857,7 +857,7 @@ The coincident time stamp follows the Phd Coincident Time Stamp Observation Prof
 All readers should check whether or not there is a time fault. Otherwise the information provided by this Observation is mostly for auditing.
 
 ### The PHD Device Resource
-The PHD Device resource follows the Phd Device Profile. It is identified by the Device.meta.profile element containing the entry "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice".
+The PHD Device resource follows the Phd Device Profile. It is identified by the Device.meta.profile element containing the entry "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice". Its structure definition is found [here](PhdDevice.html).
 
 The PHD Device resource contains the following information about the PHD in the following elements:
 
@@ -893,7 +893,7 @@ The PHD Device resource contains the following information about the PHD in the 
    - Regulation status
    - Certified transports and specializations
 
-The bold items are required to be reported by all PHDs and the italicized items are exposed by most PHDs. The transport addresses are only exposed in the transport protocol and are, of course, only applicable to PHDs using that transport.
+The bold items are required to be reported by all PHDs and the italicized items are exposed by most PHDs. The transport addresses are only exposed in the transport protocol and are, of course, only applicable to PHDs using that transport. It is encouraged by the PHG implementer to add the wireless transport address identifiers since these numbers are often available on the device whereas the system id is not. However, obtaining these addresses may not always be possible on certain platforms.
 
 #### Device identifier
 The identifier contains elements that are (supposed) to uniquely identify the PHD. To distinguish one identifier from another, especially in the case where two identifiers are the same 'bitness' a code from the [ContinuaDeviceIdentifiers](ContinuaDeviceIdentifiers.codesystem.html) code system is used in the Device.identifier.type. There are five possible codes defined:
@@ -904,9 +904,58 @@ The identifier contains elements that are (supposed) to uniquely identify the PH
 |BTMAC|The IEEE EUI-48 Bluetooth address|
 |ETHMAC|The ethernet mac address|
 |ZIGBEE|The 64-bit ZigBee address|
-|USB|The USB PID and VIS number|
+|USB|The USB PID (Product Id) and VID (Vendor Id) number|
 
-The 
+The system Id is an EUI-64 which contains an IEEE assigned manufacturer identifier (the 24 most significant bits) with the remaining 40 bits up to the manufacturer. An example of a system Id identifier entry is shown below:
+
+    "identifier" : [
+      {
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+               "code" : "SYSID"
+           }
+          ]
+        },
+        "system" : "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680",
+        "value" : "74-E8-FF-FE-FF-05-1C-00"
+      }
+    ]
+
+The public Bluetooth address is an EUI-48 which contains an IEEE assigned manufacturer identifier (the 24 most significant bits) with the remaining 32 bits up to the manufacturer. An example of a Bluetooth identifier entry is shown below:
+
+    "identifier" : [
+      {
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+              "code" : "BTMAC"
+            }
+          ]
+        },
+        "system" : "http://hl7.org/fhir/sid/eui-48",
+        "value" : "00-1C-05-FF-E8-74"
+      }
+    ]
+
+For USB a transport address is far less important as most end users will not know what the VID and PID are or have easy access to them. An example of an USB identifier entry is shown below:
+
+    "identifier" : [
+      {
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+              "code" : "USB"
+            }
+          ]
+        },
+        "system" : "http://hl7.org/fhir/sid/usb",
+        "value" : "0042.F90D"        // pid.vid
+      }
+    ]
 
 ### Links to the Profile Structure Definitions
 
