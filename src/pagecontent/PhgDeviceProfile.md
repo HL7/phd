@@ -112,7 +112,7 @@ Text elements are always optional.
 
 If these fields are encoded they shall be encoded as follows:
 
-### **Specializations**
+### **Specializations**</a>
 The specializations supported by the PHG may be reported. If reported, they shall be reported in the Device.specializations element for each specialization as follows:
 
  - specialization.systemType.coding.code="*32-bit specialization code*"

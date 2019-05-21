@@ -895,8 +895,11 @@ The PHD Device resource contains the following information about the PHD in the 
 
 The bold items are required to be reported by all PHDs and the italicized items are exposed by most PHDs. The transport addresses are only exposed in the transport protocol and are, of course, only applicable to PHDs using that transport. It is encouraged by the PHG implementer to add the wireless transport address identifiers since these numbers are often available on the device whereas the system id is not. However, obtaining these addresses may not always be possible on certain platforms.
 
+#### UDI
+At the moment there are no PHDs which electronically support a UDI. The latest version of the IEEE 11073 20601 protocol will support this field. When the updated standard is released and PHD support seems imminent UDI support will be added to this IG.
+
 #### Device identifier
-The identifier contains elements that are (supposed) to uniquely identify the PHD. To distinguish one identifier from another, especially in the case where two identifiers are the same 'bitness' a code from the [ContinuaDeviceIdentifiers](ContinuaDeviceIdentifiers.codesystem.html) code system is used in the Device.identifier.type. There are five possible codes defined:
+The identifier contains elements that are (supposed) to uniquely identify the PHD. To distinguish one identifier from another, especially in the case where two identifiers are the same 'bitness' a code from the [ContinuaDeviceIdentifiers](ContinuaDeviceIdentifiers.html) code system is used in the Device.identifier.type. There are five possible codes defined:
 
 |code|Description|
 |-
@@ -956,6 +959,290 @@ For USB a transport address is far less important as most end users will not kno
         "value" : "0042.F90D"        // pid.vid
       }
     ]
+
+The examples are shown individually but in practice one would see the system id entry and perhaps a transport entry.
+
+#### Simple String Entries
+There are several Device elements that are just basic strings. Their meanings are straight forward. In the Phd Device profile they are the following:
+ - Device.manufacturer
+ - Device.modelNumber
+ - Device.serialNumber
+ - Device.partNumber
+
+#### Device Type
+This field states that the device is a PHD. There is no code in the list of device types provided by FHIR [here](http://build.fhir.org/valueset-device-type.html) that indicates a personal health device. Instead we use the MDC code that indicates a simple MDS (Medical Device System) object. This entry will be identical for all PHDs following this IG. It appears as follows:
+
+    "type" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:11073:10101",
+            "code" : "65573"
+          }
+        ],
+        "text" : "MDC_MOC_VMS_MDS_SIMP"
+    },
+
+#### Versions
+The Device.versions entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, and even the Continua version their communication software supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions and those PHDs that are Continua compliant will expose their Continua version.
+ 
+ The [MDC code system](http://build.fhir.org/mdc.html) has a code to identify each one of these version types. The version itself it just a simple alpha-numeric string. The MDC codes for the various version types are as follows:
+ 
+|version type|MDC code|MDC reference identifier|
+|-
+|Hardware version|531974|MDC_ID_PROD_SPEC_HW|
+|Software version|531975|MDC_ID_PROD_SPEC_SW|
+|Firmware version|531976|MDC_ID_PROD_SPEC_FW|
+|Protocol version|531977|MDC_ID_PROD_SPEC_PROTOCOL|
+|Continua version|532352|MDC_REG_CERT_DATA_CONTINUA_VERSION|
+
+Below is an example of the different versions exposed by a Continua certified market PHD:
+
+    "version" : [
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "urn:iso:std:iso:11073:10101",
+                "code" : "531976"
+              }
+            ],
+            "text" : "MDC_ID_PROD_SPEC_FW: Firmware revision"
+          },
+          "value" : "r2.1"
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "urn:iso:std:iso:11073:10101",
+                "code" : "531975"
+              }
+            ],
+            "text" : "MDC_ID_PROD_SPEC_SW: Software revision"
+          },
+          "value" : "r1.5 9.7"
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "urn:iso:std:iso:11073:10101",
+                "code" : "531974"
+              }
+            ],
+            "text" : "MDC_ID_PROD_SPEC_HW: Hardware revision"
+          },
+          "value" : "r1.0"
+        },
+        {
+          "type" : {
+            "coding" : [
+              {
+                "system" : "urn:iso:std:iso:11073:10101",
+                "code" : "532352"
+              }
+            ],
+            "text" : "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+          },
+          "value" : "6.0"
+        }
+    ]
+
+The versions can be helpful identifying different PHD behaviors.
+
+#### Specializations
+The Device.specialization entry is probably the entry most consumers will want to expose. This entry states what kind of measurements the PHD takes. It is this entry that tells the consumer if the PHD is a blood pressure cuff, heart rate monitor, pulse oximeter. PHDs can support multiple specializations. This element shall always be populated.
+
+In IEEE 11073 20601 specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
+
+A table of some of the most common specializations can be found in the specialization section [here](PhdDeviceProfile.html).
+
+The example below shows an example of a market PHD following the Glucose specialization:
+
+    "specialization" : [
+        {
+          "systemType" : {
+            "coding" : [
+              {
+                "system" : "urn:iso:std:iso:11073:10101",
+                "code" : "528405"
+              }
+            ],
+            "text" : "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"
+          },
+          "version" : "1"
+        }
+    ]
+
+#### Property
+The property element contains time clock information and certification information. There will be at least one property entry for every PHD and that is the time synchronization information. The entry will be present even if the PHD supports no time clock, and that will be 'no time synchronization'.
+
+There are two types of properties, one that is described by a list of codes, and one that is described by a list of quantities. The list often contains only one entry. Though not obvious from the FHIR specification, a property cannot contain *both* a quantity and coded element.<p>
+
+The Device.property.type is a CodeableConcept which tells what the property is. There are [MDC](http://build.fhir.org/mdc.html) or [ASN1ToHL7](ASN1ToHL7.html) codes for each property type a PHD can expose. They are as follows:
+
+|description|Code|Reference identifier|
+|-
+|Time Synchronization|68220|MDC_TIME_SYNC_PROTOCOL|
+|Time capabilities|68219.x|ASN1ToHL7 name|
+|High resolution relative time resolution|68224|MDC_TIME_RES_REL_HI_RES|
+|Relative time resolution|68223|MDC_TIME_RES_REL|
+|Absolute Time time resolution|68222|MDC_TIME_RES_ABS|
+|Base offset time resolution|68226|MDC_TIME_RES_BO|
+|RR-interval Ticks. This clock is NOT used for time stamps.|68229|MDC_ATTR_TICK_RES|
+|Time synchronization accuracy|68221|MDC_TIME_SYNC_ACCURACY|
+|Regulation status|532354.x|ASN1ToHL7 name|
+|Continua Certified Device List|532353|MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST|
+
+##### Time Synchronization
+There will always be a time synchronization entry. It is identified by a property.type.coding.code="68220". It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](PhdDeviceProfile.html). This value is always TIME_SYNC_NONE (532224) if the PHD is not synchronized or has no time clock at all. To date ALL PHDs have no external time synchronization capabilities and this entry is always TIME_SYNC_NONE.
+
+An example of time synchronization property entry is shown below:
+
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:11073:10101",
+            "code" : "68220"
+          }
+        ],
+        "text" : "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+      },
+      "valueCode" : [
+        {
+          "coding" : [
+            {
+              "system" : "urn:iso:std:iso:11073:10101",
+              "code" : "532224"
+            }
+          ],
+          "text" : "MDC_TIME_SYNC_NONE:"
+        }
+      ]
+    }
+
+##### Time Capabilities
+The time capabilities defines the types of real time clocks supported, whether the time can be set, whether external time synchronization is possible, etc. Each capability is treated as an event, so most PHGs will only report the capability if the PHD indicates it has the capability. The value is a single valueCode which will be either "Y" if the PHD has the capability or "N" if not. Most PHGs will not report the "N" case.  There may be several such time capability property entries.
+
+The example below gives the time capabilities of a market pulse oximeter:
+
+    {
+        "type": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                    "code": "68219.0",
+                    "display": "mds-time-capab-real-time-clock"
+                }
+            ]
+        },
+        "valueCode": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                        "code": "Y"
+                    }
+                ],
+                "text": "real time clock supported"
+            }
+        ]
+    },
+    {
+        "type": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                    "code": "68219.1",
+                    "display": "mds-time-capab-set-clock"
+                }
+            ]
+        },
+        "valueCode": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                        "code": "Y"
+                    }
+                ],
+                "text": "setting the time supported"
+            }
+        ]
+    },
+    {
+        "type": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                    "code": "68219.2",
+                    "display": "mds-time-capab-relative-time"
+                }
+            ]
+        },
+        "valueCode": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                        "code": "Y"
+                    }
+                ],
+                "text": "relative time supported"
+            }
+        ]
+    }
+
+#### Time Clock Resolutions
+The time clock resolutions is given by one of four MDC codes for each of the possible types of time clocks. Note that a PHD can only simultaneously support an absolute time (wall clock time with no offset) or base offset time (wall clock time with offset). A PHD may support both relative time clocks. A PHD may support only one of the relative time clocks.<p>
+The resolution value is a valueQuantity and it gives the time interval between clock 'ticks', regardless of the type of time clock, in units of microseconds.
+
+An example of a time resolution property for an absolute time clock with a time resolution of of one second is shown below:
+
+    {
+        "type": {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:11073:10101",
+                    "code": "68222"
+                }
+            ],
+            "text": "MDC_TIME_RES_ABS: absolute time clock resolution"
+        },
+        "valueQuantity": [
+            {
+                "value": 1000000,
+                "system": "http://unitsofmeasure.org",
+                "code": "us"
+            }
+        ]
+    }
+
+#### Time Tick Resolution for RR Intervals
+There is also a special time clock that is not used for measurement time stamps but for measuring RR intervals, which is the time between individual heart beats. So it is used as a valueQuantity in Observations, not the effective[x]. At the current time it is only used in ECGs or heart rate monitors. These special clocks typically have a resolution of 1024 Hz or better. When RR intervals are reported, they are reported in units of these ticks, so one must know what the frequency of the clock is. The reason for this special clock is that RR intervals have been traditionally timed using dedicated crystal oscillators.<p>
+The time tick is given as a property and its units are Hertx. However, the RR interval is given in the number of these ticks and many PHGs will not make the conversion as there is no UCUM code for the MDC dimension code of Ticks. Thus the reader will have to obtain the RR interval using the RR reported tick value and the tick frequency given here.
+
+An example of the Tick resolution property entry is given below.
+
+    {
+        "type": {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:11073:10101",
+                    "code": "68221"
+                }
+            ],
+            "text": "MDC_ATTR_TICK_RES: Frequency of ticks"
+        },
+        "valueQuantity": [
+            {
+                "value": 1024,
+                "system": "http://unitsofmeasure.org",
+                "code": "s-1"    // 1/seconds or Hz
+            }
+        ]
+    }
 
 ### Links to the Profile Structure Definitions
 
