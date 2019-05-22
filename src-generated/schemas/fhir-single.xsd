@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, May 14, 2019 04:07+0000 for FHIR v4.1.0 
+  Generated on Tue, May 21, 2019 06:31+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -23409,14 +23409,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="primarySource" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates if this record was captured as a secondary 'reported' record rather than as an original primary source-of-truth record.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reportOrigin" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+              <xs:documentation xml:lang="en">Typically the source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="informationSourceCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="informationSourceReference" type="Reference"/>
+          </xs:choice>
           <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The service delivery location where the vaccine administration occurred.</xs:documentation>
@@ -23464,12 +23466,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Reasons why the vaccine was administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes why the immunization occurred in coded or textual form.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reasonReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Condition, Observation or DiagnosticReport that supports why the immunization was administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates another resource (Condition, Observation or DiagnosticReport) whose existence justifies this immunization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="isSubpotent" minOccurs="0" maxOccurs="1" type="boolean">
@@ -23824,7 +23826,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Vaccine(s) or vaccine group that pertain to the recommendation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="targetDisease" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="targetDisease" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The targeted disease for the recommendation.</xs:documentation>
            </xs:annotation>
