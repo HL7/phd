@@ -508,7 +508,7 @@ An example of the valueQuantity in the Phd Numeric Observation Profile for a the
     "valueQuantity": {
         "value": 35.6,
         "system": "http://unitsofmeasure.org",
-        "code": "cel"
+        "code": "Cel"
     }
 
 ### Measurement Values that are Multi-Number or Compounds
