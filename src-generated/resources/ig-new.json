@@ -477,8 +477,13 @@
           }]
         },
         {
+          "nameUrl" : "ProfileConsumers.html",
+          "title" : "Consuming the PHD Profile FHIR Resources",
+          "generation" : "markdown"
+        },
+        {
           "nameUrl" : "TechnicalImplementationGuidance.html",
-          "title" : "Technical Implementation Guidance",
+          "title" : "PHG Implementation Guidance",
           "generation" : "markdown",
           "page" : [{
             "nameUrl" : "RemotePatientMonitoringConsiderations.html",
@@ -721,11 +726,6 @@
           "title" : "Downloads",
           "generation" : "markdown"
         }]
-      },
-      {
-        "nameUrl" : "ProfileConsumers.html",
-        "title" : "Consuming the PHD Profile FHIR Resources",
-        "generation" : "markdown"
       },
       {
         "nameUrl" : "artifacts.html",

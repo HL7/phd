@@ -475,8 +475,13 @@
           </page>
         </page>
         <page>
+          <nameUrl value="ProfileConsumers.html"/>
+          <title value="Consuming the PHD Profile FHIR Resources"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
           <nameUrl value="TechnicalImplementationGuidance.html"/>
-          <title value="Technical Implementation Guidance"/>
+          <title value="PHG Implementation Guidance"/>
           <generation value="markdown"/>
           <page>
             <nameUrl value="RemotePatientMonitoringConsiderations.html"/>
@@ -719,11 +724,6 @@
           <title value="Downloads"/>
           <generation value="markdown"/>
         </page>
-      </page>
-       <page>
-        <nameUrl value="ProfileConsumers.html"/>
-        <title value="Consuming the PHD Profile FHIR Resources"/>
-        <generation value="markdown"/>
       </page>
       <!-- Required element. Second 'primary' top-level page. It is generated -->
       <page>

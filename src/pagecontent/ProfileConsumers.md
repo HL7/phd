@@ -155,7 +155,7 @@ An example of a reference to another Observation is shown below:
 There is no way to ascertain from the reference whether the Observation is a Coincident Time Stamp Observation or another measurement Observation. One must examine the Observation.meta.profile element of the referenced Observation to ascertain that information.
 
 #### Additional Descriptions: Observation.component:
-The reader may one to skip the rest of this section and jump directly to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar).
+The reader may want to skip the rest of this section and jump directly to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar).
 
 PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. Additional information is reported in an Observation.component element. The type of additional information is given by the Observation.component.code element. The value of the additional information is given by the Observation.component.value[x] element. PHDs support the following types of additional information:
 
