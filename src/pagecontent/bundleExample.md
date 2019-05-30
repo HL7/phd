@@ -558,7 +558,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "request": {
                 "method": "POST",
                 "url": "Observation",
-                "ifNoneExist": "identifier=sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-001C050400007825-150456-20181116212837-95-544-150588"
+                "ifNoneExist": "identifier=001C050400007825-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-150456-20181116212837.00-95-544-150588"
             }
         },
         {
@@ -651,7 +651,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "request": {
                 "method": "POST",
                 "url": "Observation",
-                "ifNoneExist": "identifier=sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-001C050400007825-149530-20181116212837-52-2720-150588"
+                "ifNoneExist": "identifier=001C050400007825-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-149530-20181116212837.00-52-2720-150588"
             }
         },
         {
@@ -744,7 +744,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "request": {
                 "method": "POST",
                 "url": "Observation",
-                "ifNoneExist": "identifier=sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-001C050400007825-150456-20181120085653-100-544-150588"
+                "ifNoneExist": "identifier=001C050400007825-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-150456-20181120085653.00-100-544-150588"
             }
         },
         {
@@ -837,7 +837,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "request": {
                 "method": "POST",
                 "url": "Observation",
-                "ifNoneExist": "identifier=sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-001C050400007825-149530-20181120085653-42-2720-150588"
+                "ifNoneExist": "identifier=001C050400007825-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-149530-20181120085653.00-42-2720-150588"
             }
         }
     ]
