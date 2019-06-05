@@ -34,11 +34,11 @@
 	"effectiveDateTime": "2018-08-02T02:25:24-04:00",
 	"valueSampledData": {
 		"origin": {
-			"value": 0,
+			"value": -3.4,
 			"system": "http://unitsofmeasure.org",
 			"code": "{unitless} 1"
 		},
-		"period": 0.01,
+		"period": 2.000,
 		"factor": 3.0,
 		"dimensions": 1,
 		"data": "123 110 97 99 112 118"
