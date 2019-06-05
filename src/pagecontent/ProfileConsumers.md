@@ -5,7 +5,7 @@ padding: 6px;}</style>
 
 This chapter is for those whose use cases require measurement data from Personal Health Devices (PHD) and need that data in FHIR format. In most cases PHDs are used when the measurements are taken by individuals who are not medical professionals and outside of the health care provider's institution. The individuals could be patients recovering at home from a serious operation, diabetics managing their condition while trying to live as normal a life as possible, or athletes wearing fitness devices keeping track of their training. Point of Care Devices (PoCD) used in acute care are not covered by this IG. There is a separate implementation guide [here](http://build.fhir.org/ig/HL7/uv-pocd) for such devices.
 
-It is important to understand that this Implementation Guide (IG) assumes that the source of the data is from *communicating* PHDs. This IG does NOT cover measurement data entered manually, such as a pulse rate taken by putting one's fingers on the wrist, or reading data from a non-communicating medical device. Manual entry of data is subject to human error which this IG does not consider.
+It is important to understand that this Implementation Guide (IG) assumes that the source of the data is from *communicating* PHDs. This IG does NOT cover measurement data entered manually, such as a pulse rate taken by putting one's fingers on the wrist, or reading data from a non-communicating medical device. Manual entry of data is not considered by this IG as it is subject to human error.
 
 Understanding the content of the FHIR resources specified in this IG should be straight forward. Familiarity with the [MDC](http://build.fhir.org/mdc.html) coding system is the only IEEE 11073 domain-specific knowledge required. In addition, there is only one extension used in the PHD related profiles and that is a reference to the Personal Health Gateway (PHG) Device resource in the PHD Observation profiles. A PHG is the unit that is typically responsible for communicating with the PHD and encoding that data into FHIR. It may be a mobile phone, a PC, or a dedicated set-top box. Most of this IG is dedicated to the PHD to FHIR mapping that a PHG must follow. Those sections do require IEEE 11073 domain knowledge.
 
@@ -19,8 +19,8 @@ PHDs measurements are encoded into Observation resources. There are six types of
 
  - **single number** such as a temperature, weight, glucose concentration, pulse rate, blood oxygen saturation, or miles run. Single number or 'scalar' measurements are the most common type of measurement and *usually* have a unit. All measurements in this category follow the [Phd Numeric Observation Profile](PhdNumericObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation".
  - **multiple-number** where multiple numbers at a single point in time need to be taken together to represent the value, also known as compound or vector, such as the systolic, diastolic, and mean components of the blood pressure or x-, y-, and z- components of an acceleration. Compound measurements *usually* have units. All measurements in this category follow the [Phd Compound Numeric Observation Profile](PhdCompoundNumericObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation".
- - **code** such as the meal context and health status in a glucose monitor. A coded measurement is used when there is a limited set of options and each option is specified by a code. In the case of the meal context some of the options are pre-meal, post-meal, bedtime, fasting, etc. All measurements in this category follow the [Phd Coded Enumeration Observation Profile](PhdCodedEnumerationObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation".
- - **state or event** measurements which report a set of conditions that may occur simultaneously. An example would be a room status measurement in an independent living facility such as patient in room, door closed, window closed, climate control off, and video monitoring off. All measurements in this category follow the [Phd Bits Enumeration Observation Profile](PhdBitsEnumerationObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation". It should be noted that there is no 'room status' measurement defined for PHDs; it is used here because if it did exist it would be an illustrative example of a state measurement value.
+ - **alpha-numeric code** such as the meal context and health status in a glucose monitor. A coded measurement is used when there is a limited set of options and each option is specified by a code. In the case of the meal context some of the options are pre-meal, post-meal, bedtime, fasting, etc. All measurements in this category follow the [Phd Coded Enumeration Observation Profile](PhdCodedEnumerationObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation".
+ - **state or event** measurements (alpha-numeric codes) which report a set of conditions that may occur simultaneously. An example would be a room status measurement in an independent living facility such as patient in room, door closed, window closed, climate control off, and video monitoring off. All measurements in this category follow the [Phd Bits Enumeration Observation Profile](PhdBitsEnumerationObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation". It should be noted that there is no 'room status' measurement defined for PHDs; it is used here because if it did exist it would be an illustrative example of a state measurement value.
  - **periodic samples** (often waveforms) such as an ECG trace, a forced exhalation flow rate from a spirometer, a pleth wave of a pulse oximeter, or a sequence of heart rates. These measurements are a periodic sequence of scalars and *usually* have units.  All measurements in this category follow the [Phd Rtsa Observation Profile](PhdRtsaObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation".
  - **string** measurements which are just arbitrary human-readable strings. These kinds of measurements are rare as they cannot be processed by machine. All measurements in this category follow the [Phd String Enumeration Observation Profile](PhdStringEnumerationObservation.html) and can be identified when the Observation.meta.profile="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation".
 
@@ -30,7 +30,7 @@ Every PHD measurement Observation resource contains the following information re
 |Measurement item|element|Description|
 |-
 |profile|Observation.meta.profile|This element contains the URL to the structure definition identifying the profile this Observation belongs to.|
-|measurement type|Observation.code.coding.code|This element tells you what the measurement is. There shall be at least one coding element using the MDC coding system identified by Observation.code.coding.system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the LOINC 'magic' codes. There will also be an Observation.category element as demanded by the vital signs profile. Additional coding elements representing the same concept as the MDC code in other coding systems may be present.|
+|measurement type|Observation.code.coding.code|This element tells you what the measurement is. There shall be at least one coding element using the MDC coding system identified by Observation.code.coding.system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the [LOINC 'magic' values](http://build.fhir.org/observation-vitalsigns.html). There will also be an Observation.category element as demanded by the vital signs profile. Additional coding elements representing the same concept as the MDC code in other coding systems may be present.|
 |time stamp|Observation.dateTimeEffective<br/><br/>Observation.period|If the measurement is a point in time.<br/><br/>If the measurement has a duration.|
 |PHG reference|Observation.extension.valueReference|This element points to the PHG Device resource. The resource contains information about the PHG that generated the FHIR resources. The gateway extension is the only extension used in this guide. It is identified by Observation.extension.url="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"|
 |patient reference|Observation.subject|Points to the Patient resource. Contains information about the patient to whom this measurement refers|
@@ -64,14 +64,14 @@ The measurement type tells what the measurement is. In HL7 such information is t
 |188424|Oral temperature|
 |160368|Glucose concentration in plasma|
 
-A comprehensive list of MDC codes is available using the [NIST RTMSS Rosetta](https://rtmms.nist.gov/rtmms/index.htm).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. The Rosetta is still a work in progress and one may find the user interface a little hard to navigate. One can find more information about the MDC code system [here](http://build.fhir.org/mdc.html).
+A comprehensive list of MDC codes is available using the [NIST RTMSS Rosetta](https://rtmms.nist.gov/rtmms/index.htm).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. The Rosetta is still a work in progress. One can find more information about the MDC code system [here](http://build.fhir.org/mdc.html).
 
 For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, there is a mapping from MDC to LOINC available [here](https://loinc.org/collaboration/ieee/) with a direct link to the download [here](https://loinc.org/file-access/download-id/9385/). The FHIR MDC to LOINC concept map is available [here](https://fhir.loinc.org/ConceptMap/?url=http://loinc.org/cm/loinc-to-ieee-device-codes). One may freely download and use this material as needed in an implementation license free, but it does require that one create a (free) login account. At the time of this writing there is no comprehensive mapping of MDC to other code systems such as SNOMED CT. A mapping from MDC to SNOMED CT for some of the more common codes is available in the 2017 Continua Design Guidelines [H.813 HIS Interface](https://www.pchalliance.org/continua-design-guidelines) document. The guidelines are freely available for download, however it is not known what the licensing requirements are for use of the SNOMED CT code system.
 
 ##### Vital Signs
-FHIR requires that a LOINC 'magic' code be present if the measurement is one of the vital signs given [here](http://build.fhir.org/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic code. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC magic code (8867-4). A PHG is not required to use the magic codes but may map the MDC codes more specifically to LOINC. 
+FHIR requires that a LOINC 'magic' value be present if the measurement is one of the vital signs given [here](http://build.fhir.org/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic value. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC magic value (8867-4). A PHG is not required to use the magic values but may map the MDC codes more specifically to LOINC. 
 
-In addition to the LOINC magic code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. When the measurement is not a vital sign, the PHD measurement profiles do not require an Observation.category element.
+In addition to the LOINC magic value, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. When the measurement is not a vital sign, the PHD measurement profiles do not require an Observation.category element.
 
 Below is a snippet showing a code element for a measurement type that is a vital sign (body temperature) along with the FHIR-required 'vital signs' category element:
 
@@ -101,7 +101,7 @@ Below is a snippet showing a code element for a measurement type that is a vital
     }
 
 ##### Caveats
-The PHG may express the code in additional coding systems but the consumer cannot rely on it. The PHD profiles in this IG require *only* the MDC code as it is provided by the PHD and the LOINC magic code if the measurement is a vital sign. It is also possible that a vital sign is *not* mapped to LOINC by the PHG. By design, the PHG is written to map the data from the PHD without any knowledge to what the data is. The exception is for the LOINC magic codes which require the PHG to pre-code a map. If a new PHD specialization is created after the PHG is already implemented, the new PHD may possess a new MDC code and the new code may be a vital sign (perhaps the new code represents a pulse rate obtained via a new technique). The PHG can still populate the Observation.code.coding.code with the MDC code as that is provided in the PHD protocol, but the new MDC code will not be in its pre-coded local map of MDC codes to LOINC magic codes.
+The PHG may express the code in additional coding systems but the consumer cannot rely on it. The PHD profiles in this IG require *only* the MDC code as it is provided by the PHD and the LOINC magic value if the measurement is a vital sign. It is also possible that a vital sign is *not* mapped to LOINC by the PHG. By design, the PHG is written to map the data from the PHD without any knowledge to what the data is. The exception is for the LOINC magic values which require the PHG to pre-code a map. If a new PHD specialization is created after the PHG is already implemented, the new PHD may possess a new MDC code and the new code may be a vital sign (perhaps the new code represents a pulse rate obtained via a new technique). The PHG can still populate the Observation.code.coding.code with the MDC code as that is provided in the PHD protocol, but the new MDC code will not be in its pre-coded local map of MDC codes to LOINC magic values.
 
 #### The Time Stamp: Observation.effective[x]
 All measurements contain a time stamp which is either an instant in time, a dateTime data type, or a period of time, a Period data type. The period has both a start and end. Results of a workout session are a common type of measurement with a period. The 'instant' data type is not used as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a resolution.
@@ -155,7 +155,7 @@ An example of a reference to another Observation is shown below:
 There is no way to ascertain from the reference whether the Observation is a Coincident Time Stamp Observation or another measurement Observation. One must examine the Observation.meta.profile element of the referenced Observation to ascertain that information.
 
 #### Additional Descriptions: Observation.component:
-The reader may want to skip the rest of this section and jump directly to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar).
+In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar) and return to this section when relevant.
 
 PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. Additional information is reported in an Observation.component element. The type of additional information is given by the Observation.component.code element. The value of the additional information is given by the Observation.component.value[x] element. PHDs support the following types of additional information:
 
@@ -171,7 +171,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 |Measurement Confidence 95|68236 (MDC code)|Only Quantities|valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
 |Threshold notification string|68232 (MDC code)|Only Quantities|valueString| Human readable string describing thresholds. Similar to the Alert operational text string|
 
-At the time of this writing, only the supplemental types and the high resolution relative time stamp 'additional descriptions' are used by market PHDs. Some of the text string descriptions are unlikely to be used given that the IEEE 11073 20601 specification only allows ASCII 127 and consumers of the data are likely to provide their own descriptions customized to their locale.
+At the time of this writing, only the supplemental types and the high resolution relative time stamp 'additional descriptions' are used by current PHDs on the market. Some of the text string descriptions are unlikely to be used given that the IEEE 11073 20601 specification only allows ASCII 127 and consumers of the data are likely to provide their own descriptions customized to their locale.
 
 ##### Supplemental Types
 Supplemental type information is indicated by the Observation.component.code.coding.code element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by Observation.component.valueCodeableConcept.coding.code. There may be more than one Observation.component entry containing supplemental type information. An example of a supplemental types component entry is as follows:
@@ -292,7 +292,7 @@ The entry is indicated by the Observation.component.code.coding.code element hav
     ]
 
 ##### Alert Operational State
-The Alert Operational State is identified by an Observation.component.coding.code containing one of three possible [ASN1ToHL7](ASN1ToHL7.html) codes 67846.n where n is 0, 1, or 2. When reported, there will be a component entry for all three states. The Alert Operational state is used in the Pulse Oximeter specialization, but currently there is no market pulse oximeter that implements it. The Alert Operational State applies only to measurement values that are quantities. 
+The Alert Operational State is identified by an Observation.component.coding.code containing one of three possible [ASN1ToHL7](ASN1ToHL7.html) codes 67846.n where n is 0, 1, or 2. When reported, there will be a component entry for all three states. The Alert Operational state is used in the Pulse Oximeter specialization. The Alert Operational State applies only to measurement values that are quantities. 
 
 The Alert Operational State is a state and not en event. It indicates that the PHD supports an alert mechanism for the primary measurement. It does not indicate that the alert has been triggered. What these alert thresholds might be are indicated in the Current Limits component. A PHD that reports this state shall also report the Current Limits values.
 
@@ -449,6 +449,7 @@ An example of a component entry is as follows:
     ]
 
 
+
 ### Measurement Status
 Every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG will report any measurement it receives from the PHD including error states and let the end user decide what to do with it.
 
@@ -528,7 +529,7 @@ Each Observation.component will have the following:
 |Observation.component.valueQuantity.code|the units (as UCUM)|
 |Observation.component.valueQuantity.system="http://unitsofmeasure.org"|UCUM code system identifier|
 
-Note that the Observation.component.code element is subject to the same FHIR LOINC magic code requirement as the Observation.code element if the component is one of the vital signs [here](http://build.fhir.org/observation-vitalsigns.html). The Systolic and diastolic pressures are in that list, but the MEAN component is not.
+Note that the Observation.component.code element is subject to the same FHIR LOINC magic value requirement as the Observation.code element if the component is one of the vital signs [here](http://build.fhir.org/observation-vitalsigns.html). The Systolic and diastolic pressures are in that list, but the MEAN component is not.
 
 An example of a Blood Pressure measurement would be as follows:
 
@@ -653,7 +654,7 @@ PHDs support a measurement value type that indicate a set of states or events, f
 
 Measurement values that fall into this category are mapped to an Observation following the Phd Bits Enumeration Observation profile. An Observation following this profile is indicated by an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation".
 
-Each event or state is reported in a component element. The Observation.component.code will be the ASN1ToHL7 code indicating what the state or event is. The value of the state or event will be in an Observation.component.valueCodeableConcept entry using the V2 binary code system. It should be noted that 'state' values must be reported for either state. It is as important know whether the door is opened or closed. Events are only required to be reported when they happen.
+Each event or state is reported in a component element. The Observation.component.code will be the ASN1ToHL7 code indicating what the state or event is. The value of the state or event will be in an Observation.component.valueCodeableConcept entry using the V2 binary code system. It should be noted that 'state' values must be reported for either state. It is as important to know whether the door is opened or closed. Events are only required to be reported when they happen.
 
 Implementers should not make any assumption about the state assignment. For example, to assume that 'something opened' is signified by a "Y" can lead to misinterpretation. The monitor specification may have been designed with the idea that everything closed was the desired state and signified it with "Y". The ASN1ToHL7 code system will have the assignment and readers will need to examine it.
 
@@ -822,7 +823,7 @@ or the familiar equation of a line
 
 The Observation.referenceRange element is for convenience and is not necessary for decoding the data. It was designed for plotting as it gives the upper and lower bounds of the trace at any time (it does not mean that either value is obtained in the transmitted sequence). One can create a graph with such limits without examining the sequence.
 
-It is possible that the periodic measurement is a vital sign, for example, a heart rate. If it is a vital sign, the same magic code rules apply as they do for scalar and vector measurements.
+It is possible that the periodic measurement is a vital sign, for example, a heart rate. If it is a vital sign, the same FHIR-required LOINC magic value rules apply as they do for scalar and vector measurements.
 
 ### String measurements
 PHDs can send a measurement value that is just an arbitrary human readable string. An example of such a measurement might be the name of an exercise program on a piece of gym equipment.
@@ -1081,7 +1082,7 @@ The example below shows an example of a market PHD following the Glucose special
 #### Property
 The property element contains time clock information and certification information. There will be at least one property entry for every PHD and that is the time synchronization information. The entry will be present even if the PHD supports no time clock, and that will be 'no time synchronization'.
 
-There are two types of properties, one that is described by a list of codes, and one that is described by a list of quantities. The list often contains only one entry. Though not obvious from the FHIR specification, a property cannot contain *both* a quantity and coded element.<p>
+There are two types of properties, one that is described by a list of codes, and one that is described by a list of quantities. The list often contains only one entry. Though not obvious from the FHIR specification, a property cannot contain *both* a quantity and coded element.
 
 The Device.property.type is a CodeableConcept which tells what the property is. There are [MDC](http://build.fhir.org/mdc.html) or [ASN1ToHL7](ASN1ToHL7.html) codes for each property type a PHD can expose. They are as follows:
 
@@ -1127,7 +1128,7 @@ An example of time synchronization property entry is shown below:
     }
 
 ##### Time Capabilities
-The time capabilities defines the types of real time clocks supported, whether the time can be set, whether external time synchronization is possible, etc. Each capability is treated as an event, so most PHGs will only report the capability if the PHD indicates it has the capability. The value is a single valueCode which will be either "Y" if the PHD has the capability or "N" if not. Most PHGs will not report the "N" case.  There may be several such time capability property entries.
+The time capabilities defines the types of real time clocks supported, whether the time can be set, whether external time synchronization is possible, etc. Each capability is treated as an event, so most PHGs will only report the capability if the PHD indicates it has the capability. The value is a single valueCode which will be either "Y" if the PHD has the capability or "N" if not. Most PHGs will not report the "N" case as that would significantly increase the size of the resource on the wire.  There may be several such time capability property entries.
 
 The time capabilities property is indicated by the Device.property.type.coding.code having one of the ASN1ToHL7 codes of "68219.x" which is NOT a decimal number! The value is a valueCode with codes "Y" or "N".
 
@@ -1201,7 +1202,8 @@ The example below gives the time capabilities of a market pulse oximeter:
     }
 
 #### Time Clock Resolutions
-The time clock resolutions is given by one of four MDC codes for each of the possible types of time clocks. Note that a PHD can only simultaneously support an absolute time (wall clock time with no offset) or base offset time (wall clock time with offset). A PHD may support both relative time clocks thus there could be up to three separate time resolution property entries though in most cases there is only one clock.<p>
+The time clock resolutions is given by one of four MDC codes for each of the possible types of time clocks. Note that a PHD can only simultaneously support an absolute time (wall clock time with no offset) or base offset time (wall clock time with offset). A PHD may support both relative time clocks thus there could be up to three separate time resolution property entries though in most cases there is only one clock.
+
 The resolution value is a valueQuantity and it gives the time interval between clock 'pulses', regardless of the type of time clock, in units of microseconds.
 
 The property is indicated by the Device.property.type.coding.code having one of four MDC codes "68222, 68223, 68224, and 68226". The value is a valueQuantity.
@@ -1227,9 +1229,10 @@ An example of a time resolution property for an absolute time clock with a time 
         ]
     }
 
-#### Time Tick Resolution for RR Intervals
-The Time Tick resolution is not used for measurement time stamps but for measuring RR intervals, which is the time between individual heart beats. So it is used as a valueQuantity in Observations, not the effective[x]. At the current time it is only used in ECGs or heart rate monitors. These special clocks typically have a resolution of 1024 Hz or better. When RR intervals are reported, they are reported in units of these ticks, so one must know what the frequency of the clock is. The reason for this special clock is that RR intervals have been traditionally timed using dedicated crystal oscillators.<p>
-The time tick is given as a property and its units are Hertz. However, the RR interval is given in the number of these ticks and many PHGs will not make the conversion as there is no UCUM code for the MDC dimension code of Ticks and therefore the units reported will be the MDC unit of ticks. Thus the reader will have to obtain the RR interval using the RR reported tick value and the tick frequency given in the Device property element.
+#### Time Tick Resolution for R-R Intervals
+The Time Tick resolution is not used for measurement time stamps but for measuring R-R intervals (time between electrocardiogram R-wave peaks) in ECG and Heart Rate specializations. The number of ticks is reported in the valueQuantity.value element in Observations, not the effective[x] which is the time the measurement is taken. These special clocks typically have a resolution of 1024 Hz or better. When R-R intervals are reported, they are reported in units of these ticks, so one must know what the frequency of the clock is. The reason for this special clock is that R-R intervals have been traditionally timed using dedicated crystal oscillators.
+
+The time tick is given as a property and its units are Hertz. However, the R-R interval is given in the number of these ticks and many PHGs will not make the conversion as there is no UCUM code for the MDC dimension code of Ticks and therefore the units reported will be the MDC unit of ticks. Thus the reader will have to obtain the R-R interval using the R-R reported tick value and the tick frequency given in the Device property element.
 
 The property is indicated by the Device.property.type.coding.code having the MDC code "68229". The value is a valueQuantity.
 
@@ -1254,12 +1257,12 @@ An example of the Tick resolution property entry is given below.
         ]
     }
 
-#### Time Accuracy
+#### Time Synchronization Accuracy
 The time synchronization accuracy is the accumulated difference between the PHD's internal clock and external reference source since last synchronization. It is reported in units of microseconds. To date no PHD is externally time synchronized so no PHD reports this attribute value.
 
 The property is indicated by the Device.property.type.coding.code having the MDC code "68221". The value is a valueQuantity.
 
-An example of the Tick resolution property entry is given below.
+An example of the time synchronization accuracy property entry is given below.
 
     {
         "type": {
@@ -1281,7 +1284,7 @@ An example of the Tick resolution property entry is given below.
     }
 
 #### Regulation Status
-The Regulation status is a set of states where only one state is defined. In the future the regulation status may become more defined to indicate which regulation body it is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated.
+The Regulation status is a set of states where only one state is defined. Regulation Status is used to indicate which regulation body the PHD is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated
 
 The property is indicated by the Device.property.type.coding.code having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
 
@@ -1352,7 +1355,7 @@ An example of a property entry where a PHD is certified for the pulse oximeter s
     ]
 
 ### The PHG Device Resource
-The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of Continua certified Health and Fitness interfaces. One of those Health and Fitness interfaces is the upload to RESTFul FHIR servers.
+The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of Continua certified Health and Fitness interfaces. A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
 
 However, the only required PHG entries are the time synchronization protocol and the system id identifier. For Continua compliance, PHGs must also report their Continua version, the list of certified PHD interfaces, the list of certified Health & Fitness interfaces, and the regulation status.
 
