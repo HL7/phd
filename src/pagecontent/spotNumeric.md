@@ -22,7 +22,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	"identifier": [ // The identifier's purpose is to uniquely identify this
 					// measurement on a given server for a given patient and device.
 		{
-			"value": "sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-74E8FFFEFF051C00-149530-20181113175902-48.0-2720-150588"
+			"value": "74E8FFFEFF051C00-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-149530-20181113175902.00-48.0-2720-150588"
 			// Identifier contains (patient info, PHD system id, type code, time stamp from PHD,
 			// measurement value, MDC term code for the units, and the supplemental types 32-bit MDC code.
 		}
