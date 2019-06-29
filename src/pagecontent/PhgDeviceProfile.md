@@ -279,8 +279,10 @@ The PHG regulation status is reported as follows:
  - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
  - property.type.text="regulation-status"
  - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0203 "
+ - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "
  - property.valueCode.text="Y=unregulated N=regulated"
+ 
+One could enter some time capabilities as additional 'bits' components if desired.
 
 #### **Time Synchronization Accuracy**
 The time synchronization accuracy is reported in microseconds as follows:

@@ -28,10 +28,36 @@ Recall that only set bits of type 'event' need to be reported. If of type 'state
 
 |Attribute|FHIR coding|
 |-
-|Enum-Observed-Value-Basic-Bit_str.*bitN* <br/> where 0 <= *N* <= 15|Observation.component*M*.code.coding.code="Type.*N*"<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared|
-|Enum-Observed-Value-Simple-Bit_str.*bitN* <br/> where 0 <= *N* <= 31|Observation.component*M*.code.coding.code<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared|
-|Enum-Observed-Value.*bitN*<br/><br/> where 0 <= *N* <= 31<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.component*N*.code.coding.code="Type.*N*" where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared<br/><br/>effects the Observation.component.code.coding.code "Type" see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>see Measurement Status in [Phd Base Observation Profile](BaseObservationProfile.html) |
+|Enum-Observed-Value-Basic-Bit_str.*bitN* <br/> where 0 <= *N* <= 15|Observation.component*M*.code.coding.code="Type.*N*"<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.code.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared</br>Observation.component*M*.valueCodableConcept.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136"<br/> where *M* is the *M*th setting being reported|
+|Enum-Observed-Value-Simple-Bit_str.*bitN* <br/> where 0 <= *N* <= 31|Observation.component*M*.code.coding.code<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.code.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared</br>Observation.component*M*.valueCodableConcept.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136"<br/> where *M* is the *M*th setting being reported|
+|Enum-Observed-Value.*bitN*<br/><br/> where 0 <= *N* <= 31<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.component*N*.code.coding.code="Type.*N*" where *M* is the *M*th setting being reported<br/>Observation.component*M*.code.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br/> where *M* is the *M*th setting being reported<br/>Observation.component*M*.valueCodableConcept.coding.code="Y/N" if bit *N* is set/cleared<br/>Observation.component*M*.valueCodableConcept.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136"<br/> where *M* is the *M*th setting being reported<br/><br/>effects the Observation.component.code.coding.code "Type" see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>see Measurement Status in [Phd Base Observation Profile](BaseObservationProfile.html) |
 |If reporting an unsupported bit *N*|Observation.component*M*.dataAbsentReason="unsupported"|
+
+Below is an example of one Observation.component element containing one of the perhaps several bit settings from a pulse oximeter device and sensor status measurement:
+<pre>
+component": [
+    {
+        "code": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                    "code": "150604.2"
+                }
+            ],
+            "text": "sensor-displaced"
+        },
+        "valueCodeableConcept": {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "code": "Y"
+                }
+            ],
+            "text": "Sensor is incorrectly placed on user"
+        }
+}
+</pre>
+There would be one such component element for every bit setting to be reported. Of one examines the ASN1ToHL7 code system [here](ASN1BITs.codesystem.html) one will see that the code 150604.2 means "Sensor is incorrectly placed on user".
 
 ### Meta Data Profile
 The uploader shall populate the Observation.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.

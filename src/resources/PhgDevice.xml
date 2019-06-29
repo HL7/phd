@@ -380,6 +380,88 @@
       <!-- There will, at minimum be a MDC_TIME_SYNC_PROTOCOL entry -->
       <min value="1" />
     </element>
+
+    <!-- The BITS property: Input a 16/32-bit ASN1 BITS field: may need up to 16/32 entrants! -->
+    <element id="Device.property:bitProperties">
+      <path value="Device.property" />
+      <sliceName value="bitProperties" />
+      <short value="Properties reported in BITs fields" />
+      <definition value="For each bit setting reported a BITs value, a bitProperties element is used." />
+      <comment value="A BITs measurement is a 16 or 32-bit ASN1 BITs value where each bit means something. " />
+    </element>
+    <!-- The bitProperties type: It will contain at least one coding element using the ASN1 system with one of
+    the ASN1 codes. Currently the MdsTimeInfo capabilities and RegCertDataList regulation status are reported as BITS  -->
+    <element id="Device.property:bitProperties.type">
+      <path value="Device.property.type" />
+      <short value="Tells what the BITs item is" />
+      <definition value="One of the capabilities reported in the Mds-Time-Info.mds-time-caps-state or Reg-Cert-Data-List.regulation-status field." />
+      <comment value="Only set 'event' types need be reported. Both set and cleared 'state' types need to be reported. The regulation status is as state type. All time capabilities are event types" />
+      <binding> 
+        <strength value="required"/> 
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"/> 
+      </binding>
+    </element>
+    <element id="Device.property:bitProperties.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
+    </element>
+    <!-- This is an ASN1 BITS code, tied to value. Use only one coding system -->
+    <element id="Device.property:bitProperties.type.coding">
+      <path value="Device.property.type.coding" />
+      <short value="Required ASN1 code system entry" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <!-- The system value is fixed -->
+    <element id="Device.property:bitProperties.type.coding.system">
+      <path value="Device.property.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" />
+    </element>
+    <element id="Device.property:bitProperties.type.coding.code">
+      <path value="Device.property.type.coding.code" />
+      <definition value="The ASN1 code made from the code and the Mder bit position" />
+      <comment value="The MDC code for the regulation status field is 532354, and only bit 0 is defined. However, the regulated status is when the bit is cleared and the unregulated status is when the bit is set. That choice can be confusing. One could enter some fields of the time capabilities attribute if desired." />
+      <min value="1" />
+    </element>
+    <!-- No quantity entry when the value is a code! -->
+    <element id="Device.property:bitProperties.valueQuantity">
+      <path value="Device.property.valueQuantity" />
+      <max value="0" />
+    </element>
+    <element id="Device.property:bitProperties.valueCode">
+      <path value="Device.property.valueCode" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Device.property:bitProperties.valueCode.coding">
+      <path value="Device.property.valueCode.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Device.property:bitProperties.valueCode.coding:V2Binary">
+      <path value="Device.property.valueCode.coding" />
+      <sliceName value="V2Binary" />
+      <short value="Required V2 Binary code system entry" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Device.property:bitProperties.valueCode.coding:V2Binary.system">
+      <path value="Device.property.valueCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0136" />
+    </element>
+    <element id="Device.property:bitProperties.valueCode.coding:V2Binary.code">
+      <path value="Device.property.valueCode.coding.code" />
+      <definition value="If bit is set, code contains Y if cleared, N" />
+      <min value="1" />
+    </element>
     
     
     <!-- The quantitiesProperty property gives the clock resolutions, and time synchronization accuracy -->

@@ -12,6 +12,7 @@ padding: 6px;}</style>
 |-
 |SYSID|System Identifier|
 |BTMAC|Bluetooth Address, both classic or Low Energy|
+|ETHMAC|Ethernet MAC address|
 |USB|USB 'address' (PID.VID)|
 |ZIGBEE|ZigBee Address|
 

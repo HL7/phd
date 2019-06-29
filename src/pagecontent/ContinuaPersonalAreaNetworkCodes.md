@@ -26,7 +26,7 @@ A sample of the most common specialization term codes
 
 |Specialization|MDC term code|Reference Identifier|
 |-
-|Generic 20601|4097|MDC_DEV_SPEC_PROFILE_GENERIC|
+|Generic 20601|4169|MDC_DEV_SPEC_PROFILE_GENERIC|
 |Pulse Oximeter|4100|MDC_DEV_SPEC_PROFILE_PULS_OXIM|
 |Electro cardiograph|4102|MDC_DEV_SPEC_PROFILE_MIN_ECG|
 |Blood Pressure Cuff|4103|MDC_DEV_SPEC_PROFILE_BP|
