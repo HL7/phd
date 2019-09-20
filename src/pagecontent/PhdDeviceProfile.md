@@ -50,6 +50,11 @@ The identifier is encoded as follows:
 
 There is actually a problem at the moment as there is no defined system for the transport addresses. Given that the Bluetooth and Ethernet MAC addresses are an EUI-48, the system value 'http://hl7.org/fhir/sid/eui-48' represents a placeholder until an actual system value is created. The MAC address placeholder has been floated in the Zulip discussions so it is a reasonable choice at this time. There are no proposals for ZigBee or USB and the placeholders are completely artificial.
 
+### Device.udiCarrier ###
+The UDI has recently been introduced into the IEEE 11073 20601 standard, however, no PHDs have implemented this feature and it is not yet present in Bluetooth Low Energy. For that reason, the mapping of this element is not specified in this version of the implementation guide. The IEEE 11073 20601 standard supports an issuer, jurisdiction, and the Human Readable interpretation of the barcode. The udiCarrier does have elements for each of these entries. On the other hand, there is no appropriate entryType code for this sourcing of the UDI as it is obtained electronically through protocol.
+
+It is anticipated that all these issues will be resolved and that eventually PHDs will support it via protocol. At that time a mapping from the IEEE UDI to the Device.uidCarrier will be specified.
+
 ### Device.type ###
 The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the Device.specializations element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In 11073-10201 this code is described as indicating "a single-purpose medical device". The code is also used in 11073-20601 to identify the MDS object, but there is no particular description as to its interpretation.
 
