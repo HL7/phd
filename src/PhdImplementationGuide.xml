@@ -299,7 +299,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Bundle/nonin-hdp-1542718631721"/>
       </reference> 
       <name value="Example of a first time Bundle upload"/>
-      <description value="This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present." />
+      <description value="This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present. The udiCarrier element present in the example was constructed from information sent by the device to illustrate what a UDI might look like; an actual UDI was not sent by protocol fromthe device. This guide does not yet stipulate how to map the UDI." />
       <exampleBoolean value="true"/>
       <groupingId value="examples" />
     </resource>
