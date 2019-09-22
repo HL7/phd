@@ -108,7 +108,7 @@ This example is a transaction bundle where the Patient and Device resources are 
               {
                 "coding": [
                   {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
                     "code": "4"
                   }
                 ]
@@ -358,7 +358,7 @@ This example is a transaction bundle where the Patient and Device resources are 
               {
                 "coding": [
                   {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
                     "code": "4"
                   }
                 ]

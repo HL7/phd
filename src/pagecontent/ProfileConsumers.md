@@ -57,12 +57,17 @@ The measurement type tells what the measurement is. In HL7 such information is t
 |-
 |150456|Pulse Oximeter Oxygen Saturation|
 |149530|Pulse Oximeter Pulse Rate|
-|188736|Body Mass|
+|188736|Body Mass (weight)|
 |150020|Non invasive blood pressure|
+|150021|Systolic Non invasive blood pressure|
+|150022|Diastolic Non invasive blood pressure|
+|150023|Mean Non invasive blood pressure|
 |149546|Non invasive pulse rate|
 |150364|Body temperature|
 |188424|Oral temperature|
 |160368|Glucose concentration in plasma|
+|188737|Body length (height)|
+|‭8410590|ECG heart rate (instant)|
 
 A comprehensive list of MDC codes is available using the [NIST RTMSS Rosetta](https://rtmms.nist.gov/rtmms/index.htm).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. The Rosetta is still a work in progress. One can find more information about the MDC code system [here](http://build.fhir.org/mdc.html).
 
@@ -1331,7 +1336,7 @@ An example of a property entry where a PHD is certified for the pulse oximeter s
         {
             "coding": [
                 {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD,
                     "code": "32772"
                 }
             ]
@@ -1339,7 +1344,7 @@ An example of a property entry where a PHD is certified for the pulse oximeter s
         {
             "coding": [
                 {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
                     "code": "8196"
                 }
             ]
@@ -1347,7 +1352,7 @@ An example of a property entry where a PHD is certified for the pulse oximeter s
         {
             "coding": [
                 {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPAN",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
                     "code": "4"
                 }
             ]
