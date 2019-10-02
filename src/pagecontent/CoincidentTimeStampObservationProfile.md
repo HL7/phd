@@ -26,6 +26,8 @@ The code element is used to report the type of time clock used by the PHD. The P
 |Relative-Time|relative time|a sequence of ticks with 1/8<sup>th</sup> millisecond resolution|Observation.code.coding.code = 67983|
 |HiRes-Relative-Time|relative time|a sequence of ticks with microsecond resolution|Observation.code.coding.code = 68072|
 
+Standard Bluetooth Low Energy Health profiles (at the time of this writing) always use an Absolute Time.
+
 ### Subject
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'
 
