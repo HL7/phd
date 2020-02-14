@@ -18,7 +18,7 @@
       "path": "http://hl7.org/fhir/uv/phd",
       "status": "trial-use",
       "sequence": "STU 1",
-      "fhirversion": "4.0.0"
+      "fhirversion": "4.0.1"
     },
     {
       "version": "0.3.0",
