@@ -211,7 +211,7 @@
 <a href="nonin-hdp-1542718631721.html">
                         •  Example of a first time Bundle upload</a>
 </td>
-<td>This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present.</td>
+<td>This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present. The udiCarrier element present in the example was constructed from information sent by the device to illustrate what a UDI might look like; an actual UDI was not sent by protocol fromthe device. This guide does not yet stipulate how to map the UDI.</td>
 </tr>
 <tr>
 <td style="column-width:30%">

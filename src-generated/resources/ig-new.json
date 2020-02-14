@@ -41,8 +41,8 @@
   }],
   "packageId" : "hl7.fhir.uv.phd",
   "license" : "CC0-1.0",
-  "fhirVersion" : ["4.0.0",
-  "4.0.0"],
+  "fhirVersion" : ["4.0.1",
+  "4.0.1"],
   "definition" : {
     "grouping" : [{
       "id" : "profiles",
@@ -281,7 +281,7 @@
         "reference" : "Bundle/nonin-hdp-1542718631721"
       },
       "name" : "Example of a first time Bundle upload",
-      "description" : "This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present.",
+      "description" : "This example shows a full transaction Bundle containing Patient, Device, and Observation resources. In subsequent uploads, the Patient and Device resources would not need to be present. The udiCarrier element present in the example was constructed from information sent by the device to illustrate what a UDI might look like; an actual UDI was not sent by protocol fromthe device. This guide does not yet stipulate how to map the UDI.",
       "exampleBoolean" : true,
       "groupingId" : "examples"
     },
