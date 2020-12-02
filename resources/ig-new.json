@@ -1,0 +1,278 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "PoCD",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PoCD-IG\\resources"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PoCD-IG\\examples"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
+    "valueString" : "E:\\Ruby25-x64\\IG_Publisher\\PoCD-IG\\pages"
+  }],
+  "url" : "http://hl7.org/fhir/uv/pocd/ImplementationGuide/PoCD",
+  "version" : "0.2.0",
+  "name" : "Point-of-Care Device Implementation Guide",
+  "title" : "Point-of-Care Device Implementation Guide",
+  "status" : "draft",
+  "date" : "2018-08-18",
+  "publisher" : "Health Level Seven International (Health Care Devices Work Group)",
+  "description" : "ImplementationGuide for Point-of-Care Devices (PoCD), such as those typically found in a hospital care setting (e.g., physiological monitors, infusion pumps, ventilators, pulse-oximeters, etc.).",
+  "packageId" : "hl7.fhir.uv.pocd",
+  "license" : "CC0-1.0",
+  "fhirVersion" : "3.5.0",
+  "definition" : {
+    "resource" : [{
+      "reference" : {
+        "reference" : "StructureDefinition/MdsDevice"
+      },
+      "name" : "MdsDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/VmdDevice"
+      },
+      "name" : "VmdDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/ChannelDevice"
+      },
+      "name" : "ChannelDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/NumericDeviceMetric"
+      },
+      "name" : "NumericDeviceMetric",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/EnumerationDeviceMetric"
+      },
+      "name" : "EnumerationDeviceMetric",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/NumericObservation"
+      },
+      "name" : "NumericObservation",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/CompoundNumericObservation"
+      },
+      "name" : "CompoundNumericObservation",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/EnumerationObservation"
+      },
+      "name" : "EnumerationObservation",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/device-instance"
+      },
+      "name" : "device-instance",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/measurement-status"
+      },
+      "name" : "MeasurementStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/11073MDC-object"
+      },
+      "name" : "11073MDC-object",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/11073MDC-metric"
+      },
+      "name" : "11073MDC-metric",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/11073MDC-dimension"
+      },
+      "name" : "11073MDC-dimension",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/observation-interpretation"
+      },
+      "name" : "ObservationInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "Device/5205082c-1f88-434e-9252-6c6b09c81a0d"
+      },
+      "name" : "PhysioMonitorMdsDevice",
+      "exampleCanonical" : "StructureDefinition/MdsDevice"
+    },
+    {
+      "reference" : {
+        "reference" : "Device/40b86960-b54f-402e-87d7-b6067313d449"
+      },
+      "name" : "ECGVmdDevice",
+      "exampleCanonical" : "StructureDefinition/VmdDevice"
+    },
+    {
+      "reference" : {
+        "reference" : "Device/1afc491f-86bf-4195-b3b0-3d6f006e05c5"
+      },
+      "name" : "ECGChannelDevice",
+      "exampleCanonical" : "StructureDefinition/ChannelDevice"
+    },
+    {
+      "reference" : {
+        "reference" : "Device/2cbadf16-8aaa-4188-8fa4-0875c922ebb2"
+      },
+      "name" : "HeartRateChannelDevice",
+      "exampleCanonical" : "StructureDefinition/ChannelDevice"
+    },
+    {
+      "reference" : {
+        "reference" : "Device/33d406f4-62cc-4e4c-9674-638610625d50"
+      },
+      "name" : "NBPVmdDevice",
+      "exampleCanonical" : "StructureDefinition/VmdDevice"
+    },
+    {
+      "reference" : {
+        "reference" : "Device/2b7069bf-65a4-4226-a2ba-9af47197074f"
+      },
+      "name" : "NBPChannelDevice",
+      "exampleCanonical" : "StructureDefinition/ChannelDevice"
+    },
+    {
+      "reference" : {
+        "reference" : "DeviceMetric/5b4b7dd2-d53c-4a60-9c40-457c54d7eb7b"
+      },
+      "name" : "HeartRateNumericDeviceMetric",
+      "exampleCanonical" : "StructureDefinition/NumericDeviceMetric"
+    },
+    {
+      "reference" : {
+        "reference" : "DeviceMetric/2f26a717-9841-4ddc-92eb-26398c7548c7"
+      },
+      "name" : "NBPNumericDeviceMetric",
+      "exampleCanonical" : "StructureDefinition/NumericDeviceMetric"
+    },
+    {
+      "reference" : {
+        "reference" : "DeviceMetric/da145796-6cda-4dec-b9cf-8385b24afddf"
+      },
+      "name" : "RhythmStatusEnumerationDeviceMetric",
+      "exampleCanonical" : "StructureDefinition/EnumerationDeviceMetric"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/f2252dbe-48e5-463b-b781-00c4fa71da88"
+      },
+      "name" : "HeartRateNumericObservation",
+      "exampleCanonical" : "StructureDefinition/NumericObservation"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/d77b8105-44a7-47dc-931e-2621ad85d472"
+      },
+      "name" : "NBPCompoundNumericObservation",
+      "exampleCanonical" : "StructureDefinition/CompoundNumericObservation"
+    },
+    {
+      "reference" : {
+        "reference" : "Observation/84b2ce38-98e2-4da6-a593-afdb3fd017f5"
+      },
+      "name" : "RhythmStatusEnumerationObservation",
+      "exampleCanonical" : "StructureDefinition/EnumerationObservation"
+    },
+    {
+      "reference" : {
+        "reference" : "Patient/6a41c235-5421-4698-af96-20f279b21ffc"
+      },
+      "exampleBoolean" : true
+    },
+    {
+      "reference" : {
+        "reference" : "Location/6a10c89f-8a65-46c9-af60-4f6c12f9bd48"
+      },
+      "exampleBoolean" : true
+    }],
+    "page" : {
+      "nameUrl" : "index.html",
+      "title" : "Home",
+      "generation" : "html",
+      "page" : [{
+        "nameUrl" : "overview.html",
+        "title" : "Overview",
+        "generation" : "html"
+      },
+      {
+        "nameUrl" : "profiles.html",
+        "title" : "Profiles",
+        "generation" : "html"
+      },
+      {
+        "nameUrl" : "terminology.html",
+        "title" : "Terminology",
+        "generation" : "html"
+      },
+      {
+        "nameUrl" : "resources.html",
+        "title" : "Resources",
+        "generation" : "html"
+      },
+      {
+        "nameUrl" : "downloads.html",
+        "title" : "Downloads",
+        "generation" : "html"
+      },
+      {
+        "nameUrl" : "changes.html",
+        "title" : "Change Log",
+        "generation" : "html"
+      }]
+    },
+    "parameter" : [{
+      "code" : "apply-business-version",
+      "value" : "0.2.0"
+    },
+    {
+      "code" : "generate-json",
+      "value" : "true"
+    },
+    {
+      "code" : "generate-xml",
+      "value" : "true"
+    },
+    {
+      "code" : "generate-turtle",
+      "value" : "true"
+    }],
+    "template" : [{
+      "code" : "test",
+      "source" : "http://github.com/fhir/test-template"
+    }]
+  }
+}

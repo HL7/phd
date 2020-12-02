@@ -41,7 +41,7 @@
       "date": "2018-01-01",
       "desc": "STU #1 draft for comment",
       "path": "http://hl7.org/fhir/uv/phd",
-      "status": "draft for comment",
+      "status": "ballot",
       "sequence": "STU1"
     }
   ]
