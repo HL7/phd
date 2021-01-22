@@ -1487,7 +1487,7 @@ An example of an unknown patient using the Version 2 Table 0004 patient class co
  - [Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)
  - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)
  - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)
- - [BITs Enumeration Observation Profile](StructureDefinition-PhdBITsEnumerationObservation.html)
+ - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)
  - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)
  - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)
  - [Coincident Time Stamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html)
