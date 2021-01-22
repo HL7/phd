@@ -14,7 +14,7 @@ padding: 6px;}</style>
 
 This measurement is just a human readable string and is not designed to support generic interpretation by machine. To date it is used in only the Cardiovascular specialization to report the name of some exercise program option.
 
-Structure definition for this profile is defined [here](PhdStringEnumerationObservation.html)
+Structure definition for this profile is defined [here](StructureDefinition-PhdStringEnumerationObservation.html)
 
 ### Mapping the Enumeration String to FHIR
 The human readable string from the Enum-Observed-Value-Simple-Str attribute is mapped to the Observation.valueString element.

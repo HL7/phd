@@ -6,7 +6,7 @@ If a PHD has its time clock altered, a Date-Time-Adjustment attribute is sent to
 
 The Coincident Time Stamp Observation is created every connection so data duplication is not an issue. Therefore the identifier element of this resource is not used in this profile.
 
-The Structure Definition for the PHD Coincident Time Stamp Observation Profile is given [here](PhdCoincidentTimeStampObservation.html)
+The Structure Definition for the PHD Coincident Time Stamp Observation Profile is given [here](StructureDefinition-PhdCoincidentTimeStampObservation.html)
 
 <style>table, th, td {
 border: 1px solid black;

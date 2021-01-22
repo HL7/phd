@@ -58,7 +58,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
                   "code": "SYSID",
-                  "display": "System Identifier"
+                  "display": "IEEE 11073 System Identifier"
                 }
               ]
             },
@@ -171,7 +171,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
-                  "display": "regulation-status"
+                  "display": "If bit is cleared device is regulated"
                 }
               ]
             },
@@ -251,7 +251,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
                   "code": "SYSID",
-                  "display": "System Identifier"
+                  "display": "IEEE 11073 System Identifier"
                 }
               ]
             },
@@ -264,7 +264,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
                   "code": "BTMAC",
-                  "display": "Bluetooth Address"
+                  "display": "Bluetooth MAC Address"
                 }
               ]
             },

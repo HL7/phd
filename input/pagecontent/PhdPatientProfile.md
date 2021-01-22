@@ -11,7 +11,7 @@ padding: 6px;}</style>
 
 The profile in the meta element shall be http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient
 
-The structure definition for the Phd Patient Profile is given [here](PhdPatient.html)
+The structure definition for the Phd Patient Profile is given [here](StructureDefinition-PhdPatient.html)
 
 ### Mapping
 When a Patient resource for a known patient is to be created by the PHG the following mapping is used:

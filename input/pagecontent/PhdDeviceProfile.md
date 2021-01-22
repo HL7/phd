@@ -21,7 +21,7 @@ The transport address and friendly name are not provided by the MDS but come fro
 
 There are several CodeableConcept data types in this mapping where the Coding data type has a 'display' element. It is recommended to put the MDC reference identifier as part of the display element if known. The coding system element is always set to "urn.iso.std.iso:11073:10101 when an MDC code".
 
-The structure definition for the PHD Device Profile is given [here](PhdDevice.html)
+The structure definition for the PHD Device Profile is given [here](StructureDefinition-PhdDevice.html)
 
 ### Meta Data Profile
 The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice indicating this resource is generated following the PHD Implementation Guide.
@@ -29,7 +29,7 @@ The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/
 ### System Identifier
 All 11073 20601 PHDs are required to have a system identifier. It is an EUI-64 consisting of 8 bytes. The system id is mapped to the Device.identifier.value element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required for Continua compliance, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall enter 00-00-00-00-00-00-00-00 and it is highly recommended to provide a transport address as a means of uniquely identifying the PHD.
 
-In order to discriminate between an identifier that is a system id and that which is a transport address the identifier.type element is used. A Continua-defined CodeSystem [Device Identifier Codes](ContinuaDeviceIdentifiers.html) has the codes one can use to populate the identifier.type.coding.code element.
+In order to discriminate between an identifier that is a system id and that which is a transport address the identifier.type element is used. A Continua-defined CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the identifier.type.coding.code element.
 
 The transport addresses are as follows:
 

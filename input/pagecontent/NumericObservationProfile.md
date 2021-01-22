@@ -15,7 +15,7 @@ padding: 6px;}</style>
 
 These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
 
-The structure definition for this profile is given [here](PhdNumericObservation.html)
+The structure definition for this profile is given [here](StructureDefinition-PhdNumericObservation.html)
 
 ### Mapping Numerics to FHIR
 The following table shows how the numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC unit code needs to be mapped to UCUM. In most cases this mapping is straight forward, but there can be some examples which are tricky. The MDC_DIM_TICK for the RR interval is just the number of ticks. However, the tick unit is given by the MDS attribute MDC_ATTR_TICK_RES which is the number of ticks per second. So if MDC_ATTR_TICK_RES is 2048 and the RR measurement is 3092, that means the RR interval is 1.5 seconds. One could also express the measurement in Hertz. When the units are converted in this manner, the value must be converted appropriately.

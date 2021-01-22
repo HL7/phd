@@ -48,7 +48,7 @@
       <sliceName value="phdProfile" />
       <min value="1" />
       <max value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice" />
+      <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice" />
     </element>
 
     <!-- IDENTIFIER -->
@@ -274,7 +274,7 @@
       <short value="Indicates PHD" />
       <definition value="The code for a Simple MDS indicating that this unit is a personal health device" />
       <min value="1" />
-      <fixedUri value="65573" />
+      <fixedCode value="65573" />
     </element>
     <!-- SPECIALIZATIONS -->
     <element id="Device.specialization">

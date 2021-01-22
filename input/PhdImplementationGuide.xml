@@ -427,7 +427,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of a Blood Pressure PHD"/>
       <description value="This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information." />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
       <groupingId value="examples" />
     </resource>
 
@@ -437,7 +437,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of a Glucose Monitor PHD"/>
       <description value="This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation" />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
       <groupingId value="examples" />
     </resource>
 

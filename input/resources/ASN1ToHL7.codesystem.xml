@@ -123,7 +123,7 @@
 <!-- The following code concepts are derived from the MDC_TIME_CAP_STATE attribute -->
   <concept> 
     <code value="68219.0"/> 
-    <display value="Real-time clock"/> 
+    <display value="Real-time clock supported"/> 
     <definition value="Indicates real time clock is supported"/> 
     <property> 
       <code value="type" /> 
@@ -136,7 +136,7 @@
   </concept>
     <concept> 
     <code value="68219.1"/> 
-    <display value="PHG set-time"/> 
+    <display value="set-time supported"/> 
     <definition value="Indicates support for the PHG to set the time"/> 
     <property> 
       <code value="type" /> 
@@ -149,7 +149,7 @@
   </concept>
     <concept> 
     <code value="68219.2"/> 
-    <display value="Relative Time"/> 
+    <display value="Relative Time clock supported"/> 
     <definition value="Indicates Relative Time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -162,7 +162,7 @@
   </concept>
     <concept> 
     <code value="68219.3"/> 
-    <display value="Hi-Res Relative Time"/> 
+    <display value="Hi-Res Relative Time clock supported"/> 
     <definition value="Indicates Hi-Res Relative Time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -175,7 +175,7 @@
   </concept>
     <concept> 
     <code value="68219.4"/> 
-    <display value="Sync Absolute Time"/> 
+    <display value="Sync Absolute Time supported"/> 
     <definition value="Indicates that syncing the absolute time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -188,7 +188,7 @@
   </concept>
     <concept> 
     <code value="68219.5"/> 
-    <display value="Sync Relative Time"/> 
+    <display value="Sync Relative Time supported"/> 
     <definition value="Indicates that syncing the relative time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -201,7 +201,7 @@
   </concept>
     <concept> 
     <code value="68219.6"/> 
-    <display value="Sync Hi-Res Relative Time"/> 
+    <display value="Sync Hi-Res Relative Time supported"/> 
     <definition value="Indicates that syncing hi-res relative time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -214,7 +214,7 @@
   </concept>
     <concept> 
     <code value="68219.7"/> 
-    <display value="Base Offset Time"/> 
+    <display value="Base Offset Time supported"/> 
     <definition value="Indicates that the real-time clock supports base offset time"/> 
     <property> 
       <code value="type" /> 
@@ -227,7 +227,7 @@
   </concept>
   <concept> 
     <code value="68219.8"/> 
-    <display value="Absolute Time Synced"/> 
+    <display value="Absolute Time is Synced"/> 
     <definition value="Indicates the absolute time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -240,7 +240,7 @@
   </concept>
   <concept> 
     <code value="68219.9"/> 
-    <display value="Relative Time Synced"/> 
+    <display value="Relative Time is Synced"/> 
     <definition value="Indicates the relative time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -253,7 +253,7 @@
   </concept>
 <concept> 
     <code value="68219.10"/> 
-    <display value="Hi-Res Relative Time Synced"/> 
+    <display value="Hi-Res Relative Time is Synced"/> 
     <definition value="Indicates the hi-res time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -279,7 +279,7 @@
   </concept>
   <concept> 
     <code value="68219.12"/> 
-    <display value="Syncing base-offset time support"/> 
+    <display value="Syncing base-offset time supported"/> 
     <definition value="Indicates that syncing base-offset time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -292,7 +292,7 @@
   </concept>
     <concept> 
     <code value="68219.13"/> 
-    <display value="Base-Offset Time Synced"/> 
+    <display value="Base-Offset Time is Synced"/> 
     <definition value="Indicates that base-offset time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -305,7 +305,7 @@
   </concept>
   <concept> 
     <code value="68219.14"/> 
-    <display value="Base-Offset Time UTC Aligned"/> 
+    <display value="Base-Offset Time is UTC Aligned"/> 
     <definition value="Indicates that base-offset time is aligned with UTC time standard"/> 
     <property> 
       <code value="type" /> 

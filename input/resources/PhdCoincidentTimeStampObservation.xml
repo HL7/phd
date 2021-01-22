@@ -45,7 +45,7 @@
       <sliceName value="phdProfile" />
       <min value="1" />
       <max value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
+      <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" />
     </element>
 
     <!-- For PHG reference -->

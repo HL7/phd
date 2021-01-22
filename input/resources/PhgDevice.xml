@@ -48,7 +48,7 @@
       <sliceName value="phdProfile" />
       <min value="1" />
       <max value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice" />
+      <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice" />
     </element>
     
     <!-- IDENTIFIER -->
@@ -264,7 +264,7 @@
       <short value="Indicates PHG" />
       <definition value="The code for a PHG indicating that this unit is a personal health device" />
       <min value="1" />
-      <fixedUri value="531981" />
+      <fixedCode value="531981" />
     </element>
     
         <!-- SPECIALIZATIONS -->

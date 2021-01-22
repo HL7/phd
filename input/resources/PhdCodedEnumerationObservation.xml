@@ -46,7 +46,7 @@
       <sliceName value="phdProfile" />
       <min value="1" />
       <max value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation" />
+      <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation" />
     </element>
     
     <!-- value[x] which is a valueCodeableConcept  -->

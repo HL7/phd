@@ -69,7 +69,7 @@
 			"valueQuantity": {
 				"value": 116,
 				"system": "http://unitsofmeasure.org",
-				"code": "mmHg"
+				"code": "mm[Hg]"
 			}
 		},
 		{
@@ -89,7 +89,7 @@
 			"valueQuantity": {
 				"value": 71,
 				"system": "http://unitsofmeasure.org",
-				"code": "mmHg"
+				"code": "mm[Hg]"
 			}
 		},
 		{
@@ -105,7 +105,7 @@
 			"valueQuantity": {
 				"value": 86,
 				"system": "http://unitsofmeasure.org",
-				"code": "mmHg"
+				"code": "mm[Hg]"
 			}
 		}
 	]

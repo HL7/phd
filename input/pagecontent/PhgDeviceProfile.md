@@ -29,7 +29,7 @@ A transport address is not required. It is still strongly recommended that the t
 
 Similar to the PHD case, when CodeableConcept data types are used it is recommended to put the MDC reference identifier as part of the text element when the system element indicates the MDC coding system "urn.iso.std.iso:11073:10101".
 
-The structure definition for the PHG Device Profile is given [here](PhgDevice.html)
+The structure definition for the PHG Device Profile is given [here](StructureDefinition-PhgDevice.html)
 
 A JSON example is given in [PHG Device JSON Example](https://simplifier.net/guide/PCHAPersonalHealthDeviceDataImplementationGuide/PhgDeviceJSONExample)
 
@@ -64,7 +64,7 @@ The identifier for the Bluetooth Address:
  
  There is actually a problem at the moment as there is no defined system for the transport addresses. Given that the Bluetooth and Ethernet MAC addresses are an EUI-48, the system value 'http://hl7.org/fhir/sid/eui-48' represents a placeholder until an actual system value is created. The MAC address placeholder has been floated in the Zulip discussions so it is a reasonable choice at this time. There are no proposals for ZigBee or USB and the placeholders (see PhdProfile page) are completely artificial.
  
- An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](phg-ecde3d4e58532d31.000000000000.html)
+ An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](Device-phg-ecde3d4e58532d31.000000000000.html)
 
 #### **Device type**
 The PHG Device.type is given by the MDC code 531981. The reference identifier for this code is MDC_MOC_VMS_MDS_AHD. "AHD" is the previous name Continua gave to what is now known as the PHG. However, reference identifiers are normative and once accepted, they cannot change. It shall be encoded as follows:

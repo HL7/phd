@@ -46,7 +46,7 @@
       <sliceName value="phdProfile" />
       <min value="1" />
       <max value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation" />
+      <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation" />
     </element>
     
     <!-- value[x] which is a valueString  -->

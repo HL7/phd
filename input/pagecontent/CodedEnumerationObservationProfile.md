@@ -16,7 +16,7 @@ The Enum-Observed-Value-Simple-OID attribute is used when the measurement is its
 
 The Enum-Observed-Value attribute is a complex attribute and can be any one of the three possible enumeration measurements. There is an element in the structure which indicates which type of enumeration it is. If it is an 'OID' type it has an MDC term code. The attribute also has its own metric-id value telling what it is and status value. The metric-id value replaces the term code given by the Type attribute for the *type* of measurement (*not the measurement!*) and the status value replaces the Measurement-Status attribute.
 
-The structure definition for this profile is given [here](PhdCodedEnumerationObservation.html)
+The structure definition for this profile is given [here](StructureDefinition-PhdCodedEnumerationObservation.html)
 
 ### Mapping Coded Enumerations to FHIR
 The following table shows how the coded enumeration attributes are mapped to FHIR.

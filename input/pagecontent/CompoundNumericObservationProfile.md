@@ -19,7 +19,7 @@ The Observation.component.code element is obtained from the Metric-Id-List attri
 
 The Observation.code element comes from the Type attribute and gives the general type of measurement. For example, the Type attribute might indicate "acceleration" or "non-invasive blood pressure". There is no Observation.value[x] entry. There may still be an Observation.dataAbsentReason element if, say, the Measurement-Status attribute indicates an invalid or otherwise overall failure value. If there is such an overall failure of the measurement, then there is no need to report the components.
 
-The structure definition is given [here](PhdCompoundNumericObservation.html)
+The structure definition is given [here](StructureDefinition-PhdCompoundNumericObservation.html)
 
 ### Mapping Compound Numerics to FHIR
 The following table shows how the compound numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC units need to be mapped to UCUM when used in FHIR.

@@ -8,7 +8,7 @@ The PHD Base Observation profile contains the elements that are common to all PH
  - components: contains any additional measurement descriptions (supplemental types and relative time stamps)
  - measurement status
 
-The structure definition is given [here](PhdBaseObservation.html)
+The structure definition is given [here](StructureDefinition-PhdBaseObservation.html)
 
 <style>table, th, td {
 border: 1px solid black;
