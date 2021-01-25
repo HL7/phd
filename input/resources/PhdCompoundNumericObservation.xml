@@ -153,10 +153,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"/> 
       </binding>
     </element>
-    <element id="Observation.component:compound.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="It is recommended to display at least the reference identifier describing the compound sub-element" />
-    </element>
     <element id="Observation.component:compound.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -201,6 +197,10 @@
       <path value="Observation.component.code.coding.code" />
       <comment value="Required if the measurement is a vital sign" />
       <min value="1" />
+    </element>
+    <element id="Observation.component:compound.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="It is recommended to display at least the reference identifier describing the compound sub-element" />
     </element>
 
     <!-- Component: value[x]:valueQuantity -->
@@ -301,10 +301,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:accuracyComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
-    </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -334,6 +330,11 @@
       <min value="1" />
       <fixedCode value="67914" />
     </element>
+    <element id="Observation.component:accuracyComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
+    </element>
+
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
       <sliceName value="valueQuantity" />

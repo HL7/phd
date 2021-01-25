@@ -129,10 +129,6 @@
     <element id="Observation.code">
       <path value="Observation.code" />
     </element>
-    <element id="Observation.code.text">
-      <path value="Observation.code.text" />
-      <short value="It is recommended to display at least the reference identifier for the MDC code" />
-    </element>
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
       <slicing>
@@ -158,10 +154,6 @@
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
-    <element id="Observation.code.coding:MDCType.code">
-      <path value="Observation.code.coding.code" />
-      <min value="1" />
-    </element>
     <element id="Observation.code.coding:LoincCoding">
       <path value="Observation.code.coding" />
       <sliceName value="LoincCoding" />
@@ -179,6 +171,10 @@
       <path value="Observation.code.coding.code" />
       <comment value="Required if the measurement is a vital sign" />
       <min value="1" />
+    </element>
+	<element id="Observation.code.text">
+      <path value="Observation.code.text" />
+      <short value="It is recommended to display at least the reference identifier for the MDC code" />
     </element>
 
     <element id="Observation.subject">
@@ -210,19 +206,6 @@
         <expression value="effectiveDateTime.exists() or effectivePeriod.exists().exists()"/>
       </constraint> -->
     </element>
-
-    <element id="Observation.device">
-      <path value="Observation.device" />
-      <comment value="This field will reference the PHD Device." />
-      <min value="1" />
-    </element>
-    <element id="Observation.device.reference">
-      <path value="Observation.device.reference" />
-      <short value="Reference to the device responsible for the measurement" />
-      <definition value="Reference to the device-related resources that describe the sensor device taking the measurement. This element will point to a Device resource following the Phd Device Profile." />
-      <comment value="This reference points to the Device resource containing information about the sensor device that took the measurement." />
-      <min value="1" />
-    </element>
     
     <!-- INTERPRETATION -->
     <element id="Observation.interpretation.coding">
@@ -250,7 +233,21 @@
     <element id="Observation.interpretation.coding:MsmtStatusInterpretation.code">
       <path value="Observation.interpretation.coding.code" />
       <min value="1" />
-    </element>    
+    </element>
+
+
+    <element id="Observation.device">
+      <path value="Observation.device" />
+      <comment value="This field will reference the PHD Device." />
+      <min value="1" />
+    </element>
+    <element id="Observation.device.reference">
+      <path value="Observation.device.reference" />
+      <short value="Reference to the device responsible for the measurement" />
+      <definition value="Reference to the device-related resources that describe the sensor device taking the measurement. This element will point to a Device resource following the Phd Device Profile." />
+      <comment value="This reference points to the Device resource containing information about the sensor device that took the measurement." />
+      <min value="1" />
+    </element>	
     
     <!-- DERIVED FROM: Coincident time stamp and Source Handle Reference -->
     <element id="Observation.derivedFrom">
@@ -287,10 +284,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:supplementalTypesComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES" />
-    </element>
     <element id="Observation.component:supplementalTypesComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -320,6 +313,11 @@
       <min value="1" />
       <fixedCode value="68193" />
     </element>
+    <element id="Observation.component:supplementalTypesComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES" />
+    </element>
+	
     <element id="Observation.component:supplementalTypesComponent.value[x]:valueCodeableConcept">
       <path value="Observation.component.valueCodeableConcept" />
       <sliceName value="valueCodeableConcept" />
@@ -378,10 +376,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:relativeTimeComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="The reference identifier should be included in the description. For a Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL" />
-    </element>
     <element id="Observation.component:relativeTimeComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -411,6 +405,11 @@
       <min value="1" />
       <fixedCode value="67985" />
     </element>
+    <element id="Observation.component:relativeTimeComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="The reference identifier should be included in the description. For a Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL" />
+    </element>
+	
     <!-- value[x] is Quantity -->
     <element id="Observation.component:relativeTimeComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
@@ -458,10 +457,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:hiresRelativeTimeComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="The reference identifier should be included in the description. For a Hi-Res-Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL_HI_RES" />
-    </element>
     <element id="Observation.component:hiresRelativeTimeComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -491,6 +486,11 @@
       <min value="1" />
       <fixedCode value="68073" />
     </element>
+	<element id="Observation.component:hiresRelativeTimeComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="The reference identifier should be included in the description. For a Hi-Res-Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL_HI_RES" />
+    </element>
+	
     <element id="Observation.component:hiresRelativeTimeComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
       <sliceName value="valueQuantity" />

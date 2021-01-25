@@ -228,11 +228,6 @@
       <short value="Indicates the device is a PHG." /> 
       <min value="1" />      
     </element>
-    <element id="Device.type.text">
-      <path value="Device.type.text" />
-      <definition value="A human readable display descrbing the meaning of the code." />
-      <comment value="It is suggested that this element contain the reference identifier for a PHG 'MDC_MOC_VMS_MDS_AHD'." />
-    </element>
     <element id="Device.type.coding">
       <path value="Device.type.coding" />
       <slicing>
@@ -265,6 +260,11 @@
       <definition value="The code for a PHG indicating that this unit is a personal health device" />
       <min value="1" />
       <fixedCode value="531981" />
+    </element>
+    <element id="Device.type.text">
+      <path value="Device.type.text" />
+      <definition value="A human readable display descrbing the meaning of the code." />
+      <comment value="It is suggested that this element contain the reference identifier for a PHG 'MDC_MOC_VMS_MDS_AHD'." />
     </element>
     
         <!-- SPECIALIZATIONS -->
@@ -401,10 +401,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"/> 
       </binding>
     </element>
-    <element id="Device.property:bitProperties.type.text">
-      <path value="Device.property.type.text" />
-      <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
-    </element>
     <!-- This is an ASN1 BITS code, tied to value. Use only one coding system -->
     <element id="Device.property:bitProperties.type.coding">
       <path value="Device.property.type.coding" />
@@ -424,6 +420,11 @@
       <comment value="The MDC code for the regulation status field is 532354, and only bit 0 is defined. However, the regulated status is when the bit is cleared and the unregulated status is when the bit is set. That choice can be confusing. One could enter some fields of the time capabilities attribute if desired." />
       <min value="1" />
     </element>
+    <element id="Device.property:bitProperties.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the ASN1 name for the given bit meaning" />
+    </element>
+	
     <!-- No quantity entry when the value is a code! -->
     <element id="Device.property:bitProperties.valueQuantity">
       <path value="Device.property.valueQuantity" />
@@ -480,10 +481,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
-    <element id="Device.property:quantitiesProperty.type.text">
-      <path value="Device.property.type.text" />
-      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
-    </element>
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:quantitiesProperty.type.coding">
       <path value="Device.property.type.coding" />
@@ -510,12 +507,11 @@
       Time sync accuracy                68221            MDC_TIME_SYNC_ACCURACY&#xD;&#xA;" />
       <min value="1" />
     </element>
-    
-    <!-- No code entry when the value is a quantity! -->
-    <element id="Device.property:quantitiesProperty.valueCode">
-      <path value="Device.property.valueCode" />
-      <max value="0" />
+    <element id="Device.property:quantitiesProperty.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
     </element>
+    
     <element id="Device.property:quantitiesProperty.valueQuantity">
       <path value="Device.property.valueQuantity" />
       <definition value="The value of the reported quantity." />
@@ -538,6 +534,11 @@
       <definition value="The UCUM code (for microseconds it is 'us')" />
       <min value="1" />
       <fixedCode value="us" />
+    </element>
+    <!-- No code entry when the value is a quantity! -->
+    <element id="Device.property:quantitiesProperty.valueCode">
+      <path value="Device.property.valueCode" />
+      <max value="0" />
     </element>
     
 <!--    <!{1}** The singleCodedProperties property. At this time there is only one
@@ -640,10 +641,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
       </binding>
     </element>
-    <element id="Device.property:codedListProperties.type.text">
-      <path value="Device.property.type.text" />
-      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
-    </element>
     <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:codedListProperties.type.coding">
       <path value="Device.property.type.coding" />
@@ -666,6 +663,10 @@
       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD&#xD;&#xA;
       Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS&#xD;&#xA;" />
       <min value="1" />
+    </element>
+    <element id="Device.property:codedListProperties.type.text">
+      <path value="Device.property.type.text" />
+      <definition value="It is recommended to display at least the MDC reference identifier for the code" />
     </element>
     
     <!-- No quantity entry when the value is a code! -->

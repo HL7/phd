@@ -164,10 +164,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:accuracyComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
-    </element>
     <element id="Observation.component:accuracyComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -197,6 +193,11 @@
       <min value="1" />
       <fixedCode value="67914" />
     </element>
+    <element id="Observation.component:accuracyComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
+    </element>
+	
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.valueQuantity" />
       <sliceName value="valueQuantity" />
@@ -318,10 +319,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:currentLimitsComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_LIMIT_CURR" />
-    </element>
      <element id="Observation.component:currentLimitsComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -353,6 +350,11 @@
       <min value="1" />
       <fixedCode value="67892" />
     </element>
+    <element id="Observation.component:currentLimitsComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_LIMIT_CURR" />
+    </element>
+	
     <element id="Observation.component:currentLimitsComponent.value[x]">
       <path value="Observation.component.valueRange" />
       <min value="1" />
@@ -428,10 +430,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:alertOpTextStringComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="The reference identifier for the attribute should be included. The Alert-Op-Text-String attribute ref id is MDC_ATTR_AL_OP_TEXT_STRING" />
-    </element>
      <element id="Observation.component:alertOpTextStringComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -461,6 +459,11 @@
       <min value="1" />
       <fixedCode value="68104" />
     </element>
+    <element id="Observation.component:alertOpTextStringComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="The reference identifier for the attribute should be included. The Alert-Op-Text-String attribute ref id is MDC_ATTR_AL_OP_TEXT_STRING" />
+    </element>
+
     <element id="Observation.component:alertOpTextStringComponent.value[x]:valueString">
       <path value="Observation.component.valueString" />
       <sliceName value="valueString" />
@@ -494,10 +497,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:measurementConfidence95Component.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_MSMT_CONFIDENCE_95" />
-    </element>
      <element id="Observation.component:measurementConfidence95Component.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -529,6 +528,11 @@
       <min value="1" />
       <fixedCode value="68236" />
     </element>
+    <element id="Observation.component:measurementConfidence95Component.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_MSMT_CONFIDENCE_95" />
+    </element>
+
     <element id="Observation.component:measurementConfidence95Component.value[x]">
       <path value="Observation.component.valueRange" />
       <min value="1" />
@@ -604,10 +608,6 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/> 
       </binding>
     </element>
-    <element id="Observation.component:thresholdNotificationTextStringComponent.code.text">
-      <path value="Observation.component.code.text" />
-      <definition value="The reference identifier for the attribute should be included. The Threshold-Notification-Text-String attribute ref id is MDC_ATTR_THRES_NOTIF_TEXT_STRING" />
-    </element>
      <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding">
       <path value="Observation.component.code.coding" />
       <slicing>
@@ -637,6 +637,11 @@
       <min value="1" />
       <fixedCode value="68232" />
     </element>
+    <element id="Observation.component:thresholdNotificationTextStringComponent.code.text">
+      <path value="Observation.component.code.text" />
+      <definition value="The reference identifier for the attribute should be included. The Threshold-Notification-Text-String attribute ref id is MDC_ATTR_THRES_NOTIF_TEXT_STRING" />
+    </element>
+
      <element id="Observation.component:thresholdNotificationTextStringComponent.value[x]:valueString">
       <path value="Observation.component.valueString" />
       <sliceName value="valueString" />
