@@ -319,7 +319,7 @@
     </element>
 	
     <element id="Observation.component:supplementalTypesComponent.value[x]:valueCodeableConcept">
-      <path value="Observation.component.valueCodeableConcept" />
+      <path value="Observation.component.value[x]" /> <!--valueCodeableConcept" /-->
       <sliceName value="valueCodeableConcept" />
       <definition value="The information determined as a result of making the observation, if the information is a code." />
       <min value="1" />
@@ -412,7 +412,7 @@
 	
     <!-- value[x] is Quantity -->
     <element id="Observation.component:relativeTimeComponent.value[x]:valueQuantity">
-      <path value="Observation.component.valueQuantity" />
+      <path value="Observation.component.value[x]" /> <!--valueQuantity" /-->
       <sliceName value="valueQuantity" />
       <min value="1" />
       <type>
@@ -492,7 +492,7 @@
     </element>
 	
     <element id="Observation.component:hiresRelativeTimeComponent.value[x]:valueQuantity">
-      <path value="Observation.component.valueQuantity" />
+      <path value="Observation.component.value[x]" /> <!--valueQuantity" /-->
       <sliceName value="valueQuantity" />
       <min value="1" />
       <type>
