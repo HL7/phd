@@ -6,10 +6,13 @@
   "list": [
     {
       "version": "current",
+	  "date": "2021-02-10"
       "desc": "Continuous Integration Build (latest in version control)",
-      "path": "http://build.fhir.org/ig/HL7/PHD",
+      "path": "'http://hl7.org/fhir/uv/phd",
       "status": "ci-build",
       "current": true
+	  "sequence": "STU 1",
+      "fhirversion": "4.0.1"
     },
     {
       "version": "1.0.0",
@@ -44,5 +47,6 @@
       "status": "ballot",
       "sequence": "STU1"
     }
-  ]
+  ],
+  "category": "Personal Healthcare"
 }

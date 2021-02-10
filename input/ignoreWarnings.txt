@@ -3,13 +3,12 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 
-# The following code systems are external and not supported by terminology server. These feed back on several other code systems and value sets.
+# The following code system is not yet supported by the terminology server. This oid identifies the Nomenclature (MDC)
+# code system defined in IEEE 11073 10101 and used by both PoCD and PHD devices. There are several value sets and code
+# systens defined in the PHD and PcOCD implementation guides which are based upon this same MDC code system which causes
+# problems when referencing them.
+Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101
 Code System URI "urn:iso:std:iso:11073:10101" is unknown so the code cannot be validated
 
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/*; The code systems and value sets referenced contain references to "urn:iso:std:iso:11073:10101"
-
-The URL value 'http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status' does not resolve, This value set is defined in the currently unpublished uv-pocd Implementation Guide. The PoCD (Point of Care devices) is for acute care whereas the PHD is for home devices.
-
-The code system http://hl7.org/fhir/sid/eui-48 does not resolve as it is a placeholder for a references to Bluetooth and Eithernet Mac address EUI-48 identifiers.
-
-The URL values 'http://hl7.org/fhir/NamingSystem/gs1-di' and 'http://hl7.org/fhir/NamingSystem/fda-udi' do not resolve. These two systems are for the UDI. The examples have UDIs in them but UDIs are not supported by this version of the IG. Support for the UDI will be added in the next version.
+# This profile is not something that can be implemented. It represents only those elements that are common to all PHD Observational profiles.
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile

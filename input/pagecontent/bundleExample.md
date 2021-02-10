@@ -271,7 +271,7 @@ This example is a transaction bundle where the Patient and Device resources are 
                 }
               ]
             },
-            "system": "http://hl7.org/fhir/sid/eui-48",
+            "system": "https://standards.ieee.org/products-services/regauth/oui/index.html",
             "value": "00-1C-05-00-78-25"
           }
         ],

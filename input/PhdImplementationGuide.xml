@@ -43,14 +43,14 @@ The 'menu.xml' file in src/includes contains the headers or sections displayed a
 In this example there are only xml structure definitions, value sets, code systems, and markdown pages that are all text. -->
 
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
-  <id value="PhdImplementationGuide"/>
-  <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/PhdImplementationGuide"/>
+  <id value="hl7.fhir.uv.phd"/>
+  <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
   <version value="current"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="Health Level Seven International (Health Care Devices Work Group)"/>
+  <publisher value="HL7 International - Health Care Devices Work Group"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -69,6 +69,11 @@ In this example there are only xml structure definitions, value sets, code syste
   <packageId value="hl7.fhir.uv.phd" />
 
   <fhirVersion value="4.0.1"/>
+  <dependsOn>
+    <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>
+	<packageId value="hl7.fhir.uv.pocd"/>
+	<version value="current"/>
+  </dependsOn>
   <definition>
     <grouping id="profiles">
       <name value="PHD Profiles"/>

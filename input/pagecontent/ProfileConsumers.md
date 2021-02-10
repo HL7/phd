@@ -948,7 +948,7 @@ The public Bluetooth address is an EUI-48 which contains an IEEE assigned manufa
             }
           ]
         },
-        "system" : "http://hl7.org/fhir/sid/eui-48",
+        "system" : "https://standards.ieee.org/products-services/regauth/oui/index.html",
         "value" : "00-1C-05-FF-E8-74"
       }
     ]
