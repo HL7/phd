@@ -61,7 +61,7 @@ This example is a transaction bundle where the Patient and Device resources are 
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
                   "code": "SYSID",
-                  "display": "System Identifier"
+                  "display": "IEEE 11073 System Identifier"
                 }
               ]
             },

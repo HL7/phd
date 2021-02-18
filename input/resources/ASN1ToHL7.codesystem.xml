@@ -43,7 +43,7 @@
   <!-- The following code concepts are derived from the MDC_ATTR_POWER_STAT MDS attribute -->
   <concept> 
     <code value="67925.0"/> 
-    <display value="Mains power state"/> 
+    <display value="onMains"/> 
     <definition value="Indicates whether the PHD is on or off mains power"/> 
     <property> 
       <code value="type" /> 
@@ -56,7 +56,7 @@
   </concept> 
   <concept> 
     <code value="67925.1"/> 
-    <display value="Battery state"/> 
+    <display value="onBattery"/> 
     <definition value="Indicates whether the PHD is on or off Battery power"/> 
     <property> 
       <code value="type" /> 
@@ -69,7 +69,7 @@
   </concept>
   <concept> 
     <code value="67925.8"/> 
-    <display value="Charging at full rate"/> 
+    <display value="chargingFull"/> 
     <definition value="Indicates whether the PHD battery is charging at maximum rate"/> 
     <property> 
       <code value="type" /> 
@@ -82,7 +82,7 @@
   </concept>
   <concept> 
     <code value="67925.9"/> 
-    <display value="Charging at trickle rate"/> 
+    <display value="chargingTrickle"/> 
     <definition value="Indicates whether the PHD battery is charging at a trickle rate"/> 
         <property> 
       <code value="type" /> 
@@ -95,7 +95,7 @@
   </concept>
   <concept> 
     <code value="67925.10"/> 
-    <display value="Charging state"/> 
+    <display value="chargingOff"/> 
     <definition value="Indicates whether the PHD battery charging is on or off"/> 
     <property> 
       <code value="type" /> 
@@ -109,8 +109,8 @@
 <!-- The following code concepts are derived from the MDC_REG_CERT_DATA_CONTINUA_REG_STATUS attribute -->
   <concept> 
     <code value="532354.0"/> 
-    <display value="If bit is cleared device is regulated"/> 
-    <definition value="Indicates whether the device is regulated"/> 
+    <display value="regulation-status"/> 
+    <definition value="Indicates device is regulated when cleared"/> 
     <property> 
       <code value="type" /> 
       <valueString value="state" />
@@ -123,7 +123,7 @@
 <!-- The following code concepts are derived from the MDC_TIME_CAP_STATE attribute -->
   <concept> 
     <code value="68219.0"/> 
-    <display value="Real-time clock supported"/> 
+    <display value="mds-time-capab-real-time-clock"/> 
     <definition value="Indicates real time clock is supported"/> 
     <property> 
       <code value="type" /> 
@@ -136,7 +136,7 @@
   </concept>
     <concept> 
     <code value="68219.1"/> 
-    <display value="set-time supported"/> 
+    <display value="mds-time-capab-set-clock"/> 
     <definition value="Indicates support for the PHG to set the time"/> 
     <property> 
       <code value="type" /> 
@@ -149,7 +149,7 @@
   </concept>
     <concept> 
     <code value="68219.2"/> 
-    <display value="Relative Time clock supported"/> 
+    <display value="mds-time-capab-relative-time"/> 
     <definition value="Indicates Relative Time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -162,7 +162,7 @@
   </concept>
     <concept> 
     <code value="68219.3"/> 
-    <display value="Hi-Res Relative Time clock supported"/> 
+    <display value="mds-time-capab-high-res-relative-time"/> 
     <definition value="Indicates Hi-Res Relative Time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -175,7 +175,7 @@
   </concept>
     <concept> 
     <code value="68219.4"/> 
-    <display value="Sync Absolute Time supported"/> 
+    <display value="mds-time-capab-sync-abs-time"/> 
     <definition value="Indicates that syncing the absolute time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -188,7 +188,7 @@
   </concept>
     <concept> 
     <code value="68219.5"/> 
-    <display value="Sync Relative Time supported"/> 
+    <display value="mds-time-capab-sync-rel-time"/> 
     <definition value="Indicates that syncing the relative time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -201,7 +201,7 @@
   </concept>
     <concept> 
     <code value="68219.6"/> 
-    <display value="Sync Hi-Res Relative Time supported"/> 
+    <display value="mds-time-capab-sync-hi-res-relative-time"/> 
     <definition value="Indicates that syncing hi-res relative time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -214,7 +214,7 @@
   </concept>
     <concept> 
     <code value="68219.7"/> 
-    <display value="Base Offset Time supported"/> 
+    <display value="mds-time-capab-bo-time"/> 
     <definition value="Indicates that the real-time clock supports base offset time"/> 
     <property> 
       <code value="type" /> 
@@ -227,7 +227,7 @@
   </concept>
   <concept> 
     <code value="68219.8"/> 
-    <display value="Absolute Time is Synced"/> 
+    <display value="mds-time-state-abs-time-synced"/> 
     <definition value="Indicates the absolute time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -240,7 +240,7 @@
   </concept>
   <concept> 
     <code value="68219.9"/> 
-    <display value="Relative Time is Synced"/> 
+    <display value="mds-time-state-rel-time-synced"/> 
     <definition value="Indicates the relative time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -253,7 +253,7 @@
   </concept>
 <concept> 
     <code value="68219.10"/> 
-    <display value="Hi-Res Relative Time is Synced"/> 
+    <display value="mds-time-state-hi-res-relative-time-synced"/> 
     <definition value="Indicates the hi-res time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -266,7 +266,7 @@
   </concept>
   <concept> 
     <code value="68219.11"/> 
-    <display value="PHG Set-Time Requested"/> 
+    <display value="mds-time-mgr-set-time"/> 
     <definition value="PHG Requested to set the time"/> 
     <property> 
       <code value="type" /> 
@@ -279,7 +279,7 @@
   </concept>
   <concept> 
     <code value="68219.12"/> 
-    <display value="Syncing base-offset time supported"/> 
+    <display value="mds-time-capab-sync-bo-time"/> 
     <definition value="Indicates that syncing base-offset time is supported"/> 
     <property> 
       <code value="type" /> 
@@ -292,7 +292,7 @@
   </concept>
     <concept> 
     <code value="68219.13"/> 
-    <display value="Base-Offset Time is Synced"/> 
+    <display value="mds-time-state-bo-time-synced"/> 
     <definition value="Indicates that base-offset time has been synced"/> 
     <property> 
       <code value="type" /> 
@@ -305,7 +305,7 @@
   </concept>
   <concept> 
     <code value="68219.14"/> 
-    <display value="Base-Offset Time is UTC Aligned"/> 
+    <display value="mds-time-state-bo-time-UTC-aligned"/> 
     <definition value="Indicates that base-offset time is aligned with UTC time standard"/> 
     <property> 
       <code value="type" /> 
@@ -318,7 +318,7 @@
   </concept>
   <concept> 
     <code value="68219.15"/> 
-    <display value="Daylight Savings Time Rules Understood"/> 
+    <display value="mds-time-dst-rules-enabled"/> 
     <definition value="Indicates support for daylight savings time rules"/> 
     <property> 
       <code value="type" /> 
@@ -332,7 +332,7 @@
 <!-- The following code concepts are derived from the MDC_ATTR_AL_OP_STAT attribute -->
   <concept> 
     <code value="67846.0"/> 
-    <display value="All alerts disabled"/> 
+    <display value="lim-alert-off"/> 
     <definition value="Indicates both the high and the low limit alerts are disabled"/> 
     <property> 
       <code value="type" /> 
@@ -345,7 +345,7 @@
   </concept>
   <concept> 
     <code value="67846.1"/> 
-    <display value="Low limit alert disabled"/> 
+    <display value="lim-low-off"/> 
     <definition value="Indicates the low limit alert is disabled"/> 
     <property> 
       <code value="type" /> 
@@ -358,7 +358,7 @@
   </concept>
   <concept> 
     <code value="67846.2"/> 
-    <display value="High limit alert disabled"/> 
+    <display value="lim-high-off"/> 
     <definition value="Indicates the high limit alert is disabled"/> 
     <property> 
       <code value="type" /> 
@@ -372,7 +372,7 @@
 <!-- The following code concepts are derived from the MDC_PULS_OXIM_DEV_STATUS measurement -->
   <concept> 
     <code value="150604.0"/> 
-    <display value="Device not connected to sensor"/> 
+    <display value="sensor-disconnected"/> 
     <definition value="Indicates the device is not connected with the sensor"/> 
     <property> 
       <code value="type" /> 
@@ -385,7 +385,7 @@
   </concept>
   <concept> 
     <code value="150604.1"/> 
-    <display value="Sensor has malfunctioned"/> 
+    <display value="sensor-malfunction"/> 
     <definition value="Indicates the sensor has malfunctioned"/> 
     <property> 
       <code value="type" /> 
@@ -398,7 +398,7 @@
   </concept>
   <concept> 
     <code value="150604.2"/> 
-    <display value="Sensor incorrectly placed on user"/> 
+    <display value="sensor-displaced"/> 
     <definition value="Indicates the sensor is not correctly placed on the user"/> 
     <property> 
       <code value="type" /> 
@@ -411,7 +411,7 @@
   </concept>
   <concept> 
     <code value="150604.3"/> 
-    <display value="Unsupported sensor"/> 
+    <display value="sensor-unsupported"/> 
     <definition value="Indicates the sensor connected to the device is unsupported"/> 
     <property> 
       <code value="type" /> 
@@ -424,7 +424,7 @@
   </concept>
   <concept> 
     <code value="150604.4"/> 
-    <display value="Sensor off"/> 
+    <display value="sensor-off"/> 
     <definition value="Indicates the sensor is not connected to the user"/> 
     <property> 
       <code value="type" /> 
@@ -437,7 +437,7 @@
   </concept>
   <concept> 
     <code value="150604.5"/> 
-    <display value="Sensor interference"/> 
+    <display value="sensor-interference"/> 
     <definition value="Indicates the sensor is experiencing interference"/> 
     <property> 
       <code value="type" /> 
@@ -450,7 +450,7 @@
   </concept>
   <concept> 
     <code value="150604.6"/> 
-    <display value="Searching for signal"/> 
+    <display value="signal-searching"/> 
     <definition value="Indicates the sensor is searching for a signal"/> 
     <property> 
       <code value="type" /> 
@@ -463,7 +463,7 @@
   </concept>
   <concept> 
     <code value="150604.7"/> 
-    <display value="Signal pulse questionable"/> 
+    <display value="signal-pulse-questionable"/> 
     <definition value="Indicates a questionable pulse has been detected"/> 
     <property> 
       <code value="type" /> 
@@ -476,7 +476,7 @@
   </concept>
   <concept> 
     <code value="150604.8"/> 
-    <display value="Non pulsatile signal"/> 
+    <display value="signal-non-pulsatile"/> 
     <definition value="Indicates a non pulsatile signal has been detected"/> 
     <property> 
       <code value="type" /> 
@@ -489,7 +489,7 @@
   </concept>
   <concept> 
     <code value="150604.9"/> 
-    <display value="Signal erratic"/> 
+    <display value="signal-erratic"/> 
     <definition value="Indicates a signal has been discovered, but it is erratic"/> 
     <property> 
       <code value="type" /> 
@@ -502,7 +502,7 @@
   </concept>
   <concept> 
     <code value="150604.10"/> 
-    <display value="Signal low perfusion"/> 
+    <display value="signal-low-perfusion"/> 
     <definition value="Indicates the signal is experiencing low perfusion"/> 
     <property> 
       <code value="type" /> 
@@ -515,7 +515,7 @@
   </concept>
   <concept> 
     <code value="150604.11"/> 
-    <display value="Signal is poor"/> 
+    <display value="signal-poor"/> 
     <definition value="Indicates the signal has been discovered, but it is poor"/> 
     <property> 
       <code value="type" /> 
@@ -528,7 +528,7 @@
   </concept>
   <concept> 
     <code value="150604.12"/> 
-    <display value="Signal inadequate"/> 
+    <display value="signal-inadequate"/> 
     <definition value="Indicates the signal has been discovered, but it is inadequate"/> 
     <property> 
       <code value="type" /> 
@@ -541,7 +541,7 @@
   </concept>
   <concept> 
     <code value="150604.13"/> 
-    <display value="Signal experiencing processing irregularity"/> 
+    <display value="signal-processing-irregularity"/> 
     <definition value="Indicates the signal has been discovered, but is experiencing processing irregularity"/> 
     <property> 
       <code value="type" /> 
@@ -554,7 +554,7 @@
   </concept>
   <concept> 
     <code value="150604.14"/> 
-    <display value="Device malfunction"/> 
+    <display value="device-equipment-malfunction"/> 
     <definition value="Indicates a device malfunction has occurred"/> 
     <property> 
       <code value="type" /> 
@@ -567,7 +567,7 @@
   </concept>
   <concept> 
     <code value="150604.15"/> 
-    <display value="Device extended update"/> 
+    <display value="device-extended-update"/> 
     <definition value="Indicates an extended display update is in progress on device"/> 
     <property> 
       <code value="type" /> 
@@ -581,7 +581,7 @@
 <!-- The following code concepts are derived from the MDC_PULS_OXIM_PULS_CHAR attribute -->
   <concept> 
     <code value="150605.0"/> 
-    <display value="Pulse quality nominal"/> 
+    <display value="pulse-qual-nominal"/> 
     <definition value="Indicates no abnormalities have been detected by the sensor"/> 
     <property> 
       <code value="type" /> 
@@ -594,7 +594,7 @@
   </concept>
   <concept> 
     <code value="150605.1"/> 
-    <display value="Pulse quality marginal"/> 
+    <display value="pulse-qual-marginal"/> 
     <definition value="Indicates the pulse profusion or quality is marginal"/> 
     <property> 
       <code value="type" /> 
@@ -607,7 +607,7 @@
   </concept>
   <concept> 
     <code value="150605.2"/> 
-    <display value="Pulse quality minimal"/> 
+    <display value="pulse-qual-minimal"/> 
     <definition value="Indicates the pulse profusion or quality is minimal"/> 
     <property> 
       <code value="type" /> 
@@ -620,7 +620,7 @@
   </concept>
   <concept> 
     <code value="150605.3"/> 
-    <display value="Pulse quality unacceptable"/> 
+    <display value="pulse-qual-unacceptable"/> 
     <definition value="Indicates the pulse profusion or quality is unacceptable"/> 
     <property> 
       <code value="type" /> 
@@ -634,7 +634,7 @@
 <!-- The following code concepts are derived from the MDC_ECG_DEV_STAT attribute -->
   <concept> 
     <code value="8410584.0"/> 
-    <display value="Lead wire loss"/> 
+    <display value="leadwire-loss"/> 
     <definition value="Loss of unspecified lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
@@ -647,7 +647,7 @@
   </concept>
   <concept> 
     <code value="8410584.1"/> 
-    <display value="Lead signal loss"/> 
+    <display value="leadsignal-loss"/> 
     <definition value="Loss of unspecified lead signal"/> 
     <property> 
       <code value="type" /> 
@@ -660,7 +660,7 @@
   </concept>
   <concept> 
     <code value="8410584.2"/> 
-    <display value="Lead wire loss first-lead"/> 
+    <display value="leadwire-loss-first-lead"/> 
     <definition value="Loss of 1st lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
@@ -673,7 +673,7 @@
   </concept>
   <concept> 
     <code value="8410584.3"/> 
-    <display value="Lead signal loss first-lead"/> 
+    <display value="leadsignal-loss-first-lead"/> 
     <definition value="Loss of 1st lead signal"/> 
     <property> 
       <code value="type" /> 
@@ -686,7 +686,7 @@
   </concept>
   <concept> 
     <code value="8410584.4"/> 
-    <display value="Lead wire loss second-lead"/> 
+    <display value="leadwire-loss-second-lead"/> 
     <definition value="Loss of 2nd lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
@@ -699,7 +699,7 @@
   </concept>
   <concept> 
     <code value="8410584.5"/> 
-    <display value="Lead signal loss second-lead"/> 
+    <display value="leadsignal-loss-second-lead"/> 
     <definition value="Loss of 2nd lead signal"/> 
     <property> 
       <code value="type" /> 
@@ -712,7 +712,7 @@
   </concept>
   <concept> 
     <code value="8410584.6"/> 
-    <display value="Lead wire loss third-lead"/> 
+    <display value="leadwire-loss-third-lead"/> 
     <definition value="Loss of 3rd lead wire or electrode connection"/> 
     <property> 
       <code value="type" /> 
@@ -725,7 +725,7 @@
   </concept>
   <concept> 
     <code value="8410584.7"/> 
-    <display value="Lead signal loss third-lead"/> 
+    <display value="leadsignal-loss-third-lead"/> 
     <definition value="Loss of 3rd lead signal"/> 
     <property> 
       <code value="type" /> 
@@ -739,7 +739,7 @@
 <!-- The following code concepts are derived from the MDC_GLU_METER_DEV_STATUS attribute -->
   <concept> 
     <code value="8417752.0"/> 
-    <display value="Battery low"/> 
+    <display value="device-battery-low"/> 
     <definition value="The device battery is low"/> 
     <property> 
       <code value="type" /> 
@@ -752,7 +752,7 @@
   </concept>
   <concept> 
     <code value="8417752.1"/> 
-    <display value="Sensor malfunction"/> 
+    <display value="sensor-malfunction"/> 
     <definition value="The sensor has malfunctioned"/> 
     <property> 
       <code value="type" /> 
@@ -765,7 +765,7 @@
   </concept>
   <concept> 
     <code value="8417752.2"/> 
-    <display value="Not enough blood in sample"/> 
+    <display value="sensor-sample-size-insufficient"/> 
     <definition value="The sensor's sample size is insufficient"/> 
     <property> 
       <code value="type" /> 
@@ -778,7 +778,7 @@
   </concept>
   <concept> 
     <code value="8417752.3"/> 
-    <display value="Sensor strip insertion"/> 
+    <display value="sensor-strip-insertion"/> 
     <definition value="The test strip was inserted incorrectly"/> 
     <property> 
       <code value="type" /> 
@@ -791,7 +791,7 @@
   </concept>
   <concept> 
     <code value="8417752.4"/> 
-    <display value="Sensor strip type incorrect"/> 
+    <display value="sensor-strip-type-incorrect"/> 
     <definition value="The test strip type is incompatable with the sensor"/> 
     <property> 
       <code value="type" /> 
@@ -804,7 +804,7 @@
   </concept>
   <concept> 
     <code value="8417752.5"/> 
-    <display value="Sensor result too high"/> 
+    <display value="sensor-result-too-high"/> 
     <definition value="The value reported by the sensor is too high"/> 
     <property> 
       <code value="type" /> 
@@ -817,7 +817,7 @@
   </concept>
   <concept> 
     <code value="8417752.6"/> 
-    <display value="Sensor result too low"/> 
+    <display value="sensor-result-too-low"/> 
     <definition value="The value reported by the sensor is too low"/> 
     <property> 
       <code value="type" /> 
@@ -830,7 +830,7 @@
   </concept>
   <concept> 
     <code value="8417752.7"/> 
-    <display value="Sensor temp too high"/> 
+    <display value="sensor-temp-too-high"/> 
     <definition value="The temperature is too high"/> 
     <property> 
       <code value="type" /> 
@@ -843,7 +843,7 @@
   </concept>
   <concept> 
     <code value="8417752.8"/> 
-    <display value="Sensor temp too low"/> 
+    <display value="sensor-temp-too-low"/> 
     <definition value="The temperature is too low"/> 
     <property> 
       <code value="type" /> 
@@ -856,7 +856,7 @@
   </concept>
   <concept> 
     <code value="8417752.9"/> 
-    <display value="Sensor read interrupt"/> 
+    <display value="sensor-read-interrupt"/> 
     <definition value="The read process was interrupted"/> 
     <property> 
       <code value="type" /> 
@@ -869,7 +869,7 @@
   </concept>
   <concept> 
     <code value="8417752.10"/> 
-    <display value="General Device Fault"/> 
+    <display value="device-gen-fault"/> 
     <definition value="General Device Fault"/> 
     <property> 
       <code value="type" /> 
@@ -882,7 +882,7 @@
   </concept>
   <concept> 
     <code value="8417752.11"/> 
-    <display value="Sensor temp out of range"/> 
+    <display value="sensor-temp-out-of-range"/> 
     <definition value="The temperature is out of range"/> 
     <property> 
       <code value="type" /> 
@@ -896,7 +896,7 @@
 <!-- The following code concepts are derived from the MDC_INR_METER_DEV_STATUS attribute -->
   <concept> 
     <code value="8417909.0"/> 
-    <display value="INR device battery low"/> 
+    <display value="inr-device-battery-low"/> 
     <definition value="The INR device battery is low"/> 
     <property> 
       <code value="type" /> 
@@ -909,7 +909,7 @@
   </concept>
   <concept> 
     <code value="8417909.1"/> 
-    <display value="Sensor malfunction"/> 
+    <display value="inr-sensor-malfunction"/> 
     <definition value="The INR device sensor has malfunctioned"/> 
     <property> 
       <code value="type" /> 
@@ -922,7 +922,7 @@
   </concept>
   <concept> 
     <code value="8417909.2"/> 
-    <display value="Not enough blood in sample"/> 
+    <display value="inr-sensor-sample-size-insufficient"/> 
     <definition value="The sample size was insufficient"/> 
     <property> 
       <code value="type" /> 
@@ -935,7 +935,7 @@
   </concept>
   <concept> 
     <code value="8417909.3"/> 
-    <display value="INR sensor strip insertion"/> 
+    <display value="inr-sensor-strip-insertion"/> 
     <definition value="The test script was inserted incorrectly"/> 
     <property> 
       <code value="type" /> 
@@ -948,7 +948,7 @@
   </concept>
   <concept> 
     <code value="8417909.4"/> 
-    <display value="INR sensor strip type incorrect"/> 
+    <display value="inr-sensor-strip-type-incorrect"/> 
     <definition value="The test strip used is not compatible with the INR"/> 
     <property> 
       <code value="type" /> 
@@ -961,7 +961,7 @@
   </concept>
   <concept> 
     <code value="8417909.5"/> 
-    <display value="INR sensor result too high"/> 
+    <display value="inr-sensor-result-too-high"/> 
     <definition value="The test result is too high"/> 
     <property> 
       <code value="type" /> 
@@ -974,7 +974,7 @@
   </concept>
   <concept> 
     <code value="8417909.6"/> 
-    <display value="INR sensor result too low"/> 
+    <display value="inr-sensor-result-too-low"/> 
     <definition value="The test result is too low"/> 
     <property> 
       <code value="type" /> 
@@ -987,7 +987,7 @@
   </concept>
   <concept> 
     <code value="8417909.7"/> 
-    <display value="INR sensor temp too high"/> 
+    <display value="inr-sensor-temp-too-high"/> 
     <definition value="The temperature is too high"/> 
     <property> 
       <code value="type" /> 
@@ -1000,7 +1000,7 @@
   </concept>
   <concept> 
     <code value="8417909.8"/> 
-    <display value="INR sensor temp too low"/> 
+    <display value="inr-sensor-temp-too-low"/> 
     <definition value="The temperature is too low"/> 
     <property> 
       <code value="type" /> 
@@ -1013,7 +1013,7 @@
   </concept>
   <concept> 
     <code value="8417909.9"/> 
-    <display value="INR sensor read interrupt"/> 
+    <display value="inr-sensor-read-interrupt"/> 
     <definition value="The read process was  interrupted"/> 
     <property> 
       <code value="type" /> 
@@ -1026,7 +1026,7 @@
   </concept>
   <concept> 
     <code value="8417909.10"/> 
-    <display value="INR device general fault"/> 
+    <display value="inr-device-gen-fault"/> 
     <definition value="General device fault"/> 
     <property> 
       <code value="type" /> 
@@ -1039,7 +1039,7 @@
   </concept>
   <concept> 
     <code value="8417909.11"/> 
-    <display value="INR sensor calibration due"/> 
+    <display value="inr-sensor-calibration-due"/> 
     <definition value="The INR sensor calibration is due"/> 
     <property> 
       <code value="type" /> 
@@ -1053,7 +1053,7 @@
 <!-- The following code concepts are derived from the MDC_PHD_DM_DEV_STAT attribute -->
   <concept> 
     <code value="8408608.0"/> 
-    <display value="Undetermined device status"/> 
+    <display value="device-status-undetermined"/> 
     <definition value="Undetermined device status event"/> 
     <property> 
       <code value="type" /> 
@@ -1066,7 +1066,7 @@
   </concept>
   <concept> 
     <code value="8408608.1"/> 
-    <display value="Device status reset"/> 
+    <display value="device-status-reset"/> 
     <definition value="Device reset"/> 
     <property> 
       <code value="type" /> 
@@ -1079,7 +1079,7 @@
   </concept>
   <concept> 
     <code value="8408608.5"/> 
-    <display value="Device status error"/> 
+    <display value="device-status-error"/> 
     <definition value="Device error"/> 
     <property> 
       <code value="type" /> 
@@ -1092,7 +1092,7 @@
   </concept>
   <concept> 
     <code value="8408608.6"/> 
-    <display value="Device status error mechanical"/> 
+    <display value="device-status-error-mechanical"/> 
     <definition value="Mechanical error"/> 
     <property> 
       <code value="type" /> 
@@ -1105,7 +1105,7 @@
   </concept>
   <concept> 
     <code value="8408608.7"/> 
-    <display value="Device status error electronic"/> 
+    <display value="device-status-error-electronic"/> 
     <definition value="Electronic error"/> 
     <property> 
       <code value="type" /> 
@@ -1118,7 +1118,7 @@
   </concept>
   <concept> 
     <code value="8408608.8"/> 
-    <display value="Device status error software"/> 
+    <display value="device-status-error-software"/> 
     <definition value="Software error"/> 
     <property> 
       <code value="type" /> 
@@ -1131,7 +1131,7 @@
   </concept>
   <concept> 
     <code value="8408608.9"/> 
-    <display value="Device status error battery"/> 
+    <display value="device-status-error-battery"/> 
     <definition value="Battery error"/> 
     <property> 
       <code value="type" /> 
@@ -1144,8 +1144,8 @@
   </concept>
   <concept> 
     <code value="8408608.15"/> 
-    <display value="Device status service"/> 
-    <definition value="Undetermined device status event"/> 
+    <display value="device-status-service"/> 
+    <definition value="Undetermined device status event, service needed"/> 
     <property> 
       <code value="type" /> 
       <valueString value="event" />
@@ -1157,7 +1157,7 @@
   </concept>
   <concept> 
     <code value="8408608.16"/> 
-    <display value="Device status service time-sync required"/> 
+    <display value="device-status-service-time-sync-required"/> 
     <definition value="Time sync service required"/> 
     <property> 
       <code value="type" /> 
@@ -1170,7 +1170,7 @@
   </concept>
   <concept> 
     <code value="8408608.17"/> 
-    <display value="Device status service calibration required"/> 
+    <display value="device-status-service-calibration-required"/> 
     <definition value="Calibration required"/> 
     <property> 
       <code value="type" /> 
@@ -1183,8 +1183,8 @@
   </concept>
   <concept> 
     <code value="8408608.18"/> 
-    <display value="Device status service replentishment required"/> 
-    <definition value="Replentishment required"/> 
+    <display value="device-status-service-replenishment-required"/> 
+    <definition value="Replenishment required"/> 
     <property> 
       <code value="type" /> 
       <valueString value="event" />
@@ -1196,7 +1196,7 @@
   </concept>
   <concept> 
     <code value="8408608.25"/> 
-    <display value="Device status battery low"/> 
+    <display value="device-status-battery-low"/> 
     <definition value="Battery power is too low"/> 
     <property> 
       <code value="type" /> 
@@ -1209,7 +1209,7 @@
   </concept>
   <concept> 
     <code value="8408608.26"/> 
-    <display value="Device status battery depleted"/> 
+    <display value="device-status-battery-depleted"/> 
     <definition value="Battery is depleted"/> 
     <property> 
       <code value="type" /> 
@@ -1222,7 +1222,7 @@
   </concept>
   <concept> 
     <code value="8408608.27"/> 
-    <display value="Device status battery replaced"/> 
+    <display value="device-status-battery-replaced"/> 
     <definition value="Battery has been replaced"/> 
     <property> 
       <code value="type" /> 
@@ -1235,7 +1235,7 @@
   </concept>
   <concept> 
     <code value="8408608.28"/> 
-    <display value="Device status battery interrupted"/> 
+    <display value="device-status-battery-interrupted"/> 
     <definition value="Battery was interrupted"/> 
     <property> 
       <code value="type" /> 
@@ -1249,7 +1249,7 @@
 <!-- The following code concepts are derived from the MDC_CGM_DEV_STAT attribute -->
   <concept> 
     <code value="8418060.0"/> 
-    <display value="Sensor session stopped"/> 
+    <display value="sensor-session-stopped"/> 
     <definition value="Session stopped"/> 
     <property> 
       <code value="type" /> 
@@ -1262,7 +1262,7 @@
   </concept>
   <concept> 
     <code value="8418060.2"/> 
-    <display value="Sensor type incorrect"/> 
+    <display value="sensor-type-incorrect"/> 
     <definition value="Sensor type incorrect for device"/> 
     <property> 
       <code value="type" /> 
@@ -1275,7 +1275,7 @@
   </concept>
   <concept> 
     <code value="8418060.3"/> 
-    <display value="Sensor malfunction"/> 
+    <display value="sensor-malfunction"/> 
     <definition value="The sensor malfunctioned"/> 
     <property> 
       <code value="type" /> 
@@ -1288,7 +1288,7 @@
   </concept>
   <concept> 
     <code value="8418060.4"/> 
-    <display value="Device specific alert"/> 
+    <display value="device-specific-alert"/> 
     <definition value="Device specific alert"/> 
     <property> 
       <code value="type" /> 
@@ -1301,7 +1301,7 @@
   </concept>
   <concept> 
     <code value="8418060.7"/> 
-    <display value="Sensor calibration not allowed"/> 
+    <display value="sensor-calibration-not-allowed"/> 
     <definition value="Calibrating the sensor is not allowed"/> 
     <property> 
       <code value="type" /> 
@@ -1314,7 +1314,7 @@
   </concept>
   <concept> 
     <code value="8418060.8"/> 
-    <display value="Sensor calibration recommended"/> 
+    <display value="sensor-calibration-recommended"/> 
     <definition value="Calibrating the sensor is recommended"/> 
     <property> 
       <code value="type" /> 
@@ -1327,7 +1327,7 @@
   </concept>
   <concept> 
     <code value="8418060.9"/> 
-    <display value="Sensor calibration required"/> 
+    <display value="sensor-calibration-required"/> 
     <definition value="Calibrating the sensor is required"/> 
     <property> 
       <code value="type" /> 
@@ -1340,7 +1340,7 @@
   </concept>
   <concept> 
     <code value="8418060.10"/> 
-    <display value="Sensor temp too high"/> 
+    <display value="sensor-temp-too-high"/> 
     <definition value="Temperature is too high for a valid result"/> 
     <property> 
       <code value="type" /> 
@@ -1353,7 +1353,7 @@
   </concept>
   <concept> 
     <code value="8418060.11"/> 
-    <display value="Sensor temp too low"/> 
+    <display value="sensor-temp-too-low"/> 
     <definition value="Temperature is too low for a valid result"/> 
     <property> 
       <code value="type" /> 
@@ -1366,7 +1366,7 @@
   </concept>
   <concept> 
     <code value="8418060.12"/> 
-    <display value="Sensor result below patient level"/> 
+    <display value="sensor-result-below-patient-low"/> 
     <definition value="Sensor result below the Patient Low level"/> 
     <property> 
       <code value="type" /> 
@@ -1379,7 +1379,7 @@
   </concept>
   <concept> 
     <code value="8418060.13"/> 
-    <display value="Sensor result above patient level"/> 
+    <display value="sensor-result-above-patient-high"/> 
     <definition value="Sensor result above the Patient High level"/> 
     <property> 
       <code value="type" /> 
@@ -1392,8 +1392,8 @@
   </concept>
   <concept> 
     <code value="8418060.14"/> 
-    <display value="Sensor low hypo"/> 
-    <definition value="Sensor result below the Hypo level"/> 
+    <display value="sensor-low-hypo"/> 
+    <definition value="Sensor result below level"/> 
     <property> 
       <code value="type" /> 
       <valueString value="event" />
@@ -1405,8 +1405,8 @@
   </concept>
   <concept> 
     <code value="8418060.15"/> 
-    <display value="Sensor result hyper"/> 
-    <definition value="Sensor result above the Hyper level"/> 
+    <display value="sensor-high-hyper"/> 
+    <definition value="Sensor result above level"/> 
     <property> 
       <code value="type" /> 
       <valueString value="event" />
@@ -1418,7 +1418,7 @@
   </concept>
   <concept> 
     <code value="8418060.16"/> 
-    <display value="Sensor rate decrease exceeded"/> 
+    <display value="sensor-rate-decrease-exceeded"/> 
     <definition value="The sensor rate of decrease has been exceeded"/> 
     <property> 
       <code value="type" /> 
@@ -1431,7 +1431,7 @@
   </concept>
   <concept> 
     <code value="8418060.17"/> 
-    <display value="Sensor rate increase exceeded"/> 
+    <display value="sensor-rate-increase-exceeded"/> 
     <definition value="The sensor rate of increase has been exceeded"/> 
     <property> 
       <code value="type" /> 
@@ -1444,7 +1444,7 @@
   </concept>
   <concept> 
     <code value="8418060.18"/> 
-    <display value="Sensor result too low"/> 
+    <display value="sensor-result-too-low"/> 
     <definition value="Sensor result is lower than the device can process"/> 
     <property> 
       <code value="type" /> 
@@ -1457,7 +1457,7 @@
   </concept>
   <concept> 
     <code value="8418060.19"/> 
-    <display value="Sensor result too high"/> 
+    <display value="sensor-result-too-high"/> 
     <definition value="Sensor result is higher than the device can process"/> 
     <property> 
       <code value="type" /> 
@@ -1470,7 +1470,7 @@
   </concept>
   <concept> 
     <code value="8418060.20"/> 
-    <display value="Sensor com out of range"/> 
+    <display value="sensor-com-out-of-range"/> 
     <definition value="The sensor communication is out of range"/> 
     <property> 
       <code value="type" /> 
@@ -1481,5 +1481,218 @@
       <valueString value="measurement" />
     </property>
   </concept>
+  
+  <!-- MDC_BATTERY_STATUS all are states. From the Battery Status Monitor -->
+  <concept> 
+    <code value="8418512.0"/> 
+    <display value="Battery-status-Undetermined"/> 
+    <definition value="the status of the battery is unknown"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.1"/> 
+    <display value="Battery-absent"/> 
+    <definition value="Indicates if the battery is absent"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.2"/> 
+    <display value="Battery-active"/> 
+    <definition value="Indicates if the battery is active in the system"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.3"/> 
+    <display value="Battery-charging"/> 
+    <definition value="Indicates if the battery is charging"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.4"/> 
+    <display value="Battery-fullyCharged"/> 
+    <definition value="Indicates if the battery is fully charged"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.5"/> 
+    <display value="Battery-disposable"/> 
+    <definition value="Indicates if the battery is disposable"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.6"/> 
+    <display value="Battery-rechargeable"/> 
+    <definition value="Indicates if battery is rechargable"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="state" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept>
+  <concept> 
+    <code value="8418512.7"/> 
+    <display value="Battery-overTemperature"/> 
+    <definition value="Indicates if the battery is too hot"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+    <code value="8418512.8"/> 
+    <display value="Battery-faulty"/> 
+    <definition value="Indicates if battery is faulty"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8418512.9"/> 
+    <display value="Battery-incompatible"/> 
+    <definition value="Indicates if battery is incompatible"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  
+  <!-- MDC_BLOOD_PRESSURE_MEASUREMENT_STATUS Only makes sense to report set bits (events) -->
+  <concept> 
+    <code value="8410608.0"/> 
+    <display value="body-movement"/> 
+    <definition value="Indicates too much body movement"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410608.1"/> 
+    <display value="cuff-too-loose"/> 
+    <definition value="Indicates the cuff was too loose"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410608.2"/> 
+    <display value="irregular-pulse"/> 
+    <definition value="Indicates an irregular pulse was detected"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410608.3"/> 
+    <display value="pulse-over-range-limit"/> 
+    <definition value="Indicates the pulse was too high for sensor to work"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410608.4"/> 
+    <display value="pulse-under-range-limit"/> 
+    <definition value="Indicates the pulse was too low for sensor to work"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  <concept> 
+    <code value="8410608.5"/> 
+    <display value="improper-body-position"/> 
+    <definition value="Indicates the cuff was incorrectly placed with respect to the heart"/> 
+    <property> 
+      <code value="type" /> 
+      <valueString value="event" />
+    </property>
+    <property> 
+      <code value="source" /> 
+      <valueString value="measurement" />
+    </property>
+  </concept>
+  
 </CodeSystem> 
 
