@@ -28,7 +28,7 @@
                     }
                 ]
             },
-            "system": "https://standards.ieee.org/products-services/regauth/oui/index.html",
+            "system": "http://hl7.org/fhir/sid/eui-48/bluetooth",
             "value": "B0-49-5F-00-10-71"
         }
     ],

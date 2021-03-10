@@ -232,7 +232,7 @@
       "request": {
         "method": "POST",
         "url": "Device",
-        "ifNoneExist": "identifier=https://standards.ieee.org/products-services/regauth/oui/index.html|4C-4E-49-12-34-56-FF-FF"
+        "ifNoneExist": "identifier=urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680|4C-4E-49-12-34-56-FF-FF"
       }
     },
     {
@@ -268,7 +268,7 @@
                 }
               ]
             },
-            "system": "https://standards.ieee.org/products-services/regauth/oui/index.html",
+            "system": "http://hl7.org/fhir/sid/eui-48/bluetooth",
             "value": "00-1C-05-00-78-25"
           }
         ],

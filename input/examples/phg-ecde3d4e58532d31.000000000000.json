@@ -28,7 +28,7 @@
                     }
                 ]
             },
-            "system": "https://standards.ieee.org/products-services/regauth/oui/index.html",
+            "system": "http://hl7.org/fhir/sid/eui-48/bluetooth",
             "value": "3d-4e-58-53-2d-31"
         },
         {
@@ -40,7 +40,7 @@
                     }
                 ]
             },
-            "system": "https://standards.ieee.org/products-services/regauth/oui/index.html",
+            "system": "http://hl7.org/fhir/sid/eui-48/ethernet",
             "value": "3d-4e-58-53-2d-35"
         }
     ],

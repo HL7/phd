@@ -151,7 +151,7 @@
     <element id="Device.identifier:btmacAddressIdentifier.system">
       <path value="Device.identifier.system" />
       <min value="1" />
-      <fixedUri value="https://standards.ieee.org/products-services/regauth/oui/index.html" />
+      <fixedUri value="http://hl7.org/fhir/sid/eui-48/bluetooth" />
     </element>
     <element id="Device.identifier:btmacAddressIdentifier.value">
       <path value="Device.identifier.value" />
@@ -191,7 +191,7 @@
     <element id="Device.identifier:macAddressIdentifier.system">
       <path value="Device.identifier.system" />
       <min value="1" />
-      <fixedUri value="https://standards.ieee.org/products-services/regauth/oui/index.html" />
+      <fixedUri value="http://hl7.org/fhir/sid/eui-48/ethernet" />
     </element>
     <element id="Device.identifier:macAddressIdentifier.value">
       <path value="Device.identifier.value" />

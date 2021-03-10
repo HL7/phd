@@ -58,11 +58,10 @@ The identifier for the system id:
 The identifier for the Bluetooth Address: 
 
  - identifier.value=*formatted as above*
- - identifier.system="https://standards.ieee.org/products-services/regauth/oui/index.html"
+ - identifier.system="http://hl7.org/fhir/sid/eui-48/bluetooth"
  - identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
  - identifier.type.coding.code="BTMAC"
  
- There is actually a problem at the moment as there is no defined system for the transport addresses. Given that the Bluetooth and Ethernet MAC addresses are an EUI-48, the system value 'https://standards.ieee.org/products-services/regauth/oui/index.html' represents a placeholder until an actual system value is created. The MAC address placeholder has been floated in the Zulip discussions so it is a reasonable choice at this time. There are no proposals for ZigBee or USB and the placeholders (see PhdProfile page) are completely artificial.
  
  An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](Device-phg-ecde3d4e58532d31.000000000000.html)
 

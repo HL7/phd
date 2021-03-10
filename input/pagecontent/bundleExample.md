@@ -271,17 +271,8 @@ This example is a transaction bundle where the Patient and Device resources are 
                 }
               ]
             },
-            "system": "https://standards.ieee.org/products-services/regauth/oui/index.html",
+            "system": "http://hl7.org/fhir/sid/eui-48/bluetooth",
             "value": "00-1C-05-00-78-25"
-          }
-        ],
-        "udiCarrier": [
-          {
-            "deviceIdentifier": "120343001125",
-            "issuer": "http://hl7.org/fhir/NamingSystem/gs1-di",
-            "jurisdiction": "http://hl7.org/fhir/NamingSystem/fda-udi",
-            "carrierHRF": "(01)120343001125(21)0400007825",
-            "entryType": "unknown"
           }
         ],
         "manufacturer": "Nonin Medical, Inc.",
