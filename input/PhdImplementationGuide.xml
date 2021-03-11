@@ -72,7 +72,7 @@ In this example there are only xml structure definitions, value sets, code syste
   <dependsOn>
     <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>
 	<packageId value="hl7.fhir.uv.pocd"/>
-	<version value="0.2.0"/>
+	<version value="current"/>
   </dependsOn>
   <definition>
     <grouping id="profiles">
