@@ -69,11 +69,13 @@ In this example there are only xml structure definitions, value sets, code syste
   <packageId value="hl7.fhir.uv.phd" />
 
   <fhirVersion value="4.0.1"/>
+  <!--
   <dependsOn>
     <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>
 	<packageId value="hl7.fhir.uv.pocd"/>
 	<version value="current"/>
   </dependsOn>
+  -->
   <definition>
     <grouping id="profiles">
       <name value="PHD Profiles"/>
@@ -213,6 +215,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <description value="Codes for the IEEE 11073 20601 BITs measurement bit values. For example, 150604.0 is the code for Mder bit 0 in measurement type 150604 which is a pulse oximeter device and sensor status. The description of that code is 'Indicates the device is not connected with the sensor'. This code system will grow as more BITs measurements are defined in specializations"/>
       <exampleBoolean value="false"/>
       <groupingId value="codeSystems" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/measurement-status"/>
+      </reference>
+      <name value="Measurement status codes"/>
+      <description value="Measurement status definitions from the ISO/IEEE 11073-10201 DIM."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
