@@ -154,6 +154,11 @@
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
+    <element id="Observation.code.coding:MDCType.code">
+      <path value="Observation.code.coding.code" />
+      <comment value="Required for all measurements" />
+      <min value="1" />
+    </element>
     <element id="Observation.code.coding:LoincCoding">
       <path value="Observation.code.coding" />
       <sliceName value="LoincCoding" />
