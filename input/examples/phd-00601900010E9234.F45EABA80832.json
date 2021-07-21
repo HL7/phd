@@ -50,7 +50,7 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "528405"
+                        "code": "528401"
                     }
                 ],
                 "text": "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"

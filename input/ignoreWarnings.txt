@@ -2,10 +2,10 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
-#Work-around for a bug introduced by the latest version of the publisher 1.1.63. The element <fixedUri> causes the error. Changing it to <fixeduri> fixes the error. HOWEVER, the error is only reported when the element is in an extension. When I have <fixedUri> in any other element (and I do have it in many) no error is reported. I am assuming the <fixedUri> version is correct as it has never caused a problem before.
+# Work-around for a bug introduced by the latest version of the publisher 1.1.63. The element <fixedUri> causes the error. Changing it to <fixeduri> fixes the error. HOWEVER, the error is only reported when the element is in an extension. When I have <fixedUri> in any other element (and I do have it in many) no error is reported. I am assuming the <fixedUri> version is correct as it has never caused a problem before.
 ERROR: StructureDefinition/PhdCoincidentTimeStampObservation: StructureDefinition.snapshot.element[19].fixed.ofType(uri): The element Observation.extension.url has a fixed of type uri, which is not in the list of allowed types ([http://hl7.org/fhirpath/System.String])
 
-#Work-around for as of yet unresolved namespaces for transport device identifiers:
+# Work-around for as of yet unresolved namespaces for transport device identifiers:
 ERROR: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
 ERROR: Device/phd-00601900010E9234.F45EABA80832: Device.identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
 ERROR: Device/phd-711000FEFF5F49B0.B0495F001071: Device.identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
