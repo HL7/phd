@@ -756,7 +756,7 @@
       <path value="Device.property.valueCode.coding.system" />
       <definition value="The Code System for the certified PHD interface" />
       <min value="1" />
-      <!--<fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />-->
+      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
       <path value="Device.property.valueCode.coding.code" />
