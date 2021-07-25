@@ -660,6 +660,7 @@
       <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
       Description                CODE    Reference Identifier                           Code System&#xD;&#xA;
       -----------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
+	  Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL&#xD;
       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD&#xD;&#xA;
       Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS&#xD;&#xA;" />
       <min value="1" />
@@ -685,7 +686,7 @@
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding.system">
       <path value="Device.property.valueCode.coding.system" />
-      <definition value="Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS code systems" />
+      <definition value="Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS or urn:iso:std:iso:11073:10101 code systems" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding.code">
