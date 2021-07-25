@@ -18,8 +18,8 @@
         <system value="urn:iso:std:iso:11073:10101"/>
         <filter>
           <property value="partition"/>
-            <op value="not-in"/>
-            <value value="1"/>
+            <op value="="/>
+            <value value="2,3,4,5,7,8,127,128,258"/>
         </filter>
       </include>
   </compose>

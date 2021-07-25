@@ -667,14 +667,14 @@
       <min value="1" />
     </element>-->
     
-    <!-- The codedListProperties property. At this time there is only one
-    coded list entry reported by PHDs; the list of certified PHD interfaces     -->
+    <!-- The codedListProperties property. At this time there is are two
+    coded list entries for PHGs; the list of certified PHD and H&FS interfaces     -->
     <element id="Device.property:codedListProperties">
       <path value="Device.property" />
       <sliceName value="codedListProperties" />
-      <short value="The device properties represented by a list of codes such as the list of certified PHD interfaces" />
+      <short value="The device properties represented by a list of codes such as the list of certified PHD or H-FS interfaces" />
       <definition value="This element represents all those properties that are a list of codes. At the moment there is only certified PHD interfaces." />
-      <comment value="Continua certified PHDs are required to have this entry. " />
+      <comment value="Continua certified PHDs are required to have these entries." />
     </element>
     <element id="Device.property:codedListProperties.type">
       <path value="Device.property.type" />
@@ -684,46 +684,34 @@
         <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"/> 
       </binding>
     </element>
-    <!-- The MDCType slice of the coding element: This element is required -->
+    <!-- Slice the coding to allow one to express the same concept in another coding system -->
     <element id="Device.property:codedListProperties.type.coding">
       <path value="Device.property.type.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
+      <short value="Required MDC code system entry" />
       <min value="1" />
-    </element>
-    <element id="Device.property:codedListProperties.type.coding:MDCType">
-      <path value="Device.property.type.coding" />
-      <sliceName value="MDCType" />
-      <short value="The 11073-10101 MDC code for the type" />
-      <min value="1" />
-      <max value="1" />
     </element>
     <!-- The system value is fixed -->
-    <element id="Device.property:codedListProperties.type.coding:MDCType.system">
+    <element id="Device.property:codedListProperties.type.coding.system">
       <path value="Device.property.type.coding.system" />
       <min value="1" />
       <fixedUri value="urn:iso:std:iso:11073:10101" />
     </element>
     <!-- The currently defined coded list properties reported by the device -->
-    <element id="Device.property:codedListProperties.type.coding:MDCType.code">
+    <element id="Device.property:codedListProperties.type.coding.code">
       <path value="Device.property.type.coding.code" />
       <definition value="The MDC code representing the property" />
       <comment value="Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future&#xD;&#xA;&#xD;&#xA;
-      Description                CODE    Reference Identifier                        Code System&#xD;&#xA;
-      --------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
-      Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST    http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD&#xD;&#xA;" />
+      Description                CODE    Reference Identifier                           Code System&#xD;&#xA;
+      -----------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;
+	  Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL&#xD;
+      Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD&#xD;&#xA;" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.type.text">
       <path value="Device.property.type.text" />
       <definition value="It is recommended to display at least the MDC reference identifier for the code" />
     </element>
-
+    
     <!-- No quantity entry when the value is a code! -->
     <element id="Device.property:codedListProperties.valueQuantity">
       <path value="Device.property.valueQuantity" />
@@ -731,36 +719,21 @@
     </element>
     <element id="Device.property:codedListProperties.valueCode">
       <path value="Device.property.valueCode" />
-      <short value="There shall be one valueCode entry for every item reported by the PHD in the list" />
+      <short value="There shall be one valueCode entry for every item supported by the PHG in the list" />
       <min value="1" />
     </element>
     <element id="Device.property:codedListProperties.valueCode.coding">
       <path value="Device.property.valueCode.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="1" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType">
-      <path value="Device.property.valueCode.coding" />
-      <sliceName value="ContinuaPHDType" />
-      <short value="Required Continua PHDType code system entry" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.system">
+    <element id="Device.property:codedListProperties.valueCode.coding.system">
       <path value="Device.property.valueCode.coding.system" />
-      <definition value="The Code System for the certified PHD interface" />
+      <definition value="Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD or urn:iso:std:iso:11073:10101 code systems" />
       <min value="1" />
-      <fixedUri value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD" />
     </element>
-    <element id="Device.property:codedListProperties.valueCode.coding:ContinuaInterfacesType.code">
+    <element id="Device.property:codedListProperties.valueCode.coding.code">
       <path value="Device.property.valueCode.coding.code" />
-      <definition value="The Continua code for the certified PHD interface" />
+      <definition value="One of the Continua interface certification codes" />
       <min value="1" />
     </element>
   </differential>
