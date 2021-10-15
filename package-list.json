@@ -10,13 +10,13 @@
       "desc": "Continuous Integration Build (latest in version control)",
       "path": "'http://hl7.org/fhir/uv/phd",
       "status": "ci-build",
-      "current": true
+      "current": true,
 	  "sequence": "STU 1",
       "fhirversion": "4.0.1"
     },
     {
       "version": "1.0.0",
-      "date": "xxx",
+      "date": "2019-05-19",
       "desc": "STU 1",
       "path": "http://hl7.org/fhir/uv/phd",
       "status": "trial-use",
@@ -25,7 +25,7 @@
     },
     {
       "version": "0.3.0",
-      "date": "xxx",
+      "date": "2019-05-19",
       "desc": "STU #1 2nd Ballot",
       "path": "http://hl7.org/fhir/uv/phd/2019May",
       "status": "ballot",
