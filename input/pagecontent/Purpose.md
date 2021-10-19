@@ -11,4 +11,4 @@ For consumers (readers) of FHIR data, this Implementation Guide specifies the FH
  - [Next: Audience](Audience.html)
  - [Previous: Organization](Organization.html)
 
-HL7 GitHub location: https://github.com/HL7/PHD
+HL7 GitHub location: https://github.com/HL7/phd

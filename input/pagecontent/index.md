@@ -15,5 +15,5 @@ Those readers who *are* implementing a PHG are going to need an understanding of
 
 *However, this choice does not mean that this guide is only of use for Continua compliant PHDs that follow the IEEE 11073 20601 standard. Any PHD that provides a means to establish a PHG-validated consistent time stamp can use this guide. The mapping in this guide is currently used with many existing proprietary Serial Port Protocol (SPP) PHDs and Bluetooth Low Energy PHDs, both proprietary and those following one of the Bluetooth Low Energy Health Device Profiles.* See [Non-11073 20601 Devices](Non1107320601Devices.html) for more information.
 
-[HL7 GitHub location](https://github.com/HL7/PHD)
+[HL7 GitHub location](https://github.com/HL7/phd)
 
