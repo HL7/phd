@@ -83,151 +83,151 @@
       </concept>
 	  <concept>
         <!-- CGM -->
-        <code value="528409/>
+        <code value="528409"/>
         <display value="MDC_DEV_SPEC_PROFILE_CGM: Continuous Glucose Monitor" />
       </concept>
 	  <concept>
         <!-- Power Status Monitor -->
-        <code value="528412/>
+        <code value="528412"/>
         <display value="MDC_DEV_SPEC_PROFILE_PSM: Power Status Monitor" />
       </concept>
 	  <concept>
         <!-- Spirometer -->
-        <code value="528413/>
+        <code value="528413"/>
         <display value="MDC_DEV_SPEC_PROFILE_SPIRO: Spirometer" />
       </concept>
 	  <concept>
         <!-- Cardio -->
-        <code value="528425/>
+        <code value="528425"/>
         <display value="MDC_DEV_SPEC_PROFILE_HF_CARDIO: Cardiovascular exercise equipment" />
       </concept>
 	  <concept>
         <!-- Strength -->
-        <code value="528426/>
+        <code value="528426"/>
         <display value="MDC_DEV_SPEC_PROFILE_HF_STRENGH: Strength and fitness equipment" />
       </concept>
 	  <concept>
         <!-- Independent Living hub -->
-        <code value="528455/>
+        <code value="528455"/>
         <display value="MDC_DEV_SPEC_PROFILE_AI_ACTIVITY_HUB: Independent living hub" />
       </concept>
 	  <concept>
         <!-- Medication monitor -->
-        <code value="528456/>
+        <code value="528456"/>
         <display value="MDC_DEV_SPEC_PROFILE_AI_NED_MINDER: Medication Monitor" />
       </concept>
 	  <concept>
         <!-- Generic 20601 device -->
-        <code value="528457/>
+        <code value="528457"/>
         <display value="MDC_DEV_SPEC_PROFILE_GENERIC: Device following the 20601 standard but no specific specialization" />
       </concept>
 	  <concept>
         <!-- Step counter -->
-        <code value="528488/>
+        <code value="528488"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_STEP_COUNTER: Step counter" />
       </concept>
 	  <concept>
         <!-- Fall sensor -->
-        <code value="528501/>
+        <code value="528501"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_FALL_SENSOR: Fall sensor" />
       </concept>
 	  <concept>
         <!-- Personal sensor -->
-        <code value="528502/>
+        <code value="528502"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_PERS_SENSOR: Personal sensor" />
       </concept>
 	  <concept>
         <!-- Smoke sensor -->
-        <code value="528503/>
+        <code value="528503"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_SMOKE_SENSOR: Smoke sensor" />
       </concept>
 	  <concept>
         <!-- CO sensor -->
-        <code value="528504/>
+        <code value="528504"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_CO_SENSOR: Carbon Monoxide sensor" />
       </concept>
 	  <concept>
         <!-- Water sensor -->
-        <code value="528505/>
+        <code value="528505"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_WATER_SENSOR: Water sensor" />
       </concept>
 	  <concept>
         <!-- Gas sensor -->
-        <code value="528506/>
+        <code value="528506"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_GAS_SENSOR: Gas sensor" />
       </concept>
 	  <concept>
         <!-- Motion sensor -->
-        <code value="528507/>
+        <code value="528507"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_MOTION_SENSOR: Motion sensor" />
       </concept>
 	  <concept>
         <!-- Property Exit sensor -->
-        <code value="528508/>
+        <code value="528508"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_PROPEXIT_SENSOR: Property Exit sensor" />
       </concept>
 	  <concept>
         <!-- Enuresis sensor -->
-        <code value="528509/>
+        <code value="528509"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_ENURESIS_SENSOR: Enuresis sensor" />
       </concept>
 	  <concept>
         <!-- Contact Closure sensor -->
-        <code value="528510/>
+        <code value="528510"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_CONTACTCLOSURE_SENSOR: Contact Closure sensor" />
       </concept>
 	  <concept>
         <!-- Usage sensor -->
-        <code value="528511/>
+        <code value="528511"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_USAGE_SENSOR: Usage sensor" />
       </concept>
 	  <concept>
         <!-- Switch sensor -->
-        <code value="528512/>
+        <code value="528512"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_SWITCH_SENSOR: Switch sensor" />
       </concept>
 	  <concept>
         <!-- Dosage sensor -->
-        <code value="528513/>
+        <code value="528513"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_DOSAGE_SENSOR: Dosage sensor" />
       </concept>
 	  <concept>
         <!-- Temperature sensor -->
-        <code value="528514/>
+        <code value="528514"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_TEMP_SENSOR: Temperature sensor" />
       </concept>
 	  <concept>
         <!-- ECG Waveform -->
-        <code value="528524/>
+        <code value="528524"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_ECG: ECG supporting waveforms" />
       </concept>
 	  <concept>
         <!-- ECG Heart Rate -->
-        <code value="528525/>
+        <code value="528525"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_HR: ECG supporting just heart rate" />
       </concept>
         <!-- SABTE CPAP -->
-        <code value="528532/>
+        <code value="528532"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_CPAP: Specialized SABTE device providing CPAP (continuous positive airway pressure) manually set" />
       </concept>
 	  <concept>
         <!-- SABTE CPAP_AUTO -->
-        <code value="528533/>
+        <code value="528533"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_CPAP_AUTO: Specialized SABTE device providing CPAP (continuous positive airway pressure) automatically" />
       </concept>
 	  <concept>
         <!-- SABTE BPAP -->
-        <code value="528534/>
+        <code value="528534"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_BPAP: Specialized SABTE device providing BPAP (Bi-level positive airway pressure) manually set" />
       </concept>
 	  <concept>
         <!-- SABTE BPAP_AUTO -->
-        <code value="528535/>
+        <code value="528535"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_BPAP_AUTO: Specialized SABTE device providing BPAP (Bi-level positive airway pressure) automatically" />
       </concept>
 	  <concept>
         <!-- SABTE ACSV -->
-        <code value="528535/>
+        <code value="528535"/>
         <display value="MDC_DEV_SUB_SPEC_PROFILE_ACSV: Specialized SABTE device providing ACSV (Anti-cyclic Servo Ventilation)" />
       </concept>
     </include>
