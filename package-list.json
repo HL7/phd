@@ -17,7 +17,7 @@
     {
       "version": "1.0.0",
       "date": "2019-05-19",
-      "desc": "STU 1",
+      "desc": "STU 1 accepted version",
       "path": "http://hl7.org/fhir/uv/phd/STU1",
       "status": "trial-use",
       "sequence": "STU 1",
@@ -29,15 +29,17 @@
       "desc": "STU #1 2nd Ballot",
       "path": "http://hl7.org/fhir/uv/phd/2019May",
       "status": "ballot",
-      "sequence": "STU1"
+      "sequence": "STU1",
+      "fhirversion": "4.0.0"
     },
     {
       "version": "0.2.0",
       "date": "2018-12-04",
       "desc": "STU #1 1st Ballot",
-      "path": "http://hl7.org/fhir/uv/phd/2018Dec",
+      "path": "http://hl7.org/fhir/uv/phd/2019Jan",
       "status": "ballot",
-      "sequence": "STU1"
+      "sequence": "STU1",
+      "fhirversion": "4.0.0"
     },
     {
       "version": "0.1.0",
@@ -45,7 +47,8 @@
       "desc": "STU #1 draft for comment",
       "path": "http://hl7.org/fhir/uv/phd/2018Jan",
       "status": "ballot",
-      "sequence": "STU1"
+      "sequence": "STU1",
+      "fhirversion": "3.0.0"
     }
   ],
   "category": "Personal Healthcare"

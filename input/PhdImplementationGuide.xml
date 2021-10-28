@@ -420,7 +420,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/coin-20181119202022"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp"/>
+      <name value="Example of a Coincident Time Stamp PHG better synchronized"/>
       <description value="This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD. This situation is the most prevalent." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
       <groupingId value="examples" />
@@ -460,7 +460,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/coin-20181119174911"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp"/>
+      <name value="Example of a Coincident Time Stamp referenced from BP observation"/>
       <description value="This Coincident Time Stamp observation is referenced by the Blood Pressure Observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
       <groupingId value="examples" />
