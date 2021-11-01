@@ -54,7 +54,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	},
 	"subject": {
 		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
-		// Patient resource was originally uploaded in an update transaction and the logical id was
+		// The Patient resource was originally uploaded in an update transaction and the logical id was
 		// specified to be generated from the Patient.identifier.value and Patient.identifier.system elements.
 		// This resource is already on the server
 	},
