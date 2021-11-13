@@ -42,7 +42,7 @@
       "fhirversion": "4.0.0"
     },
     {
-      "version": "0.1.0",
+      "version": "0.1",
       "date": "2018-01-01",
       "desc": "STU #1 draft for comment",
       "path": "http://hl7.org/fhir/uv/phd/2018Jan",
