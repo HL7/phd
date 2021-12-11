@@ -5,204 +5,28 @@
 # Work-around for a bug introduced by the latest version of the publisher 1.1.63. The element <fixedUri> causes the error. Changing it to <fixeduri> fixes the error. HOWEVER, the error is only reported when the element is in an extension. When I have <fixedUri> in any other element (and I do have it in many) no error is reported. I am assuming the <fixedUri> version is correct as it has never caused a problem before.
 ERROR: StructureDefinition/PhdCoincidentTimeStampObservation: StructureDefinition.snapshot.element[19].fixed.ofType(uri): The element Observation.extension.url has a fixed of type uri, which is not in the list of allowed types ([http://hl7.org/fhirpath/System.String])
 
-# Work-around for as of yet unresolved namespaces for transport device identifiers:
-#ERROR: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: Device/phd-00601900010E9234.F45EABA80832: Device.identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: Device/phd-711000FEFF5F49B0.B0495F001071: Device.identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: Device/phg-ecde3d4e58532d31.000000000000: Device.identifier[1].system: URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: Device/phg-ecde3d4e58532d31.000000000000: Device.identifier[2].system: URL value 'http://hl7.org/fhir/sid/eui-48/ethernet' does not resolve
-#ERROR: StructureDefinition/PhdDevice: StructureDefinition.snapshot.element[55].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: StructureDefinition/PhdDevice: StructureDefinition.snapshot.element[75].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/ethernet' does not resolve
-#ERROR: StructureDefinition/PhdDevice: StructureDefinition.differential.element[17].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: StructureDefinition/PhdDevice: StructureDefinition.differential.element[24].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/ethernet' does not resolve
-#ERROR: StructureDefinition/PhgDevice: StructureDefinition.snapshot.element[55].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: StructureDefinition/PhgDevice: StructureDefinition.snapshot.element[75].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/ethernet' does not resolve
-#ERROR: StructureDefinition/PhgDevice: StructureDefinition.differential.element[17].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/bluetooth' does not resolve
-#ERROR: StructureDefinition/PhgDevice: StructureDefinition.differential.element[24].fixed.ofType(uri): URL value 'http://hl7.org/fhir/sid/eui-48/ethernet' does not resolve
-
-# The following code system is not yet supported by the terminology server. This oid identifies the Nomenclature (MDC) code system defined in IEEE 11073 10101 and used by both PoCD and PHD devices. There are several value sets and code systens defined in the PHD and PoCD implementation guides which are based upon this same MDC code system which causes problems when referencing them.
-Error from server: Unable to provide support for code system urn:iso:std:iso:11073:10101
-Code System URI "urn:iso:std:iso:11073:10101" is unknown so the code cannot be validated
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.component[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.component[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.component[0].code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.component[1].code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/bloodPress-1.0.1: Observation.component[2].code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/bits-1.0.0.40: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/bundle-continuousnonin: Bundle.entry[0].resource.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/coin-1234: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/coin-20181119174911: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/coin-20181119202022: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/coin-fault20: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/glucose-1.0.0.4: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/glucose-1.0.0.4: Observation.value.ofType(CodeableConcept).coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/nan-1.0.0.42: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).version[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[3].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[3].valueCode[0].coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[4].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).specialization[0].systemType.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).version[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).version[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[2].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[2].valueCode[0].coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[6].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[7].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[7]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[3].resource.ofType(Observation): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[3].resource.ofType(Observation).code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[3].resource.ofType(Observation).device: Details for urn:oid:1.2.3.2 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Device
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[3].resource.ofType(Observation): Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation - listed in meta
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).component[0].code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).component[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).device: Details for urn:oid:1.2.3.2 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Device
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).component[0].code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).component[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).device: Details for urn:oid:1.2.3.2 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Device
 INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
 INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.specialization[0].systemType.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.version[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.version[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.version[2].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[1].valueCode[0].coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.specialization[0].systemType.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.version[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.version[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.version[2].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.property[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.property[0].valueCode[0].coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
 INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.specialization[0].systemType.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.version[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.version[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.version[2].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.version[3].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[2].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[2].valueCode[0].coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
 INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
 INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.version[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[0].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[0].valueCode[0].coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[1].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[2].type.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/rtsa-1234: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
+
 INFORMATION: Observation/spotnumeric-1.0.0.3: Observation.component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-#INFORMATION: Observation/spotnumeric-1.0.0.3: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/spotnumeric-1.0.0.3: Observation.component[0].code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/spotnumeric-1.0.0.3: Observation.component[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
-#INFORMATION: Observation/stringenum-1234: Observation.code.coding[0]: Code System URI 'urn:iso:std:iso:11073:10101' is unknown so the code cannot be validated
 WARNING: ValueSet/CodeableConcept11073MDC: ValueSet.compose[0].include[0].concept[0]: The code 68193 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/CodeableConcept11073MDC: ValueSet.compose[0].include[0].concept[1]: The code 68220 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/CodeableConcept11073MDC: ValueSet.compose[0].include[0].concept[2]: The code 532353 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/CodeableConcept11073MDC: ValueSet.compose[0].include[0].concept[3]: The code 532355 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[0]: The code 68073 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[1]: The code 67914 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[2]: The code 68222 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[3]: The code 68226 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[4]: The code 68223 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[5]: The code 68224 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[6]: The code 68224 is not valid in the system urn:iso:std:iso:11073:10101
-WARNING: ValueSet/Quantity11073MDC: ValueSet.compose[0].include[0].concept[7]: The code 68229 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/Range11073MDC: ValueSet.compose[0].include[0].concept[0]: The code 67892 is not valid in the system urn:iso:std:iso:11073:10101
-WARNING: ValueSet/Range11073MDC: ValueSet.compose[0].include[0].concept[1]: The code 68236 is not valid in the system urn:iso:std:iso:11073:10101
-#WARNING: ValueSet/String11073MDC: ValueSet.compose[0].include[0].concept[0]: The code 68104 is not valid in the system urn:iso:std:iso:11073:10101
 WARNING: ValueSet/String11073MDC: ValueSet.compose[0].include[0].concept[1]: The code 68232 is not valid in the system urn:iso:std:iso:11073:10101
 
 #This profile is not something that can be implemented. It represents only those elements that are common to all PHD Observational profiles.
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
-
-#These are the correct resources for validation
-#INFORMATION: ImplementationGuide/hl7.fhir.uv.phd: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-#INFORMATION: Observation/bits-1.0.0.40: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation
-#INFORMATION: Observation/bloodPress-1.0.1: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation
-#INFORMATION: Bundle/bundle-continuousnonin: Bundle.entry[0].resource: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-#INFORMATION: Observation/coin-1234: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation
-#INFORMATION: Observation/coin-20181119174911: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation
-#INFORMATION: Observation/coin-20181119202022: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation
-#INFORMATION: Observation/coin-fault20: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation
-#INFORMATION: Observation/glucose-1.0.0.4: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation
-#INFORMATION: Observation/nan-1.0.0.42: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[0].resource.ofType(Patient): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[0].resource.ofType(Patient): Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient - listed in meta
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Device
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device): Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice - listed in meta
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Device
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device): Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice - listed in meta
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation): Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation - listed in meta
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
-#INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation): Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation - listed in meta
-#INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
-#INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
-#INFORMATION: Observation/rtsa-1234: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation
-#INFORMATION: Observation/spotnumeric-1.0.0.3: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-#INFORMATION: Observation/stringenum-1234: Observation: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation
-#INFORMATION: Patient/sisansarahId.1.2.3.4.5.6.7.8.10: Patient: Validate resource against profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient
-#INFORMATION: CodeSystem/ASN1ToHL7: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-#INFORMATION: CodeSystem/ASN1ToHL7: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem - listed in meta
-#INFORMATION: ValueSet/ASN1attribute: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/ASN1attribute: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
-#INFORMATION: ValueSet/ASN1measurement: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/ASN1measurement: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
-#INFORMATION: ValueSet/CodeableConcept11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/CodeableConcept11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
-#INFORMATION: CodeSystem/ContinuaDeviceIdentifiers: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-#INFORMATION: CodeSystem/ContinuaDeviceIdentifiers: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem - listed in meta
-#INFORMATION: CodeSystem/ContinuaHFS: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-#INFORMATION: CodeSystem/ContinuaHFS: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem - listed in meta
-#INFORMATION: CodeSystem/ContinuaPHD: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-#INFORMATION: CodeSystem/ContinuaPHD: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem - listed in meta
-#INFORMATION: ValueSet/MDCnotObject: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/MDCnotObject: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
-#INFORMATION: StructureDefinition/PhdBaseObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdBitsEnumerationObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdCodedEnumerationObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdCoincidentTimeStampObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdCompoundNumericObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdDevice: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdNumericObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdPatient: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhdRtsaObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: CapabilityStatement/PhdServerCapabilityStatement: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
-#INFORMATION: StructureDefinition/PhdStringEnumerationObservation: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: StructureDefinition/PhgDevice: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-#INFORMATION: ValueSet/Quantity11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/Quantity11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
-#INFORMATION: ValueSet/Range11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/Range11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
-#INFORMATION: ValueSet/String11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-#INFORMATION: ValueSet/String11073MDC: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
