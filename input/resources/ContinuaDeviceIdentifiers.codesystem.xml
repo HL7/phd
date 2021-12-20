@@ -29,7 +29,8 @@
 
   <description value="Codes used to describe the Device (PHD or PHG) Identifiers, such as the system id or Bluetooth Address. More codes maybe added to this list in the future."/> 
 
-  <caseSensitive value="true"/> 
+  <caseSensitive value="true"/>
+  <hierarchyMeaning value="grouped-by"/>
   <content value="complete"/> 
 
   <concept> 

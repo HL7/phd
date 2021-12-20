@@ -33,6 +33,7 @@
   
   <!-- The codes are strings but consist of only digits, they do not represent integers -->
   <caseSensitive value="true"/> 
+  <hierarchyMeaning value="grouped-by"/>
   <content value="complete"/> 
   
  
