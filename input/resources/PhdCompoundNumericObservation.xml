@@ -205,24 +205,24 @@
 
     <!-- Component: value[x]:valueQuantity -->
     <element id="Observation.component:compound.value[x]">
-      <path value="Observation.component.valueQuantity" />
+      <path value="Observation.component.value[x]" />
       <type>
         <code value="Quantity" />
       </type>
     </element>
     <element id="Observation.component:compound.value[x]:valueQuantity.value">
-      <path value="Observation.component.valueQuantity.value" />
+      <path value="Observation.component.value[x].value" />
       <definition value="The value of nth element of the compound attribute. The value element for the nth compoundComponent is missing if the attribute sends a special value or the Compound-Nu-Observed-Value status element indicates an error." />
       <min value="1" />
     </element>
     <element id="Observation.component:compound.value[x]:valueQuantity.system">
-      <path value="Observation.component.valueQuantity.system" />
+      <path value="Observation.component.value[x].system" />
       <definition value="The unit code shall use the UCUM system" />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:compound.value[x]:valueQuantity.code">
-      <path value="Observation.component.valueQuantity.code" />
+      <path value="Observation.component.value[x].code" />
       <definition value="The MDC code must be translated to the UCUM code." />
       <min value="1" />
     </element>
@@ -336,7 +336,7 @@
     </element>
 
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
-      <path value="Observation.component.valueQuantity" />
+      <path value="Observation.component.value[x]" />
       <sliceName value="valueQuantity" />
       <min value="1" />
       <type>
@@ -344,18 +344,18 @@
       </type>
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.value">
-      <path value="Observation.component.valueQuantity.value" />
+      <path value="Observation.component.value[x].value" />
       <definition value="This is the value of the accuracy attribute. The value is Mder FLOAT encoded and shall be expressed to the precision indicated by the Mder FLOAT." />
       <min value="1" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.system">
-      <path value="Observation.component.valueQuantity.system" />
+      <path value="Observation.component.value[x].system" />
       <definition value="The unit code shall use the UCUM system" />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.code">
-      <path value="Observation.component.valueQuantity.code" />
+      <path value="Observation.component.value[x].code" />
       <definition value="The units for the Accuracy are given by the units of the measurement so this entry shall have the same code as in Observation.valueQuantity.code" />
       <min value="1" />
     </element>

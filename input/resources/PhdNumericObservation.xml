@@ -92,25 +92,25 @@
 
     <!-- value[x] which is a valueQuantity  -->
     <element id="Observation.value[x]">
-      <path value="Observation.valueQuantity" />
+      <path value="Observation.value[x]" />
       <type>
         <code value="Quantity" />
       </type>
     </element>
 
     <element id="Observation.value[x]:valueQuantity.value">
-      <path value="Observation.valueQuantity.value" />
+      <path value="Observation.value[x].value" />
       <definition value="The decoded Mder FLOAT or SFLOAT value from a PHD measurement containing either a&#xD;&#xA;Basic-Nu-Observed-Value&#xD;&#xA;Simple-Nu-Observed-Value or&#xD;&#xA;Nu_observed-Value attribute." />
       <comment value="The implicit precision in the value shall be honored. The Mder encoding used in the above attributes provides this precision. The translating software shall honor that precision when generating this value.&#xD;&#xA;This element shall be present unless there is an error reported in the Measurement-Status attribute or the Nu-Observed-Value.status field or the Mder encoding represents one of the special values. In that case there is a dataAbsentReason element and the valueQuantity element is not present. Note that not all measurement status values are errors resulting in no measurement being reported here; for example the preliminary or verified status." />
       <min value="1" />
     </element>
     <element id="Observation.value[x]:valueQuantity.system">
-      <path value="Observation.valueQuantity.system" />
+      <path value="Observation.value[x].system" />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.value[x]:valueQuantity.code">
-      <path value="Observation.valueQuantity.code" />
+      <path value="Observation.value[x].code" />
       <short value="The UCUM code for the units of this measurement." />
       <comment value="The UCUM code needs to be translated from  the 11073-10101 code from the device. This translation means that the reporting of units is not future proof." />
       <min value="1" />
@@ -199,7 +199,7 @@
     </element>
 	
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
-      <path value="Observation.component.valueQuantity" />
+      <path value="Observation.component.value[x]" />
       <sliceName value="valueQuantity" />
       <min value="1" />
       <type>
@@ -207,18 +207,18 @@
       </type>
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.value">
-      <path value="Observation.component.valueQuantity.value" />
+      <path value="Observation.component.value[x].value" />
       <definition value="This is the value of the accuracy attribute. The value is Mder FLOAT encoded and shall be expressed to the precision indicated by the Mder FLOAT." />
       <min value="1" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.system">
-      <path value="Observation.component.valueQuantity.system" />
+      <path value="Observation.component.value[x].system" />
       <definition value="The unit code shall use the UCUM system" />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity.code">
-      <path value="Observation.component.valueQuantity.code" />
+      <path value="Observation.component.value[x].code" />
       <definition value="The units for the Accuracy are given by the units of the measurement so this entry shall have the same code as in Observation.valueQuantity.code" />
       <min value="1" />
     </element>
@@ -261,14 +261,14 @@
       <min value="1" />
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]">
-      <path value="Observation.component.valueCodeableConcept" />
+      <path value="Observation.component.value[x]" />
       <min value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding">
-      <path value="Observation.component.valueCodeableConcept.coding" />
+      <path value="Observation.component.value[x].coding" />
       <slicing>
         <discriminator>
           <type value="value" />
@@ -279,20 +279,20 @@
       <min value="1" />
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary">
-      <path value="Observation.component.valueCodeableConcept.coding" />
+      <path value="Observation.component.value[x].coding" />
       <sliceName value="V2Binary" />
       <short value="The required Version 2 Table 0136 Binary code entry" />
       <min value="1" />
       <max value="1" />
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary.system">
-      <path value="Observation.component.valueCodeableConcept.coding.system" />
+      <path value="Observation.component.value[x].coding.system" />
       <definition value="This coding system contains only two entries, 'Y' (bit set) and 'N' (bit cleared)" />
       <min value="1" />
       <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
     </element>
     <element id="Observation.component:alertOpStateComponent.value[x]:valueCodeableConcept.coding:V2Binary.code">
-      <path value="Observation.component.valueCodeableConcept.coding.code" />
+      <path value="Observation.component.value[x].coding.code" />
       <definition value="If the MDER-Bit is set, the code value is 'Y' otherwise it is 'N'. These are 'state' bits thus both the set and cleared states are reported." />
       <comment value="Recall that when the value is 'Y' the alarm or alert is turned off" />
       <min value="1" />
@@ -356,55 +356,55 @@
     </element>
 	
     <element id="Observation.component:currentLimitsComponent.value[x]">
-      <path value="Observation.component.valueRange" />
+      <path value="Observation.component.value[x]" />
       <min value="1" />
       <type>
         <code value="Range" />
       </type>
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low">
-      <path value="Observation.component.valueRange.low" />
+      <path value="Observation.component.value[x].low" />
       <sliceName value="SimpleQuantity" />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.value">
-      <path value="Observation.component.valueRange.low.value" />
+      <path value="Observation.component.value[x].low.value" />
       <definition value="This value is given by Current-Limits.lower as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the lower threshold. If the measurement falls below this value, the Measurement-Status attribute is sent with a bit stating the alert is present (if the alerts are not turned off for the lower limits)." />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.system">
-      <path value="Observation.component.valueRange.low.system" />
+      <path value="Observation.component.value[x].low.system" />
       <definition value="Indicates the UCUM coding system." />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.value.code">
-      <path value="Observation.component.valueRange.low.code" />
+      <path value="Observation.component.value[x].low.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
       <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high">
-      <path value="Observation.component.valueRange.high" />
+      <path value="Observation.component.value[x].high" />
       <sliceName value="SimpleQuantity" />
       <comment value="The high limit shall be present" />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.value">
-      <path value="Observation.component.valueRange.high.value" />
+      <path value="Observation.component.value[x].high.value" />
       <definition value="This value is given by Current-Limits.upper as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the upper threshold. If the measurement goes above this value, the Measurement-Status attribute is sent with a bit stating the alert is present (if the alerts are not turned off for the upper limits)." />
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.system">
-      <path value="Observation.component.valueRange.high.system" />
+      <path value="Observation.component.value[x].high.system" />
       <definition value="Indicates the MDC coding system." />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high.code">
-      <path value="Observation.component.valueRange.high.code" />
+      <path value="Observation.component.value[x].high.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
       <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
@@ -465,7 +465,7 @@
     </element>
 
     <element id="Observation.component:alertOpTextStringComponent.value[x]:valueString">
-      <path value="Observation.component.valueString" />
+      <path value="Observation.component.value[x]" />
       <sliceName value="valueString" />
       <min value="1" />
       <type>
@@ -473,7 +473,7 @@
       </type>
     </element>
     <element id="Observation.component:alertOpTextStringComponent.value[x]:valueString.value">
-      <path value="Observation.component.valueString.value" />
+      <path value="Observation.component.value[x].value" />
       <definition value="This is the value of the lower and upper text strings presented in an application specific manner." />
       <min value="1" />
     </element>
@@ -534,55 +534,55 @@
     </element>
 
     <element id="Observation.component:measurementConfidence95Component.value[x]">
-      <path value="Observation.component.valueRange" />
+      <path value="Observation.component.value[x]" />
       <min value="1" />
       <type>
         <code value="Range" />
       </type>
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low">
-      <path value="Observation.component.valueRange.low" />
+      <path value="Observation.component.value[x].low" />
       <sliceName value="SimpleQuantity" />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.value">
-      <path value="Observation.component.valueRange.low.value" />
+      <path value="Observation.component.value[x].low.value" />
       <definition value="Thsi value is given by Measurement-Confidence-95.lower-bound as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the lower bound of the range for which the manufacturer is 95% confident that the measurement reported lies in." />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.system">
-      <path value="Observation.component.valueRange.low.system" />
+      <path value="Observation.component.value[x].low.system" />
       <definition value="Indicates the UCUM coding system." />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.value.code">
-      <path value="Observation.component.valueRange.low.code" />
+      <path value="Observation.component.value[x].low.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
       <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high">
-      <path value="Observation.component.valueRange.high" />
+      <path value="Observation.component.value[x].high" />
       <sliceName value="SimpleQuantity" />
       <comment value="The high limit shall be present" />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.value">
-      <path value="Observation.component.valueRange.high.value" />
+      <path value="Observation.component.value[x].high.value" />
       <definition value="This value is given by Measurement-Confidence-95.upper-bound as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct." />
       <comment value="This gives the upper bound of the range for which the manufacturer is 95% confident that the measurement reported lies in." />
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.system">
-      <path value="Observation.component.valueRange.high.system" />
+      <path value="Observation.component.value[x].high.system" />
       <definition value="Indicates the UCUM coding system." />
       <min value="1" />
       <fixedUri value="http://unitsofmeasure.org" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high.code">
-      <path value="Observation.component.valueRange.high.code" />
+      <path value="Observation.component.value[x].high.code" />
       <definition value="This code (which is the code for the units) shall be the same as Observation.valueQuantity.code" />
       <comment value="The MDC units are translated to UCUM." />
       <min value="1" />
@@ -643,7 +643,7 @@
     </element>
 
      <element id="Observation.component:thresholdNotificationTextStringComponent.value[x]:valueString">
-      <path value="Observation.component.valueString" />
+      <path value="Observation.component.value[x]" />
       <sliceName value="valueString" />
       <min value="1" />
       <type>
@@ -651,7 +651,7 @@
       </type>
     </element>
     <element id="Observation.component:thresholdNotificationTextStringComponent.value[x]:valueString.value">
-      <path value="Observation.component.valueString.value" />
+      <path value="Observation.component.value[x].value" />
       <definition value="This is the value of the text string." />
       <min value="1" />
     </element>
