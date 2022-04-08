@@ -19,16 +19,16 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "8452096"
+				"code": "8454252"
 			}
 		],
-		"text": "Private Attribute: Unknown Private Attribute"
+		"text": "MDC_HF_PROGRAM_ID: Program id"
 	},
 	"subject": {
 		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
 	},
 	"effectiveDateTime": "2018-08-02T03:25:24.000-04:00",
-	"valueString": "Test Strip Buckled",
+	"valueString": "Endurance run",
 	"device": {
 		"reference": "Device/phd-00601900010E9234.F45EABA80832"
 	},
