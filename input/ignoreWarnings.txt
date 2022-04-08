@@ -5,7 +5,24 @@
 # Work-around for a bug introduced by the latest version of the publisher 1.1.63. The element <fixedUri> causes the error. Changing it to <fixeduri> fixes the error. HOWEVER, the error is only reported when the element is in an extension. When I have <fixedUri> in #any other element (and I do have it in many) no error is reported. I am assuming the <fixedUri> version is correct as it has never caused a problem before.
 #ERROR: StructureDefinition/PhdCoincidentTimeStampObservation: StructureDefinition.snapshot.element[19].fixed.ofType(uri): The element Observation.extension.url has a fixed of type uri, which is not in the list of allowed types #([http://hl7.org/fhirpath/System.String])
 
-
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[2].resource.ofType(Device).property[7]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
+INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
+INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Device/phd-00601900010E9234.F45EABA80832: Device.property[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Device/phd-711000FEFF5F49B0.B0495F001071: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Device/phd-74E8FFFEFF051C00.001C05FFE874: Device.property[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
+INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
+INFORMATION: Device/phg-ecde3d4e58532d31.000000000000: Device.property[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
 
 INFORMATION: Observation/spotnumeric-1.0.0.3: Observation.component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
 WARNING: ValueSet/CodeableConcept11073MDC: ValueSet.compose[0].include[0].concept[0]: The code 68193 is not valid in the system urn:iso:std:iso:11073:10101
