@@ -6,7 +6,7 @@
   "list": [
     {
       "version": "current",
-	  "date": "2021-02-10",
+	  "date": "2022-04-08",
       "desc": "Continuous Integration Build (latest in version control)",
       "path": "https://build.fhir.org/ig/HL7/phd",
       "status": "ci-build",
@@ -20,6 +20,7 @@
       "desc": "STU 1 accepted version",
       "path": "http://hl7.org/fhir/uv/phd/STU1",
       "status": "trial-use",
+	  "current": true,
       "sequence": "STU 1",
       "fhirversion": "4.0.1"
     },
