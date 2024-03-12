@@ -47,46 +47,69 @@
       <max value="1" />
       <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" />
     </element>
-    
-    <!-- The vital Signs category     -->
-    <element id="Observation.category:vitalSignsCategory">
-      <path value="Observation.category" />
-      <sliceName value="vitalSignsCategory" />
-      <short value="Required by the FHIR specification if the measurement value is a vital sign" />      
-    </element>
-    <!-- Slice the coding to allow one to express the same concept in another coding system -->
-    <element id="Observation.category:vitalSignsCategory.coding">
-      <path value="Observation.category.coding" />
+
+    <!--   slicing copied from FHIR Vital signs profile -->
+    <element id="Observation.category">
+      <path value="Observation.category"/>
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="system" />
+          <type value="value"/>
+          <path value="coding.code"/>
         </discriminator>
-        <rules value="open" />
+        <discriminator>
+          <type value="value"/>
+          <path value="coding.system"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
       </slicing>
-      <min value="1" />
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
     </element>
-    <!-- The vitalSigns slice of the coding element: This element is required -->
-    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns">
-      <path value="Observation.category.coding" />
-      <sliceName value="vitalSigns" />
-      <short value="Required Vital Signs category code system entry" />
-      <min value="1" />
-      <max value="1" />
+    <element id="Observation.category:VSCat">
+      <path value="Observation.category"/>
+      <sliceName value="VSCat"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
     </element>
-    <!-- The system value is fixed -->
-    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.system">
-      <path value="Observation.category.coding.system" />
-      <min value="1" />
-      <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category" />
+    <element id="Observation.category:VSCat.coding">
+      <path value="Observation.category.coding"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <mustSupport value="true"/>
     </element>
-    <!-- The currently defined single-coded properties reported by the device -->
-    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.code">
-      <path value="Observation.category.coding.code" />
-      <definition value="The 'vital-signs' category code" />
-      <min value="1" />
-      <fixedCode value="vital-signs" />
+    <element id="Observation.category:VSCat.coding.system">
+      <path value="Observation.category.coding.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <mustSupport value="true"/>
     </element>
+    <element id="Observation.category:VSCat.coding.code">
+      <path value="Observation.category.coding.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="vital-signs"/>
+      <mustSupport value="true"/>
+    </element>
+    <!--    end of FHIR Vital signs copy -->
  
     <!-- No value[x] in a compound  -->
     <element id="Observation.value[x]">
@@ -133,7 +156,6 @@
           <type value="value" />
           <path value="code" />
         </discriminator>
-
         <rules value="open" />
       </slicing>
     </element>
@@ -148,9 +170,9 @@
     </element>
     <element id="Observation.component:compound.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"/>
       </binding>
     </element>
     <element id="Observation.component:compound.code.coding">
@@ -268,6 +290,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="1" />
     </element>
     <element id="Observation.component:compound.interpretation.coding:MsmtStatusInterpretation">
       <path value="Observation.component.interpretation.coding" />
@@ -287,6 +310,7 @@
     </element>    
     
     <!-- ACCURACY COMPONENT -->
+    <!-- COMPONENT -->
     <element id="Observation.component:accuracyComponent">
       <path value="Observation.component" />
       <sliceName value="accuracyComponent" />
@@ -335,6 +359,17 @@
       <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
     </element>
 
+    <element id="Observation.component:accuracyComponent.value[x]">
+      <path value="Observation.component.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.value[x]" />
       <sliceName value="valueQuantity" />

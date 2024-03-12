@@ -49,6 +49,17 @@
     </element>
     
         <!-- The vital Signs category     -->
+    <element id="Observation.category">
+      <path value="Observation.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
     <element id="Observation.category:vitalSignsCategory">
       <path value="Observation.category" />
       <sliceName value="vitalSignsCategory" />

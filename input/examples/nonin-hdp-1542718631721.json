@@ -3,8 +3,7 @@
   "id": "nonin-hdp-1542718631721",
   "type": "transaction",
   "entry": [
-    {
-      "fullUrl": "urn:oid:1.2.3.0",
+    { "fullUrl": "http://example.org/Patient/patient-001",
       "resource": {
         "resourceType": "Patient",
         "meta": {
@@ -12,6 +11,7 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"
           ]
         },
+        "id": "patient-001",
         "identifier": [
           {
             "type": {
@@ -43,7 +43,7 @@
       }
     },
     {
-      "fullUrl": "urn:oid:1.2.3.1",
+      "fullUrl": "http://example.org/Device/phg-001",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -51,6 +51,7 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"
           ]
         },
+        "id": "phg-001",
         "identifier": [
           {
             "type": {
@@ -236,7 +237,7 @@
       }
     },
     {
-      "fullUrl": "urn:oid:1.2.3.2",
+      "fullUrl": "http://example.org/Device/phd-001",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -244,6 +245,7 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
           ]
         },
+        "id": "phd-001",
         "identifier": [
           {
             "type": {
@@ -508,7 +510,7 @@
       }
     },
     {
-      "fullUrl": "urn:oid:0.1568.997631834",
+      "fullUrl": "http://example.org/Observation/cts-001",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -516,11 +518,12 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
           ]
         },
+        "id": "cts-001",
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "urn:oid:1.2.3.1"
+              "reference": "Device/phg-001"
             }
           }
         ],
@@ -535,12 +538,12 @@
           "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
         },
         "subject": {
-          "reference": "urn:oid:1.2.3.0"
+          "reference": "Patient/patient-001"
         },
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
         "device": {
-          "reference": "urn:oid:1.2.3.2"
+          "reference": "Device/phd-001"
         }
       },
       "request": {
@@ -549,7 +552,7 @@
       }
     },
     {
-      "fullUrl": "urn:oid:1.0.0.1",
+      "fullUrl": "urn:uuid:752b1a27-bbed-47d6-bbb8-b649a5261c52",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -561,7 +564,7 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "urn:oid:1.2.3.1"
+              "reference": "Device/phg-001"
             }
           }
         ],
@@ -591,20 +594,21 @@
           "text": "MDC_PULS_OXIM_SAT_O2: Blood 0₂"
         },
         "subject": {
-          "reference": "urn:oid:1.2.3.0"
+          "reference": "Patient/patient-001"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
           "value": 98,
+          "unit": "Superfluous mandatory field!",
           "system": "http://unitsofmeasure.org",
           "code": "%"
         },
         "device": {
-          "reference": "urn:oid:1.2.3.2"
+          "reference": "Device/phd-001"
         },
         "derivedFrom": [
           {
-            "reference": "urn:oid:0.1568.997631834"
+            "reference": "Observation/cts-001"
           }
         ],
         "component": [
@@ -636,7 +640,7 @@
       }
     },
     {
-      "fullUrl": "urn:oid:1.0.0.2",
+      "fullUrl": "urn:uuid:9b676667-4eea-4837-8c6e-df5c1bce9b38",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -648,7 +652,7 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "urn:oid:1.2.3.1"
+              "reference": "Device/phg-001"
             }
           }
         ],
@@ -678,20 +682,21 @@
           "text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate"
         },
         "subject": {
-          "reference": "urn:oid:1.2.3.0"
+          "reference": "Patient/patient-001"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
           "value": 47,
+          "unit": "{beat}/min}",
           "system": "http://unitsofmeasure.org",
-          "code": "{beat}/min"
+          "code": "/min"
         },
         "device": {
-          "reference": "urn:oid:1.2.3.2"
+          "reference": "Device/phd-001"
         },
         "derivedFrom": [
           {
-            "reference": "urn:oid:0.1568.997631834"
+            "reference": "Observation/cts-001"
           }
         ],
         "component": [

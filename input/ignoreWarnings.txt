@@ -2,14 +2,20 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
-#The following are due to two missing MDC code elements in the FHIR (supplemental types and glucose specialization)
-INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[1].resource.ofType(Device).property[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice
-INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[4].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-INFORMATION: Bundle/nonin-hdp-1542718631721: Bundle.entry[5].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
+# this rule makes no sense for device generated observations; all example observation in this IG are device generated
+Best Practice Recommendation: In general, all observations should have a performer
 
-INFORMATION: Observation/spotnumeric-1.0.0.3: Observation.component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation
-WARNING: ValueSet/CodeableConcept11073MDC: ValueSet.compose[0].include[0].concept[0]: The code 68193 is not valid in the system urn:iso:std:iso:11073:10101
-WARNING: ValueSet/String11073MDC: ValueSet.compose[0].include[0].concept[1]: The code 68232 is not valid in the system urn:iso:std:iso:11073:10101
+# Supplemental information components have a valueCodeableConcept and even when present in vital signs observations they should not be required to have a UCUM unit code
+None of the codings provided are in the value set 'Vital Signs Units' (http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1), and a coding from this value set is required) (codes = urn:iso:std:iso:11073:10101#150588)
 
-#This profile is not something that can be implemented. It represents only those elements that are common to all PHD Observational profiles.
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
+# this is a recent code for a spirometer device type
+The code '528413' is not valid in the system urn:iso:std:iso:11073:10101
+
+# The ISO/IEEE 11073 Codesystem is not draft
+Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
+
+# Why are code systems defined by the IG seen as experimental?
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7|1.0.0
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS|1.0.0
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers|1.0.0
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD|1.0.0

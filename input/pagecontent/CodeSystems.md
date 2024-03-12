@@ -20,3 +20,6 @@ http://loinc.org
 
 http://hl7.org/fhir/ValueSet/observation-valueabsentreason
  - This URL identifies the FHIR data absent reason codes
+
+http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status
+ - This URL identifies the IEEE 11073 based measurement status codes that PHD and PoCD share

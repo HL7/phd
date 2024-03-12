@@ -34,7 +34,7 @@
 			},
 			{
 				"system": "http://loinc.org",
-				"code": "55284-4"
+				"code": "85354-9"
 			}
 		],
 		"text": "MDC_PRESS_BLD_NONINV: Blood pressure"
@@ -68,6 +68,7 @@
 			},
 			"valueQuantity": {
 				"value": 116,
+				"unit" : "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}
@@ -88,6 +89,7 @@
 			},
 			"valueQuantity": {
 				"value": 71,
+				"unit" : "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}
@@ -104,6 +106,7 @@
 			},
 			"valueQuantity": {
 				"value": 86,
+				"unit" : "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}

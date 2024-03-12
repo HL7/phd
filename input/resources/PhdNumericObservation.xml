@@ -45,50 +45,74 @@
     <element id="Observation.meta.profile:phdProfile">
       <path value="Observation.meta.profile" />
       <sliceName value="phdProfile" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <fixedCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" />
     </element>
-    
-    <!-- The vital Signs category     -->
-    <element id="Observation.category:vitalSignsCategory">
-      <path value="Observation.category" />
-      <sliceName value="vitalSignsCategory" />
-      <short value="Required by the FHIR specification if the measurement value is a vital sign" />      
-    </element>
-    <!-- Slice the coding to allow one to express the same concept in another coding system -->
-    <element id="Observation.category:vitalSignsCategory.coding">
-      <path value="Observation.category.coding" />
+
+<!--     The vital Signs category     -->
+<!--   copied from FHIR Vital signs profile -->
+    <element id="Observation.category">
+      <path value="Observation.category"/>
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="system" />
+          <type value="value"/>
+          <path value="coding.code"/>
         </discriminator>
-        <rules value="open" />
+        <discriminator>
+          <type value="value"/>
+          <path value="coding.system"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
       </slicing>
-      <min value="1" />
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
     </element>
-    <!-- The vitalSigns slice of the coding element: This element is required -->
-    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns">
-      <path value="Observation.category.coding" />
-      <sliceName value="vitalSigns" />
-      <short value="Required Vital Signs category code system entry" />
-      <min value="1" />
-      <max value="1" />
+    <element id="Observation.category:VSCat">
+      <path value="Observation.category"/>
+      <sliceName value="VSCat"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
     </element>
-    <!-- The system value is fixed -->
-    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.system">
-      <path value="Observation.category.coding.system" />
-      <min value="1" />
-      <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category" />
+    <element id="Observation.category:VSCat.coding">
+      <path value="Observation.category.coding"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <mustSupport value="true"/>
     </element>
-    <!-- The currently defined single-coded properties reported by the device -->
-    <element id="Observation.category:vitalSignsCategory.coding:vitalSigns.code">
-      <path value="Observation.category.coding.code" />
-      <definition value="The 'vital-signs' category code" />
-      <min value="1" />
-      <fixedCode value="vital-signs" />
+    <element id="Observation.category:VSCat.coding.system">
+      <path value="Observation.category.coding.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <mustSupport value="true"/>
     </element>
+    <element id="Observation.category:VSCat.coding.code">
+      <path value="Observation.category.coding.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="vital-signs"/>
+      <mustSupport value="true"/>
+    </element>
+<!--    end of FHIR Vital signs copy -->
 
     <!-- value[x] which is a valueQuantity  -->
     <element id="Observation.value[x]">
@@ -115,7 +139,7 @@
       <comment value="The UCUM code needs to be translated from  the 11073-10101 code from the device. This translation means that the reporting of units is not future proof." />
       <min value="1" />
     </element>
-    
+
     <element id="Observation.dataAbsentReason">
       <path value="Observation.dataAbsentReason" />
       <short value="Populated when a special value occurs or Measurement-Status indicates invalid, not unavailable, or msmt ongoing" />
@@ -148,7 +172,7 @@
       <path value="Observation.dataAbsentReason.coding.code" />
       <min value="1" />
     </element>
-    
+
     <!-- ACCURACY COMPONENT -->
     <element id="Observation.component:accuracyComponent">
       <path value="Observation.component" />
@@ -159,9 +183,9 @@
     </element>
     <element id="Observation.component:accuracyComponent.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"/>
       </binding>
     </element>
     <element id="Observation.component:accuracyComponent.code.coding">
@@ -197,7 +221,19 @@
       <path value="Observation.component.code.text" />
       <definition value="Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT" />
     </element>
-	
+
+    <element id="Observation.component:accuracyComponent.value[x]">
+      <path value="Observation.component.value[x]"/>
+      <slicing>
+        <discriminator>
+          <type value="type"/>
+          <path value="$this"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+      <min value="1"/>
+    </element>
     <element id="Observation.component:accuracyComponent.value[x]:valueQuantity">
       <path value="Observation.component.value[x]" />
       <sliceName value="valueQuantity" />
@@ -226,7 +262,7 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-    
+
     <!-- ALERT-OP-STATE COMPONENT -->
     <element id="Observation.component:alertOpStateComponent">
       <path value="Observation.component" />
@@ -237,9 +273,9 @@
     </element>
     <element id="Observation.component:alertOpStateComponent.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"/>
       </binding>
     </element>
     <element id="Observation.component:alertOpStateComponent.code.coding">
@@ -301,7 +337,7 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-    
+
     <!-- CURRENT LIMITS COMPONENT -->
     <element id="Observation.component:currentLimitsComponent">
       <path value="Observation.component" />
@@ -314,9 +350,9 @@
     </element>
     <element id="Observation.component:currentLimitsComponent.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/>
       </binding>
     </element>
      <element id="Observation.component:currentLimitsComponent.code.coding">
@@ -354,17 +390,18 @@
       <path value="Observation.component.code.text" />
       <definition value="Should include the reference id for the Current-Limits attribute which is MDC_ATTR_LIMIT_CURR" />
     </element>
-	
-    <element id="Observation.component:currentLimitsComponent.value[x]">
+
+    <element id="Observation.component:currentLimitsComponent">
       <path value="Observation.component.value[x]" />
       <min value="1" />
       <type>
         <code value="Range" />
       </type>
     </element>
+
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low">
       <path value="Observation.component.value[x].low" />
-      <sliceName value="SimpleQuantity" />
+<!--      <sliceName value="SimpleQuantity" />-->
       <min value="1" />
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.low.value">
@@ -387,7 +424,7 @@
     </element>
     <element id="Observation.component:currentLimitsComponent:value[x].valueRange.high">
       <path value="Observation.component.value[x].high" />
-      <sliceName value="SimpleQuantity" />
+<!--      <sliceName value="SimpleQuantity" />-->
       <comment value="The high limit shall be present" />
       <min value="1" />
     </element>
@@ -413,7 +450,7 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-    
+
     <!-- ALERT-OP-TEXT COMPONENT -->
     <element id="Observation.component:alertOpTextStringComponent">
       <path value="Observation.component" />
@@ -425,9 +462,9 @@
     </element>
     <element id="Observation.component:alertOpTextStringComponent.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/>
       </binding>
     </element>
      <element id="Observation.component:alertOpTextStringComponent.code.coding">
@@ -466,7 +503,7 @@
 
     <element id="Observation.component:alertOpTextStringComponent.value[x]:valueString">
       <path value="Observation.component.value[x]" />
-      <sliceName value="valueString" />
+<!--      <sliceName value="valueString" />-->
       <min value="1" />
       <type>
         <code value="string" />
@@ -481,20 +518,20 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-    
+
     <!-- MEASUREMENT-CONFIDENCE-95 COMPONENT -->
     <element id="Observation.component:measurementConfidence95Component">
       <path value="Observation.component" />
       <sliceName value="measurementConfidence95Component" />
-      <short value="The Measurement-Confidence-95 range" /> 
+      <short value="The Measurement-Confidence-95 range" />
       <definition value="The Measurement-Confidence-95 attribute defines the lower and upper bounds for a range within which the manufacture is 95% confident that the actual value resides. The unit for the lower bound and upper bound is the same as the measurement. " />
       <max value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"/>
       </binding>
     </element>
      <element id="Observation.component:measurementConfidence95Component.code.coding">
@@ -542,7 +579,7 @@
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low">
       <path value="Observation.component.value[x].low" />
-      <sliceName value="SimpleQuantity" />
+<!--      <sliceName value="SimpleQuantity" />-->
       <min value="1" />
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.low.value">
@@ -565,7 +602,7 @@
     </element>
     <element id="Observation.component:measurementConfidence95Component:value[x].valueRange.high">
       <path value="Observation.component.value[x].high" />
-      <sliceName value="SimpleQuantity" />
+<!--      <sliceName value="SimpleQuantity" />-->
       <comment value="The high limit shall be present" />
       <min value="1" />
     </element>
@@ -591,21 +628,21 @@
       <path value="Observation.component.dataAbsentReason" />
       <max value="0" />
     </element>
-    
+
     <!-- THRESHOLD-NOTIFICATION-TEXT-STRING COMPONENT -->
     <element id="Observation.component:thresholdNotificationTextStringComponent">
       <path value="Observation.component" />
       <sliceName value="thresholdNotificationTextStringComponent" />
-      <short value="The Threshold-Notification-Text-String attribute value entry" /> 
+      <short value="The Threshold-Notification-Text-String attribute value entry" />
       <definition value="This component reports the values in the Threshold-Notification-Text-String attribute. This attribute is a human readable string describing the threshold met condition." />
       <comment value="This attribute consists of human readable strings giving further information threshold notification(s)" />
       <max value="1" />
     </element>
     <element id="Observation.component:thresholdNotificationTextStringComponent.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC"/>
       </binding>
     </element>
      <element id="Observation.component:thresholdNotificationTextStringComponent.code.coding">
@@ -644,7 +681,7 @@
 
      <element id="Observation.component:thresholdNotificationTextStringComponent.value[x]:valueString">
       <path value="Observation.component.value[x]" />
-      <sliceName value="valueString" />
+<!--      <sliceName value="valueString" />-->
       <min value="1" />
       <type>
         <code value="string" />

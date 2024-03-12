@@ -83,7 +83,7 @@
       <path value="Observation.dataAbsentReason.coding.code" />
       <min value="1" />
     </element>
-    
+
     <!-- COMPONENTS FOR ASN1 BITS -->
     <element id="Observation.component:bitsComponent">
       <path value="Observation.component" />
@@ -94,9 +94,9 @@
     <!-- component: code -->
     <element id="Observation.component:bitsComponent.code">
       <path value="Observation.component.code" />
-      <binding> 
-        <strength value="required"/> 
-        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement"/>
       </binding>
     </element>
     <element id="Observation.component:bitsComponent.code.coding">
@@ -133,6 +133,7 @@
         <ordered value="true" />
         <rules value="open" />
       </slicing>
+      <min value="1" />
     </element>
     <element id="Observation.component:bitsComponentComponent.value[x]:valueCodeableConcept.coding:v2BinaryValue">
       <path value="Observation.component.valueCodeableConcept.coding" />
@@ -149,8 +150,8 @@
       <path value="Observation.component.valueCodeableConcept.coding.code" />
       <definition value="If the bit is set this code is 'Y' and 'N' if the bit is cleared. If an 'event' bit only the set case needs to be reported. If the bit is unsupported, the dataAbsentReason code &quot;unsupported' is used. Unsupported bits are optional to report. If a state bit is supported both states shall be reported." />
       <min value="1" />
-    </element>    
-    
+    </element>
+
     <element id="Observation.component:bitsComponent.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason" />
       <short value="For the optional reporting of unsupported bits" />

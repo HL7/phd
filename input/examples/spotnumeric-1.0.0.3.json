@@ -50,8 +50,9 @@
 	"effectiveDateTime": "2018-11-13T17:59:02-05:00",
 	"valueQuantity": {
 		"value": 48.0,
+		"unit": "{beat}/min}",
 		"system": "http://unitsofmeasure.org",
-		"code": "{beat}/min"
+		"code": "/min"
 	},
 	"device": {
 		"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"

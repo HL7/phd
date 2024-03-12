@@ -64,6 +64,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="1" />
       <comment value="This element shall be populated." />
     </element>
     <element id="Patient.identifier.type.coding:v2Coding">

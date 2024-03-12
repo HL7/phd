@@ -15,7 +15,8 @@
   
   <version value="0.3.0"/> 
 
-  <name value="ASN1ToHL7"/> 
+  <name value="ASN1ToHL7"/>
+  <title value="ASN1 bits to HL7 enumerated values"/>
   <status value="draft"/> 
   <experimental value="true"/> 
   <date value="2018-09-18"/> 
