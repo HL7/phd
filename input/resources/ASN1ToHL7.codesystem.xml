@@ -34,12 +34,12 @@
   <property> 
       <code value="type" /> 
 	  <description value="Indicates that the code type is an event or state" />
-	  <type value="code" />
+	  <type value="string" />
   </property>
   <property> 
       <code value="source" /> 
 	  <description value="Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device." />
-	  <type value="code" />
+	  <type value="string" />
   </property>
   
   <!-- The following code concepts are derived from the MDC_ATTR_POWER_STAT MDS attribute -->
