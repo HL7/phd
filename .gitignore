@@ -23,3 +23,4 @@ Thumbs.db
 
 # IntelliJ IDEA development env files
 .idea/**
+.idea/phd.iml
