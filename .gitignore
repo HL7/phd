@@ -3,6 +3,7 @@
 temp
 template
 output
+.idea
 
 # Don't commit this because it's so large #
 ###########################################
@@ -22,5 +23,3 @@ Thumbs.db
 ################
 *.bak
 
-# IntelliJ IDEA development env files
-/.idea
