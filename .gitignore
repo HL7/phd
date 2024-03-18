@@ -23,6 +23,4 @@ Thumbs.db
 *.bak
 
 # IntelliJ IDEA development env files
-.idea/phd.iml
-.idea/**
-.idea/phd.iml
+/.idea/**
