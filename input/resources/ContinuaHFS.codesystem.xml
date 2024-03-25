@@ -21,8 +21,8 @@
   
   <url value="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS" />
 
-  <version value="0.3.0"/> 
-
+  <version value="0.3.0"/>
+  <title value="Continua Health and Fitness Continua Service Interfaces"/>
   <name value="ContinuaHFS"/> 
   <status value="draft"/> 
   <experimental value="true"/> 

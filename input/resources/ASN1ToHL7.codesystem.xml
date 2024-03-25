@@ -15,7 +15,8 @@
   
   <version value="0.3.0"/> 
 
-  <name value="ASN1ToHL7"/> 
+  <name value="ASN1ToHL7"/>
+  <title value="ASN1 bits to HL7 enumerated values"/>
   <status value="draft"/> 
   <experimental value="true"/> 
   <date value="2018-09-18"/> 
@@ -33,12 +34,12 @@
   <property> 
       <code value="type" /> 
 	  <description value="Indicates that the code type is an event or state" />
-	  <type value="code" />
+	  <type value="string" />
   </property>
   <property> 
       <code value="source" /> 
 	  <description value="Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device." />
-	  <type value="code" />
+	  <type value="string" />
   </property>
   
   <!-- The following code concepts are derived from the MDC_ATTR_POWER_STAT MDS attribute -->

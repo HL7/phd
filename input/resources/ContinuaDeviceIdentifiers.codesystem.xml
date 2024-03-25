@@ -21,7 +21,8 @@
 
   <version value="0.3.0"/> 
 
-  <name value="ContinuaDeviceIdentifiers"/> 
+  <name value="ContinuaDeviceIdentifiers"/>
+  <title value="Continua Device Identifiers"/>
   <status value="draft"/> 
   <experimental value="true"/> 
   <date value="2018-11-25"/> 
