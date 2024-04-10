@@ -13,7 +13,7 @@ Usage: #definition
 * description = "Specifies the capabilities of a server supporting the Continua FHIR Observation Server class. The Continua FHIR Observation Server supports the Continua FHIR Observation Client as specified in the Continua H.812-5 Design Guidelines. This class of uploaders transcodes data from medical devices following the IEEE 11073 20601 data model to FHIR as profiled in the Continua Personal Health Device Implementation Guide with the authentication, security, and transaction protocols specified in H.812-5. The Continua FHIR Observation Server is a RESTFul FHIR server subject to the additional requirements of H.812-5. This capability statement specifies only those capabilities needed to receive data from a Continua FHIR Observation Client."
 * kind = #capability
 * software.name = "Continua FHIR Observation Server"
-* fhirVersion = #4.0.0
+* fhirVersion = #4.0.1
 * format[0] = #json
 * format[+] = #xml
 * rest.mode = #server
