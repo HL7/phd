@@ -38,7 +38,7 @@ One obtains the 11073 20601 measurement type for the code element in the same ma
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'
 
 ### Time Stamp: effective[x]
-PHDs report time stamps in one of four methods and may not report time stamps at all. The time clock types are summarized below:
+PHDs report time stamps in one of four methods and may not report time stamps at all. The PHG will include a time stamp in every observation that is uploaded using a conversion as needed based on the time stamp data received from the PHD. The time stamp types and corresponding PHG conversions are summarized below:
 
 |Time Stamp Type|Description|PHD requirement|PHG conversion|
 |-
