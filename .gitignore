@@ -3,6 +3,7 @@
 temp
 template
 output
+fsh-generated
 .idea
 
 # Don't commit this because it's so large #

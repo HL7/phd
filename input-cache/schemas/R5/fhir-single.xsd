@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Mar 6, 2024 04:43+0000 for FHIR v6.0.0-cibuild 
+  Generated on Sat, Mar 30, 2024 17:03+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -17862,14 +17862,14 @@ The duration (usually in minutes) could also be provided to indicate the length 
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Partitions the audit event into one or more categories that can be used to filter searching, to govern access control and/or to guide system behavior.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="subtype" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Describes what happened. The most specific code for the event.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes what happened. The most specific codes for the event.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="action" minOccurs="0" maxOccurs="1" type="AuditEventAction">
@@ -21118,7 +21118,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="onBehalfOf" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The organization of the practitioner.</xs:documentation>
+              <xs:documentation xml:lang="en">Entity that the participant is acting as a proxy of, or an agent of, or in the interest of, or as a representative of.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -52874,7 +52874,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The data in scope are those with the given codes present in that data .meta.security element.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="period" minOccurs="0" maxOccurs="unbounded" type="Period">
+          <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">Clinical or Operational Relevant period of time that bounds the data controlled by this rule.</xs:documentation>
            </xs:annotation>
@@ -54433,14 +54433,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="bodyStructure" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="bodyStructure" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates the body structure on the subject's body where the procedure was performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="outcome" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="outcome" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The outcome of the procedure - did it resolve the reasons for the procedure being performed?</xs:documentation>
+              <xs:documentation xml:lang="en">The short term outcome of the procedure assessed during the procedure, at the conclusion of the procedure, during the immediate post-performance period, or at discharge. The outcome is usually expected to be within the encounter during which the procedure was performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="report" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -58005,6 +58005,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             </xs:annotation>
             <xs:element name="timeDateTime" type="dateTime"/>
             <xs:element name="timePeriod" type="Period"/>
+            <xs:element name="timeDuration" type="Duration"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>
