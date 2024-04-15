@@ -1,5 +1,5 @@
 
-These sections provide background on the concepts behind the technical mapping approach and how the PHD's IEEE 11073 20601 Objects, which represent the measurements and device data, are related to FHIR Observation and Device resources. The normative details of the mapping are given in the Profiles sections. Implementers who are familiar with the concepts behind the IEEE 11073 20601 Object model can skip these sections and proceed directly to the [Profile Details sections](ProfilesOverview.html). Readers who are interested in *consuming* the FHIR resources specified in this IG should go directly to the [Profile Consumers](ProfileConsumers.html) chapter. The mapping sections require knowledge of the IEEE 11073 20601 domain and are intended for implementers of PHGs.
+These sections provide background on the concepts behind the technical mapping approach and how the PHD's IEEE 11073-20601 Objects, which represent the measurements and device data, are related to FHIR Observation and Device resources. The normative details of the mapping are given in the Profiles sections. Implementers who are familiar with the concepts behind the IEEE 11073-20601 Object model can skip these sections and proceed directly to the [Profile Details sections](ProfilesOverview.html). Readers who are interested in *consuming* the FHIR resources specified in this IG should go directly to the [Profile Consumers](ProfileConsumers.html) chapter. The mapping sections require knowledge of the IEEE 11073-20601 domain and are intended for implementers of PHGs.
 <!-- https://stackoverflow.com/questions/27977078/how-do-i-reference-the-root-directory-of-my-site-and-why-wont-jekyll-render-so -->
 
  - [Remote Patient Monitoring Considerations](RemotePatientMonitoringConsiderations.html)
@@ -18,4 +18,4 @@ These sections provide background on the concepts behind the technical mapping a
    - [The Observation Identifier](ObservationIdentifier.html)
    - [Generating the Reported Time Stamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
  - [Coincident Time Stamp](CoincidentTimeStamp.html) 
- - [Non-11073 20601 Devices](Non1107320601Devices.html)
+ - [Non-IEEE 11073-20601 Devices](Non1107320601Devices.html)

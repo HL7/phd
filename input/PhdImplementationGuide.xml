@@ -83,7 +83,7 @@ In this example there are only xml structure definitions, value sets, code syste
   <definition>
     <grouping id="profiles">
       <name value="PHD Profiles"/>
-      <description value="Profiles for mapping 11073 20601 Personal Health Devices to FHIR resources"/>
+      <description value="Profiles for mapping IEEE 11073-20601 Personal Health Devices to FHIR resources"/>
     </grouping>
     <grouping id="valueSets">
       <name value="Value Sets"/>
@@ -216,7 +216,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
       <name value="ASN1ToHL7"/>
-      <description value="Codes for the IEEE 11073 20601 BITs measurement bit values. For example, 150604.0 is the code for Mder bit 0 in measurement type 150604 which is a pulse oximeter device and sensor status. The description of that code is 'Indicates the device is not connected with the sensor'. This code system will grow as more BITs measurements are defined in specializations"/>
+      <description value="Codes for the IEEE 11073-20601 BITs measurement bit values. For example, 150604.0 is the code for Mder bit 0 in measurement type 150604 which is a pulse oximeter device and sensor status. The description of that code is 'Indicates the device is not connected with the sensor'. This code system will grow as more BITs measurements are defined in specializations"/>
       <exampleBoolean value="false"/>
       <groupingId value="codeSystems" />
     </resource>
@@ -670,7 +670,7 @@ In this example there are only xml structure definitions, value sets, code syste
           </page>
           <page>
             <nameUrl value="Non1107320601Devices.html"/>
-            <title value="Non 11073 20601 Devices"/>
+            <title value="Non IEEE 11073-20601 Devices"/>
             <generation value="markdown"/>
           </page>
         </page>

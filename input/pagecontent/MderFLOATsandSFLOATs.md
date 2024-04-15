@@ -1,4 +1,4 @@
-Mder FLOATs and SFLOATs are the 11073 20601 means of encoding floating point numbers. The primary reason for this encoding is to indicate the precision of the measurement. The SFLOAT is 16-bits and the FLOAT is 32-bits. In the SFLOAT, the most significant 4 bits is the exponent and the remaining 12 bits the mantissa. In the FLOAT, the most significant byte is the exponent and the remaining 24 bits the mantissa. Both the exponent and mantissa are signed.
+Mder FLOATs and SFLOATs are the IEEE 11073-20601 means of encoding floating point numbers. The primary reason for this encoding is to indicate the precision of the measurement. The SFLOAT is 16-bits and the FLOAT is 32-bits. In the SFLOAT, the most significant 4 bits is the exponent and the remaining 12 bits the mantissa. In the FLOAT, the most significant byte is the exponent and the remaining 24 bits the mantissa. Both the exponent and mantissa are signed.
 
 The exponent gives the precision. It indicates where the decimal point goes in the mantissa. A negative exponent of -*N* moves the decimal point to the left *N* places and a positive exponent of +*N* moves the decimal point to the right *N* places.
 
