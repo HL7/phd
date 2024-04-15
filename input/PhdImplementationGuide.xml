@@ -325,7 +325,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="ValueSet/DeviceTypes11073MDC"/>
       </reference>
-      <name value="Device Type Specialization 11073 10101 Nomenclature Codes"/>
+      <name value="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
       <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Device specialization types."/>
       <exampleBoolean value="false"/>
       <groupingId value="valueSets" />

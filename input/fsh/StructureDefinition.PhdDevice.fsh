@@ -100,11 +100,11 @@ Description: "Base StructureDefinition for the Device Resource for a PHD"
     * ^slicing.rules = #open
   * coding contains MDCType 1..1
   * coding[MDCType] ^short = "Required MDC code system entry"
-    * ^definition = "The 11073 10101 code for the PHD simple MDS."
+    * ^definition = "The IEEE 11073-10101 code for the PHD simple MDS."
     * system 1..
     * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * ^short = "Identifies IEEE 11073 10101 coding system"
-      * ^definition = "This value identifies the IEEE 11073 10101 coding system"
+      * ^short = "Identifies IEEE 11073-10101 coding system"
+      * ^definition = "This value identifies the IEEE 11073-10101 coding system"
     * code 1..
     * code = #65573 (exactly)
       * ^short = "Indicates PHD"

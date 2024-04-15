@@ -1,4 +1,4 @@
-In this guide there will be several instances where the 11073 10101 nomenclature (MDC) codes are mapped to FHIR. In almost all cases this mapping involves an element that is a CodeableConcepts data type. The mapping is as follows:
+In this guide there will be several instances where the IEEE 11073-10101 nomenclature (MDC) codes are mapped to FHIR. In almost all cases this mapping involves an element that is a CodeableConcepts data type. The mapping is as follows:
 
  - CodeableConcept.coding.code = *partition* * 2<sup>16</sup> + *term code*
  - CodeableConcept.coding.system = urn:iso:std:iso:11073:10101
