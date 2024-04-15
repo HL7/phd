@@ -42,10 +42,10 @@ The simplest example of a mapping of a Numeric Metric object to a FHIR Observati
 
 |IEEE Attribute|Meaning|Observation element|
 |-
-|Type|Tells what the measurement is as a 11073 10101 code|code|
+|Type|Tells what the measurement is as an IEEE 11073-10101 code|code|
 |Absolute-Time-Stamp<br/>Base-Offset-Time-Stamp|Gives the time of the measurement|effectiveDateTime|
 |Simple/Basic-Nu-Observed-Value|Gives the value of the measurement|valueQuantity.value|
-|Unit-Code|Gives the units of the measurement as a 11073 10101 code. Will need to be translated to the UCUM code system|valueQuantity.code|
+|Unit-Code|Gives the units of the measurement as an IEEE 11073-10101 code. Will need to be translated to the UCUM code system|valueQuantity.code|
 
 This mapping applies to several simple types of PHD measurements that are scalars, for example body temperature, body mass, body height, glucose concentration, among many others. This Implementation Guide specifies a structure definition profile that applies to all scalar Numeric Metric measurements.
 
@@ -57,11 +57,11 @@ The simplest example of a mapping of a Compound Numeric Metric object whose valu
 
 |IEEE Attribute|Meaning|Observation element|
 |-
-|Type|Tells what the 'overall' measurement is as a 11073 10101 code|code|
+|Type|Tells what the 'overall' measurement is as an IEEE 11073-10101 code|code|
 |Absolute-Time-Stamp<br/>Base-Offset-Time-Stamp|Gives the time of the measurement|effectiveDateTime|
 |Metric-Id-List.*entryN*|Gives the code of *N*th component of the measurement|component*N*.code|
 |Compound Simple/Basic-Nu-Observed-Value.*valueN*|Gives the Nth component of the measurement|component*N*.valueQuantity.value|
-|Unit-Code|Gives the units of the *N*th component of the measurement as a 11073 10101 code. Will need to be translated to the UCUM code system|component*N*.valueQuantity.code|
+|Unit-Code|Gives the units of the *N*th component of the measurement as an IEEE 11073-10101 code. Will need to be translated to the UCUM code system|component*N*.valueQuantity.code|
 
 This mapping applies to simple types of PHD measurements that are represented by vectors, for example, the blood pressure and the user feedback. The Type attribute indicates what the overall measurement is, and the Metric-Id-List attribute indicates what each component of the overall measurement is. In the blood pressure case, the Type states that this is a non-invasive blood pressure and the Metric-Id-List attribute identifies the systolic, diastolic, and MAP components. This implementation guide specifies a structure definition profile that applies to all compound Numeric Metric measurements.
 
@@ -72,9 +72,9 @@ The simplest example of a mapping of Enumeration Metric object, where the enumer
 
 |IEEE Attribute|Meaning|Observation element|
 |-
-|Type|Tells what the measurement is as a 11073 10101 code|code|
+|Type|Tells what the measurement is as an IEEE 11073-10101 code|code|
 |Absolute-Time-Stamp<br/>Base-Offset-Time-Stamp|Gives the time of the measurement|effectiveDateTime|
-|Enum-Observed-Value-Simple-OID|Gives the value of the measurement as 11073 10101 code|valueCodeableConcept|
+|Enum-Observed-Value-Simple-OID|Gives the value of the measurement as IEEE 11073-10101 code|valueCodeableConcept|
 
 This mapping applies to simple types of PHD measurements whose value is given by a finite list of codes, for example the pulsatile characteristics measurement of a pulse oximeter or the meal context associated with a glucose measurement. In the pulse oximter case there are three codes defined that can be reported; trigger on a beat, trigger on a maximum inrush, and no pulsatile event occurred. The latter is only reported by the device in special conditions and is usually not reported. This implementation guide specifies a structure definition profile that applies to all coded Metric measurements.
 
@@ -89,7 +89,7 @@ The simplest example of a mapping of an ASN1 BITs enumeration object to a FHIR O
 
 |IEEE Attribute|Meaning|Observation element|
 |-
-|Type|Tells what the measurement is as a 11073 10101 code|code|
+|Type|Tells what the measurement is as an IEEE 11073-10101 code|code|
 |Absolute-Time-Stamp<br/>Base-Offset-Time-Stamp|Gives the time of the measurement|effectiveDateTime|
 |ASN1 Code for BIT *N*|Gives the code of *N*th BIT setting|component*M*.code|
 |Enum-Observed-Value-Simple/Basic-Bit-Str.*BitN*|Gives the *N*th bit setting as binary yes/no|component*M*.valueCodeableConcept (Y/N)|

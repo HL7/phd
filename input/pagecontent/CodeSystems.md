@@ -1,7 +1,7 @@
 The following code systems are used in this implementation guide:
 
 urn:iso:std:iso:11073:10101
- - This URN identifies the IEEE 11073 10101 nomenclature codes. These codes are used extensively in this profile.
+ - This URN identifies the IEEE 11073-10101 nomenclature codes. These codes are used extensively in this profile.
 
 http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7
  - This URL identifies the IEEE ASN.1 BITs field codes

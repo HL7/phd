@@ -92,8 +92,8 @@ Description: "Base StructureDefinition for the Device Resource for a PHG"
 * type.coding[MDCType] ^definition = "The MDC code for the PHG is a special value defined for V2 PCD-01."
 * type.coding[MDCType].system 1..
 * type.coding[MDCType].system = "urn:iso:std:iso:11073:10101" (exactly)
-* type.coding[MDCType].system ^short = "Identifies IEEE 11073 10101 coding system"
-* type.coding[MDCType].system ^definition = "This value identifies the IEEE 11073 10101 coding system"
+* type.coding[MDCType].system ^short = "Identifies IEEE 11073-10101 coding system"
+* type.coding[MDCType].system ^definition = "This value identifies the IEEE 11073-10101 coding system"
 * type.coding[MDCType].code 1..
 * type.coding[MDCType].code = #531981 (exactly)
 * type.coding[MDCType].code ^short = "Indicates PHG"
