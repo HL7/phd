@@ -176,7 +176,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 |Measurement Confidence 95|68236 (MDC code)|Only Quantities|valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
 |Threshold notification string|68232 (MDC code)|Only Quantities|valueString| Human readable string describing thresholds. Similar to the Alert operational text string|
 
-At the time of this writing, only the supplemental types and the high resolution relative time stamp 'additional descriptions' are used by current PHDs on the market. Some of the text string descriptions are unlikely to be used given that the IEEE 11073 20601 specification only allows ASCII 127 and consumers of the data are likely to provide their own descriptions customized to their locale.
+At the time of this writing, only the supplemental types and the high resolution relative time stamp 'additional descriptions' are used by current PHDs on the market. Some of the text string descriptions are unlikely to be used given that the IEEE 11073-20601 specification only allows ASCII 127 and consumers of the data are likely to provide their own descriptions customized to their locale.
 
 ##### Supplemental Types
 Supplemental type information is indicated by the Observation.component.code.coding.code element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by Observation.component.valueCodeableConcept.coding.code. There may be more than one Observation.component entry containing supplemental type information. An example of a supplemental types component entry is as follows:
@@ -207,7 +207,7 @@ Supplemental type information is indicated by the Observation.component.code.cod
 A 'spot modality' means that the pulse oximeter sensed over a period long enough to obtain a stable average.
 
 ##### Relative Times
-A PHD may use a relative time clock. A relative time clock is nothing but a series of ticks with a fixed interval between ticks. The IEEE 11073 20601 standard allows for two types of relative time clocks where the standard specifies what the fixed interval between ticks is. Clearly such a clock is much simpler for a PHD to implement. As long as the PHD provides its current tick value, the PHG can convert these relative times to a user-friendly wall clock time. The time stamp reported in the Observation.effective[x] element is always the user-friendly wall clock time.
+A PHD may use a relative time clock. A relative time clock is nothing but a series of ticks with a fixed interval between ticks. The IEEE 11073-20601 standard allows for two types of relative time clocks where the standard specifies what the fixed interval between ticks is. Clearly such a clock is much simpler for a PHD to implement. As long as the PHD provides its current tick value, the PHG can convert these relative times to a user-friendly wall clock time. The time stamp reported in the Observation.effective[x] element is always the user-friendly wall clock time.
 
 However, there may be use cases where the relative time stamp is desired. Relative time stamps have, by spec, a resolution of either 125 microseconds or microseconds depending upon which relative time clock is used. FHIR only reports time stamps to the millisecond. If one's use case requires knowing the time stamp to the microsecond, one will need to obtain the reported ticks in this component element. The coincident time stamp Observation will, in this case have information about the current relative time ticks, if, for some reason that is needed. 
 
@@ -215,7 +215,7 @@ Note that just because a PHD uses a relative time clock it does not mean that th
 
 At the time of this writing there are no PHDs on the market that use relative time stamps because they need very precise time stamps for their measurements. Relative time stamp use has been for simplicity and reduced power consumption. Devices that need very precise time stamps are much more likely to be Point of Care Devices (PoCDs) used in hospital environments.
 
-There are two types relative time stamps defined by IEEE 11073 20601. A 'relative time' with a maximum resolution of 125 microseconds and a 'high resolution relative time' with a maximum resolution of microseconds. Which relative time stamp is used is given by the MDC code in the Observation.component.code.coding.code element:
+There are two types relative time stamps defined by IEEE 11073-20601. A 'relative time' with a maximum resolution of 125 microseconds and a 'high resolution relative time' with a maximum resolution of microseconds. Which relative time stamp is used is given by the MDC code in the Observation.component.code.coding.code element:
 
 |MDC Code|Description|
 |-
@@ -507,7 +507,7 @@ The Observation.dataAbsentReason.coding.system in the above cases is always
 
  - Observation.dataAbsentReason.coding.system="http://terminology.hl7.org/CodeSystem/data-absent-reason"
 
-IEEE 11073 20601 defines two other special values that are not translated to FHIR which are encoded as "error". To date, there has been no market PHD which reports the other two special values.
+IEEE 11073-20601 defines two other special values that are not translated to FHIR which are encoded as "error". To date, there has been no market PHD which reports the other two special values.
 
 An example of the valueQuantity in the Phd Numeric Observation Profile for a thermometer reporting a value of 35.6 &deg;C is as follows:
 
@@ -906,14 +906,14 @@ The PHD Device resource contains the following information about the PHD in the 
 The bold items are required to be reported by all PHDs and the italicized items are exposed by most PHDs. The transport addresses are only exposed in the transport protocol and are, of course, only applicable to PHDs using that transport. It is encouraged by the PHG implementer to add the wireless transport address identifiers since these numbers are often available on the device whereas the system id is not. However, obtaining these addresses may not always be possible on certain platforms.
 
 #### UDI
-At the moment there are no PHDs which electronically support a UDI. The latest version of the IEEE 11073 20601 protocol will support this field. When the updated standard is released and PHD support seems imminent UDI support will be added to this IG.
+At the moment there are no PHDs which electronically support a UDI. The latest version of the IEEE 11073-20601 protocol will support this field. When the updated standard is released and PHD support seems imminent UDI support will be added to this IG.
 
 #### Device identifier
 The identifier contains elements that are (supposed) to uniquely identify the PHD. To distinguish one identifier from another, especially in the case where two identifiers are the same 'bitness' a code from the [ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) code system is used in the Device.identifier.type. There are five possible codes defined:
 
 |code|Description|
 |-
-|SYSID|The IEEE EUI-64 system identifier, required in all IEEE 11073 20601 PHDs|
+|SYSID|The IEEE EUI-64 system identifier, required in all IEEE 11073-20601 PHDs|
 |BTMAC|The IEEE EUI-48 Bluetooth address|
 |ETHMAC|The ethernet mac address|
 |ZIGBEE|The 64-bit ZigBee address|
@@ -1063,7 +1063,7 @@ The versions can be helpful identifying different PHD behaviors.
 #### Specializations
 The Device.specialization entry is probably the entry most consumers will want to expose. This entry states what kind of measurements the PHD takes. It is this entry that tells the consumer if the PHD is a blood pressure cuff, heart rate monitor, pulse oximeter. PHDs can support multiple specializations. This element shall always be populated.
 
-In IEEE 11073 20601 specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
+In IEEE 11073-20601 specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
 
 A table of some of the most common specializations can be found in the specialization section [here](PhdDeviceProfile.html).
 

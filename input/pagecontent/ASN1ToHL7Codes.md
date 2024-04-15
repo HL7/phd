@@ -1,4 +1,4 @@
-The ASN1 to HL7 code system is the result of mapping 11073 20601 BITs measurements or values to codes. HL7 (in V2, V3, and FHIR) has no native support for BITs type values.
+The ASN1 to HL7 code system is the result of mapping IEEE 11073-20601 BITs measurements or values to codes. HL7 (in V2, V3, and FHIR) has no native support for BITs type values.
 
 The following tables gives the codes, names, and event or state type for the currently specified BITs measurements and values. The HL7 ASN1 Code is the code entered into the FHIR code elements. The ASN1 name is standardized and is analogous to the reference identifier for the nomenclature codes. If the state type is an event, only the 'set' meaning is displayed.
 
