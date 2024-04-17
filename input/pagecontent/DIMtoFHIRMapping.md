@@ -83,7 +83,7 @@ The ASN.1 BITs measurement is the most difficult measurement class to map becaus
 
 In the latest version of IEEE 11073-20601, two sets of support attributes for an ASN1 BITs measurements have been added. The Capability-Mask-Simple/Basic attribute indicates whether a given bit is supported (set) or not (cleared). The State-Flag-Simple/Basic attribute indicates whether a given bit is an event (cleared) or state (set). Unsupported bits do not need to be reported and cleared event bits do not need to be reported. Both set and cleared state bits need to be reported. Undefined bits are never reported (what bits are defined is given in the respective specialization documents).
 
-Since the earlier versions of the 20601 standard do not provide state/event information, the ASN.1 code set does. There is no way to determine if a given device supports a defined bit setting so one has to assume that all defined settings are supported. Since most BITs measurements are events, the lack of support information tends not to be a problem.
+Since the earlier versions of the 20601 standard do not provide state/event information, the [ASN1 BITs Code System](ASN1BITsCodeSystem.html) does. There is no way to determine if a given device supports a defined bit setting so one has to assume that all defined settings are supported. Since most BITs measurements are events, the lack of support information tends not to be a problem.
 
 The simplest example of a mapping of an ASN1 BITs enumeration object to a FHIR Observation resource is as follows:
 
