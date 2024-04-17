@@ -60,7 +60,7 @@ The simplest example of a mapping of a Compound Numeric Metric object whose valu
 |Type|Tells what the 'overall' measurement is as an IEEE 11073-10101 code|code|
 |Absolute-Time-Stamp<br/>Base-Offset-Time-Stamp|Gives the time of the measurement|effectiveDateTime|
 |Metric-Id-List.*entryN*|Gives the code of *N*th component of the measurement|component*N*.code|
-|Compound Simple/Basic-Nu-Observed-Value.*valueN*|Gives the Nth component of the measurement|component*N*.valueQuantity.value|
+|Compound Simple/Basic-Nu-Observed-Value.*valueN*|Gives the *N*th component of the measurement|component*N*.valueQuantity.value|
 |Unit-Code|Gives the units of the *N*th component of the measurement as an IEEE 11073-10101 code. Will need to be translated to the UCUM code system|component*N*.valueQuantity.code|
 
 This mapping applies to simple types of PHD measurements that are represented by vectors, for example, the blood pressure and the user feedback. The Type attribute indicates what the overall measurement is, and the Metric-Id-List attribute indicates what each component of the overall measurement is. In the blood pressure case, the Type states that this is a non-invasive blood pressure and the Metric-Id-List attribute identifies the systolic, diastolic, and MAP components. This implementation guide specifies a structure definition profile that applies to all compound Numeric Metric measurements.
