@@ -17,25 +17,25 @@ Description: "StructureDefinition for Observation Resources representing measure
 * . ^short = "Simple Numeric measurement"
   * ^definition = "The PhdNumericObservation reports PHD measurements that contain one of either a Basic-Nu-Observed-Value, Simple-Nu_observed-Value, or Nu_observed-Value attribute."
   * ^comment = "Used for non-compound numeric observations from Personal Health Devices"
-* meta
-  * profile 1..
-    * ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "value"
-    * ^slicing.rules = #open
-  * profile contains phdProfile 0..1
-  * profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" (exactly)
-* category MS
+// * meta
+//   * profile 1..
+//     * ^slicing.discriminator[0].type = #value
+//     * ^slicing.discriminator[=].path = "value"
+//     * ^slicing.rules = #open
+//   * profile contains phdProfile 0..1
+//   * profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" (exactly)
+* category
   * ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "coding.code"
   * ^slicing.discriminator[+].type = #value
   * ^slicing.discriminator[=].path = "coding.system"
   * ^slicing.ordered = false
   * ^slicing.rules = #open
-* category contains VSCat 0..1 MS
-* category[VSCat].coding 1.. MS
-  * system 1.. MS
+* category contains VSCat 0..1
+* category[VSCat].coding 1..
+  * system 1..
   * system = "http://terminology.hl7.org/CodeSystem/observation-category" (exactly)
-  * code 1.. MS
+  * code 1..
   * code = #vital-signs (exactly)
 * value[x] only Quantity
   * value 1..

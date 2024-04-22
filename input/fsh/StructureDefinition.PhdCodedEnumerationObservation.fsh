@@ -11,12 +11,12 @@ Description: "StructureDefinition for Observation Resources representing measure
 * . ^short = "Reports measurements that are enumeration MDC codes"
 * . ^definition = "The PhdCodedEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-OID attribute."
 * . ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073-10101 code. An example would be the most recent meal context associated with a glucose measurement such as 'breakfast', 'fasting', 'snack', etc. The list of codes for these meal options is finite."
-* meta 1..
-* meta.profile ^slicing.discriminator.type = #value
-* meta.profile ^slicing.discriminator.path = "value"
-* meta.profile ^slicing.rules = #open
-* meta.profile contains phdProfile 1..1
-* meta.profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation" (exactly)
+// * meta 1..
+// * meta.profile ^slicing.discriminator.type = #value
+// * meta.profile ^slicing.discriminator.path = "value"
+// * meta.profile ^slicing.rules = #open
+// * meta.profile contains phdProfile 1..1
+// * meta.profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation" (exactly)
 * value[x] only CodeableConcept
 * valueCodeableConcept.coding ^slicing.discriminator.type = #value
 * valueCodeableConcept.coding ^slicing.discriminator.path = "system"

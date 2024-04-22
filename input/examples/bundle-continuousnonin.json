@@ -12,6 +12,16 @@
 						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"
 					]
 				},
+				"category": [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],				
 				"extension": [
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
@@ -75,8 +85,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -135,6 +153,14 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+						"coding" : [
+						{
+							"system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+							"code" : "phd-observation"
+						}
+						]
 					}
 				],
 				"code": {
@@ -185,6 +211,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -240,8 +276,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -300,8 +344,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -350,6 +402,16 @@
 						}
 					}
 				],
+				"category": [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -395,6 +457,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -507,8 +579,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -567,8 +647,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -617,6 +705,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -662,6 +760,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -794,8 +902,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -854,8 +970,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -904,6 +1028,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -949,6 +1083,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1081,8 +1225,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -1141,8 +1293,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -1191,6 +1351,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1236,6 +1406,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1368,8 +1548,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -1428,8 +1616,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -1470,6 +1666,16 @@
 						"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"
 					]
 				},
+				"category": [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"extension": [
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
@@ -1523,6 +1729,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1655,8 +1871,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -1715,8 +1939,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -1765,6 +1997,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1810,6 +2052,16 @@
 						}
 					}
 				],
+				"category": [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1942,8 +2194,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2002,8 +2262,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2052,6 +2320,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2097,6 +2375,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2229,8 +2517,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2289,8 +2585,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2339,6 +2643,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2384,6 +2698,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2516,8 +2840,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2576,8 +2908,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2626,6 +2966,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2671,6 +3021,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2823,8 +3183,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2878,13 +3246,21 @@
 					{
 						"coding": [
 							{
-								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
 								"code": "vital-signs"
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -2933,6 +3309,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2978,6 +3364,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -3130,8 +3526,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -3190,8 +3594,16 @@
 							}
 						],
 						"text": "Vital Signs"
+					},
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
 					}
-				],
+				  ],
 				"code": {
 					"coding": [
 						{
@@ -3240,6 +3652,16 @@
 						}
 					}
 				],
+				"category" : [
+					{
+					  "coding" : [
+						{
+						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+						  "code" : "phd-observation"
+						}
+					  ]
+					}
+				  ],
 				"status": "final",
 				"code": {
 					"coding": [
