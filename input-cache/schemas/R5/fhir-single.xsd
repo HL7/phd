@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Apr 12, 2024 18:40+0000 for FHIR v6.0.0-cibuild 
+  Generated on Fri, Apr 19, 2024 18:19+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -63145,6 +63145,16 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="key" minOccurs="1" maxOccurs="1" type="id">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Key that identifies this test case (unique within this resource).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Narrative description using markdown content to explain the purpose of this test case.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="sequence" minOccurs="0" maxOccurs="1" type="integer">
             <xs:annotation>
               <xs:documentation xml:lang="en">Sequence of test case - an ordinal number that indicates the order for the present test case in the test plan.</xs:documentation>
@@ -63153,6 +63163,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="scope" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The scope or artifact covered by the case, when the individual test case is associated with a testable artifact.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="requirement" type="TestPlan.Requirement" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Links or references providing traceability to the testing requirements for this assert.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="dependency" type="TestPlan.Dependency1" minOccurs="0" maxOccurs="unbounded">
@@ -63179,6 +63194,27 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="TestPlan.Requirement">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A plan for executing testing on an artifact or specifications.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="reference" minOccurs="1" maxOccurs="1" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Canonical reference providing traceability to the testing requirement for this test case.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="key" minOccurs="1" maxOccurs="1" type="id">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Requirements.statement.key that identifies the statement that this test case satisfies.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="TestPlan.Dependency1">
     <xs:annotation>
       <xs:documentation xml:lang="en">A plan for executing testing on an artifact or specifications.</xs:documentation>
@@ -63191,9 +63227,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Description of the criteria.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="predecessor" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="reference" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Link to predecessor test plans.</xs:documentation>
+              <xs:documentation xml:lang="en">Canonical reference providing traceability to the TestPlan dependency instance for this test case.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="key" minOccurs="0" maxOccurs="1" type="id">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">TestPlan.testCase.key that identifies the testCase in the TestPlan dependency instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -64426,13 +64467,16 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="reference" minOccurs="1" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Link or reference providing traceability to the testing requirement for this test.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="linkUri" type="uri"/>
-            <xs:element name="linkCanonical" type="canonical"/>
-          </xs:choice>
+              <xs:documentation xml:lang="en">Canonical reference providing traceability to the testing requirement for this assert.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="key" minOccurs="1" maxOccurs="1" type="id">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Requirements.statement.key that identifies the statement that this assert satisfies.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

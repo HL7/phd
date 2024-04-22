@@ -29,6 +29,24 @@ Description: "Observation elements that are common to all the Continua PHD Obser
   * value[x] 1..
   * value[x] only Reference
     * ^short = "Reference to the Personal Health Gateway (PHG) Device"
+* category ..* 
+* category only CodeableConcept
+  * ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "coding.code"
+  * ^slicing.discriminator[+].type = #value
+  * ^slicing.discriminator[=].path = "coding.system"
+  * ^slicing.ordered = false
+  * ^slicing.rules = #open
+* category contains PHD-Observation 1..1
+* category[PHD-Observation] only CodeableConcept
+  * coding 1..*
+  * coding only Coding
+    * system 1..1
+    * system only uri
+    * system = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS" (exactly)
+    * code 1..1
+    * code only code
+    * code = #phd-observation (exactly)
 * identifier ^slicing.discriminator[0].type = #exists
   * ^slicing.discriminator[=].path = "value"
   * ^slicing.discriminator[+].type = #exists

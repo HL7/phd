@@ -24,8 +24,16 @@
 				}
 			],
 			"text": "Vital Signs"
+		},
+		{
+		  "coding" : [
+			{
+			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+			  "code" : "phd-observation"
+			}
+		  ]
 		}
-	],
+	  ],
 	"code": {
 		"coding": [
 			{

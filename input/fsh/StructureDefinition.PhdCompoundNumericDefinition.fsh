@@ -13,13 +13,13 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCompoundNumericObservation reports PHD measurements that contain one of either a Compound-Basic-Nu-Observed-Value, Compound-Simple-Nu-Observed-Value, or Compound-Nu-Observed-Value attribute."
   * ^comment = "Used for compound numeric observations from Personal Health Devices"
-* meta 1..
-  * profile ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "value"
-    * ^slicing.rules = #open
-  * profile contains phdProfile 1..1
-  * profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" (exactly)
-* category ..* MS
+// * meta 1..
+//   * profile ^slicing.discriminator[0].type = #value
+//     * ^slicing.discriminator[=].path = "value"
+//     * ^slicing.rules = #open
+//   * profile contains phdProfile 1..1
+//   * profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" (exactly)
+* category ..*
 * category only CodeableConcept
   * ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "coding.code"
@@ -27,14 +27,14 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^slicing.discriminator[=].path = "coding.system"
   * ^slicing.ordered = false
   * ^slicing.rules = #open
-* category contains VSCat 0..1 MS
+* category contains VSCat 0..1
 * category[VSCat] only CodeableConcept
-  * coding 1..* MS
+  * coding 1..*
   * coding only Coding
-    * system 1..1 MS
+    * system 1..1
     * system only uri
     * system = "http://terminology.hl7.org/CodeSystem/observation-category" (exactly)
-    * code 1..1 MS
+    * code 1..1
     * code only code
     * code = #vital-signs (exactly)
 * value[x] ..0

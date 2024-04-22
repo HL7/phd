@@ -6,6 +6,16 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"
 		]
 	},
+	"category": [
+		{
+		  "coding" : [
+			{
+			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+			  "code" : "phd-observation"
+			}
+		  ]
+		}
+	  ],
 	"extension": [
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",

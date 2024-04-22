@@ -518,6 +518,16 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
           ]
         },
+        "category": [
+          {
+            "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+              "code" : "phd-observation"
+            }
+            ]
+          }
+          ],
         "id": "cts-001",
         "extension": [
           {
@@ -578,8 +588,16 @@
                 "display": "Vital Signs"
               }
             ]
+          },
+          {
+            "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+              "code" : "phd-observation"
+            }
+            ]
           }
-        ],
+          ],
         "code": {
           "coding": [
             {
@@ -665,6 +683,14 @@
                 "code": "vital-signs",
                 "display": "Vital Signs"
               }
+            ]
+          },
+          {
+            "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS",
+              "code" : "phd-observation"
+            }
             ]
           }
         ],
