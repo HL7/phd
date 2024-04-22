@@ -13,7 +13,7 @@ If the ASN1 bit represents an event, only the set condition needs to be reported
 
 In version 4 of the IEEE 11073-20601 specification from 2019 the enumeration metric object supports both a Capability-Mask-Simple/Basic and State-flag-Simple/Basic attribute that must be present when an enumeration BITs measurement is reported. The Capability-Mask attribute will have a bit set when the corresponding bit in the actual measurement is supported by the device. The State-Flag attribute will have a bit set if the corresponding bit is a state. If cleared, the corresponding bit is an event.
 
-However, these attributes are not present in 11073-20601 versions 3 or earlier that are currently used by PHDs. Thus, the uploader will need to obtain this information from the ASN1 mapping tables.
+However, these attributes are not present in IEEE 11073-20601 versions 3 or earlier that are currently used by PHDs. Thus, the uploader will need to obtain this information from the ASN1 mapping tables.
 
 ## Mder Bit Position
 To generate this code, the uploader needs to understand that Mder Bit position 0 is the ***most*** significant bit of the 16- or 32-bit integer and the Mder Bit position 15 or 31 is the ***least*** significant bit of the 16- or 32-bit integer, respectively. The following table shows the Mder bit position and the corresponding integer value representing it when that bit is set.
