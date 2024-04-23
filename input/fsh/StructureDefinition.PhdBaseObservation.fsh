@@ -43,7 +43,7 @@ Description: "Observation elements that are common to all the Continua PHD Obser
   * coding only Coding
     * system 1..1
     * system only uri
-    * system = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS" (exactly)
+    * system = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories" (exactly)
     * code 1..1
     * code only code
     * code = #phd-observation (exactly)
