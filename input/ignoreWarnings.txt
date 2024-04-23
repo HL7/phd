@@ -19,7 +19,7 @@ Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ASN1T
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS|1.0.0
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers|1.0.0
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD|1.0.0
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesCS|1.0.0
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories|1.0.0
 
 # the PHD Base Observation is never instantiated directly on its own - it provides a basis for specific Observation profiles
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
