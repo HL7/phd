@@ -101,9 +101,7 @@ The mapped codes reported in the FHIR Observation.component.coding.code elements
 |150604.14|	device-equipment-malfunction|event|
 |150604.15|	device-extended-update|event|
 
-See [currently defined ASN.1 Codes]({{ output }}ASN1ToHL7Codes.html) .
+See [currently defined ASN1 Codes]({{ output }}ASN1ToHL7Codes.html).
 
  - [Next: The Observation Identifier]({{ output }}ObservationIdentifier.html)
  - [Previous: Obtaining the Unit code]({{ output }}ObtainUnitCode.html)
-
-
