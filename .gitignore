@@ -5,6 +5,7 @@ template
 output
 fsh-generated
 .idea
+.vscode
 
 # Don't commit this because it's so large #
 ###########################################
