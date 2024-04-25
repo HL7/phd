@@ -3,20 +3,25 @@ This Implementation Guide specifies profiles on the FHIR <a href="http://hl7.org
 Each profile defines constraints, extensions, and terminology requirements for an implementation that claims conformance to this guide.
 
 ### <a name="back"></a> Profile Implementation Details
+The following profiles are defined in this IG and have their own descriptive page: 
 
- - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
- - [Phd Numeric Observation Profile](NumericObservationProfile.html)
- - [Phd Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Phd Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [Phd BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Phd Real Time Sample Array Observation Profile](RtsaObservationProfile.html)
- - [Phd String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Phd Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
+ - [Profiles Overview](ProfilesOverview.html), gives more information on the set of profiles.
+
+ - [Base Observation Profile](BaseObservationProfile.html), the base profile for the observation profiles in this IG:
+   - [Phd Numeric Observation Profile](NumericObservationProfile.html)
+   - [Phd Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+   - [Phd Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+   - [Phd BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+   - [Phd Real Time Sample Array Observation Profile](RtsaObservationProfile.html)
+   - [Phd String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+   
+
+ - [Phd Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html), profile to associate two time lines
  
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)
- - [Phd Patient Profile](PhdPatientProfile.html)
+ - [Phd Device Profile](PhdDeviceProfile.html), the profile for a personal health sensor device generating observations
+ - [Phg Device Profile](PhgDeviceProfile.html), the profile for a personal health gateway receiving such observations and uploading them to a FHIR server
+ - [Phd Patient Profile](PhdPatientProfile.html), the profile for a patient using a PHD
+
 
 ### List of Profile Structure Definitions used in this Guide
 
