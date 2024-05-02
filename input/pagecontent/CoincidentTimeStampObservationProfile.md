@@ -14,7 +14,7 @@ border-collapse:collapse;
 padding: 6px;}</style>
 
 ### Meta Data Profile
-The uploader shall populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation indicating this resource is generated following the PHD Implementation Guide.
+The uploader should populate the Device.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation indicating this resource is generated following the PHD Implementation Guide.
 
 ### Code
 The code element is used to report the type of time clock used by the PHD. The PHG obtains the type of time clock and its current setting by reading the MDS attributes. There are four types of clocks as follows:

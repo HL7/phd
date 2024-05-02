@@ -73,20 +73,20 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 |Attribute|FHIR coding|
 |-
 |Simple-Sa-Observed-Value.*data[i]*|Observation.valueSampledData.data[i]|
-|Unit-Code.*code*|Observation.valueSampledData.origin.code (as UCUM)|
+|Unit-Code.*code*|Observation.valueSampledData.origin.code (as UCUM when available)|
 |See calculation of 'b' above|Observation.valueSampledData.origin.value = b*|
 |See calculation of 's' above|Observation.valueSampledData.scaleFactor = s*|
 |Sample-Period.*period*/8|Observation.valueSampledData.period (milliseconds)|
 |Concept not supported in 20601.|Observation.valueSampledData.dimensions = 1|
 |Scale-and-Range-SpecificationX.*upper-absolute-value*|Observation.referenceRange.high.value|
-|Unit-Code.*code*|Observation.referenceRange.high.code (as UCUM)|
+|Unit-Code.*code*|Observation.referenceRange.high.code (as UCUM when available)|
 |Scale-and-Range-SpecificationX.*lower-absolute-value*|Observation.referenceRange.low.value|
-|Unit-Code.*code*|Observation.referenceRange.low.code (as UCUM)|
+|Unit-Code.*code*|Observation.referenceRange.low.code (as UCUM when available)|
 
 *noting that other scaling options are allowed.
 
 ### Meta Data Profile
-The uploader shall populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation indicating this resource is generated following the PHD Implementation Guide.
+The uploader should populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation indicating this resource is generated following the PHD Implementation Guide.
 
 ### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
