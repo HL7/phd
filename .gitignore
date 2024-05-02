@@ -4,6 +4,9 @@ temp
 template
 output
 fsh-generated
+
+# Development environment folders
+#################################
 .idea
 .vscode
 
