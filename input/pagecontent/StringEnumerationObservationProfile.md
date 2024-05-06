@@ -19,9 +19,6 @@ Structure definition for this profile is defined [here](StructureDefinition-PhdS
 ### Mapping the Enumeration String to FHIR
 The human readable string from the Enum-Observed-Value-Simple-Str attribute is mapped to the Observation.valueString element.
 
-### Meta Data Profile
-The uploader should populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation indicating this resource is generated following the PHD Implementation Guide.
-
 ### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
 

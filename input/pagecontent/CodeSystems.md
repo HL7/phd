@@ -12,6 +12,10 @@ http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD
 http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS
  - This URL identifies the Continua certified Health and Fitness interface codes
 
+http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories
+ - This URL identifies the category cod(e) for PHD-generated observations
+
+
 urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680
  - This OID identifies the IEEE EUI coding system
 

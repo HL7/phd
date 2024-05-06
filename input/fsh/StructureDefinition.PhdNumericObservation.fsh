@@ -17,14 +17,14 @@ Description: "StructureDefinition for Observation Resources representing measure
 * . ^short = "Simple Numeric measurement"
   * ^definition = "The PhdNumericObservation reports PHD measurements that contain one of either a Basic-Nu-Observed-Value, Simple-Nu_observed-Value, or Nu_observed-Value attribute."
   * ^comment = "Used for non-compound numeric observations from Personal Health Devices."
-* meta
-  * profile
-    * ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "value"
-    * ^slicing.rules = #open
-  * profile contains phdProfile 0..1
-  * profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" (exactly)
-    * ^comment = "Uploaders should include this element to ease validation by the receiver."
+// * meta
+//   * profile
+//     * ^slicing.discriminator[0].type = #value
+//     * ^slicing.discriminator[=].path = "value"
+//     * ^slicing.rules = #open
+//   * profile contains phdProfile 0..1
+//   * profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" (exactly)
+//     * ^comment = "Uploaders should include this element to ease validation by the receiver."
 * category
   * ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "coding.code"

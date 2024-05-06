@@ -104,7 +104,7 @@ This example maps a Blood Pressure PHD unit to a Device Resource. All the inform
                             "code": "532224"
                         }
                     ],
-                    "text": "MDC_TIME_SYNC_NONE: "
+                    "text": "MDC_TIME_SYNC_NONE: No time synchronization"
                 }
             ]
         }

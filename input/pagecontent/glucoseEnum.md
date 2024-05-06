@@ -10,6 +10,16 @@ Note there is no logical id in this resource as this resource is being uploaded 
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation"
 		]
 	},
+	"category" : [
+		{
+		  "coding" : [
+			{
+			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+			  "code" : "phd-observation"
+			}
+		  ]
+		}
+	  ],
 	"extension": [
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",

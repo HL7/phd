@@ -1127,7 +1127,7 @@ An example of time synchronization property entry is shown below:
               "code" : "532224"
             }
           ],
-          "text" : "MDC_TIME_SYNC_NONE:"
+          "text" : "MDC_TIME_SYNC_NONE: No time synchronization"
         }
       ]
     }

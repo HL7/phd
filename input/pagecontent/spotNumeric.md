@@ -37,8 +37,16 @@ Note there is no logical id in this resource as this resource is being uploaded 
 				}
 			],
 			"text": "Vital Signs"
+		},
+		{
+		  "coding" : [
+			{
+			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+			  "code" : "phd-observation"
+			}
+		  ]
 		}
-	],
+	  ],	
 	"code": {
 		"coding": [
 			{

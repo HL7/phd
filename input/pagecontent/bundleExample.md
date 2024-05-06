@@ -578,8 +578,16 @@ This example is a transaction bundle where the Patient and Device resources are 
                 "display": "Vital Signs"
               }
             ]
-          }
-        ],
+          },
+      		{
+		        "coding" : [
+			        {
+			          "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+			          "code" : "phd-observation"
+			        }
+		        ]
+		      }
+	      ],
         "code": {
           "coding": [
             {
@@ -665,7 +673,15 @@ This example is a transaction bundle where the Patient and Device resources are 
                 "display": "Vital Signs"
               }
             ]
-          }
+          },
+       		{
+		        "coding" : [
+			        {
+			          "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+			          "code" : "phd-observation"
+			        }
+		        ]
+		      }  
         ],
         "code": {
           "coding": [
