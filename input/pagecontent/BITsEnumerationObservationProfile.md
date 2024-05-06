@@ -60,7 +60,7 @@ component": [
 There would be one such component element for every bit setting to be reported. Of one examines the ASN1ToHL7 code system [here](ASN1BITsCodeSystem.html) one will see that the code 150604.2 means "Sensor is incorrectly placed on user".
 
 ### Meta Data Profile
-The uploader shall populate the Observation.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.
+The uploader should populate the Observation.meta.profile with "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation" indicating this resource is generated following the PHD Implementation Guide.
 
 #### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.

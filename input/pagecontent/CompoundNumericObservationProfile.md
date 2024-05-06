@@ -22,7 +22,7 @@ The Observation.code element comes from the Type attribute and gives the general
 The structure definition is given [here](StructureDefinition-PhdCompoundNumericObservation.html)
 
 ### Mapping Compound Numerics to FHIR
-The following table shows how the compound numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC units need to be mapped to UCUM when used in FHIR.
+The following table shows how the compound numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC units need to be mapped to UCUM when used in FHIR. A UCUM unit shall be used when it is available.
 
 |Attribute|FHIR coding|
 |-
@@ -31,7 +31,7 @@ The following table shows how the compound numeric attributes are mapped to FHIR
 |Compound-Nu-Observed-Value.*valueN*<br/>Compound-Nu-Observed-Value.*unitN*<br/>Compound-Nu-Observed-Value.*metric-idN*<br/>Compound-Nu-Observed-Value.*statusN*|Observation.component*N*.valueQuantity.value<br/>Observation.component*N*.valueQuantity.code  (as UCUM)<br/> Observation.component*N*.code.coding.code<br/>Observation.component*N*.dataAbsentReason|
 
 ### Meta Data Profile
-The uploader shall populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation indicating this resource is generated following the PHD Implementation Guide.
+The uploader should populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation indicating this resource is generated following the PHD Implementation Guide.
 
 ### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
@@ -56,7 +56,7 @@ The final identifier is made by concatenating the entries above as follows:
 ### Additional Numerical Measurement Information
 IEEE 11073-20601 numeric metric measurements have some additional optional attributes that are used only for numerics. When they occur, these additional attributes provide further information about the measurement. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement. The accuracy is a measure of the deviation of the actual measurement from the reported measurement. Consequently, 'accuracy' is not a concept that makes any sense in the context of a measurement which is one or more of a finite set of enumerated codes such as a glucose-monitor meal association (breakfast, snack, fasting, etc.), and thus the attribute is not used in Enumeration metrics.
 
-As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. At this time there only the Accuracy attribute is used for compound numerics. The remaining numeric-specific attributes are not structured to handle compounds.
+As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. Only the Accuracy attribute is used for compound numerics. The other numeric-specific attributes are not structured to handle compounds.
 
 #### Accuracy
 The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is in the units of the measurement itself. This kind of measurement may not make sense to report with some compound measurements, especially in the case of the Compound-Nu-Observed-Value as each element could have different units.
