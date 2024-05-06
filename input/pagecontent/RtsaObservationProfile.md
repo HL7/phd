@@ -85,9 +85,6 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 
 *noting that other scaling options are allowed.
 
-### Meta Data Profile
-The uploader should populate the Observation.meta.profile with http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation indicating this resource is generated following the PHD Implementation Guide.
-
 ### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
 

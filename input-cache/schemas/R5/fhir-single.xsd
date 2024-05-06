@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Apr 25, 2024 12:40+0000 for FHIR v6.0.0-cibuild 
+  Generated on Sat, May 4, 2024 21:56+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -18296,9 +18296,9 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="productCategory" minOccurs="0" maxOccurs="1" type="Coding">
+          <xs:element name="productCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Broad category of this product.</xs:documentation>
+              <xs:documentation xml:lang="en">A category or classification of the product.  Products may be assigned multiple categories, for example a human heart valve can be categorized as an 'MPHO' and 'tissue'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="productCode" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -18390,6 +18390,11 @@ into another (possibly the same) biological entity.</xs:documentation>
             <xs:element name="collectedDateTime" type="dateTime"/>
             <xs:element name="collectedPeriod" type="Period"/>
           </xs:choice>
+          <xs:element name="procedure" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The procedure performed to collect the biologically derived product.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -29977,6 +29982,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="deviceIdentifierSystem" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Establishes the namespace for the device identifier value that is an URL, OID, urn or uuid.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="issuer" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
               <xs:documentation xml:lang="en">Organization that is charged with issuing UDIs for devices. For example, the US FDA issuers include: 
@@ -30330,7 +30340,7 @@ of the resource representation.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="DomainResource">
+      <xs:extension base="CanonicalResource">
         <xs:sequence>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
@@ -30442,7 +30452,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">A substance used to create the material(s) of which the device is made.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="productionIdentifierInUDI" minOccurs="0" maxOccurs="unbounded" type="DeviceProductionIdentifierInUDI">
+          <xs:element name="productionIdentifierInUDI" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates the production identifier(s) that are expected to appear in the UDI carrier on the device label.</xs:documentation>
            </xs:annotation>
@@ -30561,7 +30571,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">A human-friendly name that is used to refer to the device - depending on the type, it can be the brand name, the common name or alias, or other.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="DeviceNameType">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of deviceName.
 RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
@@ -30937,51 +30947,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="DeviceDefinitionRegulatoryIdentifierTypeEnum" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="DeviceProductionIdentifierInUDIEnum">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="lot-number">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Lot Number</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="manufactured-date">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Manufactured date</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="serial-number">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Serial Number</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="expiration-date">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Expiration date</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="biological-source">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Biological source</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="software-version">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Software Version</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DeviceProductionIdentifierInUDI">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="DeviceProductionIdentifierInUDIEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -31859,7 +31824,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.</xs:documentation>
+              <xs:documentation xml:lang="en">The encounter (e.g. a patient and healthcare provider interaction) that is associated with the DiagnosticReport.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -57948,7 +57913,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="device" minOccurs="0" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A coded value specifying the technique that is used to perform the procedure.</xs:documentation>
+              <xs:documentation xml:lang="en">A coded value specifying the device that is used to perform the procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="procedure" minOccurs="0" maxOccurs="1" type="Reference">
@@ -57989,6 +57954,16 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A coded value specifying the method used to process the specimen.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="performer" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The performer of the processing of the specimen.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="device" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The device used in the processing of the specimen.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="additive" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Material used in the processing step.</xs:documentation>
@@ -58016,11 +57991,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="device" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The device resource for the the container holding the specimen. If the container is in a holder then the referenced device will point to a parent device.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The location of the container holding the specimen.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="specimenQuantity" minOccurs="0" maxOccurs="1" type="Quantity">
@@ -61739,12 +61709,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:element name="SupplyDelivery" type="SupplyDelivery">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Record of delivery of what is supplied.</xs:documentation>
+      <xs:documentation xml:lang="en">Record of movement of supplies from one location to another.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="SupplyDelivery">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Record of delivery of what is supplied.</xs:documentation>
+      <xs:documentation xml:lang="en">Record of movement of supplies from one location to another.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -61765,7 +61735,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A larger event of which this particular event is a component or step.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="SupplyDeliveryStatus">
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="SupplyDeliveryStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">A code specifying the state of the dispense event.</xs:documentation>
            </xs:annotation>
@@ -61778,6 +61748,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates the type of supply being provided.  Examples include: Medication, Device, Biologically Derived Product.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="stage" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the stage of the delivery. In case the delivery is tracked only at the specific events (e.g. receipt), this resource represents the stage represented, not the entire history nor previous delivery stages.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="suppliedItem" type="SupplyDelivery.SuppliedItem" minOccurs="0" maxOccurs="unbounded">
@@ -61800,7 +61775,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="destination" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identification of the facility/location where the delivery was shipped to.</xs:documentation>
+              <xs:documentation xml:lang="en">Identification of the facility, location or person where the delivery is shipped to.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="receiver" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -61814,14 +61789,19 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="SupplyDelivery.SuppliedItem">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Record of delivery of what is supplied.</xs:documentation>
+      <xs:documentation xml:lang="en">Record of movement of supplies from one location to another.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The amount of the item that has been supplied.  Unit of measure may be included.</xs:documentation>
+              <xs:documentation xml:lang="en">The amount of the item that has been supplied. Unit of measure may be included.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="condition" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The condition in which the supplied item was at the event (shipment, or receipt, etc.).  For example, to indicate when the supplied item is not suitable for use (e.g., damaged or out of temperature control).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -61891,6 +61871,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="SupplyRequestStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">Status of the supply request.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="intent" minOccurs="1" maxOccurs="1" type="SupplyRequestIntent">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether the request is a proposal, plan, or an original order.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -62045,14 +62030,69 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="SupplyRequestIntentEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="proposal">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Proposal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="plan">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Plan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="order">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="original-order">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Original Order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="reflex-order">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reflex Order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="filler-order">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Filler Order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="instance-order">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Instance Order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="option">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Option</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SupplyRequestIntent">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="SupplyRequestIntentEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="Task" type="Task">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A task to be performed.</xs:documentation>
+      <xs:documentation xml:lang="en">A task to be performed as a part of a workflow and the related informations like inputs, outputs and execution progress. While very simple workflows can be implemented with Request alone, most workflows would require a Task (explicit or contained) as a means to track the execution data (i.e. inputs, outputs, status). Please refer to the workflow page for more details.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Task">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A task to be performed.</xs:documentation>
+      <xs:documentation xml:lang="en">A task to be performed as a part of a workflow and the related informations like inputs, outputs and execution progress. While very simple workflows can be implemented with Request alone, most workflows would require a Task (explicit or contained) as a means to track the execution data (i.e. inputs, outputs, status). Please refer to the workflow page for more details.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -62229,7 +62269,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="Task.Performer">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A task to be performed.</xs:documentation>
+      <xs:documentation xml:lang="en">A task to be performed as a part of a workflow and the related informations like inputs, outputs and execution progress. While very simple workflows can be implemented with Request alone, most workflows would require a Task (explicit or contained) as a means to track the execution data (i.e. inputs, outputs, status). Please refer to the workflow page for more details.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -62250,7 +62290,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="Task.Restriction">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A task to be performed.</xs:documentation>
+      <xs:documentation xml:lang="en">A task to be performed as a part of a workflow and the related informations like inputs, outputs and execution progress. While very simple workflows can be implemented with Request alone, most workflows would require a Task (explicit or contained) as a means to track the execution data (i.e. inputs, outputs, status). Please refer to the workflow page for more details.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -62276,7 +62316,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="Task.Input">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A task to be performed.</xs:documentation>
+      <xs:documentation xml:lang="en">A task to be performed as a part of a workflow and the related informations like inputs, outputs and execution progress. While very simple workflows can be implemented with Request alone, most workflows would require a Task (explicit or contained) as a means to track the execution data (i.e. inputs, outputs, status). Please refer to the workflow page for more details.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -62351,7 +62391,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="Task.Output">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A task to be performed.</xs:documentation>
+      <xs:documentation xml:lang="en">A task to be performed as a part of a workflow and the related informations like inputs, outputs and execution progress. While very simple workflows can be implemented with Request alone, most workflows would require a Task (explicit or contained) as a means to track the execution data (i.e. inputs, outputs, status). Please refer to the workflow page for more details.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
