@@ -23,9 +23,7 @@ The six measurement observation profiles mirror the six measurement 'value-types
 The value-type of measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
 
 ### PHD Device Profile
-The PHD Device profile for the IEEE 11073-20601 MDS object is for the device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. The Device resource in FHIR has just undergone major changes. The DeviceComponent resource, used in a preliminary version of this IG has been merged into the Device and the DeviceComponent no longer exists. The productionSpecification element no longer exists as a backbone element but has been broken up into its concomitant parts. A new specializations field has been added. There is also a udiCarrier element which will support the new 20601 MDS Udi attribute. Since there are no PHDs on the market which support an electronic UID via protocol, there is no mapping of the UDI considered in this Guide. 
-
-Though the changes in the Device related resources have been radical, the changes are much more suitable for PHDs.
+The PHD Device profile for the IEEE 11073-20601 MDS object is for the device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that can support the new 20601 MDS UDI attribute.  
 
 |MDS Attribute|FHIR Device element|
 |-
