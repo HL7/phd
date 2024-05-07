@@ -9,10 +9,20 @@ Best Practice Recommendation: In general, all observations should have a perform
 None of the codings provided are in the value set 'Vital Signs Units' (http://hl7.org/fhir/ValueSet/ucum-vitals-common|4.0.1), and a coding from this value set is required) (codes = urn:iso:std:iso:11073:10101#150588)
 
 # this is a recent code for a spirometer device type
-The code '528413' is not valid in the system urn:iso:std:iso:11073:10101
+The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
+
+# partition is a known IEEE 11073-10101 concept
+The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
+
+# bits coding system issues
+This property has only a code ('type') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+This property has only a code ('source') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
 
 # The ISO/IEEE 11073 Codesystem is not draft
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
+
+# too large code system
+The value set expansion is too large, and only a subset has been displayed
 
 # How long are code systems defined by the IG to be seen as experimental?
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7|1.0.0
@@ -24,5 +34,22 @@ Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/PhdOb
 # the PHD Base Observation is never instantiated directly on its own - it provides a basis for specific Observation profiles
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
 
-# When this happens, we'll handle it with THO...
-Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book)
+# When this happens, we'll handle it with THO... however ignores does not really work...
+Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# slicing checks are too ambitious
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# local referenceswithin a bundle are not properly checked
+Entry 0 matches the reference Patient/patient-001 by type and id but it's fullUrl http://example.org/Patient/patient-001 does not match the full target URL urn:uuid:patient-001 by Bundle resolution rules
+Entry 1 matches the reference Device/phg-001 by type and id but it's fullUrl http://example.org/Device/phg-001 does not match the full target URL urn:uuid:phg-001 by Bundle resolution rules
+Entry 2 matches the reference Device/phd-001 by type and id but it's fullUrl http://example.org/Device/phd-001 does not match the full target URL urn:uuid:phd-001 by Bundle resolution rules
+Entry 3 matches the reference Observation/cts-001 by type and id but it's fullUrl http://example.org/Observation/cts-001 does not match the full target URL urn:uuid:cts-001 by Bundle resolution rules
+
+# we want to extend the set of observation category codes
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
+

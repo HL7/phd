@@ -518,16 +518,6 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
           ]
         },
-        "category": [
-          {
-            "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-              "code" : "phd-observation"
-            }
-            ]
-          }
-          ],
         "id": "cts-001",
         "extension": [
           {
@@ -581,20 +571,20 @@
         "status": "final",
         "category": [
           {
+            "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+              "code" : "phd-observation"
+            }
+            ]
+          },
+         {
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
                 "code": "vital-signs",
                 "display": "Vital Signs"
               }
-            ]
-          },
-          {
-            "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-              "code" : "phd-observation"
-            }
             ]
           }
           ],
@@ -677,6 +667,14 @@
         "status": "final",
         "category": [
           {
+            "coding" : [
+            {
+              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+              "code" : "phd-observation"
+            }
+            ]
+          },
+          {
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -684,15 +682,7 @@
                 "display": "Vital Signs"
               }
             ]
-          },
-          {
-            "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-              "code" : "phd-observation"
-            }
-            ]
-          }
+          }          
         ],
         "code": {
           "coding": [
