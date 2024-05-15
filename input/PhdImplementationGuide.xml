@@ -45,7 +45,7 @@ In this example there are only xml structure definitions, value sets, code syste
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
   <id value="hl7.fhir.uv.phd"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
-  <version value="1.0.1"/>
+  <version value="1.1.0"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>
