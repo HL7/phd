@@ -678,7 +678,7 @@ In this example there are only xml structure definitions, value sets, code syste
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="Non1107320601Devices.html"/>
+            <nameUrl value="Non11073PHDDevices.html"/>
             <title value="Non IEEE 11073-20601 Devices"/>
             <generation value="markdown"/>
           </page>

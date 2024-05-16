@@ -37,6 +37,6 @@ A relative time stamp value in a measurement is mapped to UTC plus offset by tak
 
 Time faults are reported in the same manner as when PHDs use Absolute or Base-Offset time; the Observation.valueQuantity is empty and the dataAbsentReason is set to "unknown".
 
- - [Next: Non-IEEE 11073-20601 Devices](Non1107320601Devices.html)
+ - [Next: Non-IEEE 11073-20601 Devices](Non11073PHDDevices.html)
  - [Previous: Generating the Reported Time Stamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
 
