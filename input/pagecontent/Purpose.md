@@ -2,7 +2,7 @@ The Personal Health Device Implementation Guide (IG) describes how information f
 
 In most cases a Personal Health Gateway (PHG) is responsible for receiving and decoding the information from the PHD. Implementations following this IG are likely to be done on PHGs. When a PHG is involved, information about the PHG shall also be generated.
 
-<img src="GHS-overall.jpg" alt="PHD IG context diagram" style="width:100%">
+<img src="PHD-context-complete.jpg" alt="PHD IG context diagram" style="width:100%">
 
 This IG assumes that PHDs use a protocol based on IEEE 11073-10206 or IEEE 11073-20601 when communicating with a PHG or that the PHG is capable of mapping received data into an IEEE 11073-10206  compliant format.  
 
