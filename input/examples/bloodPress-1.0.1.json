@@ -1,6 +1,6 @@
 {
 	"resourceType": "Observation",
-	"id": "bloodPress-1.0.1",
+	"id": "bloodPress-1.2.3.4",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"

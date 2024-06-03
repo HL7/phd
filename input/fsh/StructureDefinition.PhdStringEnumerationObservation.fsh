@@ -11,12 +11,6 @@ Description: "StructureDefinition for Observation Resources representing measure
 * . ^short = "Reports measurements that are enumerated human-readable strings"
 * . ^definition = "The PhdStringEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Str attribute."
 * . ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an arbitrary text string. An example would be the program name of an exercise option on a piece of cardio equipment. These strings are not generically processable by machine and only for human consumption."
-// * meta 1..
-// * meta.profile ^slicing.discriminator.type = #value
-// * meta.profile ^slicing.discriminator.path = "value"
-// * meta.profile ^slicing.rules = #open
-// * meta.profile contains phdProfile 1..1
-// * meta.profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation" (exactly)
 * value[x] 1..
 * value[x] only string
 * value[x] ^short = "Human readable text string"

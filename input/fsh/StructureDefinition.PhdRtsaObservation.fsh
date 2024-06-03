@@ -10,12 +10,6 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdRtsaObservation reports PHD measurements that contain a Simple-Sa-Observed-Value attribute."
 * . ^comment = "Used for RTSA (waveform) observations from Personal Health Devices"
-// * meta 1..
-// * meta.profile ^slicing.discriminator.type = #value
-// * meta.profile ^slicing.discriminator.path = "value"
-// * meta.profile ^slicing.rules = #open
-// * meta.profile contains phdProfile 1..1
-// * meta.profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation" (exactly)
 // * category ^slicing.discriminator.type = #value
 // * category ^slicing.discriminator.path = "system"
 // * category ^slicing.rules = #open
