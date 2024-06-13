@@ -41,11 +41,10 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # local referenceswithin a bundle are not properly checked
-Entry 0 matches the reference Patient/patient-001 by type and id but it's fullUrl http://example.org/Patient/patient-001 does not match the full target URL urn:uuid:patient-001 by Bundle resolution rules
-Entry 1 matches the reference Device/phg-001 by type and id but it's fullUrl http://example.org/Device/phg-001 does not match the full target URL urn:uuid:phg-001 by Bundle resolution rules
-Entry 2 matches the reference Device/phd-001 by type and id but it's fullUrl http://example.org/Device/phd-001 does not match the full target URL urn:uuid:phd-001 by Bundle resolution rules
-Entry 3 matches the reference Observation/cts-001 by type and id but it's fullUrl http://example.org/Observation/cts-001 does not match the full target URL urn:uuid:cts-001 by Bundle resolution rules
+Entry 0 matches the reference Patient/patient-001 by type and id but it's fullUrl http:///Patient/patient-001 does not match the full target URL urn:uuid:patient-001 by Bundle resolution rules
+Entry 1 matches the reference Device/phg-001 by type and id but it's fullUrl http:///Device/phg-001 does not match the full target URL urn:uuid:phg-001 by Bundle resolution rules
+Entry 2 matches the reference Device/phd-001 by type and id but it's fullUrl http:///Device/phd-001 does not match the full target URL urn:uuid:phd-001 by Bundle resolution rules
+Entry 3 matches the reference Observation/cts-001 by type and id but it's fullUrl http:///Observation/cts-001 does not match the full target URL urn:uuid:cts-001 by Bundle resolution rules
 
 # we want to extend the set of observation category codes
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
-
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)

@@ -1,8 +1,3 @@
-This example shows a compound numeric observation. The most common type of compound measurement is the Blood Pressure. The systolic, diastolic, and mean values are treated as parts of the same measurement. The compound elements are reported in Observation.component elements. Note that there is **no** value[x] in the 'primary' observation. Note, in addition, that the 'mean' component is not considered as one of FHIR's vital signs and no LOINC code is present for that component code.
-
-Note there is no logical id in this resource as this resource is being uploaded to the server in a conditional create operation. The server will use the identifier to check that no other Observation resource exists on the server with the same identifier. If there is not such resource present, the server will create the logical id and return it to the sender in the response. 
-
-<pre>
 {
 	"resourceType": "Observation",
 	"meta": {
@@ -14,18 +9,8 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		{
 			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 			"valueReference": {
-				"reference": "Device/ecde3d4e58532d31.000000000000"	// Resource already on the server
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
-		}
-	],
-	"category" : [
-		{
-		  "coding" : [
-			{
-			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-			  "code" : "phd-observation"
-			}
-		  ]
 		}
 	],
 	"status": "final",
@@ -38,8 +23,16 @@ Note there is no logical id in this resource as this resource is being uploaded 
 				}
 			],
 			"text": "Vital Signs"
+		},
+		{
+		  "coding" : [
+			{
+			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+			  "code" : "phd-observation"
+			}
+		  ]
 		}
-	],
+	  ],
 	"code": {
 		"coding": [
 			{
@@ -48,21 +41,21 @@ Note there is no logical id in this resource as this resource is being uploaded 
 			},
 			{
 				"system": "http://loinc.org",
-				"code": "55284-4"
+				"code": "85354-9"
 			}
 		],
 		"text": "MDC_PRESS_BLD_NONINV: Blood pressure"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"	// Resource already on the server
+		"reference": "Patient/patientExample-1"
 	},
 	"effectiveDateTime": "2018-11-11T11:38:15-05:00",
 	"device": {
-		"reference": "Device/711000FEFF5F49B0.B0495F001071"
+		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/coin-20181119174911"	// Resource already on the server
+			"reference": "Observation/coin-20181119174911"
 		}
 	],
 	"component": [
@@ -82,8 +75,9 @@ Note there is no logical id in this resource as this resource is being uploaded 
 			},
 			"valueQuantity": {
 				"value": 116,
+				"unit" : "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
-				"code": "mmHg"
+				"code": "mm[Hg]"
 			}
 		},
 		{
@@ -102,8 +96,9 @@ Note there is no logical id in this resource as this resource is being uploaded 
 			},
 			"valueQuantity": {
 				"value": 71,
+				"unit" : "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
-				"code": "mmHg"
+				"code": "mm[Hg]"
 			}
 		},
 		{
@@ -118,10 +113,10 @@ Note there is no logical id in this resource as this resource is being uploaded 
 			},
 			"valueQuantity": {
 				"value": 86,
+				"unit" : "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
-				"code": "mmHg"
+				"code": "mm[Hg]"
 			}
 		}
 	]
 }
-</pre>

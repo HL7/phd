@@ -24,10 +24,10 @@ The following table shows how the numeric attributes are mapped to FHIR. Since t
 |-
 |Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"|
 |Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"|
-|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>handle measurement status see [PHD Base Observation Profile](BaseObservationProfile.html) |
+|Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>handle measurement status see [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html) |
 
 ### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
+For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
@@ -126,9 +126,9 @@ The Threshold-Notification-Text-String attribute is currently used only in the C
 
 ### Examples:
 
-A basic simple numeric observation with a time stamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](spotNumeric.html). Simple numeric measurements are common in PHDs.
+A basic simple numeric observation with a time stamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](Observation-numeric-spotnumeric.html). Simple numeric measurements are common in PHDs.
 
-An example of a NaN (not a number) measurement is shown in [NaN Example](NumericNaN.html). Note that the value element is absent and replaced by a dataAbsentReason element.
+An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a dataAbsentReason element.
 
 ### Consumer of the PHD Numeric Observation Profile
 The consumer of this profile does not need to concern itself with the mapping complexities or the PHD-related entry for the Observation.identifier which is used by the uploader to prevent data duplication. There are no extensions introduced by this profile except for the HL7 gateway extension so the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
@@ -149,7 +149,7 @@ The consumer of this profile does not need to concern itself with the mapping co
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
  - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
  - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)

@@ -31,7 +31,7 @@ The following table shows how the compound numeric attributes are mapped to FHIR
 |Compound-Nu-Observed-Value.*valueN*<br/>Compound-Nu-Observed-Value.*unitN*<br/>Compound-Nu-Observed-Value.*metric-idN*<br/>Compound-Nu-Observed-Value.*statusN*|Observation.component*N*.valueQuantity.value<br/>Observation.component*N*.valueQuantity.code  (as UCUM)<br/> Observation.component*N*.code.coding.code<br/>Observation.component*N*.dataAbsentReason|
 
 ### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
+For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
@@ -71,12 +71,12 @@ The entries are as populated as follows:
 |valueQuantity.code|shall be the UCUM code of the primary measurement|Assumes the units are the same for all components|
 
 ### Examples:
-This example shows a [blood pressure](bloodPress.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
+This example shows a [blood pressure](Observation-compound-numeric-observation.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
 
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Numeric Observation Profile](NumericObservationProfile.html)
  - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
  - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)

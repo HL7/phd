@@ -24,6 +24,6 @@ Example 3: Medical research
 -
 Another use case is participation in medical research. For example, a medical center associated with a large university is conducting a study on memory impairment interventions in the elderly. The study involves the patients participating in adaptive on-line memory ‘games’. The data is collected in association with a home healthcare service. The use of remote monitoring allows the study to collect a large set of data with minimal impact on the involved patients. The automated approach reduces cost, increases sample size, allows the collection of larger amounts of data from each participant, and the minimal impact is likely to result in longer participation times. Data anonymity is often important in such studies. 
 
- - [Data Users: Profile Consumers](ProfileConsumers.html)
- - [PHG implementers: PHG Implementation Guidance](TechnicalImplementationGuidance.html)
+ - [Next for data users: Profile Consumers](ProfileConsumers.html)
+ - [Next for PHG implementers: PHG Implementation Guidance](TechnicalImplementationGuidance.html)
  - [Previous: Scope](Scope.html) 

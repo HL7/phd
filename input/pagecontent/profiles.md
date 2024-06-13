@@ -7,7 +7,7 @@ The following profiles are defined in this IG and have their own descriptive pag
 
  - [Profiles Overview](ProfilesOverview.html), gives more information on the set of profiles.
 
- - [Base Observation Profile](BaseObservationProfile.html), the base profile for the observation profiles in this IG:
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html), the base profile for the observation profiles in this IG:
    - [Phd Numeric Observation Profile](NumericObservationProfile.html)
    - [Phd Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
    - [Phd Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
@@ -23,9 +23,14 @@ The following profiles are defined in this IG and have their own descriptive pag
  - [Phd Patient Profile](PhdPatientProfile.html), the profile for a patient using a PHD
 
 
-### List of Profile Structure Definitions used in this Guide
+### Alphabetic list of Profile Structure Definitions used in this Guide
 
 These structure definition profiles, along with all the resources used by this Guide, are also found in the Artifacts page.
+
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
 
 <table class="table-striped" style="width:100%">
 <col style="width:40%"/>

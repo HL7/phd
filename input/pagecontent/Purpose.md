@@ -18,6 +18,6 @@ The purpose of this Implementation Guide is to specify the mapping of PHD inform
 For consumers (readers) of FHIR data, this Implementation Guide specifies the FHIR resources that contain the PHD information and what elements contain what fields. Readers interested in using the FHIR resources specified by this IG can read the  [Profile Consumers](ProfileConsumers.html) chapter.
 
  - [Next: Audience](Audience.html)
- - [Previous: Organization](Organization.html)
+ - [Previous: Overview](overview.html)
 
 HL7 GitHub location: https://github.com/HL7/phd

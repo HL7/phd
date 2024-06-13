@@ -1,6 +1,6 @@
 {
 	"resourceType": "Observation",
-	"id":"coin-1234",
+	"id":"coin-example-1",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
@@ -25,7 +25,7 @@
 		"text": "MDC_ATTR_TIME_ABS: Absolute time"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/patientExample-1"
 	},
 	"effectiveDateTime": "2017-06-02T18:02:35-04:00",
 	"valueDateTime": "2017-06-02T18:02:30-04:00",

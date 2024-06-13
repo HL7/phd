@@ -1,9 +1,10 @@
 {
   "resourceType": "Bundle",
-  "id": "nonin-hdp-1542718631721",
+  "id": "bundle-example-1",
   "type": "transaction",
   "entry": [
-    { "fullUrl": "http://example.org/Patient/patient-001",
+    { 
+      "fullUrl" :"http:///Patient/patient-001",
       "resource": {
         "resourceType": "Patient",
         "meta": {
@@ -43,7 +44,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/Device/phg-001",
+      "fullUrl": "http:///Device/phg-001",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -237,7 +238,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/Device/phd-001",
+      "fullUrl": "http:///Device/phd-001",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -510,7 +511,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/Observation/cts-001",
+      "fullUrl": "http:///Observation/cts-001",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -538,7 +539,7 @@
           "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
         },
         "subject": {
-          "reference": "Patient/patient-001"
+          "reference": "Device/phd-001"
         },
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
