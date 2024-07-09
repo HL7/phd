@@ -2,7 +2,7 @@
 This Implementation Guide specifies profiles on the FHIR <a href="http://hl7.org/fhir/patient.html">Patient</a>, <a href="http://hl7.org/fhir/device.html">Device</a>, and <a href="http://hl7.org/fhir/observation.html">Observation</a> resources. 
 Each profile defines constraints, extensions, and terminology requirements for an implementation that claims conformance to this guide.
 
-### <a name="back"></a> Profile Implementation Details
+### Profile Implementation Details
 The following profiles are defined in this IG and have their own descriptive page: 
 
  - [Profiles Overview](ProfilesOverview.html), gives more information on the set of profiles.

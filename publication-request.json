@@ -1,0 +1,11 @@
+{
+    "package-id" : "hl7.fhir.uv.phd",
+    "version" : "1.1",
+    "path" : "http://hl7.org/fhir/uv/phd/STU 1.1",
+    "mode" : "technical-correction",
+    "status" : "trial-use",
+    "sequence" : "Releases",
+    "desc" : "This version fixes all reported Jira issues on the PHD IG until 2024-07-09.",
+    "changes" : "changes.html",
+    "first" : false
+  }
