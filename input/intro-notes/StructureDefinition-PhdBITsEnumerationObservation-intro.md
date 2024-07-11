@@ -1,0 +1,5 @@
+The BITs Enumeration Observation Profile is used when the PHD Observation reports a bitstring where each bit represents an event or a state. PHDs typically send this kind of observation when more than one event or state can occur simultaneously. If the event or states are mutually exclusive, a [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html) is typically used instead.
+
+Each bit in the bitstring may represent some state or event. The most common use of this type of observation is for reporting device status events that influence the observation. It is also used extensively in the Independent Living specialization to report states such as 'door open', 'door closed' or 'patient in room', 'patient out of room', etc. This type observation is generally used when there is the potential for more than one event or state to be set at the same time.
+
+In IEEE 11073-10206 the information model only supports states as bitstrings. In the Generic Health Sensor Service Specification both states and events can be modelled using bitstrings.  

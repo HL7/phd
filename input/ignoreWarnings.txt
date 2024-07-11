@@ -18,9 +18,6 @@ This property has only a code ('source') and not a URI, so it has no clearly def
 # The ISO/IEEE 11073 Codesystem is not draft
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
 
-# too large code system
-The value set expansion is too large, and only a subset has been displayed
-
 # How long are code systems defined by the IG to be seen as experimental?
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7|2.0.0
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS|2.0.0
