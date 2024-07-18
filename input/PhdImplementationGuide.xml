@@ -853,7 +853,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU 1.1.0"/>
+      <value value="STU 1.1"/>
     </parameter>
   </definition>
 </ImplementationGuide>
