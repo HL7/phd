@@ -9,7 +9,19 @@ The *PHD Observation Identifier* is defined to prevent data duplication. It can 
 Ideally the PHG will implement a duplication detection mechanism and filter out any observations that have already been uploaded. One possible mechanism is to record the latest time stamp of any observation received during a connection. Then for a given device and patient and upload destination, on a subsequent connection the PHG can filter out any observations with a time stamp earlier than the recorded latest time stamp of the previous connection. The latest time stamp is then updated given the information received during the current connection. This filter not only saves the server from handling the conditional update transaction but saves bandwidth and upload costs.
 
 Additionally a globally unique identifier can be used in combination with a conditional create operation to prevent  duplication of observations on the server.
-The identifier is a concatenated string of elements that contain sufficient information to uniquely identify the observation. The identifier is the combination of the device identifier, patient identifier, the ***PHD*** timestamp of the observation, the observation type code, and the list of Supplemental-Types codes if any. Each entry is separated by a dash (-). It is important to use the time stamp of the PHD and not the potentially modified time stamp placed in the Observation.effective[x] element. Two PHGs may have slightly different times which would allow a duplicate observation to appear different.
+The identifier is a concatenated string of elements that contain sufficient information to uniquely identify the observation. The identifier is the concatenation of the device identifier, patient identifier, the ***PHD*** timestamp of the observation, the observation type code, the measurement duration if present, and the list of Supplemental-Types codes if any. Each entry is separated by a dash (-). It is important to use the time stamp of the PHD and not the potentially modified time stamp placed in the Observation.effective[x] element. Two PHGs may have slightly different times which would allow an undesired duplicate observation to appear.
+
+|Entry|value|Additional information|
+|-
+|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
+|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html)|
+|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
+|duration|
+|Supplemental Information|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
+
+The final identifier is made by concatenating the entries above as follows:
+ - "device-patient-type-value-timestamp-duration-Supplemental Information"
 
 All PHGs compliant to this IG should implement this identifier in the same manner. Compliance assures that even if the patient uploads the same observation to the same server from a different PHG, a duplicate of the observation will not be generated on the server. This is important since some PHDs do not provide a means of deleting stored and uploaded observations and will upload old observations again with each new addition of a observation as much as device storage allows.
 
@@ -52,8 +64,8 @@ A Source-Handle-Reference attribute points to a previously reported observation 
 ### Components
 Component elements are used whenever the observation contains additional information attributes that further describe the observation. There are four such attributes that can be reported by all types of  observations; the Supplemental-Types, Relative-Time, Hi-Res-Relative-Time, and Measurement-Status.
 
-#### Supplemental Types
-The Supplemental Types attribute contains a list of one or more partition-term code pairs. These define MDC codes that describe some property of the observation. There will be one component element for each entry pair in the list. For example, the code MDC_MODALITY_SPOT used in the pulse oximeter specialization indicates that the observation reported is a stable average. In contrast there is MDC_MODALITY_FAST and MDC_MODALITY_SLOW. The component elements are as populated as follows:
+#### Supplemental Information
+The Supplemental Information attribute contains a list of one or more MDC codes that describe some property of the observation. There will be one component element for each entry pair in the list. For example, the code MDC_MODALITY_SPOT used in the pulse oximeter specialization indicates that the observation reported is a stable average. In contrast there is MDC_MODALITY_FAST and MDC_MODALITY_SLOW. The component elements are as populated as follows:
 
 |Observation.component element|entry|Additional Information|
 |-
@@ -61,7 +73,7 @@ The Supplemental Types attribute contains a list of one or more partition-term c
 |code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
 |code.text|optional but|Should contain the reference id MDC_ATTR_SUPPLEMENTAL_TYPES along with any other additional text|
 |valueCodeableConcept.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|valueCodeableConcept.coding.code|the 32-bit MDC code|(partition) * 2<sup>16</sup> + term code|
+|valueCodeableConcept.coding.code|the MDC code as a decimal string|
 |valueCodeableConcept.text|optional but|Should contain the reference id for the reported code along with any other additional text|
 
 #### Relative Time Stamp

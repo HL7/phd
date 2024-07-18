@@ -289,7 +289,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="ValueSet/MDCnotObject"/>
       </reference>
       <name value="MDCnotObject"/>
-      <description value="Value set for those Observation component elements that come from compound and BITs measurements. These attributes come from several partitions but NOT the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the supplemental types would give an extra description about the measurement such as 'duration average' whereas the measurement itself might be acceleration values."/>
+      <description value="Value set for those Observation component elements that come from compound and BITs measurements. These attributes come from several partitions but NOT the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the Supplemental Information would give an extra description about the measurement such as 'duration average' whereas the measurement itself might be acceleration values."/>
       <exampleBoolean value="false"/>
       <groupingId value="valueSets" />
     </resource>
@@ -394,7 +394,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Observation/numeric-spotnumeric"/>
       </reference> 
       <name value="Example of a numeric."/>
-      <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Types attribute indicating that this is a SPOT measurement (a stable average)." />
+      <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Information attribute indicating that this is a SPOT measurement (a stable average)." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
       <groupingId value="examples" />
     </resource>
