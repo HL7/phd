@@ -17,7 +17,7 @@ The identifier is a concatenated string of elements that contain sufficient info
 |patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
 |type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html)|
 |reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|duration|
+|duration|"duration"|See *TBD*|
 |Supplemental Information|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:

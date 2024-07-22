@@ -2,6 +2,18 @@ Note that this time stamp identifier is part of the Observation.identifier whose
 
 This algorithm shows how one generates the time stamp as reported by the PHD for use in the Observation.identifier element. The Observation.identifier element is used in the PHD profiles to perform conditional creates and thus eliminate data duplication.
 
+- If the PHD timestamp reports a tick counter the reported value will be encoded as the number of seconds it represents according to its resolution. 
+   - For example, when a Bluetooth GHS sensor reports a tick counter of 12345678 with a millisecond resolution this will be encoded as "12345.678".
+
+- If the PHD timestamp reports local or UTC time the reported value will be encoded as the number of seconds it represents since 2000-01-01  according to its resolution.
+   - For example, when a Bluetooth GHS sensor reports a local or UTC time of 2021-11-22 11:56:30 with a milliseconds resolution this will be encoded as "690897360.567"
+
+- If the PHD timestamp reports a TZ/DST offset the reported value will be encoded as seconds according to its resolution.
+   - For example, when a Bluetooth GHS sensor reports a local or UTC time of 2021-11-22 11:56:30 with a seconds resolution and an offset of 4 (1 hour) this will be encoded as "2011-11-22T11:56:30+01:00"
+
+- If the PHD Observation also includes a Measurement-duration attribute this will be appended to the endcoded timestamp as a ".. 
+
+
  - If the sensor reports absolute time this string will be encoded as an HL7 DTM YYYYMMDDTHHMMSS.ss.
    - Example 1: The sensor reports absolute time as an 8-byte Binary Coded Decimal (BCD) Mder OCTET STRING:
 0x20 0x07 0x02 0x01 0x12 0x05 0x20 0x86 which is the date and then the time.
