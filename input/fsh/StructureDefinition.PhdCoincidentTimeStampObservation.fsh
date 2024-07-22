@@ -8,12 +8,6 @@ Description: "StructureDefinition for Observation Resources representing the coi
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCoincidentTimeStampObservation reports the current time of the PHD sensor at the current time of the PHG."
 * . ^comment = "Used to record the correction the PHG applied to the PHD measurement time stamps (if any) and to be able to recover the original time stamps reported by the PHD should that be needed."
-// * meta 1..
-// * meta.profile ^slicing.discriminator.type = #value
-// * meta.profile ^slicing.discriminator.path = "value"
-// * meta.profile ^slicing.rules = #open
-// * meta.profile contains phdProfile 1..1
-// * meta.profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation" (exactly)
 * extension 1..1
 * extension ^short = "Extension for the PHG"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" (exactly)

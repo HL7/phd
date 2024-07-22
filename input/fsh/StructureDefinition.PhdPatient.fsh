@@ -8,12 +8,6 @@ Description: "The patient information reported from personal health gateways (PH
 * ^date = "2017-08-04T06:04:53.838-04:00"
 * ^purpose = "All PHD related Observation resources reference a Patient resource containing a minimal set of information sufficient to identify the patient. However, it may require additional information to link the patient to a person that is only available to an authorized entity. In this manner, PHMI can be protected."
 * . ^comment = "Note that the only element that is required to be populated is the identifier which can be made opaque to a third party viewer. PCHA also supports a situation where the PHG can be provided a logical id to a Patient Resource out of band. In this case, the PHG never uploads a Patient Resource, but uses the provided logical id in the Observation resources instead. In this manner, not even the opaque identifiers are sent over the wire."
-* meta 1..
-* meta.profile ^slicing.discriminator.type = #value
-* meta.profile ^slicing.discriminator.path = "value"
-* meta.profile ^slicing.rules = #open
-* meta.profile contains phdProfile 1..1
-* meta.profile[phdProfile] = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" (exactly)
 * identifier 1..
 * identifier.type 1..
 * identifier.type.coding ^slicing.discriminator.type = #value
