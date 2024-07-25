@@ -30,6 +30,13 @@ The measurement observation profiles mirror the  measurement 'value-types' of th
 |peridoic samples |sample array|valueSampledData|
 |compound |Compound |component.value[x]]|
 
+An UML diagram is shown below:
+
+<figure>
+{% include acom-observations.svg %}
+<figcaption>IEEE 11073-10206 ACOM Observation classes</figcaption>
+</figure>
+
 The value-type of measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
 
 ### PHD Device Profile

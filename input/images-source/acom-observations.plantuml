@@ -1,0 +1,115 @@
+@startuml acom-observations
+'!theme mono
+
+ 
+class Observation <<ACOM Base Class>> {
+type : Term
+timeStamp: Time[0..1]
+derivedFrom : reference[0..*]
+hasMember : reference[0..*]
+id: unique reference value
+...
+--
+The base class for observations in ACOM.
+}
+
+class NumericObservation {
+unit : Term
+value : FLOAT
+}
+
+class DiscreteObservation {}
+
+class StringObservation {
+'length : uint16
+'value: utf8s
+value: string
+}
+
+class SampleArrayObservation {
+unitCode : Term
+scalingFactor : FLOAT
+offset : FLOAT
+samplePeriod : FLOAT -- seconds
+'numberOfSamplesPerPeriod : uint8
+'bytesPerSample : uint8
+'numberOfSamples : uint32
+scaledSample : int[*]
+}
+
+class CompoundObservation {
+'numberOfComponents : uint8
+value: ObservationComponent[*]
+}
+
+'class TLVEncodedObservation {
+'numberOfTLVAttributes : uint8
+'value: TLVAttribute[*]
+'}
+
+
+Observation <|-- NumericObservation 
+Observation <|-- DiscreteObservation
+Observation <|--- SampleArrayObservation
+Observation <|-- CompoundObservation
+'Observation <|--- TLVEncodedObservation
+Observation <|-- StringObservation
+
+
+Class SingleEventObservation {
+value: Term
+}
+
+DiscreteObservation <|-- SingleEventObservation
+
+Class MultipleEventObservation {
+value: Term[*]
+}
+
+DiscreteObservation  <|--- MultipleEventObservation
+
+Class MultipleBooleanStateObservation {
+value: BooleanState[*]
+}
+
+DiscreteObservation  <|--- MultipleBooleanStateObservation
+
+Struct ObservationComponent {
+componentType: Term
+}
+
+CompoundObservation *-- ObservationComponent
+
+
+Struct NumericComponent {
+unit: Term
+value: FLOAT 
+}
+
+ObservationComponent <|-- NumericComponent
+
+
+Struct DiscreteComponent {
+value: Term[*] 
+}
+
+ObservationComponent <|-- DiscreteComponent
+
+Struct StringComponent {
+value: string
+}
+
+ObservationComponent <|--- StringComponent
+
+Struct SampleArrayComponent {
+unitCode : Term
+scalingFactor : FLOAT
+offset : FLOAT
+samplePeriod : FLOAT -- seconds
+scaledSample : int[*]
+}
+
+ObservationComponent <|--- SampleArrayComponent
+
+
+@enduml

@@ -113,9 +113,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open
 * component contains
-    supplementalTypesComponent 0..* and
-    relativeTimeComponent 0..1 and
-    hiresRelativeTimeComponent 0..1
+    supplementalTypesComponent 0..*
 * component[supplementalTypesComponent] ^short = "Supplemental Type: A further description of the measurement type."
   * ^definition = "For each partition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
   * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes as partition:term code pairs. Each pair is a code describing something additional about the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average. An MDC_MODALITY_FAST would indicate that a short averaging is used and the result reported regardless of stability."
@@ -147,63 +145,4 @@ Description: "Common base profile with the elements that are common to the PHD I
       * code 1..
         * ^definition = "For the given Supplemental-Types entry the code here is given by: partition * 2**16 + term code"
   * dataAbsentReason ..0
-* component[relativeTimeComponent] ^short = "Relative time stamp of the measurement reported by the PHD."
-  * ^definition = "This component shall be present if the measurement contains a Relative-Time-Stamp."
-  * ^comment = "Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also provided a higher time resolution than permitted by the effective[x] time stamp should it be needed.\r\nThe Relative-Time-Stamp is a 32-bit unsigned integer in units of 1/8th ms. It is reported here scaled to microseconds."
-  * code from $Quantity11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-      * code = #67985 (exactly)
-        * ^definition = "The MDC code of the Relative-Time-Stamp attribute"
-    * text ^definition = "The reference identifier should be included in the description. For a Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL"
-  * value[x] 1..
-  * valueQuantity 1..1
-  * valueQuantity only Quantity
-    * ^sliceName = "valueQuantity"
-    * value 1..
-      * ^definition = "The value of the relative time attribute which is in units of 1/8th milliseconds scaled to microseconds."
-    * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "The unit code shall use the UCUM system"
-    * code 1..
-    * code = #us (exactly)
-      * ^definition = "The UCUM code for microseconds"
-  * dataAbsentReason ..0
-* component[hiresRelativeTimeComponent] ^short = "Hi-Resolution Relative time stamp of the measurement reported by the PHD."
-  * ^definition = "This component shall be present if the measurement contains Hi-Res-Relative-Time-Stamp."
-  * ^comment = "Hi Res Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also allows much higher time resolution than permitted in the effective{x] element should it be needed.\r\nThe Hi-Res-Relative-Time-Stamp is a 64-bit unsigned interger in units of microseconds."
-  * code from $Quantity11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.description = "Slice by coding..."
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-      * code = #68073 (exactly)
-        * ^definition = "The MDC code for the Hi-Res-Relative-Time-Stamp attribute"
-    * text ^definition = "The reference identifier should be included in the description. For a Hi-Res-Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL_HI_RES"
-  * value[x] 1..
-  * valueQuantity 1..1
-  * valueQuantity only Quantity
-    * ^sliceName = "valueQuantity"
-    * value 1..
-      * ^short = "Numerical value"
-      * ^definition = "The value of the hi res relative time attribute (already in microseconds)."
-    * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "The unit code shall use the UCUM system"
-    * code 1..
-    * code = #us (exactly)
-      * ^definition = "The UCUM code for microseconds"
-  * dataAbsentReason ..0
+
