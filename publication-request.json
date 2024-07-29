@@ -6,6 +6,6 @@
     "status" : "trial-use",
     "sequence" : "STU 1",
     "desc" : "This version fixes all reported Jira issues on the PHD IG until 2024-07-09.",
-    "changes" : "changes.html",
+    "changes" : "input/pagecontent/changes.md",
     "first" : false
   }
