@@ -57,6 +57,7 @@
 <artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
+<artifact id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="Range 11073 Attributes"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
 <artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
 <artifact deprecated="true" key="StructureDefinition" name="StructureDefinition"/>
@@ -72,6 +73,7 @@
 <page key="BITsDevSensor" name="BITs measurement; Device-Sensor status"/>
 <page key="BaseObservationProfile" name="Base Observation Profile"/>
 <page key="bundleExample" name="Bundled upload of Patient, Device, and Observation resources"/>
+<page key="changes" name="Change Log"/>
 <page key="CodeableConcepts" name="Codeable Concepts"/>
 <page key="glucoseEnum" name="Coded Enumeration"/>
 <page key="CoincidentTimeStamp" name="Coincident Time Stamp"/>

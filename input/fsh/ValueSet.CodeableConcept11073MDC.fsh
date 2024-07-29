@@ -4,8 +4,8 @@ Title: "CodeableConcept 11073 Attributes"
 Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-20601 attributes whose values are codes and thus represented as Codeable Concepts."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"
-* ^version = "0.3.0"
-* ^status = #draft
+* ^version = "current"
+* ^status = #active
 * ^experimental = false
 * ^date = "2018-11-23"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"

@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jul 19, 2024 15:58+0000 for FHIR v6.0.0-cibuild 
+  Generated on Fri, Jul 26, 2024 15:34+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -18679,7 +18679,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="bodyLandmarkOrientation" type="BodyStructure.BodyLandmarkOrientation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Body locations in relation to a specific body landmark (tatoo, scar, other body structure).</xs:documentation>
+              <xs:documentation xml:lang="en">Body location in relation to a specific body landmark (e.g., a body structure such a navel, scar, or implanted device).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="spatialReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -49336,7 +49336,7 @@ The primary difference between a medicationstatement and a medicationadministrat
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The person, animal or group who is/was consuming the food (i.e. solid and/or liquid).</xs:documentation>
+              <xs:documentation xml:lang="en">The person or group who is/was consuming the food (i.e. solid and/or liquid).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
@@ -49365,12 +49365,7 @@ The primary difference between a medicationstatement and a medicationadministrat
           </xs:choice>
           <xs:element name="nutritionItem" type="NutritionIntake.NutritionItem" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The nutrition product intended for consumption and/or infusion.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="ingredientLabel" type="NutritionIntake.IngredientLabel" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Nutrients and/or energey contained in product, serving, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">The nutrition product intended for consumption and/or administration.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="performer" type="NutritionIntake.Performer" minOccurs="0" maxOccurs="unbounded">
@@ -49421,7 +49416,17 @@ The primary difference between a medicationstatement and a medicationadministrat
           </xs:element>
           <xs:element name="consumedItem" type="NutritionIntake.ConsumedItem" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Schedule of consumption.</xs:documentation>
+              <xs:documentation xml:lang="en">What nutrition item was consumed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="notConsumed" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicator that the nutrition item was not consumed, such as it was refused, held (e.g., tube feedings), or otherwise not provided.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="notConsumedReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Document the reason the nutrition item was not consumed, such as refused, held, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -49445,26 +49450,23 @@ The primary difference between a medicationstatement and a medicationadministrat
               <xs:documentation xml:lang="en">Quantity of the specified food (i.e. solid and/or liquid) .</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">Rate at which enteral feeding was administered.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="notConsumed" minOccurs="0" maxOccurs="1" type="boolean">
+              <xs:documentation xml:lang="en">Rate of enteral feeding administration.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="rateQuantity" type="Quantity"/>
+            <xs:element name="rateRatio" type="Ratio"/>
+          </xs:choice>
+          <xs:element name="totalIntake" type="NutritionIntake.TotalIntake" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicator that the nutrition item was not consumed, such as it was refused, held (e.g., tube feedings), or otherwise not provided. If a consumption is being recorded from an app, such as MyFitnessPal, this indicator will likely not be used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="notConsumedReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Document the reason the food or fluid was not consumed, such as refused, held, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Nutrients and/or energy contained in the intake.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="NutritionIntake.IngredientLabel">
+  <xs:complexType name="NutritionIntake.TotalIntake">
     <xs:annotation>
       <xs:documentation xml:lang="en">A record of intake by a patient.  A NutritionIntake may indicate that the patient may be consuming the food or fluid now or has consumed the food (i.e. solid and/or liquid), breastmilk, infant formula, supplements, enteral formula now or has consumed it in the past.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay or through an app that tracks food or fluids consumed.   The consumption information may come from sources such as the patient's memory, from a nutrition label,  or from a clinician documenting observed intake.</xs:documentation>
     </xs:annotation>
@@ -49473,12 +49475,17 @@ The primary difference between a medicationstatement and a medicationadministrat
         <xs:sequence>
           <xs:element name="nutrient" minOccurs="1" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Total nutrient consumed. This could be a macronutrient (protein, fat, carbohydrate), or a vitamin and mineral.</xs:documentation>
+              <xs:documentation xml:lang="en">Type of nutrient consumed. This could be a macronutrient (protein, fat, carbohydrate), or a vitamin and mineral.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="amount" minOccurs="1" maxOccurs="1" type="Quantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">Total amount of nutrient consumed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="energy" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Total energy consumed in kilocalories or kilojoules.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -49508,12 +49515,12 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:element name="NutritionOrder" type="NutritionOrder">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="NutritionOrder">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -49645,14 +49652,14 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.OralDiet">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.</xs:documentation>
+              <xs:documentation xml:lang="en">The kind of diet or dietary restriction such as fiber restricted diet or diet for diabetes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="schedule" type="NutritionOrder.Schedule" minOccurs="0" maxOccurs="1">
@@ -49686,7 +49693,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Schedule">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49712,7 +49719,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Nutrient">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49733,7 +49740,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Texture">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49754,7 +49761,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Supplement">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49795,7 +49802,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Schedule1">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49821,7 +49828,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.EnteralFormula">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49846,9 +49853,9 @@ The primary difference between a medicationstatement and a medicationadministrat
               <xs:documentation xml:lang="en">The amount of energy (calories or kilojoules) that the feeding should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="routeOfAdministration" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="routeOfAdministration" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The route or physiological path of administration into the patient's gastrointestinal  tract for purposes of providing the formula feeding, e.g. nasogastric tube.</xs:documentation>
+              <xs:documentation xml:lang="en">The administration into the patient's gastrointestinal  tract for purposes of providing the formula feeding, e.g. nasogastric tube, oral.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="administration" type="NutritionOrder.Administration" minOccurs="0" maxOccurs="unbounded">
@@ -49872,7 +49879,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Administration">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49900,7 +49907,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Schedule2">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49926,7 +49933,7 @@ The primary difference between a medicationstatement and a medicationadministrat
   </xs:complexType>
   <xs:complexType name="NutritionOrder.Additive">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.</xs:documentation>
+      <xs:documentation xml:lang="en">A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to an individual or group.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -49998,9 +50005,9 @@ The primary difference between a medicationstatement and a medicationadministrat
               <xs:documentation xml:lang="en">Ingredients contained in this product.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="knownAllergen" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
+          <xs:element name="energy" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allergens that are known or suspected to be a part of this nutrition product.</xs:documentation>
+              <xs:documentation xml:lang="en">The amount of energy present in the product expressed in kilocalories or kilojoules.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="characteristic" type="NutritionProduct.Characteristic" minOccurs="0" maxOccurs="unbounded">
@@ -50064,6 +50071,11 @@ The primary difference between a medicationstatement and a medicationadministrat
             <xs:element name="amountRatio" type="Ratio"/>
             <xs:element name="amountQuantity" type="Quantity"/>
           </xs:choice>
+          <xs:element name="allergen" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Substances associated with allergies and/or intolerances that a part of this product.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -50823,6 +50835,11 @@ Reflex | Repeat | Re-run.</xs:documentation>
           <xs:element name="criticalCodedValueSet" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">The set of critical coded results for qualitative observations  that match the criteria of this set of qualified values.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="interpretation" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The expected coded interpretation values of an observation that matches this qualified interval. For example, high, low, normal.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -66451,6 +66468,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">A unique identifier assigned to this vision prescription.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Plan/proposal/order/request fulfilled by this prescription.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="FinancialResourceStatusCodes">

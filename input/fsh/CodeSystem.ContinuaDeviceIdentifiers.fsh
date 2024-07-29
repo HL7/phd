@@ -4,10 +4,9 @@ Title: "Continua Device Identifiers"
 Description: "Codes used to describe the Device (PHD or PHG) Identifiers, such as the system id or Bluetooth Address. More codes maybe added to this list in the future."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"
-* ^version = "0.3.0"
-* ^status = #draft
-* ^experimental = true
-* ^date = "2018-11-25"
+* ^version = "current"
+* ^status = #active
+* ^experimental = false
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
