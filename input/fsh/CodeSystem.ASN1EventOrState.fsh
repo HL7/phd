@@ -1,6 +1,6 @@
 CodeSystem: ASN1EventOrState
 Id: ASN1EventOrState
-Title: "Range 11073 Attributes"
+Title: "11073 ASN1 Event Or State"
 Description: "Code system for ASN1ToHL7 state or event property"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1EventOrState"

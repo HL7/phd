@@ -144,6 +144,9 @@ The reference to the Device resource containing the properties of the PHD that t
 #### The Patient reference: Observation.subject:
 The reference to the Patient resource containing information about the patient upon whom the measurement was taken is placed in the Observation.subject element.
 
+#### The Performer references: Observation.performer[]:
+In many cases the patient is also the person that is taking the measurement. In other cases a general physician may be using a PHD in his clinic. When known to the gateway a reference to the performer may be present in this element, otherwise this element may be absent.
+
 #### References to Other Observations: Observation.derivedFrom.reference:
 There are situations where a given Observation is an important part of another Observation such as a glucose meal context measurement giving additional information about a glucose concentration measurement. In that case the context measurement will have an Observation.derivedFrom.reference element that points to the Observation resource containing the glucose measurement. Another common case where an Observation references another Observation is in an activity monitor. Results of an exercise session such as miles run, calories burned, average and maximum heart rates, etc. are reported as Observations where each Observation points to the master session Observation which has the activity type and duration (period).
 
