@@ -795,6 +795,11 @@ In this example there are only xml structure definitions, value sets, code syste
         <title value="Artifact List"/>
         <generation value="html"/>
       </page>
+      <page>
+        <nameUrl value="changes.html"/>
+        <title value="Change Log"/>
+        <generation value="markdown"/>
+      </page>      
       <!-- to fix recent warnings from the tooling-->
       <page>
         <nameUrl value="Appendices.html"/>
