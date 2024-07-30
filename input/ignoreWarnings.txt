@@ -2,16 +2,16 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
-# this rule is too strict for device generated observations; all example observation in this IG are suppossed to be device generated with sometimes an unknown performer
+# This rule is too strict for device generated observations; all example observation in this IG are suppossed to be device generated with often an unknown performer. Added text in the IG to explain this.
 Best Practice Recommendation: In general, all observations should have a performer
 
 # This is a valid code for a spirometer device type. The IEEE 11073-10429 spirometer device specialization was published in 2022. Started a Zulip discussion to get this code added.
 The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
 
-# partition is a known IEEE 11073-10101 concept - not sure how to fix this....
+# Partition is a known IEEE 11073-10101 concept - not sure how to fix this....
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
-# The ISO/IEEE 11073 Codesystem is not draft - started a Zulip discussion to fix that
+# The ISO/IEEE 11073 Codesystem is not draft - started a Zulip discussion to fix that.
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
 
 # The PHD Base Observation is never instantiated directly on its own - it provides a basis for specific Observation profiles
@@ -33,7 +33,7 @@ This element does not match any known slice Defined in the profile http://hl7.or
 # The check on category code is too strict when multiple categories are used.
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.3.0), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
-# local references within a bundle are not properly checked
+# Local references within a bundle are not properly checked
 Entry 0 matches the reference Patient/patient-001 by type and id but it's fullUrl http://example.org/Patient/patient-001 does not match the full target URL urn:uuid:patient-001 by Bundle resolution rules
 Entry 1 matches the reference Device/phg-001 by type and id but it's fullUrl http://example.org/Device/phg-001 does not match the full target URL urn:uuid:phg-001 by Bundle resolution rules
 Entry 2 matches the reference Device/phd-001 by type and id but it's fullUrl http://example.org/Device/phd-001 does not match the full target URL urn:uuid:phd-001 by Bundle resolution rules
