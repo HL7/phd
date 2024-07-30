@@ -74,6 +74,7 @@
 <page deprecated="true" key="BITsDevSensor" name="BITs measurement; Device-Sensor status"/>
 <page deprecated="true" key="BaseObservationProfile" name="Base Observation Profile"/>
 <page deprecated="true" key="bundleExample" name="Bundled upload of Patient, Device, and Observation resources"/>
+<page key="changes" name="Change Log"/>
 <page key="CodeableConcepts" name="Codeable Concepts"/>
 <page key="glucoseEnum" name="Coded Enumeration"/>
 <page key="CoincidentTimeStamp" name="Coincident Time Stamp"/>
