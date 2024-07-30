@@ -5,8 +5,8 @@ Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes h
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
 * ^version = "0.3.0"
-* ^status = #draft
-* ^experimental = true
+* ^status = #active
+* ^experimental = false
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
 * ^caseSensitive = true

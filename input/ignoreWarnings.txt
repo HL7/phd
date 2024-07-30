@@ -8,7 +8,7 @@ Best Practice Recommendation: In general, all observations should have a perform
 # this is a recent code for a spirometer device type
 The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
 
-# partition is a known IEEE 11073-10101 concept
+# partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this...
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
 # bits coding system issues
@@ -17,13 +17,6 @@ This property has only a code ('source') and not a URI, so it has no clearly def
 
 # The ISO/IEEE 11073 Codesystem is not draft
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
-
-# How long are code systems defined by the IG to be seen as experimental?
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7|2.0.0
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS|2.0.0
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers|2.0.0
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD|2.0.0
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories|2.0.0
 
 # the PHD Base Observation is never instantiated directly on its own - it provides a basis for specific Observation profiles
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
@@ -35,8 +28,7 @@ Most code systems defined in HL7 IGs will need to move to THO later during the p
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
+This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 # local referenceswithin a bundle are not properly checked
 Entry 0 matches the reference Patient/patient-001 by type and id but it's fullUrl http:///Patient/patient-001 does not match the full target URL urn:uuid:patient-001 by Bundle resolution rules
 Entry 1 matches the reference Device/phg-001 by type and id but it's fullUrl http:///Device/phg-001 does not match the full target URL urn:uuid:phg-001 by Bundle resolution rules
