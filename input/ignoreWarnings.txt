@@ -2,29 +2,22 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
-# this rule makes no sense for device generated observations; all example observation in this IG are device generated; unless we consider the patient as the performer as well.
+# This best practice rule is too strong for device generated observations; all example observation in this IG are suppossed to be device generated with often an unknown performer. There is text in the IG to explain this.
 Best Practice Recommendation: In general, all observations should have a performer
 
-# this is a recent code for a spirometer device type
+# This is a recent code for a spirometer device type. Created a pull request on the codes in https://github.com/FHIR/packages/pulls
 The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
 
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this...
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
-# bits coding system issues
-This property has only a code ('type') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
-This property has only a code ('source') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
-
-# The ISO/IEEE 11073 Codesystem is not draft
+# The ISO/IEEE 11073 Codesystem is not draft - fixed by Grahame, but needs time before this warning goes away...
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
 
-# the PHD Base Observation is never instantiated directly on its own - it provides a basis for specific Observation profiles
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
-
-# When this happens, we'll handle it with THO... however ignores does not really work...
+# These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# Slicing checks are too ambitious: when optional slices are present in a profile and a base profile this warning is generated….
+# Slicing checks are too ambitious: when optional slices are present in a profile and a base profile this warning is generated.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)

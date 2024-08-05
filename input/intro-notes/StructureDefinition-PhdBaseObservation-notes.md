@@ -31,6 +31,9 @@ One obtains the IEEE 11073-10101 observation type for the code element in the sa
 ### Subject
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'.
 
+#### Performer
+In situations where the gateway knows that the patinet is the person performing the measurement, a Observation.performer[] element can also point to the PhdPatient resource. However, in most situations this is unknown and the performer is not filled in.
+
 ### Time Stamp: effective[x]
 PHDs report time stamps in various methods and may not report time stamps at all. The PHG will include a time stamp in every observation that is uploaded using a conversion as needed based on the time stamp data received from the PHD. The time stamp types and corresponding PHG conversions are summarized below:
 

@@ -49,6 +49,11 @@
 	"subject": {
 		"reference": "Patient/patientExample-1"
 	},
+	"performer": [
+		{
+			"reference": "Patient/patientExample-1"
+		}
+	],
 	"effectiveDateTime": "2018-11-11T11:38:15-05:00",
 	"device": {
 		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"

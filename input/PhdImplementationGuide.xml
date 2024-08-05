@@ -222,6 +222,15 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ASN1ToHL7Concepts"/>
+      </reference>
+      <name value="ASN1ToHL7Concepts"/>
+      <description value="Concept codes for the ASN1ToHL7 code system properties"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="codeSystems" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ContinuaHFS"/>
       </reference>
       <name value="ContinuaHFS"/>

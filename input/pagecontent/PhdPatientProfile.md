@@ -9,8 +9,6 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-The profile in the meta element shall be http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient
-
 The structure definition for the Phd Patient Profile is given [here](StructureDefinition-PhdPatient.html)
 
 ### Mapping

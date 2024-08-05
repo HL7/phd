@@ -13,11 +13,11 @@ Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes h
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^property[0].code = #type
-* ^property[=].uri = "https://standards.ieee.org/ieee/11073-20601#EventOrStateBit"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#type"
 * ^property[=].description = "Indicates that the code type is an event or state"
 * ^property[=].type = #string
 * ^property[+].code = #source
-* ^property[=].uri = "https://standards.ieee.org/ieee/11073-20601#DeviceOrMeasurmentAttribute"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#source"
 * ^property[=].description = "Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #string
 * #67925.0 "onMains" "Indicates whether the PHD is on or off mains power"
