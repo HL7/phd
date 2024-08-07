@@ -615,11 +615,6 @@
         "device": {
           "reference": "Device/phd-001"
         },
-        "derivedFrom": [
-          {
-            "reference": "Observation/cts-001"
-          }
-        ],
         "component": [
           {
             "code": {
@@ -711,11 +706,6 @@
         "device": {
           "reference": "Device/phd-001"
         },
-        "derivedFrom": [
-          {
-            "reference": "Observation/cts-001"
-          }
-        ],
         "component": [
           {
             "code": {
