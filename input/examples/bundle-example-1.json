@@ -3,8 +3,8 @@
   "id": "bundle-example-1",
   "type": "transaction",
   "entry": [
-    { 
-      "fullUrl" :"http:///Patient/patient-001",
+    {
+      "fullUrl": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2",
       "resource": {
         "resourceType": "Patient",
         "meta": {
@@ -44,7 +44,7 @@
       }
     },
     {
-      "fullUrl": "http:///Device/phg-001",
+      "fullUrl": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -238,7 +238,7 @@
       }
     },
     {
-      "fullUrl": "http:///Device/phd-001",
+      "fullUrl": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -511,7 +511,7 @@
       }
     },
     {
-      "fullUrl": "http:///Observation/cts-001",
+      "fullUrl": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -519,15 +519,15 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
           ]
         },
-        "id": "cts-001",
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "Device/phg-001"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
+        "id": "cts-001",
         "status": "final",
         "code": {
           "coding": [
@@ -539,12 +539,12 @@
           "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
         },
         "subject": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
         "device": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         }
       },
       "request": {
@@ -565,21 +565,22 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "Device/phg-001"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
+        "id": "pulse-ox-001",
         "status": "final",
         "category": [
           {
-            "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-              "code" : "phd-observation"
-            }
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+                "code": "phd-observation"
+              }
             ]
           },
-         {
+          {
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -588,7 +589,7 @@
               }
             ]
           }
-          ],
+        ],
         "code": {
           "coding": [
             {
@@ -603,7 +604,7 @@
           "text": "MDC_PULS_OXIM_SAT_O2: Blood 0₂"
         },
         "subject": {
-          "reference": "Patient/patient-001"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
@@ -613,7 +614,7 @@
           "code": "%"
         },
         "device": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "component": [
           {
@@ -656,18 +657,19 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "Device/phg-001"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
+        "id": "pulse-ox-002",
         "status": "final",
         "category": [
           {
-            "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-              "code" : "phd-observation"
-            }
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+                "code": "phd-observation"
+              }
             ]
           },
           {
@@ -678,7 +680,7 @@
                 "display": "Vital Signs"
               }
             ]
-          }          
+          }
         ],
         "code": {
           "coding": [
@@ -694,7 +696,7 @@
           "text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate"
         },
         "subject": {
-          "reference": "Patient/patient-001"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
@@ -704,7 +706,7 @@
           "code": "/min"
         },
         "device": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "component": [
           {

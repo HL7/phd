@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 5, 2024 12:01+0000 for FHIR v6.0.0-ballot1 
+  Generated on Wed, Aug 7, 2024 08:03+0000 for FHIR v6.0.0-ballot1 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot1">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -2109,11 +2109,6 @@
       <xs:enumeration value="Appointment">
         <xs:annotation>
           <xs:documentation xml:lang="en">Appointment</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="AppointmentResponse">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">AppointmentResponse</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CarePlan">
@@ -52492,7 +52487,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="gender" minOccurs="0" maxOccurs="1" type="AdministrativeGender">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.</xs:documentation>
+              <xs:documentation xml:lang="en">Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.See the [Patient Gender and Sex section](patient.html#gender) for additional information about communicating patient gender and sex.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="birthDate" minOccurs="0" maxOccurs="1" type="date">
@@ -52572,7 +52567,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="HumanName">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A name associated with the contact person.</xs:documentation>
+              <xs:documentation xml:lang="en">A name associated with the contact person. Alternate/additional names for this contact can be found in the `additionalName` property.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="additionalName" minOccurs="0" maxOccurs="unbounded" type="HumanName">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional names for the contact person.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
@@ -52582,7 +52582,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="address" minOccurs="0" maxOccurs="1" type="Address">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Address for the contact person.</xs:documentation>
+              <xs:documentation xml:lang="en">Address for the contact person. Alternate/additional addresses for this contact can be found in the `additionalAddress` property.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="additionalAddress" minOccurs="0" maxOccurs="unbounded" type="Address">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional addresses for the contact person.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="gender" minOccurs="0" maxOccurs="1" type="AdministrativeGender">
@@ -54574,9 +54579,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Roles which this practitioner is authorized to perform for the organization.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="display" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A name that describes the intersection of the practitioner, organization, and the role of the practitioner within the organization.  This is not the human name of the practitioner, though the textual representation of that human name may be a part of this property.</xs:documentation>
+              <xs:documentation xml:lang="en">A value that describes the intersection of the practitioner, organization, and the role of the practitioner within the organization.  This is not the human name of the practitioner, though the textual representation of that human name may be a part of this property.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="specialty" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
