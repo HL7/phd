@@ -7,6 +7,6 @@ Description: "ValueSet for the ANS1ToHL7 codes that are derived from enumeration
 * ^date = "2018-09-17"
 * ^status = #active
 * ^experimental = false
-* ^version = "0.3.0"
+* ^version = "current"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
 * include codes from system ASN1ToHL7 where source = "measurement"
