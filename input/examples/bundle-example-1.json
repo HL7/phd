@@ -616,6 +616,11 @@
         "device": {
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+          }
+        ],
         "component": [
           {
             "code": {
@@ -708,6 +713,11 @@
         "device": {
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+          }
+        ],
         "component": [
           {
             "code": {
