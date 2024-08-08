@@ -3,27 +3,44 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-This Implementation Guide utilizes 10 profiles and one base measurement profile that is part of the six measurement profiles. The PHD Numeric, Compound Numeric, Coded Enumeration, BITs Enumeration, String Enumeration, and Rtsa Observation Profiles are used to report one of the six possible measurement types or classes sent by PHDs. The PHD Coincident Time Stamp Observation Profile is present for time auditing purposes. The PHD Device Profile is used to report the PHD features and properties. The PHG Device Profile is used to report the PHG properties and the PHD Patient Profile is used to report the patient data. In the Continua use case the Patient resource may contain only keys to identify the patient that only the health care provider can match to a person. It is also possible in the Continua architecture that the Patient resource is never sent on the wire by the uploader. In that case the logical id to a Patient resource on the destination server must be provided to the uploader by out-of-band means.
+This Implementation Guide defines a base measurement profile with the elements common to all measurement profiles. The PHD Numeric, Compound Numeric, Coded Enumeration, BITs Enumeration, String Enumeration, and Rtsa Observation Profiles are used to report one of the six possible measurement types or classes sent by PHDs. 
+
+The PHD Coincident Time Stamp Observation Profile is present for time auditing purposes. 
+
+The PHD Device Profile is used to report the PHD features and properties. 
+
+The PHG Device Profile is used to report the PHG properties.  
+
+The PHD Patient Profile is used to report the patient data. Dependent on the use case the Patient resource may contain only keys to identify the patient that only the health care provider can match to a person. It is also possible that the Patient resource is never uploaded by the PHG. In that case the logical id to a Patient resource on the FHIR server must be provided to the PHG by out-of-band means.
 
 ### Notes on Examples
 The examples referenced in these profile sections are what is *uploaded*. These examples will differ slightly from similar examples in the Artifacts section. The reason is that the examples in the Artificats section are required to represent the resource *as it appears on the server*. However, when uploading, create operations either have no logical ids or temporary logical ids. Resources on the server, however, are required to have logical ids. 
 
 ### Measurement Observation Profiles
-The six measurement observation profiles mirror the six measurement 'value-types' of that a IEEE 11073-20601 PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
+The measurement observation profiles mirror the  measurement 'value-types' of that a IEEE 11073-10206 PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
 
-|Measurement value-type|IEEE attribute type|FHIR Observation element|
+|Measurement value-type|IEEE 11073-10206 Observation type|FHIR Observation element|
 |-
-|scalar |single numeric|valueQuantity|
-|vector |compound numeric|component.valueQuantity|
-|code |coded enumeration|valueCodeableConcept|
-|bits (events or states) |BITs enumeration|component.code<br/>component.valueCodeableConcept|
+|scalar |Numeric|valueQuantity|
+|discrete | Discrete | valueCodeableConcept(s)
+| |Single Event |valueCodeableConcept|
+| |Multiple Event |component.valueCodeableConcept(s)|
+| |Multiple Boolean State (Bitstring)|component.code<br/>component.valueCodeableConcepts|
 |string |string enumeration|valueString|
 |peridoic samples |sample array|valueSampledData|
+|compound |Compound |component.value[x]]|
+
+An UML diagram is shown below:
+
+<figure>
+{% include acom-observations.svg %}
+<figcaption>IEEE 11073-10206 ACOM Observation classes</figcaption>
+</figure>
 
 The value-type of measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
 
 ### PHD Device Profile
-The PHD Device profile for the IEEE 11073-20601 MDS object is for the device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that can support the new 20601 MDS UDI attribute.  
+The PHD Device profile for the IEEE 11073-20601 MDS object is for the device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that can support the UDI attribute.  
 
 |MDS Attribute|FHIR Device element|
 |-
@@ -46,15 +63,15 @@ A transaction Bundle may prove useful in that case. A bundled upload will contai
 
 On the other hand, if the use case only involves PHDs that do not emit source-handle-references and do not need a Coincident Time Stamp, the single upload approach may prove to be much more efficient. It is also permissible to mix and match, using both single and Bundled uploads.
 
-### The Profiles
+### The PHD IG Profiles
 
- - [Base Observation Profile](BaseObservationProfile.html)
- - [Numeric Observation Profile](NumericObservationProfile.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Rtsa Observation Profile](RtsaObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
+   - [Numeric Observation Profile](NumericObservationProfile.html)
+   - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
+   - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+   - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
+   - [Rtsa Observation Profile](RtsaObservationProfile.html)
+   - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
  - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
  - [Phd Device Profile](PhdDeviceProfile.html)
  - [Phg Device Profile](PhgDeviceProfile.html)

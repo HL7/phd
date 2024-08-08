@@ -20,7 +20,7 @@ Structure definition for this profile is defined [here](StructureDefinition-PhdS
 The human readable string from the Enum-Observed-Value-Simple-Str attribute is mapped to the Observation.valueString element.
 
 ### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](BaseObservationProfile.html). The table below lists the items that make up the identifier.
+For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
@@ -44,7 +44,7 @@ String enumeration measurements are very rare. This example shows an example fro
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Numeric Observation Profile](NumericObservationProfile.html)
  - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
  - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)

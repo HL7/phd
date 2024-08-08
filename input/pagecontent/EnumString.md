@@ -39,7 +39,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		"text": "Private Attribute: Unknown Private Attribute"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/patientExample-1"
 	},
 	"effectiveDateTime": "2018-08-02T03:25:24.000-04:00",
 	"valueString": "Test Strip Buckled",
@@ -48,7 +48,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/coin-1234"
+			"reference": "Observation/coin-example-1"
 		}
 	]
 }

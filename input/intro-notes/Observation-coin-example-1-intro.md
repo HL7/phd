@@ -1,0 +1,1 @@
+This example shows a standard coincident time stamp where the PHG has superior time synchronization to the PHD. There is no identifier element in this Observation as Coincident Time Stamps are never duplicates and are always 'created'.

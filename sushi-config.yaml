@@ -5,7 +5,7 @@ status: active
 version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2020+
-releaseLabel: Build CI
+releaseLabel: STU2 Ballot
 publisher:
   name: HL7 International / Health Care Devices
   url: http://www.hl7.org/Special/committees/healthcaredevices

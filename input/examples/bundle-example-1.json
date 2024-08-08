@@ -1,13 +1,10 @@
-This example is a transaction bundle where the Patient and Device resources are using a conditional create transaction. In this manner the PHG specifies a temporary id and uses that temporary id in the bundle where it needs to without waiting for a server response. The PHG also needs to specify a sufficiently selective criterion identifying those resources that only one or none should be found on the server. When a server response is obtained, the actual logical id can be used in the Observations. Subsequent bundles can be sent without the Patient and Device resources since they have already been uploaded.
-
-<pre>
 {
   "resourceType": "Bundle",
-  "id": "1568997631814",
+  "id": "bundle-example-1",
   "type": "transaction",
   "entry": [
     {
-      "fullUrl": "urn:oid:1.2.3.0",
+      "fullUrl": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2",
       "resource": {
         "resourceType": "Patient",
         "meta": {
@@ -15,6 +12,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"
           ]
         },
+        "id": "patient-001",
         "identifier": [
           {
             "type": {
@@ -46,7 +44,7 @@ This example is a transaction bundle where the Patient and Device resources are 
       }
     },
     {
-      "fullUrl": "urn:oid:1.2.3.1",
+      "fullUrl": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -54,6 +52,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"
           ]
         },
+        "id": "phg-001",
         "identifier": [
           {
             "type": {
@@ -239,7 +238,7 @@ This example is a transaction bundle where the Patient and Device resources are 
       }
     },
     {
-      "fullUrl": "urn:oid:1.2.3.2",
+      "fullUrl": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -247,6 +246,7 @@ This example is a transaction bundle where the Patient and Device resources are 
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
           ]
         },
+        "id": "phd-001",
         "identifier": [
           {
             "type": {
@@ -254,7 +254,7 @@ This example is a transaction bundle where the Patient and Device resources are 
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
                   "code": "SYSID",
-                  "display": "System Identifier"
+                  "display": "IEEE 11073 System Identifier"
                 }
               ]
             },
@@ -267,7 +267,7 @@ This example is a transaction bundle where the Patient and Device resources are 
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
                   "code": "BTMAC",
-                  "display": "Bluetooth Address"
+                  "display": "Bluetooth MAC Address"
                 }
               ]
             },
@@ -511,7 +511,7 @@ This example is a transaction bundle where the Patient and Device resources are 
       }
     },
     {
-      "fullUrl": "urn:oid:3.1568997631834",
+      "fullUrl": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -523,10 +523,11 @@ This example is a transaction bundle where the Patient and Device resources are 
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "urn:oid:1.2.3.1"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
+        "id": "cts-001",
         "status": "final",
         "code": {
           "coding": [
@@ -538,12 +539,12 @@ This example is a transaction bundle where the Patient and Device resources are 
           "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
         },
         "subject": {
-          "reference": "urn:oid:1.2.3.0"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
         "device": {
-          "reference": "urn:oid:1.2.3.2"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         }
       },
       "request": {
@@ -552,7 +553,7 @@ This example is a transaction bundle where the Patient and Device resources are 
       }
     },
     {
-      "fullUrl": "urn:oid:1.0.0.1",
+      "fullUrl": "urn:uuid:752b1a27-bbed-47d6-bbb8-b649a5261c52",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -564,12 +565,21 @@ This example is a transaction bundle where the Patient and Device resources are 
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "urn:oid:1.2.3.1"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
+        "id": "pulse-ox-001",
         "status": "final",
         "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+                "code": "phd-observation"
+              }
+            ]
+          },
           {
             "coding": [
               {
@@ -578,16 +588,8 @@ This example is a transaction bundle where the Patient and Device resources are 
                 "display": "Vital Signs"
               }
             ]
-          },
-      		{
-		        "coding" : [
-			        {
-			          "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-			          "code" : "phd-observation"
-			        }
-		        ]
-		      }
-	      ],
+          }
+        ],
         "code": {
           "coding": [
             {
@@ -602,20 +604,21 @@ This example is a transaction bundle where the Patient and Device resources are 
           "text": "MDC_PULS_OXIM_SAT_O2: Blood 0₂"
         },
         "subject": {
-          "reference": "urn:oid:1.2.3.0"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
           "value": 98,
+          "unit": "Superfluous mandatory field!",
           "system": "http://unitsofmeasure.org",
           "code": "%"
         },
         "device": {
-          "reference": "urn:oid:1.2.3.2"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "derivedFrom": [
           {
-            "reference": "urn:oid:3.1568997631834"
+            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
           }
         ],
         "component": [
@@ -647,7 +650,7 @@ This example is a transaction bundle where the Patient and Device resources are 
       }
     },
     {
-      "fullUrl": "urn:oid:1.0.0.2",
+      "fullUrl": "urn:uuid:9b676667-4eea-4837-8c6e-df5c1bce9b38",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -659,12 +662,21 @@ This example is a transaction bundle where the Patient and Device resources are 
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "urn:oid:1.2.3.1"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
+        "id": "pulse-ox-002",
         "status": "final",
         "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+                "code": "phd-observation"
+              }
+            ]
+          },
           {
             "coding": [
               {
@@ -673,15 +685,7 @@ This example is a transaction bundle where the Patient and Device resources are 
                 "display": "Vital Signs"
               }
             ]
-          },
-       		{
-		        "coding" : [
-			        {
-			          "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-			          "code" : "phd-observation"
-			        }
-		        ]
-		      }  
+          }
         ],
         "code": {
           "coding": [
@@ -697,20 +701,21 @@ This example is a transaction bundle where the Patient and Device resources are 
           "text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate"
         },
         "subject": {
-          "reference": "urn:oid:1.2.3.0"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
           "value": 47,
+          "unit": "{beat}/min}",
           "system": "http://unitsofmeasure.org",
-          "code": "{beat}/min"
+          "code": "/min"
         },
         "device": {
-          "reference": "urn:oid:1.2.3.2"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "derivedFrom": [
           {
-            "reference": "urn:oid:3.1568997631834"
+            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
           }
         ],
         "component": [
@@ -743,4 +748,3 @@ This example is a transaction bundle where the Patient and Device resources are 
     }
   ]
 }
-</pre>

@@ -1,4 +1,4 @@
-This guide applies to any situation where Continua-compliant PHD data needs to be mapped to FHIR resources and/or such data needs to be read and interpreted by a consumer. In most cases PHDs are used in remote patient monitoring efforts but that does not mean within-enterprise uses of PHDs are excluded. However, it is important to emphasize that this guide does NOT specify anything about how the collected data is used.
+This guide applies to any situation where IEEE 11073-10206 compliant PHD data needs to be mapped to FHIR resources and/or such data needs to be read and interpreted by a consumer. In most cases PHDs are used in remote patient monitoring efforts but that does not mean within-enterprise uses of PHDs are excluded. However, it is important to emphasize that this guide does NOT specify anything about how the collected data is used.
 
 Remote patient monitoring involving the use of PHDs typically involves monitoring of vital signs, blood sugar levels, etc. on a scheduled basis, to allow care providers to observe the health of their patients. Patients are enrolled to the remote health monitoring program on request (e.g. prescription) of their care provider and obtain the necessary equipment and facilities in part or completely from the service provider. Ideally, the system should be simple enough that patients are able to install and operate the necessary equipment themselves, but that may not always be the case. Remote patient monitoring could also be fitness related, and the 'provider' may be a health care provider, a coach, or the individual. The same need to collect data from PHDs is required.
 
@@ -24,6 +24,6 @@ Example 3: Medical research
 -
 Another use case is participation in medical research. For example, a medical center associated with a large university is conducting a study on memory impairment interventions in the elderly. The study involves the patients participating in adaptive on-line memory ‘games’. The data is collected in association with a home healthcare service. The use of remote monitoring allows the study to collect a large set of data with minimal impact on the involved patients. The automated approach reduces cost, increases sample size, allows the collection of larger amounts of data from each participant, and the minimal impact is likely to result in longer participation times. Data anonymity is often important in such studies. 
 
- - [Data Users: Profile Consumers](ProfileConsumers.html)
- - [PHG implementers: PHG Implementation Guidance](TechnicalImplementationGuidance.html)
+ - [Next for data users: Profile Consumers](ProfileConsumers.html)
+ - [Next for PHG implementers: PHG Implementation Guidance](TechnicalImplementationGuidance.html)
  - [Previous: Scope](Scope.html) 

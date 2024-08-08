@@ -22,13 +22,7 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://terminology.hl7.org/CodeSystem/v3-ActReason" (exactly)
     * code 1..
     * code = #HTEST (exactly)
-* extension 0..1
-  * ^short = "Extension for the PHG"
-  * url = "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" (exactly)
-    * ^short = "Url indicating this is the gateway device extension"
-  * value[x] 1..
-  * value[x] only Reference
-    * ^short = "Reference to the Personal Health Gateway (PHG) Device"
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice named GatewayDevice 0..1
 * ^abstract = true
 * category ..* 
 * category only CodeableConcept
@@ -58,8 +52,8 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^slicing.rules = #open
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
-  * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, value, units code, patient and device identifiers, and selected elements of any component elements."
-  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-20601 devices, which are required to delete the data after sending, can also be considered real time. Temporarily stored data from Bluetooth Low Energy Health devices may be resent so these cannot be considered as real time. "
+  * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
+  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observation from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
   * ^requirements = "Allows observations to be distinguished in a selective enough manner to prevent resource duplication."
   * type ..0
   * system ..0
@@ -74,15 +68,15 @@ Description: "Common base profile with the elements that are common to the PHD I
       MDCType 1..1 and
       LoincCoding 0..1
   * coding[MDCType] ^short = "The 11073-10101 MDC code for the measurement"
-    * ^definition = "This MDC code expresses what the measurement is"
-    * ^comment = "For non-compound 11073-20601 metric numeric measurements, this code is obtained from one or more of the Type, Metric-Id, Nu-Observed-Value, and Metric-Id-Partition attributes. The algorithm to get the 16-bit partition and 16-bit term code is as follows:  1. The partition and term code are obtained from the Type attribute. 2. If there is a Metric-Id attribute the term code comes from this attribute. 3. If there is a Nu-Observed-Value attribute the term code comes from this attribute. 4. If the term code is NOT from the Type attribute, and there is a Metric-Id-Partition attribute, the partition comes from this attribute. 5. The 32-bit 11073-10101 code value is given by partition * 2 **16 + term code.  It is this value that is placed in the code.coding.code element for this MDCType slice.\r\nFor compound numeric measurements, the code comes from the Type attribute."
+    * ^definition = "This MDC code expresses what the measurement is."
+    * ^comment = "The value for the code can be obtained from the IEEE 11073-10206 Observation.type attribute."
     * system 1..
     * system = "urn:iso:std:iso:11073:10101" (exactly)
     * code 1..
       * ^comment = "Required for all measurements"
   * coding[LoincCoding] ^short = "The LOINC code for the measurement"
     * ^definition = "This LOINC code expresses what the measurement is"
-    * ^comment = "If the measurement is one of the magic vital signs, the Magic LOINC code for that vital sign as specified by FHIR appears here."
+    * ^comment = "If the observation is one of the FHIR-defined vital signs observation, the equivalent LOINC code for that vital sign as specified by FHIR appears here."
     * system 1..
     * system = "http://loinc.org" (exactly)
     * code 1..
@@ -108,15 +102,13 @@ Description: "Common base profile with the elements that are common to the PHD I
     * ^short = "Reference to the device responsible for the measurement"
     * ^definition = "Reference to the device-related resources that describe the sensor device taking the measurement. This element will point to a Device resource following the Phd Device Profile."
     * ^comment = "This reference points to the Device resource containing information about the sensor device that took the measurement."
-* derivedFrom ^short = "Reference to the Coincident Time Stamp Observation and/or Source-Handle-Reference Observation"
+* derivedFrom[Observation] ^short = "Reference to the Coincident Time Stamp Observation and/or Source-Handle-Reference Observation"
   * ^comment = "When the PHD reports a time stamp a reference to the Coincident Time Stamp Observation is placed here. When the PHD reports a Source-Handle-Reference/-List attribute the Observation(s) pointed to by that Source-Handle-Reference/-List is (are) placed here. One may end up with several Observation.derivedFrom elements."
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open
 * component contains
-    supplementalTypesComponent 0..* and
-    relativeTimeComponent 0..1 and
-    hiresRelativeTimeComponent 0..1
+    supplementalTypesComponent 0..*
 * component[supplementalTypesComponent] ^short = "Supplemental Type: A further description of the measurement type."
   * ^definition = "For each partition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
   * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes as partition:term code pairs. Each pair is a code describing something additional about the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average. An MDC_MODALITY_FAST would indicate that a short averaging is used and the result reported regardless of stability."
@@ -148,63 +140,4 @@ Description: "Common base profile with the elements that are common to the PHD I
       * code 1..
         * ^definition = "For the given Supplemental-Types entry the code here is given by: partition * 2**16 + term code"
   * dataAbsentReason ..0
-* component[relativeTimeComponent] ^short = "Relative time stamp of the measurement reported by the PHD."
-  * ^definition = "This component shall be present if the measurement contains a Relative-Time-Stamp."
-  * ^comment = "Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also provided a higher time resolution than permitted by the effective[x] time stamp should it be needed.\r\nThe Relative-Time-Stamp is a 32-bit unsigned integer in units of 1/8th ms. It is reported here scaled to microseconds."
-  * code from $Quantity11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-      * code = #67985 (exactly)
-        * ^definition = "The MDC code of the Relative-Time-Stamp attribute"
-    * text ^definition = "The reference identifier should be included in the description. For a Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL"
-  * value[x] 1..
-  * valueQuantity 1..1
-  * valueQuantity only Quantity
-    * ^sliceName = "valueQuantity"
-    * value 1..
-      * ^definition = "The value of the relative time attribute which is in units of 1/8th milliseconds scaled to microseconds."
-    * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "The unit code shall use the UCUM system"
-    * code 1..
-    * code = #us (exactly)
-      * ^definition = "The UCUM code for microseconds"
-  * dataAbsentReason ..0
-* component[hiresRelativeTimeComponent] ^short = "Hi-Resolution Relative time stamp of the measurement reported by the PHD."
-  * ^definition = "This component shall be present if the measurement contains Hi-Res-Relative-Time-Stamp."
-  * ^comment = "Hi Res Relative time stamps are converted to wall clock time by the PHG through the Coincident Time Stamp Observation. The original relative time value shall be provided here in order to recover the data sent by the sensor device. It also allows much higher time resolution than permitted in the effective{x] element should it be needed.\r\nThe Hi-Res-Relative-Time-Stamp is a 64-bit unsigned interger in units of microseconds."
-  * code from $Quantity11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.description = "Slice by coding..."
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-      * code = #68073 (exactly)
-        * ^definition = "The MDC code for the Hi-Res-Relative-Time-Stamp attribute"
-    * text ^definition = "The reference identifier should be included in the description. For a Hi-Res-Relative-Time-Stamp the ref id is MDC_ATTR_TIME_STAMP_REL_HI_RES"
-  * value[x] 1..
-  * valueQuantity 1..1
-  * valueQuantity only Quantity
-    * ^sliceName = "valueQuantity"
-    * value 1..
-      * ^short = "Numerical value"
-      * ^definition = "The value of the hi res relative time attribute (already in microseconds)."
-    * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "The unit code shall use the UCUM system"
-    * code 1..
-    * code = #us (exactly)
-      * ^definition = "The UCUM code for microseconds"
-  * dataAbsentReason ..0
+

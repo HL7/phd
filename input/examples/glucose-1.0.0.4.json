@@ -40,7 +40,7 @@
 		"text": "MDC_CTXT_GLU_MEAL: Meal context"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/patientExample-1"
 	},
 	"effectiveDateTime": "2017-06-02T15:02:35-04:00",
 	"valueCodeableConcept": {
@@ -57,7 +57,7 @@
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/coin-1234"
+			"reference": "Observation/coin-example-1"
 		}
 	]
 }

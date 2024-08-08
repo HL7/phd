@@ -311,7 +311,7 @@ For the Consumer of this profile the following table gives a quick guide to the 
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Numeric Observation Profile](NumericObservationProfile.html)
  - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
  - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)

@@ -296,7 +296,7 @@ An example of an Android PHG mapping is given [here](phgExample.html)
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Numeric Observation Profile](NumericObservationProfile.html)
  - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
  - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)

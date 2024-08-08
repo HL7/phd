@@ -24,10 +24,10 @@ The following table shows how the coded enumeration attributes are mapped to FHI
 |Attribute|FHIR coding|
 |-
 |Enum-Observed-Value-Simple-OID.*value*|Observation.valueCodeableConcept.coding.code|
-|Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>see Measurement Status in [PHD Base Observation Profile](BaseObservationProfile.html) |
+|Enum-Observed-Value.*value*<br/>Enum-Observed-Value.*metric-id*<br/>Enum-Observed-Value.*status*|Observation.valueCodeableConcept.coding.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>see Measurement Status in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html) |
 
 ### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](BaseObservationProfile.html The table below lists the items that make up the identifier.
+For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html The table below lists the items that make up the identifier.
 
 |Entry|value|Additional information|
 |-
@@ -50,7 +50,7 @@ The [Glucose Meal Context](glucoseEnum.html) example shows a glucose meal contex
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Numeric Observation Profile](NumericObservationProfile.html)
  - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
  - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)

@@ -7,6 +7,10 @@ Description: "Codes used to describe the Device (PHD or PHG) Identifiers, such a
 * ^version = "current"
 * ^status = #active
 * ^experimental = false
+* ^version = "0.3.0"
+* ^status = #active
+* ^experimental = false
+* ^date = "2018-11-25"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by

@@ -44,7 +44,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		"text": "MDC_CTXT_GLU_MEAL: Meal context"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10" // Resource is already on the server
+		"reference": "Patient/patientExample-1" // Resource is already on the server
 	},
 	"effectiveDateTime": "2017-06-02T15:02:35-04:00",
 	"valueCodeableConcept": {
@@ -61,7 +61,7 @@ Note there is no logical id in this resource as this resource is being uploaded 
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/coin-1234" // Resource is already on the server
+			"reference": "Observation/coin-example-1" // Resource is already on the server
 		}
 	]
 }

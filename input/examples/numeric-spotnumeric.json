@@ -1,6 +1,5 @@
 {
 	"resourceType": "Observation",
-	"id":"spotnumeric-1.0.0.3",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"
@@ -53,11 +52,11 @@
 		"text": "MDC_PULS_OXIM_PULS_RATE"
 	},
 	"subject": {
-		"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+		"reference": "Patient/patientExample-1"
 	},
 	"performer": [
 		{
-			"reference": "Patient/sisansarahId.1.2.3.4.5.6.7.8.10"
+			"reference": "Patient/patientExample-1"
 		}
 	],
 	"effectiveDateTime": "2018-11-13T17:59:02-05:00",

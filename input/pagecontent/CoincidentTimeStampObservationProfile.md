@@ -52,12 +52,12 @@ The Observation.device element is a reference to the Device resource representin
 There is no additional information reported in component elements in this profile.
 
 ### Examples:
-An example of a coincident time stamp observation where the PHG is better synchronized to NTP time than the PHD is given [here](coincidentTime.html). An example where the PHD has a time fault is given [here](coinFault.html).
+An example of a coincident time stamp observation where the PHG is better synchronized to NTP time than the PHD is given [here](Observation-coin-example-1.html). An example where the PHD has a time fault is given [here](Observation-coin-example-timefault.html).
 
 ### The Other Profiles
 
  - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](BaseObservationProfile.html)
+ - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
  - [Numeric Observation Profile](NumericObservationProfile.html)
  - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
  - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)

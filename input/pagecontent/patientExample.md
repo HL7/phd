@@ -3,7 +3,7 @@ This example shows a PHD Patient resource including the optional patient name en
 <pre>
 {
 	"resourceType": "Patient",
-	"id": "sisansarahId.1.2.3.4.5.6.7.8.10",
+	"id": "patientExample-1",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"

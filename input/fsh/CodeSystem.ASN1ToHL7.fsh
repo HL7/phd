@@ -4,19 +4,20 @@ Title: "ASN1 bits to HL7 enumerated values"
 Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occurred when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement. More codes maybe added to this list in the future."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
-* ^version = "current"
+* ^version = "0.3.0"
 * ^status = #active
 * ^experimental = false
+* ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^property[0].code = #type
-* ^property[=].uri = "https://sagroups.ieee.org/11073/TypeIsASN1EventOrState"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#type"
 * ^property[=].description = "Indicates that the code type is an event or state"
 * ^property[=].type = #code
 * ^property[+].code = #source
-* ^property[=].uri = "https://sagroups.ieee.org/11073/SourceIsMeasurementOrDevice"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#source"
 * ^property[=].description = "Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #string
 * #67925.0 "onMains" "Indicates whether the PHD is on or off mains power"
