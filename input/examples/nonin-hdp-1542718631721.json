@@ -3,7 +3,7 @@
   "id": "nonin-hdp-1542718631721",
   "type": "transaction",
   "entry": [
-    { "fullUrl": "http://example.org/Patient/patient-001",
+    { "fullUrl": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2",
       "resource": {
         "resourceType": "Patient",
         "meta": {
@@ -43,7 +43,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/Device/phg-001",
+      "fullUrl": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -237,7 +237,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/Device/phd-001",
+      "fullUrl": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a",
       "resource": {
         "resourceType": "Device",
         "meta": {
@@ -510,7 +510,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/Observation/cts-001",
+      "fullUrl": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108",
       "resource": {
         "resourceType": "Observation",
         "meta": {
@@ -523,7 +523,7 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "Device/phg-001"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
@@ -538,12 +538,12 @@
           "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
         },
         "subject": {
-          "reference": "Patient/patient-001"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
         "device": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         }
       },
       "request": {
@@ -564,7 +564,7 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "Device/phg-001"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
@@ -602,7 +602,7 @@
           "text": "MDC_PULS_OXIM_SAT_O2: Blood 0₂"
         },
         "subject": {
-          "reference": "Patient/patient-001"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
@@ -612,11 +612,11 @@
           "code": "%"
         },
         "device": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "derivedFrom": [
           {
-            "reference": "Observation/cts-001"
+            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
           }
         ],
         "component": [
@@ -660,7 +660,7 @@
           {
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
-              "reference": "Device/phg-001"
+              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
           }
         ],
@@ -698,7 +698,7 @@
           "text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate"
         },
         "subject": {
-          "reference": "Patient/patient-001"
+          "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
         },
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
@@ -708,11 +708,11 @@
           "code": "/min"
         },
         "device": {
-          "reference": "Device/phd-001"
+          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "derivedFrom": [
           {
-            "reference": "Observation/cts-001"
+            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
           }
         ],
         "component": [

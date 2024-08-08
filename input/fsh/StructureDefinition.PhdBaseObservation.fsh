@@ -29,6 +29,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * value[x] 1..
   * value[x] only Reference
     * ^short = "Reference to the Personal Health Gateway (PHG) Device"
+* ^abstract = true
 * category ..* 
 * category only CodeableConcept
   * ^slicing.discriminator[0].type = #value

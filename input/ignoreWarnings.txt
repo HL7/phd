@@ -2,39 +2,29 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
-# This rule is too strict for device generated observations; all example observation in this IG are suppossed to be device generated with often an unknown performer. Added text in the IG to explain this.
+# All example observation in this IG are suppossed to be device generated with often an unknown performer. There is text in the IG to explain this. The affected example observations / bundles are: bits-observation.json, bundle-continuousnonin.json, bundle-example-1.json, coin-20181119174911.json, coin-20181119202022.json, coin-example-1.json, coin-example-timefault.json, glucose-1.0.0.4.json, numeric-observation-not-a-number.json, numeric-spotnumeric.json, stringenum-1234.json
 Best Practice Recommendation: In general, all observations should have a performer
 
-# This is a valid code for a spirometer device type. The IEEE 11073-10429 spirometer device specialization was published in 2022. Started a Zulip discussion to get this code added.
+# This is a recent code for a spirometer device type. Created a pull request on the codes in https://github.com/FHIR/packages/pulls
 The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
 
-# Partition is a known IEEE 11073-10101 concept - not sure how to fix this....
+# partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
-# The ISO/IEEE 11073 Codesystem is not draft - started a Zulip discussion to fix that.
+# The ISO/IEEE 11073 Codesystem is not draft - fixed by Grahame, but needs time before this warning goes away... https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
 
-# The PHD Base Observation is never instantiated directly on its own - it provides a basis for specific Observation profiles
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation'): The Implementation Guide contains no examples for this profile
-
-# When this happens, we'll handle it with THO... however ignores does not really work...
+# These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The slicing checks on this blood pressure example are too strict: in addition to meeting the FHIR bp profile it has an additional category element and an additional mean bp component and no other optional components as defined in the PhdBaseObservation.
-This element does not match any known slice Defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+# When a vital signs observation has a derivedFrom reference to a timestamp observation this is also checked against vital signs, leading to these warnings. 
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|1.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# The slicing checks on this heart rate example are too strict: in addition to meeting the FHIR bp profile it has an additional category element.
-This element does not match any known slice Defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# The slicing checks on this oxygen saturation example are too strict: in addition to meeting the FHIR bp profile it has an additional category element.
-This element does not match any known slice Defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# The check on category code is too strict when multiple categories are used.
+# This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd-observations:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.3.0), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
-# Local references within a bundle are not properly checked
-Entry 0 matches the reference Patient/patient-001 by type and id but it's fullUrl http://example.org/Patient/patient-001 does not match the full target URL urn:uuid:patient-001 by Bundle resolution rules
-Entry 1 matches the reference Device/phg-001 by type and id but it's fullUrl http://example.org/Device/phg-001 does not match the full target URL urn:uuid:phg-001 by Bundle resolution rules
-Entry 2 matches the reference Device/phd-001 by type and id but it's fullUrl http://example.org/Device/phd-001 does not match the full target URL urn:uuid:phd-001 by Bundle resolution rules
-Entry 3 matches the reference Observation/cts-001 by type and id but it's fullUrl http://example.org/Observation/cts-001 does not match the full target URL urn:uuid:cts-001 by Bundle resolution rules
+# This warning is generated for a coincident timestamp observation that is not a vital signs observation, but referenced in a derivedFrom element in another observation that is a vital sign. This will be fixed by using an extension instead in the next version of the IG. See https://jira.hl7.org/browse/FHIR-46586.
+Details for urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108 matching against profile http://hl7.org/fhir/StructureDefinition/vitalsigns|4.3.0
