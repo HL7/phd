@@ -20,14 +20,14 @@ Description: "Base StructureDefinition for the Device Resource for a PHD"
   * ^slicing.rules = #open
   * ^short = "Information that uniquely describes the personal health device"
   * ^definition = "The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is required and the transportAddressIdentifier is highly recommended as this is what most end users see and can obtain from the device itself or device packaging."
-  * ^alias = "11073-20601 System id, transport address, etc."
+  * ^alias = "11073-10206 System id, transport address, etc."
 * identifier contains
     systemIdIdentifier 1..1 and
     btmacAddressIdentifier 0..1 and
     macAddressIdentifier 0..1
 * identifier[systemIdIdentifier] ^short = "System Id identifier"
   * ^definition = "This entry contains the IEEE EUI-64. If absent (bad device) set to all zeros."
-  * ^alias = "11073-20601 System id"
+  * ^alias = "11073-10206 System id"
   * type 1..
     * coding 1..1
       * ^short = "Indicates this is the IEEE 11073 System Id identifier"
@@ -74,19 +74,16 @@ Description: "Base StructureDefinition for the Device Resource for a PHD"
     * ^definition = "The MAC as an EUI-48 such as 00-E5-DE-AD-77-C8. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
 * manufacturer 1..
-  * ^short = "Manufacturer name from System-Model.manufacturer"
-  * ^definition = "The manufacturer name as reported by the System-Model attribute."
-  * ^comment = "The System-Model attribute is required by the IEEE 11073-20601 specification"
-* serialNumber ^short = "Serial number from the Production-Specification attribute"
-  * ^definition = "The serial number as reported by the Production-Specification attribute."
-  * ^comment = "The Production-Specification is optional in the 11073-20601 specification but required by Continua. A Continua certified PHD shall report a serial number. The serial number shall be mapped if the PHD reports it."
+  * ^short = "Manufacturer name from SystemInfo.system-manufacturer"
+  * ^definition = "The manufacturer name as reported in the IEEE 11073-10206 SystemInfo."
+  * ^comment = "The system manufacturer attribute is required by the IEEE 11073-10206 specification"
+* serialNumber ^short = "Serial number from the SystemInfo.serial-number"
+  * ^definition = "The serial number as reported by the IEEE 11073-10206 SystemInfo."
+  * ^comment = "The serial number is optional in the 11073-10206 specification. The serial number shall be present if the PHD reports it."
 * modelNumber 1..
-  * ^short = "Model number from System-Model.model"
-  * ^definition = "The model number as reported by the System-Model attribute."
-  * ^comment = "The System-Model attribute is required by the IEEE 11073-20601 specification"
-* partNumber ^short = "Part number from the Production-Specification attribute"
-  * ^definition = "The part number as reported by the Production-Specification attribute."
-  * ^comment = "The Production-Specification is optional in the 11073-20601 specification. This element shall be mapped if the PHD reports it"
+  * ^short = "Model number from SystemInfo.model-number"
+  * ^definition = "The model number as reported by the SystemInfo attribute."
+  * ^comment = "The model number attribute is required by the IEEE 11073-10206 specification"
 * type 1..
   * ^short = "Indicates the device is a PHD."
   * coding ^slicing.discriminator[0].type = #value
@@ -122,9 +119,9 @@ Description: "Base StructureDefinition for the Device Resource for a PHD"
         * ^short = "The 11073-10101 specialization code from a System-Type-Spec-List[i].type."
   * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
-    * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-20601 standard, the version is the 20601 protocol version."
+    * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-10206 standard, the version is the 10206 protocol version."
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, and Continua versions."
-  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 20601), and Software versions come from the Production-Specification attribute. The Continua version comes from the Reg-Cert-Data-List attribute. Continua compliant PHDs report at least a firmware and Continua version. A separate version entry is needed for each of the versions reported by the PHD."
+  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 10206), and Software versions come from the Production-Specification attribute. The Continua version comes from the Reg-Cert-Data-List attribute. Continua compliant PHDs report at least a firmware and Continua version. A separate version entry is needed for each of the versions reported by the PHD."
   * type 1..
     * coding ^slicing.discriminator[0].type = #value
       * ^slicing.discriminator[=].path = "system"

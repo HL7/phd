@@ -52,8 +52,8 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^slicing.rules = #open
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
-  * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, value, units code, patient and device identifiers, and selected elements of any component elements."
-  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-20601 devices, which are required to delete the data after sending, can also be considered real time. Temporarily stored data from Bluetooth Low Energy Health devices may be resent so these cannot be considered as real time. "
+  * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
+  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observation from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
   * ^requirements = "Allows observations to be distinguished in a selective enough manner to prevent resource duplication."
   * type ..0
   * system ..0
@@ -68,15 +68,15 @@ Description: "Common base profile with the elements that are common to the PHD I
       MDCType 1..1 and
       LoincCoding 0..1
   * coding[MDCType] ^short = "The 11073-10101 MDC code for the measurement"
-    * ^definition = "This MDC code expresses what the measurement is"
-    * ^comment = "For non-compound 11073-20601 metric numeric measurements, this code is obtained from one or more of the Type, Metric-Id, Nu-Observed-Value, and Metric-Id-Partition attributes. The algorithm to get the 16-bit partition and 16-bit term code is as follows:  1. The partition and term code are obtained from the Type attribute. 2. If there is a Metric-Id attribute the term code comes from this attribute. 3. If there is a Nu-Observed-Value attribute the term code comes from this attribute. 4. If the term code is NOT from the Type attribute, and there is a Metric-Id-Partition attribute, the partition comes from this attribute. 5. The 32-bit 11073-10101 code value is given by partition * 2 **16 + term code.  It is this value that is placed in the code.coding.code element for this MDCType slice.\r\nFor compound numeric measurements, the code comes from the Type attribute."
+    * ^definition = "This MDC code expresses what the measurement is."
+    * ^comment = "The value for the code can be obtained from the IEEE 11073-10206 Observation.type attribute."
     * system 1..
     * system = "urn:iso:std:iso:11073:10101" (exactly)
     * code 1..
       * ^comment = "Required for all measurements"
   * coding[LoincCoding] ^short = "The LOINC code for the measurement"
     * ^definition = "This LOINC code expresses what the measurement is"
-    * ^comment = "If the measurement is one of the magic vital signs, the Magic LOINC code for that vital sign as specified by FHIR appears here."
+    * ^comment = "If the observation is one of the FHIR-defined vital signs observation, the equivalent LOINC code for that vital sign as specified by FHIR appears here."
     * system 1..
     * system = "http://loinc.org" (exactly)
     * code 1..
