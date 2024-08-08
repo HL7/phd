@@ -22,13 +22,7 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://terminology.hl7.org/CodeSystem/v3-ActReason" (exactly)
     * code 1..
     * code = #HTEST (exactly)
-* extension 0..1
-  * ^short = "Extension for the PHG"
-  * url = "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" (exactly)
-    * ^short = "Url indicating this is the gateway device extension"
-  * value[x] 1..
-  * value[x] only Reference
-    * ^short = "Reference to the Personal Health Gateway (PHG) Device"
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice named GatewayDevice 0..1
 * ^abstract = true
 * category ..* 
 * category only CodeableConcept
