@@ -832,7 +832,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="ballot"/>
+      <value value="STU2 Ballot"/>
     </parameter>
   </definition>
 </ImplementationGuide>
