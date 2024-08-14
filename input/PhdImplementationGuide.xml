@@ -75,9 +75,9 @@ In this example there are only xml structure definitions, value sets, code syste
   <fhirVersion value="4.3.0"/>
 <!-- declare dependency on PoCD IG for measurement status CodeSystem -->
   <dependsOn>
-    <uri value="https://hl7.org/fhir/uv/pocd/2021Sep/"/>
-	<packageId value="hl7.fhir.uv.pocd"/>
-	<version value="0.3.0"/>
+    <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>
+	  <packageId value="hl7.fhir.uv.pocd"/>
+  	<version value="0.3.0"/>
   </dependsOn>
 
   <definition>
