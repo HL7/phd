@@ -23,7 +23,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|1.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd-observations:
+# This warning is generated when new observation categoriy codes are defined and required in observation profiles, outside the preferred set of codes from the base FHIR spec: 
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.3.0), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
 # This warning is generated for a coincident timestamp observation that is not a vital signs observation, but referenced in a derivedFrom element in another observation that is a vital sign. This will be fixed by using an extension instead in the next version of the IG. See https://jira.hl7.org/browse/FHIR-46586.

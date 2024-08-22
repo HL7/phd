@@ -99,7 +99,7 @@ The simplest example of a mapping of an ASN1 BITs enumeration object to a FHIR O
 This implementation guide specifies a structure definition profile that applies to all ASN1 Bits Metric measurements.
 
 ### Other Potential Mappings
-One could go further and add mappings of IEEE-11073-20601 specifics such as the Configuration Report. This addition would require the use of the DeviceMetric resource. Adding such mappings would add significant bulk to the upload. Mapping of the Configuration Report would not be something of interest to medical personnel. Giving the cost in complexity and bulk it is not considered in this guide. 
+One could go further and add mappings of IEEE-11073-20601 specifics such as the Configuration Report. This addition would require the use of the DeviceMetric resource. Adding such mappings would add significant bulk to the upload. Mapping of the Configuration Report would not be something of interest to medical personnel. Giving the cost in complexity and bulk it is not considered in this version of the guide. 
 
 
 ### The Devil is in the Details
