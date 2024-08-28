@@ -75,7 +75,7 @@ In this example there are only xml structure definitions, value sets, code syste
   <fhirVersion value="4.3.0"/>
 <!-- declare dependency on PoCD IG for measurement status CodeSystem -->
   <dependsOn>
-    <uri value="https://hl7.org/fhir/uv/pocd/2021Sep"/>
+    <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>
 	<packageId value="hl7.fhir.uv.pocd"/>
 	<version value="0.3.0"/>
   </dependsOn>
@@ -405,6 +405,16 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example Bundled upload"/>
       <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
+      <groupingId value="examples" />
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="DeviceMetric/bp-devicemetric-example"/>
+      </reference> 
+      <name value="Example Phd Device Metric"/>
+      <description value="This example is a PhdDeviceMetric for a Blood Pressure measurement." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"/>
       <groupingId value="examples" />
     </resource>
     

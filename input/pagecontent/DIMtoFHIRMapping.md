@@ -98,9 +98,8 @@ The simplest example of a mapping of an ASN1 BITs enumeration object to a FHIR O
 
 This implementation guide specifies a structure definition profile that applies to all ASN1 Bits Metric measurements.
 
-### Other Potential Mappings
-One could go further and add mappings of IEEE-11073-20601 specifics such as the Configuration Report. This addition would require the use of the DeviceMetric resource. Adding such mappings would add significant bulk to the upload. Mapping of the Configuration Report would not be something of interest to medical personnel. Giving the cost in complexity and bulk it is not considered in this guide. 
-
+### PhdDeviceMetric
+The IEEE 11073-10206 ACOM specification and the Bluetooth SIG GHS specifications require a compliant device to publish the list of supported observation types. This list of observation types can be mapped to a set of [PhdDeviceMetric resources](StructureDefinition-PhdDeviceMetric.html). The GHS specifications also support an optional Observation Schedule descriptor. The information in this descriptor can be mapped to the DeviceMetric.measurementPeriod. 
 
 ### The Devil is in the Details
 Unfortunately, the Metric object to Observation resource mapping is not always a simple one-to-one relation between IEEE 11073-20601 attributes and Observation elements as shown in the tables above. For example, the code that ends up in the Observation.code element does not always come from the Type attribute. The PHD decoder (the endpoint that receives and decodes IEEE 20601 data) will, in general, need to look at other attributes, should they be sent, to get the final code to enter in the Observation.code element. The same goes for the unit code. The Unit-code attribute can be overridden if certain other attributes exist.
