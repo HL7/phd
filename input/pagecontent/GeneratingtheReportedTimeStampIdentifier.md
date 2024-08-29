@@ -12,7 +12,7 @@ This algorithm shows how one generates the time stamp as reported by the PHD for
    - For example, when a Bluetooth GHS timestamp reports an offset of +4 (1 hour) this will be appended as "+4". Combined with the previous examples, this becomes "690897360.567+4"
 
 - If the PHD Observation also includes a Measurement-duration attribute this will be appended to the endcoded timestamp as a ".." followed by the duration encoded according to the timestamp resolution.
-   - For example a duration of 1 second with a millisecond resolution will be appended as "..1.000". Combined with the previous example this becomes "690897360.567+4..1.00"
+   - For example a duration of 1 second with a millisecond resolution will be appended as "..1.000". Combined with the previous example this becomes "690897360.567+4..1.000"
  
  - [Next: The Coincident Time Stamp](CoincidentTimeStamp.html)
  - [Previous: The Observation Identifier](ObservationIdentifier.html)
