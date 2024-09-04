@@ -29,7 +29,7 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Dev
 * Mdc#528426 "MDC_DEV_SPEC_PROFILE_HF_STRENGH: Strength and fitness equipment"
 * Mdc#528455 "MDC_DEV_SPEC_PROFILE_AI_ACTIVITY_HUB: Independent living hub"
 * Mdc#528456 "MDC_DEV_SPEC_PROFILE_AI_NED_MINDER: Medication Monitor"
-* Mdc#528457 "MDC_DEV_SPEC_PROFILE_GENERIC: Device following the 20601 standard but no specific specialization"
+* Mdc#528457 "MDC_DEV_SPEC_PROFILE_GENERIC: Device following the IEEE 11073-10206 standard but no specific specialization"
 * Mdc#528484 "MDC_DEV_SUB_SPEC_PROFILE_STEP_COUNTER: Step counter"
 * Mdc#528501 "MDC_DEV_SUB_SPEC_PROFILE_FALL_SENSOR: Fall sensor"
 * Mdc#528502 "MDC_DEV_SUB_SPEC_PROFILE_PERS_SENSOR: Personal sensor"

@@ -1,4 +1,4 @@
-The Real Time Sample Array (RTSA) Observation Profile is used when the PHD metric measurement is a periodic sequences of scalars in time, typically waveforms. In theory, this measurement could be split up into a sequence of Numeric Observations but that would be inefficient especially if one is talking about a 1000 samples per second or more. Waveforms are used for spirometry, ECG, pulse oximeter pleth wave traces, etc. These measurement types are quite rare.
+The Real Time Sample Array (RTSA) Observation Profile is used when the PHD metric measurement is a periodic sequences of scalars in time, typically waveforms. In theory, this measurement could be split up into a sequence of Numeric Observations but that would be inefficient especially if one is talking about a 1000 samples per second or more. Waveforms are used for spirometry, ECG, pulse oximeter pleth wave traces, etc. 
 
 The measurement is a waveform when the PHD metric contains the following attribute:
 
@@ -13,7 +13,7 @@ padding: 6px;}</style>
 
 This attribute contain a measurement that is a sequence of scaled periodic values. It is typically used when reporting waveforms. The values are scaled to reduced bandwidth. The bandwidth reduction can be significant in cases where the actual values are small fluctuations about a large average value. The scale factors, number of bits in each sample, the period, and the number of data elements in the sequence are given by a set of support attributes.
 
-IEEE 11073-20601 does not support the concept of compound arrays, so the sampled data is always one dimensional in time only. Reporting a sequence of x, y, z acceleration components from a PHD would require three RTSA objects. FHIR, on the other hand, does support the concept of two-dimensional arrays. It would be possible for the PHG to map the x, y, and z components of an acceleration to a single two-dimensional valueSampledData element. However, doing this task requires pre-existing knowledge about each specialization and cannot be done generically. Therefore this IG does not support such a mapping.
+IEEE 11073-20601 does not support the concept of compound arrays, so the sampled data is always one dimensional in time only. Reporting a sequence of x, y, z acceleration components from a PHD would require three RTSA objects. FHIR, on the other hand, does support the concept of two-dimensional arrays. It would be possible for the PHG to map the x, y, and z components of an acceleration to a single three-dimensional valueSampledData element. However, doing this task requires pre-existing knowledge about each specialization and cannot be done generically. Therefore this IG does not support such a mapping.
 
 |Support Attribute|Value|Description|
 |-

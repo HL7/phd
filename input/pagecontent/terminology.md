@@ -1,6 +1,6 @@
 ## Terminology
 
-The ISO/IEEE 11073-10101 Nomenclature standard (11073 MDC) provides a comprehensive terminology for device models according to the ISO/IEEE 11073-10201 and 11073-20601 Domain information models (DIM). 
+The ISO/IEEE 11073-10101 Nomenclature standard (11073 MDC) provides a comprehensive terminology for device models according to the ISO/IEEE 11073-10201 and 11073-10206 Domain information models (DIM). 
 It is the required code system for profiles in this implementation guide. Other additional coding systems expressing the same concepts may also be used.
 Reference identifiers, terminology codes, and descriptions are available at the <a href="https://rtmms.nist.gov/rtmms/index.htm">Rosetta Terminology Mapping Management System</a> (RTMMS).
 
