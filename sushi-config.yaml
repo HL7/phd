@@ -2,10 +2,10 @@ FSHOnly: true
 canonical: http://hl7.org/fhir/uv/phd
 name: PhdImplementationGuide
 status: active
-version: 1.0.0
+version: 1.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2020+
-releaseLabel: Build CI
+releaseLabel: STU1.1
 publisher:
   name: HL7 International / Health Care Devices
   url: http://www.hl7.org/Special/committees/healthcaredevices
