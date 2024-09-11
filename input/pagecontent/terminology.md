@@ -11,10 +11,11 @@ Reference identifiers, terminology codes, and descriptions are available at the 
 </li>
 </ul>
 <p>The <a href="http://hl7.org/fhir/observation-vitalsigns.html">Vital Signs Profile</a>, which is part of FHIR core specification, applies for some commonly used measurement observations (e. g., heart rate, blood pressure, respiratory rate, oxygen saturation, body temperature). The main impact this core requirement imposes on the PHD profiles is that for measurements that are considered vital signs, the LOINC code for that vital sign must be present. 
-<p>
+</p><p>
 Consequently for vital signs measurements the <code>Observation.code</code> and, for compound metrics, the <code>Observation.component.code</code> elements must contain a matching <a href="http://hl7.org/fhir/loinc.html">LOINC</a> code in addition to the required 11073 MDC code. 
-<p>
+</p><p>
 The Vital Signs Profile also specifies that the Quantity data type in <code>Observation.value[x]</code> and <code>Observation.component.value[x]</code> contains the units of measure which shall be <a href="http://hl7.org/fhir/ucum.html">UCUM</a>. The PHD profiles extends this requirement for all measurements that are of type Quantity, with the exception of rare cases where no UCUM code is defined.
+</p>
 
 ### Code Systems
 

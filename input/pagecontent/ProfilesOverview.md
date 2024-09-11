@@ -14,7 +14,7 @@ The PHG Device Profile is used to report the PHG properties.
 The PHD Patient Profile is used to report the patient data. Dependent on the use case the Patient resource may contain only keys to identify the patient that only the health care provider can match to a person. It is also possible that the Patient resource is never uploaded by the PHG. In that case the logical id to a Patient resource on the FHIR server must be provided to the PHG by out-of-band means.
 
 ### Notes on Examples
-The examples referenced in these profile sections are what is *uploaded*. These examples will differ slightly from similar examples in the Artifacts section. The reason is that the examples in the Artificats section are required to represent the resource *as it appears on the server*. However, when uploading, create operations either have no logical ids or temporary logical ids. Resources on the server, however, are required to have logical ids. 
+The examples referenced in these profile sections are what is *uploaded*. These examples will differ slightly from similar examples in the Artifacts section. The reason is that the examples in the Artifacts section are required to represent the resource *as it appears on the server*. However, when uploading, create operations either have no logical ids or temporary logical ids. Resources on the server, however, are required to have logical ids.
 
 ### Measurement Observation Profiles
 The measurement observation profiles mirror the  measurement 'value-types' of that a IEEE 11073-10206 PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
@@ -27,7 +27,7 @@ The measurement observation profiles mirror the  measurement 'value-types' of th
 | |Multiple Event |component.valueCodeableConcept(s)|
 | |Multiple Boolean State (Bitstring)|component.code<br/>component.valueCodeableConcepts|
 |string |string enumeration|valueString|
-|peridoic samples |sample array|valueSampledData|
+|periodic samples |sample array|valueSampledData|
 |compound |Compound |component.value[x]]|
 
 An UML diagram is shown below:
