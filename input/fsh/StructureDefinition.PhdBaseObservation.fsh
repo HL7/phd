@@ -23,6 +23,7 @@ Description: "Common base profile with the elements that are common to the PHD I
     * code 1..
     * code = #HTEST (exactly)
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice named GatewayDevice 0..1
+* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference named CoincidentTimeStamp 0..1
 * ^abstract = true
 * category ..* 
 * category only CodeableConcept
@@ -102,8 +103,8 @@ Description: "Common base profile with the elements that are common to the PHD I
     * ^short = "Reference to the device responsible for the measurement"
     * ^definition = "Reference to the device-related resources that describe the sensor device taking the measurement. This element will point to a Device resource following the Phd Device Profile."
     * ^comment = "This reference points to the Device resource containing information about the sensor device that took the measurement."
-* derivedFrom[Observation] ^short = "Reference to the Coincident Time Stamp Observation and/or Source-Handle-Reference Observation"
-  * ^comment = "When the PHD reports a time stamp a reference to the Coincident Time Stamp Observation is placed here. When the PHD reports a Source-Handle-Reference/-List attribute the Observation(s) pointed to by that Source-Handle-Reference/-List is (are) placed here. One may end up with several Observation.derivedFrom elements."
+//* derivedFrom[Observation] ^short = "Reference to the Coincident Time Stamp Observation and/or Source-Handle-Reference Observation"
+//  * ^comment = "When the PHD reports a time stamp a reference to the Coincident Time Stamp Observation is placed here. When the PHD reports a Source-Handle-Reference/-List attribute the Observation(s) pointed to by that Source-Handle-Reference/-List is (are) placed here. One may end up with several Observation.derivedFrom elements."
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open

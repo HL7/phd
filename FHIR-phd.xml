@@ -6,7 +6,6 @@
 <version code="0.3.0" deprecated="true" url="http://hl7.org/fhir/uv/phd/2019May"/>
 <version code="0.2.0" deprecated="true" url="http://hl7.org/fhir/uv/phd/2019Jan"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/uv/phd/2018Jan"/>
-<version code="1.1.0" deprecated="true" url="http://hl7.org/fhir/uv/phd/STU1.1"/>
 <version code="0.1" deprecated="true" url="http://hl7.org/fhir/uv/phd/2018Jan"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
@@ -17,6 +16,7 @@
 <artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
 <artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
 <artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept11073MDC"/>
+<artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="ContinuaDeviceIdentifiers"/>
 <artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="ContinuaHFS"/>
 <artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
