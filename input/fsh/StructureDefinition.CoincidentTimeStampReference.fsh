@@ -10,7 +10,7 @@ Context: Observation
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
 * ^extension[=].valueInteger = 0
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
+* ^extension[=].valueCode = #draft
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"
 * ^extension[=].valueCode = #can-bind
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"
