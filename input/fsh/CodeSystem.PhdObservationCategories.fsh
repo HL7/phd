@@ -6,7 +6,7 @@ Description: "Codes used for tagging observations coming from PHD devices. More 
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories"
 * ^version = "0.1.0"
 * ^status = #draft
-* ^experimental = true
+* ^experimental = false
 * ^date = "2024-04-18"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
 * ^caseSensitive = true
