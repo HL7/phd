@@ -15,29 +15,13 @@ The property 'partition' is not known for the system 'urn:iso:std:iso:11073:1010
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # When a vital signs observation has a derivedFrom reference to a timestamp observation this is also checked against vital signs, leading to these warnings. 
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|1.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when new observation categoriy codes are defined and required in observation profiles, outside the preferred set of codes from the base FHIR spec: 
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.3.0), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
 # This warning is generated for a coincident timestamp observation that is not a vital signs observation, but referenced in a derivedFrom element in another observation that is a vital sign. This will be fixed by using an extension instead in the next version of the IG. See https://jira.hl7.org/browse/FHIR-46586.
-Details for urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108 matching against profile http://hl7.org/fhir/StructureDefinition/vitalsigns|4.3.0
-
-# where do these Observation warnings come from?
-The definition for the element 'Observation.meta.tag' binds to the value set 'http://hl7.org/fhir/ValueSet/common-tags' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.status' binds to the value set 'http://hl7.org/fhir/ValueSet/observation-status|4.3.0' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.category' binds to the value set 'http://hl7.org/fhir/ValueSet/observation-category' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.category' binds to the value set 'http://hl7.org/fhir/ValueSet/observation-category' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.code' binds to the value set 'http://hl7.org/fhir/ValueSet/observation-codes' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.bodySite' binds to the value set 'http://hl7.org/fhir/ValueSet/body-site' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.method' binds to the value set 'http://hl7.org/fhir/ValueSet/observation-methods' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.referenceRange.type' binds to the value set 'http://hl7.org/fhir/ValueSet/referencerange-meaning' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.referenceRange.appliesTo' binds to the value set 'http://hl7.org/fhir/ValueSet/referencerange-appliesto' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Observation.component.code' binds to the value set 'http://hl7.org/fhir/ValueSet/observation-codes' which is experimental, but this structure is not labeled as experimental
-
-# where do these Device warnings come from?
-The definition for the element 'Device.deviceName.type' binds to the value set 'http://hl7.org/fhir/ValueSet/device-nametype|4.3.0' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Device.type' binds to the value set 'http://hl7.org/fhir/ValueSet/device-type' which is experimental, but this structure is not labeled as experimental
+Details for urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108 matching against profile http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
