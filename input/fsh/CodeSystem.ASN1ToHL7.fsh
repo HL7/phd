@@ -20,11 +20,17 @@ Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes h
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#source"
 * ^property[=].description = "Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #string
+* ^property[+].code = #MDCCode
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#MDCCode"
+* ^property[=].description = "The decimal code for the MDC code of the bits observation"
+* ^property[=].type = #code
 * #67925.0 "onMains" "Indicates whether the PHD is on or off mains power"
   * ^property[0].code = #type
   * ^property[=].valueCode = ASN1EventOrState#state
   * ^property[+].code = #source
   * ^property[=].valueString = "attribute"
+  * ^property[0].code = #MDCCode
+  * ^property[=].valueCode = Mdc#67925
 * #67925.1 "onBattery" "Indicates whether the PHD is on or off Battery power"
   * ^property[0].code = #type
   * ^property[=].valueCode = ASN1EventOrState#state
