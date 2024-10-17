@@ -25,3 +25,6 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 
 # This warning is generated for a coincident timestamp observation that is not a vital signs observation, but referenced in a derivedFrom element in another observation that is a vital sign. This will be fixed by using an extension instead in the next version of the IG. See https://jira.hl7.org/browse/FHIR-46586.
 Details for urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108 matching against profile http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
+
+# publisher issue - it generates duplicate anchor Ids
+The html source has duplicate anchor Ids:%
