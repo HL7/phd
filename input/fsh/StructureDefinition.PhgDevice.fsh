@@ -19,14 +19,14 @@ Description: "Base StructureDefinition for the Device Resource for a PHG"
 * identifier ^slicing.rules = #open
 * identifier ^short = "Information that uniquely describes the personal health device"
 * identifier ^definition = "The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is required and the transportAddressIdentifier is highly recommended as this is what most end users see and can obtain from the device itself or device packaging."
-* identifier ^alias = "11073-20601 System id, transport address, etc."
+* identifier ^alias = "11073-10206 System id, transport address, etc."
 * identifier contains
     systemIdIdentifier 1..1 and
     btmacAddressIdentifier 0..1 and
     macAddressIdentifier 0..1
 * identifier[systemIdIdentifier] ^short = "System Id identifier"
 * identifier[systemIdIdentifier] ^definition = "This entry contains the IEEE EUI-64. If absent (bad device) set to all zeros."
-* identifier[systemIdIdentifier] ^alias = "11073-20601 System id"
+* identifier[systemIdIdentifier] ^alias = "11073-10206 System id"
 * identifier[systemIdIdentifier].type 1..
 * identifier[systemIdIdentifier].type.coding 1..1
 * identifier[systemIdIdentifier].type.coding ^short = "Indicates this is the IEEE 11073 System Id identifier"

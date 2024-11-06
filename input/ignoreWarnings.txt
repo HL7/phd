@@ -11,20 +11,17 @@ The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknow
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
-# The ISO/IEEE 11073 Codesystem is not draft - fixed by Grahame, but needs time before this warning goes away... https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
-
 # These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # When a vital signs observation has a derivedFrom reference to a timestamp observation this is also checked against vital signs, leading to these warnings. 
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.3.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd-observations:
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.3.0), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
-# This warning is generated for a coincident timestamp observation that is not a vital signs observation, but referenced in a derivedFrom element in another observation that is a vital sign. This will be fixed by using an extension instead in the next version of the IG. See https://jira.hl7.org/browse/FHIR-46586.
-Details for urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108 matching against profile http://hl7.org/fhir/StructureDefinition/vitalsigns|4.3.0
+# This warning is generated for a bundle of observations. Looks like a publisher  bug.
+The html source has duplicate anchor Ids: Observation_null

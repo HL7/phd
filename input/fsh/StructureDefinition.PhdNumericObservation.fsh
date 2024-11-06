@@ -50,6 +50,7 @@ Description: "StructureDefinition for Observation Resources representing measure
     * system 1..
     * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
     * code 1..
+* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * component contains
     accuracyComponent 0..1 and
     alertOpStateComponent 0..* and

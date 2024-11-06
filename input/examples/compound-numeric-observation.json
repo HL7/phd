@@ -12,6 +12,12 @@
 			"valueReference": {
 				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
+		},
+		{
+			"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+			"valueReference": {
+				"reference": "Observation/coin-20181119174911"
+			}
 		}
 	],
 	"status": "final",
@@ -59,11 +65,6 @@
 	"device": {
 		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
 	},
-	"derivedFrom": [
-		{
-			"reference": "Observation/coin-20181119174911"
-		}
-	],
 	"component": [
 		{
 			"code": {

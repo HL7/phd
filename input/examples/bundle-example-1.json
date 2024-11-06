@@ -567,6 +567,12 @@
             "valueReference": {
               "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
             }
+          },
+          {
+            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference" : {
+              "reference" : "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+            }
           }
         ],
         "id": "pulse-ox-001",
@@ -616,11 +622,6 @@
         "device": {
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
-        "derivedFrom": [
-          {
-            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
-          }
-        ],
         "component": [
           {
             "code": {
@@ -663,6 +664,12 @@
             "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
             "valueReference": {
               "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
+            }
+          },
+          {
+            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference" : {
+              "reference" : "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
             }
           }
         ],
@@ -713,11 +720,6 @@
         "device": {
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
-        "derivedFrom": [
-          {
-            "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
-          }
-        ],
         "component": [
           {
             "code": {

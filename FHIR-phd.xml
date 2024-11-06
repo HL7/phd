@@ -13,10 +13,11 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="11073 ASN1 Event Or State"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1ToHL7"/>
-<artifact id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
+<artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
 <artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
 <artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
 <artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept11073MDC"/>
+<artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="ContinuaDeviceIdentifiers"/>
 <artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="ContinuaHFS"/>
 <artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
@@ -25,12 +26,13 @@
 <artifact id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
 <artifact id="ValueSet/DeviceTypes11073MDC" key="ValueSet-DeviceTypes11073MDC" name="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
 <artifact id="Bundle/bundle-continuousnonin" key="Bundle-bundle-continuousnonin" name="Example Bundled upload"/>
+<artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Example Phd Device Metric"/>
 <artifact deprecated="true" id="Observation/bloodPress-1.0.1" key="Observation-bloodPress-1.0.1" name="Example of Compound measurement"/>
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="Example of PHD Device"/>
 <artifact id="Observation/stringenum-1234" key="Observation-stringenum-1234" name="Example of String measurement"/>
 <artifact id="Observation/bits-observation" key="Observation-bits-1.0.0.40" name="Example of a ASN1 BITs measurement"/>
 <artifact id="Device/phd-711000FEFF5F49B0.B0495F001071" key="Device-phd-711000FEFF5F49B0.B0495F001071" name="Example of a Blood Pressure PHD"/>
-<artifact id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Time Stamp"/>
+<artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Time Stamp"/>
 <artifact id="Observation/coin-20181119202022" key="Observation-coin-20181119202022" name="Example of a Coincident Time Stamp PHG better synchronized"/>
 <artifact deprecated="true" id="Observation/coin-1234" key="Observation-coin-1234" name="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation"/>
 <artifact id="Observation/coin-20181119174911" key="Observation-coin-20181119174911" name="Example of a Coincident Time Stamp referenced from BP observation"/>
@@ -39,7 +41,7 @@
 <artifact id="Device/phd-00601900010E9234.F45EABA80832" key="Device-phd-00601900010E9234.F45EABA80832" name="Example of a Glucose Monitor PHD"/>
 <artifact id="Observation/numeric-observation-not-a-number" key="Observation-nan-1.0.0.42" name="Example of a NaN case"/>
 <artifact id="Patient/patientExample-1" key="Patient-sisansarahId.1.2.3.4.5.6.7.8.10" name="Example of a Patient"/>
-<artifact id="Observation/compound-numeric-observation" key="Observation-compound-numeric-observation" name="Example of a compound numeric observation"/>
+<artifact deprecated="true" id="Observation/compound-numeric-observation" key="Observation-compound-numeric-observation" name="Example of a compound numeric observation"/>
 <artifact id="Bundle/bundle-example-1" key="Bundle-nonin-hdp-1542718631721" name="Example of a first time Bundle upload"/>
 <artifact id="Observation/numeric-spotnumeric" key="Observation-spotnumeric-1.0.0.3" name="Example of a numeric."/>
 <artifact id="Observation/rtsa-1234" key="Observation-rtsa-1234" name="Example of an Rtsa."/>
@@ -47,6 +49,7 @@
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDCnotObject"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
+<artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>
 <artifact id="StructureDefinition/PhdBitsEnumerationObservation" key="StructureDefinition-PhdBitsEnumerationObservation" name="PhdBitsEnumerationObservation"/>
@@ -54,6 +57,7 @@
 <artifact id="StructureDefinition/PhdCoincidentTimeStampObservation" key="StructureDefinition-PhdCoincidentTimeStampObservation" name="PhdCoincidentTimeStampObservation"/>
 <artifact id="StructureDefinition/PhdCompoundNumericObservation" key="StructureDefinition-PhdCompoundNumericObservation" name="PhdCompoundNumericObservation"/>
 <artifact id="StructureDefinition/PhdDevice" key="StructureDefinition-PhdDevice" name="PhdDevice"/>
+<artifact id="StructureDefinition/PhdDeviceMetric" key="StructureDefinition-PhdDeviceMetric" name="PhdDeviceMetric"/>
 <artifact id="StructureDefinition/PhdNumericObservation" key="StructureDefinition-PhdNumericObservation" name="PhdNumericObservation"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PhdObservationCategories"/>
 <artifact id="StructureDefinition/PhdPatient" key="StructureDefinition-PhdPatient" name="PhdPatient"/>
@@ -99,7 +103,7 @@
 <page key="MetricAttributesofNoInterest" name="Metric Protocol-Only Attributes"/>
 <page deprecated="true" key="NumericNaN" name="NaN Example"/>
 <page key="Nomenclaturecodes" name="Nomenclature codes"/>
-<page key="Non11073PHDDevices" name="Non IEEE 11073 PHD Devices"/>
+<page deprecated="true" key="Non11073PHDDevices" name="Non IEEE 11073 PHD Devices"/>
 <page deprecated="true" key="Non1107320601Devices" name="Non IEEE 11073-20601 Devices"/>
 <page key="ObtainObservationCode" name="Obtaining the Observation Code"/>
 <page key="ObtainUnitCode" name="Obtaining the Unit Code"/>

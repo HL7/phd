@@ -1,7 +1,7 @@
 ValueSet: Quantity11073MDC
 Id: Quantity11073MDC
 Title: "Quantity 11073 Attributes"
-Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-20601 attributes whose values are Quantities."
+Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-10206 or -20601 attributes whose values are Quantities."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC"
 * ^version = "current"

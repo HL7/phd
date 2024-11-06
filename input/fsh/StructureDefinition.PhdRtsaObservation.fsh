@@ -72,7 +72,7 @@ Description: "StructureDefinition for Observation Resources representing measure
 * referenceRange ^slicing.discriminator.path = "low.system"
 * referenceRange ^slicing.rules = #open
 * referenceRange contains scaleAndReferenceRange 0..1
-* referenceRange[scaleAndReferenceRange] ^short = "Provides the scale factors as sent by the 20601 device"
+* referenceRange[scaleAndReferenceRange] ^short = "Provides the scale factors as sent by the PHD device"
 * referenceRange[scaleAndReferenceRange].low 1..
 * referenceRange[scaleAndReferenceRange].low ^definition = "The Scale-and-Range-SpecificationX.lower-absolute-value from the RTSA metric where X is one of 8, 16, or 32."
 * referenceRange[scaleAndReferenceRange].low.value 1..

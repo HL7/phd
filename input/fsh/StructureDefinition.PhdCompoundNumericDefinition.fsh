@@ -1,5 +1,6 @@
 Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
 Alias: $MDCnotObject = http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject
+Alias: $DataAbsentReason = http://hl7.org/fhir/ValueSet/data-absent-reason
 
 Profile: PhdCompoundNumericObservation
 Parent: PhdBaseObservation
@@ -21,16 +22,6 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^slicing.discriminator[=].path = "coding.system"
   * ^slicing.ordered = false
   * ^slicing.rules = #open
-* category contains VSCat 0..1
-* category[VSCat] only CodeableConcept
-  * coding 1..*
-  * coding only Coding
-    * system 1..1
-    * system only uri
-    * system = "http://terminology.hl7.org/CodeSystem/observation-category" (exactly)
-    * code 1..1
-    * code only code
-    * code = #vital-signs (exactly)
 * value[x] ..0
 * dataAbsentReason ^definition = "Provides a reason why no measurement compoundComponent elements are present. This situation only happens if the Measurement-Status attribute indicates a generic error."
   * ^comment = "Special values reported in the Compound-Basic/Simple-Nu-Observed-Value are handled individually in each compoundComponent element and are not considered generic. The Compound-Nu-Observed-Value has its own status entry and it is also handled in the component elements representing the compound."
@@ -42,17 +33,13 @@ Description: "StructureDefinition for Observation Resources representing measure
     * system 1..
     * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
     * code 1..
+    * code from $DataAbsentReason
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open
 * component contains
     compound 0..* and
     accuracyComponent 0..1
-//   * code.coding[LoincCoding]
-//     * system 1..
-//     * system = "http://loinc.org" (exactly)
-//     * code 1..
-//       * ^comment = "Required if the measurement is a vital sign"
 * component[compound] ^short = "Compound numeric measurement entry components"
   * ^definition = "Each compoundComponent contains one of the N constituents of the compound measurement. These entries are NOT present if a Measurement-Status attribute indicates an error."
   * ^comment = "A compound measurement is a measurement that requires more than one value to represent it, such as an acceleration which has an x, y, and z components. The Blood pressure is also represented as a compound measurement, containing systolic, diastolic and MAP components. One combines all the compound elements together to describe the measurement. The Metric-Id-List entry n and Compound-Basic/Simple-Nu-Observed-Value entry n are ordered such that the code that describes each entry n is computed from the partition of the Type attribute and the term code of the Metric-Id-List attribute. In the case of the Compound-Nu-Observed-Value, the term code comes from the Compound-Nu-Observed-Value.metric sub-component."
