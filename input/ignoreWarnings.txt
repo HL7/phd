@@ -23,5 +23,5 @@ This element does not match any known slice Defined in the profile http://hl7.or
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd-observations:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
-# This warning is generated for a bundle of observations. Looks like a publisher  bug.
+# This warning is generated for a bundle of observations. Looks like a publisher bug.
 The html source has duplicate anchor Ids: Observation_null

@@ -43,7 +43,7 @@ In addition to the elements that are always present, the following set of elemen
 |coincident time stamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. May only be present when the PHD provides a time stamp. The timestamp extension is identified by Observation.extension.url="http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference" |
 |related measurement|Observation.derivedFrom Observation.hasMember|Points to a PHD Observation that is related to this Observation. An example would be an activity session measurement that has a miles run measurement member. Only present if the measurement references an additional measurement.|
 |additional descriptions|Observation.component|Sometimes a measurement is sent containing additional information such as the technique used to obtain the measurement. These elements are placed in a component.|
-||Observation.identifier|This element is used to prevent data duplication during uploads and can normally be ignored.|
+||Observation.identifier|This element is used to prevent data duplication during uploads.|
 
 ### Description of the Fields
 In this section each of the fields summarized above is discussed.
@@ -483,7 +483,7 @@ The table below lists the special conditions reported and in what elements they 
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 #### Identifier
-The Observation.identifier entry created by this IG is *not* for consumption. It is for preventing data duplication during uploads. It is used in conditional create transactions. Consumers are expected to ignore the element.
+To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Other systems may add further identifiers.
 
 ### Measurement Values that are Single-Number or Scalar
 Scalar numeric measurements are the most common type of measurement reported by PHDs. Temperature, weight, height, miles run, pulse rate, etc. are examples. Scalar numeric measurements are reported in Observation resources following the Phd Numeric Observation Profile. The scalar values are reported in the Observation.valueQuantity element. If the PHD reports a special value; Not a number, Positive infinity, Negative infinity, and two other possible values unknown to FHIR, an Observation.dataAbsentReason element replaces the valueQuantity and there is no value[x] element.
