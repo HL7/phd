@@ -29,3 +29,4 @@ Description: "StructureDefinition for the DeviceMetric for a PHD"
   * ^comment = "When the category can be derived from the type of the DeviceMetric it can be filled in on creation. Otherwise it can be filled in by updating the DeviceMetric resource when the PHD generates an observation of that type. It can be set to #unspecified until known."
 * measurementPeriod
   * ^comment = "when this information is provided by a GHS device in an Observation Schedule descriptor, it should be filled in here as well."
+* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1

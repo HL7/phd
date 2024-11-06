@@ -17,6 +17,14 @@
 		  "valueReference" : {
 			"reference" : "Observation/coin-20181119202022"
 		  }
+		},
+		{
+		  "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy",
+		  "valueQuantity" : {
+			"value": 0.1,
+			"system": "http://unitsofmeasure.org",
+			"code": "/min"
+		  }
 		}
 	],
 	"identifier": [
@@ -95,6 +103,22 @@
 				],
 				"text": "MDC_MODALITY_SPOT"
 			}
-		}
-	]
+		},
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "67914"
+                    }
+                ],
+                "text": "MDC_ATTR_NU_ACCUR_MSMT: Measurement accuracy"
+            },
+            "valueQuantity": {
+                "value": 0.1,
+                "system": "http://unitsofmeasure.org",
+                "code": "/min"
+            }
+        }
+    ]
 }

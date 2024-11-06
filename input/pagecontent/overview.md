@@ -17,7 +17,8 @@ These sections introduce this implementation guide, its scope, what it is meant 
  - [Use Cases]({{ output }}UseCases.html)
 
 #### Profile Consumers
-This [chapter](ProfileConsumers.html) describes the content of the resources for those interested in consuming the data. A great deal of this guide is dedicated to the mapping of Personal Health Device (PHD) data to FHIR for those implementing Personal Health Gateways. The mapping requires considerable knowledge of the PHD communication protocols and the IEEE 11073 Information Models. That knowledge is not necessary for consumption of the generated resources. Readers interesting in consuming the data can skip the mapping details and begin here.
+Readers primarily interested in using data from PHD devices are directed to [this chapter](ProfileConsumers.html).
+Unlike resource generation, consumption of the resources described in this IG should not require in-depth knowledge of the IEEE 11073 Information Model and PHD communication protocol. Similarly, a reader focusing on consumption of data may find less value in those parts of the IG focused on mapping of PHD data to FHIR, as that process will have already occured before consumption.
 
 #### PHG Implementation Guidance
 This informative [chapter](TechnicalImplementationGuidance.html) provides an introduction and overview of the IEEE 11073 topics used in the profile mappings, such as the IEEE 11073-10206 Abstract Content Information Model (ACOM), ACOM objects and attributes, nomenclature codes, and Mder FLOATs, among others. This chapter also discusses some of the reasons behind the generic modeling approach used by this guide. 
