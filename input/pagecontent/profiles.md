@@ -8,12 +8,12 @@ The following profiles are defined in this IG and have their own descriptive pag
  - [Profiles Overview](ProfilesOverview.html), gives more information on the set of profiles.
 
  - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html), the base profile for the observation profiles in this IG:
-   - [Phd Numeric Observation Profile](NumericObservationProfile.html)
+   - [Phd Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)
    - [Phd Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
-   - [Phd Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+   - [Phd Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)
    - [Phd BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
    - [Phd Real Time Sample Array Observation Profile](RtsaObservationProfile.html)
-   - [Phd String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+   - [Phd String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)
    
 
  - [Phd Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html), profile to associate two time lines

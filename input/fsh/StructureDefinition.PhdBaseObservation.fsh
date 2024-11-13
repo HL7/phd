@@ -141,4 +141,14 @@ Description: "Common base profile with the elements that are common to the PHD I
       * code 1..
         * ^definition = "For the given Supplemental-Types entry the code here is given by: partition * 2**16 + term code"
   * dataAbsentReason ..0
+* dataAbsentReason ^short = "This element is populated when the Measurement Status indicates invalid, not available or measurement-ongoing."
+* dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.value[x]] is missing."
+* dataAbsentReason ^comment = "Only the Measurement-Status/status flags indicating invalid, not unavailable, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element."
+* dataAbsentReason.coding ^slicing.discriminator.type = #value
+* dataAbsentReason.coding ^slicing.discriminator.path = "system"
+* dataAbsentReason.coding ^slicing.rules = #open
+* dataAbsentReason.coding contains FhirDefault 1..1
+* dataAbsentReason.coding[FhirDefault].system 1..
+* dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
+* dataAbsentReason.coding[FhirDefault].code 1..
 

@@ -39,17 +39,9 @@ Description: "StructureDefinition for Observation Resources representing measure
   * code 1..
     * ^short = "The UCUM code for the units of this measurement."
     * ^comment = "The UCUM code needs to be translated from  the 11073-10101 code from the device. This translation means that the reporting of units is not future proof."
-* dataAbsentReason ^short = "Populated when a special value occurs or Measurement-Status indicates invalid, not unavailable, or msmt ongoing"
-  * ^definition = "Provides a reason why the expected value in the element Observation.valueQuantity is missing. This could be a 'not-a-number', 'positive-infinity', 'negative-infinity' or an error condition indicated by the Measurement-Status attribute or the status field from a Nu-Observed-Value attribute."
-  * ^comment = "The current values in the http://terminology.hl7.org/CodeSystem/data-absent-reason system do not provide a code that matches the special values 'not at this resolution' and 'reserved'. In those cases one uses the generic 'error' code. If both a special value and a Measurement-Status indicating invalid, not unavailable, or msmt ongoing are received, the Measurement-Status mapping takes precedence."
-  * coding ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "system"
-    * ^slicing.rules = #open
-  * coding contains FhirDefault 1..1
-  * coding[FhirDefault]
-    * system 1..
-    * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-    * code 1..
+* dataAbsentReason ^short = "This element is populated for numeric observations when a special value is reported that is not a real number."
+  * ^definition = "Provides a reason why the expected value in the element Observation.valueQuantity is missing. In this case this could also be 'not-a-number', 'positive-infinity', 'negative-infinity' or 'error'."
+  * ^comment = "The values in the http://terminology.hl7.org/CodeSystem/data-absent-reason system do not provide a code that matches the special values 'not at this resolution' and 'reserved'. In those cases one uses the generic 'error' code. If both a special value and a Measurement-Status indicating invalid, not unavailable, or msmt ongoing are received, the Measurement-Status mapping takes precedence."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * component contains
     accuracyComponent 0..1 and

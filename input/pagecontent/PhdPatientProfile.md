@@ -9,41 +9,20 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-The structure definition for the Phd Patient Profile is given [here](StructureDefinition-PhdPatient.html)
+The structure definition for the Phd Patient Profile is given [here](StructureDefinition-PhdPatient.html).
 
 ### Mapping
-When a Patient resource for a known patient is to be created by the PHG the following mapping is used:
+A Patient resource for a known or an unknown patient shall be  created by the PHG according to the following mapping:
 
-|patient information|FHIR mapping|Description|
+|patient information|FHIR mapping|Value for a known patient|Value for an unknown patient|
 |-
-|patient identifier|Patient.identifier.value|Generally a code from the health care provider identifying the patient|
-|health care provider identifier|Patient.identifier.system|Generally a code identifying the health care provider|
-|code system|Patient.identifier.type.coding.system|"http://terminology.hl7.org/CodeSystem/v2-0203 "
-|code system code|Patient.identifier.type.coding.code|The code system identifier code such as 'MR' (medical record) or 'L' (local)|
+|patient identifier|Patient.identifier.value|Generally a code from the health care provider identifying the patient|'U'|
+|health care provider identifier|Patient.identifier.system|Generally a code identifying the health care provider|[http://terminology.hl7.org/CodeSystem/v2-0004](http://terminology.hl7.org/CodeSystem/v2-0004)|
+|fixed coding system|Patient.identifier.type.coding.system|[http://terminology.hl7.org/CodeSystem/v2-0203](http://terminology.hl7.org/CodeSystem/v2-0203)|[http://terminology.hl7.org/CodeSystem/v2-0203](http://terminology.hl7.org/CodeSystem/v2-0203)|
+|code |Patient.identifier.type.coding.code|A code such as 'MR' (medical record) or 'LR' (local registry) from the above coding system|'U'|
 
-<br>
-When a Patient is unknown the following mapping is used:
-
-|patient information|FHIR mapping|Description|
-|-
-|patient identifier|Patient.identifier.value|'U'|
-|health care provider identifier|Patient.identifier.system|"http://hl7.org/fhir/CodeSystem/v2-0004 "
-|code system|Patient.identifier.type.coding.system|"http://hl7.org/fhir/CodeSystem/v2-0203 "
-|code system code|Patient.identifier.type.coding.code|'U'|
 
 ### Examples:
-An example of a PHD patient mapping is given [here](patientExample.html). The example contains an optional name element.
+An example of a PHD patient mapping for a known patient is given [here](Patient-patientExample-1.html). The example contains an optional name element.<br>
+An example of a PHD patient mapping for an unknown patient is given [here](Patient-patientExample-2.html). The example contains an optional name element.
 
-### The Other Profiles
-
- - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Numeric Observation Profile](NumericObservationProfile.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Rtsa Observation Profile](RtsaObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)

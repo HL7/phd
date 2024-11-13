@@ -23,17 +23,6 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^slicing.ordered = false
   * ^slicing.rules = #open
 * value[x] ..0
-* dataAbsentReason ^definition = "Provides a reason why no measurement compoundComponent elements are present. This situation only happens if the Measurement-Status attribute indicates a generic error."
-  * ^comment = "Special values reported in the Compound-Basic/Simple-Nu-Observed-Value are handled individually in each compoundComponent element and are not considered generic. The Compound-Nu-Observed-Value has its own status entry and it is also handled in the component elements representing the compound."
-  * coding ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "system"
-    * ^slicing.rules = #open
-  * coding contains FhirDefault 1..1
-  * coding[FhirDefault]
-    * system 1..
-    * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-    * code 1..
-    * code from $DataAbsentReason
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open

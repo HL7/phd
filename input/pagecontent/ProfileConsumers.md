@@ -1437,65 +1437,22 @@ An example of a property entry where a PHG is certified for web-services PCD-01 
 ### Patient Resource
 It is assumed here that the reader has access to the Patient resource uploaded by the PHG and that the PHG uploaded a Patient resource. There is a special case where the PHG will not upload a Patient resource.
 
-The Patient resource following the Phd Patient Profile is identified by the Patient.meta.profile element having a "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" entry.
+The Patient resource is following the Phd Patient Profile as defined [here](StructureDefinition-PhdPatient.html).
 
-There is only one additional required entry in the Phd Patient Profile; the Patient.identifier. Any other information is optional and it will not be discussed here.
+There is only one additional required entry in the Phd Patient Profile; the Patient.identifier.
 
-The required Patient.identifier entry contains an identifier.type using the version 2 Table 0203 code system "http://terminology.hl7.org/CodeSystem/v2-0203" found [here](http://build.fhir.org/v2/0203/index.html). The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
+The required Patient.identifier entry contains an identifier.type using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
 
 The identifier.value and identifier.system entries are used to quantify the entries of the given identifier.type. For example, the identifier.system might be the XDSb institutional identifier and the identifier.value the patient record number (also known as the patient identifier).
 
 The above information exposes no personal health information as only the organization responsible for the patient has the dictionary that can relate these codes to a given person.
 
 An example of a Patient.identifier following the XDSb notation is given below:
-
-    "identifier": [
-        {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "MR"
-                    }
-                ],
-                "text": "Medical record number"
-            },
-            "system": "urn:oid:1.2.3.4.5.6.7.8.11",
-            "value": "sisansarahId"
-        }
-    ]
+{% fragment Patient/patientExample-1 JSON BASE:identifier %}
 
 An example of an unknown patient using the Version 2 Table 0004 patient class code system is given below:
+{% fragment Patient/patientExample-2 JSON BASE:identifier %}
 
-    "identifier": [
-        {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "U"
-                    }
-                ],
-                "text": "Unspecified"
-            },
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0004",
-            "value": "U"
-        }
-    ]
-
-### Links to the Profile Structure Definitions
-
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)
- - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)
- - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)
- - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)
- - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)
- - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)
- - [Coincident Time Stamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html)
- - [Phd Device Profile](StructureDefinition-PhdDevice.html)
- - [Phg Device Profile](StructureDefinition-PhgDevice.html)
- - [Patient Profile](StructureDefinition-PhdPatient.html)
 
 
 

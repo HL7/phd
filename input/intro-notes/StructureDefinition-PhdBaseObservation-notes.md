@@ -42,7 +42,7 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-IEEE 11073-10206 timestamps represent a UTC time or a local time, that is synchronised with an external time source or not and can come with or without a TZ/DST offset or the time stamp represents a Tick Counter value. These time stamps can come from the current timeline of the PHD or not. In order to map a timestamp for the PHD's cyrrent timeline, the PHG needs the PHD's current time. 
+IEEE 11073-10206 timestamps represent a UTC time or a local time, that is synchronised with an external time source or not and can come with or without a TZ/DST offset or the time stamp represents a Tick Counter value. These time stamps can come from the current timeline of the PHD or not. In order to map a timestamp for the PHD's current timeline, the PHG needs the PHD's current time. 
 
 Observations with a timestamp that is not from the current timeline of the PHD and that are not from a timeline synchronised with an external time source should be thrown away since there is no way to give them a correct timestamp.
 
@@ -134,7 +134,7 @@ The Measurement Status element from IEEE 11073-10206 is used to report errors or
 
 The Bluetooth SIG GHS specification adds two more:
 
- - Threshold error                                         |
+ - Threshold error
  - Thresholding disabled  
 
 
@@ -161,16 +161,4 @@ CS2: [Observation Status CodeSystem](http://hl7.org/fhir/observation-status)
 CS3: [CodeSystem: Measurement Status Codes CodeSystem](https://build.fhir.org/ig/HL7/uv-pocd/CodeSystem-measurement-status.html)
 CS4: [CodeSystem: Act Reason CodeSystem](http://terminology.hl7.org/CodeSystem/v3-ActReason)
 
-### The Other Profiles
 
- - [Profiles Overview](ProfilesOverview.html)
- - [Numeric Observation Profile](NumericObservationProfile.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Rtsa Observation Profile](RtsaObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)
- - [Patient Profile](PhdPatientProfile.html)

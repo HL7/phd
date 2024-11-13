@@ -58,16 +58,6 @@ Description: "StructureDefinition for Observation Resources representing measure
 * valueSampledData.dimensions ^comment = "This value is obtained from the Sa-Specification.array-size field of the Sa-Specification attribute."
 * valueSampledData.data ^definition = "A series of data points which are decimal values separated by a single space (character u20). The special values \"E\" (error), \"L\" (below detection limit) and \"U\" (above detection limit) are not used. The device does not provide such individual values. "
 * valueSampledData.data ^comment = "One is strongly encouraged to use the scaling from the 11073 device as it is likely the scaling was chosen to optimize transmission. If\r\nA = Scale-and-Range-SpecificationX.lower-absolute-value as an Mder FLOAT\r\nB = Scale-and-Range-SpecificationX.upper-absolute-value as an Mder FLOAT\r\nI = Scale-and-Range-SpecificationX.lower-scaled-value as a X-bit integer\r\nJ = Scale-and-Range-SpecificationX.upper-scaled-value as a X-bit integer\r\n\r\nvalueSampledData.factor is given by (A-B)/(I-J)\r\nand\r\nvalueSampledData.origin.value = A – (A-B)*I/(I-J)\r\nand \r\nvalueSampledData.data[i] = Sa-Simple-Observed-Value.values[i]"
-* dataAbsentReason ^short = "Populated when the Measurement-Status indicates invalid, not unavailable, or msmt ongoing"
-* dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.valueSampledData is missing."
-* dataAbsentReason ^comment = "Thre are no special values sent in RTSA data."
-* dataAbsentReason.coding ^slicing.discriminator.type = #value
-* dataAbsentReason.coding ^slicing.discriminator.path = "system"
-* dataAbsentReason.coding ^slicing.rules = #open
-* dataAbsentReason.coding contains FhirDefault 1..1
-* dataAbsentReason.coding[FhirDefault].system 1..
-* dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-* dataAbsentReason.coding[FhirDefault].code 1..
 * referenceRange ^slicing.discriminator.type = #value
 * referenceRange ^slicing.discriminator.path = "low.system"
 * referenceRange ^slicing.rules = #open

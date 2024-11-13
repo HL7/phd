@@ -122,17 +122,4 @@ About the only work a consumer of this profile needs to do is to back-scale the 
 |Lower range of values|referenceRange.low.value|
 |The actual *n* values|valueSampledData.data[*n*] * valueSampledData.scaleFactor + valueSampledData.origin.value|
 
-### The Other Profiles
-
- - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Numeric Observation Profile](NumericObservationProfile.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)
- - [Patient Profile](PhdPatientProfile.html)
 

@@ -1,6 +1,5 @@
 {
 	"resourceType": "Observation",
-    "id": "glucose-1.0.0.4",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation"
