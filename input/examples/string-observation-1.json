@@ -1,8 +1,3 @@
-This example results when the device sends a String Enumeration. It is just an arbitrary human readable string and is mapped to a valueString element. This type of measurement is rare in PHDs and there is only one specialization that uses it.
-
-Note there is no logical id in this resource as this resource is being uploaded to the server in a create operation. The server will create the logical id and return it to the sender in the response.
-
-<pre>
 {
 	"resourceType": "Observation",
 	"meta": {
@@ -52,4 +47,3 @@ Note there is no logical id in this resource as this resource is being uploaded 
 		}
 	]
 }
-</pre>

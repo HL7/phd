@@ -66,12 +66,12 @@ On the other hand, if the use case only involves PHDs that do not emit source-ha
 ### The PHD IG Profiles
 
  - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
-   - [Numeric Observation Profile](NumericObservationProfile.html)
+   - [Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)
    - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
-   - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
+   - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)
    - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
    - [Rtsa Observation Profile](RtsaObservationProfile.html)
-   - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
+   - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)
  - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
  - [Phd Device Profile](PhdDeviceProfile.html)
  - [Phg Device Profile](PhgDeviceProfile.html)

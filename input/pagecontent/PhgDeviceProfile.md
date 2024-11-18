@@ -293,16 +293,3 @@ The time synchronization accuracy is reported in microseconds as follows:
 ### Examples:
 An example of an Android PHG mapping is given [here](phgExample.html)
 
-### The Other Profiles
-
- - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Numeric Observation Profile](NumericObservationProfile.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Rtsa Observation Profile](RtsaObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Patient Profile](PhdPatientProfile.html)

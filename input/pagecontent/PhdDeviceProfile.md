@@ -308,19 +308,6 @@ For the Consumer of this profile the following table gives a quick guide to the 
 |system identifier|identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"<br>identifier.value="*system id as 8 2-digit HEX values separated by dashes*"|
 |time synchronization|property.type.coding.code="68220"<br/> property.valueCode.coding.code="*code for time synchronization*"|
 
-### The Other Profiles
-
- - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Numeric Observation Profile](NumericObservationProfile.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Rtsa Observation Profile](RtsaObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)
- - [Patient Profile](PhdPatientProfile.html)
 
 
 

@@ -1,0 +1,3 @@
+This example is an observation coming from a glucose meter and explains why a measurement failed.  There is no such measurement type defined in the Glucose specialization so this manufacturer used a private attribute. 
+
+Note there is no logical id in this resource as this resource is being uploaded to the server in a create operation. The server will create the logical id and return it to the sender in the response.

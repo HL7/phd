@@ -1,21 +1,4 @@
-The Numeric Observation Profile is used when the PHD metric measurement is a scalar that may be dimensionless. Examples would be weight, body temperature, glucose concentration, pulse rate, oxygen saturation, steps take, calories burned, etc. Scalar measurements are the most common type of PHD measurement. 
-
-The measurement is a scalar when the PHD metric contains one of the following attributes:
-
-<style>table, th, td {
-border: 1px solid black;
-border-collapse:collapse;
-padding: 6px;}</style>
-
-|Attribute|Value|Additional Information|
-|-
-|Basic-Nu-Observed-Value|16-bit Mder SFLOAT|12-bit mantissa|
-|Simple-Nu-Observed-Value|32-bit Mder FLOAT|24-bit mantissa|
-|Nu-Observed-Value|32-bit Mder FLOAT|Complex attribute. Also contains<br/> metric-id<br/> measurement status<br/> unit-code|
-
-These attributes contain a measurement value that is a single number. The Mder SFLOAT and FLOAT encodings indicate both precision and the number of significant figures. The Observation.valueQuantity.value element is required to honor the reported precision. See the section [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity .
-
-The structure definition for this profile is given [here](StructureDefinition-PhdNumericObservation.html)
+This profile is used to map ACOM Numeric Observations.  The measured value is reported as a floating number with an optional accuracy. In GHS the value is encoded as an IEEE 11073 FLOAT that indicates both precision and the number of significant digits. The Observation.valueQuantity.value element is required to honor the reported precision. See [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling S/FLOATs and their encoding to the valueQuantity .
 
 ### Mapping Numerics to FHIR
 The following table shows how the numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC unit code needs to be mapped to UCUM. In most cases this mapping is straight forward, but there can be some examples which are tricky. The MDC_DIM_TICK for the RR interval is just the number of ticks. However, the tick unit is given by the MDS attribute MDC_ATTR_TICK_RES which is the number of ticks per second. So if MDC_ATTR_TICK_RES is 2048 and the RR measurement is 3092, that means the RR interval is 1.5 seconds. One could also express the measurement in Hertz. When the units are converted in this manner, the value must be converted appropriately.
@@ -145,18 +128,3 @@ The consumer of this profile does not need to concern itself with the mapping co
 |additional descriptions|Observation.component|If a component element exists it contains additional information about the measurement|
 |patient|Observation.subject|Points to the Patient resource|
 |sensor device|Observation.device|Points to the Device resource|
-
-### The Other Profiles
-
- - [Profiles Overview](ProfilesOverview.html)
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)
- - [Coded Enumeration Observation Profile](CodedEnumerationObservationProfile.html)
- - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)
- - [Rtsa Observation Profile](RtsaObservationProfile.html)
- - [String Enumeration Observation Profile](StringEnumerationObservationProfile.html)
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)
- - [Patient Profile](PhdPatientProfile.html)
-

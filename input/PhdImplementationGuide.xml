@@ -450,7 +450,7 @@ In this example there are only xml structure definitions, value sets, code syste
     
     <resource>
       <reference>
-        <reference value="Observation/glucose-1.0.0.4"/>
+        <reference value="Observation/meal-context-observation"/>
       </reference> 
       <name value="Example of coded enumeration"/>
       <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner. It is also known as the meal context." />
@@ -483,7 +483,16 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Observation/stringenum-1234"/>
       </reference> 
       <name value="Example of String measurement"/>
-      <description value="This example is some arbitrary text from a Glucose meter explaining the failure of the measurement." />
+      <description value="This example observation reports some arbitrary text from a cardiavascular fitness device." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
+      <groupingId value="examples" />
+    </resource>
+        <resource>
+      <reference>
+        <reference value="Observation/string-observation-1"/>
+      </reference> 
+      <name value="Example of String measurement"/>
+      <description value="This example observation reports some arbitrary text from a Glucose meter explaining the failure of the measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
       <groupingId value="examples" />
     </resource>
@@ -562,8 +571,18 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Patient/patientExample-1"/>
       </reference> 
-      <name value="Example of a Patient"/>
-      <description value="This example maps a patient where an optional patient name is included" />
+      <name value="Example of a known Patient"/>
+      <description value="This example maps a known patient where an optional patient name is included." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"/>
+      <groupingId value="examples" />
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Patient/patientExample-2"/>
+      </reference> 
+      <name value="Example of an unknown Patient"/>
+      <description value="This example maps an unknown patient." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"/>
       <groupingId value="examples" />
     </resource>
@@ -717,24 +736,9 @@ In this example there are only xml structure definitions, value sets, code syste
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="NumericObservationProfile.html"/>
-            <title value="PHD Numeric Observation Profile"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
             <nameUrl value="CompoundNumericObservationProfile.html"/>
             <title value="PHD Compound Numeric Observation Profile"/>
             <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="CodedEnumerationObservationProfile.html"/>
-            <title value="PHD Coded Enumeration Observation Profile"/>
-            <generation value="markdown"/>
-            <page>
-              <nameUrl value="glucoseEnum.html"/>
-              <title value="Coded Enumeration"/>
-              <generation value="markdown"/>
-            </page>
           </page>
           <page>
             <nameUrl value="BITsEnumerationObservationProfile.html"/>
@@ -748,16 +752,6 @@ In this example there are only xml structure definitions, value sets, code syste
             <page>
               <nameUrl value="Rtsa.html"/>
               <title value="Real Time Sample Array; Pleth wave"/>
-              <generation value="markdown"/>
-            </page>
-          </page>
-          <page>
-            <nameUrl value="StringEnumerationObservationProfile.html"/>
-            <title value="PHD String Enumeration Observation Profile"/>
-            <generation value="markdown"/>
-            <page>
-              <nameUrl value="EnumString.html"/>
-              <title value="A measurement that is a human readable string (Enumeration String)"/>
               <generation value="markdown"/>
             </page>
           </page>
@@ -800,11 +794,6 @@ In this example there are only xml structure definitions, value sets, code syste
             <nameUrl value="PhdPatientProfile.html"/>
             <title value="PHD Patient Profile"/>
             <generation value="markdown"/>
-            <page>
-              <nameUrl value="patientExample.html"/>
-              <title value="Patient example containing optional patient name"/>
-              <generation value="markdown"/>
-            </page>
           </page>
         </page>
         <page>

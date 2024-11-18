@@ -43,7 +43,7 @@ In addition to the elements that are always present, the following set of elemen
 |coincident time stamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. May only be present when the PHD provides a time stamp. The timestamp extension is identified by Observation.extension.url="http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference" |
 |related measurement|Observation.derivedFrom Observation.hasMember|Points to a PHD Observation that is related to this Observation. An example would be an activity session measurement that has a miles run measurement member. Only present if the measurement references an additional measurement.|
 |additional descriptions|Observation.component|Sometimes a measurement is sent containing additional information such as the technique used to obtain the measurement. These elements are placed in a component.|
-||Observation.identifier|This element is used to prevent data duplication during uploads and can normally be ignored.|
+||Observation.identifier|This element is used to prevent data duplication during uploads.|
 
 ### Description of the Fields
 In this section each of the fields summarized above is discussed.
@@ -483,7 +483,7 @@ The table below lists the special conditions reported and in what elements they 
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 #### Identifier
-The Observation.identifier entry created by this IG is *not* for consumption. It is for preventing data duplication during uploads. It is used in conditional create transactions. Consumers are expected to ignore the element.
+To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Other systems may add further identifiers.
 
 ### Measurement Values that are Single-Number or Scalar
 Scalar numeric measurements are the most common type of measurement reported by PHDs. Temperature, weight, height, miles run, pulse rate, etc. are examples. Scalar numeric measurements are reported in Observation resources following the Phd Numeric Observation Profile. The scalar values are reported in the Observation.valueQuantity element. If the PHD reports a special value; Not a number, Positive infinity, Negative infinity, and two other possible values unknown to FHIR, an Observation.dataAbsentReason element replaces the valueQuantity and there is no value[x] element.
@@ -1437,65 +1437,22 @@ An example of a property entry where a PHG is certified for web-services PCD-01 
 ### Patient Resource
 It is assumed here that the reader has access to the Patient resource uploaded by the PHG and that the PHG uploaded a Patient resource. There is a special case where the PHG will not upload a Patient resource.
 
-The Patient resource following the Phd Patient Profile is identified by the Patient.meta.profile element having a "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient" entry.
+The Patient resource is following the Phd Patient Profile as defined [here](StructureDefinition-PhdPatient.html).
 
-There is only one additional required entry in the Phd Patient Profile; the Patient.identifier. Any other information is optional and it will not be discussed here.
+There is only one additional required entry in the Phd Patient Profile; the Patient.identifier.
 
-The required Patient.identifier entry contains an identifier.type using the version 2 Table 0203 code system "http://terminology.hl7.org/CodeSystem/v2-0203" found [here](http://build.fhir.org/v2/0203/index.html). The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
+The required Patient.identifier entry contains an identifier.type using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
 
 The identifier.value and identifier.system entries are used to quantify the entries of the given identifier.type. For example, the identifier.system might be the XDSb institutional identifier and the identifier.value the patient record number (also known as the patient identifier).
 
 The above information exposes no personal health information as only the organization responsible for the patient has the dictionary that can relate these codes to a given person.
 
 An example of a Patient.identifier following the XDSb notation is given below:
-
-    "identifier": [
-        {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "MR"
-                    }
-                ],
-                "text": "Medical record number"
-            },
-            "system": "urn:oid:1.2.3.4.5.6.7.8.11",
-            "value": "sisansarahId"
-        }
-    ]
+{% fragment Patient/patientExample-1 JSON BASE:identifier %}
 
 An example of an unknown patient using the Version 2 Table 0004 patient class code system is given below:
+{% fragment Patient/patientExample-2 JSON BASE:identifier %}
 
-    "identifier": [
-        {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "U"
-                    }
-                ],
-                "text": "Unspecified"
-            },
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0004",
-            "value": "U"
-        }
-    ]
-
-### Links to the Profile Structure Definitions
-
- - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html)
- - [Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)
- - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)
- - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)
- - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)
- - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)
- - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)
- - [Coincident Time Stamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html)
- - [Phd Device Profile](StructureDefinition-PhdDevice.html)
- - [Phg Device Profile](StructureDefinition-PhgDevice.html)
- - [Patient Profile](StructureDefinition-PhdPatient.html)
 
 
 
