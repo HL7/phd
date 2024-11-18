@@ -233,3 +233,11 @@ Description: "StructureDefinition for Observation Resources representing measure
     * value 1..
       * ^definition = "This is the value of the text string."
   * dataAbsentReason ..0
+
+Mapping: IEEE-11073-10206
+Id: IEEE-11073-10206
+Title: "Mapping IEEE-11073-10206 ACOM to FHIR"
+Source: PhdNumericObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg/"
+* valueQuantity.value -> "NumericObservation.value"
+* valueQuantity.unit -> "NumericObservation.unit" 
