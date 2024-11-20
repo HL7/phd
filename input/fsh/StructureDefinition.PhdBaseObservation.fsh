@@ -9,7 +9,7 @@ Description: "Common base profile with the elements that are common to the PHD I
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation"
 * ^status = #draft
 * ^date = "2017-11-24T15:17:35.385-05:00"
-* . ^comment = "This profile defines a base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
+* . ^comment = "This profile is the base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
 * meta 1..
   * security ^slicing.discriminator[0].type = #value
     * ^slicing.discriminator[=].path = "system"
@@ -60,7 +60,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * system ..0
   * value 1..
 * status ^definition = "The status of the result value. Either 'final' or 'preliminary'"
-  * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute or Nu-Observed-Value attribute status field indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
+  * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
 * code
   * coding ^slicing.discriminator[0].type = #value
     * ^slicing.discriminator[=].path = "system"
@@ -152,3 +152,13 @@ Description: "Common base profile with the elements that are common to the PHD I
 * dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
 * dataAbsentReason.coding[FhirDefault].code 1..
 
+Mapping: IEEE-11073-10206
+Id: IEEE-11073-10206
+Title: "IEEE-11073-10206 ACOM to FHIR/0"
+Source: PhdBaseObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg/0"
+* -> "ACOM"
+* code.coding.code -> "Observation.type"
+* effectiveDateTime -> "Observation.time-stamp"
+* effectivePeriod.start -> "Observation.time-stamp"
+* effectivePeriod.end -> "Observation.time-stamp + Observation.measurement-duration" 

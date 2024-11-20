@@ -21,6 +21,12 @@
 			"valueReference": {
 				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
+		},
+		{
+			"url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+			"valueReference" : {
+			  "reference" : "Observation/coin-example-1"
+			}
 		}
 	],
 	"status": "final",
@@ -40,10 +46,5 @@
 	"valueString": "Test Strip Buckled",
 	"device": {
 		"reference": "Device/phd-00601900010E9234.F45EABA80832"
-	},
-	"derivedFrom": [
-		{
-			"reference": "Observation/coin-example-1"
-		}
-	]
+	}
 }
