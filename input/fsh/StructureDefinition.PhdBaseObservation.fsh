@@ -152,6 +152,7 @@ Description: "Common base profile with the elements that are common to the PHD I
 * dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
 * dataAbsentReason.coding[FhirDefault].code 1..
 
+
 Mapping: IEEE-11073-10206
 Id: IEEE-11073-10206
 Title: "IEEE-11073-10206 ACOM to FHIR/0"
