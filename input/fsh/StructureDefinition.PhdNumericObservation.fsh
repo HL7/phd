@@ -206,12 +206,13 @@ Description: "StructureDefinition for Observation Resources representing measure
       * ^definition = "This is the value of the text string."
   * dataAbsentReason ..0
 
+
 Mapping: IEEE-11073-10206-1
 Id: IEEE-11073-10206-1
 Title: "IEEE-11073-10206 ACOM to FHIR/1"
 Source: PhdNumericObservation
 Target: "https://sagroups.ieee.org/11073/phd-wg/1"
-* -> "ACOM"
+* -> "ACOM-1"
 * valueQuantity.value -> "NumericObservation.value"
 * valueQuantity.unit -> "NumericObservation.unit" 
 * extension[Accuracy].valueQuantity.value -> "NumericObservation.accuracy"
