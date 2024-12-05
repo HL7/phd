@@ -1,4 +1,4 @@
-The fololwing sections give more details on the data elements in a PHDBaseObservation resource.
+The following sections give more details on the data elements in a PHDBaseObservation resource.
 
 ### Gateway Device extension
 HL7 has defined an extension for the Observation resource to reference a gateway device. This extension is used to reference the Device resource representing the Personal Health Gateway (PHG) device.

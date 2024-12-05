@@ -33,7 +33,7 @@
 	"code": {
 		"coding": [
 			{
-				"system": "urn:iso:std:iso:11073:10101",
+				"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PrivateMDCCodes",
 				"code": "8452096"
 			}
 		],

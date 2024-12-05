@@ -44,39 +44,11 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^comment = "The values in the http://terminology.hl7.org/CodeSystem/data-absent-reason system do not provide a code that matches the special values 'not at this resolution' and 'reserved'. In those cases one uses the generic 'error' code. If both a special value and a Measurement-Status indicating invalid, not unavailable, or msmt ongoing are received, the Measurement-Status mapping takes precedence."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * component contains
-    accuracyComponent 0..1 and
     alertOpStateComponent 0..* and
     currentLimitsComponent 0..1 and
     alertOpTextStringComponent 0..1 and
     measurementConfidence95Component 0..1 and
     thresholdNotificationTextStringComponent 0..1
-* component[accuracyComponent] ^short = "The accuracy of the measurement"
-  * ^definition = "This component shall be present if the Accuracy attribute is present."
-  * code from $Quantity11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-      * code = #67914 (exactly)
-        * ^definition = "The code for the Accuracy attribute is 67914"
-    * text ^definition = "Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT"
-  * value[x] 1..
-  * valueQuantity 1..1
-  * valueQuantity only Quantity
-    * ^sliceName = "valueQuantity"
-    * value 1..
-      * ^definition = "This is the value of the accuracy attribute. The value is Mder FLOAT encoded and shall be expressed to the precision indicated by the Mder FLOAT."
-    * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "The unit code shall use the UCUM system"
-    * code 1..
-      * ^definition = "The units for the Accuracy are given by the units of the measurement so this entry shall have the same code as in Observation.valueQuantity.code"
-  * dataAbsentReason ..0
 * component[alertOpStateComponent] ^short = "The Alert Operations State component"
   * ^definition = "This component gives one of the settings reported in the Alert-Op-State attribute. This attribute is used only by the Pulse Oximeter specialization.\r\nThe Alert-Op-State attribute is used in conjunction with the Current-Limits and Measurement-Status attributes. The Current-Limits defines upper and lower limit thresholds for a reported measurement value. When the reported measurement value goes below or above these limits, a bit is set in the Measurement-Status attribute is set if the Alert-Op-State attribute indicates that the alert is active for the given threshold. Since it is considered important that if a Current-Limits attribute is present an alert shall be sent went the thresholds are crossed, the Alert-Op-State Bits are only set when the alert is, for some reason, turned OFF for a given threshold.\r\nThere shall be one such alertOpStateComponent entry for every bit set in the Alert-Op-State attribute. There may be an entry for the defined cleared components as well."
   * ^comment = "Recall that when creating the code for this entry that the code uses the MDER-Bit setting to be reported along with the Alert-Op-State attribute's MDC code. MDER-Bit 0 is the most significant bit of the attribute value. Since the Alert-Op-State attribute is a BITS-16 value, MDER-Bit 0 would have value 0x8000 and MDER-Bit 1 would have value 0x4000. Only bits 0, 1, and 2 are defined for this attribute. This component indicates if a given alert condition monitoring is turned off."
@@ -239,8 +211,8 @@ Mapping: IEEE-11073-10206-1
 Id: IEEE-11073-10206-1
 Title: "IEEE-11073-10206 ACOM to FHIR/1"
 Source: PhdNumericObservation
-Target: "https://sagroups.ieee.org/11073/phd-wg/1"
-* -> "ACOM-1"
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
 * valueQuantity.value -> "NumericObservation.value"
 * valueQuantity.unit -> "NumericObservation.unit" 
 * extension[Accuracy].valueQuantity.value -> "NumericObservation.accuracy"

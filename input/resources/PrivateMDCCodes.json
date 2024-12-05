@@ -1,0 +1,63 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "name": "PrivateMDCCodes",
+  "id": "PrivateMDCCodes",
+  "title": "Private MDC Codes",
+  "description": "A CodeSystem that defines two private codes in the MDC CodeSystem.",
+  "version": "1.0.0",
+  "url": "http://hl7.org/fhir/uv/phd/CodeSystem/PrivateMDCCodes",
+  "caseSensitive" : false,
+  "experimental": false,
+  "content": "complete",
+  "property" : [
+    {
+      "code" : "status",
+      "description" : "Status of the term code in NIST RTMMS.",
+      "type" : "Coding"
+    },
+    {
+      "code" : "partition",
+      "description" : "Partition is a group of semantics that are assigned to a contiguous term code range and have a categorical relationship.",
+      "type" : "code"
+    }
+  ],
+  "concept": [
+    {
+        "code": "8452096",
+        "display": "MDCX_GLU_TEST_STRIP_FAILURE_REASON",
+        "definition": "This is an example of a private code for an observation that reports the failure reason of a test strip.",
+        "property" : [
+            {
+              "code" : "partition",
+              "valueCode" : "128"
+            },
+            {
+              "code" : "status",
+              "valueCoding" : {
+                "system" : "http://devices.fhir.org/CodeSystem/MDC-concept-status",
+                "code" : "provisional"
+              }
+            }
+          ]
+    },
+    {
+      "code": "8452097",
+      "display": "MDCX_ANOTHER_PRIVATE_CODE",
+      "definition": "This is another private code added to the CodeSystem.",
+      "property" : [
+        {
+          "code" : "partition",
+          "valueCode" : "128"
+        },
+        {
+          "code" : "status",
+          "valueCoding" : {
+            "system" : "http://devices.fhir.org/CodeSystem/MDC-concept-status",
+            "code" : "provisional"
+          }
+        }
+      ]
+    }
+  ]
+}

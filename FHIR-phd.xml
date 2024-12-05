@@ -29,8 +29,8 @@
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Example Phd Device Metric"/>
 <artifact deprecated="true" id="Observation/bloodPress-1.0.1" key="Observation-bloodPress-1.0.1" name="Example of Compound measurement"/>
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="Example of PHD Device"/>
-<artifact id="Observation/stringenum-1234" key="Observation-stringenum-1234" name="Example of String measurement"/>
-<artifact id="Observation/string-observation-1" key="Observation-stringenum-1234" name="Example of String measurement"/>
+<artifact id="Observation/stringenum-1234" key="Observation-stringenum-1234" name="Example of String measurement 1"/>
+<artifact id="Observation/string-observation-1" key="Observation-string-observation-1" name="Example of String measurement 2"/>
 <artifact id="Observation/bits-observation" key="Observation-bits-1.0.0.40" name="Example of a ASN1 BITs measurement"/>
 <artifact id="Device/phd-711000FEFF5F49B0.B0495F001071" key="Device-phd-711000FEFF5F49B0.B0495F001071" name="Example of a Blood Pressure PHD"/>
 <artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Time Stamp"/>
@@ -50,6 +50,7 @@
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
+<artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDC Value Set"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDCnotObject"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
@@ -68,6 +69,7 @@
 <artifact id="CapabilityStatement/PhdServerCapabilityStatement" key="CapabilityStatement-PhdServerCapabilityStatement" name="PhdServerCapabilityStatement"/>
 <artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
+<artifact id="CodeSystem/PrivateMDCCodes" key="CodeSystem-PrivateMDCCodes" name="PrivateMDCCodes"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
 <artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>

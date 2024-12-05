@@ -1,5 +1,6 @@
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
+Alias: $MDCValueSet = http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet
 
 Profile: PhdBaseObservation
 Parent: Observation
@@ -61,28 +62,10 @@ Description: "Common base profile with the elements that are common to the PHD I
   * value 1..
 * status ^definition = "The status of the result value. Either 'final' or 'preliminary'"
   * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
-* code
-  * coding ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "system"
-    * ^slicing.rules = #open
-  * coding contains
-      MDCType 1..1 and
-      LoincCoding 0..1
-  * coding[MDCType] ^short = "The 11073-10101 MDC code for the measurement"
-    * ^definition = "This MDC code expresses what the measurement is."
-    * ^comment = "The value for the code can be obtained from the IEEE 11073-10206 Observation.type attribute."
-    * system 1..
-    * system = "urn:iso:std:iso:11073:10101" (exactly)
-    * code 1..
-      * ^comment = "Required for all measurements"
-  * coding[LoincCoding] ^short = "The LOINC code for the measurement"
-    * ^definition = "This LOINC code expresses what the measurement is"
-    * ^comment = "If the observation is one of the FHIR-defined vital signs observation, the equivalent LOINC code for that vital sign as specified by FHIR appears here."
-    * system 1..
-    * system = "http://loinc.org" (exactly)
-    * code 1..
-      * ^comment = "Required if the measurement is a vital sign"
-  * text ^short = "It is recommended to display at least the reference identifier for the MDC code"
+
+* code from $MDCValueSet (extensible)
+* code obeys mdc-1
+
 * subject 1..
   * reference 1..
 * effective[x] 1..
@@ -152,12 +135,17 @@ Description: "Common base profile with the elements that are common to the PHD I
 * dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
 * dataAbsentReason.coding[FhirDefault].code 1..
 
+Invariant: mdc-1
+Description: "A published MDC Code is preferred but private MDC codes are allowed as well."
+* severity = #warning
+* expression = "coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists()"
+* xpath = "@value|f:*|h:div"
 
 Mapping: IEEE-11073-10206
 Id: IEEE-11073-10206
-Title: "IEEE-11073-10206 ACOM to FHIR/0"
+Title: "IEEE-11073-10206 ACOM to FHIR"
 Source: PhdBaseObservation
-Target: "https://sagroups.ieee.org/11073/phd-wg/0"
+Target: "https://sagroups.ieee.org/11073/phd-wg"
 * -> "ACOM"
 * code.coding.code -> "Observation.type"
 * effectiveDateTime -> "Observation.time-stamp"

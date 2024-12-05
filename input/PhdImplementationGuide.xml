@@ -259,6 +259,15 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/PrivateMDCCodes"/>
+      </reference>
+      <name value="PrivateMDCCodes"/>
+      <description value="Private MDC codes code system as example."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="codeSystems" />
+    </resource> 
+    <resource>
+      <reference>
         <reference value="CodeSystem/PhdObservationCategories"/>
       </reference>
       <name value="PhdObservationCategories"/>
@@ -482,21 +491,20 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/stringenum-1234"/>
       </reference> 
-      <name value="Example of String measurement"/>
+      <name value="Example of String measurement 1"/>
       <description value="This example observation reports some arbitrary text from a cardiavascular fitness device." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
       <groupingId value="examples" />
     </resource>
-        <resource>
+    <resource>
       <reference>
         <reference value="Observation/string-observation-1"/>
       </reference> 
-      <name value="Example of String measurement"/>
+      <name value="Example of String measurement 2"/>
       <description value="This example observation reports some arbitrary text from a Glucose meter explaining the failure of the measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
       <groupingId value="examples" />
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/coin-20181119202022"/>
