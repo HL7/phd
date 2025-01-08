@@ -11,7 +11,8 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="11073 ASN1 Event Or State"/>
+<artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACMEIncPrivateMDCCodes"/>
+<artifact id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="ASN1EventOrState"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1ToHL7"/>
 <artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
 <artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
@@ -39,6 +40,7 @@
 <artifact id="Observation/coin-20181119174911" key="Observation-coin-20181119174911" name="Example of a Coincident Time Stamp referenced from BP observation"/>
 <artifact id="Observation/coin-example-timefault" key="Observation-coin-fault20" name="Example of a Coincident Time Stamp with a Time Fault"/>
 <artifact id="Device/phg-ecde3d4e58532d31.000000000000" key="Device-phg-ecde3d4e58532d31.000000000000" name="Example of a Gateway"/>
+<artifact id="Device/phg-example" key="Device-phg-example" name="Example of a Gateway 2"/>
 <artifact id="Device/phd-00601900010E9234.F45EABA80832" key="Device-phd-00601900010E9234.F45EABA80832" name="Example of a Glucose Monitor PHD"/>
 <artifact id="Observation/numeric-observation-not-a-number" key="Observation-nan-1.0.0.42" name="Example of a NaN case"/>
 <artifact deprecated="true" id="Patient/sisansarahId.1.2.3.4.5.6.7.8.10" key="Patient-sisansarahId.1.2.3.4.5.6.7.8.10" name="Example of a Patient"/>
@@ -50,7 +52,7 @@
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
-<artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDC Value Set"/>
+<artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDCValueSet"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDCnotObject"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
@@ -69,7 +71,6 @@
 <artifact id="CapabilityStatement/PhdServerCapabilityStatement" key="CapabilityStatement-PhdServerCapabilityStatement" name="PhdServerCapabilityStatement"/>
 <artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
-<artifact id="CodeSystem/PrivateMDCCodes" key="CodeSystem-PrivateMDCCodes" name="PrivateMDCCodes"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
 <artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
@@ -79,7 +80,7 @@
 <page deprecated="true" key="EnumString" name="A measurement that is a human readable string (Enumeration String)"/>
 <page key="ASN1BITsCodeSystem" name="ASN1 BITs Code System"/>
 <page key="ASN1ToHL7Codes" name="ASN1 BITs Codes"/>
-<page key="phgExample" name="Android Gateway example"/>
+<page deprecated="true" key="phgExample" name="Android Gateway example"/>
 <page key="Appendices" name="Appendices"/>
 <page key="artifacts" name="Artifact List"/>
 <page key="Audience" name="Audience"/>
@@ -98,7 +99,7 @@
 <page key="DIMtoFHIRMappingDetails" name="DIM to FHIR Mapping: Details"/>
 <page key="DefinitionMetricMsmt" name="Definition of a Metric Measurement"/>
 <page key="DeviceIdentifierCodes" name="Device Identifier codes"/>
-<page key="phdExample" name="Device example from a Blood Pressure PHD"/>
+<page deprecated="true" key="phdExample" name="Device example from a Blood Pressure PHD"/>
 <page key="downloads" name="Downloads"/>
 <page key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
 <page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Time Stamp Identifier"/>
@@ -118,16 +119,16 @@
 <page deprecated="true" key="CodedEnumerationObservationProfile" name="PHD Coded Enumeration Observation Profile"/>
 <page key="CoincidentTimeStampObservationProfile" name="PHD Coincident Time Stamp Observation Profile"/>
 <page key="CompoundNumericObservationProfile" name="PHD Compound Numeric Observation Profile"/>
-<page key="PhdDeviceProfile" name="PHD Device Profile"/>
+<page deprecated="true" key="PhdDeviceProfile" name="PHD Device Profile"/>
 <page deprecated="true" key="NumericObservationProfile" name="PHD Numeric Observation Profile"/>
-<page key="PhdPatientProfile" name="PHD Patient Profile"/>
+<page deprecated="true" key="PhdPatientProfile" name="PHD Patient Profile"/>
 <page key="RtsaObservationProfile" name="PHD Real Time Sample Array Observation Profile"/>
 <page deprecated="true" key="StringEnumerationObservationProfile" name="PHD String Enumeration Observation Profile"/>
-<page key="PhgDeviceProfile" name="PHG (Personal Health Gateway) Device Profile"/>
+<page deprecated="true" key="PhgDeviceProfile" name="PHG (Personal Health Gateway) Device Profile"/>
 <page key="TechnicalImplementationGuidance" name="PHG Implementation Guidance"/>
 <page deprecated="true" key="patientExample" name="Patient example containing optional patient name"/>
 <page key="index" name="Personal Health Device Implementation Guide Home Page"/>
-<page key="profiles" name="Profiles"/>
+<page deprecated="true" key="profiles" name="Profiles"/>
 <page key="ProfilesOverview" name="Profiles Overview"/>
 <page key="Purpose" name="Purpose"/>
 <page key="Rtsa" name="Real Time Sample Array; Pleth wave"/>

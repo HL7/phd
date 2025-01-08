@@ -2,7 +2,7 @@ Extension: Accuracy
 Id: Accuracy
 Title: "Numeric Accuracy"
 Description: "The accuracy of a measurable quantity."
-Context: Observation, DeviceMetric
+Context: Observation, DeviceMetric, Observation.component
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy"
 * . 0..1
 * . ^short = "Numeric Accuracy"

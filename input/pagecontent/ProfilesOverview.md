@@ -73,9 +73,9 @@ On the other hand, if the use case only involves PHDs that do not emit source-ha
    - [Rtsa Observation Profile](RtsaObservationProfile.html)
    - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)
  - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html)
- - [Phd Device Profile](PhdDeviceProfile.html)
- - [Phg Device Profile](PhgDeviceProfile.html)
- - [Patient Profile](PhdPatientProfile.html)
+ - [Phd Device Profile](StructureDefinition-PhdDevice.html)
+ - [Phg Device Profile](StructureDefinition-PhgDevice.html)
+ - [Patient Profile](StructureDefinition-PhdPatient.html)
 
 
 

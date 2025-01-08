@@ -1067,7 +1067,7 @@ The Device.specialization entry is probably the entry most consumers will want t
 
 In IEEE 11073-20601 specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
 
-A table of some of the most common specializations can be found in the specialization section [here](PhdDeviceProfile.html).
+A table of some of the most common specializations can be found in the specialization section [here](StructureDefinition-PhdDevice.html).
 
 The example below shows an example of a market PHD following the Glucose specialization:
 
@@ -1107,7 +1107,7 @@ The Device.property.type is a CodeableConcept which tells what the property is. 
 |Continua Certified Device List|532353|MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST|
 
 ##### Time Synchronization
-There will always be a time synchronization entry. It is identified by a property.type.coding.code="68220". It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](PhdDeviceProfile.html). This value is always TIME_SYNC_NONE (532224) if the PHD is not synchronized or has no time clock at all. To date ALL PHDs have no external time synchronization capabilities and this entry is always TIME_SYNC_NONE.
+There will always be a time synchronization entry. It is identified by a property.type.coding.code="68220". It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](StructureDefinition-PhdDevice.html). This value is always TIME_SYNC_NONE (532224) if the PHD is not synchronized or has no time clock at all. To date ALL PHDs have no external time synchronization capabilities and this entry is always TIME_SYNC_NONE.
 
 An example of time synchronization property entry is shown below:
 

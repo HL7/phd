@@ -1,0 +1,1 @@
+This example maps a Blood Pressure PHD unit to a Device Resource. All the information mapped is provided by the protocol exchange. None of the information is provided by patient entry.

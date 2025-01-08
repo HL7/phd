@@ -4,7 +4,6 @@
   <li><a href="overview.html">Overview</a></li>
   <li><a href="ProfileConsumers.html">Profile Consumers</a></li>
   <li><a href="TechnicalImplementationGuidance.html">PHG Implementation Guidance</a></li>
-  <li><a href="profiles.html">Profiles</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
   <li><a href="changes.html">Change Log</a></li>
   <li><a href="{{site.data.fhir.path}}index.html">FHIR Specification</a></li>

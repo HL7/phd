@@ -1,25 +1,33 @@
 {
   "resourceType": "CodeSystem",
   "status": "active",
-  "name": "PrivateMDCCodes",
-  "id": "PrivateMDCCodes",
-  "title": "Private MDC Codes",
-  "description": "A CodeSystem that defines two private codes in the MDC CodeSystem.",
+  "name": "ACMEIncPrivateMDCCodes",
+  "id": "ACMEIncPrivateMDCCodes",
+  "title": "ACME Inc Private MDC Codes",
+  "description": "An example CodeSystem that defines two private codes for an imaginary company in the MDC CodeSystem.",
   "version": "1.0.0",
-  "url": "http://hl7.org/fhir/uv/phd/CodeSystem/PrivateMDCCodes",
+  "url": "http://hl7.org/fhir/uv/phd/CodeSystem/ACMEIncPrivateMDCCodes",
   "caseSensitive" : false,
   "experimental": false,
   "content": "complete",
+  "identifier" : [
+    {
+      "system" : "urn:ietf:rfc:3986",
+      "value" : "urn:oid:1.2.3.4.5.6.7.8.9.10"
+    }
+  ],
   "property" : [
     {
       "code" : "status",
-      "description" : "Status of the term code in NIST RTMMS.",
-      "type" : "Coding"
+      "description" : "Status of the term code in IEEE 11073-10101 / NIST RTMMS.",
+      "type" : "code",
+      "uri" : "https://sagroups.ieee.org/11073/10101/status"
     },
     {
       "code" : "partition",
-      "description" : "Partition is a group of semantics that are assigned to a contiguous term code range and have a categorical relationship.",
-      "type" : "code"
+      "description" : "The first 16 bits of the code: [context-free] Nomenclature Code == (Partition number * 2**16) + [contextsensitive] Term Code.",
+      "type" : "code",
+      "uri" : "https://sagroups.ieee.org/11073/10101/partition"
     }
   ],
   "concept": [
@@ -34,10 +42,7 @@
             },
             {
               "code" : "status",
-              "valueCoding" : {
-                "system" : "http://devices.fhir.org/CodeSystem/MDC-concept-status",
-                "code" : "provisional"
-              }
+              "valueCode" : "private"
             }
           ]
     },
@@ -52,10 +57,7 @@
         },
         {
           "code" : "status",
-          "valueCoding" : {
-            "system" : "http://devices.fhir.org/CodeSystem/MDC-concept-status",
-            "code" : "provisional"
-          }
+          "valueCode" : "private"
         }
       ]
     }
