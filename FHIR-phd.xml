@@ -47,8 +47,10 @@
 <artifact deprecated="true" id="Observation/compound-numeric-observation" key="Observation-compound-numeric-observation" name="Example of a compound numeric observation"/>
 <artifact id="Bundle/bundle-example-1" key="Bundle-nonin-hdp-1542718631721" name="Example of a first time Bundle upload"/>
 <artifact id="Patient/patientExample-1" key="Patient-patientExample-1" name="Example of a known Patient"/>
+<artifact id="Observation/temperature-observation" key="Observation-temperature-observation" name="Example of a numeric body temperature observation."/>
 <artifact id="Observation/numeric-spotnumeric" key="Observation-spotnumeric-1.0.0.3" name="Example of a numeric."/>
-<artifact id="Observation/rtsa-1234" key="Observation-rtsa-1234" name="Example of an Rtsa."/>
+<artifact id="Observation/rtsa-example" key="Observation-rtsa-example" name="Example of an RTSA"/>
+<artifact deprecated="true" id="Observation/rtsa-1234" key="Observation-rtsa-1234" name="Example of an Rtsa."/>
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
@@ -122,7 +124,7 @@
 <page deprecated="true" key="PhdDeviceProfile" name="PHD Device Profile"/>
 <page deprecated="true" key="NumericObservationProfile" name="PHD Numeric Observation Profile"/>
 <page deprecated="true" key="PhdPatientProfile" name="PHD Patient Profile"/>
-<page key="RtsaObservationProfile" name="PHD Real Time Sample Array Observation Profile"/>
+<page deprecated="true" key="RtsaObservationProfile" name="PHD Real Time Sample Array Observation Profile"/>
 <page deprecated="true" key="StringEnumerationObservationProfile" name="PHD String Enumeration Observation Profile"/>
 <page deprecated="true" key="PhgDeviceProfile" name="PHG (Personal Health Gateway) Device Profile"/>
 <page key="TechnicalImplementationGuidance" name="PHG Implementation Guidance"/>
@@ -131,7 +133,7 @@
 <page deprecated="true" key="profiles" name="Profiles"/>
 <page key="ProfilesOverview" name="Profiles Overview"/>
 <page key="Purpose" name="Purpose"/>
-<page key="Rtsa" name="Real Time Sample Array; Pleth wave"/>
+<page deprecated="true" key="Rtsa" name="Real Time Sample Array; Pleth wave"/>
 <page key="RemotePatientMonitoringConsiderations" name="Remote Patient Monitoring Considerations"/>
 <page key="Scope" name="Scope"/>
 <page deprecated="true" key="spotNumeric" name="Simple numeric with supplemental types"/>

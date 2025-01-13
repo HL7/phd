@@ -1,6 +1,5 @@
 {
 	"resourceType": "Observation",
-	"id": "rtsa-1234",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"
@@ -53,7 +52,8 @@
 		"origin": {
 			"value": -3.4,
 			"system": "http://unitsofmeasure.org",
-			"code": "1"
+			"code": "1",
+			"unit": "{unitless} 1"
 		},
 		"period": 2.000,
 		"factor": 3.0,

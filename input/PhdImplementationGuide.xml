@@ -452,12 +452,22 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
       <!-- <groupingId value="examples" /> -->
     </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Observation/temperature-observation"/>
+      </reference> 
+      <name value="Example of a numeric body temperature observation."/>
+      <description value="This example is a simple numeric observation of a health thermometer." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
+      <!-- <groupingId value="examples" /> -->
+    </resource>
 
     <resource>
       <reference>
-        <reference value="Observation/rtsa-1234"/>
+        <reference value="Observation/rtsa-example"/>
       </reference> 
-      <name value="Example of an Rtsa."/>
+      <name value="Example of an RTSA"/>
       <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
       <!-- <groupingId value="examples" /> -->
@@ -774,16 +784,6 @@ In this example there are only xml structure definitions, value sets, code syste
             <nameUrl value="BITsEnumerationObservationProfile.html"/>
             <title value="PHD BITs Coded Enumeration Observation Profile"/>
             <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="RtsaObservationProfile.html"/>
-            <title value="PHD Real Time Sample Array Observation Profile"/>
-            <generation value="markdown"/>
-            <page>
-              <nameUrl value="Rtsa.html"/>
-              <title value="Real Time Sample Array; Pleth wave"/>
-              <generation value="markdown"/>
-            </page>
           </page>
           <page>
             <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
