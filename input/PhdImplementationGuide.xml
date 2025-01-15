@@ -249,6 +249,14 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/MDCConcepts"/>
+      </reference>
+      <name value="MDCConcepts"/>
+      <description value="Concept codes for the MDC code system properties"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ContinuaHFS"/>
       </reference>
       <name value="ContinuaHFS"/>
@@ -273,6 +281,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <description value="Example codesystem with Private MDC codes for ACME Inc as example."/>
       <exampleBoolean value="true"/>
       <!-- <groupingId value="codeSystems" /> -->
+    </resource> 
+        <resource>
+      <reference>
+        <reference value="CodeSystem/RTMMSStatusCodes"/>
+      </reference>
+      <name value="RTMMSStatusCodes"/>
+      <description value="Codesystem with statuses of MDC."/>
+      <exampleBoolean value="false"/>
     </resource> 
     <resource>
       <reference>

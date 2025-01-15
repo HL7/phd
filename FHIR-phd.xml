@@ -11,6 +11,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="CodeSystem/ASN1Source" key="CodeSystem-ASN1Source" name="11073 ASN1 Source"/>
 <artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACMEIncPrivateMDCCodes"/>
 <artifact id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="ASN1EventOrState"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1ToHL7"/>
@@ -54,6 +55,7 @@
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
+<artifact id="CodeSystem/MDCConcepts" key="CodeSystem-MDCConcepts" name="MDCConcepts"/>
 <artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDCValueSet"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDCnotObject"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
@@ -74,6 +76,7 @@
 <artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
+<artifact id="CodeSystem/RTMMSStatusCodes" key="CodeSystem-RTMMSStatusCodes" name="RTMMSStatusCodes"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
 <artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
 <artifact deprecated="true" key="StructureDefinition" name="StructureDefinition"/>

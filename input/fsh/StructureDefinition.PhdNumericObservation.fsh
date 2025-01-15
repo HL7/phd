@@ -207,8 +207,8 @@ Description: "StructureDefinition for Observation Resources representing measure
   * dataAbsentReason ..0
 
 
-Mapping: IEEE-11073-10206-1
-Id: IEEE-11073-10206-1
+Mapping: IEEE-11073-10206-PhdNumericObservation
+Id: IEEE-11073-10206-PhdNumericObservation
 Title: "IEEE-11073-10206 ACOM to FHIR/1"
 Source: PhdNumericObservation
 Target: "https://sagroups.ieee.org/11073/phd-wg"

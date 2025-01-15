@@ -143,8 +143,8 @@ Description: "A published MDC Code is preferred but private MDC codes are allowe
 * expression = "coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists()"
 * xpath = "@value|f:*|h:div"
 
-Mapping: IEEE-11073-10206
-Id: IEEE-11073-10206
+Mapping: IEEE-11073-10206-PhdBaseObservation
+Id: IEEE-11073-10206-PhdBaseObservation
 Title: "IEEE-11073-10206 ACOM to FHIR"
 Source: PhdBaseObservation
 Target: "https://sagroups.ieee.org/11073/phd-wg"

@@ -19,18 +19,27 @@
   "property" : [
     {
       "code" : "status",
-      "description" : "Status of the term code in IEEE 11073-10101 / NIST RTMMS.",
-      "type" : "code",
-      "uri" : "https://sagroups.ieee.org/11073/10101/status"
+      "description" : "Status of the term code (in IEEE 11073-10101 / NIST RTMMS)",
+      "type" : "Coding",
+      "uri" : "https://sagroups.ieee.org/11073/10101#status"
     },
     {
       "code" : "partition",
       "description" : "The first 16 bits of the code: [context-free] Nomenclature Code == (Partition number * 2**16) + [contextsensitive] Term Code.",
       "type" : "code",
-      "uri" : "https://sagroups.ieee.org/11073/10101/partition"
+      "uri" : "http://hl7.org/fhir/concept-properties#parent"
     }
   ],
   "concept": [
+    { 
+      "code": "128",
+      "display": "partition 128",
+      "definition": "partition 128 is reserved for private codes."
+    },
+    { "code": "private",
+      "display": "private",
+      "definition": "This status indicates that the code is private and not part of the standard MDC codes."
+    },
     {
         "code": "8452096",
         "display": "MDCX_GLU_TEST_STRIP_FAILURE_REASON",
@@ -42,7 +51,7 @@
             },
             {
               "code" : "status",
-              "valueCode" : "private"
+              "valueCoding" : {"system":"http://hl7.org/fhir/uv/phd/CodeSystem/RTMMSStatusCodes", "code":"private"}
             }
           ]
     },
@@ -57,7 +66,7 @@
         },
         {
           "code" : "status",
-          "valueCode" : "private"
+          "valueCoding" : {"system":"http://hl7.org/fhir/uv/phd/CodeSystem/RTMMSStatusCodes", "code":"private"}
         }
       ]
     }
