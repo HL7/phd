@@ -123,8 +123,9 @@ The consumer of this profile does not need to concern itself with the mapping co
 |measurement units|Observation.valueQuantity.code|Uses UCUM coding system.|
 |error|Observation.dataAbsentReason|Contains error code. If present no Observation.valueQuantity is present |
 |time stamp|Observation.dateTimeEffective<br/><br/>Observation.period|If the measurement is a point in time.<br/><br/>If the measurement has a duration.|
-|coincident time stamp|Observation.derivedFrom|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. Not present if the sensor provides NO time stamp |
-|related measurement|Observation.derivedFrom|Points to a PHD Observation that is related to this Observation such as a cardio session. Not present if the device did not reference an additional measurement.|
+|coincident time stamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. Not present if the sensor provides NO time stamp |
+|related measurement|Observation.derivedFrom|Points to a PHD Observations that are related to this Observation such as a height observation related to a BMI measurement. Not present if the observation did not reference other observations it is derived from.|
+|related measurement|Observation.memberOf|Points to a PHD Observation that reports a group of related Observations such as a cardio session. Not present if the observation is not a member of a group of related measurements.|
 |additional descriptions|Observation.component|If a component element exists it contains additional information about the measurement|
 |patient|Observation.subject|Points to the Patient resource|
 |sensor device|Observation.device|Points to the Device resource|

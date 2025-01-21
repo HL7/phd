@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Jan 14, 2025 22:22+0000 for FHIR v6.0.0-ballot2 
+  Generated on Mon, Jan 20, 2025 18:06+0000 for FHIR v6.0.0-ballot2 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot2">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -30176,7 +30176,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Signalling by the source device is local; signalling elsewhere is considered remote. A reference to the &quot;top level&quot; signalling device may also be present.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="manifestation" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="manifestation" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">How the signal is being annunciated.</xs:documentation>
            </xs:annotation>
@@ -58473,6 +58473,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The individual who initiated the request and has responsibility for its activation.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="additionalRecipient" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Entities in addition to the requestor that should receive the results of the ServiceRequest.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="performerType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Desired type of performer for doing the requested service.</xs:documentation>
@@ -66443,9 +66448,34 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:simpleType name="TransportStatusEnum">
     <xs:restriction base="code-primitive">
+      <xs:enumeration value="preparation">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Preparation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="in-progress">
         <xs:annotation>
           <xs:documentation xml:lang="en">In Progress</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="not-done">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not Done</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="suspended">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Suspended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stopped">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Stopped</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="on-hold">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">On Hold</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="completed">
@@ -66453,24 +66483,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:documentation xml:lang="en">Completed</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="abandoned">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Abandoned</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="cancelled">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Cancelled</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="planned">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Planned</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="entered-in-error">
         <xs:annotation>
           <xs:documentation xml:lang="en">Entered In Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>

@@ -20,7 +20,7 @@ The Enum-Observed-Value attribute is a complex attribute and can be any one of t
 The structure definition for this profile is given [here](StructureDefinition-PhdBitsEnumerationObservation.html)
 
 ### Mapping BITs Enumerations to FHIR
-FHIR has no data type that corresponds to this kind of measurement. Consequently Continua has developed a code system which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 BITS Code System](ASN1BITsCodeSystem.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported.
+FHIR has no data type that corresponds to this kind of measurement. Consequently Continua has developed a code system which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported.
 
 In the following table, N is the *bit position* being reported. M is the *component element number* in the Observation. Since not all bits may be reported, M is always <= N. The notation "Type" is the 32-bit code reported in Observation.code.coding.code used in the ASN1 mapping to HL7 codes. Note that the term code of this value will come from the metric-id element when an Enum-Observed-Value attribute is reported.
 
@@ -57,7 +57,7 @@ component": [
         }
 }
 </pre>
-There would be one such component element for every bit setting to be reported. Of one examines the ASN1ToHL7 code system [here](ASN1BITsCodeSystem.html) one will see that the code 150604.2 means "Sensor is incorrectly placed on user".
+There would be one such component element for every bit setting to be reported. Of one examines the [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html) one will see that the code 150604.2 means "Sensor is incorrectly placed on user".
 
 #### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.

@@ -1,7 +1,7 @@
 The fololwing sections give more details on the mapping of BITS to a FHIR Observation resource.
 
 ### Mapping BITs Enumerations to FHIR
-FHIR has no data type that corresponds to this kind of measurement. Consequently we developed a code system which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 BITS Code System](ASN1BITsCodeSystem.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported. 
+FHIR has no data type that corresponds to this kind of measurement. Consequently we developed a code system which maps the BITs measurement to a set of codes. The details of the mapping and how these codes are generated from data received from the PHD are given in [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html). These codes are reported in the component element; one component per reported bit setting. Thus similar to the compound numerical measurement, there is no Observation.value[x] element. There may still be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported. 
 
 <style>table, th, td {
 border: 1px solid black;
@@ -42,7 +42,7 @@ component": [
         }
 }
 </pre>
-There would be one such component element for every bit setting to be reported. If one examines the ASN1ToHL7 code system [here](ASN1BITsCodeSystem.html) one will see that the code 150604.2 means "Sensor is incorrectly placed on user".
+There would be one such component element for every bit setting to be reported. If one examines the [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html) one will see that the code 150604.2 means "Sensor is incorrectly placed on user".
 
 #### Conditional Create Identifier Generation
 For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.

@@ -14,7 +14,7 @@ These sections provide background on the concepts behind the technical mapping a
    - [FHIR's Codeable Concepts](CodeableConcepts.html)
    - [Obtaining the Observation.code](ObtainObservationCode.html)
    - [Obtaining the Unit code](ObtainUnitCode.html)
-   - [ASN1 BITS Code System](ASN1BITsCodeSystem.html)
+   - [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html)
    - [The Observation Identifier](ObservationIdentifier.html)
    - [Generating the Reported Time Stamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
  - [Coincident Time Stamp](CoincidentTimeStamp.html) 

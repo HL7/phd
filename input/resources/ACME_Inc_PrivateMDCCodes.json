@@ -18,12 +18,6 @@
   ],
   "property" : [
     {
-      "code" : "status",
-      "description" : "Status of the term code (in IEEE 11073-10101 / NIST RTMMS)",
-      "type" : "Coding",
-      "uri" : "https://sagroups.ieee.org/11073/10101#status"
-    },
-    {
       "code" : "partition",
       "description" : "The first 16 bits of the code: [context-free] Nomenclature Code == (Partition number * 2**16) + [contextsensitive] Term Code.",
       "type" : "code",
@@ -34,11 +28,12 @@
     { 
       "code": "128",
       "display": "partition 128",
-      "definition": "partition 128 is reserved for private codes."
+      "definition": "partition 128 (0x0080) is reserved for PHD disease management, with private codes in the range 0x0080F000-0x0080FFFF."
     },
-    { "code": "private",
-      "display": "private",
-      "definition": "This status indicates that the code is private and not part of the standard MDC codes."
+    { 
+      "code": "1024",
+      "display": "partition 1024",
+      "definition": "partition 1024 (0x0400) is reserved for private codes."
     },
     {
         "code": "8452096",
@@ -48,25 +43,17 @@
             {
               "code" : "partition",
               "valueCode" : "128"
-            },
-            {
-              "code" : "status",
-              "valueCoding" : {"system":"http://hl7.org/fhir/uv/phd/CodeSystem/RTMMSStatusCodes", "code":"private"}
             }
           ]
     },
     {
-      "code": "8452097",
+      "code": "67113524",
       "display": "MDCX_ANOTHER_PRIVATE_CODE",
       "definition": "This is another private code added to the CodeSystem.",
       "property" : [
         {
           "code" : "partition",
-          "valueCode" : "128"
-        },
-        {
-          "code" : "status",
-          "valueCoding" : {"system":"http://hl7.org/fhir/uv/phd/CodeSystem/RTMMSStatusCodes", "code":"private"}
+          "valueCode" : "1024"
         }
       ]
     }

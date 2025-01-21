@@ -32,7 +32,7 @@ One obtains the IEEE 11073-10101 observation type for the code element in the sa
 The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'.
 
 #### Performer
-In situations where the gateway knows that the patinet is the person performing the measurement, a Observation.performer[] element can also point to the PhdPatient resource. However, in most situations this is unknown and the performer is not filled in. And for coincident timestamp observations, the performer should not be provided.
+In situations where the gateway knows that the patient is the person performing the measurement, a Observation.performer[] element can also point to the PhdPatient resource. However, in most situations this is unknown and the performer is not filled in. And for coincident timestamp observations, the performer should not be provided.
 
 ### Time Stamp: effective[x]
 PHDs report time stamps in various methods and may not report time stamps at all. The PHG will include a time stamp in every observation that is uploaded using a conversion as needed based on the time stamp data received from the PHD. The time stamp types and corresponding PHG conversions are summarized below:
@@ -77,21 +77,16 @@ When the PHG modifies an Observation's time stamp as received from the PHD it sh
 ### Device
 The Observation.device element is a reference to the Device resource representing the PHD that generated the observation.
 
-### derivedFrom: Coincident time stamp and related Observations
-This element references Observation resources that are in some manner related to this Observation resource. In the PHD use case, this situation occurs whenever the observation reported by the PHD has a time stamp and/or the observation contains a derivedFrom attribute referencing a related Observation.
+### extension: Coincident time stamp reference
+This extension references Coincident Time Stamp Observation resource that relates the PHD and PHG timelines. This occurs whenever the observation reported by the PHD has a time stamp. The Coincident Time Stamp Observation reports how this Observation.effective[x] element is generated.
 
-### hasMember: related Observations
-This element is used when the PHD Observation reports a group of related observations.
+### derivedFrom and hasMember: related Observations
+The derivedFrom element references Observation resources that are in some manner related to this Observation resource. In the PHD use case, this situation occurs whenever the observation reported by the PHD contains a derivedFrom attribute referencing a related Observation.
 
-In GHS an Observation can have an Is Member Of attribute that references a group observation. When uploading to a FHIR server the gateway should report the group observation with a hasMember reference to all member Observations.
+The hasMember element is used when the PHD Observation reports a group of related observations. In GHS an Observation can have an Is Member Of attribute that references a group observation. When uploading to a FHIR server the gateway should report the group observation with a hasMember reference to all member Observations.
 
-In GHS the sensor device related Observations are identified using a 32-bit Observation Id that is unique in the set of observations transferred during a connection.  When
-
-Related observations are best uploaded in a single FHIR Bundle with logical ids assigned
-
-
-#### Time Stamp case
-When the observation contains a time stamp, there will be a Coincident Time Stamp Observation defining the details of how the Observation.effective[x] element is generated.
+In GHS the sensor device related Observations are identified using a 32-bit Observation Id that is unique in the set of observations transferred during a connection.  
+Related observations are best uploaded in a single FHIR Bundle with logical ids assigned.
 
 #### Source-Handle-Reference case (concept from IEEE 11073-20601 - deprecated)
 A Source-Handle-Reference attribute points to a previously reported observation that is important to this observation. By previously it is meant that the observation is reported prior to the current observation but in the same connection. If multiple such observations have been received, the correct one is that which is most recently received. As an example, the cardiovascular specialization defines a session observation defining some type of exercise period, such as a run. All observations taken during that run have a source handle reference attribute pointing to the session observation. Since Source-Handle-Reference attributes use IEEE 11073 Object handle values and not Logical resource ids to point to observations, the PHG will need to keep track of the Observation resources created during a connection to identify the correct Observation resource, and thus logical id, the Source-Handle-Reference attribute points to. The latest version of the IEEE 11073-20601 standard also supports a Source-Handle-Reference-List containing a list of handles so there can be more than one entry generated due to these attributes. The references are placed in a derivedFrom element.

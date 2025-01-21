@@ -4,10 +4,10 @@ The Coincident Time Stamp is a measurement taken by the PHG of the current time 
 
 The time properties of the PHD and PHG are in the PHD Device and PHG Device resource property elements, respectively. From these properties one can determine whether the PHG or PHD is better synchronized to NTP.
 
-Observation resources reference the Coincident Time Stamp Observation in the Observation.derivedFrom element.
-
 ### Coincident Time Stamp Basics
-The coincident time stamp is a measurement of the current time of the PHD at the current time of the PHG. The information is reported in a special Observation resource following the Coincident Time Stamp Observation profile and referenced in the PHD Observation.derivedFrom element. When the PHG uses Absolute time or Base Offset time or no time at all the algorithm is as follows:
+The coincident time stamp is a measurement of the current time of the PHD at the current time of the PHG. PHD Observation resources reference the Coincident Time Stamp Observation in the Observation.extension.valueReference element in the [Coincident TimeStamp Reference extension](StructureDefinition-CoincidentTimeStampReference.html)
+
+When the PHG uses Absolute time or Base Offset time or no time at all the algorithm is as follows:
 
 - If the PHG is better synchronized to NTP than the PHD
   - The current time of the PHG is reported in the Observation.effectiveDateTime element

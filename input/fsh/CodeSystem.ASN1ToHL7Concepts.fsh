@@ -11,6 +11,10 @@ Description: "Code system to have a formal definition and URI for these concepts
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
-* #type "Type"  "indicates if a bit represents an Event (that happens) or a State (that persists)"
-* #source "Source" "indicates if a bit comes from a measurement or from a device"
-* #MDCCode "MDC Code" "original MDC code of the bitsring observation type"
+* #eventOrState "Event or State" "Indicates whether the bit represents an event or a state"
+* #event "Event" "indicates that the bit represents an event that happens"
+* #state "State" "indicates that the bit represents a state that persists"
+* #source "Source" "indicates if a bit comes from a measurement or from a device attribute"
+* #attribute "Attribute" "Indicates that the bit represents a device attribute"
+* #measurement "Measurement" "Indicates that the bit represents a measurement aspect"
+* #MDCCode "MDC Code" "original MDC code of the bitstring observation type"

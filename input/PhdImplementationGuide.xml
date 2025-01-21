@@ -231,15 +231,6 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ASN1EventOrState"/>
-      </reference>
-      <name value="ASN1EventOrState"/>
-      <description value="Concept codes for the ASN1ToHL7 bit type property"/>
-      <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/ASN1ToHL7Concepts"/>
       </reference>
       <name value="ASN1ToHL7Concepts"/>
@@ -281,15 +272,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <description value="Example codesystem with Private MDC codes for ACME Inc as example."/>
       <exampleBoolean value="true"/>
       <!-- <groupingId value="codeSystems" /> -->
-    </resource> 
-        <resource>
-      <reference>
-        <reference value="CodeSystem/RTMMSStatusCodes"/>
-      </reference>
-      <name value="RTMMSStatusCodes"/>
-      <description value="Codesystem with statuses of MDC."/>
-      <exampleBoolean value="false"/>
-    </resource> 
+    </resource>  
     <resource>
       <reference>
         <reference value="CodeSystem/PhdObservationCategories"/>
@@ -752,16 +735,6 @@ In this example there are only xml structure definitions, value sets, code syste
               <nameUrl value="ObtainUnitCode.html"/>
               <title value="Obtaining the Unit Code"/>
               <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="ASN1BITsCodeSystem.html"/>
-              <title value="ASN1 BITs Code System"/>
-              <generation value="markdown"/>
-              <page>
-                <nameUrl value="ASN1ToHL7Codes.html"/>
-                <title value="ASN1 BITs Codes"/>
-                <generation value="markdown"/>
-              </page>
             </page>
             <page>
               <nameUrl value="ObservationIdentifier.html"/>
