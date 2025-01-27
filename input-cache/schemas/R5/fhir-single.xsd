@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jan 20, 2025 18:06+0000 for FHIR v6.0.0-ballot2 
+  Generated on Thu, Jan 23, 2025 19:52+0000 for FHIR v6.0.0-ballot2 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot2">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -30053,12 +30053,12 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:element name="DeviceAlert" type="DeviceAlert">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Describes a noteworthycondition or occurrence determined to exist by a device.</xs:documentation>
+      <xs:documentation xml:lang="en">Describes a noteworthy condition or occurrence determined to exist by a device.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="DeviceAlert">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Describes a noteworthycondition or occurrence determined to exist by a device.</xs:documentation>
+      <xs:documentation xml:lang="en">Describes a noteworthy condition or occurrence determined to exist by a device.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -30074,19 +30074,14 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">in-progress | completed | entered-in-error.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="condition" type="DeviceAlert.Condition" minOccurs="1" maxOccurs="1">
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="DeviceAlertTypeCodes">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The condition, event, or state being reported.</xs:documentation>
+              <xs:documentation xml:lang="en">physiological | technical.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="DeviceAlertPriorityCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">The alert priority is usually reported by the source. A priority of `info` may indicate that the alert is &quot;for information only&quot; and not urgent action is required. The element may be omitted if the priority is unknown.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="DeviceAlertTypeCodes">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">physiological | technical.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
@@ -30097,6 +30092,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="source" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A top-level or component Device (such as a MDS, VMD, or Channel) that detected the alert condition; or, within such a Device, the specific DeviceMetric (e.g. a heart rate reading) that was in an alert condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="condition" type="DeviceAlert.Condition" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The condition, event, or state being reported.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="derivedFrom" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -30120,7 +30120,7 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceAlert.Condition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Describes a noteworthycondition or occurrence determined to exist by a device.</xs:documentation>
+      <xs:documentation xml:lang="en">Describes a noteworthy condition or occurrence determined to exist by a device.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30156,7 +30156,7 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceAlert.Signal">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Describes a noteworthycondition or occurrence determined to exist by a device.</xs:documentation>
+      <xs:documentation xml:lang="en">Describes a noteworthy condition or occurrence determined to exist by a device.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30168,7 +30168,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="presence" minOccurs="0" maxOccurs="1" type="DeviceAlertPresenceCodes">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates whether the signal is currently being annunciated. An on signal is currently being annunciated; a latched signal is currently being being annunciated although the alert condition has ended; an off signal is not currently being annunciated; and an acknowledged signal is not currently being annuciated because the user has acknowledged the signal.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates whether the signal is currently being annunciated. An on signal is currently being annunciated; a latched signal is currently being being annunciated although the alert condition has ended; an off signal is not currently being annunciated; and an acknowledged signal is not currently being annunciated because the user has acknowledged the signal.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="annunciator" minOccurs="0" maxOccurs="1" type="CodeableReference">
@@ -30440,12 +30440,12 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:element name="DeviceDefinition" type="DeviceDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="DeviceDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -30489,6 +30489,16 @@ of the resource representation.</xs:documentation>
           <xs:element name="modelNumber" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The model number for the device for example as defined by the manufacturer or labeler, or other agency.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details for an organization or a particular human that is responsible for the device.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the organization or individual responsible for the release and ongoing maintenance of the device definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="classification" type="DeviceDefinition.Classification" minOccurs="0" maxOccurs="unbounded">
@@ -30536,16 +30546,6 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Static or essentially fixed characteristics or features of this kind of device that are otherwise not captured in more specific attributes, e.g., time or timing attributes, resolution, accuracy, and physical attributes.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="owner" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An organization that is responsible for the provision and ongoing maintenance of the device.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details for an organization or a particular human that is responsible for the device.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="link" type="DeviceDefinition.Link" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">An associated device, attached to, used with, communicating with or linking a previous or new device model to the focal device.</xs:documentation>
@@ -30587,7 +30587,7 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.UdiDeviceIdentifier">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30618,7 +30618,7 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.MarketDistribution">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30639,7 +30639,7 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.RegulatoryIdentifier">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30670,7 +30670,7 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.DeviceName">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30692,7 +30692,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Classification">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30713,7 +30713,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.ConformsTo">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30744,7 +30744,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.HasPart">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30765,7 +30765,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Packaging">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30806,7 +30806,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Distributor">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30827,7 +30827,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.DeviceVersion">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30853,7 +30853,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Property">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30881,7 +30881,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Link">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30902,7 +30902,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Material">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30928,7 +30928,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.Guideline">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -30974,7 +30974,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.CorrectiveAction">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -31000,7 +31000,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="DeviceDefinition.ChargeItem">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The characteristics, operational status and capabilities of a medical-related component of a medical device.</xs:documentation>
+      <xs:documentation xml:lang="en">The definition of a kind of device or device component. Typically, this definition corresponds to a device model although it may be a broader category of device. Defined devices may be regulated medical devices.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">

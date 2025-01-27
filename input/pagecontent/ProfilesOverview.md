@@ -16,10 +16,7 @@ This IG defines the following profiles:
  - [Phd Device Profile](StructureDefinition-PhdDevice.html): reports the PHD features and properties
  - [Phg Device Profile](StructureDefinition-PhgDevice.html): reports the PHG properties
  - [Patient Profile](StructureDefinition-PhdPatient.html): reports the patient data
-
-### Notes on Examples
-The examples referenced in these profile sections are what is *uploaded*. These examples will differ slightly from similar examples in the Artifacts section. The reason is that the examples in the Artificats section are required to represent the resource *as it appears on the server*. However, when uploading, create operations either have no logical ids or temporary logical ids. Resources on the server, however, are required to have logical ids. 
-
+ 
 ### Measurement Observation Profiles
 The measurement observation profiles mirror the  measurement 'value-types' of that a IEEE 11073-10206 PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
 
@@ -42,6 +39,7 @@ An UML diagram of the Observation profiles for measurements is shown below:
 </figure>
 <p>
 The value-type of the measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
+</p>
 
 ### PHD Device Profile
 The PHD Device profile for the IEEE 11073-20601 MDS object is for the device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that can support the UDI attribute.  

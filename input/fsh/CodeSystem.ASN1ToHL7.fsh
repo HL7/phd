@@ -1,7 +1,7 @@
 CodeSystem: ASN1ToHL7
 Id: ASN1ToHL7
 Title: "ASN1 bits to HL7 enumerated values"
-Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes have two possible values, set or cleared. The code may either represent an event or a state. When an event, the defined event has occurred when set. If a state, the described item is either set or cleared. Sometimes the states may be defined in unexpected manners. For example, the regulation state when set is unregulated and when cleared it is regulated. In addition the code may derive from an IEEE 11073 attribute or from a measurement.\n The codes come either from measurements or from a device attribute. This is encoded in a property of the code. More codes maybe added to this list in the future.\n The code values for the properties are included here as well, since the valueset extension for properties is not supported for FHIR R4."
+Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Concepts"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
 * ^version = "0.3.0"
@@ -29,8 +29,8 @@ Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes h
 // values for properties are defined here for FHIR R4, although that is not the best way to do it
 * #source "Source" "Indicates the source of the bit"
 * #eventOrState "Event or State" "Indicates whether the bit represents an event or a state"
-* #attribute "Attribute" "Indicates that the bit represents a device attribute"
-* #measurement "Measurement" "Indicates that the bit represents a measurement aspect"
+* #device "Attribute" "Indicates that the bit represents a device attribute"
+* #measurement "Measurement" "Indicates that the bit represents a measurement attribute"
 * #event "Event" "Indicates that the bit represents an event"
 * #state "State" "Indicates that the bit represents a state"
 // MDC codes are refereced using a property of type Coding 
@@ -51,49 +51,49 @@ Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes h
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
 * #67925.1 "onBattery" "Indicates whether the PHD is on or off Battery power"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
 * #67925.8 "chargingFull" "Indicates whether the PHD battery is charging at maximum rate"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
 * #67925.9 "chargingTrickle" "Indicates whether the PHD battery is charging at a trickle rate"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
 * #67925.10 "chargingOff" "Indicates whether the PHD battery charging is on or off"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
 * #532354.0 "regulation-status" "Indicates device is regulated when *cleared* and unregulated when *set*"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#532354
 * #68219.0 "mds-time-capab-real-time-clock" "Indicates real time clock is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.1 "mds-time-capab-set-clock"
@@ -101,105 +101,105 @@ Description: "Maps IEEE 11073 ASN1 BITS measurements to codes. All these codes h
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.2 "mds-time-capab-relative-time" "Indicates Relative Time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.3 "mds-time-capab-high-res-relative-time" "Indicates Hi-Res Relative Time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.4 "mds-time-capab-sync-abs-time" "Indicates that syncing the absolute time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.5 "mds-time-capab-sync-rel-time" "Indicates that syncing the relative time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.6 "mds-time-capab-sync-hi-res-relative-time" "Indicates that syncing hi-res relative time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.7 "mds-time-capab-bo-time" "Indicates that the real-time clock supports base offset time"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.8 "mds-time-state-abs-time-synced" "Indicates the absolute time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.9 "mds-time-state-rel-time-synced" "Indicates the relative time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.10 "mds-time-state-hi-res-relative-time-synced" "Indicates the hi-res time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.11 "mds-time-mgr-set-time" "PHG Requested to set the time"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.12 "mds-time-capab-sync-bo-time" "Indicates that syncing base-offset time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.13 "mds-time-state-bo-time-synced" "Indicates that base-offset time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.14 "mds-time-state-bo-time-UTC-aligned" "Indicates that base-offset time is aligned with UTC time standard"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.15 "mds-time-dst-rules-enabled" "Indicates support for daylight savings time rules"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
-  * ^property[=].valueCode = #attribute
+  * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #67846.0 "lim-alert-off" "Indicates both the high and the low limit alerts are disabled"

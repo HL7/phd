@@ -428,7 +428,6 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example Bundled upload"/>
       <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
       <!-- <groupingId value="examples" /> -->
     </resource>
 
@@ -496,12 +495,20 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/bits-observation"/>
       </reference> 
-      <name value="Example of a ASN1 BITs measurement"/>
+      <name value="Example of a ASN1 BITs measurement from a Pulse Oximeter"/>
       <description value="This example is a device and sensor status measurement from a pulse oximeter." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"/>
       <!-- <groupingId value="examples" /> -->
     </resource>
-
+    <resource>
+      <reference>
+        <reference value="Observation/bpm-status"/>
+      </reference> 
+      <name value="Example of a BPM status report"/>
+      <description value="This example reports the status of a BPM measurement." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"/>
+      <!-- <groupingId value="examples" /> -->
+    </resource>
     <resource>
       <reference>
         <reference value="Observation/compound-numeric-observation"/>

@@ -20,11 +20,10 @@ Unlike resource generation, consumption of the resources described in this IG sh
 #### PHG Implementation Guidance
 This informative [chapter](TechnicalImplementationGuidance.html) provides an introduction and overview of the IEEE 11073 topics used in the profile mappings, such as the IEEE 11073-10206 Abstract Content Information Model (ACOM), ACOM objects and attributes, nomenclature codes, and Mder FLOATs, among others. This chapter also discusses some of the reasons behind the generic modeling approach used by this guide. 
 
-#### Profiles
-This [chapter](ProfilesOverview.html) contains the normative content for PHG implementation. It provides the Structure Definitions for each of the defined profiles as well as sections giving the mapping details. It is here where the PHG implementer needs to go to develop the software. For convenience, there are links back to sections in the PHG Implementation Guidance in the Profile Details sections when some of the trickier topics come up.
-
 #### Artifact Index
-This [chapter](artifacts.html) lists all the Structure Definitions, Code Systems, Value Sets, Capability Statements, and Examples included in this guide. It should be noted that the non-Bundle examples illustrate the resources once on the FHIR server. These examples will always have logical ids, but in many cases, the uploaded example should NOT have logical ids. The PHG implementer should use the examples in the normative profile sections describing the mapping for guidance instead of those in this chapter.
+This [chapter](artifacts.html) lists all the Structure Definitions, Code Systems, Value Sets, Capability Statements, and Examples included in this guide. 
+The Struture Definitions include the Resource Profiles and Extension Definitions. This is where the PHG implementer needs to go to develop the software. For convenience, there are links back to sections in the PHG Implementation Guidance in the Profile Details sections when some of the trickier topics come up.
+It should be noted that the non-Bundle examples illustrate the resources once on the FHIR server. These examples will always have logical ids, but in many cases, the uploaded example should NOT have logical ids. 
 
 #### History
 The [list]({{site.data.fhir.canonical}}/history.html) of all published versions of this IG.

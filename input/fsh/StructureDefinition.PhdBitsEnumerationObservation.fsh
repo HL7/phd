@@ -10,7 +10,7 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
-* . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Bit-Str or Enum-Observed-Value-Basic-Bit-Str attribute."
+* . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a bitstring attribute."
   * ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073-10101 BITs value. This measurement is a complex representation where each bit means something. In many cases only certain bits are defined and it is generally true that the significant case is when the bit has been set. Given that measurement could result in up to 32 component entries (one for each bit) only set bits are required to be reported. Some specializations have used this measurement type when they should have used IEEE 11073-10101 codes."
 * value[x] ..0
 * component contains bitsComponent 0..*
@@ -48,3 +48,13 @@ Description: "StructureDefinition for Observation Resources representing measure
     * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
     * code 1..
       * ^definition = "If the bit is set this code is 'Y' and 'N' if the bit is cleared. If an 'event' bit only the set case needs to be reported. If the bit is unsupported, the dataAbsentReason code \"unsupported' is used. Unsupported bits are optional to report. If a state bit is supported both states shall be reported."
+
+Mapping: IEEE-11073-10206-PhdBitsEnumerationObservation
+Id: IEEE-11073-10206-PhdBitsEnumerationObservation
+Title: "IEEE-11073-10206 ACOM to FHIR"
+Source: PhdBitsEnumerationObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* component.code.coding -> "Observation.type + '.' + MDER bit number"
+* component.valueCodeableConcept -> "Y or N depending on the bit value in Observation.state[bit number]"
+ 

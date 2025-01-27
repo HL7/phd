@@ -6,6 +6,9 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 		]
 	},
+	"text": { 
+		"status" : "additional", 
+		"div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This observation results when a pulse oximeter is having difficulty obtaining the measurement, perhaps due to motion or position of the finger in the sensor, a bad signal, etc.</p></div>"},
 	"category" : [
 		{
 		  "coding" : [

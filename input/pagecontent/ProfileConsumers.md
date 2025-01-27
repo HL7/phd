@@ -30,11 +30,12 @@ Every PHD measurement Observation resource contains the following information re
 |Measurement item|element|Description|
 |-
 |measurement type|Observation.code.coding.code|This element tells you what the measurement is. There shall be at least one coding element using the MDC coding system identified by Observation.code.coding.system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html). There will also be an Observation.category element as demanded by the vital signs profile.|
-|time stamp|Observation.dateTimeEffective<br/><br/>Observation.period|If the measurement is a point in time.<br/><br/>If the measurement has a duration.|
-|PHG reference|Observation.extension.valueReference|This element points to the PHG Device resource. The resource contains information about the PHG that generated the FHIR resources. The gateway extension is identified by Observation.extension.url="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"|
-|patient reference|Observation.subject|Points to the Patient resource. Contains information about the patient to whom this measurement refers|
-|PHD reference|Observation.device|Points to the PHD Device resource. This resource contains information about the PHD that took the measurement|
+|time stamp|Observation.dateTimeEffective<br/>Observation.period|If the measurement is a point in time.<br/>If the measurement has a duration.|
+|PHG reference|Observation.extension.valueReference|This element points to the PHG Device that generated the FHIR resources. The gateway extension is identified by Observation.extension.url="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"|
+|patient reference|Observation.subject|Points to the Patient to whom this measurement refers|
+|PHD reference|Observation.device|Points to the PHD Device that took the measurement|
 
+#### Other Observation Element Fields
 In addition to the elements that are always present, the following set of elements may be present.
 
 |Measurement item|element|Description|
@@ -61,13 +62,13 @@ For those consumer applications that would like to have the codes as LOINC and t
 ##### Vital Signs
 FHIR (R4) requires that a LOINC code is present if the measurement is one of the vital signs given [here](https://hl7.org/fhir/R4/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic value. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC code (8867-4). A PHG is not required to use the LOINC codes from the FHIR vital signs profile but may map the MDC codes to more specific LOINC codes. 
 
-In addition to the LOINC magic value, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. When the measurement is not a vital sign, the PHD measurement profiles do not require an Observation.category element.
+In addition to the LOINC code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. 
 
 Below is a snippet showing a code element for a measurement type that is a vital sign (body temperature) along with the category elements:
 {% fragment Observation/temperature-observation JSON EXCEPT:code|category %}
 
 ##### Caveats
-The PHG may express the code in additional coding systems but the consumer cannot rely on it. The PHD profiles in this IG require *only* the MDC code as it is provided by the PHD and the LOINC code if the measurement is a vital sign. It is also possible that a vital sign is *not* mapped to LOINC by the PHG. By design, the PHG is written to map the data from the PHD without any knowledge to what the data is. The exception is for the LOINC codes for vital signs which require the PHG to pre-code a map. If a new PHD specialization is created after the PHG is already implemented, the new PHD may possess a new MDC code and the new code may be a vital sign (perhaps the new code represents a pulse rate obtained via a new technique). The PHG can still populate the Observation.code.coding.code with the MDC code as that is provided in the PHD protocol, but the new MDC code will not be in its pre-coded local map of MDC codes to LOINC codes.
+The PHG may express the code in additional coding systems but the consumer cannot rely on it. The PHD profiles in this IG require *only* the MDC code as it is provided by the PHD and the LOINC code if the measurement is a vital sign. It is also possible that a vital sign is *not* mapped to LOINC by the PHG. By design, the PHG is written to map the data from the PHD without any knowledge to what the data is. The exception is for the LOINC codes for vital signs which require the PHG to pre-code a map. If a new PHD specialization is created after the PHG is already implemented, the new PHD may use a new MDC code and the new code may be a vital sign (perhaps the new code represents a pulse rate obtained via a new technique). The PHG can still populate the Observation.code.coding.code with the MDC code as that is provided in the PHD protocol, but the new MDC code will not be in its pre-coded local map of MDC codes to LOINC codes.
 
 #### The Time Stamp: Observation.effective[x]
 All measurements contain a time stamp which is either an instant in time, a dateTime data type, or a period of time, a Period data type. The period has both a start and end. Results of a workout session are a common type of measurement with a period. The 'instant' data type is not used as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a resolution.
@@ -81,27 +82,17 @@ Below is an example of the effective[x] when the time stamp is an instant in tim
 ##### The Coincident Time Stamp extension
 The consumer can obtain further information about the time stamp from the coincident time stamp Observation identified by the profile value "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation". A reference to a coincident time stamp Observation may be present in the CoincidentTimeStampReference extension. If the reference is NOT present, it means that the PHD did not provide a time stamp, and the PHG used the time of reception as the time stamp. PHDs that send stored data shall include time stamps in their measurements.
 
-If the PHD sent the measurement with a time stamp, there will be an Observation.extension element referencing the coincident time stamp Observation resource. The Coincident Time Stamp Observation can be used to determine if the PHD had a time fault. A time fault means the PHD had measurements with time stamps but lost its sense of current time for those measurements. Such an error could occur on a battery change. If the PHD loses its sense of current time there is no way for the PHG to validate the time stamps or to correct them. Time faults need to be reported to assure that the end user of the data is aware that the time stamps may be untrustworthy. This Coincident Time Stamp can also be used to see if the PHG needed to correct the time stamp, and if it did, by how much. In that manner one can get the originally reported time stamps by the PHD and its original time line. 
-
-{% fragment Observation/temperature-observation JSON EXCEPT:extension %}
+If the PHD sent the measurement with a time stamp, there will be an Observation.extension element referencing the coincident time stamp Observation resource. The Coincident Time Stamp Observation can be used to determine the PHD's timeline and clock status. This Coincident Time Stamp can also be used to see if the PHG needed to correct the time stamp, and if it did, by how much.  
 
 Additional information about the Coincident Time Stamp can be found [here](CoincidentTimeStamp.html).
 
 #### The PHG reference extension
-The reference to the Device resource containing the PHG properties is the only extension used in this implementation guide. An example of the element is shown below:
+The reference to the Device resource containing the PHG properties is encoded in an extension element. An example of the element is shown below:
 
+An example of the Coincident Time Stamp extension and the PHG extension is shown below:
 
+{% fragment Observation/temperature-observation JSON EXCEPT:extension %}
 
-    "extension": [
-        {
-            "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-            "valueReference": {
-                "reference": "Device/12"
-            }
-        }
-    ]
-
-The extension is one of the [registered extensions](http://hl7.org/fhir/observation-profiles.html) for Observations.
 
 #### The Patient reference: Observation.subject:
 The reference to the Patient resource containing information about the patient upon whom the measurement was taken is placed in the Observation.subject element.
@@ -114,13 +105,7 @@ There are situations where a given Observation is an important part of another O
 
 An example of a reference to another Observation is shown below:
 
-    "derivedFrom": [
-        {
-            "reference": "Observation/1294"
-        }
-    ]
-
-There is no way to ascertain from the reference whether the Observation is a Coincident Time Stamp Observation or another measurement Observation. One must examine the Observation.meta.profile element of the referenced Observation to ascertain that information.
+{% fragment Observation/bpm-status JSON EXCEPT:derivedFrom %}
 
 #### Additional Descriptions: Observation.component:
 In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar) and return to this section when relevant.
@@ -1409,10 +1394,10 @@ The identifier.value and identifier.system entries are used to quantify the entr
 The above information exposes no personal health information as only the organization responsible for the patient has the dictionary that can relate these codes to a given person.
 
 An example of a Patient.identifier following the XDSb notation is given below:
-{% fragment Patient/patientExample-1 JSON BASE:identifier %}
+{% fragment Patient/patientExample-1 JSON EXCEPT:identifier %}
 
 An example of an unknown patient using the Version 2 Table 0004 patient class code system is given below:
-{% fragment Patient/patientExample-2 JSON BASE:identifier %}
+{% fragment Patient/patientExample-2 JSON EXCEPT:identifier %}
 
 
 

@@ -14,14 +14,14 @@
 				},
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],				
+				],
 				"extension": [
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
@@ -30,10 +30,10 @@
 						}
 					},
 					{
-					  "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
-					  "valueReference" : {
-						"reference" : "Observation/coin-example-1"
-					  }
+						"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+						"valueReference": {
+							"reference": "Observation/coin-example-1"
+						}
 					}
 				],
 				"status": "final",
@@ -53,7 +53,8 @@
 				"valueQuantity": {
 					"value": 100,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -93,14 +94,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -109,7 +110,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -121,7 +122,8 @@
 				"valueQuantity": {
 					"value": 99.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -161,11 +163,11 @@
 						"text": "Vital Signs"
 					},
 					{
-						"coding" : [
-						{
-							"system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-							"code" : "phd-observation"
-						}
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
 						]
 					}
 				],
@@ -189,7 +191,8 @@
 				"valueQuantity": {
 					"value": 53.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -217,16 +220,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -244,7 +247,8 @@
 				"valueQuantity": {
 					"value": 1.02,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -284,14 +288,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -300,7 +304,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -312,7 +316,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -352,14 +357,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -380,7 +385,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -410,14 +416,14 @@
 				],
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -435,7 +441,8 @@
 				"valueQuantity": {
 					"value": 0.88,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -463,16 +470,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -587,14 +594,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -603,7 +610,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -615,7 +622,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -655,14 +663,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -683,7 +691,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -711,16 +720,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -738,7 +747,8 @@
 				"valueQuantity": {
 					"value": 0.82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -766,16 +776,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -910,14 +920,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -926,7 +936,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -938,7 +948,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -978,14 +989,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1006,7 +1017,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1034,16 +1046,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1061,7 +1073,8 @@
 				"valueQuantity": {
 					"value": 0.82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1089,16 +1102,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1233,14 +1246,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1249,7 +1262,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -1261,7 +1274,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1301,14 +1315,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1329,7 +1343,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1357,16 +1372,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1384,7 +1399,8 @@
 				"valueQuantity": {
 					"value": 0.82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1412,16 +1428,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1556,14 +1572,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1572,7 +1588,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -1584,7 +1600,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1624,14 +1641,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1652,7 +1669,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1674,14 +1692,14 @@
 				},
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"extension": [
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
@@ -1707,7 +1725,8 @@
 				"valueQuantity": {
 					"value": 0.82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1735,16 +1754,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -1879,14 +1898,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1895,7 +1914,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -1907,7 +1926,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1947,14 +1967,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -1975,7 +1995,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2003,16 +2024,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2030,7 +2051,8 @@
 				"valueQuantity": {
 					"value": 0.2,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2060,14 +2082,14 @@
 				],
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2202,14 +2224,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -2218,7 +2240,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -2230,7 +2252,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2270,14 +2293,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -2298,7 +2321,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2326,16 +2350,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2353,7 +2377,8 @@
 				"valueQuantity": {
 					"value": 0.2,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2381,16 +2406,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2525,14 +2550,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -2541,7 +2566,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -2553,7 +2578,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2593,14 +2619,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -2621,7 +2647,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2649,16 +2676,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2676,7 +2703,8 @@
 				"valueQuantity": {
 					"value": 0.2,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2704,16 +2732,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2848,14 +2876,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -2864,7 +2892,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -2876,7 +2904,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2916,14 +2945,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -2944,7 +2973,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2972,16 +3002,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -2999,7 +3029,8 @@
 				"valueQuantity": {
 					"value": 0.2,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3027,16 +3058,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -3191,14 +3222,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -3207,7 +3238,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -3219,7 +3250,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3259,14 +3291,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -3287,7 +3319,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3315,16 +3348,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
+								"code": "vital-signs"
+							}
+						],
+						"text": "Vital Signs"
+					},
+					{
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -3342,7 +3384,8 @@
 				"valueQuantity": {
 					"value": 0.05,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3370,16 +3413,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
@@ -3534,14 +3577,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -3550,7 +3593,7 @@
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6"
 						}
 					],
 					"text": "MDC_PULS_OXIM_SAT_O2"
@@ -3562,7 +3605,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3602,14 +3646,14 @@
 						"text": "Vital Signs"
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
@@ -3630,7 +3674,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3658,16 +3703,16 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [

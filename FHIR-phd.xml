@@ -19,6 +19,7 @@
 <artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
 <artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept11073MDC"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
+<artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence 95 range"/>
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="ContinuaDeviceIdentifiers"/>
 <artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="ContinuaHFS"/>
 <artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
@@ -32,7 +33,9 @@
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="Example of PHD Device"/>
 <artifact id="Observation/stringenum-1234" key="Observation-stringenum-1234" name="Example of String measurement 1"/>
 <artifact id="Observation/string-observation-1" key="Observation-string-observation-1" name="Example of String measurement 2"/>
-<artifact id="Observation/bits-observation" key="Observation-bits-1.0.0.40" name="Example of a ASN1 BITs measurement"/>
+<artifact deprecated="true" id="Observation/bits-1.0.0.40" key="Observation-bits-1.0.0.40" name="Example of a ASN1 BITs measurement"/>
+<artifact id="Observation/bits-observation" key="Observation-bits-observation" name="Example of a ASN1 BITs measurement from a Pulse Oximeter"/>
+<artifact id="Observation/bpm-status" key="Observation-bpm-status" name="Example of a BPM status report"/>
 <artifact id="Device/phd-711000FEFF5F49B0.B0495F001071" key="Device-phd-711000FEFF5F49B0.B0495F001071" name="Example of a Blood Pressure PHD"/>
 <artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Time Stamp"/>
 <artifact id="Observation/coin-20181119202022" key="Observation-coin-20181119202022" name="Example of a Coincident Time Stamp PHG better synchronized"/>

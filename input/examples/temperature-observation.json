@@ -17,6 +17,13 @@
             "valueReference": {
                 "reference": "Observation/coin-20181119174911"
             }
+        },
+        {
+            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95",
+            "valueRange" : {
+                "low": { "value": 36.3, "unit": "C", "system": "http://unitsofmeasure.org", "code": "Cel" },
+                "high": { "value": 36.7, "unit": "C", "system": "http://unitsofmeasure.org", "code": "Cel" }
+            }
         }],
     "status": "final",
     "category": [

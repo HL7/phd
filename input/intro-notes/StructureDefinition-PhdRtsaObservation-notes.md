@@ -72,7 +72,6 @@ This example results when the device sends a waveform. The value[x] becomes a va
 <br>
 Note there is no logical id in this resource as this resource is being uploaded to the server in a create operation. The server will create the logical id and return it to the sender in the response.
 Note the valueSampledData:
-{% fragment Observation/rtsa-example JSON BASE:valueSampledData %}
 {% fragment Observation/rtsa-example JSON BASE:value %}
 
 ## Consumers of the RTSA Profile

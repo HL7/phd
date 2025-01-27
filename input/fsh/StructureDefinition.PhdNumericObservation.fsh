@@ -43,6 +43,7 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^definition = "Provides a reason why the expected value in the element Observation.valueQuantity is missing. In this case this could also be 'not-a-number', 'positive-infinity', 'negative-infinity' or 'error'."
   * ^comment = "The values in the http://terminology.hl7.org/CodeSystem/data-absent-reason system do not provide a code that matches the special values 'not at this resolution' and 'reserved'. In those cases one uses the generic 'error' code. If both a special value and a Measurement-Status indicating invalid, not unavailable, or msmt ongoing are received, the Measurement-Status mapping takes precedence."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
+* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
 * component contains
     alertOpStateComponent 0..* and
     currentLimitsComponent 0..1 and

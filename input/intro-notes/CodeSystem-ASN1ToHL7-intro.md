@@ -1,4 +1,8 @@
-11073 PHDs report some measurements as an integer where each bit in the integer may mean something. There is no HL7 data type that treats this kind of measurement. This guide defines a code system where each of the possible bit settings in a given measurement is mapped to a code. The code can be reported in a CodeableConcept data type.
+11073 PHDs report some device or measurement attributes as an integer where each bit in the integer may mean something. There is no HL7 data type that treats this kind of measurement. This code system defines a code for each of the possible bit settings. The bit value can be reported in a CodeableConcept data type.
+
+The bit may either represent an event or a state. When an event, the defined event has occurred when set. If a state, the described item is either set or cleared.  In addition the code may derive from an IEEE 11073 attribute or from a measurement. The codes come either from measurements or from a device attribute. This is encoded in a property of the code. More codes maybe added to this list in the future. 
+
+The code values for the properties are included here as well, since the valueset extension for properties is not supported for FHIR R4.
 
 The uploader can generate the code from the data received from the PHD. No external information is necessary unless the uploader wants to populate the 'display' element of the CodeableConcept data type. It is recommended that the uploader populate the display element with at least the 11073 specialization name for the bit setting. It is not required because it is desired to have an uploader that can still work with future specializations and in that case, it is not possible for the uploader to know what the 11073 specialization name for the bit is as it is not sent over the wire; it is only available from the specialization documents.
 
