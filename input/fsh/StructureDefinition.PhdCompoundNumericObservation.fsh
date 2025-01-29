@@ -27,8 +27,7 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open
 * component contains
-    compound 0..* and
-    accuracyComponent 0..1
+    compound 0..*
 * component[compound] ^short = "Compound numeric measurement entry components"
   * ^definition = "Each compoundComponent contains one of the N constituents of the compound measurement. These entries are NOT present if a Measurement-Status attribute indicates an error."
   * ^comment = "A compound measurement is a measurement that requires more than one value to represent it, such as an acceleration which has an x, y, and z components. The Blood pressure is also represented as a compound measurement, containing systolic, diastolic and MAP components. One combines all the compound elements together to describe the measurement. The Metric-Id-List entry n and Compound-Basic/Simple-Nu-Observed-Value entry n are ordered such that the code that describes each entry n is computed from the partition of the Type attribute and the term code of the Metric-Id-List attribute. In the case of the Compound-Nu-Observed-Value, the term code comes from the Compound-Nu-Observed-Value.metric sub-component."
@@ -38,19 +37,12 @@ Description: "StructureDefinition for Observation Resources representing measure
       * ^slicing.discriminator[=].path = "system"
       * ^slicing.rules = #open
     * coding contains
-        MdcType 1..1 and
-        LoincCoding 0..1
+        MdcType 1..1 
     * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
       * ^definition = "This MDC code expresses what the measurement is"
       * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-    * coding[LoincCoding] ^short = "The LOINC code for the measurement if a vital sign"
-      * ^definition = "This (optional) LOINC code expresses what the measurement is"
-      * system 1..
-      * system = "http://loinc.org" (exactly)
-      * code 1..
-        * ^comment = "Required if the measurement is a vital sign"    
+      * code 1.. 
     * text ^definition = "It is recommended to display at least the reference identifier describing the compound sub-element"
   * value[x] only Quantity
   * valueQuantity
@@ -80,33 +72,5 @@ Description: "StructureDefinition for Observation Resources representing measure
       * system 1..
       * system = "http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" (exactly)
       * code 1..
-* component[accuracyComponent] ^short = "The accuracy of the measurement"
-  * ^definition = "This component shall be present if the Accuracy attribute is present."
-  * code from $Quantity11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * code 1..
-      * code = #67914 (exactly)
-        * ^definition = "The code for the Accuracy attribute is 67914"
-    * text ^definition = "Should include the reference identifier for the Accuracy attribute MDC_ATTR_NU_ACCUR_MSMT"
-  * value[x] 1..
-    * ^slicing.discriminator[0].type = #type
-    * ^slicing.discriminator[=].path = "$this"
-    * ^slicing.rules = #open
-  * valueQuantity 1..
-  * valueQuantity only Quantity
-    * ^sliceName = "valueQuantity"
-    * value 1..
-      * ^definition = "This is the value of the accuracy attribute. The value is Mder FLOAT encoded and shall be expressed to the precision indicated by the Mder FLOAT."
-    * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "The unit code shall use the UCUM system"
-    * code 1..
-      * ^definition = "The units for the Accuracy are given by the units of the measurement so this entry shall have the same code as in Observation.valueQuantity.code"
-  * dataAbsentReason ..0
+  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
+  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1

@@ -6,14 +6,6 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 		]
 	},
-	"extension": [
-		{
-			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-			"valueReference": {
-				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
-			}
-		}
-	],
 	"status": "final",
 	"code": {
 		"coding": [
@@ -25,7 +17,7 @@
 		"text": "MDC_ATTR_TIME_ABS: Absolute time"
 	},
 	"subject": {
-		"reference": "Patient/patientExample-1"
+		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
 	},
 	"effectiveDateTime": "2018-11-20T04:50:47-05:00",
 	"dataAbsentReason": {
@@ -38,6 +30,6 @@
 		"text": "Sensor Time Fault"
 	},
 	"device": {
-		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
+		"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 	}
 }

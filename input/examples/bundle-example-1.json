@@ -519,14 +519,6 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
           ]
         },
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-            "valueReference": {
-              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
-            }
-          }
-        ],
         "id": "cts-001",
         "status": "final",
         "code": {
@@ -544,7 +536,7 @@
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
         "device": {
-          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
+          "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
         }
       },
       "request": {

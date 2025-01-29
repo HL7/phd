@@ -8,13 +8,6 @@ Description: "StructureDefinition for Observation Resources representing the coi
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCoincidentTimeStampObservation reports the current time of the PHD sensor at the current time of the PHG."
 * . ^comment = "Used to record the correction the PHG applied to the PHD measurement time stamps (if any) and to be able to recover the original time stamps reported by the PHD should that be needed."
-* extension 1..1
-* extension ^short = "Extension for the PHG"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice" (exactly)
-* extension.url ^short = "Url indicating this is the gateway device extension"
-* extension.value[x] 1..
-* extension.value[x] only Reference
-* extension.value[x] ^short = "Reference to the Personal Health Gateway (PHG) Device"
 * status = #final (exactly)
 * status ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint"
 * status ^extension.valueString = "default: final"
@@ -32,6 +25,9 @@ Description: "StructureDefinition for Observation Resources representing the coi
 * code.coding[MDCType].code ^comment = "The code for absolute time is 67975 with reference id MDC_ATTR_TIME_ABS, for base offset time is 68226 with reference id MDC_ATTR_TIME_BO, for relative time is 67983 with reference id MDC_ATTR_TIME_REL, and for high resolution relative time is 68072 with reference id MDC_ATTR_TIME_REL_HI_RES."
 * subject 1..
 * subject.reference 1..
+* subject only Reference(PhdDevice)
+  * ^short = "Reference to the PHD device for which the coincident time stamp measurement is reported"
+  * ^definition = "Reference to the PHD device for which the coincident time stamp measurement is reported. This element will point to a Device resource following the Phd Device Profile."
 * effective[x] ^short = "The current time of the PHG at the current time of the PHD. Absent if PHD is better synchronized"
 * effective[x] ^definition = "The time of the PHG at the time the current time of the PHD is ascertained."
 * effective[x] ^comment = "This element is absent if the PHD has superior time synchronization relative to the PHG. Wnen this element is absent it indicates that the PHG reported the measurement time stamps of the PHD without modification."
@@ -50,8 +46,8 @@ Description: "StructureDefinition for Observation Resources representing the coi
 * dataAbsentReason.coding[FhirDefault].code 1..
 * dataAbsentReason.coding[FhirDefault].code = #unknown (exactly)
 * device 1..
-* device ^comment = "This field references the PHD Device"
-* device.reference 1..
-* device.reference ^short = "Reference to the device responsible for the measurement"
-* device.reference ^definition = "Reference to the device resources that describes the sensor device taking the measurement."
-* device.reference ^comment = "This reference points to the Device resource containing information about the sensor device that took the measurement."
+* device only Reference(PhgDevice)
+  * ^comment = "This field will reference the PHG Device."
+  * reference 1..1
+    * ^short = "Reference to the PHG device responsible for the coincident time stamp measurement"
+    * ^definition = "Reference to the PHG device responsible for the coincident time stamp measurement. This element will point to a Device resource following the Phg Device Profile."

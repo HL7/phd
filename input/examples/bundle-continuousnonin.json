@@ -3284,7 +3284,7 @@
 					{
 						"coding": [
 							{
-								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
 						],

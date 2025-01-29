@@ -37,7 +37,7 @@
 				"code": "8452096"
 			}
 		],
-		"text": "Private Attribute: Unknown Private Attribute"
+		"text": "Private MDC code: MDCX_GLU_TEST_STRIP_FAILURE_REASON"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"

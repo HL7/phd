@@ -9,10 +9,10 @@ This IG defines the following profiles:
    - [Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html): reports a numeric value
    - [Compound Numeric Observation Profile](CompoundNumericObservationProfile.html): reports multiple values
    - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html): reports a coded value
-   - [BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html): reports a set of codes, each with a boolean value
+   - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html): reports a set of codes, each with a boolean value
    - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html): reports sampled data such as a waveform
    - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html): reports a (human-readable) string
- - [Coincident Time Stamp Observation Profile](CoincidentTimeStampObservationProfile.html): reports the PHD device time as observed by the PHG for time auditing purposes
+ - [Coincident Time Stamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html): reports the PHD device time as observed by the PHG for time auditing purposes
  - [Phd Device Profile](StructureDefinition-PhdDevice.html): reports the PHD features and properties
  - [Phg Device Profile](StructureDefinition-PhgDevice.html): reports the PHG properties
  - [Patient Profile](StructureDefinition-PhdPatient.html): reports the patient data
@@ -26,7 +26,7 @@ The measurement observation profiles mirror the  measurement 'value-types' of th
 |discrete | Discrete || valueCodeableConcept(s)
 | |Single Event | Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)|valueCodeableConcept|
 | |Multiple Event |component.valueCodeableConcept(s)|
-| |Multiple Boolean State (Bitstring)|[BITs Enumeration Observation Profile](BITsEnumerationObservationProfile.html)|component.code<br/>component.valueCodeableConcepts|
+| |Multiple Boolean State (Bitstring)|[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)|component.code<br/>component.valueCodeableConcepts|
 |string |string enumeration|[String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html)|valueString|
 |peridoic samples |sample array|[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)|valueSampledData|
 |compound |Compound |[Compound Numeric Observation Profile](CompoundNumericObservationProfile.html)|component.value[x]]|

@@ -37,15 +37,12 @@ along with the 'Table of Contents' entry.
 The other entries are up to you BUT there is a catch. When putting in your pages in the ImplementationGuide the <nameUrl value="pageName.html"/>
 even though the file names are 'pageName.md'. But the <generation value="markdown" />.
 Make sure the version in the src/properties.txt file is the same as the versions in you value sets and code systems
-
 The 'menu.xml' file in src/includes contains the headers or sections displayed across the top.
-
 In this example there are only xml structure definitions, value sets, code systems, and markdown pages that are all text. -->
-
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
   <id value="hl7.fhir.uv.phd"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
-  <version value="1.1.0"/>
+  <version value="2.1.0"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="draft"/>
@@ -58,7 +55,6 @@ In this example there are only xml structure definitions, value sets, code syste
     </telecom>
   </contact>
   <description value="ImplementationGuide for Personal Health Devices (PHD), used in remote patient monitoring (e.g., weight scales, blood pressure cuffs, glucose monitors, pulse-oximeters, etc.)."/>
-
   <!-- Don't know why we should have this except that the build will fail without it -->
   <jurisdiction>
     <coding>
@@ -71,7 +67,6 @@ In this example there are only xml structure definitions, value sets, code syste
       url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="dev"/>
   </extension>
-
   <fhirVersion value="4.0.1"/>
 <!-- declare dependency on PoCD IG for measurement status CodeSystem -->
   <dependsOn id="pocd">
@@ -79,28 +74,7 @@ In this example there are only xml structure definitions, value sets, code syste
 	  <packageId value="hl7.fhir.uv.pocd"/>
   	<version value="0.3.0"/>
   </dependsOn>
-
   <definition>
-    <!-- <grouping id="profiles">
-      <name value="PHD Profiles"/>
-      <description value="Profiles for mapping data from IEEE 11073-10206 Personal Health Devices to FHIR resources"/>
-    </grouping>
-    <grouping id="codeSystems">
-      <name value="Code Systems"/>
-      <description value="Code Systems defined in this Implementation Guide"/>
-    </grouping>
-    <grouping id="valueSets">
-      <name value="Value Sets"/>
-      <description value="Value Sets used and defined in this Implementation Guide"/>
-    </grouping>
-    <grouping id="capabilities">
-      <name value="Capability Statements"/>
-      <description value="Capability Statements defined in this Implementation Guide"/>
-    </grouping>
-    <grouping id="examples">
-      <name value="Examples"/>
-      <description value="Examples of resources following the Implementation Guide Profiles"/>
-    </grouping> -->
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdBaseObservation"/>
@@ -108,7 +82,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdBaseObservation"/>
       <description value="Observation elements that are common to all the PHD Observation profiles"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -117,7 +90,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdNumericObservation"/>
       <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is number."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/PhdCompoundObservation"/>
+      </reference>
+      <name value="PhdCompoundObservation"/>
+      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is described by a set of numbers such as the x, y, and x components of an acceleration."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
@@ -126,7 +106,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdCompoundNumericObservation"/>
       <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is described by a set of numbers such as the x, y, and x components of an acceleration."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -135,7 +114,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdCodedEnumerationObservation"/>
       <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated code."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -144,7 +122,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdBitsEnumerationObservation"/>
       <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is an ASN1 BITS value."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -153,7 +130,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdRtsaObservation"/>
       <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is a waveform."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -162,7 +138,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdStringEnumerationObservation"/>
       <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated human readable string."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -171,17 +146,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdCoincidentTimeStampObservation"/>
       <description value="StructureDefinition for Observation Resources representing the coincident time stamp. This report is a measurement of the current time of the sensor at the current time of the PHG. The purpose of this observation is to record the difference in the time lines between the PHG and PHD and to be able to recover the original measurement time stamps reported by the PHD should the PHG correct them because the sensor clock is in error."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
-        <!-- I believe the value after the StructureDefinition is the <id> element in a Structure definition -->
         <reference value="StructureDefinition/PhdDevice"/>
       </reference>
       <name value="PhdDevice"/>
       <description value="StructureDefinition for the Device Resource representing a PHD"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -190,7 +162,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdDeviceMetric"/>
       <description value="StructureDefinition for the Device Metric Resource representing an observation type that can be generated by a PHD"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -199,7 +170,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhgDevice"/>
       <description value="StructureDefinition for the Device Resource representing a PHG (gateway)"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
     <resource>
       <reference>
@@ -208,9 +178,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdPatient"/>
       <description value="Structure definition for the patient information reported from personal health gateways (PHG)"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="profiles" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="CodeSystem/ContinuaDeviceIdentifiers"/>
@@ -218,7 +186,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ContinuaDeviceIdentifiers"/>
       <description value="Codes that identify the device 'identifier', such as whether an EUI is a system id, Bluetooth address, or Ethernet MAC address"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>
     <resource>
       <reference>
@@ -227,7 +194,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ASN1ToHL7"/>
       <description value="Codes for the IEEE 11073-10206 BITs measurement bit values. For example, 150604.0 is the code for Mder bit 0 in measurement type 150604 which is a pulse oximeter device and sensor status. The description of that code is 'Indicates the device is not connected with the sensor'. This code system will grow as more BITs measurements are defined in specializations"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>
     <resource>
       <reference>
@@ -236,7 +202,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ASN1ToHL7Concepts"/>
       <description value="Concept codes for the ASN1ToHL7 code system properties"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>
     <resource>
       <reference>
@@ -253,7 +218,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ContinuaHFS"/>
       <description value="Codes for the Continua Health and Fitness interfaces"/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>
     <resource>
       <reference>
@@ -262,7 +226,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ContinuaPHD"/>
       <description value="Codes for the Continua certified PAN interfaces. These codes indicate that the respective platform has been certified for certain transports (Bluetooth, USB, Bluetooth Low Energy, ZigBee) and device specializations."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>
     <resource>
       <reference>
@@ -271,7 +234,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ACMEIncPrivateMDCCodes"/>
       <description value="Example codesystem with Private MDC codes for ACME Inc as example."/>
       <exampleBoolean value="true"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>  
     <resource>
       <reference>
@@ -280,7 +242,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="PhdObservationCategories"/>
       <description value="Category value for observations generated by PHD devices."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="codeSystems" /> -->
     </resource>
     <resource>
       <reference>
@@ -289,7 +250,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="MDCValueSet"/>
       <description value="Value set with all defined MDC codes."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -298,7 +258,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="CodeableConcept11073MDC"/>
       <description value="Value set for those MDC attribute codes whose values are represented by CodeableConcepts. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -307,7 +266,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Quantity11073MDC"/>
       <description value="Value set for those MDC attribute codes whose values are represented by Quantities. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -316,7 +274,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Range11073MDC"/>
       <description value="Value set for those MDC attribute codes whose values are represented by Ranges. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -325,7 +282,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="String11073MDC"/>
       <description value="Value set for those MDC attribute codes whose values are represented by Strings. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -334,7 +290,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="MDCnotObject"/>
       <description value="Value set for those Observation component elements that come from compound and BITs measurements. These attributes come from several partitions but NOT the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the Supplemental Information would give an extra description about the measurement such as 'duration average' whereas the measurement itself might be acceleration values."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -343,7 +298,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ASN1attribute"/>
       <description value="Value set for those Asn1ToHL7 codes whose PHD source is an attribute, such as the regulation status or time capabilities."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -352,7 +306,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="ASN1measurement"/>
       <description value="Value set for those Asn1ToHL7 codes whose source is a measurement attribute; one of the Enum-observed-value attributes."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
   <!--    these value sets were missing -->
     <resource>
@@ -362,7 +315,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Device System Id Identifier"/>
       <description value="ValueSet for the Codes describing the type of device identifier, such as a system id or Bluetooth address."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -371,7 +323,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Device Transport Address Identifiers"/>
       <description value="ValueSet for the Codes describing the type of device transport identifier, such the Bluetooth address."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -380,7 +331,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
       <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Device specialization types."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
     <resource>
       <reference>
@@ -389,7 +339,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
       <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclature filtered by Object partition."/>
       <exampleBoolean value="false"/>
-      <!-- <groupingId value="valueSets" /> -->
     </resource>
   <!--    end of missing value sets -->
     <resource>
@@ -401,7 +350,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleBoolean value="false"/>
       <!-- <groupingId value="capabilities" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Bundle/bundle-example-1"/>
@@ -409,9 +357,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a first time Bundle upload"/>
       <description value="This example shows a full first time transaction Bundle containing Patient, Device, and Observation resources."/>
       <exampleBoolean value="true"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Device/phd-74E8FFFEFF051C00.001C05FFE874"/>
@@ -419,18 +365,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of PHD Device"/>
       <description value="This example PHD Device resource is referenced by other examples and is present for the validator." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Bundle/bundle-continuousnonin"/>
       </reference> 
       <name value="Example Bundled upload"/>
       <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="DeviceMetric/bp-devicemetric-example"/>
@@ -438,9 +380,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example Phd Device Metric"/>
       <description value="This example is a PhdDeviceMetric for a Blood Pressure measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-    
     <resource>
       <reference>
         <reference value="Observation/numeric-spotnumeric"/>
@@ -448,9 +388,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a numeric."/>
       <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Information attribute indicating that this is a SPOT measurement (a stable average)." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-    
     <resource>
       <reference>
         <reference value="Observation/temperature-observation"/>
@@ -458,9 +396,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a numeric body temperature observation."/>
       <description value="This example is a simple numeric observation of a health thermometer." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/rtsa-example"/>
@@ -468,9 +404,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of an RTSA"/>
       <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/numeric-observation-not-a-number"/>
@@ -478,9 +412,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a NaN case"/>
       <description value="This example contains a NaN (not a number) measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-    
     <resource>
       <reference>
         <reference value="Observation/meal-context-observation"/>
@@ -488,9 +420,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of coded enumeration"/>
       <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner. It is also known as the meal context." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-    
     <resource>
       <reference>
         <reference value="Observation/bits-observation"/>
@@ -498,7 +428,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a ASN1 BITs measurement from a Pulse Oximeter"/>
       <description value="This example is a device and sensor status measurement from a pulse oximeter." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
     <resource>
       <reference>
@@ -507,18 +436,23 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a BPM status report"/>
       <description value="This example reports the status of a BPM measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
     <resource>
       <reference>
-        <reference value="Observation/compound-numeric-observation"/>
+        <reference value="Observation/compound-numeric-blood-pressure"/>
       </reference> 
       <name value="Example of a compound numeric observation"/>
       <description value="This example is from a Blood Pressure cuff." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
+   <resource>
+      <reference>
+        <reference value="Observation/compound-observation-glucose"/>
+      </reference> 
+      <name value="Example of a compound observation"/>
+      <description value="This artificial example combines a glucose measurement and context information." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Observation/stringenum-1234"/>
@@ -526,7 +460,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of String measurement 1"/>
       <description value="This example observation reports some arbitrary text from a cardiavascular fitness device." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
     <resource>
       <reference>
@@ -535,7 +468,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of String measurement 2"/>
       <description value="This example observation reports some arbitrary text from a Glucose meter explaining the failure of the measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
     <resource>
       <reference>
@@ -544,9 +476,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Coincident Time Stamp PHG better synchronized"/>
       <description value="This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-    
     <resource>
       <reference>
         <reference value="Observation/coin-example-timefault"/>
@@ -554,9 +484,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Coincident Time Stamp with a Time Fault"/>
       <description value="This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-    
     <resource>
       <reference>
         <reference value="Device/phd-711000FEFF5F49B0.B0495F001071"/>
@@ -564,9 +492,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Blood Pressure PHD"/>
       <description value="This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Device/phd-00601900010E9234.F45EABA80832"/>
@@ -574,9 +500,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Glucose Monitor PHD"/>
       <description value="This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/coin-20181119174911"/>
@@ -584,9 +508,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Coincident Time Stamp referenced from BP observation"/>
       <description value="This Coincident Time Stamp observation is referenced by the Blood Pressure Observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/coin-example-1"/>
@@ -594,9 +516,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Coincident Time Stamp"/>
       <description value="This Coincident Time Stamp observation is referenced by other Observation examples." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Device/phg-ecde3d4e58532d31.000000000000"/>
@@ -604,7 +524,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Gateway"/>
       <description value="This example maps an Android Gateway" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
     <resource>
       <reference>
@@ -613,9 +532,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a Gateway 2"/>
       <description value="This example maps an Android Gateway" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Patient/patientExample-1"/>
@@ -623,9 +540,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of a known Patient"/>
       <description value="This example maps a known patient where an optional patient name is included." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <resource>
       <reference>
         <reference value="Patient/patientExample-2"/>
@@ -633,9 +548,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="Example of an unknown Patient"/>
       <description value="This example maps an unknown patient." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"/>
-      <!-- <groupingId value="examples" /> -->
     </resource>
-
     <!-- The 'toc' or table of contents is required and must appear first in the pages list
     and it must have the name toc.html. The toc.html is generated and its contents are determined
     by all the pages contained in the hierarchy underneath it. The first page underneath it
@@ -765,7 +678,6 @@ In this example there are only xml structure definitions, value sets, code syste
             <generation value="markdown"/>
           </page>
         </page>
-
           <page>
             <nameUrl value="ProfilesOverview.html"/>
             <title value="Profiles Overview"/>
@@ -777,26 +689,15 @@ In this example there are only xml structure definitions, value sets, code syste
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="BITsEnumerationObservationProfile.html"/>
-            <title value="PHD BITs Coded Enumeration Observation Profile"/>
+            <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
+            <title value="Generating the PHD codes"/>
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="CoincidentTimeStampObservationProfile.html"/>
-            <title value="PHD Coincident Time Stamp Observation Profile"/>
+            <nameUrl value="DeviceIdentifierCodes.html"/>
+            <title value="Device Identifier codes"/>
             <generation value="markdown"/>
           </page>
-            <page>
-              <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
-              <title value="Generating the PHD codes"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="DeviceIdentifierCodes.html"/>
-              <title value="Device Identifier codes"/>
-              <generation value="markdown"/>
-            </page>
-
         <page>
           <nameUrl value="terminology.html"/>
           <title value="Terminology"/>

@@ -128,7 +128,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * dataAbsentReason ..0
 * dataAbsentReason ^short = "This element is populated when the Measurement Status indicates invalid, not available or measurement-ongoing."
 * dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.value[x]] is missing."
-* dataAbsentReason ^comment = "Only the Measurement-Status/status flags indicating invalid, not unavailable, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element."
+* dataAbsentReason ^comment = "The Measurement-Status/status flags indicating invalid, not unavailable, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element. Also populated when a numeric value is in error."
 * dataAbsentReason.coding ^slicing.discriminator.type = #value
 * dataAbsentReason.coding ^slicing.discriminator.path = "system"
 * dataAbsentReason.coding ^slicing.rules = #open

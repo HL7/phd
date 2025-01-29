@@ -47,7 +47,8 @@
 <artifact id="Device/phd-00601900010E9234.F45EABA80832" key="Device-phd-00601900010E9234.F45EABA80832" name="Example of a Glucose Monitor PHD"/>
 <artifact id="Observation/numeric-observation-not-a-number" key="Observation-nan-1.0.0.42" name="Example of a NaN case"/>
 <artifact deprecated="true" id="Patient/sisansarahId.1.2.3.4.5.6.7.8.10" key="Patient-sisansarahId.1.2.3.4.5.6.7.8.10" name="Example of a Patient"/>
-<artifact deprecated="true" id="Observation/compound-numeric-observation" key="Observation-compound-numeric-observation" name="Example of a compound numeric observation"/>
+<artifact deprecated="true" id="Observation/compound-numeric-blood-pressure" key="Observation-compound-numeric-observation" name="Example of a compound numeric observation"/>
+<artifact id="Observation/compound-observation-glucose" key="Observation-compound-observation-glucose" name="Example of a compound observation"/>
 <artifact id="Bundle/bundle-example-1" key="Bundle-nonin-hdp-1542718631721" name="Example of a first time Bundle upload"/>
 <artifact id="Patient/patientExample-1" key="Patient-patientExample-1" name="Example of a known Patient"/>
 <artifact id="Observation/temperature-observation" key="Observation-temperature-observation" name="Example of a numeric body temperature observation."/>
@@ -68,6 +69,7 @@
 <artifact id="StructureDefinition/PhdCodedEnumerationObservation" key="StructureDefinition-PhdCodedEnumerationObservation" name="PhdCodedEnumerationObservation"/>
 <artifact id="StructureDefinition/PhdCoincidentTimeStampObservation" key="StructureDefinition-PhdCoincidentTimeStampObservation" name="PhdCoincidentTimeStampObservation"/>
 <artifact id="StructureDefinition/PhdCompoundNumericObservation" key="StructureDefinition-PhdCompoundNumericObservation" name="PhdCompoundNumericObservation"/>
+<artifact id="StructureDefinition/PhdCompoundObservation" key="StructureDefinition-PhdCompoundObservation" name="PhdCompoundObservation"/>
 <artifact id="StructureDefinition/PhdDevice" key="StructureDefinition-PhdDevice" name="PhdDevice"/>
 <artifact id="StructureDefinition/PhdDeviceMetric" key="StructureDefinition-PhdDeviceMetric" name="PhdDeviceMetric"/>
 <artifact id="StructureDefinition/PhdNumericObservation" key="StructureDefinition-PhdNumericObservation" name="PhdNumericObservation"/>
@@ -121,9 +123,9 @@
 <page key="ObtainUnitCode" name="Obtaining the Unit Code"/>
 <page deprecated="true" key="Organization" name="Organization"/>
 <page key="overview" name="Overview"/>
-<page key="BITsEnumerationObservationProfile" name="PHD BITs Coded Enumeration Observation Profile"/>
+<page deprecated="true" key="BITsEnumerationObservationProfile" name="PHD BITs Coded Enumeration Observation Profile"/>
 <page deprecated="true" key="CodedEnumerationObservationProfile" name="PHD Coded Enumeration Observation Profile"/>
-<page key="CoincidentTimeStampObservationProfile" name="PHD Coincident Time Stamp Observation Profile"/>
+<page deprecated="true" key="CoincidentTimeStampObservationProfile" name="PHD Coincident Time Stamp Observation Profile"/>
 <page key="CompoundNumericObservationProfile" name="PHD Compound Numeric Observation Profile"/>
 <page deprecated="true" key="PhdDeviceProfile" name="PHD Device Profile"/>
 <page deprecated="true" key="NumericObservationProfile" name="PHD Numeric Observation Profile"/>

@@ -52,7 +52,7 @@
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/compound-numeric-observation"
+			"reference": "Observation/compound-numeric-blood-pressure"
 		}
 	],
 	"component": [

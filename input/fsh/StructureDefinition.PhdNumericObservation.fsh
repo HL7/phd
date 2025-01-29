@@ -48,7 +48,6 @@ Description: "StructureDefinition for Observation Resources representing measure
     alertOpStateComponent 0..* and
     currentLimitsComponent 0..1 and
     alertOpTextStringComponent 0..1 and
-    measurementConfidence95Component 0..1 and
     thresholdNotificationTextStringComponent 0..1
 * component[alertOpStateComponent] ^short = "The Alert Operations State component"
   * ^definition = "This component gives one of the settings reported in the Alert-Op-State attribute. This attribute is used only by the Pulse Oximeter specialization.\r\nThe Alert-Op-State attribute is used in conjunction with the Current-Limits and Measurement-Status attributes. The Current-Limits defines upper and lower limit thresholds for a reported measurement value. When the reported measurement value goes below or above these limits, a bit is set in the Measurement-Status attribute is set if the Alert-Op-State attribute indicates that the alert is active for the given threshold. Since it is considered important that if a Current-Limits attribute is present an alert shall be sent went the thresholds are crossed, the Alert-Op-State Bits are only set when the alert is, for some reason, turned OFF for a given threshold.\r\nThere shall be one such alertOpStateComponent entry for every bit set in the Alert-Op-State attribute. There may be an entry for the defined cleared components as well."
@@ -141,47 +140,6 @@ Description: "StructureDefinition for Observation Resources representing measure
     * ^sliceName = "valueString"
     * value 1..
       * ^definition = "This is the value of the lower and upper text strings presented in an application specific manner."
-  * dataAbsentReason ..0
-* component[measurementConfidence95Component] ^short = "The Measurement-Confidence-95 range"
-  * ^definition = "The Measurement-Confidence-95 attribute defines the lower and upper bounds for a range within which the manufacture is 95% confident that the actual value resides. The unit for the lower bound and upper bound is the same as the measurement. "
-  * code from $Range11073MDC (required)
-    * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-        * ^definition = "Indicates the MDC coding system"
-        * ^comment = "The code is that of the Current-Limits attribute"
-      * code 1..
-      * code = #68236 (exactly)
-        * ^definition = "Shall be the code of the Current-Limits attribute."
-    * text ^definition = "Should include the reference id for the Current-Limits attribute which is MDC_ATTR_MSMT_CONFIDENCE_95"
-  * value[x] 1..
-  * value[x] only Range
-    * low 1..
-      * value 1..
-        * ^definition = "Thsi value is given by Measurement-Confidence-95.lower-bound as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct."
-        * ^comment = "This gives the lower bound of the range for which the manufacturer is 95% confident that the measurement reported lies in."
-      * system 1..
-      * system = "http://unitsofmeasure.org" (exactly)
-        * ^definition = "Indicates the UCUM coding system."
-      * code 1..
-        * ^definition = "This code (which is the code for the units) shall be the same as Observation.valueQuantity.code"
-        * ^comment = "The MDC units are translated to UCUM."
-    * high 1..
-      * ^comment = "The high limit shall be present"
-      * value 1..
-        * ^definition = "This value is given by Measurement-Confidence-95.upper-bound as an MDER-FLOAT and shall be expressed in the precision indicated by the MDER-FLOAT construct."
-        * ^comment = "This gives the upper bound of the range for which the manufacturer is 95% confident that the measurement reported lies in."
-      * system 1..
-      * system = "http://unitsofmeasure.org" (exactly)
-        * ^definition = "Indicates the UCUM coding system."
-      * code 1..
-        * ^definition = "This code (which is the code for the units) shall be the same as Observation.valueQuantity.code"
-        * ^comment = "The MDC units are translated to UCUM."
   * dataAbsentReason ..0
 * component[thresholdNotificationTextStringComponent] ^short = "The Threshold-Notification-Text-String attribute value entry"
   * ^definition = "This component reports the values in the Threshold-Notification-Text-String attribute. This attribute is a human readable string describing the threshold met condition."
