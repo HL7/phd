@@ -11,10 +11,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "67975"
+				"code": "67975",
+				"display": "MDC_ATTR_TIME_ABS"
 			}
 		],
-		"text": "MDC_ATTR_TIME_ABS: Absolute time"
+		"text": "Absolute time"
 	},
 	"subject": {
 		"reference": "Device/phd-00601900010E9234.F45EABA80832"
