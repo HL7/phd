@@ -75,19 +75,21 @@
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "8417864"
+						"code": "8417864",
+						"display": "MDC_CTXT_GLU_MEAL"
 					}
 				],
-				"text": "MDC_CTXT_GLU_MEAL: Meal context"
+				"text": "Glucose meal context"
 			},
 			"valueCodeableConcept": {
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "8417872"
+						"code": "8417872",
+						"display": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL"
 					}
 				],
-				"text": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL: After lunch/dinner"
+				"text": "After lunch/dinner"
 			}
 		}
 	]

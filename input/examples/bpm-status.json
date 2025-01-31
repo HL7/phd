@@ -38,10 +38,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "8410608"
+				"code": "8410608",
+				"display": "MDC_BLOOD_PRESSURE_MEASUREMENT_STATUS"
 			}
 		],
-		"text": "MDC_BLOOD_PRESSURE_MEASUREMENT_STATUS: Measuring process issues"
+		"text": "Measuring process issues"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"

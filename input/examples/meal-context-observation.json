@@ -39,10 +39,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "8417864"
+				"code": "8417864",
+				"display": "MDC_CTXT_GLU_MEAL"
 			}
 		],
-		"text": "MDC_CTXT_GLU_MEAL: Meal context"
+		"text": "Meal context"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -52,10 +53,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "8417872"
+				"code": "8417872",
+				"display": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL"
 			}
 		],
-		"text": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL: After lunch/dinner"
+		"text": "After lunch/dinner"
 	},
 	"device": {
 		"reference": "Device/phd-00601900010E9234.F45EABA80832"

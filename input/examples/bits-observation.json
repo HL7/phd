@@ -38,10 +38,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "150604"
+				"code": "150604",
+				"display": "MDC_PULS_OXIM_DEV_STATUS"
 			}
 		],
-		"text": "MDC_PULS_OXIM_DEV_STATUS: Measuring process issues"
+		"text": "Measuring process issues"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"

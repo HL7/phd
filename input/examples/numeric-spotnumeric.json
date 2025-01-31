@@ -57,14 +57,14 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "149530"
-			},
+				"code": "149530",
+				"display": "MDC_PULS_OXIM_PULS_RATE"			},
 			{
 				"system": "http://loinc.org",
 				"code": "8867-4"
 			}
 		],
-		"text": "MDC_PULS_OXIM_PULS_RATE"
+		"text": "Pulse rate"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -90,19 +90,21 @@
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "68193"
+						"code": "68193",
+						"display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
 					}
 				],
-				"text": "MDC_ATTR_SUPPLEMENTAL_TYPES"
+				"text": "Supplemental information"
 			},
 			"valueCodeableConcept": {
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "150588"
+						"code": "150588",
+						"display": "MDC_MODALITY_SPOT"
 					}
 				],
-				"text": "MDC_MODALITY_SPOT"
+				"text": "Stable mean"
 			}
 		}
     ]

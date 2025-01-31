@@ -34,10 +34,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "150452"
+				"code": "150452",
+				"display": "MDC_PULS_OXIM_PLETH"
 			}
 		],
-		"text": "MDC_PULS_OXIM_PLETH: Pleth Wave"
+		"text": "Pleth Wave"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"

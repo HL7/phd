@@ -50,14 +50,15 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "150364"
+                "code": "150364",
+                "display": "MDC_TEMP_BODY"
             },
             {
                 "system": "http://loinc.org",
                 "code": "8310-5"
             }
         ],
-        "text": "MDC_TEMP_BODY: Body temp"
+        "text": "Body temperature"
     },
     "subject": {
         "reference": "Patient/patientExample-1"

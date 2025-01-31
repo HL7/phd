@@ -41,10 +41,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "67996"
+							"code": "67996",
+							"display": "MDC_ATTR_VAL_BATT_CHARGE"
 						}
 					],
-					"text": "MDC_ATTR_VAL_BATT_CHARGE"
+					"text": "Battery charge"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -106,14 +107,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -175,14 +177,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -235,10 +238,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -300,14 +304,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -369,14 +374,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -429,10 +435,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -485,10 +492,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -606,14 +614,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -675,14 +684,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -735,10 +745,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -791,10 +802,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -932,14 +944,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1001,14 +1014,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1061,10 +1075,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1117,10 +1132,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1258,14 +1274,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1327,14 +1344,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1387,10 +1405,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1443,10 +1462,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1584,14 +1604,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1653,14 +1674,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1713,10 +1735,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1769,10 +1792,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1910,14 +1934,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1979,14 +2004,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2039,10 +2065,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2095,10 +2122,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2236,14 +2264,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2305,14 +2334,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2365,10 +2395,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2421,10 +2452,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2562,14 +2594,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2631,14 +2664,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2691,10 +2725,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2747,10 +2782,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2888,14 +2924,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2957,14 +2994,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3017,10 +3055,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3073,10 +3112,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3234,14 +3274,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3303,14 +3344,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3372,10 +3414,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3428,10 +3471,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
 					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					"text": "PulseOx device status"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3589,14 +3633,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "2708-6"
 						}
 					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3658,14 +3703,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
 							"code": "8867-4"
 						}
 					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					"text": "Pulse rate"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3718,10 +3764,11 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
 					],
-					"text": "MDC_SAT_O2_QUAL"
+					"text": "Blood oxygen saturation"
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"

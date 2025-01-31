@@ -44,14 +44,15 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "150020"
+				"code": "150020",
+				"display": "MDC_PRESS_BLD_NONINV"
 			},
 			{
 				"system": "http://loinc.org",
 				"code": "85354-9"
 			}
 		],
-		"text": "MDC_PRESS_BLD_NONINV: Blood pressure"
+		"text": "Blood pressure"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -71,14 +72,15 @@
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "150021"
+						"code": "150021",
+						"display": "MDC_PRESS_BLD_NONINV_SYS"
 					},
 					{
 						"system": "http://loinc.org",
 						"code": "8480-6"
 					}
 				],
-				"text": "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
+				"text": "Systolic blood pressure"
 			},
 			"valueQuantity": {
 				"value": 116,
@@ -92,14 +94,15 @@
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "150022"
+						"code": "150022",
+						"display":"MDC_PRESS_BLD_NONINV_DIA"
 					},
 					{
 						"system": "http://loinc.org",
 						"code": "8462-4"
 					}
 				],
-				"text": "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
+				"text": "Diastolic blood pressure"
 			},
 			"valueQuantity": {
 				"value": 71,
@@ -113,10 +116,11 @@
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "150023"
+						"code": "150023",
+						"display": "MDC_PRESS_BLD_NONINV_MEAN"
 					}
 				],
-				"text": "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
+				"text": "Mean blood pressure"
 			},
 			"valueQuantity": {
 				"value": 86,

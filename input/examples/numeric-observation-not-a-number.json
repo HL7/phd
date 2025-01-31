@@ -29,10 +29,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "150320"
+				"code": "150320",
+				"display": "MDC_SAT_O2_QUAL"
 			}
 		],
-		"text": "MDC_SAT_O2_QUAL: Pulsatile quality"
+		"text": "Pulsatile quality"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"

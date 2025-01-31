@@ -39,10 +39,11 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "65573"
+                "code": "65573",
+                "display": "MDC_MOC_VMS_MDS_SIMP"
             }
         ],
-        "text": "MDC_MOC_VMS_MDS_SIMP"
+        "text": "Simple PHD"
     },
     "specialization": [
         {
@@ -50,10 +51,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "528391"
+                        "code": "528391",
+                        "display": "MDC_DEV_SPEC_PROFILE_BP"
                     }
                 ],
-                "text": "MDC_DEV_SPEC_PROFILE_BP: Blood Pressure Cuff"
+                "text": "Blood Pressure Cuff"
             },
             "version":"1"
         }
@@ -64,10 +66,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531976"
+                        "code": "531976",
+                        "display": "MDC_ID_PROD_SPEC_FW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
+                "text": "Firmware revision"
             },
             "value": "C.00.7AJ-02"
         },
@@ -76,10 +79,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531975"
+                        "code": "531975",
+                        "display": "MDC_ID_PROD_SPEC_SW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_SW: Software revision"
+                "text": "Software revision"
             },
             "value": "0000000000000101"
         },
@@ -88,10 +92,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531974"
+                        "code": "531974",
+                        "display": "MDC_ID_PROD_SPEC_HW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_HW: Hardware revision"
+                "text": "Hardware revision"
             },
             "value": "0000000000000100"
         }
@@ -102,20 +107,22 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68220"
+                        "code": "68220",
+                        "display": "MDC_TIME_SYNC_PROTOCOL"
                     }
                 ],
-                "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+                "text": "Time synchronization protocol"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "urn:iso:std:iso:11073:10101",
-                            "code": "532224"
+                            "code": "532224",
+                            "display": "MDC_TIME_SYNC_NONE"
                         }
                     ],
-                    "text": "MDC_TIME_SYNC_NONE:"
+                    "text": "None"
                 }
             ]
         }

@@ -39,10 +39,11 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "65573"
+                "code": "65573",
+                "display": "MDC_MOC_VMS_MDS_SIMP"
             }
         ],
-        "text": "MDC_MOC_VMS_MDS_SIMP"
+        "text": "Simple PHD"
     },
     "specialization": [
         {
@@ -50,10 +51,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "528401"
+                        "code": "528401",
+                        "display": "MDC_DEV_SPEC_PROFILE_GLUCOSE"
                     }
                 ],
-                "text": "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"
+                "text": "Glucose Monitor"
             },
             "version":"1"
         }

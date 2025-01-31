@@ -76,7 +76,7 @@
               "display": "MDC_MOC_VMS_MDS_AHD"
             }
           ],
-          "text": "MDC_MOC_VMS_MDS_AHD: Continua compliant Gateway"
+          "text": "Continua compliant Gateway"
         },
         "version": [
           {
@@ -84,10 +84,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532352"
+                  "code": "532352",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_VERSION"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+              "text": "Continua version"
             },
             "value": "6.0"
           }
@@ -98,10 +99,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532353"
+                  "code": "532353",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: Continua certified device list"
+              "text": "Continua certified device list"
             },
             "valueCode": [
               {
@@ -119,10 +121,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532355"
+                  "code": "532355",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: Continua certified Health&Fitness interfaces list"
+              "text": "Continua certified Health&Fitness interfaces list"
             },
             "valueCode": [
               {
@@ -194,20 +197,22 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68220"
+                  "code": "68220",
+                  "display": "MDC_TIME_SYNC_PROTOCOL"
                 }
               ],
-              "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+              "text": "Time synchronization protocol"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "urn:iso:std:iso:11073:10101",
-                    "code": "532226"
+                    "code": "532226",
+                    "display": "MDC_TIME_SYNC_NTPV4"
                   }
                 ],
-                "text": "MDC_TIME_SYNC_NTPV4: NTPV4 time synchronization"
+                "text": "NTPV4 time synchronization"
               }
             ]
           },
@@ -216,10 +221,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68221"
+                  "code": "68221",
+                  "display": "MDC_TIME_SYNC_ACCURACY"
                 }
               ],
-              "text": "MDC_TIME_SYNC_ACCURACY: unknown code 68221"
+              "text": "unknown time sync (code 68221)"
             },
             "valueQuantity": [
               {
@@ -292,7 +298,7 @@
               "display": "MDC_MOC_VMS_MDS_SIMP"
             }
           ],
-          "text": "MDC_MOC_VMS_MDS_SIMP: Personal Health Device"
+          "text": "Personal Health Device"
         },
         "specialization": [
           {
@@ -300,10 +306,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "528388"
+                  "code": "528388",
+                  "display": "MDC_DEV_SPEC_PROFILE_PULS_OXIM"
                 }
               ],
-              "text": "MDC_DEV_SPEC_PROFILE_PULS_OXIM: Pulse Oximeter"
+              "text": "Pulse Oximeter"
             },
             "version": "1"
           }
@@ -314,10 +321,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "531976"
+                  "code": "531976",
+                  "display": "MDC_ID_PROD_SPEC_FW"
                 }
               ],
-              "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
+              "text": "Firmware revision"
             },
             "value": "0.9C"
           },
@@ -326,10 +334,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532352"
+                  "code": "532352",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_VERSION"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+              "text": "Continua version"
             },
             "value": "1.0"
           }
@@ -340,10 +349,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532353"
+                  "code": "532353",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: Continua certified device list"
+              "text": "Continua certified device list"
             },
             "valueCode": [
               {
@@ -383,20 +393,22 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68220"
+                  "code": "68220",
+                  "display": "MDC_TIME_SYNC_PROTOCOL"
                 }
               ],
-              "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+              "text": "Time synchronization protocol"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "urn:iso:std:iso:11073:10101",
-                    "code": "532224"
+                    "code": "532224",
+                    "display": "MDC_TIME_SYNC_NONE"
                   }
                 ],
-                "text": "MDC_TIME_SYNC_NONE: No time synchronization"
+                "text": "No time synchronization"
               }
             ]
           },
@@ -471,10 +483,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68222"
+                  "code": "68222",
+                  "display": "MDC_TIME_RES_ABS"
                 }
               ],
-              "text": "MDC_TIME_RES_ABS: Resolution of absolute time clock"
+              "text": "Resolution of absolute time clock"
             },
             "valueQuantity": [
               {
@@ -489,10 +502,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68223"
+                  "code": "68223",
+                  "display": "MDC_TIME_RES_REL"
                 }
               ],
-              "text": "MDC_TIME_RES_REL: Resolution of relative time clock"
+              "text": "Resolution of relative time clock"
             },
             "valueQuantity": [
               {
@@ -525,10 +539,11 @@
           "coding": [
             {
               "system": "urn:iso:std:iso:11073:10101",
-              "code": "67975"
+              "code": "67975",
+              "display": "MDC_ATTR_TIME_ABS"
             }
           ],
-          "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
+          "text": "Uses Absolute time clock"
         },
         "subject": {
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
@@ -592,14 +607,15 @@
           "coding": [
             {
               "system": "urn:iso:std:iso:11073:10101",
-              "code": "150456"
+              "code": "150456",
+              "display": "MDC_PULS_OXIM_SAT_O2"
             },
             {
               "system": "http://loinc.org",
               "code": "2708-6"
             }
           ],
-          "text": "MDC_PULS_OXIM_SAT_O2: Blood 0₂"
+          "text": "Blood oxygen saturation"
         },
         "subject": {
           "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
@@ -620,19 +636,21 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68193"
+                  "code": "68193",
+                  "display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
                 }
               ],
-              "text": "MDC_ATTR_SUPPLEMENTAL_TYPES: Supplemental information"
+              "text": "Supplemental information"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "150588"
+                  "code": "150588",
+                  "display": "MDC_MODALITY_SPOT"
                 }
               ],
-              "text": "MDC_MODALITY_SPOT: Stable mean"
+              "text": "Stable mean"
             }
           }
         ]
@@ -690,14 +708,15 @@
           "coding": [
             {
               "system": "urn:iso:std:iso:11073:10101",
-              "code": "149530"
+              "code": "149530",
+              "display": "MDC_PULS_OXIM_PULS_RATE"
             },
             {
               "system": "http://loinc.org",
               "code": "8867-4"
             }
           ],
-          "text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate"
+          "text": "Pulse rate"
         },
         "subject": {
           "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
@@ -718,19 +737,21 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68193"
+                  "code": "68193",
+                  "display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
                 }
               ],
-              "text": "MDC_ATTR_SUPPLEMENTAL_TYPES: Supplemental information"
+              "text": "Supplemental information"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "150588"
+                  "code": "150588",
+                  "display": "MDC_MODALITY_SPOT"
                 }
               ],
-              "text": "MDC_MODALITY_SPOT: Stable mean"
+              "text": "Stable mean"
             }
           }
         ]

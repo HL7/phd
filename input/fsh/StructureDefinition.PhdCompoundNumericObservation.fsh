@@ -23,9 +23,9 @@ Description: "StructureDefinition for Observation Resources representing measure
   * ^slicing.ordered = false
   * ^slicing.rules = #open
 * value[x] ..0
-* component ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "code"
-  * ^slicing.rules = #open
+// * component ^slicing.discriminator[0].type = #value
+//   * ^slicing.discriminator[=].path = "code"
+//   * ^slicing.rules = #open
 * component contains
     compound 0..*
 * component[compound] ^short = "Compound numeric measurement entry components"
