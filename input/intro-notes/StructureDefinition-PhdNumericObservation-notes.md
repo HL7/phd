@@ -3,6 +3,11 @@ This profile is used to map ACOM Numeric Observations.  The measured value is re
 ### Mapping Numerics to FHIR
 The following table shows how the numeric attributes are mapped to FHIR. Since the FHIR Quantity also contains the units the Unit-Code attribute value is required to complete the picture. The MDC unit code needs to be mapped to UCUM. In most cases this mapping is straight forward, but there can be some examples which are tricky. The MDC_DIM_TICK for the RR interval is just the number of ticks. However, the tick unit is given by the MDS attribute MDC_ATTR_TICK_RES which is the number of ticks per second. So if MDC_ATTR_TICK_RES is 2048 and the RR measurement is 3092, that means the RR interval is 1.5 seconds. One could also express the measurement in Hertz. When the units are converted in this manner, the value must be converted appropriately.
 
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+
 |Attribute|FHIR coding|
 |-
 |Basic-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"|
@@ -31,7 +36,7 @@ IEEE 11073-20601 numeric metric measurements have some additional optional attri
 As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. There are five metric attributes that give extra information about numeric-only measurements.
 
 #### Accuracy
-The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is in the units of the measurement itself. The entries are as populated as follows:
+The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is reported in the same unit as those of the measurement. The entries are as populated as follows:
 
 |Observation.component element|entry|Additional Information|
 |-

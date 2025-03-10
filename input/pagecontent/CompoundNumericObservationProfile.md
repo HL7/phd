@@ -56,7 +56,7 @@ IEEE 11073-20601 numeric metric measurements have some additional optional attri
 As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. Only the Accuracy attribute is used for compound numerics. The other numeric-specific attributes are not structured to handle compounds.
 
 #### Accuracy
-The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is in the units of the measurement itself. This kind of measurement may not make sense to report with some compound measurements, especially in the case of the Compound-Nu-Observed-Value as each element could have different units.
+The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is reported in the same unit as those of the component. This kind of measurement may not make sense to report with some compound measurements, especially in the case of the Compound-Nu-Observed-Value as each element could have different units.
 
 The entries are as populated as follows:
 

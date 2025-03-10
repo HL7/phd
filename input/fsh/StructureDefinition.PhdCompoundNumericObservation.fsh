@@ -56,12 +56,11 @@ Description: "StructureDefinition for Observation Resources representing measure
   * dataAbsentReason ^short = "Populated when a special value or status in Compound-Nu-Observed-Value indicates invalid, not unavailable, or msmt ongoing"
     * ^definition = "Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This could be a NaN (Not a Number), PINF (Positive infinity), NINF (Negative infinity) or the reserved and not-at-this-resolution special values. It can also be indicated by the (measurement) status field of the Compound-Nu-Observed-Value. Note that the FHIR codes for NAN are no longer 'NAN' but 'not-a-number'. Similar changes have been made for NINF and PINF."
     * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
+      * ^slicing.discriminator[=].path = "code"
       * ^slicing.rules = #open
     * coding contains FhirDefault 1..1
     * coding[FhirDefault]
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
+      * code from $DataAbsentReason (required)
       * code 1..
   * interpretation
     * coding ^slicing.discriminator[0].type = #value

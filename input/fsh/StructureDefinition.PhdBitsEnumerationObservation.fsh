@@ -29,13 +29,11 @@ Description: "StructureDefinition for Observation Resources representing measure
   * dataAbsentReason ^short = "For the optional reporting of unsupported bits"
     * ^definition = "Provides a reason why the expected value in the element Observation.component.value[x] is missing. In this profile for this component that happens if the PHD does not support this bit and the uploader wishes to report that situation."
     * coding ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "system"
+      * ^slicing.discriminator.path = "code"
       * ^slicing.rules = #open
     * coding contains FhirDefault 1..1
-    * coding[FhirDefault] ^short = "FHIR default code system for reporting 'unsupported'"
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-      * code 1..
+    * coding[FhirDefault] ^short = "FHIR default code for reporting 'unsupported'"
+      * code from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
       * code = #unsupported (exactly)
   * valueCodeableConcept
     * coding ^slicing.discriminator.type = #value
