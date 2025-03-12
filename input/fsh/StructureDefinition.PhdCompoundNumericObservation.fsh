@@ -10,7 +10,7 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCompoundNumericObservation reports PHD measurements that contain one of either a Compound-Basic-Nu-Observed-Value, Compound-Simple-Nu-Observed-Value, or Compound-Nu-Observed-Value attribute."
   * ^comment = "Used for compound numeric observations from Personal Health Devices"

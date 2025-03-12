@@ -8,7 +8,7 @@ Id: PhdBaseObservation
 Description: "Common base profile with the elements that are common to the PHD IG Observation profiles."
 * ^meta.lastUpdated = "2017-12-14T04:17:26.671-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-11-24T15:17:35.385-05:00"
 * . ^comment = "This profile is the base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
 * meta 1..
@@ -23,7 +23,7 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://terminology.hl7.org/CodeSystem/v3-ActReason" (exactly)
     * code 1..
     * code = #HTEST (exactly)
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice named GatewayDevice 1..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice|4.0.1 named GatewayDevice 1..1
 * extension[GatewayDevice].value[x] only Reference(PhgDevice)
   * ^short = "Reference to the PHG Device"
   * ^definition = "Reference to the PHG Device that received the measurement from the PHD."

@@ -91,6 +91,19 @@
 				],
 				"text": "After lunch/dinner"
 			}
+		},
+		{
+			"code": {
+				"coding": [
+					{
+						"system": "urn:iso:std:iso:11073:10101",
+						"code": "8417846",
+						"display": "MDC_CTXT_GLU_SAMPLELOCATION_OTHER"
+					}
+				],
+				"text": "Glucose measurement context indicating sample location is other (does not match an available option)"
+			},
+			"valueString": "Somewhere on the body."
 		}
 	]
 }

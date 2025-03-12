@@ -5,9 +5,6 @@
 # Example observation in this IG are suppossed to be device generated with often an unknown performer. There is text in the IG to explain this. The affected example observations / bundles are: bits-observation.json, bundle-continuousnonin.json, bundle-example-1.json, coin-20181119174911.json, coin-20181119202022.json, coin-example-1.json, coin-example-timefault.json, glucose-1.0.0.4.json, numeric-observation-not-a-number.json, numeric-spotnumeric.json, stringenum-1234.json
 Best Practice Recommendation: In general, all observations should have a performer
 
-# This is a recent code for a spirometer device type. Created a pull request on the codes in https://github.com/FHIR/packages/pulls
-The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
-
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
@@ -30,5 +27,8 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 # With FHIR R4 there is no supported way to indicate the valueset for a property
 The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
-# no other mechanism can be used in R4
-The base property uri 'https://sagroups.ieee.org/11073/10101' is not known for the property 'status', so the property values can not be validated fully
+# This is caused by the use of String as a required value for a data element. This warning generation is out of our control and can be ignored.
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
+
+# This caused by the max value set for observation language and this is out of our control. Can be ignored.
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated

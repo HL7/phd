@@ -5,7 +5,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * name = "PhdServerCapabilityStatement"
 * title = "Continua FHIR Observation Server requirements"
-* status = #draft
+* status = #active
 * date = "2018-10-27"
 * publisher = "Continua-Personal Connected Health Alliance"
 * contact.telecom.system = #url
@@ -17,7 +17,7 @@ Usage: #definition
 * format[0] = #json
 * format[+] = #xml
 * rest.mode = #server
-* rest.documentation = "Continua FHIR Observation Server requirements"
+* rest.documentation = "PHD IG FHIR Observation Server requirements"
 * rest.security.service.coding[0] = $restful-security-service#OAuth
 * rest.security.service.coding[+] = $restful-security-service#Basic
 * rest.security.description = "Describe the oauth model ..."

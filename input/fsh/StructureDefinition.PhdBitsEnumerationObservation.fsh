@@ -8,7 +8,7 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a bitstring attribute."
   * ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073-10101 BITs value. This measurement is a complex representation where each bit means something. In many cases only certain bits are defined and it is generally true that the significant case is when the bit has been set. Given that measurement could result in up to 32 component entries (one for each bit) only set bits are required to be reported. Some specializations have used this measurement type when they should have used IEEE 11073-10101 codes."

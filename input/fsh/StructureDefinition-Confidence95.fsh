@@ -5,6 +5,7 @@ Description: "The Confidence 95 range of a measurable quantity."
 Context: Observation, DeviceMetric, Observation.component
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95"
 * ^version = "1.0.0"
+// * ^status = #draft
 * . 0..1
 * . ^short = "Confidence95"
 * . ^definition = "The Confidence 95 range of a measurable quantity."

@@ -6,7 +6,7 @@ Description: "Code system to have a formal definition and URI for these concepts
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts"
 * ^version = "current"
 * ^experimental = false
-* ^status = #active
+// * ^status = #draft
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete

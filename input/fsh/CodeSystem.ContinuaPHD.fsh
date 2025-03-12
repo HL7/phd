@@ -5,7 +5,7 @@ Description: "Codes used to describe the Continua Personal Area Network (PHD) in
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD"
 * ^version = "0.3.0"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-24"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"

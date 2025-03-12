@@ -6,7 +6,7 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdRtsaObservation reports PHD measurements that contain a Simple-Sa-Observed-Value attribute."
 * . ^comment = "Used for RTSA (waveform) observations from Personal Health Devices"

@@ -4,8 +4,8 @@ Title: "ASN1 bits to HL7 enumerated values"
 Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Concepts"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
-* ^version = "0.3.0"
-* ^status = #active
+//* ^version = "2.1.0"
+//* ^status = #active
 * ^experimental = false
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"

@@ -5,7 +5,7 @@ Description: "ValueSet for the Codes describing the type of device identifier, s
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/DeviceSystemIdIdentifier"
 * ^version = "current"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-25"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"

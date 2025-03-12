@@ -5,7 +5,7 @@ Description: "ValueSet for the ANS1ToHL7 codes that are not derived from enumera
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute"
 * ^version = "current"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^date = "2018-09-17"
 * ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
