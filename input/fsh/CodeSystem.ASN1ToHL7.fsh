@@ -82,7 +82,7 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
-* #532354.0 "regulation-status" "Indicates device is regulated when *cleared* and unregulated when *set*"
+* #532354.0 "negated-regulation-status" "Indicates device is regulated when *cleared* and unregulated when *set*"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source

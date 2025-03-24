@@ -29,9 +29,9 @@ Every PHD measurement Observation resource contains the following information re
 
 |Measurement item|element|Description|
 |-
-|measurement type|Observation.code.coding.code|This element tells you what the measurement is. There shall be at least one coding element using the MDC coding system identified by Observation.code.coding.system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html). There will also be an Observation.category element as demanded by the vital signs profile.|
+|measurement type|Observation.code|This element tells you what the measurement is. There should be at least one coding element using the MDC coding system identified by Observation.code.coding.system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html). There will also be an Observation.category element as demanded by the vital signs profile.|
 |time stamp|Observation.dateTimeEffective<br/>Observation.period|If the measurement is a point in time.<br/>If the measurement has a duration.|
-|PHG reference|Observation.extension.valueReference|This element points to the PHG Device that generated the FHIR resources. The gateway extension is identified by Observation.extension.url="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"|
+|PHG reference|Observation.extension.valueReference|This element points to the PHG Device that generated the FHIR resources. The gateway extension is identified by Observation.extension.url=["http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"](http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice.html)|
 |patient reference|Observation.subject|Points to the Patient to whom this measurement refers|
 |PHD reference|Observation.device|Points to the PHD Device that took the measurement|
 
@@ -41,31 +41,28 @@ In addition to the elements that are always present, the following set of elemen
 |Measurement item|element|Description|
 |-
 |profile|Observation.meta.profile|This element may contain the URL to the structure definition identifying the profile this Observation belongs to.|
-|coincident time stamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. May only be present when the PHD provides a time stamp. The timestamp extension is identified by Observation.extension.url="http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference" |
+|coincident time stamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. May be present only when the PHD provides a time stamp. The timestamp extension is identified by Observation.extension.url=["http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"](StructureDefinition-CoincidentTimeStampReference.html) |
 |related measurement|Observation.derivedFrom Observation.hasMember|Points to a PHD Observation that is related to this Observation. An example would be an activity session measurement that has a miles run measurement member. Only present if the measurement references an additional measurement.|
-|additional descriptions|Observation.component|Sometimes a measurement is sent containing additional information such as the technique used to obtain the measurement. These elements are placed in a component.|
+|additional descriptions|Observation.component or Observation.extension|Sometimes a measurement is sent containing additional information such as the technique used to obtain the measurement. These elements are placed in a component or an extension.|
 ||Observation.identifier|This element is used to prevent data duplication during uploads.|
 
 #### Description of the Fields
 In this section each of the fields summarized above is discussed.
 
 ##### The Profile: Observation.meta.profile
-The PHD profile element may identify what type of measurement value the Observation has. For example, if Observation.meta.profile entry contains "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation" this measurement is a scalar. As discussed in the Phd Numeric Observation Profile section, scalars are mapped to a valueQuantity element, thus one knows the value[x] element is of type valueQuantity, which may make parsing the value[x] element a little simpler.
+A PHD profile element may identifiy what type of measurement value the Observation has. For example, if Observation.meta.profile entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
 
 ##### The Measurement Type: Observation.code.coding.code
 The measurement type tells what the measurement is. In HL7 such information is typically done through codes and it is no different here. However, one must understand the coding system in order to interpret what the code means. Consumers of the PHD profiles must understand the MDC code system to interpret the measurement. One can find more information about the MDC code system [here](https://terminology.hl7.org/MDC.html). 
 
 MDC codes are available st the [Rosetta Terminology Mapping Management Service (RTMMS)](https://rtmms.nist.gov/).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. Equaivalent LOINC codes are also provided. The Rosetta system is updated on a regular basis with new codes and corrections. 
 
-For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, a mapping table between MDC and LOINC is also included in LOINC since v2.54 [available here](https://loinc.org/news/loinc-version-2-54-and-relma-version-6-12-available/). The FHIR MDC to LOINC concept map is available [here](https://fhir.loinc.org/ConceptMap/?url=http://loinc.org/cm/loinc-to-ieee-device-codes). One may freely download and use this material as needed in an implementation license free, but it does require that one create a (free) login account. A mapping from MDC to SNOMED CT for some of the more common codes is available in the Continua Design Guidelines [H.813 HIS Interface](https://www.itu.int/rec/T-REC-H.813-201911-I) document. The guidelines are freely available for download, however [licensing requirements](https://www.snomed.org/licensing) for the use of the SNOMED CT code system apply.
+For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, a mapping table between MDC and LOINC is also included in LOINC since v2.54 [available here](https://loinc.org/news/loinc-version-2-54-and-relma-version-6-12-available/). The FHIR MDC to LOINC concept map is available [here](https://fhir.loinc.org/ConceptMap/?url=http://loinc.org/cm/loinc-to-ieee-device-codes). One may freely download and use this material as needed in an implementation, but it does require a (free) login account. A mapping from MDC to SNOMED CT for some of the more common codes is available in the somewhat outdated Continua Design Guidelines [H.813 HIS Interface](https://www.itu.int/rec/T-REC-H.813-201911-I) document. The guidelines are freely available for download, however [licensing requirements](https://www.snomed.org/licensing) for the use of the SNOMED CT code system apply.
 
 ##### Vital Signs
-FHIR (R4) requires that a LOINC code is present if the measurement is one of the vital signs given [here](https://hl7.org/fhir/R4/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC magic value. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the same LOINC code (8867-4). A PHG is not required to use the LOINC codes from the FHIR vital signs profile but may map the MDC codes to more specific LOINC codes. 
+FHIR (R4) requires that a LOINC code is present if the measurement is one of the vital signs given [here](https://hl7.org/fhir/R4/observation-vitalsigns.html). In that case, the Observation.code shall have at least a second coding element containing the LOINC "magic value". *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the LOINC code (8867-4). A PHG may map these MDC codes also to more specific LOINC codes. 
 
-In addition to the LOINC code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign. 
-
-Below is a snippet showing a code element for a measurement type that is a vital sign (body temperature) along with the category elements:
-{% fragment Observation/temperature-observation JSON EXCEPT:code|category %}
+In addition to the LOINC code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign.
 
 ##### Caveats
 The PHG may express the code in additional coding systems but the consumer cannot rely on it. The PHD profiles in this IG require *only* the MDC code as it is provided by the PHD and the LOINC code if the measurement is a vital sign. It is also possible that a vital sign is *not* mapped to LOINC by the PHG. By design, the PHG is written to map the data from the PHD without any knowledge to what the data is. The exception is for the LOINC codes for vital signs which require the PHG to pre-code a map. If a new PHD specialization is created after the PHG is already implemented, the new PHD may use a new MDC code and the new code may be a vital sign (perhaps the new code represents a pulse rate obtained via a new technique). The PHG can still populate the Observation.code.coding.code with the MDC code as that is provided in the PHD protocol, but the new MDC code will not be in its pre-coded local map of MDC codes to LOINC codes.
@@ -80,18 +77,19 @@ Below is an example of the effective[x] when the time stamp is an instant in tim
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
 ##### The Coincident Time Stamp extension
-The consumer can obtain further information about the time stamp from the coincident time stamp Observation identified by the profile value "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation". A reference to a coincident time stamp Observation may be present in the CoincidentTimeStampReference extension. If the reference is NOT present, it means that the PHD did not provide a time stamp, and the PHG used the time of reception as the time stamp. PHDs that send stored data shall include time stamps in their measurements.
+The consumer can obtain further information about the time stamp from the coincident time stamp Observation identified by the profile value ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"](StructureDefinition-PhdCoincidentTimeStampObservation.html). A reference to a coincident time stamp Observation may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a time stamp, and the PHG used the time of reception as the time stamp. PHDs that send stored data shall include time stamps in their measurements.
 
-If the PHD sent the measurement with a time stamp, there will be an Observation.extension element referencing the coincident time stamp Observation resource. The Coincident Time Stamp Observation can be used to determine the PHD's timeline and clock status. This Coincident Time Stamp can also be used to see if the PHG needed to correct the time stamp, and if it did, by how much.  
+If the PHD sent the measurement with a time stamp, there will be an Observation.extension element referencing the coincident time stamp Observation resource. The Coincident Time Stamp Observation can be used to determine the PHD's timeline and clock status. This Coincident Time Stamp can also be used to see if the PHG needed to correct the time stamp, and if it did, by how much. 
+An example of the Coincident Time Stamp extension is shown below:
+
+{% fragment Observation/temperature-observation JSON EXCEPT:extension[1] %} 
 
 Additional information about the Coincident Time Stamp can be found [here](CoincidentTimeStamp.html).
 
 #### The PHG reference extension
-The reference to the Device resource containing the PHG properties is encoded in an extension element. An example of the element is shown below:
+The reference to the Device resource containing the PHG properties is encoded in an extension element.  An example of the PHG extension is shown below:
 
-An example of the Coincident Time Stamp extension and the PHG extension is shown below:
-
-{% fragment Observation/temperature-observation JSON EXCEPT:extension %}
+{% fragment Observation/temperature-observation JSON EXCEPT:extension[0] %}
 
 
 #### The Patient reference: Observation.subject:
@@ -100,24 +98,22 @@ The reference to the Patient resource containing information about the patient u
 #### The Performer references: Observation.performer[]:
 In many cases the patient is also the person that is taking the measurement. In other cases a general physician may be using a PHD in his clinic. When known to the gateway a reference to the performer may be present in this element, otherwise this element may be absent.
 
-#### References to Other Observations: Observation.derivedFrom.reference:
-There are situations where a given Observation is an important part of another Observation such as a glucose meal context measurement giving additional information about a glucose concentration measurement. In that case the context measurement will have an Observation.derivedFrom.reference element that points to the Observation resource containing the glucose measurement. Another common case where an Observation references another Observation is in an activity monitor. Results of an exercise session such as miles run, calories burned, average and maximum heart rates, etc. are reported as Observations where each Observation points to the master session Observation which has the activity type and duration (period).
+#### References to Other Observations
+There are situations where a given Observation is an important part of another Observation such as a glucose meal context measurement giving additional information about a glucose concentration measurement. In that case the context measurement will have an Observation.derivedFrom.reference element that points to the Observation resource containing the glucose measurement. Another common case where an Observation references another Observation is in an activity monitor. Results of an exercise session such as miles run, calories burned, average and maximum heart rates, etc. are reported as Observations where each Observation points to the master session Observation with a Observation.memberOf.reference which has the activity type and duration (period).
 
 An example of a reference to another Observation is shown below:
 
 {% fragment Observation/bpm-status JSON EXCEPT:derivedFrom %}
 
-#### Additional Descriptions: Observation.component:
+#### Additional Descriptive Data
 In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar) and return to this section when relevant.
 
 PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. Additional information is reported in an Observation.component element. The type of additional information is given by the Observation.component.code element. The value of the additional information is given by the Observation.component.value[x] element. PHDs support the following types of additional information:
 
-|Type of additional information|code|When it can occur|component.value[x]|Description|
+|Type of additional information|code|When it can occur|FHIR data element|Description|
 |-
 |supplemental type|68193 (MDC code)|Can occur with all measurement values|valueCodebaleConcept| provides a further description of the measurement type. Can be multiple supplemental type component entries.|
-|relative time stamp|67985 (MDC code)|Can occur with all measurement values|valueQuantity| Gives the value of the time stamp when relative times are used|
-|high resolution relative time stamp|68073 (MDC code)|Can occur with all measurement values|valueQuantity| Gives the value of the time stamp when high resolution relative times are used|
-|Accuracy|67914 (MDC code)|Only Quantities|valueQuantity| Gives the accuracy of the measurement value in the units of the measurement value|
+|Accuracy|67914 (MDC code)|Only Quantities|extension.valueQuantity| Gives the accuracy of the measurement value in the units of the measurement value|
 |Alert operational state|68746.n (ASN1ToHL7 code where n = 0, 1, or 2)|Only Quantities|valueCodeableConcept (V2 binary 'Y' or 'N')| Determines whether an alert threshold is off or on.|
 |Alert operational text string|68104 (MDC code)|Only Quantities|valueString| A human readable string describing the lower and upper alert thresholds in that order.|
 |Current Limits|67892 (MDC code)|Only Quantities|valueRange| The lower and upper threshold values in the units of the reported measurement quantity|
@@ -129,89 +125,14 @@ At the time of this writing, only the supplemental types and the high resolution
 ##### Supplemental Types
 Supplemental type information is indicated by the Observation.component.code.coding.code element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by Observation.component.valueCodeableConcept.coding.code. There may be more than one Observation.component entry containing supplemental type information. An example of a supplemental types component entry is as follows:
 
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68193"
-                    }
-                ],
-                "text": "MDC_ATTR_SUPPLEMENTAL_TYPES: Supplemental information"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "150588"
-                    }
-                ],
-                "text": "MDC_MODALITY_SPOT: Modality Spot"
-            }
-        }
-    ]
+{% fragment Observation/numeric-spotnumeric JSON EXCEPT:component[0] %}
 
 A 'spot modality' means that the pulse oximeter sensed over a period long enough to obtain a stable average.
 
-##### Relative Times
-A PHD may use a relative time clock. A relative time clock is nothing but a series of ticks with a fixed interval between ticks. The IEEE 11073-20601 standard allows for two types of relative time clocks where the standard specifies what the fixed interval between ticks is. Clearly such a clock is much simpler for a PHD to implement. As long as the PHD provides its current tick value, the PHG can convert these relative times to a user-friendly wall clock time. The time stamp reported in the Observation.effective[x] element is always the user-friendly wall clock time.
-
-However, there may be use cases where the relative time stamp is desired. Relative time stamps have, by spec, a resolution of either 125 microseconds or microseconds depending upon which relative time clock is used. FHIR only reports time stamps to the millisecond. If one's use case requires knowing the time stamp to the microsecond, one will need to obtain the reported ticks in this component element. The coincident time stamp Observation will, in this case have information about the current relative time ticks, if, for some reason that is needed. 
-
-Note that just because a PHD uses a relative time clock it does not mean that the PHD reports the time stamp at that resolution. One must look at the corresponding PHD Device resource to see what the actual resolution of the relative time clock is.
-
-At the time of this writing there are no PHDs on the market that use relative time stamps because they need very precise time stamps for their measurements. Relative time stamp use has been for simplicity and reduced power consumption. Devices that need very precise time stamps are much more likely to be Point of Care Devices (PoCDs) used in hospital environments.
-
-There are two types relative time stamps defined by IEEE 11073-20601. A 'relative time' with a maximum resolution of 125 microseconds and a 'high resolution relative time' with a maximum resolution of microseconds. Which relative time stamp is used is given by the MDC code in the Observation.component.code.coding.code element:
-
-|MDC Code|Description|
-|-
-|67985|Relative Time|
-|68073|High resolution relative time|
-
-The value of the relative time is reported as a valueQuantity in units of microseconds for BOTH types of relative time stamps. An example of a component containing high resolution relative time stamp information is as follows:
-
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68073"
-                    }
-                ],
-                "text": "MDC_ATTR_TIME_STAMP_REL_HI_RES: High resolution relative time stamp"
-            },
-            "valueQuantity": {
-                "value": 1234534,
-                "system": "http://unitsofmeasure.org",
-                "code": "us"
-            }
-        }
-    ]
-
 ##### Accuracy
-Accuracy information is indicated by the Observation.component.code.coding.code element having the value 67914. The accuracy applies only to measurement values that are quantities. It gives the maximum deviation as an absolute value of the reported measurement value from the actual measurement over the entire range of the measurement. It is reported in the units of the measurement itself. Though the IEEE 11073 specializations encourage providing this value it is not mandatory and few market PHDs implement it. An example of an accuracy entry for a thermometer is shown below:
+Accuracy information of quantities can be indicacted using an extension. It gives the maximum deviation as an absolute value of the reported measurement value from the actual measurement over the entire range of the measurement. It is reported in the units of the measurement itself. An example of an accuracy entry for a thermometer is shown below:
 
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "67914"
-                    }
-                ],
-                "text": "MDC_ATTR_NU_ACCUR_MSMT: Measurement accuracy"
-            },
-            "valueQuantity": {
-                "value": 0.1,
-                "system": "http://unitsofmeasure.org",
-                "code": "Cel"
-            }
-        }
-    ]
+{% fragment Observation/temperature-observation JSON EXCEPT:extension[3] %}
 
 ##### Current Limits
 The Current Limits component is currently only used in the Pulse Oximeter specialization. It gives the low and high threshold limit values of the primary measurement being monitored. The Current Limits  applies only to measurement values that are quantities. When either threshold limit is met an alarm event is triggered if the alarm for the given threshold limit is enabled. If this component is present, an Alert Operational State component shall also be present which indicates the disabled/enabled state of the alarms.
@@ -347,35 +268,11 @@ An example of a component entry is as follows:
     ]
 
 ##### Measurement Confidence 95
-The Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization. The compoent gives a lower and upper bound between which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. 
+TheIEEE 11073  Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization. The compoent gives a lower and upper bound between which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. 
 
-The entry is indicated by the Observation.component.code.coding.code element having the value 68236. The value is encoded in an Observation.component.valueRange element. The ranges have the same units as the primary measurement. An example of a Measurement Confidence 95 entry is shown below:
+The entry is indicated by the Observation.extension "http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95". The accuracy is encoded in an Extension.valueRange element. The ranges have the same units as the primary measurement. An example of a Measurement Confidence 95 entry is shown below:
 
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68236"
-                    }
-                ],
-                "text": "MDC_ATTR_MSMT_CONFIDENCE_95: Current lower and upper alarm threshold values"
-            },
-            "valueRange": {
-                "low": {
-                    "value": 98,
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mg/dL"
-                },
-                "high": {
-                    "value": 100,
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mg/dL"
-                }
-            }
-        }
-    ]
+{% fragment Observation/glucose-observation JSON EXCEPT:extension[2] %}
 
 The above states that the Continuous Glucose Monitor PHG is 95% sure that the reported measurement of (say 99 mg/dL) lies between 98 and 100 mg/dL.
 
@@ -404,7 +301,7 @@ An example of a component entry is as follows:
 
 
 ### Measurement Status
-Every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG will report any measurement it receives from the PHD including error states and let the end user decide what to do with it.
+Every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG supports a PHG to report any measurement it receives from a PHD including error states and let downstream consumers address it.
 
 There are other non-error special conditions that may also be reported, such as the measurement is test or demo data.
 
@@ -465,10 +362,10 @@ An example of the valueQuantity in the Phd Numeric Observation Profile for a the
         "code": "Cel"
     }
 
-### Measurement Values that are Multi-Number or Compounds
-Multi-number or compound or vector quantities are reported in Observation.component elements. There is one component for each compound entry or vector projection. A vector or compound measurement follows the Phd Compound Numeric Observation Profile. An Observation follows the compound profile if the Observation.meta.profile contains a "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation" entry.
+### Measurement Values that are Compounds
+IEEE 11073-10206 (ACOM) supports compound observations where the components can have a numeric, a string, a code or a sample array value. This type of observation is mapped to the "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation" profile.
 
-There is no primary Observation.value[x] entry and there is no Observation.dataAbsentReason unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an Observation.component.dataAbsentReason element. All Observation.component entries could have dataAbsetnReason entry but that does NOT mean the entire measurement has an Observation.dataAbsentReason entry. It is also possible that a component will have its own interpretation element of the same type as shown in the Measurement Status section. Currently there are no market PHDs that generate an Observation.component.interpretation element.
+There is no primary Observation.value[x] entry and there is no Observation.dataAbsentReason unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an Observation.component.dataAbsentReason element. All Observation.component entries could have dataAbsentReason entry but that does NOT mean the entire measurement has an Observation.dataAbsentReason entry. 
 
 Compound Observations will have a code indicating what the 'entire' measurement is, for example, non-invasive blood pressure or acceleration. Each Observation.component element will have its own code describing each individual compound or vector entry, for example, the systolic, diastolic, and mean pressures for the blood pressure or x-, y-, and z-projections of an acceleration.
 
@@ -476,8 +373,16 @@ Each Observation.component will have the following:
 
 |FHIR element|Description|
 |-
-|Observation.componentN.code.coding.code|MDC code telling what the entry is|
-|Observation.componentN.code.coding.system="urn:iso:std:iso:11073:10101"|MDC code system identifier|
+|Observation.component.code.coding.code|MDC code telling what the entry is|
+|Observation.component.code.coding.system="urn:iso:std:iso:11073:10101"|MDC code system identifier|
+|Observation.component.value[x]|contains the value of the component being a Quantity, CodeableConcept, string or SampledData|
+
+
+#### Measurement Values that are Numeric Compounds
+IEEE 11073-20601 does only support compound measurements with numeric components. These observations adhere to the Phd Compound Numeric Observation Profile ("http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"). For the numeric components the following applies:
+
+|FHIR element|Description|
+|-
 |Observation.component.valueQuantity.value|the scalar value of the given entry with the precision indicated by the PHD|
 |Observation.component.valueQuantity.code|the units (as UCUM)|
 |Observation.component.valueQuantity.system="http://unitsofmeasure.org"|UCUM code system identifier|
@@ -488,117 +393,25 @@ An example of a Blood Pressure measurement would be as follows:
 
 The Observation.code and Observation.category (since the measurement is a vital sign) entries describing the 'entire' measurement:
 
-    "category": [
-        {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                    "code": "vital-signs"
-                }
-            ],
-            "text": "Vital Signs"
-        }
-    ]
-    "code": {
-        "coding": [
-            {
-                "system": "urn:iso:std:iso:11073:10101",
-                "code": "150020"
-            },
-            {
-                "system": "http://loinc.org",
-                "code": "55284-4"
-            }
-        ],
-        "text": "MDC_PRESS_BLD_NONINV: Blood pressure"
-    },
+{% fragment Observation/compound-numeric-blood-pressure-no-mean JSON EXCEPT:code|category %}
 
 and the individual Observation.component entries describing each compound entry where the MEAN entry was unable to be determined and reported a NaN (Not a Number):
 
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "150021"
-                    },
-                    {
-                        "system": "http://loinc.org",
-                        "code": "8480-6"
-                    }
-                ],
-                "text": "MDC_PRESS_BLD_NONINV_SYS: Systolic blood pressure"
-            },
-            "valueQuantity": {
-                "value": 116,
-                "system": "http://unitsofmeasure.org",
-                "code": "mmHg"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "150022"
-                    },
-                    {
-                        "system": "http://loinc.org",
-                        "code": "8462-4"
-                    }
-                ],
-                "text": "MDC_PRESS_BLD_NONINV_DIA: Diastolic blood pressure"
-            },
-            "valueQuantity": {
-                "value": 71,
-                "system": "http://unitsofmeasure.org",
-                "code": "mmHg"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "150023"
-                    }
-                ],
-                "text": "MDC_PRESS_BLD_NONINV_MEAN: Mean blood pressure"
-            },
-            "dataAbsentReason": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-                        "code": "not-a-number"
-                    }
-                ],
-                "text": "not-a-number (Not a number)"
-            },
-        }
-    ]
+{% fragment Observation/compound-numeric-blood-pressure-no-mean JSON EXCEPT:component %}
 
-The Phd Compound Numeric Entry Profile can contain additional compound entries as noted in the [Additional Descriptions](#additional-descriptions-observationcomponent) section above. However, the codes of all Observation.component entries that are part of a compound measurement will always have an MDC entry (not ASN1ToHL7) and the MDC entry will ***never*** have a partition value (the upper 16 bits) equal to 1.
+The Phd Compound Numeric Profile can contain additional entries as noted in the [Additional Descriptive Data](#additional-descriptive-data) section above. However, the codes of all Observation.component entries that are part of a compound measurement will always have an MDC entry (not ASN1ToHL7) and the MDC entry will ***never*** have a partition value (the upper 16 bits) equal to 1.
 
-#### Remark
-There will always be a discussion about whether compounds should be reported together in a single Observation or as a separate Observations. Both approaches are totally reasonable. This IG does not make that decision. That decision is made by the designers of the PHD specialization standard. If the PHD reports the measurement as a compound, it is mapped as a compound.
+#### Remark on compound observations
+The decision to report a compound observation versus independent observations is made by the designers of the IEEE PHD device specialization standards. The IEEE PHD and FHIR policies to choose between these options are similar. This IG maps an ACOM compound observation to a FHIR Observation resource with multiple components.
 
 ### Measurement Values that are Codes
-Sometimes the PHD measurement value is a code. Like every other code in FHIR, one will need a dictionary to look up what the code means. Measurements that are codes follow the Phd Coded Enumeration Observation profile. Observations following that profile will have an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation".
+Sometimes the PHD measurement value is a code. The code comes from the MDC code system. Measurements that are codes follow the Phd Coded Enumeration Observation profile. Observations following that profile may have an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation".
 
 The measurement value is reported in an Observation.valueCodeableConcept element. Coded measurements are usually 'context' measurements that provide extra information about another measurement. They will often have an Observation.derivedFrom reference pointing to the Observation resource they support. There are no coded enumeration measurements that are vital signs.
 
 An example of a coded measurement is a meal context in a glucose monitor:
 
-    "valueCodeableConcept": {
-        "coding": [
-            {
-                "system": "urn:iso:std:iso:11073:10101",
-                "code": "8417872"
-            }
-        ],
-        "text": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL: After lunch/dinner"
-    }
+{% fragment Observation/meal-context-observation JSON EXCEPT:valueCodeableConcept %}
 
 This measurement indicates that the glucose concentration measurement was taken after a meal.
 
@@ -615,7 +428,7 @@ In future PHD versions the PHD will be able to indicate that is does not support
 
 Event and/or state measurements have no primary Observation.value[x] entry and there is no Observation.dataAbsentReason unless the *entire* measurement has an error, in which case there will be no state of event entries either. It is possible for each state or event entry to be unsupported and that will be reported with a Observation.component.dataAbsentReason element. Even if every Observation.component entry reports 'unsupported' that does not have the same meaning as the entire measurement being in error.
 
-In structure the states and/or events measurements are similar to compound or vector measurements. It is also possible that state and/or event measurements have '*additional descriptions*' as discussed in the [Additional Descriptions](#additional-descriptions-observationcomponent) section. To distinguish the measurement component entries from the additional description component entries one only needs to examine the Observation.component.code.coding.system. If it is ASN1ToHL7, it is part of the measurement. The ASN1ToHL7 additional description entry [alert operation state](#alert-operational-state) is not possible in a state or event measurement.
+In structure the states and/or events measurements are similar to compound or vector measurements. It is also possible that state and/or event measurements have '*additional descriptions*' as discussed in the [Additional Descriptive Data](#additional-descriptive-data) section. To distinguish the measurement component entries from the additional description component entries one only needs to examine the Observation.component.code.coding.system. If it is ASN1ToHL7, it is part of the measurement. The ASN1ToHL7 additional description entry [alert operation state](#alert-operational-state) is not possible in a state or event measurement.
 
 Each Observation.component entry will have the following:
 
@@ -626,124 +439,7 @@ Each Observation.component entry will have the following:
 |Observation.component.valueCodeableConcept.coding.code|either "Y" or "N"|
 |Observation.component.valueCodeableConcept.coding.systen="http://terminology.hl7.org/CodeSystem/v2-0136"|the V2 binary code system|
 
-The 'independent living' example mentioned above does not currently exist in any specialization but it is illustrative of the concept. However, a pulse oximeter device sensor status measurement containing several different events does exist. An example of such a measurement is shown below:
-
-The overall measurement type is given in the Observation.code element:
-
-    "code": {
-            "coding": [
-                {
-                    "system": "urn:iso:std:iso:11073:10101",
-                    "code": "150604"
-                }
-            ],
-            "text": "MDC_PULS_OXIM_DEV_STATUS: Measuring process issues"
-        }
-
-and the components containing the events:
-
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "150604.2"
-                    }
-                ],
-                "text": "sensor-displaced"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                        "code": "Y"
-                    }
-                ],
-                "text": "Sensor is incorrectly placed on user"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "150604.7"
-                    }
-                ],
-                "text": "signal-pulse-questionable"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                        "code": "Y"
-                    }
-                ],
-                "text": "Questionable pulse detected"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "150604.10"
-                    }
-                ],
-                "text": "signal-low-perfusion"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                        "code": "Y"
-                    }
-                ],
-                "text": "Signal experiencing low perfusion"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "150604.11"
-                    }
-                ],
-                "text": "signal-poor"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                        "code": "Y"
-                    }
-                ],
-                "text": "Signal is poor"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "150604.12"
-                    }
-                ],
-                "text": "signal-inadequate"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                        "code": "Y"
-                    }
-                ],
-                "text": "Signal is inadequate"
-            }
-        }
-    ]
+The 'independent living' example mentioned above does not currently exist in any specialization but it is illustrative of the concept. However, a pulse oximeter device sensor status measurement containing several different events does exist. An example of such a measurement can be found [here](Observation-bits-observation.html)
 
 All of the entries are events in this example so the values are always "Y" indicting the event occurred. One might note that the ANS1ToHL7 code 150604.*x* in all cases contains the MDC code of the measurement 150604. That relationship will always be true for all event and state measurement value types. In addition, the MDC code of the overall measurement will never have a partition (the upper 16 bits) value of 1.
 
@@ -930,14 +626,16 @@ There are several Device elements that are just basic strings. Their meanings ar
 #### Device Type
 This field states that the device is a PHD. There is no code in the list of device types provided by FHIR [here](http://build.fhir.org/valueset-device-type.html) that indicates a personal health device. Instead we use the MDC code that indicates a simple MDS (Medical Device System) object. This entry will be identical for all PHDs following this IG. It appears as follows:
 
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:type %}
+
     "type" : {
         "coding" : [
           {
             "system" : "urn:iso:std:iso:11073:10101",
-            "code" : "65573"
+            "code" : "65573",
+            "display" : "MDC_MOC_VMS_MDS_SIMP"
           }
-        ],
-        "text" : "MDC_MOC_VMS_MDS_SIMP: Continua PHD"
+        ]
     }
 
 #### Versions
@@ -964,7 +662,7 @@ Below is an example of the different versions exposed by a Continua certified ma
                 "code" : "531976"
               }
             ],
-            "text" : "MDC_ID_PROD_SPEC_FW: Firmware revision"
+            "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
           },
           "value" : "r2.1"
         },
@@ -976,7 +674,7 @@ Below is an example of the different versions exposed by a Continua certified ma
                 "code" : "531975"
               }
             ],
-            "text" : "MDC_ID_PROD_SPEC_SW: Software revision"
+            "text": "MDC_ID_PROD_SPEC_SW: Software revision"
           },
           "value" : "r1.5 9.7"
         },
@@ -988,7 +686,7 @@ Below is an example of the different versions exposed by a Continua certified ma
                 "code" : "531974"
               }
             ],
-            "text" : "MDC_ID_PROD_SPEC_HW: Hardware revision"
+            "text": "MDC_ID_PROD_SPEC_HW: Hardware revision"
           },
           "value" : "r1.0"
         },
@@ -1000,7 +698,7 @@ Below is an example of the different versions exposed by a Continua certified ma
                 "code" : "532352"
               }
             ],
-            "text" : "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+            "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
           },
           "value" : "6.0"
         }
@@ -1026,7 +724,7 @@ The example below shows an example of a market PHD following the Glucose special
                 "code" : "528405"
               }
             ],
-            "text" : "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"
+            "text": "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"
           },
           "version" : "1"
         }
@@ -1065,7 +763,7 @@ An example of time synchronization property entry is shown below:
             "code" : "68220"
           }
         ],
-        "text" : "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+        "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
       },
       "valueCode" : [
         {
@@ -1075,7 +773,7 @@ An example of time synchronization property entry is shown below:
               "code" : "532224"
             }
           ],
-          "text" : "MDC_TIME_SYNC_NONE: No time synchronization"
+          "text": "MDC_TIME_SYNC_NONE: No time synchronization"
         }
       ]
     }
@@ -1265,120 +963,32 @@ An example of an entry for an FDA regulated device is shown below:
     ]
 
 #### Continua Certified PHD Interfaces
-This property is a list of codes that indicate which specializations and transports the PHD has been certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates.
+This property is a list of codes that indicate which specializations and transports the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organisation certified PHDs for compliance to its guidelines that referenced this IG.
 
 The property is indicated by the Device.property.type.coding.code having the MDC code "532353". The value is a list of valueCodes where the codes come from the [ContinuaPHD](CodeSystem-ContinuaPHD.html) code system. How these codes are generated is given [here](ContinuaPersonalAreaNetworkCodes.html).
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 
-    "type": {
-        "coding": [
-            {
-                "system": "urn:iso:std:iso:11073:10101",
-                "code": "532353"
-            }
-        ],
-        "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: Continua certified device list"
-    },
-    "valueCode": [
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD,
-                    "code": "32772"
-                }
-            ]
-        },
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                    "code": "8196"
-                }
-            ]
-        },
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                    "code": "4"
-                }
-            ]
-        }
-    ]
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[0] %}
 
 ### The PHG Device Resource
-The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of Continua certified Health and Fitness interfaces. A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
+The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
 
-However, the only required PHG entries are the time synchronization protocol and the system id identifier. For Continua compliance, PHGs must also report their Continua version, the list of certified PHD interfaces, the list of certified Health & Fitness interfaces, and the regulation status.
+However, the only required PHG entries are the time synchronization protocol and the system id identifier. For compliance with this IG, PHGs must also report the list of certified PHD interfaces and the list of certified Health & Fitness interfaces.
 
 The time synchronization protocol is important as the PHG plays an important role in the measurement time stamps, and may change them from what the PHD reports if warranted.
 
 Only the entries that are different from the PHD are discussed in the following sections.
 
 #### Device Type
-This field states that the device is a PHG. There is no code in the list of device types provided by FHIR [here](http://build.fhir.org/valueset-device-type.html) that indicates a personal health gateway. Instead we use the MDC code that indicates a gateway. This entry will be identical for all PHGs following this IG. It appears as follows:
+This field states that the device is a PHG. There is no code in the list of device types provided by FHIR [here](http://build.fhir.org/valueset-device-type.html) that indicates a personal health gateway. Instead we use the MDC code MDC_MOC_VMS_MDS_AHD that indicates a gateway. 
 
-    "type" : {
-        "coding" : [
-          {
-            "system" : "urn:iso:std:iso:11073:10101",
-            "code" : "531981"
-          }
-        ],
-        "text" : "MDC_MOC_VMS_MDS_AHD: Continua Gateway"
-    }
-
-#### Continua Certified Health and Fitness Interfaces
-This property is a list of codes that indicate which Health and Fitness interfaces the PHG has been *certified* for. There is no entry for which Health and Fitness interfaces the PHG supports, so this field is often erroneously populated to indicate support.
+#### Certified Health and Fitness Interfaces
+This property is a list of codes that indicate which Health and Fitness interfaces the PHG has been *certified* for. There is no certification body active for this IG, so this entry can be populated with interfaces the PHG supports.
 
 The property is indicated by the Device.property.type.coding.code having the MDC code "532355". The value is a list of valueCodes where the codes come from the [ContinuaHFS](CodeSystem-ContinuaHFS.html) code system. The code system is simple and limited to only eight values at the current time.
 
-An example of a property entry where a PHG is certified for web-services PCD-01 uploads, FHIR uploads, capability exchange, and Authenticated Persistent Sessions is given below:
-
-    "type": {
-        "coding": [
-            {
-                "system": "urn:iso:std:iso:11073:10101",
-                "code": "532355"
-            }
-        ],
-        "text": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: Continua certified Health&Fitness interfaces list"
-    },
-    "valueCode": [
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "0"  // web services PCD-01 uploads
-                }
-            ]
-        },
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "7"  // FHIR uploads
-                }
-            ]
-        },
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "2"  // Capability exchange
-                }
-            ]
-        },
-        {
-            "coding": [
-                {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "6"  // Authenticated Persistent Sessions
-                }
-            ]
-        }
-    ]
+An example of a PHG resource is given [here](Device-phg-example.html).
 
 ### Patient Resource
 It is assumed here that the reader has access to the Patient resource uploaded by the PHG and that the PHG uploaded a Patient resource. There is a special case where the PHG will not upload a Patient resource.
@@ -1396,8 +1006,7 @@ The above information exposes no personal health information as only the organiz
 An example of a Patient.identifier following the XDSb notation is given below:
 {% fragment Patient/patientExample-1 JSON EXCEPT:identifier %}
 
-An example of an unknown patient using the Version 2 Table 0004 patient class code system is given below:
-{% fragment Patient/patientExample-2 JSON EXCEPT:identifier %}
+An example of an unknown patient using the Version 2 Table 0004 patient class code system is given [here](Patient-patientExample-2.html)
 
 
 

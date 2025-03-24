@@ -127,7 +127,7 @@ The Measurement Status element from IEEE 11073-10206 is used to report errors or
  - setting
  - manually-entered
 
-The Bluetooth SIG GHS specification adds two more:
+The Bluetooth SIG GHS specification adds more:
 
  - Threshold error
  - Thresholding disabled  

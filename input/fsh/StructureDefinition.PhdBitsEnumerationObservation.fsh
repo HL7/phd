@@ -37,13 +37,12 @@ Description: "StructureDefinition for Observation Resources representing measure
       * code = #unsupported (exactly)
   * valueCodeableConcept
     * coding ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "system"
+      * ^slicing.discriminator.path = "code"
       * ^slicing.ordered = true
       * ^slicing.rules = #open
     * coding contains v2BinaryValue 1..1
     * coding[v2BinaryValue]
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
+      * code from http://terminology.hl7.org/ValueSet/v2-0136|2.0.0 (required)
       * code 1..
         * ^definition = "If the bit is set this code is 'Y' and 'N' if the bit is cleared. If an 'event' bit only the set case needs to be reported. If the bit is unsupported, the dataAbsentReason code \"unsupported' is used. Unsupported bits are optional to report. If a state bit is supported both states shall be reported."
 

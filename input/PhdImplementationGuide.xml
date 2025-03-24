@@ -187,6 +187,30 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/Accuracy"/>
+      </reference>
+      <name value="Accuracy"/>
+      <description value="Structure definition for the accuracy extension."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/Confidence95"/>
+      </reference>
+      <name value="Confidence95"/>
+      <description value="Structure definition for the confidence 95 extension."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/SimpleAlerting"/>
+      </reference>
+      <name value="SimpleAlerting"/>
+      <description value="Structure definition for the simple alerting extension."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ContinuaDeviceIdentifiers"/>
       </reference>
       <name value="ContinuaDeviceIdentifiers"/>
@@ -397,10 +421,26 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="Observation/numeric-spo2-alarm"/>
+      </reference> 
+      <name value="Example of a numeric with an alert."/>
+      <description value="This example is a simple numeric observation from a pulse oximeter with an alert." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Observation/temperature-observation"/>
       </reference> 
       <name value="Example of a numeric body temperature observation."/>
       <description value="This example is a simple numeric observation of a health thermometer." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/glucose-observation"/>
+      </reference> 
+      <name value="Example of a numeric glucose observation."/>
+      <description value="This example is a simple numeric observation of a (continuous) glucose monitor." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
     </resource>
     <resource>
@@ -448,6 +488,14 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Observation/compound-numeric-blood-pressure"/>
       </reference> 
       <name value="Example of a compound numeric observation"/>
+      <description value="This example is from a Blood Pressure cuff." />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
+    </resource>
+   <resource>
+      <reference>
+        <reference value="Observation/compound-numeric-blood-pressure-no-mean"/>
+      </reference> 
+      <name value="Example of a compound numeric observation with one component value absent"/>
       <description value="This example is from a Blood Pressure cuff." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
     </resource>

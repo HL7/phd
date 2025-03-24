@@ -25,7 +25,8 @@
 		"coding": [
 			{
 				"system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-				"code": "unknown"
+				"code": "unknown",
+				"display": "Unknown"
 			}
 		],
 		"text": "Sensor Time Fault"

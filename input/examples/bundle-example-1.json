@@ -19,10 +19,10 @@
               "coding": [
                 {
                   "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "MR"
+                  "code": "MR",
+                  "display": "Medical record number"
                 }
-              ],
-              "text": "Medical record number"
+              ]
             },
             "system": "urn:oid:1.2.3.4.5.6.6.8.10",
             "value": "sisansarahId"
@@ -110,7 +110,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                    "code": "4"
+                    "code": "4",
+                    "display": "Pulse Oximeter certified"
                   }
                 ]
               }
@@ -132,7 +133,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "0"
+                    "code": "0",
+                    "display": "observation-upload-soap"
                   }
                 ]
               },
@@ -140,7 +142,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "3"
+                    "code": "3",
+                    "display": "observation-upload-hdata"
                   }
                 ]
               },
@@ -148,7 +151,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "7"
+                    "code": "7",
+                    "display": "observation-upload-fhir"
                   }
                 ]
               },
@@ -156,7 +160,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "2"
+                    "code": "2",
+                    "display": "capabilities"
                   }
                 ]
               },
@@ -164,7 +169,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "6"
+                    "code": "6",
+                    "display": "aps"
                   }
                 ]
               }
@@ -176,7 +182,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
-                  "display": "regulation-status"
+                  "display": "negated-regulation-status"
                 }
               ]
             },
@@ -185,7 +191,8 @@
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
                 ],
                 "text": "Device is Unregulated"
@@ -200,8 +207,7 @@
                   "code": "68220",
                   "display": "MDC_TIME_SYNC_PROTOCOL"
                 }
-              ],
-              "text": "Time synchronization protocol"
+              ]
             },
             "valueCode": [
               {
@@ -211,8 +217,7 @@
                     "code": "532226",
                     "display": "MDC_TIME_SYNC_NTPV4"
                   }
-                ],
-                "text": "NTPV4 time synchronization"
+                ]
               }
             ]
           },
@@ -224,8 +229,7 @@
                   "code": "68221",
                   "display": "MDC_TIME_SYNC_ACCURACY"
                 }
-              ],
-              "text": "unknown time sync (code 68221)"
+              ]
             },
             "valueQuantity": [
               {
@@ -360,7 +364,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                    "code": "4"
+                    "code": "4",
+                    "display": "Pulse Oximeter certified"
                   }
                 ]
               }
@@ -372,7 +377,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
-                  "display": "regulation-status"
+                  "display": "negated-regulation-status"
                 }
               ]
             },
@@ -420,17 +425,18 @@
                   "code": "68219.0",
                   "display": "mds-time-capab-real-time-clock"
                 }
-              ]
+              ],
+              "text": "real time clock supported"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
-                ],
-                "text": "real time clock supported"
+                ]
               }
             ]
           },
@@ -442,17 +448,18 @@
                   "code": "68219.1",
                   "display": "mds-time-capab-set-clock"
                 }
-              ]
+              ],
+              "text": "setting the time supported"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
-                ],
-                "text": "setting the time supported"
+                ]
               }
             ]
           },
@@ -464,17 +471,18 @@
                   "code": "68219.2",
                   "display": "mds-time-capab-relative-time"
                 }
-              ]
+              ],
+              "text": "relative time supported"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
-                ],
-                "text": "relative time supported"
+                ]
               }
             ]
           },
@@ -493,7 +501,8 @@
               {
                 "value": 1000000,
                 "system": "http://unitsofmeasure.org",
-                "code": "us"
+                "code": "us",
+                "unit": "us"
               }
             ]
           },
@@ -512,7 +521,8 @@
               {
                 "value": 10000,
                 "system": "http://unitsofmeasure.org",
-                "code": "us"
+                "code": "us",
+                "unit": "us"
               }
             ]
           }
@@ -576,9 +586,9 @@
             }
           },
           {
-            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
-            "valueReference" : {
-              "reference" : "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference": {
+              "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
             }
           }
         ],
@@ -612,10 +622,10 @@
             },
             {
               "system": "http://loinc.org",
-              "code": "2708-6"
+              "code": "2708-6",
+              "display": "Oxygen saturation in Arterial blood"
             }
-          ],
-          "text": "Blood oxygen saturation"
+          ]
         },
         "subject": {
           "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
@@ -623,7 +633,7 @@
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
           "value": 98,
-          "unit": "Superfluous mandatory field!",
+          "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
         },
@@ -677,9 +687,9 @@
             }
           },
           {
-            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
-            "valueReference" : {
-              "reference" : "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference": {
+              "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
             }
           }
         ],
@@ -698,8 +708,7 @@
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "vital-signs",
-                "display": "Vital Signs"
+                "code": "vital-signs"
               }
             ]
           }
@@ -713,10 +722,10 @@
             },
             {
               "system": "http://loinc.org",
-              "code": "8867-4"
+              "code": "8867-4",
+              "display": "Heart rate"
             }
-          ],
-          "text": "Pulse rate"
+          ]
         },
         "subject": {
           "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"

@@ -12,7 +12,8 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
-                        "code": "SYSID"
+                        "code": "SYSID",
+                        "display": "IEEE 11073 System Identifier"
                     }
                 ]
             },
@@ -24,7 +25,8 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
-                        "code": "BTMAC"
+                        "code": "BTMAC",
+                        "display": "Bluetooth MAC address"
                     }
                 ]
             },
@@ -131,7 +133,27 @@
                     "coding": [
                         {
                             "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                            "code": "32772"
+                            "code": "32772",
+                            "display": "Bluetooth LE Pulse Oximeter certified"
+                        }
+                    ]
+                },
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "code": "8196",
+                            "display": "PHDC USB Pulse Oximeter certified"
+                        }
+                    ]
+                },
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "code": "4",
+                            "display": "Pulse Oximeter certified"
+
                         }
                     ]
                 }
@@ -142,20 +164,20 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "532354.0"
+                        "code": "532354.0",
+                        "display": "negated-regulation-status"
                     }
-                ],
-                "text": "regulation-status"
+                ]
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                            "code": "N"
+                            "code": "N",
+                            "display": "No"
                         }
-                    ],
-                    "text": "Device is Regulated"
+                    ]
                 }
             ]
         },
@@ -178,8 +200,7 @@
                             "code": "532224",
                             "display": "MDC_TIME_SYNC_NONE"
                         }
-                    ],
-                    "text": "None"
+                    ]
                 }
             ]
         }

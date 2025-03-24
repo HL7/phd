@@ -61,10 +61,10 @@
 				"display": "MDC_PULS_OXIM_PULS_RATE"			},
 			{
 				"system": "http://loinc.org",
-				"code": "8867-4"
+				"code": "8867-4",
+				"display": "Heart rate"
 			}
-		],
-		"text": "Pulse rate"
+		]
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -93,8 +93,7 @@
 						"code": "68193",
 						"display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
 					}
-				],
-				"text": "Supplemental information"
+				]
 			},
 			"valueCodeableConcept": {
 				"coding": [
@@ -103,8 +102,7 @@
 						"code": "150588",
 						"display": "MDC_MODALITY_SPOT"
 					}
-				],
-				"text": "Stable mean"
+				]
 			}
 		}
     ]

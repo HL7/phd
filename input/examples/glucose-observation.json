@@ -22,38 +22,22 @@
             "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95",
             "valueRange": {
                 "low": {
-                    "value": 36.3,
-                    "unit": "C",
+                    "value": 98,
+                    "unit": "mg/dL",
                     "system": "http://unitsofmeasure.org",
-                    "code": "Cel"
+                    "code": "mg/dL"
                 },
                 "high": {
-                    "value": 36.7,
-                    "unit": "C",
+                    "value": 100,
+                    "unit": "mg/dL",
                     "system": "http://unitsofmeasure.org",
-                    "code": "Cel"
+                    "code": "mg/dL"
                 }
-            }
-        },
-        {
-            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy",
-            "valueQuantity": {
-                "value": 0.1,
-                "system": "http://unitsofmeasure.org",
-                "code": "Cel"
             }
         }
     ],
     "status": "final",
     "category": [
-        {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                    "code": "vital-signs"
-                }
-            ]
-        },
         {
             "coding": [
                 {
@@ -67,15 +51,11 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "150364",
-                "display": "MDC_TEMP_BODY"
-            },
-            {
-                "system": "http://loinc.org",
-                "code": "8310-5"
+                "code": "160368",
+                "display": "MDC_CONC_GLU_UNDETERMINED_PLASMA"
             }
         ],
-        "text": "Body temperature"
+        "text": "Glucose measurement"
     },
     "subject": {
         "reference": "Patient/patientExample-1"
@@ -85,9 +65,9 @@
     },
     "effectiveDateTime": "2025-01-08T19:07:48-05:00",
     "valueQuantity": {
-        "value": 36.5,
-        "unit": "C",
+        "value": 99,
+        "unit": "mg/dL",
         "system": "http://unitsofmeasure.org",
-        "code": "Cel"
+        "code": "mg/dL"
     }
 }
