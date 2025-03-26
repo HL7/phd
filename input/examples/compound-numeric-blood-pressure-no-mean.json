@@ -31,14 +31,14 @@
 			]
 		},
 		{
-		  "coding" : [
-			{
-			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-			  "code" : "phd-observation"
-			}
-		  ]
+			"coding": [
+				{
+					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+					"code": "phd-observation"
+				}
+			]
 		}
-	  ],
+	],
 	"code": {
 		"coding": [
 			{
@@ -83,7 +83,7 @@
 			},
 			"valueQuantity": {
 				"value": 116,
-				"unit" : "mm[Hg]",
+				"unit": "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}
@@ -94,7 +94,7 @@
 					{
 						"system": "urn:iso:std:iso:11073:10101",
 						"code": "150022",
-						"display":"MDC_PRESS_BLD_NONINV_DIA"
+						"display": "MDC_PRESS_BLD_NONINV_DIA"
 					},
 					{
 						"system": "http://loinc.org",
@@ -105,7 +105,7 @@
 			},
 			"valueQuantity": {
 				"value": 71,
-				"unit" : "mm[Hg]",
+				"unit": "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}
@@ -120,11 +120,14 @@
 					}
 				]
 			},
-			"valueQuantity": {
-				"value": 86,
-				"unit" : "mm[Hg]",
-				"system": "http://unitsofmeasure.org",
-				"code": "mm[Hg]"
+			"dataAbsentReason": {
+				"coding": [
+					{
+						"system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+						"code": "not-a-number",
+						"display": "Not a Number (NaN)"
+					}
+				]
 			}
 		}
 	]

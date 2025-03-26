@@ -64,9 +64,6 @@ FHIR (R4) requires that a LOINC code is present if the measurement is one of the
 
 In addition to the LOINC code, FHIR requires an Observation.category.coding.code element with value "vital-signs" when the measurement is a vital sign.
 
-##### Caveats
-The PHG may express the code in additional coding systems but the consumer cannot rely on it. The PHD profiles in this IG require *only* the MDC code as it is provided by the PHD and the LOINC code if the measurement is a vital sign. It is also possible that a vital sign is *not* mapped to LOINC by the PHG. By design, the PHG is written to map the data from the PHD without any knowledge to what the data is. The exception is for the LOINC codes for vital signs which require the PHG to pre-code a map. If a new PHD specialization is created after the PHG is already implemented, the new PHD may use a new MDC code and the new code may be a vital sign (perhaps the new code represents a pulse rate obtained via a new technique). The PHG can still populate the Observation.code.coding.code with the MDC code as that is provided in the PHD protocol, but the new MDC code will not be in its pre-coded local map of MDC codes to LOINC codes.
-
 #### The Time Stamp: Observation.effective[x]
 All measurements contain a time stamp which is either an instant in time, a dateTime data type, or a period of time, a Period data type. The period has both a start and end. Results of a workout session are a common type of measurement with a period. The 'instant' data type is not used as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a resolution.
 
@@ -77,9 +74,9 @@ Below is an example of the effective[x] when the time stamp is an instant in tim
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
 ##### The Coincident Time Stamp extension
-The consumer can obtain further information about the time stamp from the coincident time stamp Observation identified by the profile value ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"](StructureDefinition-PhdCoincidentTimeStampObservation.html). A reference to a coincident time stamp Observation may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a time stamp, and the PHG used the time of reception as the time stamp. PHDs that send stored data shall include time stamps in their measurements.
+The consumer can obtain further information about the time stamp from a referenced coincident time stamp Observation identified by the profile value ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"](StructureDefinition-PhdCoincidentTimeStampObservation.html). This reference may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a time stamp, and the PHG used the time of reception as the time stamp. PHDs that send stored data shall include time stamps in their measurements.
 
-If the PHD sent the measurement with a time stamp, there will be an Observation.extension element referencing the coincident time stamp Observation resource. The Coincident Time Stamp Observation can be used to determine the PHD's timeline and clock status. This Coincident Time Stamp can also be used to see if the PHG needed to correct the time stamp, and if it did, by how much. 
+The Coincident Time Stamp Observation can be used to determine the PHD's timeline and clock status. It can also be used to see if the PHG needed to correct the time stamp, and if it did, by how much. 
 An example of the Coincident Time Stamp extension is shown below:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[1] %} 
@@ -108,19 +105,15 @@ An example of a reference to another Observation is shown below:
 #### Additional Descriptive Data
 In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar) and return to this section when relevant.
 
-PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. Additional information is reported in an Observation.component element. The type of additional information is given by the Observation.component.code element. The value of the additional information is given by the Observation.component.value[x] element. PHDs support the following types of additional information:
+PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. This additional information is reported in an Observation.component element. The type of additional information is given by the Observation.component.code element. The value of such additional information is given by an Observation.component or an Observation.extension element. PHDs support the following types of additional information:
 
-|Type of additional information|code|When it can occur|FHIR data element|Description|
+|Type of additional information|When it can occur|FHIR data element|Description|
 |-
-|supplemental type|68193 (MDC code)|Can occur with all measurement values|valueCodebaleConcept| provides a further description of the measurement type. Can be multiple supplemental type component entries.|
-|Accuracy|67914 (MDC code)|Only Quantities|extension.valueQuantity| Gives the accuracy of the measurement value in the units of the measurement value|
-|Alert operational state|68746.n (ASN1ToHL7 code where n = 0, 1, or 2)|Only Quantities|valueCodeableConcept (V2 binary 'Y' or 'N')| Determines whether an alert threshold is off or on.|
-|Alert operational text string|68104 (MDC code)|Only Quantities|valueString| A human readable string describing the lower and upper alert thresholds in that order.|
-|Current Limits|67892 (MDC code)|Only Quantities|valueRange| The lower and upper threshold values in the units of the reported measurement quantity|
-|Measurement Confidence 95|68236 (MDC code)|Only Quantities|valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
-|Threshold notification string|68232 (MDC code)|Only Quantities|valueString| Human readable string describing thresholds. Similar to the Alert operational text string|
+|supplemental type|Can occur with all measurement values|valueCodebaleConcept| provides a further description of the measurement type. Can be multiple supplemental type component entries.|
+|Accuracy|Only Quantities|extension.valueQuantity| Gives the accuracy of the measurement value in the units of the measurement value|
+|Measurement Confidence 95|Only Quantities|extension.valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
+|Simple Alerting|Only Quantities|complex extension| Gives the parameters for alerting and thresholding on a quantity.|
 
-At the time of this writing, only the supplemental types and the high resolution relative time stamp 'additional descriptions' are used by current PHDs on the market. Some of the text string descriptions are unlikely to be used given that the IEEE 11073-20601 specification only allows ASCII 127 and consumers of the data are likely to provide their own descriptions customized to their locale.
 
 ##### Supplemental Types
 Supplemental type information is indicated by the Observation.component.code.coding.code element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by Observation.component.valueCodeableConcept.coding.code. There may be more than one Observation.component entry containing supplemental type information. An example of a supplemental types component entry is as follows:
@@ -129,143 +122,28 @@ Supplemental type information is indicated by the Observation.component.code.cod
 
 A 'spot modality' means that the pulse oximeter sensed over a period long enough to obtain a stable average.
 
+<blockquote class="stu-note">
+	<strong>Should we move Supplemental Type information to an extension?</strong>
+	In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. In this version we are using extensions for less often used elements of the IEEE 11073 PHD ACOM model and in places were the PHD model and the FHIR model forn observation are too different to have a 1-1 mapping between data elements of these models.
+
+    The question is if this applies to Supplemental Type information as well. Input is welcome.
+</blockquote>
+
+
 ##### Accuracy
 Accuracy information of quantities can be indicacted using an extension. It gives the maximum deviation as an absolute value of the reported measurement value from the actual measurement over the entire range of the measurement. It is reported in the units of the measurement itself. An example of an accuracy entry for a thermometer is shown below:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[3] %}
 
-##### Current Limits
-The Current Limits component is currently only used in the Pulse Oximeter specialization. It gives the low and high threshold limit values of the primary measurement being monitored. The Current Limits  applies only to measurement values that are quantities. When either threshold limit is met an alarm event is triggered if the alarm for the given threshold limit is enabled. If this component is present, an Alert Operational State component shall also be present which indicates the disabled/enabled state of the alarms.
+##### Simple Alerting
+The Simple Alerting extension can be supported for a simple alerting mechanism for numeric values (quantities in FHIR). The PHD pulse oximeter and the continuous glucose monitor specialization support this.
+The extension defines a current limits range for the quantity, an operational state and optional strings for the operational state  and the semantics of the quantity being outside the range. 
 
-The entry is indicated by the Observation.component.code.coding.code element having the value 67892. The value is encoded in an Observation.component.valueRange element. The units have the same units as the primary measurement. An example of a Current Limits entry is shown below:
+This mechanism is used in combination with the Observation.interpretation value being set to "in-alarm" when the quantity is outside the limits. 
 
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "67892"
-                    }
-                ],
-                "text": "MDC_ATTR_LIMIT_CURR: Current lower and upper alarm threshold values"
-            },
-            "valueRange": {
-                "low": {
-                    "value": 88,
-                    "system": "http://unitsofmeasure.org",
-                    "code": "%"
-                },
-                "high": {
-                    "value": 100,
-                    "system": "http://unitsofmeasure.org",
-                    "code": "%"
-                }
-            }
-        }
-    ]
+The presence of the extension in an Observation with a numeric quantity informs the consumer of the use of the alerting mechanism.
 
-##### Alert Operational State
-The Alert Operational State is identified by an Observation.component.coding.code containing one of three possible [ASN1ToHL7](CodeSystem-ASN1ToHL7.html) codes 67846.n where n is 0, 1, or 2. When reported, there will be a component entry for all three states. The Alert Operational state is used in the Pulse Oximeter specialization. The Alert Operational State applies only to measurement values that are quantities. 
-
-The Alert Operational State is a state and not en event. It indicates that the PHD supports an alert mechanism for the primary measurement. It does not indicate that the alert has been triggered. What these alert thresholds might be are indicated in the Current Limits component. A PHD that reports this state shall also report the Current Limits values.
-
-The value of the component entry is a CodeableConcept using the V2 binary code system of "Y" or "N". *When the value is "Y", the condition is disabled which maybe contrary to expectation*. The three entries are as follows:
-
-|ASN1ToHL7 Code|Description|
-|-
-|67846.0|Indicates both the high and the low limit alerts are *disabled* when "Y"|
-|67846.1|Indicates the low limit alert is *disabled* when "Y"|
-|67846.2|Indicates the high limit alert is *disabled* when "Y"|
-
-An example of an entry where the low alert alarm is enabled is as follows:
-
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "67846.0"
-                    }
-                ],
-                "text": "lim-alert-off: Alerts limits state"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "N"
-                    }
-                ],
-                "text": "At least one alert limit is enabled"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "67846.1"
-                    }
-                ],
-                "text": "lim-low-off: Alerts lower limit state"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "N"
-                    }
-                ],
-                "text": "The lower alert limit is enabled"
-            }
-        },
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "67846.2"
-                    }
-                ],
-                "text": "lim-high-off: Alert high limit state"
-            },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "Y"
-                    }
-                ],
-                "text": "The high alert limit is disabled"
-            }
-        }
-    ]
-
-It may be convenient for implementers to take advantage of the fact that every ASN1ToHL7 code, though an alpha-numeric string and not a decimal number, contains an MDC code. The digits on the left hand side of the period, when converted to an integer, are an MDC code. The MDC code 67846 in the example above is the Alert Operational State Attribute identifier.
-
-##### Alert Operational Text String
-The Alert Operational Text String provides a human readable string describing the lower and upper threshold limits expressed in the Current Limits component. It is currently used only in the Pulse Oximeter specialization. The Alert Operational Text String applies only to measurement values that are quantities.
-
-The entry is indicated by the Observation.component.code.coding.code element having the value 68104. The text string is limited to US ASCII. The value is encoded in the Observation.component.valueString element. Both the 'low' and 'high' strings are encoded into a single valureString entry in an application-dependent manner. The strings are not machine processable.
-
-An example of a component entry is as follows:
-
-    "component": [
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "678104"
-                    }
-                ],
-                "text": "MDC_ATTR_AL_OP_TEXT_STRING: PHD provided threshold descriptions"
-            },
-            "valueString": "Low limit for SpO2 - High limit for SpO2"
-        }
-    ]
+An example of an observation with an alert can be found [here](Observation-numeric-spo2-alarm.json.html).
 
 ##### Measurement Confidence 95
 TheIEEE 11073  Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization. The compoent gives a lower and upper bound between which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. 
@@ -428,7 +306,7 @@ In future PHD versions the PHD will be able to indicate that is does not support
 
 Event and/or state measurements have no primary Observation.value[x] entry and there is no Observation.dataAbsentReason unless the *entire* measurement has an error, in which case there will be no state of event entries either. It is possible for each state or event entry to be unsupported and that will be reported with a Observation.component.dataAbsentReason element. Even if every Observation.component entry reports 'unsupported' that does not have the same meaning as the entire measurement being in error.
 
-In structure the states and/or events measurements are similar to compound or vector measurements. It is also possible that state and/or event measurements have '*additional descriptions*' as discussed in the [Additional Descriptive Data](#additional-descriptive-data) section. To distinguish the measurement component entries from the additional description component entries one only needs to examine the Observation.component.code.coding.system. If it is ASN1ToHL7, it is part of the measurement. The ASN1ToHL7 additional description entry [alert operation state](#alert-operational-state) is not possible in a state or event measurement.
+In structure the states and/or events measurements are similar to compound or vector measurements. It is also possible that state and/or event measurements have '*additional descriptions*' as discussed in the [Additional Descriptive Data](#additional-descriptive-data) section. To distinguish the measurement component entries from the additional description component entries one only needs to examine the Observation.component.code.coding.system. If it is ASN1ToHL7, it is part of the measurement. 
 
 Each Observation.component entry will have the following:
 
