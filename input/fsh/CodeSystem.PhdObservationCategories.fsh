@@ -8,7 +8,7 @@ Description: "Codes used for tagging observations coming from PHD devices. More 
 // * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-18"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete

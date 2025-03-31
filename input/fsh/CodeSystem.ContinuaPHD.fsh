@@ -8,7 +8,7 @@ Description: "Codes used to describe the Continua Personal Area Network (PHD) in
 // * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-24"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete

@@ -219,6 +219,14 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/SimpleAlertOperationalStates"/>
+      </reference>
+      <name value="SimpleAlertOperationalStates CodeSystem"/>
+      <description value="Simple Alert Operational States Code System"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
       <name value="ASN1ToHL7"/>
@@ -360,6 +368,14 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference>
       <name value="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
       <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Device specialization types."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/SimpleAlertOperationalStates"/>
+      </reference>
+      <name value="Simple Alert Operational States Value Set"/>
+      <description value="ValueSet for the Simple Alert Operational States."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

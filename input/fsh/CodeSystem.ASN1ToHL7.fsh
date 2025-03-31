@@ -8,7 +8,7 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
 //* ^status = #active
 * ^experimental = false
 * ^date = "2018-09-18"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete

@@ -44,8 +44,9 @@
 					"valueCodeableConcept": {
 						"coding": [
 							{
-								"system": "http://hl7.org/fhir/metric-operational-status",
-								"code": "on"
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStates",
+								"code": "Limits-On",
+								"display": "Limits On"
 							}
 						]
 					}

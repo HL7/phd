@@ -84,6 +84,8 @@
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
+<artifact id="ValueSet/SimpleAlertOperationalStates" key="ValueSet-SimpleAlertOperationalStates" name="Simple Alert Operational States Value Set"/>
+<artifact id="CodeSystem/SimpleAlertOperationalStates" key="CodeSystem-SimpleAlertOperationalStates" name="SimpleAlertOperationalStates CodeSystem"/>
 <artifact id="StructureDefinition/SimpleAlerting" key="StructureDefinition-SimpleAlerting" name="SimpleAlerting"/>
 <artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
 <artifact deprecated="true" key="StructureDefinition" name="StructureDefinition"/>

@@ -10,7 +10,7 @@ Description: "Code system to have a formal definition and URI for these concepts
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * #eventOrState "Event or State" "Indicates whether the bit represents an event or a state"
 * #event "Event" "indicates that the bit represents an event that happens"
 * #state "State" "indicates that the bit represents a state that persists"

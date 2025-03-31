@@ -8,7 +8,7 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Dev
 // * ^status = #draft
 * ^experimental = false
 * ^date = "2021-09-25"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * Mdc#528388 "MDC_DEV_SPEC_PROFILE_PULS_OXIM: Pulse oximeter"
 * Mdc#528390 "MDC_DEV_SPEC_PROFILE_MIN_ECG: Electrocardiogram (ECG)"
 * Mdc#528391 "MDC_DEV_SPEC_PROFILE_BP: Non-invasive Blood Pressure monitor"

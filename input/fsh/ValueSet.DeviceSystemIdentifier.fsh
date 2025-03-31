@@ -8,5 +8,5 @@ Description: "ValueSet for the Codes describing the type of device identifier, s
 // * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-25"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ContinuaDeviceIdentifiers#SYSID

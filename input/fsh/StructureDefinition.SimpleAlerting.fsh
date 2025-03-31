@@ -23,7 +23,7 @@ Context: Observation, DeviceMetric, Observation.component
   * value[x] 1..
   * value[x] only CodeableConcept
   * valueCodeableConcept ^definition = "The operational state of the alerting system."
-  * valueCodeableConcept from http://hl7.org/fhir/ValueSet/metric-operational-status
+  * valueCodeableConcept from SimpleAlertOperationalStates (extensible)
 * extension[alertOperationalText]
   * value[x] 0..
   * value[x] only string

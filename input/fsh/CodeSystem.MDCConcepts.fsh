@@ -10,7 +10,7 @@ Description: "Code system to have a formal definition of the MDC code system con
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * #status "MDC code status" "The status of the MDC code in IEEE 11073-10101/RTMMS"
 * #partition "partition number" "The partition of the MDC code in IEEE 11073-10101/RTMMS"
 * #refID "MDC Reference ID" "The reference ID of the MDC code in IEEE 11073-10101/RTMMS"

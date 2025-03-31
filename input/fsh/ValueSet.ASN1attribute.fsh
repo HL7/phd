@@ -8,5 +8,5 @@ Description: "ValueSet for the ANS1ToHL7 codes that are not derived from enumera
 // * ^status = #draft
 * ^experimental = false
 * ^date = "2018-09-17"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * include codes from system ASN1ToHL7 where source = ASN1ToHL7Concepts#device

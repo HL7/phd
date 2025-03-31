@@ -30,5 +30,14 @@ The type of property 'code' is 'code', but no ValueSet information was found, so
 # This is caused by the use of String as a required value for a data element. This warning generation is out of our control and can be ignored.
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 
-# This caused by the max value set for observation language and this is out of our control. Can be ignored.
+# This is generated for all observations that use the vital signs category. This warning can be ignored safely.
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# This informational message is out of our control.
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+
+# This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
+Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well.' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
+
+# Reference to external draft code system...
+Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0

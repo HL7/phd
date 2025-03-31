@@ -8,5 +8,5 @@ Description: "ValueSet for the ANS1ToHL7 codes that are derived from enumeration
 // * ^status = #draft
 * ^experimental = false
 * ^version = "current"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * include codes from system ASN1ToHL7 where source = ASN1ToHL7Concepts#measurement

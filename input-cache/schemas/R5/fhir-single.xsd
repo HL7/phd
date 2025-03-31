@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Mar 20, 2025 16:54+0000 for FHIR v6.0.0-ballot2 
+  Generated on Wed, Mar 26, 2025 19:28+0000 for FHIR v6.0.0-ballot2 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot2">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -5315,6 +5315,11 @@
       <xs:enumeration value="special">
         <xs:annotation>
           <xs:documentation xml:lang="en">Special</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resource">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Resource</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -59063,6 +59068,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
               <xs:documentation xml:lang="en">The label that is recommended to be used in the URL or the parameter name in a parameters resource for this search parameter.  In some cases, servers may need to use a different CapabilityStatement searchParam.name to differentiate between multiple SearchParameters that happen to have the same code.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="aliasCode" minOccurs="0" maxOccurs="unbounded" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional label that are recommended to be used in the URL or the parameter name in a parameters resource for this search parameter. Typically used to provide backwards-compatibility for renamed search parameters and translations into localized languages.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="base" minOccurs="1" maxOccurs="unbounded" type="VersionIndependentResourceTypesAll">

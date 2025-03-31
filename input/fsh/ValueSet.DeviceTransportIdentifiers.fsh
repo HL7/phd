@@ -8,7 +8,7 @@ Description: "ValueSet for the Codes describing the type of device transport ide
 // * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-25"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ContinuaDeviceIdentifiers#BTMAC
 * ContinuaDeviceIdentifiers#USB
 * ContinuaDeviceIdentifiers#ZIGBEE
