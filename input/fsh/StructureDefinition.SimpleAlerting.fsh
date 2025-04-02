@@ -9,10 +9,16 @@ Context: Observation, DeviceMetric, Observation.component
 * . ^short = "SimpleAlerting"
 * . ^definition = "A simple set of parameters for basic alerting on numerical observed data."
 * extension contains
+    alertType 0..1 and
     currentLimits 1..1 and 
     alertOperationalState 1..1 and
     alertOperationalText 0..1 and 
     thresholdNotificationText 0..1
+* extension[alertType]
+  * value[x] 1..
+  * value[x] only CodeableConcept
+  * valueCodeableConcept ^definition = "The type of alerting system."
+  * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (extensible)
 * extension[currentLimits]
   * value[x] 1..
   * value[x] only Range

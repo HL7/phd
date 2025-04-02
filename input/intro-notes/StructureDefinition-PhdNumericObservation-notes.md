@@ -14,106 +14,21 @@ padding: 6px;}</style>
 |Simple-Nu-Observed-Value.*value*<br/>Unit-Code.*code*|Observation.valueQuantity.value<br/>Observation.valueQuantity.code (as UCUM)<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"|
 |Nu-Observed-Value.*value*<br/>Nu-Observed-Value.*unit*<br/>Nu-Observed-Value.*metric-id*<br/>Nu-Observed-Value.*status*|Observation.valueQuantity.value<br/>Observation.valueQuantity.system="http://unitsofmeasure.org"<br/>Observation.valueQuantity.code<br/>effects Observation.code see [Obtaining the Observation.code](ObtainObservationCode.html) <br/>handle measurement status see [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html) |
 
-### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.
-
-|Entry|value|Additional information|
-|-
-|device|"PhdDevice.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
-|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation Code](ObtainObservationCode.html)|
-|value|"Observation.valueQuantity.value" or <br/> "Observation.dataAbsentReason.coding.code|The numerical value of the measurement or <br/> the data absent reason if the value is not present|
-|units|"Observation.valueQuantity.code"|The UCUM code for the units|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
-
-The final identifier is made by concatenating the entries above as follows:
- - "device-patient-type-value-units-reported PHD timestamp-supplemental types"
 
 ### Additional Numerical Measurement Information
-IEEE 11073-20601 numeric metric measurements have some additional optional attributes that are used only for numerics. When they occur, these additional attributes provide further information about the measurement. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement. The accuracy is a measure of the deviation of the actual measurement from the reported measurement. 
-
-As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. There are five metric attributes that give extra information about numeric-only measurements.
+IEEE 11073 numeric observations have some additional optional attributes that are used only for numerics and provide further information about the measurement. 
+These optional attributes are seldom used directly by PHDs and are mapped to FHIR extensions. 
 
 #### Accuracy
-The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is reported in the same unit as those of the measurement. The entries are as populated as follows:
+The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement. It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation.  See [Accuracy extension](StructureDefinition-Accuracy.html).
 
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|67914|This is the MDC code for the Accuracy attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.text|optional but|Should contain the reference id MDC_ATTR_NU_ACCUR_MSMT along with any other additional text|
-|valueQuantity.value|the value|This is accuracy value|
-|valueQuantity.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueQuantity.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
+### Measurement Confidence 95
+The Measurement-Confidence-95 gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation. See [Confidence95 extension](StructureDefinition-Confidence95.html).
 
-#### Alert Operational State
-The Alert Operational State is currently only used in the Pulse Oximeter specialization. This attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When SET, the alerts are off. This is a state-type measurement and when this attribute is present, both the set and cleared states are reported. Three bits are defined thus there will be three component entries for each of the bits.
-
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|68746.n|68746 is the MDC code for the Alert Operational State. 'n' is 0, 1, or 2 depending upon which bit is being reported.|
-|code.coding.system|http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7 |Indicates the ASN-1 coding system|
-|code.text|optional but|Should contain the ASN1 name 'lim-alert-off', 'lim-low-off', or 'lim-high-off' for bits 0-2, respectively, along with any other additional text|
-|valueCodeableConcept.coding.code|'Y' or 'N'|'Y' for bit set, 'N' for bit cleared|
-|valueCodeableConcept.coding.system|http://terminology.hl7.org/CodeSystem/v2-0203 |Indicates the V2 binary coding system|
-
-#### Alert Operational Text String
-This attributes provides a human readable string describing the lower and upper threshold limits. It is currently used only in the Pulse Oximeter specialization.
-
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|68104|This is the MDC code for the Alert-Operational-Text_string attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.text|optional but|Should contain the reference id MDC_ATTR_AL_OP_TEXT_STRING along with any other additional text|
-|valueString|the strings|These are the lower and upper limit strings|
-
-#### Current Limits
-The Current-Limits attribute is currently only used in the Pulse Oximeter specialization. It gives the lower and upper threshold limits of whatever measurement is being monitored.
-
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|67892|This is the MDC code for the Current-Limits attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.text|optional but|Should contain the reference id MDC_ATTR_LIMIT_CURR along with any other additional text|
-|valueRange.low.value|the value|This is the lower limit|
-|valueRange.low.unit|optional||
-|valueRange.low.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueRange.low.code|shall be the code of the primary measurement|The code shall be the MDC unit code|
-|valueRange.high.value|the value|This is the upper limit|
-|valueRange.high.unit|optional ||
-|valueRange.high.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueRange.high.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
-
-#### Measurement Confidence 95
-The Measurement-Confidence-95 attribute is currently used only in the Continuous Glucose specialization. The attribute gives a lower and upper bound with which the manufacturer is 95%confident that the actual reported measurement is within that bounds.
-
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|68236|This is the MDC code for the Measurement-Confidence-95 attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.text|optional but|Should contain the reference id MDC_ATTR_MSMT_CONFIDENCE_95 along with any other additional text|
-|valueRange.low.value|the value|This is the lower limit|
-|valueRange.low.unit|optional||
-|valueRange.low.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueRange.low.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
-|valueRange.high.value|the value|This is the upper limit|
-|valueRange.high.unit|optional ||
-|valueRange.high.system|http://unitsofmeasure.org |Indicates the UCUM coding system|
-|valueRange.high.code|shall be the code of the primary measurement|The code shall be the UCUM unit code|
-
-#### Threshold Notification Text String
-The Threshold-Notification-Text-String attribute is currently used only in the Continuous Glucose specialization. It provides a human readable string describing the thresholds. There are separate measurement objects that actually give the thresholds.
-
-|Observation.component element|entry|Additional Information|
-|-
-|code.coding.code|68232|This is the MDC code for the Alert-Operational-Text_string attribute|
-|code.coding.system|urn:iso:std:iso:11073:10101|Indicates the MDC coding system|
-|code.text|optional but|Should contain the reference id MDC_ATTR_THRES_NOTIF_TEXT_STRING along with any other additional text|
-|valueString|the string|This is a textual description of the thresholds for the given measurement|
+### Simple Alerting
+The simple alerting extension supports monitoring a numerical value and provisioning of an alarm is the value is outside a defined threshold or limiting range.The extension includes the range, the operational state of the monitoring and text strings desribing these. See [Simple Alerting](StructureDefinition-SimpleAlerting.html)
 
 ### Examples:
-
 A basic simple numeric observation with a time stamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](Observation-numeric-spotnumeric.html). Simple numeric measurements are common in PHDs.
 
 An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a dataAbsentReason element.
