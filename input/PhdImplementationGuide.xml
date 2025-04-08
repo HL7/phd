@@ -754,11 +754,6 @@ In this example there are only xml structure definitions, value sets, code syste
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="CompoundNumericObservationProfile.html"/>
-            <title value="PHD Compound Numeric Observation Profile"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
             <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
             <title value="Generating the PHD codes"/>
             <generation value="markdown"/>

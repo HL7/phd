@@ -1,19 +1,10 @@
-The Compound Numeric Observation Profile is used when the PHD metric measurement is a vector or a set of related concepts which may be dimensionless. Examples would be the x, y, and z components of the acceleration, the systolic, diastolic, and mean components of a blood pressure measurement, or the set of package positions and associated questions in the Advanced Medication Monitor. Outside of the blood pressure, compound numeric measurements are relatively rare.
-
-The measurement is a compound when the PHD metric contains one of the following attributes:
 
 <style>table, th, td {
 border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-|Attribute|Value|Additional Information|
-|-
-|Compound-Basic-Nu-Observed-Value|set of 16-bit Mder SFLOATs|12-bit mantissa, 4-bit exponent|
-|Compound-Simple-Nu-Observed-Value|set of 32-bit Mder FLOATs|24-bit mantissa, 8-bit exponent|
-|Compound-Nu-Observed-Value|set of 32-bit Mder FLOATs|Complex attribute. Also contains<br/> metric-id<br/> measurement status<br/> unit-code|
-
-These attributes contain a measurement value that is described by a set of multiple numbers such as the x, y, and z components of an acceleration. It is NOT used to report an array of measurements but only where the quantity being measured requires more than one number to describe it. Each individual entry of the compound value is reported in an Observation.component element. The Mder SFLOAT and FLOAT encodings of each entry indicate both precision and the number of significant figures. The Observation.component.valueQuantity.value element is required to honor the reported precision as indicated by the Mder S/FLOAT. See the section [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity.
+A compound numeric observation reports a measurement value that is described by a set of multiple numbers such as the x, y, and z components of an acceleration. It is NOT used to report an array of measurements but only where the quantity being measured requires more than one number to describe it. Each individual entry of the compound value is reported in an Observation.component element. The  encoding of each entry should indicate both precision and the number of significant figures. The Observation.component.valueQuantity.value element is required to honor the reported precision as indicated by the encoding. Bluetooth GHS uses the IEEE FLOAT encoding. See the section [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling Mder S/FLOATs and their encoding to the valueQuantity.
 
 The Observation.component.code element is obtained from the Metric-Id-List attribute unless the measurement reported is a Compound-Nu-Observed-Value attribute. In that case the attribute itself has the metric type for each entry and that is used instead of the Metric-Id-List entries. The order of the entries in the Metric-Id-List are one-to-one with the order of the compound attribute entries. For example, if the Metric-Id-List in the Blood Pressure measurement has MDC codes for 'systolic", "diastolic" and "mean" in that order, the quantities in the compound attribute are the systolic, diastolic, and mean values, respectively.
 
@@ -52,10 +43,3 @@ The entries are as populated as follows:
 
 ### Examples:
 This example shows a [blood pressure](Observation-compound-numeric-blood-pressure.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
-
-
-
-
-
-
-

@@ -19,6 +19,55 @@ padding: 6px;}</style>
 IEEE 11073 numeric observations have some additional optional attributes that are used only for numerics and provide further information about the measurement. 
 These optional attributes are seldom used directly by PHDs and are mapped to FHIR extensions. 
 
+##### Accuracy
+Accuracy information of quantities can be indicacted using an extension. It gives the maximum deviation as an absolute value of the reported measurement value from the actual measurement over the entire range of the measurement. It is reported in the units of the measurement itself. An example of an accuracy entry for a thermometer is shown below:
+
+{% fragment Observation/temperature-observation JSON EXCEPT:extension[3] %}
+
+##### Simple Alerting
+The Simple Alerting extension can be supported for a simple alerting mechanism for numeric values (quantities in FHIR). The PHD pulse oximeter and the continuous glucose monitor specialization support this.
+The extension defines a current limits range for the quantity, an operational state and optional strings for the operational state  and the semantics of the quantity being outside the range. 
+
+This mechanism is used in combination with the Observation.interpretation value being set to "in-alarm" when the quantity is outside the limits. 
+
+The presence of the extension in an Observation with a numeric quantity informs the consumer of the use of the alerting mechanism.
+
+An example of an observation with an alert can be found [here](Observation-numeric-spo2-alarm.json.html).
+
+##### Measurement Confidence 95
+TheIEEE 11073  Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization. The compoent gives a lower and upper bound between which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. 
+
+The entry is indicated by the Observation.extension "http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95". The accuracy is encoded in an Extension.valueRange element. The ranges have the same units as the primary measurement. An example of a Measurement Confidence 95 entry is shown below:
+
+{% fragment Observation/glucose-observation JSON EXCEPT:extension[2] %}
+
+The above states that the Continuous Glucose Monitor PHG is 95% sure that the reported measurement of (say 99 mg/dL) lies between 98 and 100 mg/dL.
+
+##### Threshold Notification String
+This component contains a human readable string regarding the various threshold settings a PHD might have. Currently, only the Continuous Glucose Monitor specialization defines the use of this string with respect to its threhold settings. The Threshold Notification String applies only to measurement values that are quantities. 
+
+The entry is indicated by the Observation.component.code.coding.code element having the value 68232. The text string is limited to US ASCII. The value is encoded in the Observation.component.valueString element.
+
+An example of a component entry is as follows:
+
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "68232"
+                    }
+                ],
+                "text": " MDC_ATTR_THRES_NOTIF_TEXT_STRING: PHD provided information about the threshold"
+            },
+            "valueString": "Glucose concentration has gone under the minimum"
+        }
+    ]
+
+
+
+
 #### Accuracy
 The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement. It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation.  See [Accuracy extension](StructureDefinition-Accuracy.html).
 

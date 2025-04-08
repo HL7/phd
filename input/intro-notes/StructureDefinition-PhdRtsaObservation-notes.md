@@ -46,22 +46,6 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 
 *noting that other scaling options are allowed.
 
-### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.
-
-|Entry|value|Additional information|
-|-
-|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
-|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html)|
-|value|Observation.valueSampledData.period-Observation.valueSampledData.dimensions-Observation.valueSampledData.data[0]|The data absent reason code is used if there is no value|
-|units|"Observation.valueSampledData.origin.code|The units are the same for all data points|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
-
-The final identifier is made by concatenating the entries above as follows:
- - "device-patient-type-value-units-reported PHD timestamp-supplemental types".
-
 ### Additional RTSA Measurement Information
 All additional attributes that may be reported in a numerical metric measurement may also be present in an RTSA metric measurement. See the section 'Additional Note that one could report a waveform by reporting each value in the sequence as a sequence of single numeric metric measurements. Of course that would be costly in terms of bandwidth.
 

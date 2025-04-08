@@ -132,7 +132,7 @@
 <page deprecated="true" key="BITsEnumerationObservationProfile" name="PHD BITs Coded Enumeration Observation Profile"/>
 <page deprecated="true" key="CodedEnumerationObservationProfile" name="PHD Coded Enumeration Observation Profile"/>
 <page deprecated="true" key="CoincidentTimeStampObservationProfile" name="PHD Coincident Time Stamp Observation Profile"/>
-<page key="CompoundNumericObservationProfile" name="PHD Compound Numeric Observation Profile"/>
+<page deprecated="true" key="CompoundNumericObservationProfile" name="PHD Compound Numeric Observation Profile"/>
 <page deprecated="true" key="PhdDeviceProfile" name="PHD Device Profile"/>
 <page deprecated="true" key="NumericObservationProfile" name="PHD Numeric Observation Profile"/>
 <page deprecated="true" key="PhdPatientProfile" name="PHD Patient Profile"/>

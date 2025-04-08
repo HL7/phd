@@ -1,0 +1,2 @@
+The Compound Observation Profile is used when the PHD metric measurement is a vector or a set of related measured components that should be interpreted together. Examples would be the x, y, and z components of the acceleration, the systolic, diastolic, and mean components of a blood pressure measurement. These examples have only numeric components. An example with heterogeneous components would be a glucose measurement reporting the blood glucose level as a numeric and the meal context as a codeable concept. 
+

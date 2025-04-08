@@ -1,5 +1,3 @@
-The Compound Numeric Observation Profile is used when the PHD metric measurement is a vector or a set of related concepts which may be dimensionless. Examples would be the x, y, and z components of the acceleration, the systolic, diastolic, and mean components of a blood pressure measurement, or the set of package positions and associated questions in the Advanced Medication Monitor. Outside of the blood pressure, compound numeric measurements are relatively rare.
-
 The measurement is a compound when the PHD metric contains one of the following attributes:
 
 <style>table, th, td {
@@ -52,10 +50,3 @@ The entries are as populated as follows:
 
 ### Examples:
 This example shows a [blood pressure](Observation-compound-numeric-blood-pressure.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
-
-
-
-
-
-
-

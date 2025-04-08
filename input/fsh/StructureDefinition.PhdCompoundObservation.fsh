@@ -68,3 +68,7 @@ Description: "StructureDefinition for Observation Resources representing measure
     * coding[FhirDefault]
       * code from $DataAbsentReason (required)
       * code 1..
+* component
+  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
+  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
+  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1

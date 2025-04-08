@@ -58,7 +58,7 @@ Description: "Common base profile with the elements that are common to the PHD I
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
   * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
-  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observation from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
+  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observations from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
   * ^requirements = "Allows observations to be distinguished in a selective enough manner to prevent resource duplication."
   * type ..0
   * system ..0
@@ -127,15 +127,8 @@ Description: "Common base profile with the elements that are common to the PHD I
   * dataAbsentReason ..0
 * dataAbsentReason ^short = "This element is populated when the Measurement Status indicates invalid, not available or measurement-ongoing."
 * dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.value[x] is missing."
-* dataAbsentReason ^comment = "The Measurement-Status/status flags indicating invalid, not unavailable, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element. Also populated when a numeric value is in error."
+* dataAbsentReason ^comment = "The Measurement-Status/status flags indicating invalid, not available, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element. Also populated when a numeric value is in error."
 * dataAbsentReason.coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
-// * dataAbsentReason.coding ^slicing.discriminator.type = #value
-// * dataAbsentReason.coding ^slicing.discriminator.path = "system"
-// * dataAbsentReason.coding ^slicing.rules = #open
-// * dataAbsentReason.coding contains FhirDefault 1..1
-// * dataAbsentReason.coding[FhirDefault].system 1..
-// * dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-// * dataAbsentReason.coding[FhirDefault].code 1..
 
 Invariant: mdc-1
 Description: "A published MDC Code is preferred but private MDC codes are allowed as well."
@@ -153,3 +146,7 @@ Target: "https://sagroups.ieee.org/11073/phd-wg"
 * effectiveDateTime -> "Observation.time-stamp"
 * effectivePeriod.start -> "Observation.time-stamp"
 * effectivePeriod.end -> "Observation.time-stamp + Observation.measurement-duration" 
+* dataAbsentReason -> "Observation.measurement-status"
+* status -> "Observation.measurement-status"
+* interpretation -> "Observation.measurement-status"
+* meta.security -> "Observation.measurement-status"

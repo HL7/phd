@@ -13,23 +13,26 @@ The identifier is a concatenated string of elements that contain sufficient info
 
 |Entry|value|Additional information|
 |-
-|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
-|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html)|
+|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier (16 hexadecimal characters)|
+|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that situation the provided logical id is used|
+|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html) (decimal number)|
 |reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
 |duration|"duration"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|Supplemental Information|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
+|Supplemental Information|"Supplemental-Types.*N*-"|A sequence of MDC codes (decimal number) separated by a dash|
 
 The final identifier is made by concatenating the entries above as follows:
  - "device-patient-type-value-timestamp-duration-Supplemental Information"
 
 All PHGs compliant to this IG should implement this identifier in the same manner. Compliance assures that even if the patient uploads the same observation to the same server from a different PHG, a duplicate of the observation will not be generated on the server. This is important since some PHDs do not provide a means of deleting stored and uploaded observations and will upload old observations again with each new addition of a observation as much as device storage allows.
 
+An example of the this identifier from [this example](Observation-numeric-spotnumeric.html) is given below:
+{% fragment Observation/numeric-spotnumeric JSON EXCEPT:identifier %}
+
 ### Obtaining the Type of observation
 One obtains the IEEE 11073-10101 observation type for the code element in the same manner for all metric observations. See the section [Obtaining the Observation.code](ObtainObservationCode.html) for the details of this mapping.
 
 ### Subject
-The subject element points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'.
+The subject element normally points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'. For device settings known to the PHG it should point to the PHD.
 
 #### Performer
 In situations where the gateway knows that the patient is the person performing the measurement, a Observation.performer[] element can also point to the PhdPatient resource. However, in most situations this is unknown and the performer is not filled in. And for coincident timestamp observations, the performer should not be provided.
@@ -101,59 +104,42 @@ Note that for vital signs observations there also should be a category element a
 ### Supplemental Information - Components
 Component elements are used whenever the observation contains additional information attributes that further describe the observation. PHD observations can include Supplemental-Information that can be mapped to one or more FHIR Observation components.
 
-The Supplemental Information attribute contains a list of one or more MDC codes that describe some property of the observation. There will be one component element for each entry in the list. For example, the code MDC_MODALITY_SPOT used in the pulse oximeter specialization indicates that the observation reported is a stable average. In contrast there is MDC_MODALITY_FAST and MDC_MODALITY_SLOW. The component elements are as populated as follows:
+The Supplemental Information attribute contains a list of one or more MDC codes that describe some property of the observation. There will be one component element for each entry in the list. For example, the code MDC_MODALITY_SPOT used in the pulse oximeter specialization indicates that the observation reported is a stable average. In contrast there is MDC_MODALITY_FAST and MDC_MODALITY_SLOW. 
 
-| Observation.component element      | entry                            | Additional Information                                                                           |
-| ---------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------ |
-| code.coding.code                   | 68193                            | This is the MDC code for the Supplemental Types attribute                                        |
-| code.coding.system                 | urn:iso:std:iso:11073:10101      | Indicates the MDC coding system                                                                  |
-| code.text                          | optional                         | Should contain the reference id MDC_ATTR_SUPPLEMENTAL_TYPES along with any other additional text |
-| valueCodeableConcept.coding.system | urn:iso:std:iso:11073:10101      | Indicates the MDC coding system                                                                  |
-| valueCodeableConcept.coding.code   | the MDC code as a decimal string |                                                                                                  |
-| valueCodeableConcept.text          | optional                         | Should contain the reference id for the reported code along with any other additional text       |
+{% fragment Observation/numeric-spotnumeric JSON EXCEPT:component[0] %}
+
+<blockquote class="stu-note">
+	<strong>Should we move Supplemental Type information to an extension?</strong>
+	In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. In this version we are using extensions for less often used elements of the IEEE 11073 PHD ACOM model and in places were the PHD model and the FHIR model forn observation are too different to have a 1-1 mapping between data elements of these models.
+
+    The question is if this applies to Supplemental Type information as well. Should IEEE 11073-10206/20601 Supplemental Information be modeled as a FHIR Observation.component or as an extension in FHIR?
+    Input is welcome.
+</blockquote>
 
 
 ### Measurement Status
-The Measurement Status element from IEEE 11073-10206 is used to report errors or other special conditions. The element reports one or more of the following conditions:
+The Measurement Status element from IEEE 11073-10206 is used to report errors or other special conditions.  The Bluetooth SIG GHS specification adds more possible conditions. It is possible to have multiple conditions simultaneously, but some combinations of conditions do not make sense and should not occur.
 
- - invalid
- - questionable
- - not-available
- - calibrating
- - test-data
- - early-estimate
- - threshold-error
- - annunciation-inhibited
- - setting
- - manually-entered
+To report these conditions in FHIR requires the use of three different elements. The interpretation codes are taken from the measurement status value set defined in the [Point of Care implementation guide](https://build.fhir.org/ig/HL7/uv-pocd/index.html).
 
-The Bluetooth SIG GHS specification adds more:
+The table below lists the special conditions and the FHIR data elements to which they are mapped. The code system from which the code is drawn is also shown using a `codsystem#code` notation.
 
- - Threshold error
- - Thresholding disabled  
-
-
-It is possible to have multiple conditions simultaneously, but some combinations of conditions do not make sense and should not occur.
-
-To report these cases in FHIR requires the use of three different elements. The interpretation codes are taken from the measurement status value set defined in the [Point of Care implementation guide](https://build.fhir.org/ig/HL7/uv-pocd/index.html). The mapping is shown in the following table:
-
-| Measurement Status     | FHIR® Observation Resource Data Element                                         | Further Handling Options                                                                                                    |
+| IEEE 11073 Measurement Status     | FHIR® Observation Resource Data Element                                         | Further Remarks Options                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Invalid                | dataAbsentReason = error – from CS1 <br/> status = entered-in-error – from CS2        | A device or gateway could decide not to upload invalid observations and could report an error by other means.               |
-| Questionable           | interpretation = questionable – from CS3                                        | \-                                                                                                                          |
-| Not-available          | dataAbsentReason = not-performed – from CS1                                     | A device or gateway could decide not to upload observations with no value and could report an error by other means.         |
-| Calibrating            | interpretation = calibration-ongoing – from CS3                                 | \-                                                                                                                          |
-| Test-data              | meta.security = HTEST – from CS4                                                | Test data should in most cases not be uploaded to a FHIR® server, except for testing purposes.                              |
-| Early-estimate         | interpretation = early-indication – from CS3 <br/> status = preliminary – from CS2 | \-                                                                                                                          |
-| Annunciation-inhibited | TBD                                                                             |                                                                                                                             |
+| Invalid                | dataAbsentReason = DAR#error<br/> status = HL7Status#entered-in-error           | A device or gateway could decide not to upload invalid observations and could report an error by other means.               |
+| Questionable           | interpretation = PoCDStatus#questionable                                        | \-                                                                                                                          |
+| Not-available          | dataAbsentReason = DAR#not-performed                                            | A device or gateway could decide not to upload observations with no value and could report an error by other means.         |
+| Calibrating            | interpretation = PoCDStatus#calibration-ongoing                                 | \-                                                                                                                          |
+| Test-data              | meta.security = ActReason#HTEST                                                 | Test data should in most cases not be uploaded to a FHIR® server, except for testing purposes.                              |
+| Early-estimate         | interpretation = PoCDStatus#early-indication<br/> status = HL7Status#preliminary| \-                                                                                                                          |
 | Manually-entered       | \-                                                                              | Add a note to the Observation resource that it was manually entered.                                                        |
-| Setting                | \-                                                                              | For device settings, the Observation resource should reference the Device resource as a subject and not a Patient resource. |
-| Threshold error        | interpretation = in-alarm – from CS3                                            | Ignore or add a note to the Observation resource that it is outside its boundaries.                                         |
-| Thresholding disabled  | interpretation = alarm-inhibited – from CS3                                     | Ignore or add a note to the Observation resource that its boundaries are not checked.                                       |
+| Setting                | \-                                                                              | For device settings, the Observation resource should reference the PHD Device as the subject and not the Patient.           |
+| Threshold error        | interpretation = PoCDStatus#in-alarm                                            | Applies to numeric data. Add a note to the Observation resource that it is outside its boundaries. Should be used in combination with the SimpleAlerting Extension.                                         |
+| Thresholding disabled  | interpretation = PoCDStatus#alarm-inhibited                                     | Applies to numeric data. Add a note to the Observation resource that its boundaries are not checked. Should be used in combination with the SimpleAlerting Extension.                                      |
 
-CS1: [Data Absent Reason CodeSystem](http://terminology.hl7.org/CodeSystem/data-absent-reason)
-CS2: [Observation Status CodeSystem](http://hl7.org/fhir/observation-status)
-CS3: [CodeSystem: Measurement Status Codes CodeSystem](https://build.fhir.org/ig/HL7/uv-pocd/CodeSystem-measurement-status.html)
-CS4: [CodeSystem: Act Reason CodeSystem](http://terminology.hl7.org/CodeSystem/v3-ActReason)
+DAR: [Data Absent Reason CodeSystem](http://terminology.hl7.org/CodeSystem/data-absent-reason)
+HL7Status: [Observation Status CodeSystem](http://hl7.org/fhir/observation-status)
+PoCDStatus: [CodeSystem: Measurement Status Codes CodeSystem](https://build.fhir.org/ig/HL7/uv-pocd/CodeSystem-measurement-status.html)
+ActReason: [CodeSystem: Act Reason CodeSystem](http://terminology.hl7.org/CodeSystem/v3-ActReason)
 
 
