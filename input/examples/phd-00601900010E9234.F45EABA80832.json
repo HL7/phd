@@ -39,10 +39,11 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "65573"
+                "code": "65573",
+                "display": "MDC_MOC_VMS_MDS_SIMP"
             }
         ],
-        "text": "MDC_MOC_VMS_MDS_SIMP"
+        "text": "Simple PHD"
     },
     "specialization": [
         {
@@ -50,10 +51,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "528401"
+                        "code": "528401",
+                        "display": "MDC_DEV_SPEC_PROFILE_GLUCOSE"
                     }
                 ],
-                "text": "MDC_DEV_SPEC_PROFILE_GLUCOSE: Glucose Monitor"
+                "text": "Glucose Monitor"
             },
             "version":"1"
         }
@@ -64,10 +66,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531976"
+                        "code": "531976",
+                        "display": "MDC_ID_PROD_SPEC_FW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
+                "text": "Firmware revision"
             },
             "value": "GLU.7AJ-02"
         },
@@ -76,10 +79,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531975"
+                        "code": "531975",
+                        "display": "MDC_ID_PROD_SPEC_SW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_SW: Software revision"
+                "text": "Software revision"
             },
             "value": "3.55.6"
         },
@@ -88,10 +92,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531974"
+                        "code": "531974",
+                        "display": "MDC_ID_PROD_SPEC_HW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_HW: Hardware revision"
+                "text": "Hardware revision"
             },
             "value": "5.4.2"
         }
@@ -102,17 +107,19 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "532353"
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+                "text": "Certified device list as transport-specialization combo"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                            "code": "16401"
+                            "code": "16401",
+                            "display": "HDP BT Glucose Monitor certified"
                         }
                     ]
                 }
@@ -123,20 +130,22 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68220"
+                        "code": "68220",
+                        "display": "MDC_TIME_SYNC_PROTOCOL"
                     }
                 ],
-                "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+                "text": "Time synchronization protocol"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "urn:iso:std:iso:11073:10101",
-                            "code": "532224"
+                            "code": "532224",
+                            "display": "MDC_TIME_SYNC_NONE"
                         }
                     ],
-                    "text": "MDC_TIME_SYNC_NONE:"
+                    "text": "None"
                 }
             ]
         }

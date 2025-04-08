@@ -1,0 +1,1 @@
+This example shows the mapping of an Android gateway to the Device resource.

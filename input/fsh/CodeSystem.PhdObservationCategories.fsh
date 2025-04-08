@@ -5,10 +5,10 @@ Description: "Codes used for tagging observations coming from PHD devices. More 
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories"
 * ^version = "0.1.0"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-18"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete

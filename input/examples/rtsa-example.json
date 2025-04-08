@@ -1,6 +1,5 @@
 {
 	"resourceType": "Observation",
-	"id": "rtsa-1234",
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"
@@ -35,10 +34,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "150452"
+				"code": "150452",
+				"display": "MDC_PULS_OXIM_PLETH"
 			}
 		],
-		"text": "MDC_PULS_OXIM_PLETH: Pleth Wave"
+		"text": "Pleth Wave"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -53,7 +53,8 @@
 		"origin": {
 			"value": -3.4,
 			"system": "http://unitsofmeasure.org",
-			"code": "1"
+			"code": "1",
+			"unit": "{unitless} 1"
 		},
 		"period": 2.000,
 		"factor": 3.0,

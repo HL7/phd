@@ -1,34 +1,14 @@
-The properties and specifications of the PHD are reported in the Device resource. These are the static fields of the attributes reported in the PHD MDS object or Bluetooth Low Energy Device Information Service. Dynamic and observational attributes such as the battery level, remaining battery time, and power status are reported using the Observation resource.
-
-There are six MDS attributes that are reported. The Mds-Time-Info attribute has fields that are dynamic and static, and it is only the static entries which are required should the attribute be present. The following table summarizes these attributes and the Device elements to which they are mapped:
-
-<style>table, th, td {
-border: 1px solid black;
-border-collapse:collapse;
-padding: 6px;}</style>
-
-|MDS attribute|Device element|
-|-
-|System-Id|identifier 1|
-|*transport address*|identifier 2|
-|*Friendly name*|deviceName|
-|System-Type-Spec-List|specializations|
-|Production-Specification|serialNumber<br>version<br>partNumber|
-|Reg-Cert-Data-List|version<br>property|
-|MdsTimeInfo|property|
-
-The transport address and friendly name are not provided by the MDS but come from the transport protocols. They may not be available and are therefore optional. However, if the PHD does not report a System Id, which may happen if one needs to map non-certified and/or proprietary devices, a transport address should be reported. It is still strongly recommended that the transport address is reported as it is often beneficial to the data consumers. Transport addresses of wireless devices are often printed on the device or the device packaging whereas the system id is not. Most PHD transports provide a means of obtaining a transport address or an equivalent identifier such as a USB VID and PID.
-
-There are several CodeableConcept data types in this mapping where the Coding data type has a 'display' element. It is recommended to put the MDC reference identifier as part of the display element if known. The coding system element is always set to "urn.iso.std.iso:11073:10101 when an MDC code".
-
-The structure definition for the PHD Device Profile is given [here](StructureDefinition-PhdDevice.html)
-
 ### System Identifier
 All IEEE 11073-20601 PHDs are required to have a system identifier. It is an EUI-64 consisting of 8 bytes. The system id is mapped to the Device.identifier.value element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required for Continua compliance, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall enter 00-00-00-00-00-00-00-00 and it is highly recommended to provide a transport address as a means of uniquely identifying the PHD.
 
 In order to discriminate between an identifier that is a system id and that which is a transport address the identifier.type element is used. A Continua-defined CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the identifier.type.coding.code element.
 
 The transport addresses are as follows:
+
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
 
 |transport|format|example|
 |-
@@ -165,7 +145,7 @@ The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (P
 The PHDCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
 
 #### Reg-Cert-Data-List Regulation Status
-The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 Coding Description](ASN1BITsCodeSystem.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
+The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
 
 The regulation status is mapped to an additional Device.property.valueCode element. The Device.property.type element, which identifies the property, is given by 532354.0 following the ASN1 BITs mapping where the code 532354 is the MDC code for the regulation status. Its reference identifier is MDC_REG_CERT_DATA_CONTINUA_REG_STATUS. The '0' appended to the regulation status code indicates Mder bit 0. The Device.property.valueCode will indicate either "Y" (set) or "N" (cleared).
 
@@ -294,7 +274,7 @@ The encoding for the resolution values is as follows:
 |Device.property.valueQuantity.code|"us"  (UCUM code for microseconds)|
 
 ### Examples:
-An example of a PHD Blood Pressure cuff Device mapping is given [here](phdExample.html)
+An example of a PHD Blood Pressure cuff Device mapping is given [here](Device-phd-711000FEFF5F49B0.B0495F001071.html)
 
 ### Consumer of the PHD Device Profile
 For the Consumer of this profile the following table gives a quick guide to the main features
@@ -307,11 +287,3 @@ For the Consumer of this profile the following table gives a quick guide to the 
 |serial number|serialNumber|
 |system identifier|identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"<br>identifier.value="*system id as 8 2-digit HEX values separated by dashes*"|
 |time synchronization|property.type.coding.code="68220"<br/> property.valueCode.coding.code="*code for time synchronization*"|
-
-
-
-
-
-
-
-

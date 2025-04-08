@@ -30,33 +30,13 @@ The following table shows how the compound numeric attributes are mapped to FHIR
 |Compound-Simple-Nu-Observed-Value.*valueN*<br/>Unit-Code.*code*<br/>Metric-Id-List.*codeN*|Observation.component*N*.valueQuantity.value<br/>Observation.component*N*.valueQuantity.code  (as UCUM)<br/>Observation.component*N*.code.coding.code
 |Compound-Nu-Observed-Value.*valueN*<br/>Compound-Nu-Observed-Value.*unitN*<br/>Compound-Nu-Observed-Value.*metric-idN*<br/>Compound-Nu-Observed-Value.*statusN*|Observation.component*N*.valueQuantity.value<br/>Observation.component*N*.valueQuantity.code  (as UCUM)<br/> Observation.component*N*.code.coding.code<br/>Observation.component*N*.dataAbsentReason|
 
-### Conditional Create Identifier Generation
-For a general description of the PHD Observation Identifier see the "PHD Observation Identifier" section in [PHD Base Observation Profile](StructureDefinition-PhdBaseObservation.html). The table below lists the items that make up the identifier.
-
-|Entry|value|Additional information|
-|-
-|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier|
-|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that special case the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html)|
-|value|"Observation.component*N*.valueQuantity.value" or<br/>"Observation.component*N*.dataAbsentReason.coding.code"|The data absent reason code is used if there is no value|
-|units|"Observation.component*1*.valueQuantity.code"|When not a Compound-Nu-Observed-Value attribute the units are the same for each entry so only one unit code is needed|
-|valueUnits|"Observation.component*N*.valueQuantity.value" or <br/> "Observation.component*N*.dataAbsentReason.coding.code"<br/>followed by the UCUM unit code for each entry|In the Compound-Nu-Observed-Value the unit code can be different for each entry|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Time Stamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|supplemental types|"Supplemental-Types.*N*-"|A sequence of 32-bit MDC codes separated by a dash|
-
-The final identifier is made by concatenating the entries above as follows:
- - "device-patient-type-value-units-reported PHD timestamp-supplemental types" for the Compound-Basic/Simple-Nu-Observed-Value cases.
-   - Example of a blood pressure measurement using absolute time and mmHg; the units are the same for each entry: "FEEDABEDEAD2345-sisan34id-23.654.6.6.12.3-150020-100-60-80-mmHg-20170114173041"
- - "device-patient-type-valueUnits-reported PHD timestamp-supplemental types" for the Compound-Nu-Observed-Value case.
-   - There are no specializations which use the Compound-Nu-Observed-Value attribute.
-
 ### Additional Numerical Measurement Information
 IEEE 11073-20601 numeric metric measurements have some additional optional attributes that are used only for numerics. When they occur, these additional attributes provide further information about the measurement. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement. The accuracy is a measure of the deviation of the actual measurement from the reported measurement. Consequently, 'accuracy' is not a concept that makes any sense in the context of a measurement which is one or more of a finite set of enumerated codes such as a glucose-monitor meal association (breakfast, snack, fasting, etc.), and thus the attribute is not used in Enumeration metrics.
 
 As in the PhdBaseObservation profile, an Observation.component element is used to contain the additional information. Only the Accuracy attribute is used for compound numerics. The other numeric-specific attributes are not structured to handle compounds.
 
 #### Accuracy
-The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is in the units of the measurement itself. This kind of measurement may not make sense to report with some compound measurements, especially in the case of the Compound-Nu-Observed-Value as each element could have different units.
+The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement *over the entire range of the measurement*. The reported accuracy is, thus, static and does not vary over the range of the measurement. It shall be reported if the PHD provides it and it is not corrupted. It is reported in the same unit as those of the component. This kind of measurement may not make sense to report with some compound measurements, especially in the case of the Compound-Nu-Observed-Value as each element could have different units.
 
 The entries are as populated as follows:
 
@@ -71,7 +51,7 @@ The entries are as populated as follows:
 |valueQuantity.code|shall be the UCUM code of the primary measurement|Assumes the units are the same for all components|
 
 ### Examples:
-This example shows a [blood pressure](Observation-compound-numeric-observation.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
+This example shows a [blood pressure](Observation-compound-numeric-blood-pressure.html) measurement. The important item to note is that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the Observation.component elements.
 
 
 

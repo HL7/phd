@@ -5,10 +5,10 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 110
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"
 * ^version = "current"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-23"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * Mdc#68193 "Supplemental types"
 * Mdc#68220 "Time synchronization method"
 * Mdc#532353 "Continua certified PHD interfaces"

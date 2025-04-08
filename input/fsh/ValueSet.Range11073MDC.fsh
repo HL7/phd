@@ -5,9 +5,9 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 110
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"
 * ^version = "current"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^date = "2018-11-23"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * Mdc#67892 "Current limits"
 * Mdc#68236 "Measurement confidence 95% range"

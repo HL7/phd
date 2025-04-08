@@ -1,0 +1,109 @@
+{
+	"resourceType": "Observation",
+	"id": "compound-observation-glucose",
+	"meta": {
+		"profile": [
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"
+		]
+	},
+	"extension": [
+		{
+			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
+			"valueReference": {
+				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+			}
+		},
+		{
+			"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+			"valueReference": {
+				"reference": "Observation/coin-20181119174911"
+			}
+		}
+	],
+	"status": "final",
+	"category": [
+		{
+			"coding": [
+				{
+					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+					"code": "phd-observation"
+				}
+			]
+		}
+	],
+	"code": {
+		"coding": [
+			{
+				"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ACMEIncPrivateMDCCodes",
+				"code": "8452097"
+			}
+		],
+		"text": "Private MDC code: MDCX_GLU_COMPOUND_MEASUREMENT"
+	},
+	"subject": {
+		"reference": "Patient/patientExample-1"
+	},
+	"performer": [
+		{
+			"reference": "Patient/patientExample-1"
+		}
+	],
+	"effectiveDateTime": "2018-11-11T11:38:15-05:00",
+	"device": {
+		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
+	},
+	"component": [
+		{
+			"code": {
+				"coding": [
+					{
+						"system": "urn:iso:std:iso:11073:10101",
+						"code": "160184",
+						"display": "MDC_CONC_GLU_CAPILLARY_WHOLEBLOOD"
+					}
+				]
+			},
+			"valueQuantity": {
+				"value": 6.3,
+				"unit": "mmol/l",
+				"system": "http://unitsofmeasure.org",
+				"code": "mmol/L"
+			}
+		},
+		{
+			"code": {
+				"coding": [
+					{
+						"system": "urn:iso:std:iso:11073:10101",
+						"code": "8417864",
+						"display": "MDC_CTXT_GLU_MEAL"
+					}
+				],
+				"text": "Glucose meal context"
+			},
+			"valueCodeableConcept": {
+				"coding": [
+					{
+						"system": "urn:iso:std:iso:11073:10101",
+						"code": "8417872",
+						"display": "MDC_CTXT_GLU_MEAL_POSTPRANDIAL"
+					}
+				],
+				"text": "After lunch/dinner"
+			}
+		},
+		{
+			"code": {
+				"coding": [
+					{
+						"system": "urn:iso:std:iso:11073:10101",
+						"code": "8417846",
+						"display": "MDC_CTXT_GLU_SAMPLELOCATION_OTHER"
+					}
+				],
+				"text": "Glucose measurement context indicating sample location is other (does not match an available option)"
+			},
+			"valueString": "Somewhere on the body."
+		}
+	]
+}

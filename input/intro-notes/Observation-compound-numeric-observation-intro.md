@@ -1,5 +1,3 @@
 This example shows a compound (numeric) observation. The most common type of compound observation is the Blood Pressure. The systolic, diastolic, and mean values are treated as parts of the same observation. The compound elements are reported in Observation.component elements and that there is **no** value[x] in the 'primary' observation. In addition, that the 'mean' component is not considered as one of FHIR's vital signs and no LOINC code is present for that component code.
 
-There is no logical id in this resource as this resource is being uploaded to the server in a conditional create operation. The server will use the identifier to check that no other Observation resource exists on the server with the same identifier. If there is not such resource present, the server will create the logical id and return it to the sender in the response. 
-
 Note that the referenced resources - Patient, PHG, PHD, and coincident timestamp - are assumed to be present on the server already.

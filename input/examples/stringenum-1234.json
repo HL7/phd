@@ -35,10 +35,11 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "8454252"
+				"code": "8454252",
+				"display": "MDC_HF_PROGRAM_ID"
 			}
 		],
-		"text": "MDC_HF_PROGRAM_ID: Program id"
+		"text": "Program id"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"

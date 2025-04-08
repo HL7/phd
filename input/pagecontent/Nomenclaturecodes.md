@@ -8,7 +8,7 @@ In IEEE 11073 Units are also encoded as nomenclature codes. HL7 and IHE favor th
 
 The set of nomenclature codes is extensive, but it is segmented by partitions. Many of the codes used in the PHD measurement types and measurement values (when codes) come from the SCADA, INFRA, SITES, PHD_DM, PHD_HF, and PHD_AI partitions. This guide does not restrict the codes to come from only those partitions for future compatibility reasons. New partitions could be added and those codes could be used in future PHD specializations. Since the codes are provided by the PHD, the uploader does not need to maintain a code dictionary unless it wants to include the reference identifier or display text about the code. If this guide were to restrict the allowable codes to a given set of partitions, that restriction would prevent an older implementation from working with future devices when it otherwise could have worked with the device. It is clear, however, that any consumer and interpreter of the uploaded information *would* need to know about the new codes.
 
-More information describing the MDC coding system can be found [here](http://build.fhir.org/mdc.html)
+More information describing the MDC coding system can be found [here](https://terminology.hl7.org/MDC.html)
 
  - [Next: FHIR’s Codeable Concepts](CodeableConcepts.html)
  - [Previous: Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html)

@@ -14,19 +14,25 @@
 				},
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],				
+				],
 				"extension": [
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
 						"valueReference": {
 							"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+						}
+					},
+					{
+						"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+						"valueReference": {
+							"reference": "Observation/coin-example-1"
 						}
 					}
 				],
@@ -35,10 +41,10 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "67996"
+							"code": "67996",
+							"display": "MDC_ATTR_VAL_BATT_CHARGE"
 						}
-					],
-					"text": "MDC_ATTR_VAL_BATT_CHARGE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -47,7 +53,8 @@
 				"valueQuantity": {
 					"value": 100,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -83,30 +90,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -115,7 +122,8 @@
 				"valueQuantity": {
 					"value": 99.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -151,15 +159,14 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-						"coding" : [
-						{
-							"system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-							"code" : "phd-observation"
-						}
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
 						]
 					}
 				],
@@ -167,14 +174,15 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -183,7 +191,8 @@
 				"valueQuantity": {
 					"value": 53.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -211,34 +220,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:37-05:00",
 				"valueQuantity": {
-					"value": 1.02,
+					"value": 102,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -274,30 +284,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -306,7 +316,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -342,30 +353,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -374,7 +385,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -404,32 +416,33 @@
 				],
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:38-05:00",
 				"valueQuantity": {
-					"value": 0.88,
+					"value": 88,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -457,25 +470,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -490,19 +503,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -510,19 +523,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -530,19 +543,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -577,30 +590,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -609,7 +622,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -645,30 +659,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -677,7 +691,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -705,34 +720,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:39-05:00",
 				"valueQuantity": {
-					"value": 0.82,
+					"value": 82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -760,25 +776,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -793,19 +809,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -813,19 +829,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -833,19 +849,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -853,19 +869,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -900,30 +916,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -932,7 +948,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -968,30 +985,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1000,7 +1017,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1028,34 +1046,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:40-05:00",
 				"valueQuantity": {
-					"value": 0.82,
+					"value": 82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1083,25 +1102,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1116,19 +1135,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -1136,19 +1155,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -1156,19 +1175,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -1176,19 +1195,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -1223,30 +1242,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1255,7 +1274,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1291,30 +1311,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1323,7 +1343,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1351,34 +1372,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:41-05:00",
 				"valueQuantity": {
-					"value": 0.82,
+					"value": 83,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1406,25 +1428,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1439,19 +1461,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -1459,19 +1481,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -1479,19 +1501,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -1499,19 +1521,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -1546,30 +1568,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1578,7 +1600,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1614,30 +1637,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1646,7 +1669,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1668,14 +1692,14 @@
 				},
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"extension": [
 					{
 						"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
@@ -1689,19 +1713,20 @@
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:42-05:00",
 				"valueQuantity": {
-					"value": 0.82,
+					"value": 82,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1729,25 +1754,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1762,19 +1787,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -1782,19 +1807,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -1802,19 +1827,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -1822,19 +1847,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -1869,30 +1894,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1901,7 +1926,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1937,30 +1963,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -1969,7 +1995,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -1997,34 +2024,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:43-05:00",
 				"valueQuantity": {
-					"value": 0.2,
+					"value": 20,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2054,23 +2082,23 @@
 				],
 				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2085,19 +2113,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -2105,19 +2133,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -2125,19 +2153,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -2145,19 +2173,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -2192,30 +2220,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2224,7 +2252,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2260,30 +2289,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2292,7 +2321,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2320,34 +2350,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:44-05:00",
 				"valueQuantity": {
-					"value": 0.2,
+					"value": 20,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2375,25 +2406,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2408,19 +2439,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -2428,19 +2459,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -2448,19 +2479,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -2468,19 +2499,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -2515,30 +2546,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2547,7 +2578,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2583,30 +2615,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2615,7 +2647,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2643,34 +2676,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:45-05:00",
 				"valueQuantity": {
-					"value": 0.2,
+					"value": 20,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2698,25 +2732,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2731,19 +2765,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -2751,19 +2785,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -2771,19 +2805,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -2791,19 +2825,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -2838,30 +2872,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2870,7 +2904,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2906,30 +2941,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -2938,7 +2973,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -2966,34 +3002,35 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:46-05:00",
 				"valueQuantity": {
-					"value": 0.2,
+					"value": 20,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3021,25 +3058,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3054,19 +3091,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -3074,19 +3111,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -3094,19 +3131,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.10"
+									"code": "150604.10",
+									"display": "signal-low-perfusion"
 								}
-							],
-							"text": "signal-low-perfusion"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal experiencing low perfusion"
+							]
 						}
 					},
 					{
@@ -3114,19 +3151,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -3134,19 +3171,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -3181,30 +3218,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in Arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3213,7 +3250,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3246,33 +3284,33 @@
 					{
 						"coding": [
 							{
-								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3281,7 +3319,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3309,34 +3348,43 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
+								"code": "vital-signs"
+							}
+						]
+					},
+					{
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
 				},
 				"effectiveDateTime": "2018-11-11T19:07:47-05:00",
 				"valueQuantity": {
-					"value": 0.05,
+					"value": 5,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3364,25 +3412,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150604"
+							"code": "150604",
+							"display": "MDC_PULS_OXIM_DEV_STATUS"
 						}
-					],
-					"text": "MDC_PULS_OXIM_DEV_STATUS"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3397,19 +3445,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.2"
+									"code": "150604.2",
+									"display": "sensor-displaced"
 								}
-							],
-							"text": "sensor-displaced"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Sensor is incorrectly placed on user"
+							]
 						}
 					},
 					{
@@ -3417,19 +3465,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.7"
+									"code": "150604.7",
+									"display": "signal-pulse-questionable"
 								}
-							],
-							"text": "signal-pulse-questionable"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Questionable pulse detected"
+							]
 						}
 					},
 					{
@@ -3437,19 +3485,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.10"
+									"code": "150604.10",
+									"display": "signal-low-perfusion"
 								}
-							],
-							"text": "signal-low-perfusion"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal experiencing low perfusion"
+							]
 						}
 					},
 					{
@@ -3457,19 +3505,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.11"
+									"code": "150604.11",
+									"display": "signal-poor"
 								}
-							],
-							"text": "signal-poor"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is poor"
+							]
 						}
 					},
 					{
@@ -3477,19 +3525,19 @@
 							"coding": [
 								{
 									"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-									"code": "150604.12"
+									"code": "150604.12",
+									"display": "signal-inadequate"
 								}
-							],
-							"text": "signal-inadequate"
+							]
 						},
 						"valueCodeableConcept": {
 							"coding": [
 								{
 									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y"
+									"code": "Y",
+									"display": "Yes"
 								}
-							],
-							"text": "Signal is inadequate"
+							]
 						}
 					}
 				]
@@ -3524,30 +3572,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150456"
+							"code": "150456",
+							"display": "MDC_PULS_OXIM_SAT_O2"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "59408-5"
+							"code": "2708-6",
+							"display": "Oxygen saturation in arterial blood"
 						}
-					],
-					"text": "MDC_PULS_OXIM_SAT_O2"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3556,7 +3604,8 @@
 				"valueQuantity": {
 					"value": 100.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "%"
+					"code": "%",
+					"unit": "%"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3592,30 +3641,30 @@
 								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
 								"code": "vital-signs"
 							}
-						],
-						"text": "Vital Signs"
+						]
 					},
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "149530"
+							"code": "149530",
+							"display": "MDC_PULS_OXIM_PULS_RATE"
 						},
 						{
 							"system": "http://loinc.org",
-							"code": "8867-4"
+							"code": "8867-4",
+							"display": "Heart rate"
 						}
-					],
-					"text": "MDC_PULS_OXIM_PULS_RATE"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3624,7 +3673,8 @@
 				"valueQuantity": {
 					"value": 54.0,
 					"system": "http://unitsofmeasure.org",
-					"code": "{beat}/min"
+					"code": "/min",
+					"unit": "{beat}/min"
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
@@ -3652,25 +3702,25 @@
 						}
 					}
 				],
-				"category" : [
+				"category": [
 					{
-					  "coding" : [
-						{
-						  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-						  "code" : "phd-observation"
-						}
-					  ]
+						"coding": [
+							{
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+								"code": "phd-observation"
+							}
+						]
 					}
-				  ],
+				],
 				"status": "final",
 				"code": {
 					"coding": [
 						{
 							"system": "urn:iso:std:iso:11073:10101",
-							"code": "150320"
+							"code": "150320",
+							"display": "MDC_SAT_O2_QUAL"
 						}
-					],
-					"text": "MDC_SAT_O2_QUAL"
+					]
 				},
 				"subject": {
 					"reference": "Patient/patientExample-1"
@@ -3680,10 +3730,10 @@
 					"coding": [
 						{
 							"system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-							"code": "not-a-number"
+							"code": "not-a-number",
+							"display": "Not a Number (NaN)"
 						}
-					],
-					"text": "not-a-number (Not a number)"
+					]
 				},
 				"device": {
 					"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"

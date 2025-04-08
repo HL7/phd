@@ -6,30 +6,23 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 		]
 	},
-	"extension": [
-		{
-			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-			"valueReference": {
-				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
-			}
-		}
-	],
 	"status": "final",
 	"code": {
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "67975"
+				"code": "67975",
+				"display": "MDC_ATTR_TIME_ABS"
 			}
 		],
-		"text": "MDC_ATTR_TIME_ABS: Absolute time"
+		"text": "Absolute time"
 	},
 	"subject": {
-		"reference": "Patient/patientExample-1"
+		"reference": "Device/phd-00601900010E9234.F45EABA80832"
 	},
 	"effectiveDateTime": "2017-06-02T18:02:35-04:00",
 	"valueDateTime": "2017-06-02T18:02:30-04:00",
 	"device": {
-		"reference": "Device/phd-00601900010E9234.F45EABA80832"
+		"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 	}
 }

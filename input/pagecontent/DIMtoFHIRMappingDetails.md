@@ -7,7 +7,7 @@ In this section the details of the mapping of the IEEE 11073-20601 Metric object
  - [FHIR’s Codeable Concepts]({{ output }}CodeableConcepts.html)
  - [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html)
  - [Obtaining the Unit code]({{ output }}ObtainUnitCode.html)
- - [ASN1 BITS Code System]({{ output }}ASN1BITsCodeSystem.html)
+ - [ASN1 BITS Code System]({{ output }}CodeSystem-ASN1ToHL7.html)
  - [The Observation Identifier]({{ output }}ObservationIdentifier.html)
  - [Generating the Reported Time Stamp Observation Identifier]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)
  

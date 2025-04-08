@@ -6,7 +6,7 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^short = "Reports measurements that are enumerated human-readable strings"
 * . ^definition = "The PhdStringEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Str attribute."

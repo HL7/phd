@@ -1,0 +1,7 @@
+The Coincident Time Stamp Observation Profile is used to compare the timelines of the PHD with the timeline of the PHG. The primary elements are the Observation.effectiveDateTime which has the time of the PHG at the moment of generation the observation and the Observation.valueDateTime or Observation.valueQuantity which has the corresponding time of the PHD. The valueDateTime is used when the PHD uses a time of day clock and the valueQuantity is used when the PHD uses a tick counter (relative time). The PHG reports its current time at the time it reads the current time of the PHD. For more details on the interpretation of the Coincident Time Stamp see the section [Coincident Time Stamp](CoincidentTimeStamp.html).
+
+A PHD Observation may reference a Coincident Time Stamp Observation if the measurement reported from the PHD contains a time stamp and is from the current timeline of the PHD. It will not reference a Coincident Time Stamp Observation if the measurement reported from the PHD contains no time stamp or is from an older timeline after which a time adjustment occurred.
+
+A Coincident Time Stamp Observation is created for every connection between PHG and PHD, so data duplication is not an issue. Therefore the identifier element of this resource is not used in this profile.
+
+If a PHD has its time clock altered during a connection, a new Coincident Time Stamp Observation is generated and all data sent after the adjustment will reference the new Coincident Time Stamp Observation. 

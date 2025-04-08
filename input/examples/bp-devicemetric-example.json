@@ -1,34 +1,38 @@
 {
-    "resourceType" : "DeviceMetric",
-    "id" : "bp-devicemetric-example",
-    "meta" : {
-      "profile" : ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"]
-    },
-    "type" : {
-      "coding" : [{
-        "system" : "urn:iso:std:iso:11073:10101",
-        "code" : "150020",
-        "display" : "MDC_PRESS_BLD_NONINV"
-      }],
-      "text" : "NBP"
-    },
-    "unit" : {
-      "coding" : [{
-        "system" : "urn:iso:std:iso:11073:10101",
-        "code" : "266016",
-        "display" : "MDC_DIM_MMHG"
-      }],
-      "text" : "mmHg"
-    },
-    "source" : {
-      "reference" : "Device/phd-711000FEFF5F49B0.B0495F001071"
-    },
-    "category" : "measurement",
-    "measurementPeriod" : {
-      "repeat" : {
-        "frequency" : 1,
-        "period" : 15,
-        "periodUnit" : "min"
+  "resourceType": "DeviceMetric",
+  "id": "bp-devicemetric-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "system": "urn:iso:std:iso:11073:10101",
+        "code": "150020",
+        "display": "MDC_PRESS_BLD_NONINV"
       }
+    ]
+  },
+  "unit": {
+    "coding": [
+      {
+        "system": "urn:iso:std:iso:11073:10101",
+        "code": "266016",
+        "display": "MDC_DIM_MMHG"
+      }
+    ]
+  },
+  "source": {
+    "reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
+  },
+  "category": "measurement",
+  "measurementPeriod": {
+    "repeat": {
+      "frequency": 1,
+      "period": 15,
+      "periodUnit": "min"
     }
   }
+}

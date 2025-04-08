@@ -21,17 +21,23 @@
 			"valueReference": {
 				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 			}
+		},
+		{
+			"url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+			"valueReference" : {
+			  "reference" : "Observation/coin-example-1"
+			}
 		}
 	],
 	"status": "final",
 	"code": {
 		"coding": [
 			{
-				"system": "urn:iso:std:iso:11073:10101",
+				"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ACMEIncPrivateMDCCodes",
 				"code": "8452096"
 			}
 		],
-		"text": "Private Attribute: Unknown Private Attribute"
+		"text": "Private MDC code: MDCX_GLU_TEST_STRIP_FAILURE_REASON"
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -40,10 +46,5 @@
 	"valueString": "Test Strip Buckled",
 	"device": {
 		"reference": "Device/phd-00601900010E9234.F45EABA80832"
-	},
-	"derivedFrom": [
-		{
-			"reference": "Observation/coin-example-1"
-		}
-	]
+	}
 }

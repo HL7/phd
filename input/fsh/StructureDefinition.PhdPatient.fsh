@@ -4,7 +4,7 @@ Id: PhdPatient
 Description: "The patient information reported from personal health gateways (PHG)"
 * ^meta.lastUpdated = "2017-10-16T05:10:41.036-04:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-08-04T06:04:53.838-04:00"
 * ^purpose = "All PHD related Observation resources reference a Patient resource containing a minimal set of information sufficient to identify the patient. However, it may require additional information to link the patient to a person that is only available to an authorized entity. In this manner, PHMI can be protected."
 * . ^comment = "Note that the only element that is required to be populated is the identifier which can be made opaque to a third party viewer. PCHA also supports a situation where the PHG can be provided a logical id to a Patient Resource out of band. In this case, the PHG never uploads a Patient Resource, but uses the provided logical id in the Observation resources instead. In this manner, not even the opaque identifiers are sent over the wire."

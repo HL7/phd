@@ -12,7 +12,8 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
-                        "code": "SYSID"
+                        "code": "SYSID",
+                        "display": "IEEE 11073 System Identifier"
                     }
                 ]
             },
@@ -24,7 +25,8 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
-                        "code": "BTMAC"
+                        "code": "BTMAC",
+                        "display": "Bluetooth MAC address"
                     }
                 ]
             },
@@ -39,10 +41,11 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "65573"
+                "code": "65573",
+                "display": "MDC_MOC_VMS_MDS_SIMP"
             }
         ],
-        "text": "MDC_MOC_VMS_MDS_SIMP"
+        "text": "Simple PHD"
     },
     "specialization": [
         {
@@ -50,10 +53,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "528388"
+                        "code": "528388",
+                        "display": "MDC_DEV_SPEC_PROFILE_PULS_OXIM"
                     }
                 ],
-                "text": "MDC_DEV_SPEC_PROFILE_PULS_OXIM: Pulse Oximeter"
+                "text": "Pulse Oximeter"
             },
             "version": "1"
         }
@@ -64,10 +68,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531976"
+                        "code": "531976",
+                        "display": "MDC_ID_PROD_SPEC_FW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
+                "text": "Firmware revision"
             },
             "value": "r2.1"
         },
@@ -76,10 +81,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531975"
+                        "code": "531975",
+                        "display": "MDC_ID_PROD_SPEC_SW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_SW: Software revision"
+                "text": "Software revision"
             },
             "value": "r1.5 9.7"
         },
@@ -88,10 +94,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "531974"
+                        "code": "531974",
+                        "display": "MDC_ID_PROD_SPEC_HW"
                     }
                 ],
-                "text": "MDC_ID_PROD_SPEC_HW: Hardware revision"
+                "text": "Hardware revision"
             },
             "value": "r1.0"
         },
@@ -100,10 +107,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "532352"
+                        "code": "532352",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_VERSION"
                     }
                 ],
-                "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+                "text": "Continua version"
             },
             "value": "6.0"
         }
@@ -114,17 +122,38 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "532353"
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+                "text": "Certified device list as transport-specialization combo"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                            "code": "32772"
+                            "code": "32772",
+                            "display": "Bluetooth LE Pulse Oximeter certified"
+                        }
+                    ]
+                },
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "code": "8196",
+                            "display": "PHDC USB Pulse Oximeter certified"
+                        }
+                    ]
+                },
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "code": "4",
+                            "display": "Pulse Oximeter certified"
+
                         }
                     ]
                 }
@@ -135,20 +164,20 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
-                        "code": "532354.0"
+                        "code": "532354.0",
+                        "display": "negated-regulation-status"
                     }
-                ],
-                "text": "regulation-status"
+                ]
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                            "code": "N"
+                            "code": "N",
+                            "display": "No"
                         }
-                    ],
-                    "text": "Device is Regulated"
+                    ]
                 }
             ]
         },
@@ -157,20 +186,21 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68220"
+                        "code": "68220",
+                        "display": "MDC_TIME_SYNC_PROTOCOL"
                     }
                 ],
-                "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+                "text": "Time synchronization protocol"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "urn:iso:std:iso:11073:10101",
-                            "code": "532224"
+                            "code": "532224",
+                            "display": "MDC_TIME_SYNC_NONE"
                         }
-                    ],
-                    "text": "MDC_TIME_SYNC_NONE:"
+                    ]
                 }
             ]
         }

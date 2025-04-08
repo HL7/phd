@@ -1,0 +1,73 @@
+{
+    "resourceType": "Observation",
+    "meta": {
+        "profile": [
+            "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
+            "valueReference": {
+                "reference": "Device/phg-ecde3d4e58532d31.000000000000"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference": {
+                "reference": "Observation/coin-20181119174911"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95",
+            "valueRange": {
+                "low": {
+                    "value": 98,
+                    "unit": "mg/dL",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg/dL"
+                },
+                "high": {
+                    "value": 100,
+                    "unit": "mg/dL",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg/dL"
+                }
+            }
+        }
+    ],
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+                    "code": "phd-observation"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "urn:iso:std:iso:11073:10101",
+                "code": "160368",
+                "display": "MDC_CONC_GLU_UNDETERMINED_PLASMA"
+            }
+        ],
+        "text": "Glucose measurement"
+    },
+    "subject": {
+        "reference": "Patient/patientExample-1"
+    },
+    "device": {
+        "reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
+    },
+    "effectiveDateTime": "2025-01-08T19:07:48-05:00",
+    "valueQuantity": {
+        "value": 99,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+    }
+}

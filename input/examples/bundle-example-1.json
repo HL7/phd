@@ -19,10 +19,10 @@
               "coding": [
                 {
                   "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "MR"
+                  "code": "MR",
+                  "display": "Medical record number"
                 }
-              ],
-              "text": "Medical record number"
+              ]
             },
             "system": "urn:oid:1.2.3.4.5.6.6.8.10",
             "value": "sisansarahId"
@@ -76,7 +76,7 @@
               "display": "MDC_MOC_VMS_MDS_AHD"
             }
           ],
-          "text": "MDC_MOC_VMS_MDS_AHD: Continua compliant Gateway"
+          "text": "Continua compliant Gateway"
         },
         "version": [
           {
@@ -84,10 +84,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532352"
+                  "code": "532352",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_VERSION"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+              "text": "Continua version"
             },
             "value": "6.0"
           }
@@ -98,17 +99,19 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532353"
+                  "code": "532353",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: Continua certified device list"
+              "text": "Continua certified device list"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                    "code": "4"
+                    "code": "4",
+                    "display": "Pulse Oximeter certified"
                   }
                 ]
               }
@@ -119,17 +122,19 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532355"
+                  "code": "532355",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: Continua certified Health&Fitness interfaces list"
+              "text": "Continua certified Health&Fitness interfaces list"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "0"
+                    "code": "0",
+                    "display": "observation-upload-soap"
                   }
                 ]
               },
@@ -137,7 +142,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "3"
+                    "code": "3",
+                    "display": "observation-upload-hdata"
                   }
                 ]
               },
@@ -145,7 +151,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "7"
+                    "code": "7",
+                    "display": "observation-upload-fhir"
                   }
                 ]
               },
@@ -153,7 +160,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "2"
+                    "code": "2",
+                    "display": "capabilities"
                   }
                 ]
               },
@@ -161,7 +169,8 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "6"
+                    "code": "6",
+                    "display": "aps"
                   }
                 ]
               }
@@ -173,7 +182,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
-                  "display": "regulation-status"
+                  "display": "negated-regulation-status"
                 }
               ]
             },
@@ -182,7 +191,8 @@
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
                 ],
                 "text": "Device is Unregulated"
@@ -194,20 +204,20 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68220"
+                  "code": "68220",
+                  "display": "MDC_TIME_SYNC_PROTOCOL"
                 }
-              ],
-              "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+              ]
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "urn:iso:std:iso:11073:10101",
-                    "code": "532226"
+                    "code": "532226",
+                    "display": "MDC_TIME_SYNC_NTPV4"
                   }
-                ],
-                "text": "MDC_TIME_SYNC_NTPV4: NTPV4 time synchronization"
+                ]
               }
             ]
           },
@@ -216,10 +226,10 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68221"
+                  "code": "68221",
+                  "display": "MDC_TIME_SYNC_ACCURACY"
                 }
-              ],
-              "text": "MDC_TIME_SYNC_ACCURACY: unknown code 68221"
+              ]
             },
             "valueQuantity": [
               {
@@ -292,7 +302,7 @@
               "display": "MDC_MOC_VMS_MDS_SIMP"
             }
           ],
-          "text": "MDC_MOC_VMS_MDS_SIMP: Personal Health Device"
+          "text": "Personal Health Device"
         },
         "specialization": [
           {
@@ -300,10 +310,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "528388"
+                  "code": "528388",
+                  "display": "MDC_DEV_SPEC_PROFILE_PULS_OXIM"
                 }
               ],
-              "text": "MDC_DEV_SPEC_PROFILE_PULS_OXIM: Pulse Oximeter"
+              "text": "Pulse Oximeter"
             },
             "version": "1"
           }
@@ -314,10 +325,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "531976"
+                  "code": "531976",
+                  "display": "MDC_ID_PROD_SPEC_FW"
                 }
               ],
-              "text": "MDC_ID_PROD_SPEC_FW: Firmware revision"
+              "text": "Firmware revision"
             },
             "value": "0.9C"
           },
@@ -326,10 +338,11 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532352"
+                  "code": "532352",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_VERSION"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+              "text": "Continua version"
             },
             "value": "1.0"
           }
@@ -340,17 +353,19 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "532353"
+                  "code": "532353",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                 }
               ],
-              "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: Continua certified device list"
+              "text": "Continua certified device list"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
-                    "code": "4"
+                    "code": "4",
+                    "display": "Pulse Oximeter certified"
                   }
                 ]
               }
@@ -362,7 +377,7 @@
                 {
                   "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
-                  "display": "regulation-status"
+                  "display": "negated-regulation-status"
                 }
               ]
             },
@@ -383,20 +398,22 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68220"
+                  "code": "68220",
+                  "display": "MDC_TIME_SYNC_PROTOCOL"
                 }
               ],
-              "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+              "text": "Time synchronization protocol"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "urn:iso:std:iso:11073:10101",
-                    "code": "532224"
+                    "code": "532224",
+                    "display": "MDC_TIME_SYNC_NONE"
                   }
                 ],
-                "text": "MDC_TIME_SYNC_NONE: No time synchronization"
+                "text": "No time synchronization"
               }
             ]
           },
@@ -408,17 +425,18 @@
                   "code": "68219.0",
                   "display": "mds-time-capab-real-time-clock"
                 }
-              ]
+              ],
+              "text": "real time clock supported"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
-                ],
-                "text": "real time clock supported"
+                ]
               }
             ]
           },
@@ -430,17 +448,18 @@
                   "code": "68219.1",
                   "display": "mds-time-capab-set-clock"
                 }
-              ]
+              ],
+              "text": "setting the time supported"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
-                ],
-                "text": "setting the time supported"
+                ]
               }
             ]
           },
@@ -452,17 +471,18 @@
                   "code": "68219.2",
                   "display": "mds-time-capab-relative-time"
                 }
-              ]
+              ],
+              "text": "relative time supported"
             },
             "valueCode": [
               {
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y"
+                    "code": "Y",
+                    "display": "yes"
                   }
-                ],
-                "text": "relative time supported"
+                ]
               }
             ]
           },
@@ -471,16 +491,18 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68222"
+                  "code": "68222",
+                  "display": "MDC_TIME_RES_ABS"
                 }
               ],
-              "text": "MDC_TIME_RES_ABS: Resolution of absolute time clock"
+              "text": "Resolution of absolute time clock"
             },
             "valueQuantity": [
               {
                 "value": 1000000,
                 "system": "http://unitsofmeasure.org",
-                "code": "us"
+                "code": "us",
+                "unit": "us"
               }
             ]
           },
@@ -489,16 +511,18 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68223"
+                  "code": "68223",
+                  "display": "MDC_TIME_RES_REL"
                 }
               ],
-              "text": "MDC_TIME_RES_REL: Resolution of relative time clock"
+              "text": "Resolution of relative time clock"
             },
             "valueQuantity": [
               {
                 "value": 10000,
                 "system": "http://unitsofmeasure.org",
-                "code": "us"
+                "code": "us",
+                "unit": "us"
               }
             ]
           }
@@ -519,24 +543,17 @@
             "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
           ]
         },
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-            "valueReference": {
-              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
-            }
-          }
-        ],
         "id": "cts-001",
         "status": "final",
         "code": {
           "coding": [
             {
               "system": "urn:iso:std:iso:11073:10101",
-              "code": "67975"
+              "code": "67975",
+              "display": "MDC_ATTR_TIME_ABS"
             }
           ],
-          "text": "MDC_ATTR_TIME_ABS: Uses Absolute time clock"
+          "text": "Uses Absolute time clock"
         },
         "subject": {
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
@@ -544,7 +561,7 @@
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
         "valueDateTime": "2019-09-20T12:40:09.000-04:00",
         "device": {
-          "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
+          "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
         }
       },
       "request": {
@@ -569,9 +586,9 @@
             }
           },
           {
-            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
-            "valueReference" : {
-              "reference" : "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference": {
+              "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
             }
           }
         ],
@@ -600,14 +617,15 @@
           "coding": [
             {
               "system": "urn:iso:std:iso:11073:10101",
-              "code": "150456"
+              "code": "150456",
+              "display": "MDC_PULS_OXIM_SAT_O2"
             },
             {
               "system": "http://loinc.org",
-              "code": "2708-6"
+              "code": "2708-6",
+              "display": "Oxygen saturation in Arterial blood"
             }
-          ],
-          "text": "MDC_PULS_OXIM_SAT_O2: Blood 0₂"
+          ]
         },
         "subject": {
           "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
@@ -615,7 +633,7 @@
         "effectiveDateTime": "2019-09-20T12:40:16.936-04:00",
         "valueQuantity": {
           "value": 98,
-          "unit": "Superfluous mandatory field!",
+          "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
         },
@@ -628,19 +646,21 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68193"
+                  "code": "68193",
+                  "display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
                 }
               ],
-              "text": "MDC_ATTR_SUPPLEMENTAL_TYPES: Supplemental information"
+              "text": "Supplemental information"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "150588"
+                  "code": "150588",
+                  "display": "MDC_MODALITY_SPOT"
                 }
               ],
-              "text": "MDC_MODALITY_SPOT: Stable mean"
+              "text": "Stable mean"
             }
           }
         ]
@@ -667,9 +687,9 @@
             }
           },
           {
-            "url" : "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
-            "valueReference" : {
-              "reference" : "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
+            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference",
+            "valueReference": {
+              "reference": "urn:uuid:323f0631-6bca-47aa-8adf-69fdaf910108"
             }
           }
         ],
@@ -688,8 +708,7 @@
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "vital-signs",
-                "display": "Vital Signs"
+                "code": "vital-signs"
               }
             ]
           }
@@ -698,14 +717,15 @@
           "coding": [
             {
               "system": "urn:iso:std:iso:11073:10101",
-              "code": "149530"
+              "code": "149530",
+              "display": "MDC_PULS_OXIM_PULS_RATE"
             },
             {
               "system": "http://loinc.org",
-              "code": "8867-4"
+              "code": "8867-4",
+              "display": "Heart rate"
             }
-          ],
-          "text": "MDC_PULS_OXIM_PULS_RATE: Pulse rate"
+          ]
         },
         "subject": {
           "reference": "urn:uuid:5b7842fe-978d-4182-a41f-0d07a8617bc2"
@@ -726,19 +746,21 @@
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68193"
+                  "code": "68193",
+                  "display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
                 }
               ],
-              "text": "MDC_ATTR_SUPPLEMENTAL_TYPES: Supplemental information"
+              "text": "Supplemental information"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
-                  "code": "150588"
+                  "code": "150588",
+                  "display": "MDC_MODALITY_SPOT"
                 }
               ],
-              "text": "MDC_MODALITY_SPOT: Stable mean"
+              "text": "Stable mean"
             }
           }
         ]

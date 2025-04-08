@@ -1,0 +1,72 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "name": "ACMEIncPrivateMDCCodes",
+  "id": "ACMEIncPrivateMDCCodes",
+  "title": "ACME Inc Private MDC Codes",
+  "description": "An example CodeSystem that defines two private codes for an imaginary company in the MDC CodeSystem.",
+  "version": "1.0.0",
+  "url": "http://hl7.org/fhir/uv/phd/CodeSystem/ACMEIncPrivateMDCCodes",
+  "caseSensitive": false,
+  "experimental": false,
+  "content": "complete",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:1.2.3.4.5.6.7.8.9.10"
+    }
+  ],
+  "property": [
+    {
+      "code": "partition",
+      "description": "The first 16 bits of the code: [context-free] Nomenclature Code == (Partition number * 2**16) + [contextsensitive] Term Code.",
+      "type": "code",
+      "uri": "http://hl7.org/fhir/concept-properties#parent"
+    }
+  ],
+  "concept": [
+    {
+      "code": "128",
+      "display": "partition 128",
+      "definition": "partition 128 (0x0080) is reserved for PHD disease management, with private codes in the range 0x0080F000-0x0080FFFF."
+    },
+    {
+      "code": "1024",
+      "display": "partition 1024",
+      "definition": "partition 1024 (0x0400) is reserved for private codes."
+    },
+    {
+      "code": "8452096",
+      "display": "MDCX_GLU_TEST_STRIP_FAILURE_REASON",
+      "definition": "This is an example of a private code for an observation that reports the failure reason of a test strip.",
+      "property": [
+        {
+          "code": "partition",
+          "valueCode": "128"
+        }
+      ]
+    },
+    {
+      "code": "8452097",
+      "display": "MDCX_GLU_COMPOUND_MEASUREMENT",
+      "definition": "This is an example of a private code for a compound observation that reports glucose and context information together.",
+      "property": [
+        {
+          "code": "partition",
+          "valueCode": "128"
+        }
+      ]
+    },
+    {
+      "code": "67113524",
+      "display": "MDCX_ANOTHER_PRIVATE_CODE",
+      "definition": "This is another private code added to the CodeSystem.",
+      "property": [
+        {
+          "code": "partition",
+          "valueCode": "1024"
+        }
+      ]
+    }
+  ]
+}

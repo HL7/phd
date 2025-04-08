@@ -48,10 +48,11 @@
         "coding": [
             {
                 "system": "urn:iso:std:iso:11073:10101",
-                "code": "531981"
+                "code": "531981",
+                "display": "MDC_MOC_VMS_MDS_AHD"
             }
         ],
-        "text": "MDC_MOC_VMS_MDS_AHD"
+        "text": "Continua compliant Gateway"
     },
     "version": [
         {
@@ -59,10 +60,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "532352"
+                        "code": "532352",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_VERSION"
                     }
                 ],
-                "text": "MDC_REG_CERT_DATA_CONTINUA_VERSION: Continua version"
+                "text": "Continua version"
             },
             "value": "5.0"
         }
@@ -73,20 +75,22 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "68220"
+                        "code": "68220",
+                        "display": "MDC_TIME_SYNC_PROTOCOL"
                     }
                 ],
-                "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
+                "text": "Time synchronization protocol"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
                             "system": "urn:iso:std:iso:11073:10101",
-                            "code": "532226"
+                            "code": "532226",
+                            "display": "MDC_TIME_SYNC_NTPV4"
                         }
                     ],
-                    "text": "MDC_TIME_SYNC_NTPV4:"
+                    "text": "NTPV4"
                 }
             ]
         },
@@ -95,10 +99,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "532353"
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST: certified device list as transport-specialization combo"
+                "text": "Certified device list as transport-specialization combo"
             },
             "valueCode": [
                 {
@@ -116,10 +121,11 @@
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
-                        "code": "532355"
+                        "code": "532355",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
                     }
                 ],
-                "text": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST: certified Upload classes"
+                "text": "Certified Upload classes"
             },
             "valueCode": [
                 {

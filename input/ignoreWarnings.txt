@@ -5,26 +5,39 @@
 # Example observation in this IG are suppossed to be device generated with often an unknown performer. There is text in the IG to explain this. The affected example observations / bundles are: bits-observation.json, bundle-continuousnonin.json, bundle-example-1.json, coin-20181119174911.json, coin-20181119202022.json, coin-example-1.json, coin-example-timefault.json, glucose-1.0.0.4.json, numeric-observation-not-a-number.json, numeric-spotnumeric.json, stringenum-1234.json
 Best Practice Recommendation: In general, all observations should have a performer
 
-# This is a recent code for a spirometer device type. Created a pull request on the codes in https://github.com/FHIR/packages/pulls
-The code '528413' is not valid in the system urn:iso:std:iso:11073:10101 (Unknown code '528413' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26')
-
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
 The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
 # These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# When a vital signs observation has a derivedFrom reference to a timestamp observation this is also checked against vital signs, leading to these warnings. 
+# When a vital signs observation is also checked against the vital signs profile these warnings are generated. These are no real problems.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bodytemp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# When a Phd compound observation is also a vital sign this warning is generated, but this is not a real problem.
+This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd-observations:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
 
-# This warning is generated for a bundle of observations. Looks like a publisher bug.
-The html source has duplicate anchor Ids: Observation_null
+# With FHIR R4 there is no supported way to indicate the valueset for a property
+The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
-# This error is generated on an example of an observation using a private code. This should be fine.
-Unknown code '8452096' in the CodeSystem 'urn:iso:std:iso:11073:10101' version '2023-04-26' 
+# This is caused by the use of String as a required value for a data element. This warning generation is out of our control and can be ignored.
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
+
+# This is generated for all observations that use the vital signs category. This warning can be ignored safely.
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# This informational message is out of our control.
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+
+# This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
+Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well.' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
+
+# Reference to external draft code system...
+Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0

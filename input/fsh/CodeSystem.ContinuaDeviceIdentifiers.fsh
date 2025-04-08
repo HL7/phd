@@ -5,13 +5,12 @@ Description: "Codes used to describe the Device (PHD or PHG) Identifiers, such a
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"
 * ^version = "current"
-* ^status = #active
+// * ^status = #draft
 * ^experimental = false
 * ^version = "0.3.0"
-* ^status = #active
 * ^experimental = false
 * ^date = "2018-11-25"
-* ^publisher = "Health Level Seven International (Health Care Devices Work Group)"
+* ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^content = #complete

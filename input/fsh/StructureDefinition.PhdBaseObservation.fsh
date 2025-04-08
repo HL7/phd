@@ -1,5 +1,6 @@
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
+Alias: $MDCValueSet = http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet
 
 Profile: PhdBaseObservation
 Parent: Observation
@@ -7,9 +8,9 @@ Id: PhdBaseObservation
 Description: "Common base profile with the elements that are common to the PHD IG Observation profiles."
 * ^meta.lastUpdated = "2017-12-14T04:17:26.671-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-11-24T15:17:35.385-05:00"
-* . ^comment = "This profile defines a base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
+* . ^comment = "This profile is the base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
 * meta 1..
   * security ^slicing.discriminator[0].type = #value
     * ^slicing.discriminator[=].path = "system"
@@ -22,7 +23,10 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://terminology.hl7.org/CodeSystem/v3-ActReason" (exactly)
     * code 1..
     * code = #HTEST (exactly)
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice named GatewayDevice 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice|4.0.1 named GatewayDevice 1..1
+* extension[GatewayDevice].value[x] only Reference(PhgDevice)
+  * ^short = "Reference to the PHG Device"
+  * ^definition = "Reference to the PHG Device that received the measurement from the PHD."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference named CoincidentTimeStamp 0..1
 * ^abstract = true
 * category ..* 
@@ -54,35 +58,16 @@ Description: "Common base profile with the elements that are common to the PHD I
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
   * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
-  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observation from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
+  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observations from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
   * ^requirements = "Allows observations to be distinguished in a selective enough manner to prevent resource duplication."
   * type ..0
   * system ..0
   * value 1..
 * status ^definition = "The status of the result value. Either 'final' or 'preliminary'"
-  * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute or Nu-Observed-Value attribute status field indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
-* code
-  * coding ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "system"
-    * ^slicing.rules = #open
-  * coding contains
-      MDCType 1..1 and
-      LoincCoding 0..1
-  * coding[MDCType] ^short = "The 11073-10101 MDC code for the measurement"
-    * ^definition = "This MDC code expresses what the measurement is."
-    * ^comment = "The value for the code can be obtained from the IEEE 11073-10206 Observation.type attribute."
-    * system 1..
-    * system = "urn:iso:std:iso:11073:10101" (exactly)
-    * code 1..
-      * ^comment = "Required for all measurements"
-  * coding[LoincCoding] ^short = "The LOINC code for the measurement"
-    * ^definition = "This LOINC code expresses what the measurement is"
-    * ^comment = "If the observation is one of the FHIR-defined vital signs observation, the equivalent LOINC code for that vital sign as specified by FHIR appears here."
-    * system 1..
-    * system = "http://loinc.org" (exactly)
-    * code 1..
-      * ^comment = "Required if the measurement is a vital sign"
-  * text ^short = "It is recommended to display at least the reference identifier for the MDC code"
+  * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
+* code from $MDCValueSet (extensible)
+* code obeys mdc-1
+
 * subject 1..
   * reference 1..
 * effective[x] 1..
@@ -98,13 +83,12 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" (exactly)
     * code 1..
 * device 1..
+* device only Reference(PhdDevice)
   * ^comment = "This field will reference the PHD Device."
-  * reference 1..
+  * reference 1..1
     * ^short = "Reference to the device responsible for the measurement"
     * ^definition = "Reference to the device-related resources that describe the sensor device taking the measurement. This element will point to a Device resource following the Phd Device Profile."
     * ^comment = "This reference points to the Device resource containing information about the sensor device that took the measurement."
-//* derivedFrom[Observation] ^short = "Reference to the Coincident Time Stamp Observation and/or Source-Handle-Reference Observation"
-//  * ^comment = "When the PHD reports a time stamp a reference to the Coincident Time Stamp Observation is placed here. When the PHD reports a Source-Handle-Reference/-List attribute the Observation(s) pointed to by that Source-Handle-Reference/-List is (are) placed here. One may end up with several Observation.derivedFrom elements."
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open
@@ -142,13 +126,27 @@ Description: "Common base profile with the elements that are common to the PHD I
         * ^definition = "For the given Supplemental-Types entry the code here is given by: partition * 2**16 + term code"
   * dataAbsentReason ..0
 * dataAbsentReason ^short = "This element is populated when the Measurement Status indicates invalid, not available or measurement-ongoing."
-* dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.value[x]] is missing."
-* dataAbsentReason ^comment = "Only the Measurement-Status/status flags indicating invalid, not unavailable, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element."
-* dataAbsentReason.coding ^slicing.discriminator.type = #value
-* dataAbsentReason.coding ^slicing.discriminator.path = "system"
-* dataAbsentReason.coding ^slicing.rules = #open
-* dataAbsentReason.coding contains FhirDefault 1..1
-* dataAbsentReason.coding[FhirDefault].system 1..
-* dataAbsentReason.coding[FhirDefault].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-* dataAbsentReason.coding[FhirDefault].code 1..
+* dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.value[x] is missing."
+* dataAbsentReason ^comment = "The Measurement-Status/status flags indicating invalid, not available, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element. Also populated when a numeric value is in error."
+* dataAbsentReason.coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
 
+Invariant: mdc-1
+Description: "A published MDC Code is preferred but private MDC codes are allowed as well."
+* severity = #warning
+* expression = "coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists()"
+* xpath = "@value|f:*|h:div"
+
+Mapping: IEEE-11073-10206-PhdBaseObservation
+Id: IEEE-11073-10206-PhdBaseObservation
+Title: "IEEE-11073-10206 ACOM to FHIR"
+Source: PhdBaseObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* code.coding.code -> "Observation.type"
+* effectiveDateTime -> "Observation.time-stamp"
+* effectivePeriod.start -> "Observation.time-stamp"
+* effectivePeriod.end -> "Observation.time-stamp + Observation.measurement-duration" 
+* dataAbsentReason -> "Observation.measurement-status"
+* status -> "Observation.measurement-status"
+* interpretation -> "Observation.measurement-status"
+* meta.security -> "Observation.measurement-status"

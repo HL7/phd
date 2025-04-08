@@ -8,9 +8,9 @@ Description: "StructureDefinition for Observation Resources representing measure
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
-* . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Bit-Str or Enum-Observed-Value-Basic-Bit-Str attribute."
+* . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a bitstring attribute."
   * ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073-10101 BITs value. This measurement is a complex representation where each bit means something. In many cases only certain bits are defined and it is generally true that the significant case is when the bit has been set. Given that measurement could result in up to 32 component entries (one for each bit) only set bits are required to be reported. Some specializations have used this measurement type when they should have used IEEE 11073-10101 codes."
 * value[x] ..0
 * component contains bitsComponent 0..*
@@ -29,22 +29,29 @@ Description: "StructureDefinition for Observation Resources representing measure
   * dataAbsentReason ^short = "For the optional reporting of unsupported bits"
     * ^definition = "Provides a reason why the expected value in the element Observation.component.value[x] is missing. In this profile for this component that happens if the PHD does not support this bit and the uploader wishes to report that situation."
     * coding ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "system"
+      * ^slicing.discriminator.path = "code"
       * ^slicing.rules = #open
     * coding contains FhirDefault 1..1
-    * coding[FhirDefault] ^short = "FHIR default code system for reporting 'unsupported'"
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" (exactly)
-      * code 1..
+    * coding[FhirDefault] ^short = "FHIR default code for reporting 'unsupported'"
+      * code from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
       * code = #unsupported (exactly)
-* valueCodeableConcept
-  * coding ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "system"
-    * ^slicing.ordered = true
-    * ^slicing.rules = #open
-  * coding contains v2BinaryValue 1..1
-  * coding[v2BinaryValue]
-    * system 1..
-    * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
-    * code 1..
-      * ^definition = "If the bit is set this code is 'Y' and 'N' if the bit is cleared. If an 'event' bit only the set case needs to be reported. If the bit is unsupported, the dataAbsentReason code \"unsupported' is used. Unsupported bits are optional to report. If a state bit is supported both states shall be reported."
+  * valueCodeableConcept
+    * coding ^slicing.discriminator.type = #value
+      * ^slicing.discriminator.path = "code"
+      * ^slicing.ordered = true
+      * ^slicing.rules = #open
+    * coding contains v2BinaryValue 1..1
+    * coding[v2BinaryValue]
+      * code from http://terminology.hl7.org/ValueSet/v2-0136|2.0.0 (required)
+      * code 1..
+        * ^definition = "If the bit is set this code is 'Y' and 'N' if the bit is cleared. If an 'event' bit only the set case needs to be reported. If the bit is unsupported, the dataAbsentReason code \"unsupported' is used. Unsupported bits are optional to report. If a state bit is supported both states shall be reported."
+
+Mapping: IEEE-11073-10206-PhdBitsEnumerationObservation
+Id: IEEE-11073-10206-PhdBitsEnumerationObservation
+Title: "IEEE-11073-10206 ACOM to FHIR"
+Source: PhdBitsEnumerationObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* component.code.coding -> "Observation.type + '.' + MDER bit number"
+* component.valueCodeableConcept -> "Y or N depending on the bit value in Observation.state[bit number]"
+ 

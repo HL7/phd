@@ -8,7 +8,7 @@ Id: PhgDevice
 Description: "Base StructureDefinition for the Device Resource for a PHG"
 * ^meta.lastUpdated = "2017-10-16T05:10:49.894-04:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
 * ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any 11073 Objects or attributes though it is required to have an IEEE EUI-64 system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it has an MDS with attributes. For PCHA, the quantities that are required to be reported is the EUI-64 system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), the regulation status, and the PCHA certified interfaces."
 * . ^definition = "The characteristics, operational status and capabilities of the PHG."

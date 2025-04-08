@@ -30,7 +30,7 @@
 	],
 	"identifier": [
 		{
-			"value": "74E8FFFEFF051C00-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-149530-20181113175902.00-48.0-2720-150588"
+			"value": "74E8FFFEFF051C00-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-149530-20181113175902.00-150588"
 		}
 	],
 	"status": "final",
@@ -57,14 +57,14 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "149530"
-			},
+				"code": "149530",
+				"display": "MDC_PULS_OXIM_PULS_RATE"			},
 			{
 				"system": "http://loinc.org",
-				"code": "8867-4"
+				"code": "8867-4",
+				"display": "Heart rate"
 			}
-		],
-		"text": "MDC_PULS_OXIM_PULS_RATE"
+		]
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -90,37 +90,21 @@
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "68193"
+						"code": "68193",
+						"display": "MDC_ATTR_SUPPLEMENTAL_TYPES"
 					}
-				],
-				"text": "MDC_ATTR_SUPPLEMENTAL_TYPES"
+				]
 			},
 			"valueCodeableConcept": {
 				"coding": [
 					{
 						"system": "urn:iso:std:iso:11073:10101",
-						"code": "150588"
+						"code": "150588",
+						"display": "MDC_MODALITY_SPOT"
 					}
-				],
-				"text": "MDC_MODALITY_SPOT"
+				]
 			}
-		},
-        {
-            "code": {
-                "coding": [
-                    {
-                        "system": "urn:iso:std:iso:11073:10101",
-                        "code": "67914"
-                    }
-                ],
-                "text": "MDC_ATTR_NU_ACCUR_MSMT: Measurement accuracy"
-            },
-            "valueQuantity": {
-                "value": 0.1,
-                "system": "http://unitsofmeasure.org",
-                "code": "/min"
-            }
-        }
+		}
     ]
 }
 

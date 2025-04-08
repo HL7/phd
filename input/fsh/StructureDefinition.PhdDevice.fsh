@@ -8,7 +8,7 @@ Id: PhdDevice
 Description: "Base StructureDefinition for the Device Resource for a PHD"
 * ^meta.lastUpdated = "2017-10-16T05:03:37.38-04:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
-* ^status = #draft
+// * ^status = #draft
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
 * ^purpose = "This resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
 * . ^definition = "The characteristics, operational status and capabilities of a medical-related component of a medical device. A PHD is JUST the medical-related component."

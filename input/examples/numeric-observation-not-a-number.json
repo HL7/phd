@@ -29,10 +29,10 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "150320"
+				"code": "150320",
+				"display": "MDC_SAT_O2_QUAL"
 			}
-		],
-		"text": "MDC_SAT_O2_QUAL: Pulsatile quality"
+		]
 	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
@@ -42,10 +42,10 @@
 		"coding": [
 			{
 				"system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-				"code": "not-a-number"
+				"code": "not-a-number",
+				"display": "Not a Number (NaN)"
 			}
-		],
-		"text": "not-a-number (Not a number)"
+		]
 	},
 	"device": {
 		"reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
