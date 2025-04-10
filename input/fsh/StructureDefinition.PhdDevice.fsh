@@ -92,31 +92,26 @@ Description: "Base StructureDefinition for the Device Resource for a PHD"
   * coding contains MDCType 1..1
   * coding[MDCType] ^short = "Required MDC code system entry"
     * ^definition = "The IEEE 11073-10101 code for the PHD simple MDS."
-    * system 1..
     * system = "urn:iso:std:iso:11073:10101" (exactly)
       * ^short = "Identifies IEEE 11073-10101 coding system"
       * ^definition = "This value identifies the IEEE 11073-10101 coding system"
-    * code 1..
     * code = #65573 (exactly)
       * ^short = "Indicates PHD"
       * ^definition = "The code for a Simple MDS indicating that this unit is a personal health device"
-  * text ^definition = "A human readable display describing the meaning of the MDC code."
-    * ^comment = "It is suggested that this element contain the reference identfier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'."
+    * ^comment = "It is suggested that the display element contains the reference identfier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'."
 * specialization 1..
+* specialization ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "systemType.coding"
+  * ^slicing.rules = #open
+* specialization contains MDCType 1..
+* specialization[MDCType] ^short = "The specialization(s) of the PHD"
+  * ^definition = "The specialization(s) of the PHD. This element contains an entry for each supported specialization."
   * ^short = "This element contains an entry for each supported specialization"
   * ^comment = "There shall be a specialization entry for each specialization reported in the required System-Type-Spec-List attribute. A specialization in this case defines not only what type of measurements the PHD reports but that the PHD reports these measurements according to one of the 11073-114xx specialization standards. Most PHDs support only a single specialization such as the Blood Pressure or Pulse Oximeter specialization."
   * systemType ^short = "The specialization standard supported by the PHD."
-    * ^comment = "The specialization.specType comes from the System-Type-Spec-List specialization entry 'type'. "
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MDCType 1..1
-    * coding[MDCType] ^short = "Required MDC code system entry for specializations"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-        * ^short = "The 11073-10101 system identifier"
-      * code 1..
-        * ^short = "The 11073-10101 specialization code from a System-Type-Spec-List[i].type."
+    * ^comment = "The 11073-10101 specialization code from a System-Type-Spec-List[i].type."
+    * coding 1..
+    * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
   * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
     * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-10206 standard, the version is the 10206 protocol version."
@@ -128,7 +123,6 @@ Description: "Base StructureDefinition for the Device Resource for a PHD"
       * ^slicing.rules = #open
     * coding contains MDCType 1..1
     * coding[MDCType] ^short = "Required MDC code system entry"
-      * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
         * ^short = "Indicates the codes come from the MDC coding system"
       * code 1..
