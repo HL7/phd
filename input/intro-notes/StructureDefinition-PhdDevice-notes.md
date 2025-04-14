@@ -42,7 +42,7 @@ The Device.type shall be encoded as follows:
 The display element is optional but highly recommended.
 
 ### System Type Spec List
-The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. The specialization is reported as a 16-bit MDC term code with an assumed partition of INFRA (8) and the version is an integer. In most cases there is just one entry in the list.
+The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
 
 For each entry in the System-Type-Spec-List a specializations entry is encoded as follows: 
 
