@@ -11,6 +11,5 @@ Description: "StructureDefinition for Observation Resources representing measure
 * . ^short = "Reports measurements that are enumerated human-readable strings"
 * . ^definition = "The PhdStringEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Str attribute."
 * . ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an arbitrary text string. An example would be the program name of an exercise option on a piece of cardio equipment. These strings are not generically processable by machine and only for human consumption."
-* value[x] 1..
 * value[x] only string
 * value[x] ^short = "Human readable text string"

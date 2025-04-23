@@ -1,7 +1,7 @@
 Profile: PhdRtsaObservation
 Parent: PhdBaseObservation
 Id: PhdRtsaObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is a waveform."
+Description: "StructureDefinition for measurement data coming from a PHD where the measurement is a sample array."
 * ^meta.lastUpdated = "2017-12-14T07:44:36.955-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
@@ -33,10 +33,14 @@ Description: "StructureDefinition for Observation Resources representing measure
   * data ^definition = "A series of data points which are decimal values separated by a single space (character u20). The special values \"E\" (error), \"L\" (below detection limit) and \"U\" (above detection limit) are not used. The device does not provide such individual values. "
     * ^comment = "One is strongly encouraged to use the scaling from the 11073 device as it is likely the scaling was chosen to optimize transmission. If\r\nA = Scale-and-Range-SpecificationX.lower-absolute-value as an Mder FLOAT\r\nB = Scale-and-Range-SpecificationX.upper-absolute-value as an Mder FLOAT\r\nI = Scale-and-Range-SpecificationX.lower-scaled-value as a X-bit integer\r\nJ = Scale-and-Range-SpecificationX.upper-scaled-value as a X-bit integer\r\n\r\nvalueSampledData.factor is given by (A-B)/(I-J)\r\nand\r\nvalueSampledData.origin.value = A – (A-B)*I/(I-J)\r\nand \r\nvalueSampledData.data[i] = Sa-Simple-Observed-Value.values[i]"
 * referenceRange ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "low.system"
+  * ^slicing.discriminator.path = "type"
   * ^slicing.rules = #open
 * referenceRange contains scaleAndReferenceRange 0..1
 * referenceRange[scaleAndReferenceRange] ^short = "Provides the scale factors as sent by the PHD device"
+  * type = PhdReferenceRangeMeaning#min-max
+    * ^short = "The min-max reference range meaning code"
+    * ^definition = "The min-max reference range meaning code."
+    * ^comment = "This is the code that indicates the meaning of the reference range. The value is always 'min-max'."
   * low 1..
     * ^definition = "The Scale-and-Range-SpecificationX.lower-absolute-value from the RTSA metric where X is one of 8, 16, or 32."
     * value 1..
@@ -53,6 +57,6 @@ Description: "StructureDefinition for Observation Resources representing measure
       * ^comment = "The implicit precision in the value should always be honored. The precision is given by the Mder FLOAT."
     * system 1..
     * system = "http://unitsofmeasure.org" (exactly)
-      * ^definition = "This value identifies theUCUM coding system"
+      * ^definition = "This value identifies the UCUM coding system"
     * code 1..
       * ^definition = "This unit code shall be the same as reported in the valueSampledData"

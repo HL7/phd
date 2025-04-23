@@ -1,7 +1,7 @@
 ValueSet: DeviceTypes11073MDC
 Id: DeviceTypes11073MDC
 Title: "Device Type Specialization IEEE 11073-10101 Nomenclature Codes"
-Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Device specialization types such as blood pressure, pulse oximeter, thermometer, ecg, etc.. Nomenclature codes are 32-bit numbers where the upper 16 bits represent the partition and the lower 16 bits represent the term code. Most of the codes included in this value set are from partition infra which has value 8. THe 32-bit code for the pulse oximeter, which has term code 4100 in partition infra, is given by 524288 + 4100 = 528388. This value set will grow as new specializations are defined. The display value consists of the nomenclature code's reference identifier. Devices exchange the numerical codes in the IEEE 11073 communication standards, not reference identifiers, but the reference identifiers are often used where human readability are more important than efficiency or bandwidth. However, only the numerical codes are guaranteed to be unique."
+Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature Codes for Device Specialization types"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC"
 * ^version = "current"

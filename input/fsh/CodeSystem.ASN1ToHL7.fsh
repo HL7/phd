@@ -10,29 +10,29 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-* ^hierarchyMeaning = #grouped-by
+// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^property[0].code = #eventOrState
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#eventOrState"
-* ^property[=].description = "Indicates that the code type is an event or state"
+* ^property[=].description = "The code type is an event or state"
 * ^property[=].type = #code
 // * ^property[=].extension = http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset - not supported in R4
 // * ^property[=].extension.value = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1EventOrState" - not supported in R4
 * ^property[+].code = #source
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#source"
-* ^property[=].description = "Indicates that the code originates from a measurement or an attribute that further describes a measurement or the sensor device."
+* ^property[=].description = "The code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #code
 * ^property[+].code = #MDCCode
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#MDCCode"
 * ^property[=].description = "The decimal code for the MDC code of the bits observation"
 * ^property[=].type = #Coding
 // values for properties are defined here for FHIR R4, although that is not the best way to do it
-* #source "Source" "Indicates the source of the bit"
-* #eventOrState "Event or State" "Indicates whether the bit represents an event or a state"
-* #device "Attribute" "Indicates that the bit represents a device attribute"
-* #measurement "Measurement" "Indicates that the bit represents a measurement attribute"
-* #event "Event" "Indicates that the bit represents an event"
-* #state "State" "Indicates that the bit represents a state"
+* #source "Source" "The source of the bit"
+* #eventOrState "Event or State" "Whether the bit represents an event or a state"
+* #device "Attribute" "The bit represents a device attribute"
+* #measurement "Measurement" "The bit represents a measurement attribute"
+* #event "Event" "The bit represents an event"
+* #state "State" "The bit represents a state"
 // MDC codes are refereced using a property of type Coding 
 // * #67925 "MDC_ATTR_POWER_STAT" "MDS Power Status Attributes"
 // * #532354 "MDC_REG_CERT_DATA_CONTINUA_REG_STATUS" "MDS Regulation Status from the Reg-Cert-Data-List Attribute"
@@ -47,49 +47,49 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
 // * #8418060 "MDC_CGM_DEV_STAT" "Continuous Glucose Monitor Device and Sensor status"
 // * #8418512 "MDC_BATTERY_STATUS" "Battery Status"
 // * #8410608 "MDC_BLOOD_PRESSURE_MEASUREMENT_STATUS" "Blood Pressure Measurement Status"
-* #67925.0 "onMains" "Indicates whether the PHD is on or off mains power"
+* #67925.0 "onMains" "The device is on mains power"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
-* #67925.1 "onBattery" "Indicates whether the PHD is on or off Battery power"
+* #67925.1 "onBattery" "The device is on Battery power"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
-* #67925.8 "chargingFull" "Indicates whether the PHD battery is charging at maximum rate"
+* #67925.8 "chargingFull" "The device battery is charging at maximum rate"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
-* #67925.9 "chargingTrickle" "Indicates whether the PHD battery is charging at a trickle rate"
+* #67925.9 "chargingTrickle" "The device battery is charging at a trickle rate"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
-* #67925.10 "chargingOff" "Indicates whether the PHD battery charging is on or off"
+* #67925.10 "chargingOff" "The device battery charging is on"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67925
-* #532354.0 "negated-regulation-status" "Indicates device is regulated when *cleared* and unregulated when *set*"
+* #532354.0 "negated-regulation-status" "Device is regulated when *cleared* and unregulated when *set*"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#532354
-* #68219.0 "mds-time-capab-real-time-clock" "Indicates real time clock is supported"
+* #68219.0 "mds-time-capab-real-time-clock" "Real time clock is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
@@ -97,70 +97,70 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
 * #68219.1 "mds-time-capab-set-clock"
- "Indicates support for the PHG to set the time"
+ "Support for the PHG to set the time"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.2 "mds-time-capab-relative-time" "Indicates Relative Time is supported"
+* #68219.2 "mds-time-capab-relative-time" "Relative Time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.3 "mds-time-capab-high-res-relative-time" "Indicates Hi-Res Relative Time is supported"
+* #68219.3 "mds-time-capab-high-res-relative-time" "Hi-Res Relative Time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.4 "mds-time-capab-sync-abs-time" "Indicates that syncing the absolute time is supported"
+* #68219.4 "mds-time-capab-sync-abs-time" "Syncing the absolute time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.5 "mds-time-capab-sync-rel-time" "Indicates that syncing the relative time is supported"
+* #68219.5 "mds-time-capab-sync-rel-time" "Syncing the relative time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.6 "mds-time-capab-sync-hi-res-relative-time" "Indicates that syncing hi-res relative time is supported"
+* #68219.6 "mds-time-capab-sync-hi-res-relative-time" "Syncing hi-res relative time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.7 "mds-time-capab-bo-time" "Indicates that the real-time clock supports base offset time"
+* #68219.7 "mds-time-capab-bo-time" "The real-time clock supports base offset time"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.8 "mds-time-state-abs-time-synced" "Indicates the absolute time has been synced"
+* #68219.8 "mds-time-state-abs-time-synced" "The absolute time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.9 "mds-time-state-rel-time-synced" "Indicates the relative time has been synced"
+* #68219.9 "mds-time-state-rel-time-synced" "The relative time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.10 "mds-time-state-hi-res-relative-time-synced" "Indicates the hi-res time has been synced"
+* #68219.10 "mds-time-state-hi-res-relative-time-synced" "The hi-res time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
@@ -174,189 +174,189 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.12 "mds-time-capab-sync-bo-time" "Indicates that syncing base-offset time is supported"
+* #68219.12 "mds-time-capab-sync-bo-time" "Syncing base-offset time is supported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.13 "mds-time-state-bo-time-synced" "Indicates that base-offset time has been synced"
+* #68219.13 "mds-time-state-bo-time-synced" "Base-offset time has been synced"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.14 "mds-time-state-bo-time-UTC-aligned" "Indicates that base-offset time is aligned with UTC time standard"
+* #68219.14 "mds-time-state-bo-time-UTC-aligned" "Base-offset time is aligned with UTC time standard"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #68219.15 "mds-time-dst-rules-enabled" "Indicates support for daylight savings time rules"
+* #68219.15 "mds-time-dst-rules-enabled" "Support for daylight savings time rules"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #device
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#68219
-* #67846.0 "lim-alert-off" "Indicates both the high and the low limit alerts are disabled"
+* #67846.0 "lim-alert-off" "Both the high and the low limit alerts are disabled"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67846
-* #67846.1 "lim-low-off" "Indicates the low limit alert is disabled"
+* #67846.1 "lim-low-off" "The low limit alert is disabled"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67846
-* #67846.2 "lim-high-off" "Indicates the high limit alert is disabled"
+* #67846.2 "lim-high-off" "The high limit alert is disabled"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#67846
-* #150604.0 "sensor-disconnected" "Indicates the device is not connected with the sensor"
+* #150604.0 "sensor-disconnected" "The device is not connected with the sensor"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.1 "sensor-malfunction" "Indicates the sensor has malfunctioned"
+* #150604.1 "sensor-malfunction" "The sensor has malfunctioned"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.2 "sensor-displaced" "Indicates the sensor is not correctly placed on the user"
+* #150604.2 "sensor-displaced" "The sensor is not correctly placed on the user"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.3 "sensor-unsupported" "Indicates the sensor connected to the device is unsupported"
+* #150604.3 "sensor-unsupported" "The sensor connected to the device is unsupported"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.4 "sensor-off" "Indicates the sensor is not connected to the user"
+* #150604.4 "sensor-off" "The sensor is not connected to the user"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.5 "sensor-interference" "Indicates the sensor is experiencing interference"
+* #150604.5 "sensor-interference" "The sensor is experiencing interference"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.6 "signal-searching" "Indicates the sensor is searching for a signal"
+* #150604.6 "signal-searching" "The sensor is searching for a signal"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.7 "signal-pulse-questionable" "Indicates a questionable pulse has been detected"
+* #150604.7 "signal-pulse-questionable" "A questionable pulse has been detected"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.8 "signal-non-pulsatile" "Indicates a non pulsatile signal has been detected"
+* #150604.8 "signal-non-pulsatile" "A non pulsatile signal has been detected"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.9 "signal-erratic" "Indicates a signal has been discovered, but it is erratic"
+* #150604.9 "signal-erratic" "A signal has been discovered, but it is erratic"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.10 "signal-low-perfusion" "Indicates the signal is experiencing low perfusion"
+* #150604.10 "signal-low-perfusion" "The signal is experiencing low perfusion"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.11 "signal-poor" "Indicates the signal has been discovered, but it is poor"
+* #150604.11 "signal-poor" "The signal has been discovered, but it is poor"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.12 "signal-inadequate" "Indicates the signal has been discovered, but it is inadequate"
+* #150604.12 "signal-inadequate" "The signal has been discovered, but it is inadequate"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.13 "signal-processing-irregularity" "Indicates the signal has been discovered, but is experiencing processing irregularity"
+* #150604.13 "signal-processing-irregularity" "The signal has been discovered, but is experiencing processing irregularity"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.14 "device-equipment-malfunction" "Indicates a device malfunction has occurred"
+* #150604.14 "device-equipment-malfunction" "A device malfunction has occurred"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150604.15 "device-extended-update" "Indicates an extended display update is in progress on device"
+* #150604.15 "device-extended-update" "An extended display update is in progress on device"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150604
-* #150605.0 "pulse-qual-nominal" "Indicates no abnormalities have been detected by the sensor"
+* #150605.0 "pulse-qual-nominal" "No abnormalities have been detected by the sensor"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150605
-* #150605.1 "pulse-qual-marginal" "Indicates the pulse profusion or quality is marginal"
+* #150605.1 "pulse-qual-marginal" "The pulse quality is marginal"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150605
-* #150605.2 "pulse-qual-minimal" "Indicates the pulse profusion or quality is minimal"
+* #150605.2 "pulse-qual-minimal" "The pulse quality is minimal"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#150605
-* #150605.3 "pulse-qual-unacceptable" "Indicates the pulse profusion or quality is unacceptable"
+* #150605.3 "pulse-qual-unacceptable" "The pulse quality is unacceptable"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
@@ -825,105 +825,105 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.1 "Battery-absent" "Indicates if the battery is absent"
+* #8418512.1 "Battery-absent" "If the battery is absent"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.2 "Battery-active" "Indicates if the battery is active in the system"
+* #8418512.2 "Battery-active" "If the battery is active in the system"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.3 "Battery-charging" "Indicates if the battery is charging"
+* #8418512.3 "Battery-charging" "If the battery is charging"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.4 "Battery-fullyCharged" "Indicates if the battery is fully charged"
+* #8418512.4 "Battery-fullyCharged" "If the battery is fully charged"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.5 "Battery-disposable" "Indicates if the battery is disposable"
+* #8418512.5 "Battery-disposable" "If the battery is disposable"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.6 "Battery-rechargeable" "Indicates if battery is rechargable"
+* #8418512.6 "Battery-rechargeable" "If battery is rechargable"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.7 "Battery-overTemperature" "Indicates if the battery is too hot"
+* #8418512.7 "Battery-overTemperature" "If the battery is too hot"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.8 "Battery-faulty" "Indicates if battery is faulty"
+* #8418512.8 "Battery-faulty" "If battery is faulty"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.9 "Battery-incompatible" "Indicates if battery is incompatible"
+* #8418512.9 "Battery-incompatible" "If battery is incompatible"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8410608.0 "body-movement" "Indicates too much body movement"
+* #8410608.0 "body-movement" "Too much body movement"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8410608
-* #8410608.1 "cuff-too-loose" "Indicates the cuff was too loose"
+* #8410608.1 "cuff-too-loose" "The cuff was too loose"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8410608
-* #8410608.2 "irregular-pulse" "Indicates an irregular pulse was detected"
+* #8410608.2 "irregular-pulse" "An irregular pulse was detected"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8410608
-* #8410608.3 "pulse-over-range-limit" "Indicates the pulse was too high for sensor to work"
+* #8410608.3 "pulse-over-range-limit" "The pulse was too high for sensor to work"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8410608
-* #8410608.4 "pulse-under-range-limit" "Indicates the pulse was too low for sensor to work"
+* #8410608.4 "pulse-under-range-limit" "The pulse was too low for sensor to work"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8410608
-* #8410608.5 "improper-body-position" "Indicates the cuff was incorrectly placed with respect to the heart"
+* #8410608.5 "improper-body-position" "The cuff was incorrectly placed with respect to the heart"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source

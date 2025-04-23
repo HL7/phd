@@ -134,7 +134,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="StructureDefinition/PhdRtsaObservation"/>
       </reference>
       <name value="PhdRtsaObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is a waveform."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
