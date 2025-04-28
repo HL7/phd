@@ -17,7 +17,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -96,7 +96,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -165,7 +165,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -225,7 +225,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -290,7 +290,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -359,7 +359,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -419,7 +419,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -475,7 +475,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -596,7 +596,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -665,7 +665,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -725,7 +725,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -781,7 +781,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -922,7 +922,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -991,7 +991,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1051,7 +1051,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1107,7 +1107,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1248,7 +1248,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1317,7 +1317,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1377,7 +1377,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1433,7 +1433,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1574,7 +1574,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1643,7 +1643,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1695,7 +1695,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1759,7 +1759,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1900,7 +1900,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -1969,7 +1969,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2029,7 +2029,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2085,7 +2085,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2226,7 +2226,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2295,7 +2295,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2355,7 +2355,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2411,7 +2411,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2552,7 +2552,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2621,7 +2621,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2681,7 +2681,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2737,7 +2737,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2878,7 +2878,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -2947,7 +2947,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3007,7 +3007,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3063,7 +3063,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3224,7 +3224,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3293,7 +3293,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3361,7 +3361,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3417,7 +3417,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3578,7 +3578,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3647,7 +3647,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}
@@ -3707,7 +3707,7 @@
 						"coding": [
 							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-								"code": "phd-observation"
+								"code": "phd"
 							}
 						]
 					}

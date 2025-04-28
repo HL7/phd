@@ -47,7 +47,7 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories" (exactly)
     * code 1..1
     * code only code
-    * code = #phd-observation (exactly)
+    * code = #phd (exactly)
 * identifier ^slicing.discriminator[0].type = #exists
   * ^slicing.discriminator[=].path = "value"
   * ^slicing.discriminator[+].type = #exists
@@ -65,7 +65,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * value 1..
 * status ^definition = "The status of the result value. Either 'final' or 'preliminary'"
   * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
-* code from $MDCValueSet (extensible)
+* code from http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject (extensible)
 * code obeys mdc-1
 
 * subject 1.. 

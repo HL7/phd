@@ -12,12 +12,11 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="11073 ASN1 Event Or State"/>
-<artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="11073 ASN1ToHl7 codesystem concepts"/>
-<artifact id="CodeSystem/MDCConcepts" key="CodeSystem-MDCConcepts" name="11073 MDC codesystem concepts"/>
 <artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACME Inc Private MDC Codes"/>
 <artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
 <artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ANS1ToHL7 codes for measurement attributes"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1 bits to HL7 enumerated values"/>
+<artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
 <artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept 11073 Attributes"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence 95 range"/>
@@ -25,8 +24,8 @@
 <artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="Continua Device Interfaces"/>
 <artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="Continua Health and Fitness Continua Service Interfaces"/>
 <artifact deprecated="true" key="Device" name="Device"/>
-<artifact id="ValueSet/DeviceSystemIdIdentifier" key="ValueSet-DeviceSystemIdIdentifier" name="Device System Id Identifier"/>
-<artifact id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
+<artifact deprecated="true" id="ValueSet/DeviceSystemIdIdentifier" key="ValueSet-DeviceSystemIdIdentifier" name="Device System Id Identifier"/>
+<artifact deprecated="true" id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
 <artifact id="ValueSet/DeviceTypes11073MDC" key="ValueSet-DeviceTypes11073MDC" name="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
 <artifact id="Bundle/bundle-continuousnonin" key="Bundle-bundle-continuousnonin" name="Example Bundled upload"/>
 <artifact id="Observation/rtsa-example" key="Observation-rtsa-example" name="Example Observation - rtsa-example"/>
@@ -89,7 +88,7 @@
 <artifact id="ValueSet/SimpleAlertOperationalStates" key="ValueSet-SimpleAlertOperationalStates" name="Simple Alert Operational States Value Set"/>
 <artifact id="StructureDefinition/SimpleAlerting" key="StructureDefinition-SimpleAlerting" name="Simple Alerting"/>
 <artifact id="CodeSystem/SimpleAlertOperationalStatesCS" key="CodeSystem-SimpleAlertOperationalStatesCS" name="SimpleAlertOperationalStates CodeSystem"/>
-<artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String 11073 Attributes"/>
+<artifact deprecated="true" id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
 <artifact deprecated="true" key="StructureDefinition" name="StructureDefinition"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

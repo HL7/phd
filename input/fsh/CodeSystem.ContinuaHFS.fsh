@@ -10,13 +10,13 @@ Description: "Codes used to describe the Continua Health and Fitness interfaces 
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-* ^hierarchyMeaning = #grouped-by
+// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
-* #0 "observation-upload-soap" "Indicates the PHG has been Continua certified for the PCD-01 upload using Web services"
-* #1 "consent-enabled-soap" "Indicates the PHG has been Continua certified for the PCD-01 upload using Web services with patient consent"
-* #2 "capabilities" "Indicates the PHG has been Continua certified for Capabilities Exchange"
-* #3 "observation-upload-hdata" "Indicates the PHG has been Continua certified for PCD-01 upload using HDATA"
-* #4 "consent-enabled-hdata" "Indicates the PHG has been Continua certfied for PCD-01 upload using HDATA with patient consent"
-* #5 "questionnaire" "Indicates the PHG has been Continua certfied for the CDA questionnaire"
-* #6 "aps" "Indicates the PHG has been Continua certfied for Authenticated Persistent Sessions"
-* #7 "observation-upload-fhir" "Indicates the PHG has been Continua certfied for uploading FHIR resources"
+* #0 "observation-upload-soap" "The PHG has been Continua certified for the PCD-01 upload using Web services"
+* #1 "consent-enabled-soap" "The PHG has been Continua certified for the PCD-01 upload using Web services with patient consent"
+* #2 "capabilities" "The PHG has been Continua certified for Capabilities Exchange"
+* #3 "observation-upload-hdata" "The PHG has been Continua certified for PCD-01 upload using HDATA"
+* #4 "consent-enabled-hdata" "The PHG has been Continua certfied for PCD-01 upload using HDATA with patient consent"
+* #5 "questionnaire" "The PHG has been Continua certfied for the CDA questionnaire"
+* #6 "aps" "The PHG has been Continua certfied for Authenticated Persistent Sessions"
+* #7 "observation-upload-fhir" "The PHG has been Continua certfied for uploading FHIR resources"

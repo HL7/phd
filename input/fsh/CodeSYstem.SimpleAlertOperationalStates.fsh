@@ -6,7 +6,7 @@ Description: "The operational states for the simple alerting system."
 * ^experimental = false
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-* ^hierarchyMeaning = #grouped-by
+// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * #Limits-On "Limits On" "The alert system is checking the high and low limits."
 * #Limits-Off "Limits Off" "The alert system is not checking the high and low limits."

@@ -200,18 +200,6 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ASN1ToHL7Concepts"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/MDCConcepts"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/ContinuaHFS"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -260,12 +248,6 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/String11073MDC"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/MDCnotObject"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -284,20 +266,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleBoolean value="false"/>
     </resource>
   <!--    these value sets were missing -->
-    <resource>
-      <reference>
-        <reference value="ValueSet/DeviceSystemIdIdentifier"/>
-      </reference>
-      <name value="Device System Id Identifier"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/DeviceTransportIdentifiers"/>
-      </reference>
-      <name value="Device Transport Address Identifiers"/>
-      <exampleBoolean value="false"/>
-    </resource>
     <resource>
       <reference>
         <reference value="ValueSet/DeviceTypes11073MDC"/>

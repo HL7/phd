@@ -13,17 +13,17 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
 // * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^property[0].code = #eventOrState
-* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#eventOrState"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#eventOrState"
 * ^property[=].description = "The code type is an event or state"
 * ^property[=].type = #code
 // * ^property[=].extension = http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset - not supported in R4
 // * ^property[=].extension.value = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1EventOrState" - not supported in R4
 * ^property[+].code = #source
-* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#source"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#source"
 * ^property[=].description = "The code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #code
 * ^property[+].code = #MDCCode
-* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7Concepts#MDCCode"
+* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#MDCCode"
 * ^property[=].description = "The decimal code for the MDC code of the bits observation"
 * ^property[=].type = #Coding
 // values for properties are defined here for FHIR R4, although that is not the best way to do it
@@ -33,6 +33,7 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
 * #measurement "Measurement" "The bit represents a measurement attribute"
 * #event "Event" "The bit represents an event"
 * #state "State" "The bit represents a state"
+* #MDCCode "MDC Code" "The MDC code for the bit"
 // MDC codes are refereced using a property of type Coding 
 // * #67925 "MDC_ATTR_POWER_STAT" "MDS Power Status Attributes"
 // * #532354 "MDC_REG_CERT_DATA_CONTINUA_REG_STATUS" "MDS Regulation Status from the Reg-Cert-Data-List Attribute"
@@ -818,70 +819,70 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418060
-* #8418512.0 "Battery-status-Undetermined" "the status of the battery is unknown"
+* #8418512.0 "Battery-status-Undetermined" "The status of the battery is unknown"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.1 "Battery-absent" "If the battery is absent"
+* #8418512.1 "Battery-absent" "The battery is absent"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.2 "Battery-active" "If the battery is active in the system"
+* #8418512.2 "Battery-active" "The battery is active in the system"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.3 "Battery-charging" "If the battery is charging"
+* #8418512.3 "Battery-charging" "The battery is charging"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.4 "Battery-fullyCharged" "If the battery is fully charged"
+* #8418512.4 "Battery-fullyCharged" "The battery is fully charged"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.5 "Battery-disposable" "If the battery is disposable"
+* #8418512.5 "Battery-disposable" "The battery is disposable"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.6 "Battery-rechargeable" "If battery is rechargable"
+* #8418512.6 "Battery-rechargeable" "The battery is rechargable"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #state
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.7 "Battery-overTemperature" "If the battery is too hot"
+* #8418512.7 "Battery-overTemperature" "The battery is too hot"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.8 "Battery-faulty" "If battery is faulty"
+* #8418512.8 "Battery-faulty" "The battery is faulty"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
   * ^property[=].valueCode = #measurement
   * ^property[+].code = #MDCCode
   * ^property[=].valueCoding = Mdc#8418512
-* #8418512.9 "Battery-incompatible" "If battery is incompatible"
+* #8418512.9 "Battery-incompatible" "The battery is incompatible"
   * ^property[0].code = #eventOrState
   * ^property[=].valueCode = #event
   * ^property[+].code = #source
