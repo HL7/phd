@@ -27,9 +27,6 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 # With FHIR R4 there is no supported way to indicate the valueset for a property
 The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
-# This is caused by the use of String as a required value for a data element. This warning generation is out of our control and can be ignored.
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
-
 # This is generated for all observations that use the vital signs category. This warning can be ignored safely.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
@@ -42,11 +39,5 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
 
-# Temporal ignore because of bug in IG Publisher
-URL value 'https://sagroups.ieee.org/11073/phd-wg' does not resolve
-
 # This is a fake/example OID for a hospital and this warning can be ignored safely.
 URL value 'urn:oid:1.2.3.4.5.6.7.8.10' does not resolve
-
-# This is the OID for the IEEE EUI-64 system and this is resolvable. IG Publisher just doesn't do that.
-URL value 'urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680' does not resolve

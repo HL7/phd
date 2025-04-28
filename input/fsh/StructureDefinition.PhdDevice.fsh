@@ -5,7 +5,7 @@ Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableCo
 Profile: PhdDevice
 Parent: Device
 Id: PhdDevice
-Description: "Base StructureDefinition for the Device Resource for a PHD"
+Description: "Profile for the Device Resource for a PHD"
 * ^meta.lastUpdated = "2017-10-16T05:03:37.38-04:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
 // * ^status = #draft

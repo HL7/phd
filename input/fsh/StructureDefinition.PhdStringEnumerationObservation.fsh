@@ -1,7 +1,7 @@
 Profile: PhdStringEnumerationObservation
 Parent: PhdBaseObservation
 Id: PhdStringEnumerationObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated human readable string."
+Description: "Observations from a PHD where the measurement is a human readable string."
 * ^meta.lastUpdated = "2017-12-08T05:24:29.234-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo

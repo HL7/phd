@@ -1,7 +1,7 @@
 Profile: PhdCodedEnumerationObservation
 Parent: PhdBaseObservation
 Id: PhdCodedEnumerationObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a PHD where the measurement value is a code."
+Description: "Observations coming from a PHD where the measurement value is a code."
 * ^meta.lastUpdated = "2017-12-08T05:24:29.234-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo

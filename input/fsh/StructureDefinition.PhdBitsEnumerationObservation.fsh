@@ -3,7 +3,7 @@ Alias: $ASN1measurement = http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement
 Profile: PhdBitsEnumerationObservation
 Parent: PhdBaseObservation
 Id: PhdBitsEnumerationObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is an ASN1 BITS value."
+Description: "Observations from a PHD where the measurement is an ASN1 BITS value."
 * ^meta.lastUpdated = "2017-12-14T04:24:35.475-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo

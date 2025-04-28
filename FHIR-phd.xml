@@ -12,24 +12,24 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="11073 ASN1 Event Or State"/>
-<artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACMEIncPrivateMDCCodes"/>
-<artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1ToHL7"/>
-<artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
-<artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
-<artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
-<artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Accuracy"/>
-<artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept11073MDC"/>
+<artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="11073 ASN1ToHl7 codesystem concepts"/>
+<artifact id="CodeSystem/MDCConcepts" key="CodeSystem-MDCConcepts" name="11073 MDC codesystem concepts"/>
+<artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACME Inc Private MDC Codes"/>
+<artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
+<artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ANS1ToHL7 codes for measurement attributes"/>
+<artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1 bits to HL7 enumerated values"/>
+<artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept 11073 Attributes"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
-<artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence95"/>
-<artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="ContinuaDeviceIdentifiers"/>
-<artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="ContinuaHFS"/>
-<artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
+<artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence 95 range"/>
+<artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="Continua Device Identifiers"/>
+<artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="Continua Device Interfaces"/>
+<artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="Continua Health and Fitness Continua Service Interfaces"/>
 <artifact deprecated="true" key="Device" name="Device"/>
 <artifact id="ValueSet/DeviceSystemIdIdentifier" key="ValueSet-DeviceSystemIdIdentifier" name="Device System Id Identifier"/>
 <artifact id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
 <artifact id="ValueSet/DeviceTypes11073MDC" key="ValueSet-DeviceTypes11073MDC" name="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
 <artifact id="Bundle/bundle-continuousnonin" key="Bundle-bundle-continuousnonin" name="Example Bundled upload"/>
-<artifact id="Observation/rtsa-example-2" key="Observation-rtsa-example-2" name="Example Observation - rtsa-example-2"/>
+<artifact id="Observation/rtsa-example" key="Observation-rtsa-example" name="Example Observation - rtsa-example"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Example Phd Device Metric"/>
 <artifact deprecated="true" id="Observation/bloodPress-1.0.1" key="Observation-bloodPress-1.0.1" name="Example of Compound measurement"/>
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="Example of PHD Device"/>
@@ -58,16 +58,17 @@
 <artifact id="Observation/glucose-observation" key="Observation-glucose-observation" name="Example of a numeric glucose observation."/>
 <artifact id="Observation/numeric-spo2-alarm" key="Observation-numeric-spo2-alarm" name="Example of a numeric with an alert."/>
 <artifact id="Observation/numeric-spotnumeric" key="Observation-spotnumeric-1.0.0.3" name="Example of a numeric."/>
-<artifact id="Observation/rtsa-example" key="Observation-rtsa-example" name="Example of an RTSA"/>
+<artifact id="Observation/rtsa-example-2" key="Observation-rtsa-example-2" name="Example of an RTSA"/>
 <artifact deprecated="true" id="Observation/rtsa-1234" key="Observation-rtsa-1234" name="Example of an Rtsa."/>
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
-<artifact id="CodeSystem/MDCConcepts" key="CodeSystem-MDCConcepts" name="MDCConcepts"/>
-<artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDCValueSet"/>
-<artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDCnotObject"/>
+<artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDC Non-Object codes"/>
+<artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDC Value Set"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
+<artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
+<artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
 <artifact id="CodeSystem/PhdReferenceRangeMeaning" key="CodeSystem-PhdReferenceRangeMeaning" name="PHD Reference Range Meaning Code System"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>
 <artifact id="StructureDefinition/PhdBitsEnumerationObservation" key="StructureDefinition-PhdBitsEnumerationObservation" name="PhdBitsEnumerationObservation"/>
@@ -78,18 +79,17 @@
 <artifact id="StructureDefinition/PhdDevice" key="StructureDefinition-PhdDevice" name="PhdDevice"/>
 <artifact id="StructureDefinition/PhdDeviceMetric" key="StructureDefinition-PhdDeviceMetric" name="PhdDeviceMetric"/>
 <artifact id="StructureDefinition/PhdNumericObservation" key="StructureDefinition-PhdNumericObservation" name="PhdNumericObservation"/>
-<artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PhdObservationCategories"/>
 <artifact id="StructureDefinition/PhdPatient" key="StructureDefinition-PhdPatient" name="PhdPatient"/>
 <artifact id="StructureDefinition/PhdRtsaObservation" key="StructureDefinition-PhdRtsaObservation" name="PhdRtsaObservation"/>
 <artifact id="CapabilityStatement/PhdServerCapabilityStatement" key="CapabilityStatement-PhdServerCapabilityStatement" name="PhdServerCapabilityStatement"/>
 <artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
-<artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
-<artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
+<artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity 11073 Attributes"/>
+<artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range 11073 Attributes"/>
 <artifact id="ValueSet/SimpleAlertOperationalStates" key="ValueSet-SimpleAlertOperationalStates" name="Simple Alert Operational States Value Set"/>
-<artifact id="CodeSystem/SimpleAlertOperationalStates" key="CodeSystem-SimpleAlertOperationalStates" name="SimpleAlertOperationalStates CodeSystem"/>
-<artifact id="StructureDefinition/SimpleAlerting" key="StructureDefinition-SimpleAlerting" name="SimpleAlerting"/>
-<artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
+<artifact id="StructureDefinition/SimpleAlerting" key="StructureDefinition-SimpleAlerting" name="Simple Alerting"/>
+<artifact id="CodeSystem/SimpleAlertOperationalStatesCS" key="CodeSystem-SimpleAlertOperationalStatesCS" name="SimpleAlertOperationalStates CodeSystem"/>
+<artifact id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String 11073 Attributes"/>
 <artifact deprecated="true" key="StructureDefinition" name="StructureDefinition"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

@@ -7,7 +7,7 @@ Alias: $String11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/String11073MDC
 Profile: PhdNumericObservation
 Parent: PhdBaseObservation
 Id: PhdNumericObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is number."
+Description: "Observations from a PHD where the measurement is number"
 * ^meta.lastUpdated = "2017-12-14T04:43:57.173-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo

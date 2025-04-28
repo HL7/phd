@@ -46,6 +46,7 @@ In this example there are only xml structure definitions, value sets, code syste
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="active"/>
+  <language value="en-US"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
     <valueCode value="trial-use" />
   </extension>
@@ -60,7 +61,6 @@ In this example there are only xml structure definitions, value sets, code syste
       <value value="http://www.hl7.org/Special/committees/healthcaredevices"/>
     </telecom>
   </contact>
-  <description value="ImplementationGuide for Personal Health Devices (PHD), used in remote patient monitoring (e.g., weight scales, blood pressure cuffs, glucose monitors, pulse-oximeters, etc.)."/>
   <!-- Don't know why we should have this except that the build will fail without it -->
   <jurisdiction>
     <coding>
@@ -85,150 +85,116 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="StructureDefinition/PhdBaseObservation"/>
       </reference>
-      <name value="PhdBaseObservation"/>
-      <description value="Observation elements that are common to all the PHD Observation profiles"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdNumericObservation"/>
       </reference>
-      <name value="PhdNumericObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is number."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdCompoundObservation"/>
       </reference>
-      <name value="PhdCompoundObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is described by a set of numbers such as the x, y, and x components of an acceleration."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdCompoundNumericObservation"/>
       </reference>
-      <name value="PhdCompoundNumericObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is described by a set of numbers such as the x, y, and x components of an acceleration."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdCodedEnumerationObservation"/>
       </reference>
-      <name value="PhdCodedEnumerationObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated code."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdBitsEnumerationObservation"/>
       </reference>
-      <name value="PhdBitsEnumerationObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is an ASN1 BITS value."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdRtsaObservation"/>
       </reference>
-      <name value="PhdRtsaObservation"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdStringEnumerationObservation"/>
       </reference>
-      <name value="PhdStringEnumerationObservation"/>
-      <description value="StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated human readable string."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdCoincidentTimeStampObservation"/>
       </reference>
-      <name value="PhdCoincidentTimeStampObservation"/>
-      <description value="StructureDefinition for Observation Resources representing the coincident time stamp. This report is a measurement of the current time of the sensor at the current time of the PHG. The purpose of this observation is to record the difference in the time lines between the PHG and PHD and to be able to recover the original measurement time stamps reported by the PHD should the PHG correct them because the sensor clock is in error."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdDevice"/>
       </reference>
-      <name value="PhdDevice"/>
-      <description value="StructureDefinition for the Device Resource representing a PHD"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdDeviceMetric"/>
       </reference>
-      <name value="PhdDeviceMetric"/>
-      <description value="StructureDefinition for the Device Metric Resource representing an observation type that can be generated by a PHD"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhgDevice"/>
       </reference>
-      <name value="PhgDevice"/>
-      <description value="StructureDefinition for the Device Resource representing a PHG (gateway)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/PhdPatient"/>
       </reference>
-      <name value="PhdPatient"/>
-      <description value="Structure definition for the patient information reported from personal health gateways (PHG)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/Accuracy"/>
       </reference>
-      <name value="Accuracy"/>
-      <description value="Structure definition for the accuracy extension."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/Confidence95"/>
       </reference>
-      <name value="Confidence95"/>
-      <description value="Structure definition for the confidence 95 extension."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/SimpleAlerting"/>
       </reference>
-      <name value="SimpleAlerting"/>
-      <description value="Structure definition for the simple alerting extension."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/ContinuaDeviceIdentifiers"/>
       </reference>
-      <name value="ContinuaDeviceIdentifiers"/>
       <description value="Codes that identify the device 'identifier', such as whether an EUI is a system id, Bluetooth address, or Ethernet MAC address"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/SimpleAlertOperationalStates"/>
+        <reference value="CodeSystem/SimpleAlertOperationalStatesCS"/>
       </reference>
       <name value="SimpleAlertOperationalStates CodeSystem"/>
-      <description value="Simple Alert Operational States Code System"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/ASN1ToHL7"/>
       </reference>
-      <name value="ASN1ToHL7"/>
       <description value="Codes for the IEEE 11073-10206 BITs measurement bit values. For example, 150604.0 is the code for Mder bit 0 in measurement type 150604 which is a pulse oximeter device and sensor status. The description of that code is 'Indicates the device is not connected with the sensor'. This code system will grow as more BITs measurements are defined in specializations"/>
       <exampleBoolean value="false"/>
     </resource>
@@ -236,111 +202,84 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="CodeSystem/ASN1ToHL7Concepts"/>
       </reference>
-      <name value="ASN1ToHL7Concepts"/>
-      <description value="Concept codes for the ASN1ToHL7 code system properties"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/MDCConcepts"/>
       </reference>
-      <name value="MDCConcepts"/>
-      <description value="Concept codes for the MDC code system properties"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/ContinuaHFS"/>
       </reference>
-      <name value="ContinuaHFS"/>
-      <description value="Codes for the Continua Health and Fitness interfaces"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/ContinuaPHD"/>
       </reference>
-      <name value="ContinuaPHD"/>
-      <description value="Codes for the Continua certified PAN interfaces. These codes indicate that the respective platform has been certified for certain transports (Bluetooth, USB, Bluetooth Low Energy, ZigBee) and device specializations."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/ACMEIncPrivateMDCCodes"/>
       </reference>
-      <name value="ACMEIncPrivateMDCCodes"/>
-      <description value="Example codesystem with Private MDC codes for ACME Inc as example."/>
       <exampleBoolean value="true"/>
     </resource>  
     <resource>
       <reference>
         <reference value="CodeSystem/PhdObservationCategories"/>
       </reference>
-      <name value="PhdObservationCategories"/>
-      <description value="Category value for observations generated by PHD devices."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/MDCValueSet"/>
       </reference>
-      <name value="MDCValueSet"/>
-      <description value="Value set with all defined MDC codes."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/CodeableConcept11073MDC"/>
       </reference>
-      <name value="CodeableConcept11073MDC"/>
-      <description value="Value set for those MDC attribute codes whose values are represented by CodeableConcepts. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/Quantity11073MDC"/>
       </reference>
-      <name value="Quantity11073MDC"/>
-      <description value="Value set for those MDC attribute codes whose values are represented by Quantities. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/Range11073MDC"/>
       </reference>
-      <name value="Range11073MDC"/>
-      <description value="Value set for those MDC attribute codes whose values are represented by Ranges. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/String11073MDC"/>
       </reference>
-      <name value="String11073MDC"/>
-      <description value="Value set for those MDC attribute codes whose values are represented by Strings. These codes are used as slicing discriminators."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/MDCnotObject"/>
       </reference>
-      <name value="MDCnotObject"/>
-      <description value="Value set for those Observation component elements that come from compound and BITs measurements. These attributes come from several partitions but NOT the MDC Object partition. These codes are used as slicing discriminators to distinguish between those components that represent measurement values in the compound and ASN1 BITs profiles from those components providing additional information about the values. For example, the Supplemental Information would give an extra description about the measurement such as 'duration average' whereas the measurement itself might be acceleration values."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/ASN1attribute"/>
       </reference>
-      <name value="ASN1attribute"/>
-      <description value="Value set for those Asn1ToHL7 codes whose PHD source is an attribute, such as the regulation status or time capabilities."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/ASN1measurement"/>
       </reference>
-      <name value="ASN1measurement"/>
       <description value="Value set for those Asn1ToHL7 codes whose source is a measurement attribute; one of the Enum-observed-value attributes."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -350,7 +289,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="ValueSet/DeviceSystemIdIdentifier"/>
       </reference>
       <name value="Device System Id Identifier"/>
-      <description value="ValueSet for the Codes describing the type of device identifier, such as a system id or Bluetooth address."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -358,7 +296,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="ValueSet/DeviceTransportIdentifiers"/>
       </reference>
       <name value="Device Transport Address Identifiers"/>
-      <description value="ValueSet for the Codes describing the type of device transport identifier, such the Bluetooth address."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -366,7 +303,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="ValueSet/DeviceTypes11073MDC"/>
       </reference>
       <name value="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
-      <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing Device specialization types."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -374,7 +310,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="ValueSet/SimpleAlertOperationalStates"/>
       </reference>
       <name value="Simple Alert Operational States Value Set"/>
-      <description value="ValueSet for the Simple Alert Operational States."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -382,7 +317,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="ValueSet/MDCobject"/>
       </reference>
       <name value="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
-      <description value="ValueSet for the ISO/IEEE 11073-10101 Nomenclature filtered by Object partition."/>
       <exampleBoolean value="false"/>
     </resource>
   <!--    end of missing value sets -->
@@ -391,7 +325,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="CapabilityStatement/PhdServerCapabilityStatement"/>
       </reference>
       <name value="PhdServerCapabilityStatement"/>
-      <description value="Capability statement. This statement indicates what the server must support and accept to work with this Guide. Though the CapabilityStatement indicates, for example, that the server must support the Device resource, it does not mean the server must save the Device resource. The use case may only be interested in the Observation and Patient resources. What it does mean is that the server cannot generate an error when the PHG uploads a Device resource or references a Device resource that it has uploaded."/>
       <exampleBoolean value="false"/>
       <!-- <groupingId value="capabilities" /> -->
     </resource>
@@ -399,8 +332,8 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Bundle/bundle-example-1"/>
       </reference> 
+      <description value="This example shows a full first time transaction Bundle containing Patient, Device, and Observation resources." />
       <name value="Example of a first time Bundle upload"/>
-      <description value="This example shows a full first time transaction Bundle containing Patient, Device, and Observation resources."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -460,10 +393,10 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="Observation/rtsa-example"/>
+        <reference value="Observation/rtsa-example-2"/>
       </reference> 
       <name value="Example of an RTSA"/>
-      <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element." />
+      <description value="ECG waveform with scaling" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
     </resource>
     <resource>

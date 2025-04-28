@@ -6,7 +6,7 @@ Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableCo
 Profile: PhgDevice
 Parent: Device
 Id: PhgDevice
-Description: "Base StructureDefinition for the Device Resource for a PHG"
+Description: "Profile for the Device Resource for a PHG"
 * ^meta.lastUpdated = "2017-10-16T05:10:49.894-04:00"
 * ^version = "1.0.0"
 * ^date = "2017-07-07T11:39:51.3383228-04:00"

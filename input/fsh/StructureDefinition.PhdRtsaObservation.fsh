@@ -1,7 +1,7 @@
 Profile: PhdRtsaObservation
 Parent: PhdBaseObservation
 Id: PhdRtsaObservation
-Description: "StructureDefinition for measurement data coming from a PHD where the measurement is a sample array."
+Description: "Observations from a PHD where the measurement is a sample array."
 * ^meta.lastUpdated = "2017-12-14T07:44:36.955-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo

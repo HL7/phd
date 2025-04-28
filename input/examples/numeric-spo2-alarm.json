@@ -44,7 +44,7 @@
 					"valueCodeableConcept": {
 						"coding": [
 							{
-								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStates",
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS",
 								"code": "Limits-On",
 								"display": "Limits On"
 							}

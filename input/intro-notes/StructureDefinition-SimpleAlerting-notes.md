@@ -18,7 +18,7 @@ The `currentLimits` element specifies the acceptable range for the monitored par
 ## Alert Operational State
 The IEEE 11073 Alert Operational State attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When `SET`, the alerts are off. This is a state-type measurement, and when this attribute is present, both the set and cleared states are reported. The MDC code of the attribute is `MDC_ATTR_AL_OP_STAT`.
 
-The `alertOperationalState` element indicates the current operational state of the alerting system. It is represented as a `valueCodeableConcept` with codes from the `SimpleAlertOperationalStates` CodeSystem. Examples of operational states include:
+The `alertOperationalState` element indicates the current operational state of the alerting system. It is represented as a `valueCodeableConcept` with codes from the `SimpleAlertOperationalStates` ValueSet. Examples of operational states include:
 - **`On`**: The alerting system is active and monitoring the parameter.
 - **`LowLimitOff`**: The lower limit monitoring is disabled.
 - **`HighLimitOff`**: The upper limit monitoring is disabled.

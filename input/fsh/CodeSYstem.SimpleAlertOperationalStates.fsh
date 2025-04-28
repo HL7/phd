@@ -1,8 +1,8 @@
-CodeSystem: SimpleAlertOperationalStates
-Id: SimpleAlertOperationalStates
+CodeSystem: SimpleAlertOperationalStatesCS
+Id: SimpleAlertOperationalStatesCS
 Title: "Simple Alert Operational States"
 Description: "The operational states for the simple alerting system."
-* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStates"
+* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS"
 * ^experimental = false
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
