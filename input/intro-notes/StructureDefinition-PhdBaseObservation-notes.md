@@ -124,13 +124,13 @@ To report these conditions in FHIR requires the use of three different elements.
 
 The table below lists the special conditions and the FHIR data elements to which they are mapped. The code system from which the code is drawn is also shown using a `codsystem#code` notation.
 
-| IEEE 11073 Measurement Status     | FHIR® Observation Resource Data Element                                         | Further Remarks Options                                                                                                    |
+| IEEE 11073 Measurement Status     | FHIR Observation Resource Data Element                                         | Further Remarks Options                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Invalid                | dataAbsentReason = DAR#error<br/> status = HL7Status#entered-in-error           | A device or gateway could decide not to upload invalid observations and could report an error by other means.               |
 | Questionable           | interpretation = PoCDStatus#questionable                                        | \-                                                                                                                          |
 | Not-available          | dataAbsentReason = DAR#not-performed                                            | A device or gateway could decide not to upload observations with no value and could report an error by other means.         |
 | Calibrating            | interpretation = PoCDStatus#calibration-ongoing                                 | \-                                                                                                                          |
-| Test-data              | meta.security = ActReason#HTEST                                                 | Test data should in most cases not be uploaded to a FHIR® server, except for testing purposes.                              |
+| Test-data              | meta.security = ActReason#HTEST                                                 | Test data should in most cases not be uploaded to a FHIR server, except for testing purposes.                              |
 | Early-estimate         | interpretation = PoCDStatus#early-indication<br/> status = HL7Status#preliminary| \-                                                                                                                          |
 | Manually-entered       | \-                                                                              | Add a note to the Observation resource that it was manually entered.                                                        |
 | Setting                | \-                                                                              | For device settings, the Observation resource should reference the PHD Device as the subject and not the Patient.           |
