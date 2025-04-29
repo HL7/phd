@@ -92,35 +92,9 @@ A PHG is often designed to support all current and future PHDs that support a gi
 
 An example of generic code use would be as follows
 
- - specialization.systemType.coding.code="528385"
- - specialization.systemType.coding.system="urn.iso.std.iso:11073:10101"
- - specialization.systemType.text="MDC_DEV_SPEC_PROFILE_GENERIC: supports all 20601 devices"
- - specialization.version="2"
+{% fragment Device/phg-example JSON EXCEPT:specialization %}
 
-The following table gives a list of the more common specialization codes:
-
-|Specialization|MDC Code partition:term code|Reference Identifier|
-|-
-|Generic 20601|8::4169|MDC_DEV_SPEC_PROFILE_GENERIC|
-|Pulse Oximeter|8::4100|MDC_DEV_SPEC_PROFILE_PULS_OXIM|
-|Electro cardiograph|8::4102|MDC_DEV_SPEC_PROFILE_MIN_ECG|
-|Blood Pressure Cuff|8::4103|MDC_DEV_SPEC_PROFILE_BP|
-|Thermometer|8::4104|MDC_DEV_SPEC_PROFILE_TEMP|
-|Respiration rate|8::4109|MDC_DEV_SPEC_PROFILE_RESP_RATE|
-|Weight Scale|8::4111|MDC_DEV_SPEC_PROFILE_SCALE|
-|Glucose Monitor|8::4113|MDC_DEV_SPEC_PROFILE_GLUCOSE|
-|Coagulation meter |8::4114|MDC_DEV_SPEC_PROFILE_COAG|
-|Insulin Pump|8::4115|MDC_DEV_SPEC_PROFILE_INSULIN_PUMP|
-|Body Composition Analyzer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
-|Peak Flow meter|8::4117|MDC_DEV_SPEC_PROFILE_PEAK_FLOW|
-|Sleep Apnea Breathing Equipment|8::4120| MDC_DEV_SPEC_PROFILE_SABTE|
-|Continuous Glucose Monitor|8::4121|MDC_DEV_SPEC_PROFILE_CGM|
-|Cardiovascular Device|8::4137|MDC_DEV_SPEC_PROFILE_HF_CARDIO|
-|Strength Equipment|8::4138|MDC_DEV_SPEC_PROFILE_HF_STRENGTH|
-|Independent Activity/Living Hub|8::4167|MDC_DEV_SPEC_PROFILE_AI_ACTIVITY_HUB|
-|Medication Monitor|8::4168|MDC_DEV_SPEC_PROFILE_AI_MED_MINDER|
-
-In some sense, reporting specialization information about a PHG is superfluous as clearly, if the PHG uploads data from a given device, it supports that device.
+All defined IEEE PHD device specializations can be found in the [IEEE 11073 Device Types value set](ValueSet-DeviceTypes11073MDC.html).
 
 ### **PHG Product Information**
 The table blow provides codes and reference identifiers used in mapping the product information:

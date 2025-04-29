@@ -5,7 +5,7 @@ Alias: $DataAbsentReason = http://hl7.org/fhir/ValueSet/data-absent-reason
 Profile: PhdCompoundNumericObservation
 Parent: PhdBaseObservation
 Id: PhdCompoundNumericObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement is described by a set of numbers such as the x, y, and x components of an acceleration."
+Description: "Observations coming from a PHD where the measurement is a set of numbers such as the x, y, and z components of an acceleration."
 * ^meta.lastUpdated = "2017-12-08T06:07:29.764-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo

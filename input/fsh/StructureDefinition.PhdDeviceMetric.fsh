@@ -1,7 +1,7 @@
 Profile: PhdDeviceMetric
 Parent: DeviceMetric
 Id: PhdDeviceMetric
-Description: "StructureDefinition for the DeviceMetric for a PHD"
+Description: "Profile for the DeviceMetric for a PHD"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"
 // * ^status = #draft
 * ^purpose = "This resource captures the device metric for a single type of observation that a PHD device can generate."

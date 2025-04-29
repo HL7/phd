@@ -1,7 +1,7 @@
 Profile: PhdStringEnumerationObservation
 Parent: PhdBaseObservation
 Id: PhdStringEnumerationObservation
-Description: "StructureDefinition for Observation Resources representing measurement data coming from a medical device where the measurement itself is an enumerated human readable string."
+Description: "Observations from a PHD where the measurement is a human readable string."
 * ^meta.lastUpdated = "2017-12-08T05:24:29.234-05:00"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
@@ -11,6 +11,5 @@ Description: "StructureDefinition for Observation Resources representing measure
 * . ^short = "Reports measurements that are enumerated human-readable strings"
 * . ^definition = "The PhdStringEnumerationObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Str attribute."
 * . ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an arbitrary text string. An example would be the program name of an exercise option on a piece of cardio equipment. These strings are not generically processable by machine and only for human consumption."
-* value[x] 1..
 * value[x] only string
 * value[x] ^short = "Human readable text string"

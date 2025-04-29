@@ -1,7 +1,7 @@
 ValueSet: MDCobject
 Id: MDCobject
-Title: "IEEE 11073 MDC Object infrastructure and Device nomenclature"
-Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature filtered by Object partition."
+Title: "MDC Object and Device nomenclature"
+Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature filtered by & Device nomenclature partition."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCobject"
 * ^version = "current"

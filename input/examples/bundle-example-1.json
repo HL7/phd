@@ -78,6 +78,21 @@
           ],
           "text": "Continua compliant Gateway"
         },
+        "specialization": [
+          {
+            "systemType": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "528457",
+                  "display": "MDC_DEV_SPEC_PROFILE_GENERIC"
+                }
+              ],
+              "text": "Device following the IEEE 11073-10206 standard but no specific specialization"
+            },
+            "version": "2"
+          }
+        ],
         "version": [
           {
             "type": {
@@ -599,7 +614,7 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-                "code": "phd-observation"
+                "code": "phd"
               }
             ]
           },
@@ -700,7 +715,7 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-                "code": "phd-observation"
+                "code": "phd"
               }
             ]
           },

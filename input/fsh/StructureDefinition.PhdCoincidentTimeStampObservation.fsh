@@ -1,7 +1,7 @@
 Profile: PhdCoincidentTimeStampObservation
 Parent: Observation
 Id: PhdCoincidentTimeStampObservation
-Description: "StructureDefinition for Observation Resources representing the coincident time stamp. This report is a measurement of the current time of the sensor at the current time of the PHG. The purpose of this observation is to record the difference in the time lines between the PHG and PHD and to be able to recover the original measurement time stamps reported by the PHD should the PHG correct them because the sensor clock is in error."
+Description: "Observations containing a coincident time stamp."
 * ^meta.lastUpdated = "2017-12-14T09:41:34.341-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 // * ^status = #draft

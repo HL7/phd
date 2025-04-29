@@ -44,7 +44,7 @@
 					"valueCodeableConcept": {
 						"coding": [
 							{
-								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStates",
+								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS",
 								"code": "Limits-On",
 								"display": "Limits On"
 							}
@@ -93,7 +93,7 @@
 			"coding": [
 				{
 					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-					"code": "phd-observation"
+					"code": "phd"
 				}
 			]
 		}

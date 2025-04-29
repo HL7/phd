@@ -47,7 +47,7 @@ Description: "Common base profile with the elements that are common to the PHD I
     * system = "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories" (exactly)
     * code 1..1
     * code only code
-    * code = #phd-observation (exactly)
+    * code = #phd (exactly)
 * identifier ^slicing.discriminator[0].type = #exists
   * ^slicing.discriminator[=].path = "value"
   * ^slicing.discriminator[+].type = #exists
@@ -65,11 +65,12 @@ Description: "Common base profile with the elements that are common to the PHD I
   * value 1..
 * status ^definition = "The status of the result value. Either 'final' or 'preliminary'"
   * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
-* code from $MDCValueSet (extensible)
+* code from http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject (extensible)
 * code obeys mdc-1
 
-* subject 1..
-  * reference 1..
+* subject 1.. 
+* subject only Reference(Patient or PhdDevice)
+  * ^short = "Reference to the patient or the PhdDevice that is the subject of the observation"
 * effective[x] 1..
 * effective[x] only dateTime or Period
   * ^definition = "The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the time stamp sent by the PHD or the time of reception by the PHG if the PHD sent no time stamp."

@@ -21,14 +21,11 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 
-# This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd-observations:
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd-observation)
+# This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategoriesphd)
 
 # With FHIR R4 there is no supported way to indicate the valueset for a property
 The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
-
-# This is caused by the use of String as a required value for a data element. This warning generation is out of our control and can be ignored.
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 
 # This is generated for all observations that use the vital signs category. This warning can be ignored safely.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -41,3 +38,6 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
+
+# This is a fake/example OID for a hospital and this warning can be ignored safely.
+URL value 'urn:oid:1.2.3.4.5.6.7.8.10' does not resolve
