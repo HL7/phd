@@ -21,6 +21,8 @@ Description: "Profile for the Device Resource for a PHD"
   * ^short = "Information that uniquely describes the personal health device"
   * ^definition = "The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is required and the transportAddressIdentifier is highly recommended as this is what most end users see and can obtain from the device itself or device packaging."
   * ^alias = "11073-10206 System id, transport address, etc."
+* identifier.type from http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes (extensible)
+  * ^short = "The type of identifier"
 * identifier contains
     systemIdIdentifier 1..1 and
     btmacAddressIdentifier 0..1 and
@@ -31,9 +33,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type 1..
     * coding 1..1
       * ^short = "Indicates this is the IEEE 11073 System Id identifier"
-      * system 1..
       * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code 1..
       * code = #SYSID (exactly)
   * system 1..
   * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" (exactly)
@@ -49,9 +49,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type 1..
     * coding 1..1
       * ^short = "Indicates this is the Bluetooth Mac address identifier"
-      * system 1..
       * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code 1..
       * code = #BTMAC (exactly)
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/bluetooth" (exactly)
@@ -64,9 +62,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type 1..
     * coding 1..1
       * ^short = "Indicates this is the Mac address identifier"
-      * system 1..
       * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code 1..
       * code = #ETHMAC (exactly)
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/ethernet" (exactly)
@@ -117,18 +113,14 @@ Description: "Profile for the Device Resource for a PHD"
     * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-10206 standard, the version is the 10206 protocol version."
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, and Continua versions."
   * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 10206), and Software versions come from the Production-Specification attribute. The Continua version comes from the Reg-Cert-Data-List attribute. Continua compliant PHDs report at least a firmware and Continua version. A separate version entry is needed for each of the versions reported by the PHD."
-  * type 1..
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MDCType 1..1
-    * coding[MDCType] ^short = "Required MDC code system entry"
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-        * ^short = "Indicates the codes come from the MDC coding system"
-      * code 1..
-        * ^short = "A code indicating the type of version the Device.version.value refers to."
-        * ^comment = "The currently defined version codes used in this element are as shown in the Table. More than one of these versions may be reported by a PHD. Each version reported by the PHD shall be encoded.\r\n\r\n       Description                   CODE             Reference Identifier\r\n       ------------------------------------------------------------------------------------\r\n       Hardware revision            531974            MDC_ID_PROD_SPEC_HW\r\n       Software revision            531975            MDC_ID_PROD_SPEC_SW\r\n       Firmware revision            531976            MDC_ID_PROD_SPEC_FW\r\n       Protocol                     531977            MDC_ID_PROD_SPEC_PROTOCOL\r\n       Continua version             532352            MDC_REG_CERT_DATA_CONTINUA_VERSION\r\n       The Continua version comes from the Continua Reg-Cert-Data-List attribute\r\n"
+* version ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "type.coding"
+  * ^slicing.rules = #open
+* version contains MDCType 1..*
+* version[MDCType] ^short = "Required MDC device version type entry"
+  * type.coding from MDCDeviceVersionTypes
   * value ^short = "The version"
+  * component ..0
 * property ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
@@ -208,3 +200,17 @@ Description: "Profile for the Device Resource for a PHD"
         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD or urn:iso:std:iso:11073:10101 code systems"
       * code 1..
         * ^definition = "One of the Continua interface certification codes"
+
+Mapping: IEEE-11073-10206-PhdDevice
+Id: IEEE-11073-10206-PhdDevice
+Title: "IEEE-11073-10206 ACOM PHD to FHIR Device"
+Source: PhdDevice
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* identifier.value -> "SystemInfo.system-identifier"
+* specialization.systemType.coding.code -> "System-Type-Spec-List[i].type"
+* specialization.version -> "System-Type-Spec-List[i].version"
+* manufacturer -> "SystemInfo.system-manufacturer"
+* serialNumber -> "SystemInfo.serial-number"
+* modelNumber -> "SystemInfo.system-model-number"
+* version.

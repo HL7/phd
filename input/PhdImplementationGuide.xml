@@ -363,8 +363,16 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/rtsa-example-2"/>
       </reference> 
-      <name value="Example of an RTSA"/>
+      <name value="Example 2 of an RTSA"/>
       <description value="ECG waveform with scaling" />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/rtsa-example"/>
+      </reference> 
+      <name value="Example 1 of an RTSA"/>
+      <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
     </resource>
     <resource>
