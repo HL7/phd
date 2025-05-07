@@ -33,9 +33,9 @@ Those readers who *are* implementing a PHG are going to need an understanding of
 
 It should be noted that this implementation guide bases its mapping algorithm on the IEEE 11073-10206 model and standard (IEEE 11073-10206 Personal health device communication - Abstract Content Model). This standard provides a generic and extensible model for observations and a means to assure a consistent time management.
 
-However, this choice does not mean that this guide is only of use for IEEE 11073-10206 compliant PHDs that use one of the mentioned protocols. Any PHD that provides a means to establish a PHG-validated consistent time stamp can use this guide. The mapping in this guide can be used with many existing PHDs including Bluetooth Low Energy PHDs, both proprietary and those following one of the specific Bluetooth Low Energy Health Device Profiles. See [Non-IEEE 11073 PHD Devices](Non11073PHDDevices.html) for more information.
+However, this choice does not mean that this guide is only of use for IEEE 11073-10206 compliant PHDs that use one of the mentioned protocols. Any PHD that provides a means to establish a PHG-validated consistent timestamp can use this guide. The mapping in this guide can be used with many existing PHDs including Bluetooth Low Energy PHDs, both proprietary and those following one of the specific Bluetooth Low Energy Health Device Profiles. See [Non-IEEE 11073 PHD Devices](Non11073PHDDevices.html) for more information.
 
-### Acronyms used in this IG
+### References used throughout this IG
 - ACOM - IEEE 11073-10206 Part 10206: Personal Health Device Communication—Abstract Content Information Model
 - GHS - Bluetooth SIG Generic Health Sensor Profile and Service Specifications
 

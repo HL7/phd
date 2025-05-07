@@ -206,11 +206,12 @@ Id: IEEE-11073-10206-PhdDevice
 Title: "IEEE-11073-10206 ACOM PHD to FHIR Device"
 Source: PhdDevice
 Target: "https://sagroups.ieee.org/11073/phd-wg"
-* -> "ACOM"
+* -> "ACOM PHD"
 * identifier.value -> "SystemInfo.system-identifier"
-* specialization.systemType.coding.code -> "System-Type-Spec-List[i].type"
-* specialization.version -> "System-Type-Spec-List[i].version"
+* specialization[MDCType].systemType.coding.code -> "System-Type-Spec-List[i].type"
+* specialization[MDCType].version -> "System-Type-Spec-List[i].version"
 * manufacturer -> "SystemInfo.system-manufacturer"
 * serialNumber -> "SystemInfo.serial-number"
 * modelNumber -> "SystemInfo.system-model-number"
-* version.
+* version[MDCType].type -> "Firmware-, Hardware-, Software-, ACOM-version (MDC Device Version Type)"
+* version[MDCType].value -> "SystemInfo.firmware-, hardware-, software-revision, ACOM-version"

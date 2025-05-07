@@ -38,10 +38,10 @@ Description: "Observations from a PHD where the measurement is an ASN1 BITS valu
 
 Mapping: IEEE-11073-10206-PhdBitsEnumerationObservation
 Id: IEEE-11073-10206-PhdBitsEnumerationObservation
-Title: "IEEE-11073-10206 ACOM to FHIR"
+Title: "IEEE-11073-10206 ACOM to FHIR PhdBitsEnumerationObservation"
 Source: PhdBitsEnumerationObservation
 Target: "https://sagroups.ieee.org/11073/phd-wg"
 * -> "ACOM"
-* component.code.coding -> "Observation.type + '.' + MDER bit number"
+* component.code.coding -> "Observation.type + '.' + MDER bit number (ASN1ToHL7 code)"
 * component.valueCodeableConcept -> "Y or N depending on the bit value in Observation.state[bit number]"
  

@@ -38,7 +38,7 @@ The IEEE 11073 Measurement-Confidence-95 component is currently used only in the
 The above states that the Continuous Glucose Monitor PHG is 95% sure that the reported measurement of (say 99 mg/dL) lies between 98 and 100 mg/dL.
 
 ### Examples:
-A basic simple numeric observation with a time stamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](Observation-numeric-spotnumeric.html). Simple numeric measurements are common in PHDs.
+A basic simple numeric observation with a timestamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](Observation-numeric-spotnumeric.html). Simple numeric measurements are common in PHDs.
 
 An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a dataAbsentReason element.
 
@@ -51,8 +51,8 @@ The consumer of this profile does not need to concern itself with the mapping co
 | Measurement value             | `Observation.valueQuantity.value`       | The value has the precision of the original. measurement.                                                               |
 | Measurement units             | `Observation.valueQuantity.code`        | FHIR uses UCUM coding. system.                                                                                       |
 | Error                         | `Observation.dataAbsentReason`          | Contains error code. If present, no `Observation.valueQuantity` is present.                                    |
-| Time stamp                    | `Observation.dateTimeEffective`<br>`Observation.period` | If the measurement is a point in time.<br>If the measurement has a duration.                                   |
-| Coincident time stamp reference | `Observation.extension.valueReference` | Points to an Observation following the Coincident Time Stamp Observation profile. For time quality auditing purposes. Not present if the sensor provides no time stamp. |
+| Timestamp                    | `Observation.dateTimeEffective`<br>`Observation.period` | If the measurement is a point in time.<br>If the measurement has a duration.                                   |
+| Coincident timestamp reference | `Observation.extension.valueReference` | Points to an Observation following the Coincident Timestamp Observation profile. For time quality auditing purposes. Not present if the sensor provides no timestamp. |
 | Related measurement           | `Observation.derivedFrom`               | Points to PHD Observations that are related to this Observation, such as a height observation related to a BMI measurement. Not present if the observation did not reference other observations it is derived from. |
 | Related measurement           | `Observation.memberOf`                  | Points to a PHD Observation that reports a group of related Observations, such as a cardio session. Not present if the observation is not a member of a group of related measurements. |
 | Additional descriptions       | `Observation.extension.*`               | When present it contains additional information about the measurement.                       |

@@ -5,20 +5,5 @@
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"
 		]
-	},
-	"identifier": [
-    {
-        "type": {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                    "code": "U"
-                }
-            ],
-            "text": "Unspecified"
-        },
-        "system": "http://terminology.hl7.org/CodeSystem/v2-0004",
-        "value": "U"
-    }
-	]
+	}
 }

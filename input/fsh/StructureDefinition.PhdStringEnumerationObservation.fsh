@@ -13,3 +13,11 @@ Description: "Observations from a PHD where the measurement is a human readable 
 * . ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an arbitrary text string. An example would be the program name of an exercise option on a piece of cardio equipment. These strings are not generically processable by machine and only for human consumption."
 * value[x] only string
 * value[x] ^short = "Human readable text string"
+
+// Mapping Section
+Mapping: IEEE-11073-10206-PhdStringEnumerationObservation
+Id: IEEE-11073-10206-PhdStringEnumerationObservation
+Title: "Mapping for PhdStringEnumerationObservation"
+Source: PhdStringEnumerationObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* value[x] -> "Enum-Observed-Value-Simple-Str"

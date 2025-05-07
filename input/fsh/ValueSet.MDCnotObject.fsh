@@ -19,5 +19,6 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature excluding Objec
 // * include codes from system Mdc where partition = "258"
 // * include codes from system Mdc where partition = "2"  or partition = "3"  or partition = "4"  or partition = "5"  or partition = "7"  or partition = "8"  or partition = "127"  or partition = "128"  or partition = "258"
 // * include codes from system Mdc where partition not-in "1"
-* include codes from valueset MDCValueSet
-* exclude codes from valueset MDCobject
+// * include codes from valueset MDCValueSet
+// * exclude codes from valueset MDCobject
+* include codes from system Mdc where partition in "2,3,4,5,7,8,127,128,258"

@@ -161,7 +161,7 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 Text elements are recommended but optional.
 
 ### Mds-Time-Info
-The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report time stamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a time stamp in any of its measurements, there is no need to report the static time information ***EXCEPT*** that there is no time synchronization.
+The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report timestamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a timestamp in any of its measurements, there is no need to report the static time information ***EXCEPT*** that there is no time synchronization.
 
 #### Time Capabilities
 The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabilities. They are mapped as follows:

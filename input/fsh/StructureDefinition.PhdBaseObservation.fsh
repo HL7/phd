@@ -11,7 +11,7 @@ Description: "Common base profile with the elements that are common to the PHD I
 // * ^status = #draft
 * ^date = "2017-11-24T15:17:35.385-05:00"
 * . ^comment = "This profile is the base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
-* meta 1..
+* meta
   * security ^slicing.discriminator[0].type = #value
     * ^slicing.discriminator[=].path = "system"
     * ^slicing.discriminator[+].type = #value
@@ -50,18 +50,18 @@ Description: "Common base profile with the elements that are common to the PHD I
     * code = #phd (exactly)
 * identifier ^slicing.discriminator[0].type = #exists
   * ^slicing.discriminator[=].path = "value"
-  * ^slicing.discriminator[+].type = #exists
+  * ^slicing.discriminator[+].type = #value
   * ^slicing.discriminator[=].path = "system"
   * ^slicing.discriminator[+].type = #exists
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
-  * ^definition = "An identifier created from a combination of the measurement parameters like sensor time stamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
-  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no time stamp or is a measurement containing a time stamp that is real time. By real time the time stamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observations from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
+  * ^definition = "An identifier created from a combination of the measurement parameters like sensor timestamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
+  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no timestamp or is a measurement containing a timestamp that is real time. By real time the timestamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observations from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
   * ^requirements = "Allows observations to be distinguished in a selective enough manner to prevent resource duplication."
   * type ..0
-  * system ..0
+  * system = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" (exactly)
   * value 1..
 * status ^definition = "The status of the result value. Either 'final' or 'preliminary'"
   * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
@@ -73,7 +73,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^short = "Reference to the patient or the PhdDevice that is the subject of the observation"
 * effective[x] 1..
 * effective[x] only dateTime or Period
-  * ^definition = "The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the time stamp sent by the PHD or the time of reception by the PHG if the PHD sent no time stamp."
+  * ^definition = "The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the timestamp sent by the PHD or the time of reception by the PHG if the PHD sent no timestamp."
 * interpretation
   * coding ^slicing.discriminator[0].type = #value
     * ^slicing.discriminator[=].path = "system"
@@ -110,7 +110,7 @@ Description: "Common base profile with the elements that are common to the PHD I
       * code 1..
       * code = #68193 (exactly)
         * ^definition = "68193 is the 32-bit nomenclature code indicating a 'Supplemental-Types' value"
-    * text ^definition = "It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES"
+      * display ^definition = "It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES"
   * value[x] 1..
   * valueCodeableConcept 1..1
   * valueCodeableConcept only CodeableConcept
@@ -139,7 +139,7 @@ Description: "A published MDC Code is preferred but private MDC codes are allowe
 
 Mapping: IEEE-11073-10206-PhdBaseObservation
 Id: IEEE-11073-10206-PhdBaseObservation
-Title: "IEEE-11073-10206 ACOM to FHIR"
+Title: "IEEE-11073-10206 ACOM to FHIR PhdBaseObservation"
 Source: PhdBaseObservation
 Target: "https://sagroups.ieee.org/11073/phd-wg"
 * -> "ACOM"

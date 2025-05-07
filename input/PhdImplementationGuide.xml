@@ -215,7 +215,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="CodeSystem/ACMEIncPrivateMDCCodes"/>
       </reference>
       <exampleBoolean value="true"/>
-    </resource>  
+    </resource> 
     <resource>
       <reference>
         <reference value="CodeSystem/PhdObservationCategories"/>
@@ -451,16 +451,16 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/coin-20181119202022"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp PHG better synchronized"/>
-      <description value="This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD." />
+      <name value="Example of a Coincident Timestamp PHG better synchronized"/>
+      <description value="This example is a Coincident Timestamp where the PHG is better synchronized to NTP time than the PHD." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
       <reference>
         <reference value="Observation/coin-example-timefault"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp with a Time Fault"/>
-      <description value="This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements." />
+      <name value="Example of a Coincident Timestamp with a Time Fault"/>
+      <description value="This example is a Coincident Timestamp where the PHD has a time fault; it's current timeline is unknown and it reported timestamps in its measurements." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
@@ -483,16 +483,16 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/coin-20181119174911"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp referenced from BP observation"/>
-      <description value="This Coincident Time Stamp observation is referenced by the Blood Pressure Observation" />
+      <name value="Example of a Coincident Timestamp referenced from BP observation"/>
+      <description value="This Coincident Timestamp observation is referenced by the Blood Pressure Observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
       <reference>
         <reference value="Observation/coin-example-1"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp"/>
-      <description value="This Coincident Time Stamp observation is referenced by other Observation examples." />
+      <name value="Example of a Coincident Timestamp"/>
+      <description value="This Coincident Timestamp observation is referenced by other Observation examples." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
@@ -636,18 +636,18 @@ In this example there are only xml structure definitions, value sets, code syste
             </page>
             <page>
               <nameUrl value="ObservationIdentifier.html"/>
-              <title value="The Observation Identifier"/>
+              <title value="The Unique Observation Identifier"/>
               <generation value="markdown"/>
             </page>
             <page>
               <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
-              <title value="Generating the PHD Reported Time Stamp Identifier"/>
+              <title value="Generating the PHD Reported Timestamp Identifier"/>
               <generation value="markdown"/>
             </page>
           </page>
           <page>
             <nameUrl value="CoincidentTimeStamp.html"/>
-            <title value="Coincident Time Stamp"/>
+            <title value="Coincident Timestamp"/>
             <generation value="markdown"/>
           </page>
           <page>
