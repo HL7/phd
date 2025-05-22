@@ -27,8 +27,9 @@
 <artifact deprecated="true" id="ValueSet/DeviceSystemIdIdentifier" key="ValueSet-DeviceSystemIdIdentifier" name="Device System Id Identifier"/>
 <artifact deprecated="true" id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
 <artifact id="ValueSet/DeviceTypes11073MDC" key="ValueSet-DeviceTypes11073MDC" name="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
+<artifact id="Observation/rtsa-example" key="Observation-rtsa-example" name="Example 1 of an RTSA"/>
+<artifact id="Observation/rtsa-example-2" key="Observation-rtsa-example-2" name="Example 2 of an RTSA"/>
 <artifact id="Bundle/bundle-continuousnonin" key="Bundle-bundle-continuousnonin" name="Example Bundled upload"/>
-<artifact id="Observation/rtsa-example" key="Observation-rtsa-example" name="Example Observation - rtsa-example"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Example Phd Device Metric"/>
 <artifact deprecated="true" id="Observation/bloodPress-1.0.1" key="Observation-bloodPress-1.0.1" name="Example of Compound measurement"/>
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="Example of PHD Device"/>
@@ -38,11 +39,12 @@
 <artifact id="Observation/bits-observation" key="Observation-bits-observation" name="Example of a ASN1 BITs measurement from a Pulse Oximeter"/>
 <artifact id="Observation/bpm-status" key="Observation-bpm-status" name="Example of a BPM status report"/>
 <artifact id="Device/phd-711000FEFF5F49B0.B0495F001071" key="Device-phd-711000FEFF5F49B0.B0495F001071" name="Example of a Blood Pressure PHD"/>
-<artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Time Stamp"/>
-<artifact id="Observation/coin-20181119202022" key="Observation-coin-20181119202022" name="Example of a Coincident Time Stamp PHG better synchronized"/>
 <artifact deprecated="true" id="Observation/coin-1234" key="Observation-coin-1234" name="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation"/>
-<artifact id="Observation/coin-20181119174911" key="Observation-coin-20181119174911" name="Example of a Coincident Time Stamp referenced from BP observation"/>
-<artifact id="Observation/coin-example-timefault" key="Observation-coin-fault20" name="Example of a Coincident Time Stamp with a Time Fault"/>
+<artifact deprecated="true" id="Observation/coin-fault20" key="Observation-coin-fault20" name="Example of a Coincident Time Stamp with a Time Fault"/>
+<artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Timestamp"/>
+<artifact id="Observation/coin-20181119202022" key="Observation-coin-20181119202022" name="Example of a Coincident Timestamp PHG better synchronized"/>
+<artifact id="Observation/coin-20181119174911" key="Observation-coin-20181119174911" name="Example of a Coincident Timestamp referenced from BP observation"/>
+<artifact id="Observation/coin-example-timefault" key="Observation-coin-example-timefault" name="Example of a Coincident Timestamp with a Time Fault"/>
 <artifact id="Device/phg-ecde3d4e58532d31.000000000000" key="Device-phg-ecde3d4e58532d31.000000000000" name="Example of a Gateway"/>
 <artifact id="Device/phg-example" key="Device-phg-example" name="Example of a Gateway 2"/>
 <artifact id="Device/phd-00601900010E9234.F45EABA80832" key="Device-phd-00601900010E9234.F45EABA80832" name="Example of a Glucose Monitor PHD"/>
@@ -57,11 +59,12 @@
 <artifact id="Observation/glucose-observation" key="Observation-glucose-observation" name="Example of a numeric glucose observation."/>
 <artifact id="Observation/numeric-spo2-alarm" key="Observation-numeric-spo2-alarm" name="Example of a numeric with an alert."/>
 <artifact id="Observation/numeric-spotnumeric" key="Observation-spotnumeric-1.0.0.3" name="Example of a numeric."/>
-<artifact id="Observation/rtsa-example-2" key="Observation-rtsa-example-2" name="Example of an RTSA"/>
 <artifact deprecated="true" id="Observation/rtsa-1234" key="Observation-rtsa-1234" name="Example of an Rtsa."/>
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
+<artifact id="ValueSet/MDCDeviceIdentifierTypes" key="ValueSet-MDCDeviceIdentifierTypes" name="MDC Device Identifier Types"/>
+<artifact id="ValueSet/MDCDeviceVersionTypes" key="ValueSet-MDCDeviceVersionTypes" name="MDC Device Version Type codes"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDC Non-Object codes"/>
 <artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDC Value Set"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
@@ -81,7 +84,8 @@
 <artifact id="StructureDefinition/PhdPatient" key="StructureDefinition-PhdPatient" name="PhdPatient"/>
 <artifact id="StructureDefinition/PhdRtsaObservation" key="StructureDefinition-PhdRtsaObservation" name="PhdRtsaObservation"/>
 <artifact id="CapabilityStatement/PhdServerCapabilityStatement" key="CapabilityStatement-PhdServerCapabilityStatement" name="PhdServerCapabilityStatement"/>
-<artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
+<artifact deprecated="true" id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
+<artifact id="StructureDefinition/PhdStringObservation" key="StructureDefinition-PhdStringObservation" name="PhdStringObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity 11073 Attributes"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range 11073 Attributes"/>
@@ -105,9 +109,9 @@
 <page key="changes" name="Change Log"/>
 <page key="CodeableConcepts" name="Codeable Concepts"/>
 <page deprecated="true" key="glucoseEnum" name="Coded Enumeration"/>
-<page key="CoincidentTimeStamp" name="Coincident Time Stamp"/>
 <page deprecated="true" key="coinFault" name="Coincident Time Stamp with a time fault"/>
 <page deprecated="true" key="coincidentTime" name="Coincident Time Stamp: PHG best synchronized"/>
+<page key="CoincidentTimeStamp" name="Coincident Timestamp"/>
 <page deprecated="true" key="bloodPress" name="Compound Measurement"/>
 <page key="ProfileConsumers" name="Consuming the PHD Profile FHIR Resources"/>
 <page key="DIMtoFHIRMapping" name="DIM to FHIR Mapping: Basics"/>
@@ -117,7 +121,7 @@
 <page deprecated="true" key="phdExample" name="Device example from a Blood Pressure PHD"/>
 <page key="downloads" name="Downloads"/>
 <page key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
-<page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Time Stamp Identifier"/>
+<page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
 <page key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
 <page key="GenericModel" name="Generic and Extensible Model"/>
 <page key="MderFLOATsandSFLOATs" name="Mder FLOATs and SFLOATs"/>
@@ -152,7 +156,7 @@
 <page deprecated="true" key="spotNumeric" name="Simple numeric with supplemental types"/>
 <page key="toc" name="Table of Contents"/>
 <page key="terminology" name="Terminology"/>
-<page key="ObservationIdentifier" name="The Observation Identifier"/>
+<page key="ObservationIdentifier" name="The Unique Observation Identifier"/>
 <page key="UseCases" name="Use Cases"/>
 <page deprecated="true" key="languages" name="languages" url="languages"/>
 </specification>

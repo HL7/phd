@@ -47,7 +47,7 @@ All additional attributes that may be reported in a numerical metric measurement
 
 ### Examples:
 
-A short RTSA observation with a time stamp is shown in this [RTSA example](Observation-rtsa-example.html).
+A short RTSA observation with a timestamp is shown in this [RTSA example](Observation-rtsa-example.html).
 This example results when the device sends a waveform. The value[x] becomes a valueSampledData data type. 
 <br>
 Note there is no logical id in this resource as this resource is being uploaded to the server in a create operation. The server will create the logical id and return it to the sender in the response.
@@ -55,7 +55,7 @@ Note the valueSampledData:
 {% fragment Observation/rtsa-example JSON BASE:value %}
 
 ## Consumers of the RTSA Profile
-About the only work a consumer of this profile needs to do is to back-scale the valueSampledData.data[] values to the original values reported by the sensor. The following table summarizes where a reader can obtain the most pertinent information.
+About the only work a consumer of this profile needs to do is to back-scale the valueSampledData.data values to the original values reported by the sensor. The following table summarizes where a reader can obtain the most pertinent information.
 
 |information|Data element in Observation|
 |-

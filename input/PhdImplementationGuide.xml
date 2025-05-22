@@ -125,7 +125,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/PhdStringEnumerationObservation"/>
+        <reference value="StructureDefinition/PhdStringObservation"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -215,7 +215,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="CodeSystem/ACMEIncPrivateMDCCodes"/>
       </reference>
       <exampleBoolean value="true"/>
-    </resource>  
+    </resource> 
     <resource>
       <reference>
         <reference value="CodeSystem/PhdObservationCategories"/>
@@ -363,8 +363,16 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/rtsa-example-2"/>
       </reference> 
-      <name value="Example of an RTSA"/>
+      <name value="Example 2 of an RTSA"/>
       <description value="ECG waveform with scaling" />
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/rtsa-example"/>
+      </reference> 
+      <name value="Example 1 of an RTSA"/>
+      <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
     </resource>
     <resource>
@@ -429,7 +437,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of String measurement 1"/>
       <description value="This example observation reports some arbitrary text from a cardiavascular fitness device." />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"/>
     </resource>
     <resource>
       <reference>
@@ -437,22 +445,22 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of String measurement 2"/>
       <description value="This example observation reports some arbitrary text from a Glucose meter explaining the failure of the measurement." />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"/>
     </resource>
     <resource>
       <reference>
         <reference value="Observation/coin-20181119202022"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp PHG better synchronized"/>
-      <description value="This example is a Coincident Time stamp where the PHG is better synchronized to NTP time than the PHD." />
+      <name value="Example of a Coincident Timestamp PHG better synchronized"/>
+      <description value="This example is a Coincident Timestamp where the PHG is better synchronized to NTP time than the PHD." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
       <reference>
         <reference value="Observation/coin-example-timefault"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp with a Time Fault"/>
-      <description value="This example is a Coincident Time stamp where the PHD has a time fault; it's current time line is unknown and it reported time stamps in its measurements." />
+      <name value="Example of a Coincident Timestamp with a Time Fault"/>
+      <description value="This example is a Coincident Timestamp where the PHD has a time fault; it's current timeline is unknown and it reported timestamps in its measurements." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
@@ -475,16 +483,16 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="Observation/coin-20181119174911"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp referenced from BP observation"/>
-      <description value="This Coincident Time Stamp observation is referenced by the Blood Pressure Observation" />
+      <name value="Example of a Coincident Timestamp referenced from BP observation"/>
+      <description value="This Coincident Timestamp observation is referenced by the Blood Pressure Observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
       <reference>
         <reference value="Observation/coin-example-1"/>
       </reference> 
-      <name value="Example of a Coincident Time Stamp"/>
-      <description value="This Coincident Time Stamp observation is referenced by other Observation examples." />
+      <name value="Example of a Coincident Timestamp"/>
+      <description value="This Coincident Timestamp observation is referenced by other Observation examples." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
     </resource>
     <resource>
@@ -628,18 +636,18 @@ In this example there are only xml structure definitions, value sets, code syste
             </page>
             <page>
               <nameUrl value="ObservationIdentifier.html"/>
-              <title value="The Observation Identifier"/>
+              <title value="The Unique Observation Identifier"/>
               <generation value="markdown"/>
             </page>
             <page>
               <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
-              <title value="Generating the PHD Reported Time Stamp Identifier"/>
+              <title value="Generating the PHD Reported Timestamp Identifier"/>
               <generation value="markdown"/>
             </page>
           </page>
           <page>
             <nameUrl value="CoincidentTimeStamp.html"/>
-            <title value="Coincident Time Stamp"/>
+            <title value="Coincident Timestamp"/>
             <generation value="markdown"/>
           </page>
           <page>
