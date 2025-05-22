@@ -11,7 +11,7 @@ This IG defines the following profiles:
    - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html): reports a coded value
    - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html): reports a set of codes, each with a boolean value
    - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html): reports sampled data such as a waveform
-   - [String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html): reports a (human-readable) string
+   - [String Enumeration Observation Profile](StructureDefinition-PhdStringObservation.html): reports a (human-readable) string
    - [Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html): reports a number of related values
  - [Coincident Timestamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html): reports the PHD device time as observed by the PHG for time auditing purposes
  - [Phd Device Profile](StructureDefinition-PhdDevice.html): reports the PHD features and properties
@@ -28,7 +28,7 @@ The measurement observation profiles mirror more or less the measurement 'value-
 |                       |Single Event                     |[Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)   |valueCodeableConcept|
 |                       |Multiple Event                   |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.valueCodeableConcept(s)|
 |                       |Multiple Booleans (Bitstring)    |[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)     |component.code<br/>component.valueCodeableConcepts|
-|string                 |String enumeration               |[String Enumeration Observation Profile](StructureDefinition-PhdStringEnumerationObservation.html) |valueString|
+|string                 |String enumeration               |[String Enumeration Observation Profile](StructureDefinition-PhdStringObservation.html) |valueString|
 |peridoic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |valueSampledData|
 |compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |component.valueQuantity|
 |compound               |Compound                         |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.value[x]|

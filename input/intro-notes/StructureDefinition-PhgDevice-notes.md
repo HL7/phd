@@ -217,10 +217,8 @@ The PHG regulation status is reported as follows:
 
  - property.type.coding.code="532354.0"
  - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
- - property.type.text="regulation-status"
- - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "
- - property.valueCode.text="Y=unregulated N=regulated"
+ - property.type.display="negated-regulation-status"
+ - property.valueBoolean="true=unregulated false=regulated"
  
 One could enter some time capabilities as additional 'bits' components if desired.
 

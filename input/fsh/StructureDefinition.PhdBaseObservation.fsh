@@ -48,12 +48,9 @@ Description: "Common base profile with the elements that are common to the PHD I
     * code 1..1
     * code only code
     * code = #phd (exactly)
-* identifier ^slicing.discriminator[0].type = #exists
-  * ^slicing.discriminator[=].path = "value"
-  * ^slicing.discriminator[+].type = #value
+* identifier 
+  * ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "system"
-  * ^slicing.discriminator[+].type = #exists
-  * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
@@ -93,18 +90,12 @@ Description: "Common base profile with the elements that are common to the PHD I
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open
-* component contains
-    supplementalTypesComponent 0..*
+* component contains supplementalTypesComponent 0..*
 * component[supplementalTypesComponent] ^short = "Supplemental Type: A further description of the measurement type."
-  * ^definition = "For each partition:term code pair contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
-  * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes as partition:term code pairs. Each pair is a code describing something additional about the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average. An MDC_MODALITY_FAST would indicate that a short averaging is used and the result reported regardless of stability."
+  * ^definition = "For each code  contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
+  * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes. Each code describes an aspect of the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average."
   * code from $CodeableConcept11073MDC (required)
     * coding 1..
-      * ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MdcType 1..1
-    * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
       * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
       * code 1..
@@ -114,17 +105,10 @@ Description: "Common base profile with the elements that are common to the PHD I
   * value[x] 1..
   * valueCodeableConcept 1..1
   * valueCodeableConcept only CodeableConcept
-    * ^sliceName = "valueCodeableConcept"
-    * ^definition = "The supplemental information determined as a result of making the observation, if the information is a code."
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MDCType 1..1
-    * coding[MDCType] ^short = "Required MDC code entry."
+    * coding
       * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
       * code 1..
-        * ^definition = "For the given Supplemental-Types entry the code here is given by: partition * 2**16 + term code"
   * dataAbsentReason ..0
 * dataAbsentReason ^short = "This element is populated when the Measurement Status indicates invalid, not available or measurement-ongoing."
 * dataAbsentReason ^definition = "Provides a reason why the expected value in the element Observation.value[x] is missing."

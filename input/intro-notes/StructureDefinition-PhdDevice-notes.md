@@ -37,9 +37,9 @@ The Device.type shall be encoded as follows:
 
  - Device.type.coding.code="65573"
  - Device.type.coding.system="urn.iso.std.iso:11073:10101"
- - Device.type.text="MDC_MOC_VMS_MDS_SIMP: Continua Personal Health Device"
+ - Device.type.display="MDC_MOC_VMS_MDS_SIMP"
 
-The display element is optional but highly recommended.
+The display element is optional but is recommended.
 
 ### System Type Spec List
 The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
@@ -156,7 +156,7 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 |-
 |Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
 |Reg-Cert-Data-List: certified PHD interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PHDCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD"<br><br>|
-|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.text="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "<br>property.valueCode.text="Y=unregulated N=regulated"|
+|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.display="negated-regulation-status"<br>property.valueBoolean="true=unregulated false=regulated"|
 
 Text elements are recommended but optional.
 
@@ -187,11 +187,7 @@ The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabiliti
 
 The required remaining property elements in each reported case are as follows:
  - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
- - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "
-
- An optional text element containing at least the ASN.1 name from the above table is encouraged:
- - property.type.text="ASN.1 name + any additional text"
+ - property.valueBoolean ="true" or "false" depending on the state of the Mder bit
 
 Only the static fields shall be reported and all the static fields are treated as events thus they only need to be reported if set. Reporting cleared static states is optional.
 

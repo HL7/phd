@@ -125,7 +125,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/PhdStringEnumerationObservation"/>
+        <reference value="StructureDefinition/PhdStringObservation"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -437,7 +437,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of String measurement 1"/>
       <description value="This example observation reports some arbitrary text from a cardiavascular fitness device." />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"/>
     </resource>
     <resource>
       <reference>
@@ -445,7 +445,7 @@ In this example there are only xml structure definitions, value sets, code syste
       </reference> 
       <name value="Example of String measurement 2"/>
       <description value="This example observation reports some arbitrary text from a Glucose meter explaining the failure of the measurement." />
-      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"/>
     </resource>
     <resource>
       <reference>

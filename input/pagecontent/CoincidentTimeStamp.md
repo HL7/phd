@@ -4,11 +4,10 @@ The Coincident Timestamp is a measurement taken by the PHG of the current time o
 
 The time capabilities of the PHD and PHG are in the PHD Device and PHG Device resource property elements, respectively. The status of the PHD clock is present in the data elements of the Coincident Timestamp. From these elements one can determine whether the PHG or PHD is better synchronized.
 
-### Coincident Timestamp Basics - Work in Progress!!
+### Coincident Timestamp Basics
 The coincident timestamp is a measurement of the current time of the PHD at the current time of the PHG. PHD Observation resources reference the Coincident Timestamp Observation in the Observation.extension.valueReference element in the [Coincident Timestamp Reference extension](StructureDefinition-CoincidentTimeStampReference.html)
 
 The PHG uses the following logic to report Coincident Timestamps and to adjust PHD observation timestamps under the assumption that PHD and PHG have the same UTC time zone and DST offset:
-<p class="new-content">
 
 - If the PHD does **not** report timestamps in a measurement
   - there is no Coincident Timestamp Observation for the measurement 
@@ -38,7 +37,7 @@ The PHG uses the following logic to report Coincident Timestamps and to adjust P
     - The time of the PHG is reported in the Observation.effectiveDateTime element
     - The corresponding time of the PHD is reported in the Observation.valueDateTime or Observation.valueQuantity element
     - *The PHG maps the PHD measurement timestamp to its own timeline by using the Coincident Timestamp as a anchor point between the two timelines*
-</p>
+```
 
 As an example, say the PHG reads the current time of the PHD and sees that it is six minutes behind it's time. If the PHG is better synchronized to NTP, the PHG will add six minutes to all the timestamps reported by the PHD on its current timeline. 
 

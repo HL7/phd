@@ -84,7 +84,8 @@
 <artifact id="StructureDefinition/PhdPatient" key="StructureDefinition-PhdPatient" name="PhdPatient"/>
 <artifact id="StructureDefinition/PhdRtsaObservation" key="StructureDefinition-PhdRtsaObservation" name="PhdRtsaObservation"/>
 <artifact id="CapabilityStatement/PhdServerCapabilityStatement" key="CapabilityStatement-PhdServerCapabilityStatement" name="PhdServerCapabilityStatement"/>
-<artifact id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
+<artifact deprecated="true" id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
+<artifact id="StructureDefinition/PhdStringObservation" key="StructureDefinition-PhdStringObservation" name="PhdStringObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
 <artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity 11073 Attributes"/>
 <artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range 11073 Attributes"/>

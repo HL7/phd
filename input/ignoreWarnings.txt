@@ -42,5 +42,5 @@ Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement
 # This is a fake/example OID for a hospital and this warning can be ignored safely.
 URL value 'urn:oid:1.2.3.4.5.6.7.8.10' does not resolve
 
-# Publisher process issue - can be ignored
-Error from http://tx.fhir.org/r4: The value set 'http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject|2.1.0' expansion took too long to process (>30sec)
+# Publisher process choice - can safely be ignored
+The value set expansion is too large, and only a subset has been displayed
