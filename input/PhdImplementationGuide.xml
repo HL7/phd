@@ -592,6 +592,11 @@ In this example there are only xml structure definitions, value sets, code syste
           <title value="Use Cases"/>
           <generation value="markdown"/>
         </page>
+                <page>
+          <nameUrl value="TempDevUseCasePage.html"/>
+          <title value="Example Devices Use Case Page"/>
+          <generation value="markdown"/>
+        </page>
         <page>
           <nameUrl value="Organizations.html"/>
           <title value="Organizations"/>

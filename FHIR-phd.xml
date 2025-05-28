@@ -120,6 +120,7 @@
 <page key="DeviceIdentifierCodes" name="Device Identifier codes"/>
 <page deprecated="true" key="phdExample" name="Device example from a Blood Pressure PHD"/>
 <page deprecated="true" key="downloads" name="Downloads"/>
+<page key="TempDevUseCasePage" name="Example Devices Use Case Page"/>
 <page key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
 <page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
 <page key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
