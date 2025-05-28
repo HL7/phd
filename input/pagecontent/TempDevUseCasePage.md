@@ -11,3 +11,5 @@ To do: the diagram is created using DrawIO and uses absolute links in the SVG fi
 {{ svgpart }}
 <figcaption><i>Example Device Usecase Diagram</i></figcaption>
 </figure>
+
+Some further text or next use case description can be added here. This is a placeholder for the TempDevUseCasePage and should be replaced with actual content when available.
