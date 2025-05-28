@@ -2,5 +2,3 @@ This Implementation Guide is meant for developers of both PHD data uploaders and
 
 This guide will be of use to anyone who wishes to work with IEEE 11073 PHD data in FHIR format. 
 
- - [Next: Scope](Scope.html)
- - [Previous: Purpose](Purpose.html)

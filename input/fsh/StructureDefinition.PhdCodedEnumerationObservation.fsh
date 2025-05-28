@@ -21,3 +21,12 @@ Description: "Observations coming from a PHD where the measurement value is a co
 // * valueCodeableConcept.coding[MDCType].system 1..
 // * valueCodeableConcept.coding[MDCType].system = "urn:iso:std:iso:11073:10101" (exactly)
 
+Mapping: IEEE-11073-10206-PhdCodedEnumerationObservation
+Id: IEEE-11073-10206-PhdCodedEnumerationObservation
+Title: "IEEE-11073-10206 ACOM to FHIR PhdCodedEnumerationObservation"
+Source: PhdCodedEnumerationObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* valueCodeableConcept.coding.system -> "urn:iso:std:iso:11073:10101"
+* valueCodeableConcept.coding.code -> "DiscreteObservation.value"
+

@@ -18,5 +18,4 @@ A consumer of the PHD profile resources will find most of the mapping is as expe
 ||*sub-value absent*|a dataAbsentReason is present indicating the sub value is in error or the event/state is unsupported|
 ||component.interpretation|Gives some special conditions about the measurement sub-value that are not 'complete' errors such as 'questionable'. Infrequent.|
 
- - [Next: DIM to FHIR Mapping Details](DIMtoFHIRMappingDetails.html)
- - [Previous: DIM to FHIR Mapping; Basics](DIMtoFHIRMapping.html)
+

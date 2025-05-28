@@ -72,3 +72,13 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
+
+Mapping: IEEE-11073-10206-PhdCompoundObservation
+Id: IEEE-11073-10206-PhdCompoundObservation
+Title: "IEEE-11073-10206 ACOM to FHIR PhdCompoundObservation"
+Source: PhdCompoundObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* component.code.coding.system -> "MDC (urn:iso:std:iso:11073:10101)"
+* component.code.coding.code -> "CompoundObservation.component-type"
+* component.value[x] -> "CompoundObservation.component.value (dependent on the type of the component)"

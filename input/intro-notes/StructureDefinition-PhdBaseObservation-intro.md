@@ -2,7 +2,7 @@
 The PHD Base Observation profile contains the elements that are common to all PHD Observation profiles describing measurements. These element are: 
  - code: what the measurement is 
  - subject: the patient this measurement refers to
- - effective[x]: the time stamp and perhaps duration of the measurement
+ - effective[x]: the timestamp and perhaps duration of the measurement
  - device: reference to the PHD taking the measurement
  - derivedFrom / memberOf: references to related observations
  - components: contains any additional measurement descriptions (Supplemental Information)
@@ -10,5 +10,5 @@ The PHD Base Observation profile contains the elements that are common to all PH
  - measurement status
  - gatewayDevice extension: reference to the PHG responsible for generating the upload
  - coinincidentTimestamp extension: reference to the coincidentTimestamp observation that relates PHD time and PHG time
- - performer[ ]: optional, when the patient is known to be the performer this may refer to the patient
+ - performer: optional, when the patient is known to be the performer this may refer to the patient
 

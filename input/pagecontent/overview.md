@@ -31,6 +31,3 @@ The [list]({{site.data.fhir.canonical}}/history.html) of all published versions 
 #### FHIR
 Link to the used [FHIR specification]({{site.data.fhir.path}}index.html)
 
-
- - [Next: Purpose](Purpose.html)
- - [Previous: Homepage](index.html)

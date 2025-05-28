@@ -508,15 +508,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -528,15 +520,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -548,15 +532,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -814,15 +790,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -834,15 +802,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -854,15 +814,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -874,15 +826,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -1140,15 +1084,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1160,15 +1096,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1180,15 +1108,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1200,15 +1120,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -1466,15 +1378,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1486,15 +1390,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1506,15 +1402,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1526,15 +1414,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -1792,15 +1672,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1812,15 +1684,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1832,15 +1696,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -1852,15 +1708,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -2118,15 +1966,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2138,15 +1978,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2158,15 +1990,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2178,15 +2002,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -2444,15 +2260,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2464,15 +2272,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2484,15 +2284,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2504,15 +2296,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -2770,15 +2554,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2790,15 +2566,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2810,15 +2578,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -2830,15 +2590,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -3096,15 +2848,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3116,15 +2860,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3136,15 +2872,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3156,15 +2884,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3176,15 +2896,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},
@@ -3352,14 +3064,6 @@
 					{
 						"coding": [
 							{
-								"system": "http://terminology.hl7.org/CodeSystem/observation-category",
-								"code": "vital-signs"
-							}
-						]
-					},
-					{
-						"coding": [
-							{
 								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
 								"code": "phd"
 							}
@@ -3450,15 +3154,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3470,15 +3166,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3490,15 +3178,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3510,15 +3190,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					},
 					{
 						"code": {
@@ -3530,15 +3202,7 @@
 								}
 							]
 						},
-						"valueCodeableConcept": {
-							"coding": [
-								{
-									"system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-									"code": "Y",
-									"display": "Yes"
-								}
-							]
-						}
+						"valueBoolean": true
 					}
 				]
 			},

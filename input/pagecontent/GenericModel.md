@@ -8,5 +8,3 @@ In the IEEE 11073-10206 Abstract information Content Model (ACOM), IEEE 11073-10
 
 Note -- IEEE 11073-10206 does not define a protocol, but requires protocols that support it to support a representation of the objects defined in the model. The Bluetooth SIG Generic Health Sensor Profile (GHSP) defines an ACOM compliant protocol.
 
- - [Next: DIM to FHIR Mapping; Basics](DIMtoFHIRMapping.html)
- - [Previous: Remote Patient Monitoring Considerations](RemotePatientMonitoringConsiderations.html)
