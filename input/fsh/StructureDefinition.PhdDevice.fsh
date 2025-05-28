@@ -110,9 +110,9 @@ Description: "Profile for the Device Resource for a PHD"
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
   * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
-    * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-10206 standard, the version is the 10206 protocol version."
+    * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (follows no 114xx specialization but conforms to the 11072-10206 standard, the version is the 11073-10206 version."
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, and Continua versions."
-  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 10206), and Software versions come from the Production-Specification attribute. The Continua version comes from the Reg-Cert-Data-List attribute. Continua compliant PHDs report at least a firmware and Continua version. A separate version entry is needed for each of the versions reported by the PHD."
+  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 11073-10206), and Software versions come from the Production-Specification attribute. The Continua version comes from the Reg-Cert-Data-List attribute. Continua compliant PHDs report at least a firmware and Continua version. A separate version entry is needed for each of the versions reported by the PHD."
 * version ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type.coding"
   * ^slicing.rules = #open

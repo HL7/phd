@@ -14,5 +14,3 @@ This algorithm shows how a gateway generates the timestamp as reported by the PH
 - If the PHD Observation also includes a Measurement-duration attribute this will be appended to the endcoded timestamp as a ".." followed by the duration encoded according to the timestamp resolution.
    - For example a duration of 1 second with a millisecond resolution will be appended as "..1.000". Combined with the previous example this becomes "690897360.567+4..1.000"
  
- - [Next: The Coincident Timestamp](CoincidentTimeStamp.html)
- - [Previous: The Observation Identifier](ObservationIdentifier.html)

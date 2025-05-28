@@ -10,5 +10,3 @@ The set of nomenclature codes is extensive, but it is segmented by partitions. M
 
 More information describing the MDC coding system can be found [here](https://terminology.hl7.org/MDC.html)
 
- - [Next: FHIR’s Codeable Concepts](CodeableConcepts.html)
- - [Previous: Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html)

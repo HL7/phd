@@ -102,9 +102,9 @@ Description: "Common base profile with the elements that are common to the PHD I
       * code = #68193 (exactly)
         * ^definition = "68193 is the 32-bit nomenclature code indicating a 'Supplemental-Types' value"
       * display ^definition = "It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES"
-  * value[x] 1..
-  * valueCodeableConcept 1..1
-  * valueCodeableConcept only CodeableConcept
+//  * value[x] 1..
+//  * valueCodeableConcept 1..1
+  * valueCodeableConcept // only CodeableConcept
     * coding
       * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
@@ -135,3 +135,4 @@ Target: "https://sagroups.ieee.org/11073/phd-wg"
 * status -> "Observation.measurement-status"
 * interpretation -> "Observation.measurement-status"
 * meta.security -> "Observation.measurement-status"
+* value[x] -> "Observation.value"

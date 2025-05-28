@@ -5,7 +5,7 @@ FHIR has no data type that corresponds to this kind of measurement. Consequently
 
 There may be an Observation.dataAbsentReason element if a measurement status indicates a measurement failure in which case no component elements representing the BITs setting are reported. 
 
-When mapping Bluetooth GHS bitstring Observation values only supported bits are reported. For bits of type 'event' only set bits need to be reported. If of type 'state' both set and cleared states need to be reported. This means that some bits can be skipped and that the number FHIR components  can be smaller than the number of bits in the GHS bitstring.
+When mapping Bluetooth GHS bitstring Observation values only supported bits are reported. For bits of type 'event' only set bits need to be reported. If of type 'state' both set and cleared states need to be reported. This means that some bits can be skipped and that the number FHIR Observation can be smaller than the number of bits in the GHS bitstring.
 
 Below is an example of one Observation.component element containing one of the perhaps several bit settings from a measurement:
 {% fragment Observation/bpm-status JSON EXCEPT:component[0] %}

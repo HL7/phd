@@ -8,5 +8,3 @@ In this Implementation Guide, the PHD is treated as a IEEE 11073-10206 compliant
 
 *In general, if a PHD provides timestamps with its measurements, it needs to provide a means for the PHG to get its sense of current time. If it does, one can likely use this implementation guide with that device.*
 
- - [Next: Profiles](ProfilesOverview.html)
- - [Previous: Coincident Timestamp](CoincidentTimeStamp.html)

@@ -46,7 +46,3 @@ PHDs may also use tick counters of a specified resolution that report a tick cou
 
 A relative timestamp value in a measurement is mapped to UTC plus offset by taking the difference between the measurement timestamp and the synchronisation point's relative time. That difference is added to the synchronisation point's UTC time plus offset. For example, if the PHD is using the 1 millisecond relative time and the PHG obtains the current relative time 'anchor' value of 100000 at the PHG's current time 'anchor' value of 2017/11/27 05:31:44.555 -0500 then the PHG can map a measurement timestamp of 108000 to an actual time of 2017/11/27 05:31:52.555 -0500 since 108000 - 100000 = 8000 milliseconds.
 
-
- - [Next: Non-IEEE 11073-20601 Devices](Non11073PHDDevices.html)
- - [Previous: Generating the Reported Timestamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
-

@@ -1,10 +1,11 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="index.html">Home</a></li>
   <li><a href="overview.html">Overview</a></li>
   <li><a href="ProfileConsumers.html">Profile Consumers</a></li>
-  <li><a href="TechnicalImplementationGuidance.html">PHG Implementation Guidance</a></li>
+  <li><a href="TechnicalImplementationGuidance.html">Implementation Guidance</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="appendices.html">Appendices</a></li>
   <li><a href="changes.html">Change Log</a></li>
   <li><a href="{{site.data.fhir.path}}index.html">FHIR Specification</a></li>
 </ul>      

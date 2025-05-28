@@ -39,7 +39,8 @@ even though the file names are 'pageName.md'. But the <generation value="markdow
 Make sure the version in the src/properties.txt file is the same as the versions in you value sets and code systems
 The 'menu.xml' file in src/includes contains the headers or sections displayed across the top.
 In this example there are only xml structure definitions, value sets, code systems, and markdown pages that are all text. -->
-<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
+<ImplementationGuide xmlns="http://hl7.org/fhir"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
   <id value="hl7.fhir.uv.phd"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
   <version value="2.1.0"/>
@@ -69,16 +70,15 @@ In this example there are only xml structure definitions, value sets, code syste
     </coding>
   </jurisdiction>
   <packageId value="hl7.fhir.uv.phd" />
-  <extension
-      url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="dev"/>
   </extension>
   <fhirVersion value="4.0.1"/>
-<!-- declare dependency on PoCD IG for measurement status CodeSystem -->
+  <!-- declare dependency on PoCD IG for measurement status CodeSystem -->
   <dependsOn id="pocd">
     <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>
-	  <packageId value="hl7.fhir.uv.pocd"/>
-  	<version value="0.3.0"/>
+    <packageId value="hl7.fhir.uv.pocd"/>
+    <version value="0.3.0"/>
   </dependsOn>
   <definition>
     <resource>
@@ -215,7 +215,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="CodeSystem/ACMEIncPrivateMDCCodes"/>
       </reference>
       <exampleBoolean value="true"/>
-    </resource> 
+    </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/PhdObservationCategories"/>
@@ -265,7 +265,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <description value="Value set for those Asn1ToHL7 codes whose source is a measurement attribute; one of the Enum-observed-value attributes."/>
       <exampleBoolean value="false"/>
     </resource>
-  <!--    these value sets were missing -->
+    <!--    these value sets were missing -->
     <resource>
       <reference>
         <reference value="ValueSet/DeviceTypes11073MDC"/>
@@ -287,7 +287,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <name value="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
       <exampleBoolean value="false"/>
     </resource>
-  <!--    end of missing value sets -->
+    <!--    end of missing value sets -->
     <resource>
       <reference>
         <reference value="CapabilityStatement/PhdServerCapabilityStatement"/>
@@ -299,7 +299,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Bundle/bundle-example-1"/>
-      </reference> 
+      </reference>
       <description value="This example shows a full first time transaction Bundle containing Patient, Device, and Observation resources." />
       <name value="Example of a first time Bundle upload"/>
       <exampleBoolean value="true"/>
@@ -307,7 +307,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Device/phd-74E8FFFEFF051C00.001C05FFE874"/>
-      </reference> 
+      </reference>
       <name value="Example of PHD Device"/>
       <description value="This example PHD Device resource is referenced by other examples and is present for the validator." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
@@ -315,14 +315,14 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Bundle/bundle-continuousnonin"/>
-      </reference> 
+      </reference>
       <name value="Example Bundled upload"/>
       <description value="This example is an upload from a Bluetooth Low Energy Pulse oximeter device streaming data. In this case the gateway has previously uploaded measurements and saved the logical ids of the Patient and Device resources so they are not re-uploaded." />
     </resource>
     <resource>
       <reference>
         <reference value="DeviceMetric/bp-devicemetric-example"/>
-      </reference> 
+      </reference>
       <name value="Example Phd Device Metric"/>
       <description value="This example is a PhdDeviceMetric for a Blood Pressure measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"/>
@@ -330,7 +330,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/numeric-spotnumeric"/>
-      </reference> 
+      </reference>
       <name value="Example of a numeric."/>
       <description value="This example is a simple numeric observation of a pulse rate from a pulse oximeter. This particular example also has a component as the original measurement has a Supplemental Information attribute indicating that this is a SPOT measurement (a stable average)." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
@@ -338,7 +338,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/numeric-spo2-alarm"/>
-      </reference> 
+      </reference>
       <name value="Example of a numeric with an alert."/>
       <description value="This example is a simple numeric observation from a pulse oximeter with an alert." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
@@ -346,7 +346,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/temperature-observation"/>
-      </reference> 
+      </reference>
       <name value="Example of a numeric body temperature observation."/>
       <description value="This example is a simple numeric observation of a health thermometer." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
@@ -354,7 +354,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/glucose-observation"/>
-      </reference> 
+      </reference>
       <name value="Example of a numeric glucose observation."/>
       <description value="This example is a simple numeric observation of a (continuous) glucose monitor." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
@@ -362,7 +362,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/rtsa-example-2"/>
-      </reference> 
+      </reference>
       <name value="Example 2 of an RTSA"/>
       <description value="ECG waveform with scaling" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
@@ -370,7 +370,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/rtsa-example"/>
-      </reference> 
+      </reference>
       <name value="Example 1 of an RTSA"/>
       <description value="This example is an RTSA observation of a pleth signal from a pulse oximeter. This very short waveform maps to a valueSampledData element." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation"/>
@@ -378,7 +378,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/numeric-observation-not-a-number"/>
-      </reference> 
+      </reference>
       <name value="Example of a NaN case"/>
       <description value="This example contains a NaN (not a number) measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"/>
@@ -386,7 +386,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/meal-context-observation"/>
-      </reference> 
+      </reference>
       <name value="Example of coded enumeration"/>
       <description value="This example contains measurement that is itself a code. The measurement comes from a Glucose meter and indicates that the glucose measurement was taken after lunch or dinner. It is also known as the meal context." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation"/>
@@ -394,7 +394,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/bits-observation"/>
-      </reference> 
+      </reference>
       <name value="Example of a ASN1 BITs measurement from a Pulse Oximeter"/>
       <description value="This example is a device and sensor status measurement from a pulse oximeter." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"/>
@@ -402,7 +402,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/bpm-status"/>
-      </reference> 
+      </reference>
       <name value="Example of a BPM status report"/>
       <description value="This example reports the status of a BPM measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"/>
@@ -410,23 +410,23 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/compound-numeric-blood-pressure"/>
-      </reference> 
+      </reference>
       <name value="Example of a compound numeric observation"/>
       <description value="This example is from a Blood Pressure cuff." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
     </resource>
-   <resource>
+    <resource>
       <reference>
         <reference value="Observation/compound-numeric-blood-pressure-no-mean"/>
-      </reference> 
+      </reference>
       <name value="Example of a compound numeric observation with one component value absent"/>
       <description value="This example is from a Blood Pressure cuff." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"/>
     </resource>
-   <resource>
+    <resource>
       <reference>
         <reference value="Observation/compound-observation-glucose"/>
-      </reference> 
+      </reference>
       <name value="Example of a compound observation"/>
       <description value="This artificial example combines a glucose measurement and context information." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"/>
@@ -434,7 +434,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/stringenum-1234"/>
-      </reference> 
+      </reference>
       <name value="Example of String measurement 1"/>
       <description value="This example observation reports some arbitrary text from a cardiavascular fitness device." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"/>
@@ -442,7 +442,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/string-observation-1"/>
-      </reference> 
+      </reference>
       <name value="Example of String measurement 2"/>
       <description value="This example observation reports some arbitrary text from a Glucose meter explaining the failure of the measurement." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"/>
@@ -450,7 +450,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/coin-20181119202022"/>
-      </reference> 
+      </reference>
       <name value="Example of a Coincident Timestamp PHG better synchronized"/>
       <description value="This example is a Coincident Timestamp where the PHG is better synchronized to NTP time than the PHD." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
@@ -458,7 +458,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/coin-example-timefault"/>
-      </reference> 
+      </reference>
       <name value="Example of a Coincident Timestamp with a Time Fault"/>
       <description value="This example is a Coincident Timestamp where the PHD has a time fault; it's current timeline is unknown and it reported timestamps in its measurements." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
@@ -466,7 +466,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Device/phd-711000FEFF5F49B0.B0495F001071"/>
-      </reference> 
+      </reference>
       <name value="Example of a Blood Pressure PHD"/>
       <description value="This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
@@ -474,7 +474,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Device/phd-00601900010E9234.F45EABA80832"/>
-      </reference> 
+      </reference>
       <name value="Example of a Glucose Monitor PHD"/>
       <description value="This example maps an Glucose monitor PHD. It is referenced by a coded Glucose meal context observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
@@ -482,7 +482,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/coin-20181119174911"/>
-      </reference> 
+      </reference>
       <name value="Example of a Coincident Timestamp referenced from BP observation"/>
       <description value="This Coincident Timestamp observation is referenced by the Blood Pressure Observation" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
@@ -490,7 +490,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Observation/coin-example-1"/>
-      </reference> 
+      </reference>
       <name value="Example of a Coincident Timestamp"/>
       <description value="This Coincident Timestamp observation is referenced by other Observation examples." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"/>
@@ -498,7 +498,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Device/phg-ecde3d4e58532d31.000000000000"/>
-      </reference> 
+      </reference>
       <name value="Example of a Gateway"/>
       <description value="This example maps an Android Gateway" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"/>
@@ -506,7 +506,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Device/phg-example"/>
-      </reference> 
+      </reference>
       <name value="Example of a Gateway 2"/>
       <description value="This example maps an Android Gateway" />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhgDevice"/>
@@ -514,7 +514,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Patient/patientExample-1"/>
-      </reference> 
+      </reference>
       <name value="Example of a known Patient"/>
       <description value="This example maps a known patient where an optional patient name is included." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"/>
@@ -522,7 +522,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <resource>
       <reference>
         <reference value="Patient/patientExample-2"/>
-      </reference> 
+      </reference>
       <name value="Example of an unknown Patient"/>
       <description value="This example maps an unknown patient." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"/>
@@ -541,158 +541,161 @@ In this example there are only xml structure definitions, value sets, code syste
         <nameUrl value="index.html"/>
         <title value="Personal Health Device Implementation Guide Home Page"/>
         <generation value="markdown"/>
-        <page>
-          <nameUrl value="overview.html"/>
-          <title value="Overview"/>
-          <generation value="markdown"/>
-          <page>
-            <nameUrl value="Purpose.html"/>
-            <title value="Purpose"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-              <nameUrl value="Audience.html"/>
-              <title value="Audience"/>
-              <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="Scope.html"/>
-            <title value="Scope"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="UseCases.html"/>
-            <title value="Use Cases"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="Organizations.html"/>
-            <title value="Organizations"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="Gloassary.html"/>
-            <title value="Glosarry"/>
-            <generation value="markdown"/>
-          </page>          
-        </page>
-        <page>
+        <!-- <page>
           <nameUrl value="ProfileConsumers.html"/>
           <title value="Consuming the PHD Profile FHIR Resources"/>
           <generation value="markdown"/>
+        </page> -->
+
+        <page>
+          <nameUrl value="ProfilesOverview.html"/>
+          <title value="Profiles Overview"/>
+          <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="TechnicalImplementationGuidance.html"/>
-          <title value="PHG Implementation Guidance"/>
+          <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
+          <title value="Generating the PHD codes"/>
           <generation value="markdown"/>
-          <page>
-            <nameUrl value="RemotePatientMonitoringConsiderations.html"/>
-            <title value="Remote Patient Monitoring Considerations"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="GenericModel.html"/>
-            <title value="Generic and Extensible Model"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="DIMtoFHIRMapping.html"/>
-            <title value="DIM to FHIR Mapping: Basics"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="GeneralNotestoConsumers.html"/>
-            <title value="General Notes to Consumers of FHIR Data"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="DIMtoFHIRMappingDetails.html"/>
-            <title value="DIM to FHIR Mapping: Details"/>
-            <generation value="markdown"/>
-            <page>
-              <nameUrl value="DefinitionMetricMsmt.html"/>
-              <title value="Definition of a Metric Measurement"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="MetricAttributesofNoInterest.html"/>
-              <title value="Metric Protocol-Only Attributes"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="MderFLOATsandSFLOATs.html"/>
-              <title value="Mder FLOATs and SFLOATs"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="Nomenclaturecodes.html"/>
-              <title value="Nomenclature codes"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="CodeableConcepts.html"/>
-              <title value="Codeable Concepts"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="ObtainObservationCode.html"/>
-              <title value="Obtaining the Observation Code"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="ObtainUnitCode.html"/>
-              <title value="Obtaining the Unit Code"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="ObservationIdentifier.html"/>
-              <title value="The Unique Observation Identifier"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
-              <title value="Generating the PHD Reported Timestamp Identifier"/>
-              <generation value="markdown"/>
-            </page>
-          </page>
-          <page>
-            <nameUrl value="CoincidentTimeStamp.html"/>
-            <title value="Coincident Timestamp"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="Non11073PHDDevices.html"/>
-            <title value="Non IEEE 11073 PHD Devices"/>
-            <generation value="markdown"/>
-          </page>
         </page>
-          <page>
-            <nameUrl value="ProfilesOverview.html"/>
-            <title value="Profiles Overview"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="ContinuaPersonalAreaNetworkCodes.html"/>
-            <title value="Generating the PHD codes"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="DeviceIdentifierCodes.html"/>
-            <title value="Device Identifier codes"/>
-            <generation value="markdown"/>
-          </page>
+        <page>
+          <nameUrl value="DeviceIdentifierCodes.html"/>
+          <title value="Device Identifier codes"/>
+          <generation value="markdown"/>
+        </page>
         <page>
           <nameUrl value="terminology.html"/>
           <title value="Terminology"/>
           <generation value="markdown"/>
         </page>
+      </page>
+      <page>
+        <nameUrl value="overview.html"/>
+        <title value="Overview"/>
+        <generation value="markdown"/>
         <page>
-          <nameUrl value="downloads.html"/>
-          <title value="Downloads"/>
+          <nameUrl value="Purpose.html"/>
+          <title value="Purpose"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Audience.html"/>
+          <title value="Audience"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Scope.html"/>
+          <title value="Scope"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="UseCases.html"/>
+          <title value="Use Cases"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Organizations.html"/>
+          <title value="Organizations"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Glossary.html"/>
+          <title value="Glossary"/>
           <generation value="markdown"/>
         </page>
       </page>
-      <!-- Required element. Second 'primary' top-level page. It is generated -->
+      <page>
+        <nameUrl value="ProfileConsumers.html"/>
+        <title value="Consuming the PHD Profile FHIR Resources"/>
+        <generation value="markdown"/>
+      </page>
+
+      <page>
+        <nameUrl value="TechnicalImplementationGuidance.html"/>
+        <title value="PHG Implementation Guidance"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="RemotePatientMonitoringConsiderations.html"/>
+          <title value="Remote Patient Monitoring Considerations"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="GenericModel.html"/>
+          <title value="Generic and Extensible Model"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="DIMtoFHIRMapping.html"/>
+          <title value="DIM to FHIR Mapping: Basics"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="GeneralNotestoConsumers.html"/>
+          <title value="General Notes to Consumers of FHIR Data"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="DIMtoFHIRMappingDetails.html"/>
+          <title value="DIM to FHIR Mapping: Details"/>
+          <generation value="markdown"/>
+          <page>
+            <nameUrl value="DefinitionMetricMsmt.html"/>
+            <title value="Definition of a Metric Measurement"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="MetricAttributesofNoInterest.html"/>
+            <title value="Metric Protocol-Only Attributes"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="MderFLOATsandSFLOATs.html"/>
+            <title value="Mder FLOATs and SFLOATs"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="Nomenclaturecodes.html"/>
+            <title value="Nomenclature codes"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="CodeableConcepts.html"/>
+            <title value="Codeable Concepts"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="ObtainObservationCode.html"/>
+            <title value="Obtaining the Observation Code"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="ObtainUnitCode.html"/>
+            <title value="Obtaining the Unit Code"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="ObservationIdentifier.html"/>
+            <title value="The Unique Observation Identifier"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
+            <title value="Generating the PHD Reported Timestamp Identifier"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <nameUrl value="CoincidentTimeStamp.html"/>
+          <title value="Coincident Timestamp"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Non11073PHDDevices.html"/>
+          <title value="Non IEEE 11073 PHD Devices"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+
+      <!-- Required element, a top-level page. The content is generated -->
       <page>
         <nameUrl value="artifacts.html"/>
         <title value="Artifact List"/>
@@ -702,7 +705,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <nameUrl value="changes.html"/>
         <title value="Change Log"/>
         <generation value="markdown"/>
-      </page>      
+      </page>
       <!-- to fix recent warnings from the tooling-->
       <page>
         <nameUrl value="Appendices.html"/>
@@ -717,6 +720,10 @@ In this example there are only xml structure definitions, value sets, code syste
     <parameter>
       <code value="releaselabel"/>
       <value value="STU 2.0"/>
+    </parameter>
+    <parameter>
+      <code value="shownav"/>
+      <value value="true"/>
     </parameter>
   </definition>
 </ImplementationGuide>

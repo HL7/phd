@@ -8,5 +8,3 @@ For a list of organizations referenced in this guide and their relevance, see th
 
 For definitions of abbreviations used in this guide, see the [Glossary](Glossary.html) page.
 
- - [Next: Use Cases](UseCases.html)
- - [Previous: Audience](Audience.html)

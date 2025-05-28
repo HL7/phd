@@ -45,6 +45,3 @@ The Mder encoding also has a set of 5 reserved special values which represent so
 |0x00800002|0x802|Negative Infinity (-inf)|.dataAbsentReason set to 'negative-ifinity'|
 |0x00800000|0x800|Not at this resolution|.dataAbsentReason set to 'error'|
 |0x00800001|0x801|Reserved for future use|.dataAbsentReason set to 'error'|
-
- - [Next: Nomenclature Codes](Nomenclaturecodes.html)
- - [Previous: Protocol Only Metric Attributes](MetricAttributesofNoInterest.html)

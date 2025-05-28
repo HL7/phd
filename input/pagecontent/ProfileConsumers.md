@@ -21,7 +21,7 @@ PHDs measurements are encoded into Observation resources. There are different ty
  - **coded** such as the meal context and health status in a glucose monitor. A coded measurement is used when there is a limited set of options and each option is specified by a code. 
  - **sample array** (often waveforms) such as an ECG trace, a forced exhalation flow rate from a spirometer, a pleth wave of a pulse oximeter, or a sequence of heart rates. 
  - **string** measurements which are just arbitrary human-readable strings.  
- - **discrete state or event** measurements (alpha-numeric codes) which report a set of conditions that may occur simultaneously. An example would be a room status measurement in an independent living facility such as patient in room, door closed, window closed, climate control off, and video monitoring off.
+ - **discrete state or event** measurements report multiple conditions that can occur at the same time. For example, a room status measurement in an independent living facility might include whether the patient is in the room, the door is closed, the window is closed, climate control is off, and video monitoring is off. Each of these conditions is represented as a separate component with a boolean value (in the `Observation.component.value[x]` element).
  - **compound** where multiple measurements at a single point in time need to be taken together to represent the value, such as the systolic, diastolic, and mean components of the blood pressure or x-, y-, and z- components of an acceleration.
 
 #### Common Observation Element Fields
@@ -689,13 +689,13 @@ An example of the time synchronization accuracy property entry is given below.
     }
 
 #### Regulation Status
-The Regulation status is a set of states where only one state is defined. Regulation Status is used to indicate which regulation body the PHD is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated
+The Regulation status is a set of states where only one state is defined. Regulation Status is used to indicate which regulation body the PHD is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated.
 
 The property is indicated by the Device.property.type.coding.code having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
 
 An example of an entry for an FDA regulated device is shown below:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[1] %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') ELIDE:type|valueCode %}
 
 #### Continua Certified PHD Interfaces
 This property is a list of codes that indicate which specializations and transports the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organisation certified PHDs for compliance to its guidelines that referenced this IG.
@@ -704,7 +704,7 @@ The property is indicated by the Device.property.type.coding.code having the MDC
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[0] %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532353') ELIDE:type|valueCode %}
 
 ### The PHG Device Resource
 The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.

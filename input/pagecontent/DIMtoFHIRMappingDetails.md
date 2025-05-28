@@ -11,6 +11,5 @@ In this section the details of the mapping of the IEEE 11073-20601 Metric object
  - [The Observation Identifier]({{ output }}ObservationIdentifier.html)
  - [Generating the Reported Timestamp Observation Identifier]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)
  
- - [Previous: General Notes to Consumers of FHIR Data]({{ output }}GeneralNotestoConsumers.html)
 
  

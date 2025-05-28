@@ -18,7 +18,3 @@ This Implementation Guide (IG) references several organizations that play import
 
 ## [PCHAlliance (Personal Connected Health Alliance)](https://www.pchalliance.org/)
 **Relevance:** PCHAlliance managed the Continua Design Guidelines, which provided certification for interoperable PHDs based on IEEE 11073-20601. While the certification program is no longer active, the guidelines influenced the development of this IG.
-
----
-
-- [Back to Scope](Scope.html)

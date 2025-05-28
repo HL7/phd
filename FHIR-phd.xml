@@ -119,11 +119,12 @@
 <page key="DefinitionMetricMsmt" name="Definition of a Metric Measurement"/>
 <page key="DeviceIdentifierCodes" name="Device Identifier codes"/>
 <page deprecated="true" key="phdExample" name="Device example from a Blood Pressure PHD"/>
-<page key="downloads" name="Downloads"/>
+<page deprecated="true" key="downloads" name="Downloads"/>
 <page key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
 <page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
 <page key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
 <page key="GenericModel" name="Generic and Extensible Model"/>
+<page key="Glossary" name="Glossary"/>
 <page key="MderFLOATsandSFLOATs" name="Mder FLOATs and SFLOATs"/>
 <page key="MetricAttributesofNoInterest" name="Metric Protocol-Only Attributes"/>
 <page deprecated="true" key="NumericNaN" name="NaN Example"/>
@@ -133,6 +134,7 @@
 <page key="ObtainObservationCode" name="Obtaining the Observation Code"/>
 <page key="ObtainUnitCode" name="Obtaining the Unit Code"/>
 <page deprecated="true" key="Organization" name="Organization"/>
+<page key="Organizations" name="Organizations"/>
 <page key="overview" name="Overview"/>
 <page deprecated="true" key="BITsEnumerationObservationProfile" name="PHD BITs Coded Enumeration Observation Profile"/>
 <page deprecated="true" key="CodedEnumerationObservationProfile" name="PHD Coded Enumeration Observation Profile"/>
