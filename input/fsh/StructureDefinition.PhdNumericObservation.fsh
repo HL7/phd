@@ -1,6 +1,6 @@
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
-Alias: $ASN1attribute = http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute
+Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
 
 Profile: PhdNumericObservation
 Parent: PhdBaseObservation

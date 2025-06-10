@@ -37,8 +37,6 @@ However, some of the attributes represent the same type of measurement such as t
 
 Again, these details are only of concern to the *encoder* of the FHIR resources, the *consumer* of the FHIR resources is not concerned with the types of attributes delivered by the PHD.
 
- - [Next: Protocol Only Metric Attributes](MetricAttributesofNoInterest.html)
- - [Previous: DIM to FHIR Mapping; Details](DIMtoFHIRMappingDetails.html)
 
  
 

@@ -1,5 +1,5 @@
 This example shows a basic numeric observation. It does have a single component element as the measurement also contained a Supplemental Information attribute indicating the measurement is a SPOT (stable average).
 
-Note there is no logical id in this resource as this resource is being uploaded to the server in a conditional create operation. The server will use the identifier to check that no other Observation resource exists on the server with the same identifier. If there is not such resource present, the server will create the logical id and return it to the sender in the response. Pulse oximeters reporting a SPOT measurement have a time stamp thus there is a reference to the coincident time stamp.
+Note there is no logical id in this resource as this resource is being uploaded to the server in a conditional create operation. The server will use the identifier to check that no other Observation resource exists on the server with the same identifier. If there is not such resource present, the server will create the logical id and return it to the sender in the response. Pulse oximeters reporting a SPOT measurement have a timestamp thus there is a reference to the coincident timestamp.
 
 The referenced resources are assumed to have been uploaded to the server before - Patient, PHD, PHG and coincident timestamp.

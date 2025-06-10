@@ -14,18 +14,7 @@ Description: "Observations coming from a PHD where the measurement is a set of n
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCompoundNumericObservation reports PHD measurements that contain one of either a Compound-Basic-Nu-Observed-Value, Compound-Simple-Nu-Observed-Value, or Compound-Nu-Observed-Value attribute."
   * ^comment = "Used for compound numeric observations from Personal Health Devices"
-* category ..*
-* category only CodeableConcept
-  * ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "coding.code"
-  * ^slicing.discriminator[+].type = #value
-  * ^slicing.discriminator[=].path = "coding.system"
-  * ^slicing.ordered = false
-  * ^slicing.rules = #open
 * value[x] ..0
-// * component ^slicing.discriminator[0].type = #value
-//   * ^slicing.discriminator[=].path = "code"
-//   * ^slicing.rules = #open
 * component contains
     compound 0..*
 * component[compound] ^short = "Compound numeric measurement entry components"
@@ -73,3 +62,15 @@ Description: "Observations coming from a PHD where the measurement is a set of n
       * code 1..
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
+  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
+
+Mapping: IEEE-11073-10206-PhdCompoundNumericObservation
+Id: IEEE-11073-10206-PhdCompoundNumericObservation
+Title: "IEEE-11073-10206 ACOM to FHIR PhdCompoundNumericObservation"
+Source: PhdCompoundNumericObservation
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* component.code.coding.system -> "MDC (urn:iso:std:iso:11073:10101)"
+* component.code.coding.code -> "CompoundObservation.component-type"
+* component.valueQuantity.value -> "CompoundObservation.component.value"
+* component.valueQuantity.code -> "CompoundObservation.component.unit"

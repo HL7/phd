@@ -1,7 +1,7 @@
 ValueSet: Range11073MDC
 Id: Range11073MDC
 Title: "Range 11073 Attributes"
-Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-10206 or -20601 attributes whose values are Ranges."
+Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures describing 11073 DIM attributes whose values are Ranges."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/Range11073MDC"
 * ^version = "current"

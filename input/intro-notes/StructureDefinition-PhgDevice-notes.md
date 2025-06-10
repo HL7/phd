@@ -186,7 +186,7 @@ The PHDCodes are mapped to a list of property.valueCode elements. The property.t
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="PHDCode*N*"
- - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD "
+ - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS "
 
 Note that the property.valueCode element is an array and one can have many of these in a single property element.
 
@@ -217,10 +217,8 @@ The PHG regulation status is reported as follows:
 
  - property.type.coding.code="532354.0"
  - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
- - property.type.text="regulation-status"
- - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "
- - property.valueCode.text="Y=unregulated N=regulated"
+ - property.type.display="negated-regulation-status"
+ - property.valueBoolean="true=unregulated false=regulated"
  
 One could enter some time capabilities as additional 'bits' components if desired.
 

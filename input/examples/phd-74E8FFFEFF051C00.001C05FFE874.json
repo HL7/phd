@@ -126,34 +126,61 @@
                         "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "Certified device list as transport-specialization combo"
+                "text": "Each element of the Continua certified interfaces list as a seperate property"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                             "code": "32772",
                             "display": "Bluetooth LE Pulse Oximeter certified"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
+                    }
+                ],
+                "text": "Each element of the Continua certified interfaces list as a seperate property"
+            },
+            "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                             "code": "8196",
                             "display": "PHDC USB Pulse Oximeter certified"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
+                    }
+                ],
+                "text": "Each element of the Continua certified interfaces list as a seperate property"
+            },
+            "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                             "code": "4",
                             "display": "Pulse Oximeter certified"
-
                         }
                     ]
                 }
@@ -174,8 +201,7 @@
                     "coding": [
                         {
                             "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                            "code": "N",
-                            "display": "No"
+                            "code": "N"
                         }
                     ]
                 }
@@ -201,6 +227,72 @@
                             "display": "MDC_TIME_SYNC_NONE"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                        "code": "68219.0",
+                        "display": "mds-time-capab-real-time-clock"
+                    }
+                ]
+            },
+            "valueCode": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                            "code": "Y"
+                        }
+                    ],
+                    "text": "real time clock supported"
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                        "code": "68219.1",
+                        "display": "mds-time-capab-set-clock"
+                    }
+                ]
+            },
+            "valueCode": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                            "code": "Y"
+                        }
+                    ],
+                    "text": "setting the time supported"
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                        "code": "68219.2",
+                        "display": "mds-time-capab-relative-time"
+                    }
+                ]
+            },
+            "valueCode": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                            "code": "Y"
+                        }
+                    ],
+                    "text": "relative time supported"
                 }
             ]
         }

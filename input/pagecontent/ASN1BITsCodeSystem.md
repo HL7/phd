@@ -103,5 +103,3 @@ The mapped codes reported in the FHIR Observation.component.coding.code elements
 
 See [currently defined ASN1 Codes]({{ output }}ASN1ToHL7Codes.html).
 
- - [Next: The Observation Identifier]({{ output }}ObservationIdentifier.html)
- - [Previous: Obtaining the Unit code]({{ output }}ObtainUnitCode.html)

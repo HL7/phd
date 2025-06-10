@@ -22,8 +22,6 @@ padding: 6px;}</style>
 
 The last four attributes are essential for the decoder to properly map ASN1 BITS measurements to FHIR using the ASN1 coding system but the attributes themselves are not of interest once mapped. For example, the Capability-Mask-* attribute tells which bits are supported by the PHD. The encoder needs to know which bits these are but once known, the attribute value itself is no longer of interest. The State-Flag-* indicates to the decoder whether the bit is an event or a state. If an event, only the set case (event occurred) needs to be recorded, for example, 'sensor malfunctioned' in the sensor status measurement of several specializations. If a 'state' both the set or cleared case needs to be reported, for example 'patient in room' or 'patient not in room' in the independent living case.
 
- - [Next: Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html)
- - [Previous: Definition of a Metric Measurement](DefinitionMetricMsmt.html)
 
 
 
