@@ -700,7 +700,7 @@ An example of an entry for an FDA regulated device is shown below:
 #### Continua Certified PHD Interfaces
 This property is a list of codes that indicate which specializations and transports the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organisation certified PHDs for compliance to its guidelines that referenced this IG.
 
-The property is indicated by the Device.property.type.coding.code having the MDC code "532353". The value is a list of valueCodes where the codes come from the [ContinuaPHD](CodeSystem-ContinuaPHD.html) code system. How these codes are generated is given [here](ContinuaPersonalAreaNetworkCodes.html).
+The property is indicated by the Device.property.type.coding.code having the MDC code "532353". The value is a list of valueCodes where the codes come from the [ContinuaPHDCS](CodeSystem-ContinuaPHDCS.html) code system. How these codes are generated is given [here](ContinuaPersonalAreaNetworkCodes.html).
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 

@@ -13,4 +13,5 @@ Description: "ValueSet for the MDC Device Version Type codes"
 * Mdc#531975            
 * Mdc#531976
 * Mdc#531977
-* Mdc#532352
+* Mdc#532352 "IEEE 11073-10206 ACOM version"
+* Mdc#67912

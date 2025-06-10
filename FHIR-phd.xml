@@ -13,16 +13,20 @@
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="11073 ASN1 Event Or State"/>
 <artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACME Inc Private MDC Codes"/>
-<artifact id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
-<artifact id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ANS1ToHL7 codes for measurement attributes"/>
+<artifact id="ValueSet/ASN1DeviceBits" key="ValueSet-ASN1DeviceBits" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
+<artifact id="ValueSet/ASN1MeasurementBits" key="ValueSet-ASN1MeasurementBits" name="ANS1ToHL7 codes for measurement attributes"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1 bits to HL7 enumerated values"/>
 <artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
+<artifact deprecated="true" id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
+<artifact deprecated="true" id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
 <artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept 11073 Attributes"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence 95 range"/>
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="Continua Device Identifiers"/>
-<artifact id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="Continua Device Interfaces"/>
+<artifact id="CodeSystem/ContinuaPHDCS" key="CodeSystem-ContinuaPHDCS" name="Continua Device Interfaces CS"/>
+<artifact id="ValueSet/ContinuaPHDInterfaces" key="ValueSet-ContinuaPHDInterfaces" name="Continua Device Interfaces VS"/>
 <artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="Continua Health and Fitness Continua Service Interfaces"/>
+<artifact deprecated="true" id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
 <artifact deprecated="true" key="Device" name="Device"/>
 <artifact deprecated="true" id="ValueSet/DeviceSystemIdIdentifier" key="ValueSet-DeviceSystemIdIdentifier" name="Device System Id Identifier"/>
 <artifact deprecated="true" id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
@@ -66,6 +70,7 @@
 <artifact id="ValueSet/MDCDeviceIdentifierTypes" key="ValueSet-MDCDeviceIdentifierTypes" name="MDC Device Identifier Types"/>
 <artifact id="ValueSet/MDCDeviceVersionTypes" key="ValueSet-MDCDeviceVersionTypes" name="MDC Device Version Type codes"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDC Non-Object codes"/>
+<artifact id="ValueSet/MDCTimeSyncMethods" key="ValueSet-MDCTimeSyncMethods" name="MDC Time Synchronization Methods"/>
 <artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDC Value Set"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>

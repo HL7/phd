@@ -126,31 +126,59 @@
                         "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "Certified device list as transport-specialization combo"
+                "text": "Each element of the Continua certified interfaces list as a seperate property"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                             "code": "32772",
                             "display": "Bluetooth LE Pulse Oximeter certified"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
+                    }
+                ],
+                "text": "Each element of the Continua certified interfaces list as a seperate property"
+            },
+            "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                             "code": "8196",
                             "display": "PHDC USB Pulse Oximeter certified"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532353",
+                        "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
+                    }
+                ],
+                "text": "Each element of the Continua certified interfaces list as a seperate property"
+            },
+            "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                             "code": "4",
                             "display": "Pulse Oximeter certified"
                         }
@@ -268,13 +296,5 @@
                 }
             ]
         }
-    
-
-
-
-
-
-
-
     ]
 }

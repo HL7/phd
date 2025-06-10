@@ -186,7 +186,7 @@ The PHDCodes are mapped to a list of property.valueCode elements. The property.t
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="PHDCode*N*"
- - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD "
+ - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS "
 
 Note that the property.valueCode element is an array and one can have many of these in a single property element.
 

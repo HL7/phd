@@ -2,11 +2,11 @@
 
 This glossary lists abbreviations and acronyms used throughout this Implementation Guide.
 
-| Abbreviation | Meaning                                                                                      |
+| Abbreviation | Meaning                                                                                     |
 |--------------|---------------------------------------------------------------------------------------------|
 | ACOM         | Abstract Content Model (from IEEE 11073-10206)                                              |
 | BLE          | Bluetooth Low Energy                                                                        |
-| DIM          | Device Information Model (from IEEE 11073-20601)                                            |
+| DIM          | Device Information Model (from IEEE 11073-10201, -20601 or -10206)                          |
 | FHIR         | Fast Healthcare Interoperability Resources                                                  |
 | GHS          | Generic Health Sensor (Bluetooth SIG profile)                                               |
 | HDP          | Health Device Profile (Bluetooth SIG, deprecated)                                           |

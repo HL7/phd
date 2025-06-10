@@ -206,7 +206,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ContinuaPHD"/>
+        <reference value="CodeSystem/ContinuaPHDCS"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -254,13 +254,13 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/ASN1attribute"/>
+        <reference value="ValueSet/ASN1DeviceBits"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/ASN1measurement"/>
+        <reference value="ValueSet/ASN1MeasurementBits"/>
       </reference>
       <description value="Value set for those Asn1ToHL7 codes whose source is a measurement attribute; one of the Enum-observed-value attributes."/>
       <exampleBoolean value="false"/>

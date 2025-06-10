@@ -1,4 +1,4 @@
-Alias: $ASN1measurement = http://hl7.org/fhir/uv/phd/ValueSet/ASN1measurement
+Alias: $ASN1MeasurementBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1MeasurementBits
 
 Profile: PhdBitsEnumerationObservation
 Parent: PhdBaseObservation
@@ -19,7 +19,7 @@ Description: "Observations from a PHD where the measurement is an ASN1 BITS valu
 * component contains bitsComponent 0..*
 * component[bitsComponent] ^short = "BITs measurements entry components"
   * ^definition = "Each ASN1 component entrant contains one of the reported BITs settings. These entries are NOT present if the Measurement-Status attribute field indicates an error."
-  * code from $ASN1measurement (required)  
+  * code from $ASN1MeasurementBits (required)  
     * coding.system = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" (exactly)
   * value[x] only boolean
   * dataAbsentReason 0..1

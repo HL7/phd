@@ -124,7 +124,7 @@
               {
                 "coding": [
                   {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                     "code": "4",
                     "display": "Pulse Oximeter certified"
                   }
@@ -378,7 +378,7 @@
               {
                 "coding": [
                   {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD",
+                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
                     "code": "4",
                     "display": "Pulse Oximeter certified"
                   }
