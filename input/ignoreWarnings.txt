@@ -19,7 +19,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 
 # When a Phd compound observation is also a vital sign this warning is generated, but this is not a real problem.
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|2.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
@@ -38,6 +38,7 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
+Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.29.0
 
 # This is a fake/example OID for a hospital and this warning can be ignored safely.
 URL value 'urn:oid:1.2.3.4.5.6.7.8.10' does not resolve

@@ -42,6 +42,6 @@ The Mder encoding also has a set of 5 reserved special values which represent so
 |-
 |0x007FFFFF|0x7FF|Not a Number (NaN)|.dataAbsentReason set to 'not-a-number'|
 |0x007FFFFE|0x7FE|Positive Infinity (+inf)|.dataAbsentReason set to 'positive-infinity'|
-|0x00800002|0x802|Negative Infinity (-inf)|.dataAbsentReason set to 'negative-ifinity'|
+|0x00800002|0x802|Negative Infinity (-inf)|.dataAbsentReason set to 'negative-infinity'|
 |0x00800000|0x800|Not at this resolution|.dataAbsentReason set to 'error'|
 |0x00800001|0x801|Reserved for future use|.dataAbsentReason set to 'error'|

@@ -140,9 +140,9 @@ The Continua version has a major and minor component which are 8-bit unsigned in
 The Continua version code is mapped to a Device.version element.
 
 #### Reg-Cert-Data-List Continua Certified PHD interfaces
-The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified 'PHD' codes. Note there is a difference between certified PHD interfaces and supported PHD interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code, Tcode, and a specialization code which is based on the 16-bit term code of the MDC code for the specialization. See [generating the PHDCodes](ContinuaPersonalAreaNetworkCodes.html)
+The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified PHD interface codes. Note there is a difference between certified PHD interfaces and supported PHD interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code and a device specialization code. See [the PHD Interface codes](CodeSystem-ContinuaPHDCS.html) for the list of possible codes.
 
-The PHDCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
+The PHD interface codes are mapped to a list of properties where the property.valueCode element carries a single PHD interface code. The property.type element, which identifies the property, is given by the MDC code `532353`. Its reference id is `MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST`. 
 
 #### Reg-Cert-Data-List Regulation Status
 The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 

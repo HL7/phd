@@ -28,10 +28,10 @@ PHDs measurements are encoded into Observation resources. There are different ty
 Every PHD measurement Observation resource contains the following information regardless of the measurement value type:
 
 |11073 Observation attribute|FHIR data element|Description|
-|-
+|---|---|---|
 |measurement type|Observation.code<br/>|This element tells you what the measurement is. There should be at least one coding element using the MDC coding system identified by Observation.code.coding. The category element is present with at least the value "phd". system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html). There will also be an additional Observation.category element as demanded by the vital signs profile.|
 |measurement-status|Observation.status, Observation.data-absent-reason|This element tells what the status of the measurements is and has usually the value `final`. In error cases the data-absent-reason element is filled with an appropriate value.
-|timestamp|Observation.dateTimeEffective<br/>Observation.period|This element tells when the measurement occured, and is a point in time or a period with a start- and end-time.|
+|timestamp|Observation.effectiveDateTime<br/>Observation.effectivePeriod|This element tells when the measurement occured, and is a point in time or a period with a start- and end-time.|
 |PHG reference|Observation.extension.valueReference|This element points to the PHG Device that generated the FHIR resources. The gateway extension is identified by Observation.extension.url=["http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"](http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice.html)|
 |patient reference|Observation.subject|Points to the Patient to whom this measurement refers|
 |PHD reference|Observation.device|Points to the PHD Device that took the measurement|
@@ -698,9 +698,9 @@ An example of an entry for an FDA regulated device is shown below:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') ELIDE:type|valueCode %}
 
 #### Continua Certified PHD Interfaces
-This property is a list of codes that indicate which specializations and transports the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organisation certified PHDs for compliance to its guidelines that referenced this IG.
+This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
 
-The property is indicated by the Device.property.type.coding.code having the MDC code "532353". The value is a list of valueCodes where the codes come from the [ContinuaPHDCS](CodeSystem-ContinuaPHDCS.html) code system. How these codes are generated is given [here](ContinuaPersonalAreaNetworkCodes.html).
+The property is indicated by the Device.property.type.coding.code having the MDC code "532353". The value is a code from the [ValueSet for PHD Interfaces](ValueSet-ContinuaPHDInterfaces.html) code system.
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 
@@ -734,7 +734,7 @@ There is only one additional required entry in the Phd Patient Profile; the Pati
 
 The required Patient.identifier entry contains an identifier.type using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
 
-The identifier.value and identifier.system entries are used to quantify the entries of the given identifier.type. For example, the identifier.system might be the institutes' XDS.b assigning authority and the identifier.value the patient record number (also known as the patient identifier). See (IHE Cross-Enterprise Document Sharing)[https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html].
+The identifier.value and identifier.system entries are used to quantify the entries of the given identifier.type. For example, the identifier.system might be the institution's XDS.b assigning authority and the identifier.value the patient record number (also known as the patient identifier). See [IHE Cross-Enterprise Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html).
 
 Note that a medical record number is considered PHI in some jurisdictions and use cases. Even when the medical record number is not in itself PHI, the fact that the PHG's communication will convey both the MRN and health data could put the whole communication into the realm of PHI.
 

@@ -4,7 +4,7 @@ The following sections give more details on the data elements in a PHDBaseObserv
 HL7 has defined an extension for the Observation resource to reference a gateway device. This extension is used to reference the Device resource representing the Personal Health Gateway (PHG) device.
 
 ### Unique Observation Identifier - prevention of data duplication
-The *PHD Observation Identifier* is defined to prevent data duplication. It can be used as the selection criterium in the conditional create when uploading observations. 
+The *PHD Observation Identifier* is defined to prevent data duplication. It can be used as the selection criterion in the conditional create when uploading observations. 
 
 Ideally the PHG will implement a duplication detection mechanism and filter out any observations that have already been uploaded. One possible mechanism is to record the latest timestamp of any observation received during a connection. Then for a given device and patient and upload destination, on a subsequent connection the PHG can filter out any observations with a timestamp earlier than the recorded latest timestamp of the previous connection. The latest timestamp is then updated given the information received during the current connection. This filter not only saves the server from handling the conditional update transaction but saves bandwidth and upload costs.
 
@@ -12,16 +12,16 @@ Additionally a globally unique identifier can be used in combination with a cond
 The identifier is a concatenated string of elements that contain sufficient information to uniquely identify the observation. The identifier is the concatenation of the device identifier, patient identifier, the ***PHD*** timestamp of the observation, the observation type code, the measurement duration if present, and the list of Supplemental-Types codes if any. Each entry is separated by a dash (-). It is important to use the timestamp of the PHD and not the potentially modified timestamp placed in the Observation.effective[x] element. Two PHGs may have slightly different times which would allow an undesired duplicate observation to appear. Note that for this scheme to work PHDs should NOT change the timestamp of a generated observation.
 
 |Entry|value|Additional information|
-|-
-|device|"PHD Device.identifier.value"|This value is the PHD IEEE EUI-64 system identifier (16 hexadecimal characters)|
-|patient|"Patient.identifier.value-Patient.identifier.system" or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that situation the provided logical id is used|
-|type|"Observation.code.coding.code"|See [Obtaining the Observation.code](ObtainObservationCode.html) (decimal number)|
-|reported PHD timestamp|"timestamp"|See [Generating the PHD Reported Timestamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|duration|"duration"|See [Generating the PHD Reported Timestamp](GeneratingtheReportedTimeStampIdentifier.html)|
-|Supplemental Information|"Supplemental-Types.*N*-"|A sequence of MDC codes (decimal number) separated by a dash|
+|---|---|---|
+|device|`PHD Device.identifier.value`|This value is the PHD IEEE EUI-64 system identifier (16 hexadecimal characters)|
+|patient|`Patient.identifier.value`-`Patient.identifier.system` or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that situation the provided logical id is used|
+|type|`Observation.code.coding.code`|See [Obtaining the Observation.code](ObtainObservationCode.html) (decimal number)|
+|timestamp|`Observation.effectiveDateTime` or `Observation.effectivePeriod.start`|The reported PHD timestamp. See [Generating the PHD Reported Timestamp](GeneratingtheReportedTimeStampIdentifier.html)|
+|duration|the length of `Observation.effectivePeriod`| See [Generating the PHD Reported Timestamp](GeneratingtheReportedTimeStampIdentifier.html)|
+|Supplemental Information|`Observation.component.valueCodeableConcept.coding.code` |A sequence of MDC codes (decimal number) separated by a dash from the "supplemental information" components.|
 
 The final identifier is made by concatenating the entries above as follows:
- - "device-patient-type-value-timestamp-duration-Supplemental Information"
+ - *device*-*patient*-*type*-*value*-*timestamp*-*duration*-*Supplemental Information*
 
 All PHGs compliant to this IG should implement this identifier in the same manner. Compliance assures that even if the patient uploads the same observation to the same server from a different PHG, a duplicate of the observation will not be generated on the server. This is important since some PHDs do not provide a means of deleting stored and uploaded observations and will upload old observations again with each new addition of a observation as much as device storage allows.
 

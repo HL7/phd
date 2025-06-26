@@ -128,7 +128,7 @@
 <page key="TempDevUseCasePage" name="Example Devices Use Case Page"/>
 <page key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
 <page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
-<page key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
+<page deprecated="true" key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
 <page key="GenericModel" name="Generic and Extensible Model"/>
 <page key="Glossary" name="Glossary"/>
 <page key="MderFLOATsandSFLOATs" name="Mder FLOATs and SFLOATs"/>

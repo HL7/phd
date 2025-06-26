@@ -15,9 +15,7 @@ Description: "Profile for the Device Resource for a PHD"
   * ^comment = "This profile applies to PHDs that adhere to the IEEE 11073-10206 standard or that can be mapped to it. The profile is based on the Device resource and contains additional elements that are specific to PHDs."
 * identifier 1..
 * identifier ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "type.coding.system"
-  * ^slicing.discriminator[+].type = #value
-  * ^slicing.discriminator[=].path = "type.coding.code"
+  * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
   * ^short = "Information that uniquely describes the personal health device"
   * ^definition = "The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is highly recommended and also a transportAddressIdentifier is recommended as this is what most end users see and can obtain from the device itself or device packaging."
@@ -32,17 +30,8 @@ Description: "Profile for the Device Resource for a PHD"
   * ^definition = "This entry contains the IEEE EUI-64."
   * ^alias = "11073-10206 System id"
   * type 1..
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.discriminator[+].type = #value
-      * ^slicing.discriminator[=].path = "code"
-      * ^slicing.rules = #open
-    * coding contains SYSID 1..1
-    * coding[SYSID] ^short = "IEEE 11073-10206 System Id code system"
-      * ^definition = "The IEEE 11073-10206 System Id code system coding"
-      * system 1..
-      * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code = #SYSID (exactly)
+  * type = http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers#SYSID
+    * ^short = "Required IEEE 11073-10206 System Id code system coding"
   * system 1..
   * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" (exactly)
     * ^short = "EUI-64 system identifier"
@@ -55,16 +44,8 @@ Description: "Profile for the Device Resource for a PHD"
   * ^definition = "This entry contains the Bluetooth MAC transport address."
   * ^alias = "Bluetooth MAC Transport address"
   * type 1..
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.discriminator[+].type = #value
-      * ^slicing.discriminator[=].path = "code"
-      * ^slicing.rules = #open
-    * coding contains BTMAC 1..1
-    * coding[BTMAC] ^short = "Bluetooth MAC address code system"
-      * ^definition = "The Bluetooth Mac address code system coding"
-      * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code = #BTMAC (exactly)
+  * type = http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers#BTMAC
+    * ^short = "Required Bluetooth MAC address code system coding"
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/bluetooth" (exactly)
   * value 1..
@@ -74,16 +55,8 @@ Description: "Profile for the Device Resource for a PHD"
   * ^definition = "This entry contains the MAC transport address."
   * ^alias = "MAC Transport address"
   * type 1..
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.discriminator[+].type = #value
-      * ^slicing.discriminator[=].path = "code"      
-      * ^slicing.rules = #open
-    * coding contains ETHMAC 1..1
-    * coding[ETHMAC] ^short = "Ethernet MAC address code system"
-      * ^definition = "The Ethernet MAC address code system coding"
-      * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code = #ETHMAC (exactly)
+  * type = http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers#ETHMAC
+    * ^short = "Required Ethernet MAC address code system coding"
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/ethernet" (exactly)
   * value 1..
@@ -93,28 +66,30 @@ Description: "Profile for the Device Resource for a PHD"
   * ^short = "Manufacturer name from SystemInfo.system-manufacturer"
   * ^definition = "The manufacturer name as reported in the IEEE 11073-10206 SystemInfo."
   * ^comment = "The system manufacturer attribute is required by the IEEE 11073-10206 specification"
-* serialNumber ^short = "Serial number from the SystemInfo.serial-number"
-  * ^definition = "The serial number as reported by the IEEE 11073-10206 SystemInfo."
-  * ^comment = "The serial number is optional in the 11073-10206 specification. The serial number shall be present if the PHD reports it."
 * modelNumber 1..
   * ^short = "Model number from SystemInfo.model-number"
   * ^definition = "The model number as reported by the SystemInfo attribute."
   * ^comment = "The model number attribute is required by the IEEE 11073-10206 specification"
 * type 1..
-  * ^short = "Indicates the device is a PHD."
-  * coding ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "system"
-    * ^slicing.rules = #open
-  * coding contains MDCType 1..1
-  * coding[MDCType] ^short = "Required MDC code system entry"
-    * ^definition = "The IEEE 11073-10101 code for the PHD simple MDS."
-    * system = "urn:iso:std:iso:11073:10101" (exactly)
-      * ^short = "Identifies IEEE 11073-10101 coding system"
-      * ^definition = "This value identifies the IEEE 11073-10101 coding system"
-    * code = #65573 (exactly)
-      * ^short = "Indicates PHD"
-      * ^definition = "The code for a Simple MDS indicating that this unit is a personal health device"
-    * ^comment = "It is suggested that the display element contains the reference identfier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'."
+* type.coding ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "$this"
+  * ^slicing.rules = #open
+* type.coding contains PhdCode 1..1
+* type.coding[PhdCode] ^short = "Indicates the device is a PHD."
+* type.coding[PhdCode] = Mdc#65573
+  // * coding ^slicing.discriminator[0].type = #value
+  //   * ^slicing.discriminator[=].path = "system"
+  //   * ^slicing.rules = #open
+  // * coding contains MDCType 1..1
+  // * coding[MDCType] ^short = "Required MDC code system entry"
+  //   * ^definition = "The IEEE 11073-10101 code for the PHD simple MDS."
+  //   * system = "urn:iso:std:iso:11073:10101" (exactly)
+  //     * ^short = "Identifies IEEE 11073-10101 coding system"
+  //     * ^definition = "This value identifies the IEEE 11073-10101 coding system"
+  //   * code = #65573 (exactly)
+  //     * ^short = "Indicates PHD"
+  //     * ^definition = "The code for a Simple MDS indicating that this unit is a personal health device"
+  //   * ^comment = "It is suggested that the display element contains the reference identifier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'."
 * specialization 1..
 * specialization ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "systemType.coding"
@@ -134,15 +109,16 @@ Description: "Profile for the Device Resource for a PHD"
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
   * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
 * version ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "type.coding"
+  * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
 * version contains MDCType 1..*
 * version[MDCType] ^short = "Required MDC device version type entry"
-  * type.coding from MDCDeviceVersionTypes
+  * type from MDCDeviceVersionTypes (required)
   * value ^short = "The version"
   * component ..0
 * property ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "type.coding.code"
+  // * ^slicing.discriminator[=].path = "type.coding.code"
+  * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
 * property contains
     timeSyncProperty 0..1 and
@@ -153,36 +129,22 @@ Description: "Profile for the Device Resource for a PHD"
     //powerSourceProperty 0..1 and
 * property[timeSyncProperty] ^short = "Time synchronization method"
   * ^definition = "This element represents the time synchronization method used by the PHD. It is an MDC coded value."
-  * type.coding 1..1
-    * system = "urn:iso:std:iso:11073:10101" (exactly)
-    * code = Mdc#68220 (exactly) // MDC_TIME_SYNC_PROTOCOL
+  * type = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
   * valueCode ..1
     * coding 1..*
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
 
-* property[continuaCertProperty] ^short = "Time synchronization method"
-  * ^definition = "This element represents the time synchronization method used by the PHD. It is an MDC coded value."
-  * type.coding 1..1
-    * system = "urn:iso:std:iso:11073:10101" (exactly)
-    * code = Mdc#532353 (exactly) // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
+* property[continuaCertProperty] ^short = "Continua certified PHD interfaces"
+  * ^definition = "This element represents a Continua certified interface that is supported by the PHD. It is an MDC coded value."
+  * type = Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
   * valueCode ..1
-    * coding 1..*
-    * coding from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
+  * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
 * property[bitProperty] ^short = "Properties reported in BITs fields"
   * ^definition = "For each bit setting reported by a PHD a bitProperties element is used."
   * type from $ASN1DeviceBits (required)
     * ^short = "Tells what the BITs item is"
     * ^definition = "One of the capabilities reported in the Mds-Time-Info.mds-time-caps-state or Reg-Cert-Data-List.regulation-status field."
-    * coding 1..1
-      * ^short = "Required ASN1 code system entry"
-      * system 1..
-      * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" (exactly)
-      * code 1..
-      * code from $ASN1DeviceBits (required)
-        * ^definition = "The ASN1 code made from the MDC code and the Mder bit position"
-        * ^comment = "The MDC code for the mds-time-caps-state field is 68219. Thus the ASN1 code for the case 'device supports a relative time clock', Mder bit 2, would be 68219.2. For the regulation status field the MDC code is 532354, and only bit 0 is defined. However, the regulated status is when the bit is cleared and the unregulated status is when the bit is set. That choice can be confusing."
-    * text ^definition = "It is recommended to display at least the ASN1 name for the given bit meaning"
   * valueQuantity ..0
   * valueCode 1..1
     * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
