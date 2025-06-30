@@ -25,11 +25,12 @@ PHDs measurements are encoded into Observation resources. There are different ty
  - **compound** where multiple measurements at a single point in time need to be taken together to represent the value, such as the systolic, diastolic, and mean components of the blood pressure or x-, y-, and z- components of an acceleration.
 
 #### Common Observation Element Fields
-Every PHD measurement Observation resource contains the following information regardless of the measurement value type:
+Every PHD generated measurement Observation resource contains the following information regardless of the measurement value type:
 
-|11073 Observation attribute|FHIR data element|Description|
+|11073 Observation attribute|FHIR Observation data element|Description|
 |---|---|---|
-|measurement type|Observation.code<br/>|This element tells you what the measurement is. There should be at least one coding element using the MDC coding system identified by Observation.code.coding. The category element is present with at least the value "phd". system="urn:iso:std:iso:11073:10101"<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html). There will also be an additional Observation.category element as demanded by the vital signs profile.|
+|type|`code`|This element tells you what the measurement is. There should be a coding element using the MDC coding system.<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html).| 
+||`category`|The category element is present with at least the value `"phd"`. For vital signs, there will also be another element with value `"vital-signs"` as demanded by the vital signs profile.
 |measurement-status|Observation.status, Observation.data-absent-reason|This element tells what the status of the measurements is and has usually the value `final`. In error cases the data-absent-reason element is filled with an appropriate value.
 |timestamp|Observation.effectiveDateTime<br/>Observation.effectivePeriod|This element tells when the measurement occured, and is a point in time or a period with a start- and end-time.|
 |PHG reference|Observation.extension.valueReference|This element points to the PHG Device that generated the FHIR resources. The gateway extension is identified by Observation.extension.url=["http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"](http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice.html)|
@@ -142,7 +143,7 @@ Depending upon what the special condition is, it is reported in either the dataA
 
 The exact mapping of IEEE 11073 measurement status conditions to FHIR is covered in the [PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html).
 
-In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
+In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 #### Identifier
 To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Other systems may add further identifiers.
