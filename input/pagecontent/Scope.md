@@ -4,6 +4,8 @@ It is anticipated that this guide will be used in any scenario where observation
 
 This Implementation Guide may be referenced by profiles from the IHE Devices domain or the IHE Patient Care Coordination domain. This guide is concerned with the FHIR data model and specifies how one maps PHD information into FHIR resources and defines FHIR profiles of the FHIR resources involved. This mapping will typically be implemented in a PHG that uploads the PHD information to a FHIR Server.
 
+This guide does not cover data provenance, security, privacy, or consent management. It is assumed that the PHG and FHIR Server will implement appropriate measures as required by local regulations and organizational policies.
+
 For a list of organizations referenced in this guide and their relevance, see the [Organizations](Organizations.html) page.
 
 For definitions of abbreviations used in this guide, see the [Glossary](Glossary.html) page.
