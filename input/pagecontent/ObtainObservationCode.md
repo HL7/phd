@@ -16,5 +16,3 @@ The MDC code entry is required, but the concept may be expressed in other coding
   
 The consumer of FHIR resources containing the PHD data does not need to concern itself with this complexity. All it needs to do is obtain the Observation.code.coding.code element supporting the 11073-10101 system value to get the measurement type.
 
- - [Next: Obtaining the Unit code](ObtainUnitCode.html)
- - [Previous: FHIR’s Codeable Concepts](CodeableConcepts.html)

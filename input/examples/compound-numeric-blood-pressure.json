@@ -3,7 +3,8 @@
 	"id": "compound-numeric-blood-pressure",
 	"meta": {
 		"profile": [
-			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation",
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"
 		]
 	},
 	"extension": [

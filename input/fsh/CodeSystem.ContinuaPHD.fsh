@@ -1,9 +1,9 @@
-CodeSystem: ContinuaPHD
-Id: ContinuaPHD
-Title: "Continua Device Interfaces"
+CodeSystem: ContinuaPHDCS
+Id: ContinuaPHDCS
+Title: "Continua Device Interfaces CS"
 Description: "Codes used to describe the Continua Personal Area Network (PHD) interfaces supported by a Personal Health Gateway. More codes maybe added to this list in the future."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
-* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD"
+* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS"
 * ^version = "0.3.0"
 // * ^status = #draft
 * ^experimental = false

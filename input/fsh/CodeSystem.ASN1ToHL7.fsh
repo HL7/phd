@@ -44,7 +44,7 @@ Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Conc
 // * #8410584 "MDC_ECG_DEV_STAT" "ECG Device and Sensor status"
 // * #8417752 "MDC_GLU_METER_DEV_STATUS" "Glucose Meter Device and Sensor status"
 // * #8417909 "MDC_INR_METER_DEV_STATUS" "Coagulation Meter Device and Sensor status"
-// * #8408608 "MDC_PHD_DM_DEV_STAT" "Generic 20601 Device and Sensor status"
+// * #8408608 "MDC_PHD_DM_DEV_STAT" "Generic Device and Sensor status"
 // * #8418060 "MDC_CGM_DEV_STAT" "Continuous Glucose Monitor Device and Sensor status"
 // * #8418512 "MDC_BATTERY_STATUS" "Battery Status"
 // * #8410608 "MDC_BLOOD_PRESSURE_MEASUREMENT_STATUS" "Blood Pressure Measurement Status"

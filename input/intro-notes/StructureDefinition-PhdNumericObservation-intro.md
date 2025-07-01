@@ -1,1 +1,1 @@
-The Numeric Observation Profile is used when the PHD measurement reports a quantity. Examples would be weight, body temperature, glucose concentration, pulse rate, oxygen saturation, steps take, calories burned, etc.  
+The Numeric Observation Profile is used when the PHD measurement reports a quantity. Examples are weight, body temperature, glucose concentration, pulse rate, oxygen saturation, steps take, calories burned, etc.  

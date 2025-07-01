@@ -12,7 +12,7 @@ border-collapse:collapse;
 padding: 6px;}</style>
 
 |SFLOAT Hex|SFLOAT decimal|exponent|mantissa|FHIR encoding|
-|-
+|---|---|---|---|---|
 |0x0002|2|0|2|2|
 |0xF014|61460|-1|20|2.0|
 |0xE0C8|57544|-2|200|2.00|
@@ -25,7 +25,7 @@ padding: 6px;}</style>
 In the FLOAT case the above values would be encoded as follows:
 
 |FLOAT Hex|FLOAT decimal|exponent|mantissa|FHIR encoding|
-|-
+|---|---|---|---|---|
 |0x00000002|2|0|2|2|
 |0xFF000014|4278190100|-1|20|2.0|
 |0xFE0000C8|4261413064|-2|200|2.00|
@@ -39,12 +39,9 @@ In the FLOAT case the above values would be encoded as follows:
 The Mder encoding also has a set of 5 reserved special values which represent some type of error condition. They are as follows:
 
 |FLOAT Case|SFLOAT case|meaning|FHIR encoding|
-|-
+|---|-|-|-|
 |0x007FFFFF|0x7FF|Not a Number (NaN)|.dataAbsentReason set to 'not-a-number'|
 |0x007FFFFE|0x7FE|Positive Infinity (+inf)|.dataAbsentReason set to 'positive-infinity'|
-|0x00800002|0x802|Negative Infinity (-inf)|.dataAbsentReason set to 'negative-ifinity'|
+|0x00800002|0x802|Negative Infinity (-inf)|.dataAbsentReason set to 'negative-infinity'|
 |0x00800000|0x800|Not at this resolution|.dataAbsentReason set to 'error'|
 |0x00800001|0x801|Reserved for future use|.dataAbsentReason set to 'error'|
-
- - [Next: Nomenclature Codes](Nomenclaturecodes.html)
- - [Previous: Protocol Only Metric Attributes](MetricAttributesofNoInterest.html)

@@ -37,9 +37,9 @@ The Device.type shall be encoded as follows:
 
  - Device.type.coding.code="65573"
  - Device.type.coding.system="urn.iso.std.iso:11073:10101"
- - Device.type.text="MDC_MOC_VMS_MDS_SIMP: Continua Personal Health Device"
+ - Device.type.display="MDC_MOC_VMS_MDS_SIMP"
 
-The display element is optional but highly recommended.
+The display element is optional but is recommended.
 
 ### System Type Spec List
 The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
@@ -140,9 +140,9 @@ The Continua version has a major and minor component which are 8-bit unsigned in
 The Continua version code is mapped to a Device.version element.
 
 #### Reg-Cert-Data-List Continua Certified PHD interfaces
-The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified 'PHD' codes. Note there is a difference between certified PHD interfaces and supported PHD interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code, Tcode, and a specialization code which is based on the 16-bit term code of the MDC code for the specialization. See [generating the PHDCodes](ContinuaPersonalAreaNetworkCodes.html)
+The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified PHD interface codes. Note there is a difference between certified PHD interfaces and supported PHD interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code and a device specialization code. See [the PHD Interface codes](CodeSystem-ContinuaPHDCS.html) for the list of possible codes.
 
-The PHDCodes are mapped to a list of property.valueCode elements. The property.type element, which identifies the property, is given by the MDC 32-bit code 532353. Its reference id is MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST. 
+The PHD interface codes are mapped to a list of properties where the property.valueCode element carries a single PHD interface code. The property.type element, which identifies the property, is given by the MDC code `532353`. Its reference id is `MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST`. 
 
 #### Reg-Cert-Data-List Regulation Status
 The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
@@ -155,13 +155,13 @@ The following table summarizes the mapping of the Reg-Cert-Data-List information
 |Reg-Cert-Data-List|Device Mapping|
 |-
 |Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
-|Reg-Cert-Data-List: certified PHD interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PHDCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD"<br><br>|
-|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.text="regulation-status"<br>property.valueCode.coding.code="Y/N"<br>property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "<br>property.valueCode.text="Y=unregulated N=regulated"|
+|Reg-Cert-Data-List: certified PHD interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PHDCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS"<br><br>|
+|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.display="negated-regulation-status"<br>property.valueBoolean="true=unregulated false=regulated"|
 
 Text elements are recommended but optional.
 
 ### Mds-Time-Info
-The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report time stamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a time stamp in any of its measurements, there is no need to report the static time information ***EXCEPT*** that there is no time synchronization.
+The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report timestamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a timestamp in any of its measurements, there is no need to report the static time information ***EXCEPT*** that there is no time synchronization.
 
 #### Time Capabilities
 The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabilities. They are mapped as follows:
@@ -187,11 +187,7 @@ The Mds-Time-Info attribute has a 16-bit ASN1 BITs field for the time capabiliti
 
 The required remaining property elements in each reported case are as follows:
  - property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
- - property.valueCode.coding.code="Y/N"
- - property.valueCode.coding.system="http://terminology.hl7.org/CodeSystem/v2-0136 "
-
- An optional text element containing at least the ASN.1 name from the above table is encouraged:
- - property.type.text="ASN.1 name + any additional text"
+ - property.valueBoolean ="true" or "false" depending on the state of the Mder bit
 
 Only the static fields shall be reported and all the static fields are treated as events thus they only need to be reported if set. Reporting cleared static states is optional.
 

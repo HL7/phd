@@ -1,7 +1,7 @@
 ValueSet: CodeableConcept11073MDC
 Id: CodeableConcept11073MDC
 Title: "CodeableConcept 11073 Attributes"
-Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures Describing 11073-10206 or -20601 attributes whose values are codes and thus represented as Codeable Concepts."
+Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclatures describing 11073 DIM attributes whose values are codes and thus represented as Codeable Concepts."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC"
 * ^version = "current"

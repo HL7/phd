@@ -16,6 +16,6 @@ These sections provide background on the concepts behind the technical mapping a
    - [Obtaining the Unit code](ObtainUnitCode.html)
    - [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html)
    - [The Observation Identifier](ObservationIdentifier.html)
-   - [Generating the Reported Time Stamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
- - [Coincident Time Stamp](CoincidentTimeStamp.html) 
+   - [Generating the Reported Timestamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
+ - [Coincident Timestamp](CoincidentTimeStamp.html) 
  - [Non-IEEE 11073 PHD Devices](Non11073PHDDevices.html)

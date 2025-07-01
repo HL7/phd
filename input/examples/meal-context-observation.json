@@ -31,7 +31,8 @@
 	],
 	"identifier": [
 		{
-			"value": "00601900010E9234-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-8417864-20170602150227.00"
+			"value": "00601900010E9234-sisansarahId-urn:oid:1.2.3.4.5.6.7.8.10-8417864-20170602150227.00",
+			"system":"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation"
 		}
 	],
 	"status": "final",

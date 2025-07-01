@@ -72,7 +72,7 @@ Reference Identifier: MDC_ATTR_AL_OP_STAT
 |2|67846.2|lim-high-off|high-limit detection is off|high-limit detection is on|state|
 
 ### Enumeration Measurements
-The following tables give the currently defined BITs measurements. These values are defined in the 11073 104xx specialization standards. The HL7 ASN1 codes for these and future values can be derived directly from the protocol exchange.
+The following tables give the currently defined BITs measurements. These values are defined in the 11073-104xx specialization standards. The HL7 ASN1 codes for these and future values can be derived directly from the protocol exchange.
 
 #### Pulse Oximeter Device and Sensor status
 Partition:Term Code:  2:19532   32-bit code: 150604

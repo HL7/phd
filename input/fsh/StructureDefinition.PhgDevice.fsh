@@ -1,5 +1,5 @@
 Alias: $DeviceTypes11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC
-Alias: $ASN1attribute = http://hl7.org/fhir/uv/phd/ValueSet/ASN1attribute
+Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
 Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 
@@ -10,7 +10,7 @@ Description: "Profile for the Device Resource for a PHG"
 * ^meta.lastUpdated = "2017-10-16T05:10:49.894-04:00"
 * ^version = "1.0.0"
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
-* ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any 11073 Objects or attributes though it is required to have an IEEE EUI-64 system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it has an MDS with attributes. For PCHA, the quantities that are required to be reported is the EUI-64 system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), the regulation status, and the PCHA certified interfaces."
+* ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any 11073 Objects or attributes though it is required to have a system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it can provide system information, clock and power source information. For compliance with this IG, the quantities that are required to be reported are the system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), and the PCHA certified interfaces."
 * . ^definition = "The characteristics, operational status and capabilities of the PHG."
 * identifier ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type.coding.system"
@@ -20,19 +20,25 @@ Description: "Profile for the Device Resource for a PHG"
   * ^short = "Information that uniquely describes the personal health device"
   * ^definition = "The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is required and the transportAddressIdentifier is highly recommended as this is what most end users see and can obtain from the device itself or device packaging."
   * ^alias = "11073-10206 System id, transport address, etc."
+* identifier 1..
 * identifier contains
-    systemIdIdentifier 1..1 and
+    systemIdIdentifier 0..1 and
     btmacAddressIdentifier 0..1 and
     macAddressIdentifier 0..1
 * identifier[systemIdIdentifier] ^short = "System Id identifier"
-  * ^definition = "This entry contains the IEEE EUI-64. If absent (bad device) set to all zeros."
+  * ^definition = "This entry contains the IEEE EUI-64."
   * ^alias = "11073-10206 System id"
   * type 1..
-    * coding 1..1
-      * ^short = "Indicates this is the IEEE 11073 System Id identifier"
+    * coding ^slicing.discriminator[0].type = #value
+      * ^slicing.discriminator[=].path = "system"
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "code"
+      * ^slicing.rules = #open
+    * coding contains SYSID 1..1
+    * coding[SYSID] ^short = "IEEE 11073-10206 System Id code system"
+      * ^definition = "The IEEE 11073-10206 System Id code system coding"
       * system 1..
       * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code 1..
       * code = #SYSID (exactly)
   * system 1..
   * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" (exactly)
@@ -41,16 +47,20 @@ Description: "Profile for the Device Resource for a PHG"
   * value 1..
     * ^short = "System id value from System-Id attribute"
     * ^definition = "The System id from the System-Id attribute as an 8-byte HEX string where each byte is separated by dashes, for example FE-ED-AB-EE-DE-AD-77-C3. "
-    * ^comment = "The formatting is specified in the IEEE document Guidelines for 64-bit Global Identifier.\r\n\r\nTo allow the mapping of non-compliant proprietary devices that do not provide a system id, the value is set to all zeros in the same format, 00-00-00-00-00-00-00-00"
+    * ^comment = "The formatting is specified in the IEEE RA Guidelines for use of EUIs."
 * identifier[btmacAddressIdentifier] ^short = "Bluetooth MAC Transport address identifier"
   * ^definition = "This entry contains the Bluetooth MAC transport address."
   * ^alias = "Bluetooth MAC Transport address"
   * type 1..
-    * coding 1..1
-      * ^short = "Indicates this is the Bluetooth Mac address identifier"
-      * system 1..
+    * coding ^slicing.discriminator[0].type = #value
+      * ^slicing.discriminator[=].path = "system"
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "code"
+      * ^slicing.rules = #open
+    * coding contains BTMAC 1..1
+    * coding[BTMAC] ^short = "Bluetooth MAC address code system"
+      * ^definition = "The Bluetooth Mac address code system coding"
       * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code 1..
       * code = #BTMAC (exactly)
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/bluetooth" (exactly)
@@ -61,21 +71,21 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "This entry contains the MAC transport address."
   * ^alias = "MAC Transport address"
   * type 1..
-    * coding 1..1
-      * ^short = "Indicates this is the Mac address identifier"
-      * system 1..
+    * coding ^slicing.discriminator[0].type = #value
+      * ^slicing.discriminator[=].path = "system"
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "code"      
+      * ^slicing.rules = #open
+    * coding contains ETHMAC 1..1
+    * coding[ETHMAC] ^short = "Ethernet MAC address code system"
+      * ^definition = "The Ethernet MAC address code system coding"
       * system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers" (exactly)
-      * code 1..
       * code = #ETHMAC (exactly)
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/ethernet" (exactly)
   * value 1..
     * ^definition = "The MAC as an EUI-48 such as 00-E5-DE-AD-77-C8. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
-* manufacturer ^short = "Manufacturer name"
-  * ^definition = "The manufacturer name."
-* serialNumber ^short = "Serial number"
-* modelNumber ^short = "Model number"
 * type 1..
   * ^short = "Indicates the device is a PHG."
   * coding ^slicing.discriminator[0].type = #value
@@ -104,23 +114,16 @@ Description: "Profile for the Device Resource for a PHG"
   * systemType ^short = "The specialization standard supported by the PHD."
     * coding 1..
     * coding from $DeviceTypes11073MDC (required)
-  * version 1..
-    * ^short = "The version of the specialization standard supported by the PHG."
-* version 1..
-  * ^short = "A firmware, hardware, software, internal protocol may be reported for a PHG. A Continua version shall be reported."
-  * type 1..
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "system"
-      * ^slicing.rules = #open
-    * coding contains MDCType 1..1
-    * coding[MDCType] ^short = "Required MDC code system entry"
-      * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
-        * ^short = "Indicates the codes come from the MDC coding system"
-      * code 1..
-        * ^short = "A code indicating the type of version the Device.version.value refers to."
-        * ^comment = "The currently defined version codes used in this element are as shown in the Table. More than one of these versions may be indicated for the PHG. Each version reported by the PHG shall be encoded.\r\n\r\n       Description                   CODE             Reference Identifier\r\n       ------------------------------------------------------------------------------------\r\n       Hardware revision            531974            MDC_ID_PROD_SPEC_HW\r\n       Software revision            531975            MDC_ID_PROD_SPEC_SW\r\n       Firmware revision            531976            MDC_ID_PROD_SPEC_FW\r\n       Protocol                     531977            MDC_ID_PROD_SPEC_PROTOCOL\r\n       Continua version             532352            MDC_REG_CERT_DATA_CONTINUA_VERSION\r\n       The Continua version comes from the Continua Reg-Cert-Data-List attribute\r\n"
+* version ^short = "A PHG may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
+  * ^comment = "There are several versions that may be reported by a PHG. PHGs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHG."
+* version ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "type.coding"
+  * ^slicing.rules = #open
+* version contains MDCType 1..*
+* version[MDCType] ^short = "Required MDC device version type entry"
+  * type.coding from MDCDeviceVersionTypes
   * value ^short = "The version"
+  * component ..0
 * property 1..
   * ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
@@ -132,7 +135,7 @@ Description: "Profile for the Device Resource for a PHG"
 * property[bitProperties] ^short = "Properties reported in BITs fields"
   * ^definition = "For each bit setting reported a BITs value, a bitProperties element is used."
   * ^comment = "A BITs measurement is a 16 or 32-bit ASN1 BITs value where each bit means something. "
-  * type from $ASN1attribute (required)
+  * type from $ASN1DeviceBits (required)
     * ^short = "Tells what the BITs item is"
     * ^definition = "One of the capabilities reported in the Mds-Time-Info.mds-time-caps-state or Reg-Cert-Data-List.regulation-status field."
     * ^comment = "Only set 'event' types need be reported. Both set and cleared 'state' types need to be reported. The regulation status is as state type. All time capabilities are event types"
@@ -182,13 +185,13 @@ Description: "Profile for the Device Resource for a PHG"
       * system = "urn:iso:std:iso:11073:10101" (exactly)
       * code 1..
         * ^definition = "The MDC code representing the property"
-        * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD\r\n       Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS\r\n"
+        * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS\r\n       Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS\r\n"
     * text ^definition = "It is recommended to display at least the MDC reference identifier for the code"
   * valueQuantity ..0
   * valueCode 1..
     * ^short = "There shall be one valueCode entry for every item supported by the PHG in the list"
     * coding 1..
       * system 1..
-        * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHD or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS or urn:iso:std:iso:11073:10101 code systems"
+        * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS or urn:iso:std:iso:11073:10101 code systems"
       * code 1..
         * ^definition = "One of the Continua interface certification codes"

@@ -1,21 +1,5 @@
 FSHOnly: true
 canonical: http://hl7.org/fhir/uv/phd
-name: PhdImplementationGuide
 status: active
 version: 1.0.0
 fhirVersion: 4.0.1
-copyrightYear: 2020+
-releaseLabel: STU2 Ballot
-publisher:
-  name: HL7 International / Health Care Devices
-  url: http://www.hl7.org/Special/committees/healthcaredevices
-jurisdiction: urn:iso:std:iso:3166#US "United States of America"
-
-menu:
-  Home: index.html
-  Artifacts: artifacts.html
-
-parameters:
-  apply-contact: true
-  apply-jurisdiction: true
-  apply-publisher: true

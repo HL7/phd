@@ -3,7 +3,7 @@
 	"id":"stringenum-1234",
 	"meta": {
 		"profile": [
-			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringEnumerationObservation"
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"
 		]
 	},
 	"category": [
