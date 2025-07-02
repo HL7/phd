@@ -7,12 +7,12 @@ This IG defines the following profiles:
 
  - [Base Observation Profile](StructureDefinition-PhdBaseObservation.html): the abstract base observation profile with elements common to the observation profiles reporting measurement values in this IG:
    - [Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html): reports a numeric value
-   - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html): reports multiple numeric values
    - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html): reports a coded value
    - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html): reports a set of codes, each with a boolean value
    - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html): reports sampled data such as a waveform
    - [String Enumeration Observation Profile](StructureDefinition-PhdStringObservation.html): reports a (human-readable) string
-   - [Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html): reports a number of related values
+   - [Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html): reports multiple related values
+   - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html): reports multiple numeric values
  - [Coincident Timestamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html): reports the PHD device time as observed by the PHG for time auditing purposes
  - [Phd Device Profile](StructureDefinition-PhdDevice.html): reports the PHD features and properties
  - [Phg Device Profile](StructureDefinition-PhgDevice.html): reports the PHG properties
@@ -22,7 +22,7 @@ This IG defines the following profiles:
 The measurement observation profiles mirror more or less the measurement 'value-types' of that a IEEE 11073-10206 PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
 
 |Measurement value-type |IEEE 11073-10206 Observation type|IG Profile                                                                                         |FHIR Observation element|
-|-
+|---|---|---|---|
 |scalar                 |Numeric                          |[Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)                      |valueQuantity|
 |discrete               |Discrete                         |                                                                                                   ||
 |                       |Single Event                     |[Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)   |valueCodeableConcept|
@@ -30,8 +30,9 @@ The measurement observation profiles mirror more or less the measurement 'value-
 |                       |Multiple Booleans (Bitstring)    |[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)     |component.code<br/>component.valueCodeableConcepts|
 |string                 |String enumeration               |[String Enumeration Observation Profile](StructureDefinition-PhdStringObservation.html) |valueString|
 |peridoic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |valueSampledData|
-|compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |component.valueQuantity|
 |compound               |Compound                         |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.value[x]|
+|compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |component.valueQuantity|
+
 
 An UML diagram of the Observation profiles for measurements is shown below:
 

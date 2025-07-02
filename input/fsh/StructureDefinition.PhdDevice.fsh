@@ -70,6 +70,16 @@ Description: "Profile for the Device Resource for a PHD"
   * ^short = "Model number from SystemInfo.model-number"
   * ^definition = "The model number as reported by the SystemInfo attribute."
   * ^comment = "The model number attribute is required by the IEEE 11073-10206 specification"
+* udiCarrier ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "entryType"
+  * ^slicing.rules = #open
+* udiCarrier contains PhdProvidedUdi 0..1
+* udiCarrier[PhdProvidedUdi] ^short = "The UDI of the PHD as provided by protocol"
+  * ^definition = "The UDI of the PHD as provided by protocol. The UDI is an optional attribute in the IEEE 11073-10206 standard and is also supported by Bluetooth Low Energy DIS and GHS specifications."
+  * entryType = #electronic-transmission
+  * carrierAIDC 0..0
+  * carrierHRF 1..1
+    * ^short = "The UDI Human Readable Barcode String form is supported in ACOM and GHS."
 * type 1..
 * type.coding ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "$this"
@@ -77,19 +87,6 @@ Description: "Profile for the Device Resource for a PHD"
 * type.coding contains PhdCode 1..1
 * type.coding[PhdCode] ^short = "Indicates the device is a PHD."
 * type.coding[PhdCode] = Mdc#65573
-  // * coding ^slicing.discriminator[0].type = #value
-  //   * ^slicing.discriminator[=].path = "system"
-  //   * ^slicing.rules = #open
-  // * coding contains MDCType 1..1
-  // * coding[MDCType] ^short = "Required MDC code system entry"
-  //   * ^definition = "The IEEE 11073-10101 code for the PHD simple MDS."
-  //   * system = "urn:iso:std:iso:11073:10101" (exactly)
-  //     * ^short = "Identifies IEEE 11073-10101 coding system"
-  //     * ^definition = "This value identifies the IEEE 11073-10101 coding system"
-  //   * code = #65573 (exactly)
-  //     * ^short = "Indicates PHD"
-  //     * ^definition = "The code for a Simple MDS indicating that this unit is a personal health device"
-  //   * ^comment = "It is suggested that the display element contains the reference identifier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'."
 * specialization 1..
 * specialization ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "systemType.coding"
