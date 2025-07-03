@@ -33,13 +33,7 @@ The identifier for the Bluetooth Address:
  An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](Device-phg-ecde3d4e58532d31.000000000000.html)
 
 #### **Device type**
-The PHG Device.type is given by the MDC code 531981. The reference identifier for this code is MDC_MOC_VMS_MDS_AHD. "AHD" is the previous name Continua gave to what is now known as the PHG. However, reference identifiers are normative and once accepted, they cannot change. It shall be encoded as follows:
-
- - Device.type.coding.code="531981"
- - Device.type.coding.system="urn.iso.std.iso:11073:10101"
- - Device.type.text="MDC_MOC_VMS_MDS_AHD: Continua Personal Health Gateway"
-
-Here the text element is optional but highly recommended.
+The PHG Device.type is given by the MDC code 531981. The reference identifier for this code is MDC_MOC_VMS_MDS_AHD. "AHD" stands for Application Hosting Device and is the name Continua gave to what is commonly known as a PHG. 
 
 #### **Time synchronization**
 The time synchronization is mapped as follows:

@@ -15,7 +15,7 @@ This glossary lists abbreviations and acronyms used throughout this Implementati
 | IG           | Implementation Guide                                                                        |
 | MDC          | Medical Device Communication (nomenclature codes, IEEE 11073-10101)                         |
 | MRN          | Medical Record Number                                                                       |
-| PCHAlliance  | Personal Connected Health Alliance                                                          |
+| PCHA         | Personal Connected Health Alliance                                                          |
 | PHD          | Personal Health Device                                                                      |
 | PHG          | Personal Health Gateway                                                                     |
 | PII          | Personally Identifiable Information                                                         |

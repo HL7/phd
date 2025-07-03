@@ -579,7 +579,7 @@ The time synchronization protocol is important as the PHG plays an important rol
 Only the entries that are different from the PHD are discussed in the following sections.
 
 #### Device Type
-This field states that the device is a PHG. There is no code in the list of device types provided by FHIR [here](https://hl7.org/fhir/R4/valueset-device-type.html) that indicates a personal health gateway. Instead we use the MDC code MDC_MOC_VMS_MDS_AHD that indicates a gateway. 
+This field states that the device is a PHG. This IG uses the MDC code MDC_MOC_VMS_MDS_AHD that indicates a gateway. "AHD" stands for Application Hosting Device and is the name Continua gave to what is commonly known as a PHG. 
 
 #### Certified Health and Fitness Interfaces
 This property is a list of codes that indicate which Health and Fitness interfaces the PHG has been *certified* for. There is no certification body active for this IG, so this entry can be populated with interfaces the PHG supports.

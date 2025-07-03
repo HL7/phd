@@ -5,7 +5,7 @@ In most cases, a Personal Health Gateway (PHG) handles receiving and decoding in
 <img src="PHD-context-complete.jpg" alt="PHD IG context diagram" style="width:100%">
 
 ## ACOM and GHS
-This IG assumes that PHDs use a protocol based on IEEE 11073-10206 or IEEE 11073-20601 when communicating with a PHG or that the PHG is capable of mapping received data into an IEEE 11073-10206  compliant format.  
+This IG assumes that PHDs use a protocol based on IEEE 11073-10206 or IEEE 11073-20601 when communicating with a PHG or that the PHG is capable of mapping received data into an IEEE 11073-10206 compliant form.  
 
 IEEE 11073-10206 or ACOM defines an Abstract COntent Model for personal health devices and is supported on Bluetooth by the Generic Health Sensor specifications defined by the Bluetooth SIG. ACOM is protocol agnostic and can be implemented on other transport protocols as well. This IG can be used for any PHD for which a mapping can be defined to the IEEE 11073-10206 Abstract Content Model.
 
