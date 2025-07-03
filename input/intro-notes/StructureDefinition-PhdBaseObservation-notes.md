@@ -147,4 +147,3 @@ HL7Status: [Observation Status CodeSystem](http://hl7.org/fhir/observation-statu
 PoCDStatus: [CodeSystem: Measurement Status Codes CodeSystem](https://hl7.org/fhir/uv/pocd/2021Sep/ValueSet-observation-interpretation.html)
 ActReason: [CodeSystem: Act Reason CodeSystem](http://terminology.hl7.org/CodeSystem/v3-ActReason)
 
-
