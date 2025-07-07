@@ -129,7 +129,7 @@ A 'spot modality' means that the pulse oximeter sensed over a period long enough
 	<strong>Should we move Supplemental Type information to an extension?</strong>
 	In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. In this version we are using extensions for less often used elements of the IEEE 11073 PHD ACOM model and in places were the PHD model and the FHIR model forn observation are too different to have a 1-1 mapping between data elements of these models.
 
-    The question is if this applies to Supplemental Type information as well. Should IEEE 11073-10206/20601 Supplemental Information be modeled as a FHIR Observation.component or as an extension in FHIR?
+    The question is if this applies to Supplemental Type information as well. Should IEEE 11073-10206 Supplemental Information be modeled as a FHIR Observation.component or as an extension in FHIR?
     Input is welcome.
 </blockquote>
 
@@ -404,7 +404,7 @@ Below is an example of the different versions exposed by a PHD:
 #### Specializations
 The Device.specialization entry is probably the entry most consumers will want to inspect. This entry states what kind of measurements the PHD takes. It is this entry that tells the consumer if the PHD is a blood pressure cuff, heart rate monitor, pulse oximeter. PHDs can support multiple specializations. This element shall always be populated.
 
-In IEEE 11073-20601 specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
+In IEEE 11073-10206 ACOM specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
 
 A table of some of the most common specializations can be found in the specialization section [here](StructureDefinition-PhdDevice.html).
 
@@ -558,7 +558,7 @@ The property is indicated by the Device.property.type.coding.code having the ASN
 
 An example of an entry for an FDA regulated device is shown below:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') ELIDE:type|valueCode %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') %}
 
 #### Continua Certified PHD Interfaces
 This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
@@ -567,7 +567,7 @@ The property is indicated by the Device.property.type.coding.code having the MDC
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532353') ELIDE:type|valueCode %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532353') %}
 
 ### The PHG Device Resource
 The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.

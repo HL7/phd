@@ -1,4 +1,4 @@
-Every IEEE 11073-10206 Observation instance is required to have a Type attribute. The Type attribute value is an MDC term code that maps directly to the Observation.code element. 
+Every IEEE 11073-10206 ACOM Observation instance is required to have a Type attribute. The Type attribute value is an MDC term code that maps directly to the Observation.code element. 
 The Observation.code element is populated as follows:
 
 * if the application wishes to transcode this MDC code into other coding systems the application is free to do so but

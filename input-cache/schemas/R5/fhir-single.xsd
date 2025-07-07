@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jun 30, 2025 19:03+0000 for FHIR v6.0.0-ballot2 
+  Generated on Fri, Jul 4, 2025 15:03+0000 for FHIR v6.0.0-ballot2 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot2">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -40252,7 +40252,7 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           </xs:element>
           <xs:element name="endpoint" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The network services providing retrieval access to the selected images, frames, etc. See implementation notes for information about using DICOM endpoints.</xs:documentation>
+              <xs:documentation xml:lang="en">The network services providing access to the selected images, frames, etc. See implementation notes for information about using DICOM endpoints.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instance" type="ImagingSelection.Instance" minOccurs="0" maxOccurs="unbounded">

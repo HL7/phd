@@ -7,7 +7,7 @@ padding: 6px;}</style>
 
 The values are scaled to reduced bandwidth. The bandwidth reduction can be significant in cases where the actual values are small fluctuations about a large average value. The scale factors, number of bits in each sample, the period, and the number of data elements in the sequence are given by a set of support attributes.
 
-IEEE 11073-10206 and GHS do support the concept of multi-dimensional arrays. Reporting a sequence of x, y, z acceleration components from a PHD can be done by reporting 3 samples per period, that all share the same unit and scaling factors. FHIR also support the concept of multi-dimensional arrays. 
+IEEE 11073-10206 ACOM and GHS do support the concept of multi-dimensional arrays. Reporting a sequence of x, y, z acceleration components from a PHD can be done by reporting 3 samples per period, that all share the same unit and scaling factors. FHIR also support the concept of multi-dimensional arrays. 
 
 |IEEE 11073-10206 Sample Array Attribute|Value type|Description|
 |-

@@ -521,26 +521,6 @@
                 "unit": "us"
               }
             ]
-          },
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "urn:iso:std:iso:11073:10101",
-                  "code": "68223",
-                  "display": "MDC_TIME_RES_REL"
-                }
-              ],
-              "text": "Resolution of relative time clock"
-            },
-            "valueQuantity": [
-              {
-                "value": 10000,
-                "system": "http://unitsofmeasure.org",
-                "code": "us",
-                "unit": "us"
-              }
-            ]
           }
         ]
       },

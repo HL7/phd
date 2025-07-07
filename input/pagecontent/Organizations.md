@@ -11,7 +11,7 @@ This Implementation Guide (IG) references several organizations that play import
 - **IEEE 11073-20601:** An earlier standard for PHDs, referenced for historical context and compatibility.
 
 ## [Bluetooth SIG (Special Interest Group)](https://www.bluetooth.com/)
-**Relevance:** The Bluetooth SIG defines wireless communication protocols, including the Generic Health Sensor Profile and Service, which are based on IEEE 11073-10206. These protocols are widely used for PHD communication and are supported by this IG.
+**Relevance:** The Bluetooth SIG defines wireless communication protocols, including the Generic Health Sensor Profile and Service, which are based on IEEE 11073-10206 ACOM. These protocols are widely used for PHD communication and are supported by this IG.
 
 ## [IHE (Integrating the Healthcare Enterprise)](https://www.ihe.net/)
 **Relevance:** IHE develops integration profiles for healthcare IT systems. This IG may be referenced by IHE Devices and Patient Care Coordination domain profiles to ensure consistent use of PHD data in broader healthcare workflows.

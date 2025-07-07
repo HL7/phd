@@ -13,6 +13,7 @@
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/ASN1EventOrState" key="CodeSystem-ASN1EventOrState" name="11073 ASN1 Event Or State"/>
 <artifact id="CodeSystem/ACMEIncPrivateMDCCodes" key="CodeSystem-ACMEIncPrivateMDCCodes" name="ACME Inc Private MDC Codes"/>
+<artifact id="ValueSet/ASN1ClockBits" key="ValueSet-ASN1ClockBits" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
 <artifact id="ValueSet/ASN1DeviceBits" key="ValueSet-ASN1DeviceBits" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
 <artifact id="ValueSet/ASN1MeasurementBits" key="ValueSet-ASN1MeasurementBits" name="ANS1ToHL7 codes for measurement attributes"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1 bits to HL7 enumerated values"/>
@@ -67,6 +68,7 @@
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Example of an unknown Patient"/>
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Example of coded enumeration"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
+<artifact id="ValueSet/MDCClockResolutionTypes" key="ValueSet-MDCClockResolutionTypes" name="MDC Clock Resolution Types"/>
 <artifact id="ValueSet/MDCDeviceIdentifierTypes" key="ValueSet-MDCDeviceIdentifierTypes" name="MDC Device Identifier Types"/>
 <artifact id="ValueSet/MDCDeviceVersionTypes" key="ValueSet-MDCDeviceVersionTypes" name="MDC Device Version Type codes"/>
 <artifact id="ValueSet/MDCnotObject" key="ValueSet-MDCnotObject" name="MDC Non-Object codes"/>
