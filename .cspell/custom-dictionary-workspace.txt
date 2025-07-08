@@ -1,2 +1,6 @@
 # Custom Dictionary Words
+codeable
 FHIR
+PCHA
+RTMMS
+UCUM

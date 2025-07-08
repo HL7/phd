@@ -11,7 +11,7 @@ The FLOAT encoding of the numeric components indicates both precision and the nu
 The structure definition is given [here](StructureDefinition-PhdCompoundObservation.html)
 
 ### Additional Numerical Measurement Information
-IEEE 11073-10206 numeric measurement values may have some additional optional attributes that are used only for numerics. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement value. 
+IEEE 11073-10206 ACOM numeric measurement values may have some additional optional attributes that are used only for numerics. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement value. 
 
 In FHIR these attributes are reported in extensions. The same extensions that are used as for [non-compoud numeric measurements](StructureDefinition-PhdNumericObservation.html) can be used for the numeric components. 
 

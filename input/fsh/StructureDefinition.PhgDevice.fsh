@@ -101,9 +101,7 @@ Description: "Profile for the Device Resource for a PHG"
     * code 1..
     * code = #531981 (exactly)
       * ^short = "Indicates PHG"
-      * ^definition = "The code for a PHG indicating that this unit is a personal health device"
-  * text ^definition = "A human readable display descrbing the meaning of the code."
-    * ^comment = "It is suggested that this element contain the reference identifier for a PHG 'MDC_MOC_VMS_MDS_AHD'."
+      * ^definition = "MDC code indicating that this unit is a personal health gateway (PHG)."
 * specialization ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "systemType.coding"
   * ^slicing.rules = #open

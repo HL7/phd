@@ -12,7 +12,7 @@ Description: "Profile for the Device Resource for a PHD"
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
 * ^purpose = "This resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
 * . ^definition = "The characteristics, operational status and capabilities of a medical-related component of a medical device. A PHD is JUST the medical-related component."
-  * ^comment = "This profile applies to PHDs that adhere to the IEEE 11073-10206 standard or that can be mapped to it. The profile is based on the Device resource and contains additional elements that are specific to PHDs."
+  * ^comment = "This profile applies to PHDs that adhere to the IEEE 11073-10206 ACOM standard or that can be mapped to it. The profile is based on the Device resource and contains additional elements that are specific to PHDs."
 * identifier 1..
 * identifier ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
@@ -70,6 +70,16 @@ Description: "Profile for the Device Resource for a PHD"
   * ^short = "Model number from SystemInfo.model-number"
   * ^definition = "The model number as reported by the SystemInfo attribute."
   * ^comment = "The model number attribute is required by the IEEE 11073-10206 specification"
+* udiCarrier ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "entryType"
+  * ^slicing.rules = #open
+* udiCarrier contains PhdProvidedUdi 0..1
+* udiCarrier[PhdProvidedUdi] ^short = "The UDI of the PHD as provided by protocol"
+  * ^definition = "The UDI of the PHD as provided by protocol. The UDI is an optional attribute in the IEEE 11073-10206 standard and is also supported by Bluetooth Low Energy DIS and GHS specifications."
+  * entryType = #electronic-transmission
+  * carrierAIDC 0..0
+  * carrierHRF 1..1
+    * ^short = "The UDI Human Readable Barcode String form is supported in ACOM and GHS."
 * type 1..
 * type.coding ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "$this"
@@ -77,19 +87,6 @@ Description: "Profile for the Device Resource for a PHD"
 * type.coding contains PhdCode 1..1
 * type.coding[PhdCode] ^short = "Indicates the device is a PHD."
 * type.coding[PhdCode] = Mdc#65573
-  // * coding ^slicing.discriminator[0].type = #value
-  //   * ^slicing.discriminator[=].path = "system"
-  //   * ^slicing.rules = #open
-  // * coding contains MDCType 1..1
-  // * coding[MDCType] ^short = "Required MDC code system entry"
-  //   * ^definition = "The IEEE 11073-10101 code for the PHD simple MDS."
-  //   * system = "urn:iso:std:iso:11073:10101" (exactly)
-  //     * ^short = "Identifies IEEE 11073-10101 coding system"
-  //     * ^definition = "This value identifies the IEEE 11073-10101 coding system"
-  //   * code = #65573 (exactly)
-  //     * ^short = "Indicates PHD"
-  //     * ^definition = "The code for a Simple MDS indicating that this unit is a personal health device"
-  //   * ^comment = "It is suggested that the display element contains the reference identifier for Simple MDS 'MDC_MOC_VMS_MDS_SIMP'."
 * specialization 1..
 * specialization ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "systemType.coding"
@@ -123,28 +120,31 @@ Description: "Profile for the Device Resource for a PHD"
 * property contains
     timeSyncProperty 0..1 and
     continuaCertProperty 0..* and
-    bitProperty 0..* //and
-    //clockResolutionProperty 0..1 and
+    clockBitProperty 0..* and
+    isRegulatedProperty 0..1 and
+    clockResolutionProperty 0..1 //and
     //clockTypeProperty 0..1 and
     //powerSourceProperty 0..1 and
+
 * property[timeSyncProperty] ^short = "Time synchronization method"
   * ^definition = "This element represents the time synchronization method used by the PHD. It is an MDC coded value."
+  * ^comment = "The clock set method is a required attribute in the IEEE 11073-10206 standard. It is also supported by Bluetooth Low Energy ETS and GHS specifications. Strictly speaking, the time synchronization method is not a property of the PHD but rather a property of the PHG. However, it is included here as it is a required attribute in the IEEE 11073-10206 standard and is often used by the PHG to determine how to set the time on the PHD. In most cases it reflects the time synchronization method used to set the PHG's clock and strictly speaking it should not be reported as a static device property, but as part of a coincident timestamp."
   * type = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
   * valueCode ..1
     * coding 1..*
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
 
-* property[continuaCertProperty] ^short = "Continua certified PHD interfaces"
+* property[continuaCertProperty] ^short = "Continua certified PHD interfaces (from IEEE 11073-20601)"
   * ^definition = "This element represents a Continua certified interface that is supported by the PHD. It is an MDC coded value."
   * type = Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
   * valueCode ..1
   * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
-* property[bitProperty] ^short = "Properties reported in BITs fields"
-  * ^definition = "For each bit setting reported by a PHD a bitProperties element is used."
-  * type from $ASN1DeviceBits (required)
-    * ^short = "Tells what the BITs item is"
-    * ^definition = "One of the capabilities reported in the Mds-Time-Info.mds-time-caps-state or Reg-Cert-Data-List.regulation-status field."
+* property[clockBitProperty] ^short = "Boolean Properties reported by the Clock"
+  * ^definition = "For each Boolean clock capability reported by a PHD a property element is used."
+  * type from ASN1ClockBits (required)
+    * ^short = "Tells what the clock capability item is"
+    * ^definition = "One of the capabilities of the clock as reported by the PHD."
   * valueQuantity ..0
   * valueCode 1..1
     * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
@@ -152,6 +152,31 @@ Description: "Profile for the Device Resource for a PHD"
       * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
       * code 1..
         * ^definition = "If bit is set, code contains Y if cleared, N"
+
+* property[clockResolutionProperty] ^short = "Clock Resolution as reported by the PHD"
+  * ^definition = "For each Boolean clock capability reported by a PHD a property element is used."
+  * type from MDCClockResolutionTypes (required)
+    * ^short = "Tells what the clock resolution type is"
+    * ^definition = "The resolution of the clock as reported by the PHD."
+  * valueQuantity 1..1
+    * ^definition = "The value. All the time fields are scaled to microseconds"
+    * system 1..
+    * system = "http://unitsofmeasure.org" (exactly)
+    * code = UCUM#us
+      * ^definition = "The UCUM code (for microseconds it is 'us')"
+
+* property[isRegulatedProperty] ^short = "Regulatory status of the PHD"
+  * ^definition = "This element represents the regulatory status of the PHD."
+  * type = ASN1ToHL7#532354.0
+    * ^short = "Negated regulatory status of the PHD"
+    * ^definition = "This element represents the negated regulatory status of the PHD."
+  * valueQuantity ..0
+  * valueCode 1..1
+    * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
+      * system 1..
+      * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
+      * code 1..
+        * ^definition = "If bit is set, the device is not regulated. If cleared, the device is regulated."
 
 // * property[quantitiesProperty] ^short = "The device properties represented by quantities such as clock resolution"
 //   * ^definition = "This element represents all those time properties that are a quantity such as the various clock resolutions and synchronization accuracy."
@@ -214,5 +239,11 @@ Target: "https://sagroups.ieee.org/11073/phd-wg"
 * manufacturer -> "SystemInfo.system-manufacturer"
 * serialNumber -> "SystemInfo.serial-number"
 * modelNumber -> "SystemInfo.system-model-number"
-* version[MDCType].type -> "Firmware-, Hardware-, Software-, ACOM-version (MDC Device Version Type)"
-* version[MDCType].value -> "SystemInfo.firmware-, hardware-, software-revision, ACOM-version"
+* version[MDCType].type -> "MDC Device Version Type code for Firmware-, Hardware-, Software-, Continua-version"
+* version[MDCType].value -> "SystemInfo.firmware-, hardware-, software-revision, Continua-version"
+* property[timeSyncProperty].valueCode.coding.code -> "Clock.clock-set-method"
+* property[continuaCertProperty].valueCode.coding.code -> "Continua-cert-dev-list (from IEEE 11073-20601)"
+* property[clockBitProperty].type -> "clock-capability as ASN1ToHL7 code"
+* property[clockBitProperty].valueCode.coding.code -> "Y if supported, N if not supported"
+* udiCarrier[PhdProvidedUdi].carrierHRF -> "SystemInfo.udi-label"
+

@@ -1,7 +1,9 @@
 ### System Identifier
-All IEEE 11073-20601 PHDs are required to have a system identifier. It is an EUI-64 consisting of 8 bytes. The system id is mapped to the Device.identifier.value element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required for Continua compliance, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall enter 00-00-00-00-00-00-00-00 and it is highly recommended to provide a transport address as a means of uniquely identifying the PHD.
+All IEEE 11073-10206 PHDs are required to have a system identifier. This usually is an EUI-64 consisting of 8 bytes. The EUI-64 is mapped to the Device.identifier.value element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required by IEEE 11073-10206, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall provide a transport address as a means of uniquely identifying the PHD. Supported transport addresses are Bluetooth and ZigBee. The Bluetooth address is an EUI-48, and the ZigBee address is an EUI-64. These will be encoded as strings just as the EUI-64. Note that USB.vid (vendor id) and USB.pid (product id) are not unique and cannot be used as system identifiers. 
 
-In order to discriminate between an identifier that is a system id and that which is a transport address the identifier.type element is used. A Continua-defined CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the identifier.type.coding.code element.
+In order to discriminate between an identifier that is a system id and that which is a transport address the identifier.type element is used. A dedicated CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the identifier.type.coding.code element.
+
+When in the future other system identifiers such as ETSI-ICCID (International Circuit Card Identifier) or other identifiers are used, this coding scheme will need to be extended.
 
 The transport addresses are as follows:
 
@@ -10,155 +12,63 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-|transport|format|example|
-|-
-|Bluetooth|EUI-48|00-E5-DE-AD-77-C3|
-|ZigBee|EUI-64|36-ED-9A-EE-DE-AD-77-C3|
-|USB|vid.pid|0043.F90D|
+|transport|format|code|system|example|
+|---|---|---|---|---|
+|System Identifier|EUI-64|SYSID|urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680|FE-ED-AB-EE-DE-AD-77-C3|
+|Bluetooth|EUI-48|BTMAC|http://hl7.org/fhir/sid/eui-48/bluetooth|00-E5-DE-AD-77-C3|
+|ZigBee|EUI-64|ZIGBEE|http://hl7.org/fhir/sid/eui-64/zigbee|36-ED-9A-EE-DE-AD-77-C3|
 
-The identifier is encoded as follows:
-
-|Source|Device Encoding|
-|-
-|System-Id.value|identifier.value=*formatted as above*<br>identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="SYSID"|
-|Bluetooth Address|identifier.value=*formatted as above*<br>identifier.system="http://hl7.org/fhir/sid/eui-48/bluetooth"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="BTMAC"|
-|ZigBee Address|identifier.value=*formatted as above*<br>identifier.system="http://hl7.org/fhir/sid/eui-64/zigbee"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="ZIGBEE"|
-|USB Address|identifier.value=*formatted as above*<br>identifier.system="http://hl7.org/fhir/sid/usb"<br>identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers"<br>identifier.type.coding.code="USB"|
+An example of a system identifier is:
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
 
 ### Device.udiCarrier ###
-The UDI has recently been introduced into the IEEE 11073-20601 standard, however, no PHDs have implemented this feature and it is not yet present in Bluetooth Low Energy. For that reason, the mapping of this element is not specified in this version of the implementation guide. The IEEE 11073-20601 standard supports an issuer, jurisdiction, and the Human Readable interpretation of the barcode. The udiCarrier does have elements for each of these entries. On the other hand, there is no appropriate entryType code for this sourcing of the UDI as it is obtained electronically through protocol.
+The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard (and the older 11073-20601 standard). It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. There is no appropriate entryType code for this sourcing of the UDI in FHIR R4 and the code `unknown` should be used. In FHIR R5 the code `electronic-transmission` can be used.
 
-It is anticipated that all these issues will be resolved and that eventually PHDs will support it via protocol. At that time a mapping from the IEEE UDI to the Device.uidCarrier will be specified.
+The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
 ### Device.type ###
-The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the Device.specializations element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In 11073-10201 this code is described as indicating "a single-purpose medical device". The code is also used in 11073-20601 to identify the MDS object, but there is no particular description as to its interpretation.
+The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the Device.specializations element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In 11073-10201 this code is described as indicating "a single-purpose medical device".
 
-The Device.type shall be encoded as follows:
-
- - Device.type.coding.code="65573"
- - Device.type.coding.system="urn.iso.std.iso:11073:10101"
- - Device.type.display="MDC_MOC_VMS_MDS_SIMP"
+An example of a `Device.type` encoding is:
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:type %}
 
 The display element is optional but is recommended.
 
 ### System Type Spec List
 The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
 
-For each entry in the System-Type-Spec-List a specializations entry is encoded as follows: 
+The specialization is encoded as a 32-bit code, where the first 16 bits are the partition INFRA and the last 16 bits are the term code from System-Type-Spec-List.type. The version is encoded as a 16-bit number. The code and version are encoded in the Device.specialization element as follows:
 
-|System-Type-Spec-List entry|Device encoding|
-|- 
-|System-Type-Spec-List.type|specialization.systemType.coding.code="code"<br>specialization.systemType.coding.system="urn.iso.std.iso:11073:10101"<br>specialization.systemType.text="*reference-id plus additional text*" |
-|System-Type-Spec-List.version|specialization.version="version" |
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:specialization %}
 
-where "code" is the 32-bit nomenclature code computed from the partition INFRA and the term code from System-Type-Spec-List.type and "version" is the version from System-Type-Spec-List.version.
+The display element is optional but it is highly recommended that it be included and the reference id be in the description. 
 
-The display element is optional but it is highly recommended that it be included and the reference id be in the description. The table below gives a list of some of the most common specializations and their codes:
+The MDC_DEV_SPEC_PROFILE_GENERIC 'generic' device on the PHD side indicates that the device follows the IEEE 11073-10206 ACOM standard but not any specific specialization. On the PHG side it indicates that the PHG understands anything following the IEEE 11073-10206 standard. That would include all specializations since all specializations comply with the IEEE 11073-10206 standard.
 
-|Specialization|MDC Code partition:term code|Reference Identifier|
-|-
-|Generic 20601 Device|8::4169|MDC_DEV_SPEC_PROFILE_GENERIC|
-|Pulse Oximeter|8::4100|MDC_DEV_SPEC_PROFILE_PULS_OXIM|
-|Electro cardiograph|8::4102|MDC_DEV_SPEC_PROFILE_MIN_ECG|
-|Blood Pressure Cuff|8::4103|MDC_DEV_SPEC_PROFILE_BP|
-|Thermometer|8::4104|MDC_DEV_SPEC_PROFILE_TEMP|
-|Respiration rate|8::4109|MDC_DEV_SPEC_PROFILE_RESP_RATE|
-|Weight Scale|8::4111|MDC_DEV_SPEC_PROFILE_SCALE|
-|Glucose Monitor|8::4113|MDC_DEV_SPEC_PROFILE_GLUCOSE|
-|Coagulation meter |8::4114|MDC_DEV_SPEC_PROFILE_COAG|
-|Insulin Pump|8::4115|MDC_DEV_SPEC_PROFILE_INSULIN_PUMP|
-|Body Composition Analyzer|8::4116|MDC_DEV_SPEC_PROFILE_BCA|
-|Peak Flow meter|8::4117|MDC_DEV_SPEC_PROFILE_PEAK_FLOW|
-|Sleep Apnea Breathing Equipment|8::4120| MDC_DEV_SPEC_PROFILE_SABTE|
-|Continuous Glucose Monitor|8::4121|MDC_DEV_SPEC_PROFILE_CGM|
-|Cardiovascular Device|8::4137|MDC_DEV_SPEC_PROFILE_HF_CARDIO|
-|Strength Equipment|8::4138|MDC_DEV_SPEC_PROFILE_HF_STRENGTH|
-|Independent Activity/Living Hub|8::4167|MDC_DEV_SPEC_PROFILE_AI_ACTIVITY_HUB|
-|Medication Monitor|8::4168|MDC_DEV_SPEC_PROFILE_AI_MED_MINDER|
+### Manufacturer, System Model and Serial Number
+The ACOM Manufacturer, System-Model and Serial Number attributes contains strings. The Device resource has stand-alone primitive elements for these fields to which these attributes are mapped. 
 
-The 'generic' device on the PHD side indicates that the device follows 20601 but not any specialization. On the PHG side it indicates that the PHG understands anything following the 20601 standard. That would include all specializations since all specializations are a subset of the 20601 standard.
-
-The table below gives the set of 32-bit MDC codes and reference identifiers used in the subsequent mappings.
-
-|11073 Attribute|description|MDC code|MDC reference identifier|
-|-
-|System-Model|Model number|531969|MDC_ID_MODEL_NUMBER|
-|System-Model|Manufacturer name|531970|MDC_ID_MODEL_MANUFACTURER|
-|Production-Specification|Unspecified|	531971|MDC_ID_PROD_SPEC_UNSPECIFIED|
-|Production-Specification|Serial number|	531972|MDC_ID_PROD_SPEC_SERIAL|
-|Production-Specification|Part number|	531973|MDC_ID_PROD_SPEC_PART|
-|Production-Specification|Hardware revision|	531974|MDC_ID_PROD_SPEC_HW|
-|Production-Specification|Software revision|	531975|MDC_ID_PROD_SPEC_SW|
-|Production-Specification|Firmware revision|	531976|MDC_ID_PROD_SPEC_FW|
-|Production-Specification|Protocol revision|	531977|MDC_ID_PROD_SPEC_PROTOCOL|
-|Production-Specification|Global Medical Device Nomenclature (GMDN)|	531978|MDC_ID_PROD_SPEC_GMDN|
-|Reg-Cert-Data-List|Continua version|532352|MDC_REG_CERT_DATA_CONTINUA_VERSION|
-|Reg-Cert-Data-List|Continua Certified Device List|532353|MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST|
-|Reg-Cert-Data-List|Regulation status|532354|MDC_REG_CERT_DATA_CONTINUA_REG_STATUS |
-|*PHG only*|Continua Certified H&FS List|532355|MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST|
-|Mds-Time-Info|Synchronization method|68220|MDC_TIME_SYNC_PROTOCOL|
-|Mds-Time-Info|Time capabilities|68219|MDC_TIME_CAP_STATE|
-|Mds-Time-Info|High resolution relative time resolution|68224|MDC_TIME_RES_REL_HI_RES|
-|Mds-Time-Info|Relative time resolution|68223|MDC_TIME_RES_REL|
-|Mds-Time-Info|Absolute Time time resolution|68222|MDC_TIME_RES_ABS|
-|Mds-Time-Info|Base offset time resolution|68226|MDC_TIME_RES_BO|
-|Mds-Time-Info|Time synchronization accuracy|68221|MDC_TIME_SYNC_ACCURACY|
-
-### System Model
-The System-Model attribute contains two strings, the manufacturer name and the model number. The Device resource has stand-alone primitive elements for these two fields. The mapping is straight forward:
-
-|System-Model|Device encoding|
-|- 
-|System-Model.manufacturer|manufacturer="System-Model.manufacturer" |
-|System-Model.model-number|modelNumber="System-Model.model-number" |
-
-### Production-Specification ###
-The Production-Specification attribute values are mapped to three separate elements in the Device, the Device.serialNumber, Device.partNumber, and Device.version. The serialNumber and partNumber elements are string primitives, thus it is not possible to map the PrivateOid of those two values without extensions. The version element, on the other hand, is a Backbone element which will allow such a mapping without the use of extensions.
-
-The mapping is as follows:
-
-|Production-Specification entry|Device encoding|
-|- 
-|Production-Specification.spec-type = 1 (*serial number*)<br>Production-Specification.value|serialNumber="Production-Specification.value" |
-|Production-Specification.spec-type = 2 (*part number*)<br>Production-Specification.value|partNumber="Production-Specification.value" |
-|Production-Specification.spec-type = 3 (*hardware version*)<br>Production-Specification.PrivateOid<br>Production-Specification.value|version.type.coding.code="531974"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_ID_PROD_SPEC_HW + optional text"\*\*<br>version.value="Production-Specification.value"<br>version.component.system="system id formatted as above"\*<br> version.component.value="Production-Specification.PrivateOid"\*|
-|Production-Specification.spec-type = 4 (*software version*)<br>Production-Specification.PrivateOid<br>Production-Specification.value|version.type.coding.code="531975"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_ID_PROD_SPEC_SW + optional text"\*\*<br>version.value="Production-Specification.value"<br>version.component.system="system id formatted as above"\*<br> version.component.value="Production-Specification.PrivateOid"\*|
-|Production-Specification.spec-type = 5 (*firmware version*)<br>Production-Specification.PrivateOid<br>Production-Specification.value|version.type.coding.code="531976"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_ID_PROD_SPEC_FW + optional text"\*\*<br>version.value="Production-Specification.value"<br>version.component.system="system id formatted as above"\*<br> version.component.value="Production-Specification.PrivateOid"\*|
-|Production-Specification.spec-type = 6 (*protocol version*)<br>Production-Specification.PrivateOid<br>Production-Specification.value|version.type.coding.code="531977"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_ID_PROD_SPEC_PROTOCOL + optional text"\*\*<br>version.value="Production-Specification.value"<br>version.component.system="system id formatted as above"\*<br> version.component.value="Production-Specification.PrivateOid"\*|
-
-*The PrivateOid is only a 16-bit unsigned number. To give it some meaning, the system-id of the device is placed in the Identifier 'system' value to link the PrivateOid to this physical device in the presence of some other possible identifiers.
-
-**The text elements are optional but it is encouraged to include them and populate them with at least the reference identifier.
+### Version or Revision information ###
+The revision information provided by the PHD, such as the hardware-revision, is encoded in the Device.version element. The version information is provided as a list of versions, where each version has a type and a value. The type is encoded as an MDC code and the value is a string. The type codes are defined in the [MDC Device Version Type Codes ValueSet](ValueSet-MDCDeviceVersionTypes.html).
 
 ### Reg-Cert-Data-List ###
-The Reg-Cert-Data-List contains the Continua version, list of certified PHD interfaces, and the regulation status. The Continua version is mapped to an additional Device.version element and the other two fields are mapped to a Device.property element.
+The Reg-Cert-Data-List can be provided by PHDs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. 
+It contains the Continua version, list of certified PHD interfaces, and the regulation status. The Continua version is mapped to an additional Device.version element and the other two fields are mapped to a Device.property element.
 
 #### Reg-Cert-Data-List Continua version
-
-The Continua version has a major and minor component which are 8-bit unsigned integers. The code reported in the Device.versions element is obtained by concatenating the major-version, a dot (.), and the minor version. For example, "6.1" where "6" is the major version and "1" is the minor version. 
-
-The Continua version code is mapped to a Device.version element.
+The Continua version code is reported using MDC code `532352` with reference Id `MDC_REG_CERT_DATA_CONTINUA_VERSION` and this is mapped to a Device.version element.
 
 #### Reg-Cert-Data-List Continua Certified PHD interfaces
-The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified PHD interface codes. Note there is a difference between certified PHD interfaces and supported PHD interfaces. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code and a device specialization code. See [the PHD Interface codes](CodeSystem-ContinuaPHDCS.html) for the list of possible codes.
+The Reg-Cert-Data-List attribute reports the list of Continua *certified* PHD (Personal Area Network) interfaces as a list of Continua-specified PHD interface codes. The Continua-specified certification codes obtained from the Reg-Cert-Data-List are a combination of a transport code and a device specialization code. See [the PHD Interface codes](CodeSystem-ContinuaPHDCS.html) for the list of possible codes.
 
 The PHD interface codes are mapped to a list of properties where the property.valueCode element carries a single PHD interface code. The property.type element, which identifies the property, is given by the MDC code `532353`. Its reference id is `MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST`. 
 
 #### Reg-Cert-Data-List Regulation Status
-The regulation status element is a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 Codesystem](CodeSystem-ASN1ToHL7.html)). At the current time only Mder bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. 
+The regulation status element has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. The regulation status is mapped to an additional Device.property.valueCode element. 
 
-The regulation status is mapped to an additional Device.property.valueCode element. The Device.property.type element, which identifies the property, is given by 532354.0 following the ASN1 BITs mapping where the code 532354 is the MDC code for the regulation status. Its reference identifier is MDC_REG_CERT_DATA_CONTINUA_REG_STATUS. The '0' appended to the regulation status code indicates Mder bit 0. The Device.property.valueCode will indicate either "Y" (set) or "N" (cleared).
+A fragment:
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354') %}
 
-The following table summarizes the mapping of the Reg-Cert-Data-List information to FHIR:
-
-
-|Reg-Cert-Data-List|Device Mapping|
-|-
-|Reg-Cert-Data-List: continuaVersion|version.type.coding.code="532352"<br>version.type.coding.system="urn.iso.std.iso:11073:10101"<br>version.type.text="MDC_REG_CERT_DATA_CONTINUA_VERSION + text"<br>version.value="Continua version code"<br><br>|
-|Reg-Cert-Data-List: certified PHD interfaces|property.type.coding.code="532353"<br>property.type.coding.system="urn.iso.std.iso:11073:10101"<br>property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"<br>property.valueCode*N*.coding.code="PHDCode*N*"<br>property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS"<br><br>|
-|Reg-Cert-Data-List: regulation status|property.type.coding.code="532354.0"<br>property.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"<br>property.type.display="negated-regulation-status"<br>property.valueBoolean="true=unregulated false=regulated"|
-
-Text elements are recommended but optional.
 
 ### Mds-Time-Info
 The Mds-Time-Info attribute is required on PHDs that support a real time clock of some type and report timestamps in their measurements. In Bluetooth Low Energy devices these properties must be inferred from other information like the Current Time Service. If the PHD does NOT report a timestamp in any of its measurements, there is no need to report the static time information ***EXCEPT*** that there is no time synchronization.

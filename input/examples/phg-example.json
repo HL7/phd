@@ -31,7 +31,8 @@
 				"code": "531981",
 				"display": "MDC_MOC_VMS_MDS_AHD"
 			}
-		]
+		],
+        "text": "Application Hosting Device, a.k.a. PHG"
 	},
 	"specialization": [
 		{
@@ -43,7 +44,7 @@
 						"display": "MDC_DEV_SPEC_PROFILE_GENERIC"
 					}
 				],
-				"text": "Generic 11073 compliant PHD device"
+				"text": "Generic 11073 PHD device"
 			},
 			"version": "2"
 		}

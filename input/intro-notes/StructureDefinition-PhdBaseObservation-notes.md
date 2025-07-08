@@ -47,7 +47,7 @@ padding: 6px;}</style>
 
 IEEE 11073-10206 timestamps represent a UTC time or a local time, that is synchronised with an external time source or not and can come with or without a TZ/DST offset or the timestamp represents a Tick Counter value. These timestamps can come from the current timeline of the PHD or not. In order to map a timestamp for the PHD's current timeline, the PHG needs the PHD's current time. 
 
-A timestamp comes from the current timeline of the PHD if the PHD's clock progressed naturally without discontinuities since the time reported in the timestamp. This information is included in the timestamp reported by an IEEE 11073-10206 compliant PHD, such as Bluetooth devices following the GHS specification. More information can be found in the IEEE 11073-10206 and Bluetooth GHS specifications.
+A timestamp comes from the current timeline of the PHD if the PHD's clock progressed naturally without discontinuities since the time reported in the timestamp. This information is included in the timestamp reported by an IEEE 11073-10206 compliant PHD, such as Bluetooth devices following the GHS specification. More information can be found in the IEEE 11073-10206 ACOM and Bluetooth GHS specifications.
 
 Observations with a timestamp that is not from the current timeline of the PHD and that are not from a timeline synchronised with an external time source should be thrown away since there is no way to give them a correct timestamp.
 
@@ -120,11 +120,14 @@ The Supplemental Information attribute contains a list of one or more MDC codes 
 
 
 ### Measurement Status
-The Measurement Status element from IEEE 11073-10206 is used to report errors or other special conditions.  The Bluetooth SIG GHS specification adds more possible conditions. It is possible to have multiple conditions simultaneously, but some combinations of conditions do not make sense and should not occur.
+The Measurement Status element from IEEE 11073-10206 ACOM is used to report errors or other special conditions.  The Bluetooth SIG GHS specification adds more possible conditions. It is possible to have multiple conditions simultaneously, but some combinations of conditions do not make sense and should not occur.
 
-To report these conditions in FHIR requires the use of three different elements. The interpretation codes are taken from the measurement status value set defined in the [Point of Care implementation guide](https://build.fhir.org/ig/HL7/uv-pocd/index.html).
+To report these conditions in FHIR requires the use of different elements:
+- The `dataAbsentReason` element is used to report the error or not-available condition.
+- The `status` element is used to report the entered-in-error condition.
+- The `interpretation` element is used to report the questionable, calibrating, early-estimate, manually-entered, threshold error, and thresholding disabled conditions.
 
-The table below lists the special conditions and the FHIR data elements to which they are mapped. The code system from which the code is drawn is also shown using a `codsystem#code` notation.
+The table below lists the error conditions and the FHIR data elements to which they are mapped. The code system from which the code is drawn is also shown using a `codsystem#code` notation.
 
 | IEEE 11073 Measurement Status     | FHIR Observation Resource Data Element                                         | Further Remarks Options                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -141,7 +144,6 @@ The table below lists the special conditions and the FHIR data elements to which
 
 DAR: [Data Absent Reason CodeSystem](http://terminology.hl7.org/CodeSystem/data-absent-reason)
 HL7Status: [Observation Status CodeSystem](http://hl7.org/fhir/observation-status)
-PoCDStatus: [CodeSystem: Measurement Status Codes CodeSystem](https://build.fhir.org/ig/HL7/uv-pocd/CodeSystem-measurement-status.html)
+PoCDStatus: [CodeSystem: Measurement Status Codes CodeSystem](https://hl7.org/fhir/uv/pocd/2021Sep/ValueSet-observation-interpretation.html)
 ActReason: [CodeSystem: Act Reason CodeSystem](http://terminology.hl7.org/CodeSystem/v3-ActReason)
-
 
