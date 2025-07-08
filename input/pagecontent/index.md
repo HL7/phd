@@ -34,7 +34,6 @@ A PHG-validated timestamp can be generated if a PHD gives access to its clock an
 The IEEE 11073-20601 specification is a predecessor of the IEEE 11073-10206 ACOM standard that supports almost the same DIM and in addition defines a binary presentation of the objects and a stateful application layer protocol. This standard was the basis for the Continua Design Guidelines and a certification programme by the Personal Connected Health Alliance (PCHA). This programme failed to gain a significant market position and is no longer operational, but nevertheless this IG can to a large extent also be used with PHDs and PHGs supporting the IEEE 11073-20601 specification. Where appropriate, this IG will explain the differences between the two standards.
 
 ### References used throughout this IG
-- ACOM - [IEEE 11073-10206: Personal Health Device Communication — Abstract Content Information Model](https://standards.ieee.org/ieee/1107-10206/11702/11073-10206/10311/)
-- GHS - [Bluetooth SIG Generic Health Sensor profile and service](https://www.bluetooth.com/specifications/specs/?types=adopted&keyword=GHS&filter=) (GHS)
-
-
+- ACOM - [IEEE 11073-10206: Health Informatics—Device Interoperability Part 10206: Personal Health Device Communication—Abstract Content Information Model](https://standards.ieee.org/ieee/1107-10206/11702/11073-10206/10311/)
+- GHS - [Bluetooth SIG Generic Health Sensor profile and service specifications](https://www.bluetooth.com/specifications/specs/?types=adopted&keyword=GHS&filter=)
+- MDC - [IEEE 11073-10101: Health informatics — Device interoperability — Part 10101: Point-of-care medical device communication — Nomenclature](https://standards.ieee.org/ieee/11073-10101/5034/)
