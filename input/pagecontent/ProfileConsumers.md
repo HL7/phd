@@ -27,7 +27,7 @@ PHDs measurements are encoded into Observation resources. There are different ty
 #### Common Observation Element Fields
 Every PHD generated measurement Observation resource contains the following information regardless of the measurement value type:
 
-|11073 Observation attribute|FHIR Observation data element|Description|
+|IEEE 11073-10206 Observation attribute|FHIR Observation data element|Description|
 |---|---|---|
 |type|`code`|This element tells you what the measurement is. There should be a coding element using the MDC coding system.<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html).| 
 ||`category`|The category element is present with at least the value `"phd"`. For vital signs, there will also be another element with value `"vital-signs"` as demanded by the vital signs profile.
@@ -76,7 +76,7 @@ There is a dedicated profile for the PHD device that is used to capture the syst
 #### Other Observation Element Fields
 In addition to the elements that are always present, the following set of elements may be present.
 
-|11073 Observation attribute|FHIR data element|Description|
+|IEEE 11073-10206 Observation attribute|FHIR data element|Description|
 |-
 |profile|Observation.meta.profile|This element may contain the URL to the structure definition identifying the profile this Observation belongs to.|
 |coincident timestamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Timestamp Observation profile. For time quality auditing purposes. May be present only when the PHD provides a timestamp. The timestamp extension is identified by Observation.extension.url=["http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"](StructureDefinition-CoincidentTimeStampReference.html) |
@@ -127,7 +127,7 @@ A 'spot modality' means that the pulse oximeter sensed over a period long enough
 
 <blockquote class="stu-note">
 	<strong>Should we move Supplemental Type information to an extension?</strong>
-	In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. In this version we are using extensions for less often used elements of the IEEE 11073 PHD ACOM model and in places were the PHD model and the FHIR model forn observation are too different to have a 1-1 mapping between data elements of these models.
+	In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. In this version we are using extensions for less often used elements of IEEE 11073-10206 ACOM and in places were the ACOM model and the FHIR model for an observation are too different to have a 1-1 mapping between data elements of these models.
 
     The question is if this applies to Supplemental Type information as well. Should IEEE 11073-10206 Supplemental Information be modeled as a FHIR Observation.component or as an extension in FHIR?
     Input is welcome.
@@ -141,7 +141,7 @@ There are other non-error special conditions that may also be reported, such as 
 
 Depending upon what the special condition is, it is reported in either the dataAbsentReason, interpretation, or meta.security element. All of these entries are CodeableConcepts. When the condition is reported in the dataAbsentReason, there will be no measurement value entry in accord with the FHIR specification, even if the PHD reports a measurement value. Note that there may be multiple interpretation entries but only one dataAbsentReason element.
 
-The exact mapping of IEEE 11073 measurement status conditions to FHIR is covered in the [PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html).
+The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is covered in the [PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html).
 
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 

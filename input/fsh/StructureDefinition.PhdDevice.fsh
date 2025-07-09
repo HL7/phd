@@ -97,14 +97,14 @@ Description: "Profile for the Device Resource for a PHD"
   * ^short = "This element contains an entry for each supported specialization"
   * ^comment = "There shall be a specialization entry for each specialization reported in the required System-Type-Spec-List attribute. A specialization in this case defines not only what type of measurements the PHD reports but that the PHD reports these measurements according to one of the 11073-114xx specialization standards. Most PHDs support only a single specialization such as the Blood Pressure or Pulse Oximeter specialization."
   * systemType ^short = "The specialization standard supported by the PHD."
-    * ^comment = "The 11073-10101 specialization code from a System-Type-Spec-List[i].type."
+    * ^comment = "The IEEE 11073-10101 specialization code from a System-Type-Spec-List[i].type."
     * coding 1..
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
   * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
     * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (using MDC_DEV_SPEC_PROFILE_HYDRA or MDC_DEV_SPEC_PROFILE_GENERIC), the version is the 11073-10206 version."
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
-  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
+  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not IEEE 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
 * version ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open

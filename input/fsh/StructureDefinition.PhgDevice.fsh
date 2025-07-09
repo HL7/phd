@@ -10,7 +10,7 @@ Description: "Profile for the Device Resource for a PHG"
 * ^meta.lastUpdated = "2017-10-16T05:10:49.894-04:00"
 * ^version = "1.0.0"
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
-* ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any 11073 Objects or attributes though it is required to have a system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it can provide system information, clock and power source information. For compliance with this IG, the quantities that are required to be reported are the system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), and the PCHA certified interfaces."
+* ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any IEEE 11073-10206 Objects or attributes though it is required to have a system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it can provide system information, clock and power source information. For compliance with this IG, the quantities that are required to be reported are the system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), and the PCHA certified interfaces."
 * . ^definition = "The characteristics, operational status and capabilities of the PHG."
 * identifier ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type.coding.system"

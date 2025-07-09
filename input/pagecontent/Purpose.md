@@ -1,6 +1,6 @@
 The Personal Health Device Implementation Guide (IG) describes how information from Personal Health Devices (PHDs) shall be represented in FHIR. PHDs are devices that are mostly used in home-care contexts and include devices such as glucose meters, blood pressure cuffs, weight scales, thermometers, etc. The PHD 'information' in this context means both the measurements taken by the PHD and data about the PHD itself. The PHD data includes characteristics, operational status and capabilities of the device, such as the serial number, manufacturer name, and firmware revision. Typically, the PHD is in the patient's home or on the patient's person.
 
-In most cases, a Personal Health Gateway (PHG) handles receiving and decoding information from the PHD. Implementations of the mapping of IEEE 11073 data described in this IG are typically carried out on PHGs, and when a PHG is used, information about the PHG must also be generated.
+In most cases, a Personal Health Gateway (PHG) handles receiving and decoding information from the PHD. Implementations of the mapping of IEEE 11073-10206 data described in this IG are typically carried out on PHGs, and when a PHG is used, information about the PHG must also be generated.
 
 <img src="PHD-context-complete.jpg" alt="PHD IG context diagram" style="width:100%">
 

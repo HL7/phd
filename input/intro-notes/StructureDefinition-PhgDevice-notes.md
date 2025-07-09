@@ -61,7 +61,7 @@ The time synchronization is mapped as follows:
 |532231	|MDC_TIME_SYNC_HL7_NCK	|Synchronized via Health Level 7 NCK (network clock)|8::7943|
 |532232	|MDC_TIME_SYNC_CDMA	CDMA |mobile telecommunications synchronization	|8::7944|
 |532233	|MDC_TIME_SYNC_GSM	|GSM - Network Identity and Time Zone (NITZ)	|8::7945|
-|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that is out of scope for IEEE 11073	|8::7948|
+|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that has no known MDC code	|8::7948|
 |532237	|MDC_TIME_SYNC_OTHER_MOBILE	|A time sync method based on other mobile network technology that is not listed above	|8::7949|
 |532238	|MDC_TIME_SYNC_GPS	|A time sync method based on GPS information	|8::7950|
 
@@ -88,12 +88,12 @@ An example of generic code use would be as follows
 
 {% fragment Device/phg-example JSON EXCEPT:specialization %}
 
-All defined IEEE PHD device specializations can be found in the [IEEE 11073 Device Types value set](ValueSet-DeviceTypes11073MDC.html).
+All defined IEEE PHD device specializations can be found in the [MDC Device Types value set](ValueSet-DeviceTypes11073MDC.html).
 
 ### **PHG Product Information**
 The table blow provides codes and reference identifiers used in mapping the product information:
 
-|11073 Attribute|description|MDC code|MDC reference identifier|
+|IEEE 11073-20601 Attribute|description|MDC code|MDC reference identifier|
 |-
 |System-Model|Model number|531969|MDC_ID_MODEL_NUMBER|
 |System-Model|Manufacturer name|531970|MDC_ID_MODEL_MANUFACTURER|
@@ -147,7 +147,7 @@ The table blow provides codes and reference identifiers used in mapping the prod
  - version.type.coding.code="531977"
  - version.type.coding.system="urn.iso.std.iso:11073:10101"
  - version.type.text="MDC_ID_PROD_SPEC_PROTOCOL + optional text"
- - version.value="*protocol-version*" (Not 11073-20601 protocol!)
+ - version.value="*protocol-version*" (Not IEEE 11073-20601 protocol!)
 
  - Continua
  - version.type.coding.code="532352"

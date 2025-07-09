@@ -22,12 +22,12 @@ An example of a system identifier is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
 
 ### Device.udiCarrier ###
-The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard (and the older 11073-20601 standard). It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. There is no appropriate entryType code for this sourcing of the UDI in FHIR R4 and the code `unknown` should be used. In FHIR R5 the code `electronic-transmission` can be used.
+The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard (and the older IEEE 11073-20601 standard). It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. There is no appropriate entryType code for this sourcing of the UDI in FHIR R4 and the code `unknown` should be used. In FHIR R5 the code `electronic-transmission` can be used.
 
 The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
 ### Device.type ###
-The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the Device.specializations element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In 11073-10201 this code is described as indicating "a single-purpose medical device".
+The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the Device.specializations element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In IEEE 11073-10201 this code is described as indicating "a single-purpose medical device".
 
 An example of a `Device.type` encoding is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:type %}
@@ -118,7 +118,7 @@ The Mds-Time-Info.*time-sync-protocol* indicates the method of time synchronizat
 |532231	|MDC_TIME_SYNC_HL7_NCK	|Synchronized via Health Level 7 NCK (network clock)|8::7943|
 |532232	|MDC_TIME_SYNC_CDMA	CDMA |mobile telecommunications synchronization	|8::7944|
 |532233	|MDC_TIME_SYNC_GSM	|GSM - Network Identity and Time Zone (NITZ)	|8::7945|
-|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that is out of scope for IEEE 11073	|8::7948|
+|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that has no known MDC code	|8::7948|
 |532237	|MDC_TIME_SYNC_OTHER_MOBILE	|A time sync method based on other mobile network technology that is not listed above	|8::7949|
 |532238	|MDC_TIME_SYNC_GPS	|A time sync method based on GPS information	|8::7950|
 

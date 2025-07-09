@@ -9,7 +9,7 @@ border-collapse:collapse;
 padding: 6px;}</style>
 
 ### Additional Numerical Measurement Information
-IEEE 11073 numeric observations have some additional optional attributes that are used only for numerics and provide further information about the measurement. 
+IEEE 11073-10206 numeric observations have some additional optional attributes that are used only for numerics and provide further information about the measurement. 
 These optional attributes are seldom used directly by PHDs and are mapped to FHIR extensions. 
 
 ##### Accuracy
@@ -29,9 +29,9 @@ The presence of the extension in an Observation with a numeric quantity informs 
 An example of an observation with an alert can be found [here](Observation-numeric-spo2-alarm.json.html).
 
 ##### Measurement Confidence 95
-The Measurement-Confidence-95 gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. 
+The Measurement-Confidence-95 gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. It is supported by the IEEE 11073-20601 specification, but not by the IEEE 11073-10206 ACOM specification. 
 It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation. See [Confidence95 extension](StructureDefinition-Confidence95.html). The range is encoded in an Extension.valueRange element. The ranges have the same units as the primary measurement.
-The IEEE 11073 Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization.  An example of a Measurement Confidence 95 entry is shown below:
+The IEEE 11073-20601 Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization.  An example of a Measurement Confidence 95 entry is shown below:
 
 {% fragment Observation/glucose-observation JSON EXCEPT:extension[2] %}
 

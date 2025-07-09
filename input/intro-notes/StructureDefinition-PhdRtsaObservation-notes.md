@@ -1,5 +1,5 @@
 
-### Mapping 11073 Sample Arrays To FHIR
+### Mapping IEEE 11073-10206 Sample Arrays To FHIR
 Periodic data is mapped to the SampledData data type in FHIR. The SampledData.data element in this data type is also scaled. If *y*[i] is the i<sup>th</sup> entry of the actual unscaled data from the PHD sensor, *y*[i] is obtained from the SampledData type using the following relation:
 
 *y*[i] = d[i] * s + b

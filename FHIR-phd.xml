@@ -20,7 +20,7 @@
 <artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
 <artifact deprecated="true" id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
 <artifact deprecated="true" id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
-<artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept 11073 Attributes"/>
+<artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept IEEE 11073-20601 Attributes"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence 95 range"/>
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="Continua Device Identifiers"/>
@@ -94,8 +94,8 @@
 <artifact deprecated="true" id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhdStringObservation" key="StructureDefinition-PhdStringObservation" name="PhdStringObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
-<artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity 11073 Attributes"/>
-<artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range 11073 Attributes"/>
+<artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity IEEE 11073-20601 Attributes"/>
+<artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range 11073-20601 Attributes"/>
 <artifact id="ValueSet/SimpleAlertOperationalStates" key="ValueSet-SimpleAlertOperationalStates" name="Simple Alert Operational States Value Set"/>
 <artifact id="StructureDefinition/SimpleAlerting" key="StructureDefinition-SimpleAlerting" name="Simple Alerting"/>
 <artifact id="CodeSystem/SimpleAlertOperationalStatesCS" key="CodeSystem-SimpleAlertOperationalStatesCS" name="SimpleAlertOperationalStates CodeSystem"/>

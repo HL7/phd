@@ -18,4 +18,4 @@ These sections provide background on the concepts behind the technical mapping a
    - [The Observation Identifier](ObservationIdentifier.html)
    - [Generating the Reported Timestamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
  - [Coincident Timestamp](CoincidentTimeStamp.html) 
- - [Non-IEEE 11073 PHD Devices](Non11073PHDDevices.html)
+ - [Non-IEEE 11073-10206 PHD Devices](Non11073PHDDevices.html)
