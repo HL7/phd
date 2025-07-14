@@ -206,7 +206,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ContinuaPHDCS"/>
+        <reference value="CodeSystem/ContinuaPHDInterfaceIDs"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -290,9 +290,9 @@ In this example there are only xml structure definitions, value sets, code syste
     <!--    end of missing value sets -->
     <resource>
       <reference>
-        <reference value="CapabilityStatement/PhdServerCapabilityStatement"/>
+        <reference value="CapabilityStatement/PhdFHIRServer"/>
       </reference>
-      <name value="PhdServerCapabilityStatement"/>
+      <name value="PhdFHIRServer"/>
       <exampleBoolean value="false"/>
       <!-- <groupingId value="capabilities" /> -->
     </resource>
@@ -541,55 +541,19 @@ In this example there are only xml structure definitions, value sets, code syste
         <nameUrl value="index.html"/>
         <title value="Personal Health Device Implementation Guide Home Page"/>
         <generation value="markdown"/>
-        <!-- <page>
-          <nameUrl value="ProfileConsumers.html"/>
-          <title value="Consuming the PHD Profile FHIR Resources"/>
+        <page>
+          <nameUrl value="UseCases.html"/>
+          <title value="Use Cases"/>
           <generation value="markdown"/>
-        </page> -->
-
+        </page>        
         <page>
           <nameUrl value="ProfilesOverview.html"/>
           <title value="Profiles Overview"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="DeviceIdentifierCodes.html"/>
-          <title value="Device Identifier codes"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
           <nameUrl value="terminology.html"/>
           <title value="Terminology"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-      <page>
-        <nameUrl value="overview.html"/>
-        <title value="Overview"/>
-        <generation value="markdown"/>
-        <page>
-          <nameUrl value="Purpose.html"/>
-          <title value="Purpose"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="Audience.html"/>
-          <title value="Audience"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="Scope.html"/>
-          <title value="Scope"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="UseCases.html"/>
-          <title value="Use Cases"/>
-          <generation value="markdown"/>
-        </page>
-                <page>
-          <nameUrl value="TempDevUseCasePage.html"/>
-          <title value="Example Devices Use Case Page"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -626,11 +590,6 @@ In this example there are only xml structure definitions, value sets, code syste
         <page>
           <nameUrl value="DIMtoFHIRMapping.html"/>
           <title value="DIM to FHIR Mapping: Basics"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="GeneralNotestoConsumers.html"/>
-          <title value="General Notes to Consumers of FHIR Data"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -708,8 +667,8 @@ In this example there are only xml structure definitions, value sets, code syste
       </page>
       <!-- to fix recent warnings from the tooling-->
       <page>
-        <nameUrl value="Appendices.html"/>
-        <title value="Appendices"/>
+        <nameUrl value="Appendix.html"/>
+        <title value="Appendix"/>
         <generation value="markdown"/>
       </page>
     </page>

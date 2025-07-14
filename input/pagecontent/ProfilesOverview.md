@@ -10,7 +10,7 @@ This IG defines the following profiles:
    - [Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html): reports a coded value
    - [BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html): reports a set of codes, each with a boolean value
    - [Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html): reports sampled data such as a waveform
-   - [String Enumeration Observation Profile](StructureDefinition-PhdStringObservation.html): reports a (human-readable) string
+   - [String Observation Profile](StructureDefinition-PhdStringObservation.html): reports a (human-readable) string
    - [Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html): reports multiple related values
    - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html): reports multiple numeric values
  - [Coincident Timestamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html): reports the PHD device time as observed by the PHG for time auditing purposes
@@ -28,18 +28,18 @@ The measurement observation profiles mirror more or less the measurement 'value-
 |                       |Single Event                     |[Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)   |valueCodeableConcept|
 |                       |Multiple Event                   |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.valueCodeableConcept(s)|
 |                       |Multiple Booleans (Bitstring)    |[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)     |component.code<br/>component.valueCodeableConcepts|
-|string                 |String enumeration               |[String Enumeration Observation Profile](StructureDefinition-PhdStringObservation.html) |valueString|
+|string                 |String                |[String Observation Profile](StructureDefinition-PhdStringObservation.html) |valueString|
 |peridoic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |valueSampledData|
 |compound               |Compound                         |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.value[x]|
 |compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |component.valueQuantity|
 
+Further information on the mapping of the ACOM Observation types to FHIR Observation elements can be found in the [DIM to FHIR Mapping section](DIMtoFHIRMapping.html). An UML diagram of the Observation profiles for measurements is shown below:
 
-An UML diagram of the Observation profiles for measurements is shown below:
-
-<figure>
+<figure style="width: 80%;">
 {% include acom-observations.svg %}
-<figcaption>IEEE 11073-10206 ACOM Observation classes</figcaption>
+<figcaption><i>IEEE 11073-10206 ACOM Observation classes</i></figcaption>
 </figure>
+<br>
 <p>
 The value-type of the measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
 </p>
@@ -57,10 +57,15 @@ A transaction Bundle may prove useful in that case. A bundled upload will contai
 
 Another option for the PHG is to perform a FHIR server query to obtain the patient logical id using the provided patient information and to perform an initial upload of the PHD(s) and PHG device resources to obtain their logical ids. These logical ids can then be used in subsequent uploads by the PHG.
 
-On the other hand, if the use case only involves PHDs that do not emit source-handle-references and do not need a Coincident Timestamp, the single upload approach may prove to be much more efficient. It is also permissible to mix and match, using both single and Bundled uploads.
+On the other hand, if the use case only involves PHDs that do not emit Observations referencing other Observations and do not need a Coincident Timestamp, the single upload approach may prove to be much more efficient. It is also permissible to mix and match, using both single and Bundled uploads.
 
 ### Patient Profile
 The PHD Patient Profile is used to report the patient data. Dependent on the use case the Patient resource may contain only keys to identify the patient that only the health care provider can match to a person. It is also possible that the Patient resource is never uploaded by the PHG. In that case the logical id to a Patient resource on the FHIR server must be provided to the PHG by out-of-band means.
 
+### PII/PHI protection
+Patient information, such as demographic and administrative information about the patient, is considered sensitive and must be properly protected. PHDs are typically used in home-care contexts, and the information they provide is often transmitted over public networks. Therefore, it is essential to protect Personally Identifiable Information (PII) and Personal Health Information (PHI).
 
+Normally PHDs do not need to store any patient information, and the PHDs themselves do not provide any patient information through standardized protocols. Therefore, the PHDs do not need to be concerned with PII/PHI protection. However, the Personal Health Gateway (PHG) needs some patient information to upload data, and it must handle this information appropriately.
+
+That being said, this IG does not require that PII/PHI be protected. Implementations are free to populate any of the other fields of the Patient resource. A common case where PII/PHI may be of little concern is in the handling of fitness data from activity monitors and related fitness devices.
  

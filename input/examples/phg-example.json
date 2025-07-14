@@ -23,7 +23,7 @@
 			}
 		}
 	],
-	"manufacturer": "Continua Medical PHGs",
+	"manufacturer": "Certified Medical PHGs",
 	"type": {
 		"coding": [
 			{
@@ -44,7 +44,7 @@
 						"display": "MDC_DEV_SPEC_PROFILE_GENERIC"
 					}
 				],
-				"text": "Generic 11073 PHD device"
+				"text": "Generic IEEE 11073-10206 PHD device"
 			},
 			"version": "2"
 		}
@@ -113,7 +113,7 @@
 				{
 					"coding": [
 						{
-							"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
+							"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
 							"code": "4"
 						}
 					]

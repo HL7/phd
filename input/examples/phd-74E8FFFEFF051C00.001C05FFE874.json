@@ -126,13 +126,13 @@
                         "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "Each element of the Continua certified interfaces list as a seperate property"
+                "text": "Each element of the certified interfaces list as a separate property"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
                             "code": "32772",
                             "display": "Bluetooth LE Pulse Oximeter certified"
                         }
@@ -149,13 +149,13 @@
                         "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "Each element of the Continua certified interfaces list as a seperate property"
+                "text": "Each element of the certified interfaces list as a separate property"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
                             "code": "8196",
                             "display": "PHDC USB Pulse Oximeter certified"
                         }
@@ -172,13 +172,13 @@
                         "display": "MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST"
                     }
                 ],
-                "text": "Each element of the Continua certified interfaces list as a seperate property"
+                "text": "Each element of the certified interfaces list as a separate property"
             },
             "valueCode": [
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
                             "code": "4",
                             "display": "Pulse Oximeter certified"
                         }

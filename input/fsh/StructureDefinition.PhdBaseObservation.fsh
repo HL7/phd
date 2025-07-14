@@ -1,5 +1,4 @@
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
-Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
 Alias: $MDCValueSet = http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet
 
 Profile: PhdBaseObservation

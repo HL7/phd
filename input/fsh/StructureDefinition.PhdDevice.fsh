@@ -1,5 +1,4 @@
 Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
-Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 
 Profile: PhdDevice
@@ -10,8 +9,8 @@ Description: "Profile for the Device Resource for a PHD"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
 // * ^status = #draft
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
-* ^purpose = "This resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
-* . ^definition = "The characteristics, operational status and capabilities of a medical-related component of a medical device. A PHD is JUST the medical-related component."
+* ^purpose = "This resource describes the primary features of a Personal Health Device (PHD)."
+* . ^definition = "his resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
   * ^comment = "This profile applies to PHDs that adhere to the IEEE 11073-10206 ACOM standard or that can be mapped to it. The profile is based on the Device resource and contains additional elements that are specific to PHDs."
 * identifier 1..
 * identifier ^slicing.discriminator[0].type = #value
@@ -97,14 +96,14 @@ Description: "Profile for the Device Resource for a PHD"
   * ^short = "This element contains an entry for each supported specialization"
   * ^comment = "There shall be a specialization entry for each specialization reported in the required System-Type-Spec-List attribute. A specialization in this case defines not only what type of measurements the PHD reports but that the PHD reports these measurements according to one of the 11073-114xx specialization standards. Most PHDs support only a single specialization such as the Blood Pressure or Pulse Oximeter specialization."
   * systemType ^short = "The specialization standard supported by the PHD."
-    * ^comment = "The 11073-10101 specialization code from a System-Type-Spec-List[i].type."
+    * ^comment = "The IEEE 11073-10101 specialization code from a System-Type-Spec-List[i].type."
     * coding 1..
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
   * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
     * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (using MDC_DEV_SPEC_PROFILE_HYDRA or MDC_DEV_SPEC_PROFILE_GENERIC), the version is the 11073-10206 version."
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
-  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
+  * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not IEEE 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
 * version ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
@@ -163,7 +162,7 @@ Description: "Profile for the Device Resource for a PHD"
     * system 1..
     * system = "http://unitsofmeasure.org" (exactly)
     * code = UCUM#us
-      * ^definition = "The UCUM code (for microseconds it is 'us')"
+      * ^definition = "The UCUM code for microseconds is 'us'."
 
 * property[isRegulatedProperty] ^short = "Regulatory status of the PHD"
   * ^definition = "This element represents the regulatory status of the PHD."
@@ -216,14 +215,14 @@ Description: "Profile for the Device Resource for a PHD"
 //       * system = "urn:iso:std:iso:11073:10101" (exactly)
 //       * code 1..
 //         * ^definition = "The MDC code representing the property"
-//         * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS\r\n"
+//         * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs\r\n"
 //     * text ^definition = "It is recommended to display at least the MDC reference identifier for the code"
 //   * valueQuantity ..0
 //   * valueCode 1..
 //     * ^short = "There shall be one valueCode entry for every item supported by the PHG in the list"
 //     * coding 1..
 //       * system 1..
-//         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS or urn:iso:std:iso:11073:10101 code systems"
+//         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs or urn:iso:std:iso:11073:10101 code systems"
 //       * code 1..
 //         * ^definition = "One of the Continua interface certification codes"
 

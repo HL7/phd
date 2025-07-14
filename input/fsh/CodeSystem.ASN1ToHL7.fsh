@@ -10,7 +10,7 @@ RuleSet: Bitcode(concept, define, description, eventOrState, source, mdcmapping)
 CodeSystem: ASN1ToHL7
 Id: ASN1ToHL7
 Title: "ASN1 bits to HL7 enumerated values"
-Description: "Codesystem for mapping IEEE 11073 bitstrings to FHIR Codeable Concepts"
+Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeable Concepts"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
 //* ^version = "2.1.0"

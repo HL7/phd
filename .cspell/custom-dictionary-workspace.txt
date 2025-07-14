@@ -1,6 +1,12 @@
 # Custom Dictionary Words
 codeable
 FHIR
+LOINC
+oximeters
 PCHA
 RTMMS
+SNOMED
+timestamping
 UCUM
+unsynchronized
+Zigbee

@@ -1,34 +1,5 @@
 ### **System Identifier**
-All IEEE 11073-20601 PHGs are required to have a system identifier.  It is an EUI-64 consisting of 8 bytes. The system id is mapped to the Device.identifier.value element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. It shall be reported.
-
-It is strongly encouraged to also report the PHG PHD and H&FS transport addresses in a second and third identifier element. The transport addresses are as follows:
-
-<style>table, th, td {
-border: 1px solid black;
-border-collapse:collapse;
-padding: 6px;}</style>
-
-|transport|format|example|
-|-
-|Bluetooth|EUI-48|00-E5-DE-AD-77-C3|
-|ZigBee|EUI-64|36-ED-9A-EE-DE-AD-77-C3|
-|USB|vid.pid|0043.F90D|
-|MAC|EUI-48|EE-FF-DE-AD-77-01|
-
-The identifier for the system id:
-
- - identifier.value=*system id formatted as above*
- - identifier.system="urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"
- - identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
- - identifier.type.coding.code="SYSID"
-
-The identifier for the Bluetooth Address: 
-
- - identifier.value=*formatted as above*
- - identifier.system="http://hl7.org/fhir/sid/eui-48/bluetooth"
- - identifier.type.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
- - identifier.type.coding.code="BTMAC"
- 
+PHGs are required to have a system identifier.  This identifier follows the same rules as the [PHD system identifier](StructureDefinition-PhdDevice.html#system-identifier--deviceidentifier). The system identifier is a unique identifier for the PHG and is used to identify the PHG in the FHIR server. The system identifier is represented as a Device.identifier element.
  
  An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](Device-phg-ecde3d4e58532d31.000000000000.html)
 
@@ -61,7 +32,7 @@ The time synchronization is mapped as follows:
 |532231	|MDC_TIME_SYNC_HL7_NCK	|Synchronized via Health Level 7 NCK (network clock)|8::7943|
 |532232	|MDC_TIME_SYNC_CDMA	CDMA |mobile telecommunications synchronization	|8::7944|
 |532233	|MDC_TIME_SYNC_GSM	|GSM - Network Identity and Time Zone (NITZ)	|8::7945|
-|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that is out of scope for IEEE 11073	|8::7948|
+|532236	|MDC_TIME_SYNC_OTHER	|A time sync method that has no known MDC code	|8::7948|
 |532237	|MDC_TIME_SYNC_OTHER_MOBILE	|A time sync method based on other mobile network technology that is not listed above	|8::7949|
 |532238	|MDC_TIME_SYNC_GPS	|A time sync method based on GPS information	|8::7950|
 
@@ -88,12 +59,12 @@ An example of generic code use would be as follows
 
 {% fragment Device/phg-example JSON EXCEPT:specialization %}
 
-All defined IEEE PHD device specializations can be found in the [IEEE 11073 Device Types value set](ValueSet-DeviceTypes11073MDC.html).
+All defined IEEE PHD device specializations can be found in the [MDC Device Types value set](ValueSet-DeviceTypes11073MDC.html).
 
 ### **PHG Product Information**
 The table blow provides codes and reference identifiers used in mapping the product information:
 
-|11073 Attribute|description|MDC code|MDC reference identifier|
+|IEEE 11073-20601 Attribute|description|MDC code|MDC reference identifier|
 |-
 |System-Model|Model number|531969|MDC_ID_MODEL_NUMBER|
 |System-Model|Manufacturer name|531970|MDC_ID_MODEL_MANUFACTURER|
@@ -147,7 +118,7 @@ The table blow provides codes and reference identifiers used in mapping the prod
  - version.type.coding.code="531977"
  - version.type.coding.system="urn.iso.std.iso:11073:10101"
  - version.type.text="MDC_ID_PROD_SPEC_PROTOCOL + optional text"
- - version.value="*protocol-version*" (Not 11073-20601 protocol!)
+ - version.value="*protocol-version*" (Not IEEE 11073-20601 protocol!)
 
  - Continua
  - version.type.coding.code="532352"
@@ -180,7 +151,7 @@ The PHDCodes are mapped to a list of property.valueCode elements. The property.t
  - property.type.coding.system="urn.iso.std.iso:11073:10101"
  - property.type.text="MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST + text"
  - property.valueCode*N*.coding.code="PHDCode*N*"
- - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS "
+ - property.valueCode*N*.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs "
 
 Note that the property.valueCode element is an array and one can have many of these in a single property element.
 

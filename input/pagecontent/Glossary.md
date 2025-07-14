@@ -24,7 +24,3 @@ This glossary lists abbreviations and acronyms used throughout this Implementati
 | UCUM         | Unified Code for Units of Measure                                                           |
 | USB PHDC     | USB Personal Healthcare Device Class                                                        |
 
----
-
-- [Back to Scope](Scope.html)
-- [Organizations](Organizations.html)

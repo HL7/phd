@@ -14,15 +14,12 @@ Description: "Observations containing a coincident timestamp."
 * status ^definition = "The status of the result value. Always 'final'"
 * status ^comment = "The value shall be set to 'final'"
 * code.coding ^slicing.discriminator.type = #value
-* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding contains MDCType 1..1
-* code.coding[MDCType] ^short = "The required MDC code for the type of time clock used by the PHD"
-* code.coding[MDCType] ^comment = "PHDs use one of absolute time, base offset time, relative time, or high resolution relative time."
-* code.coding[MDCType].system 1..
-* code.coding[MDCType].system = "urn:iso:std:iso:11073:10101" (exactly)
-* code.coding[MDCType].code 1..
-* code.coding[MDCType].code ^comment = "The code for absolute time is 67975 with reference id MDC_ATTR_TIME_ABS, for base offset time is 68226 with reference id MDC_ATTR_TIME_BO, for relative time is 67983 with reference id MDC_ATTR_TIME_REL, and for high resolution relative time is 68072 with reference id MDC_ATTR_TIME_REL_HI_RES."
+* code.coding[MDCType] 
+  * ^short = "The type of time clock used by the PHD"
+* code.coding[MDCType] from http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes (required)
 * subject 1..
 * subject.reference 1..
 * subject only Reference(PhdDevice)
@@ -34,16 +31,37 @@ Description: "Observations containing a coincident timestamp."
 * value[x] only dateTime or Quantity
 * value[x] ^short = "The current time of the PHD as a wallclock time (dateTime), relative time (Quantity), or if a time fault a dataAbsentReason"
 * value[x] ^definition = "The current time of the PHD. It will be either a valueDateTime if a wallclock time or a valueQuantity if a relative time or a dataAbsentReason if there is a time fault. The relative time is expressed in microseconds"
-* dataAbsentReason ^short = "Populated when the PHD has a time fault"
-* dataAbsentReason ^definition = "In this profile this element indicates that the current time of the PHD for the measurements reported is not known and is unable to be obtained"
-* dataAbsentReason ^comment = "This situation arises when the PHD has a time fault, perhaps by battery change. The sensor device may have stored data with timestamps taken at a time when the clock was running but after the fault the original timeline was not able to be recovered. Thus the current timeline, if any, has an unknown relationship to the previous timeline."
 * dataAbsentReason.coding ^slicing.discriminator.type = #value
-* dataAbsentReason.coding ^slicing.discriminator.path = "code"
+* dataAbsentReason.coding ^slicing.discriminator.path = "$this"
 * dataAbsentReason.coding ^slicing.rules = #open
-* dataAbsentReason.coding contains FhirDefault 1..1
-* dataAbsentReason.coding[FhirDefault].code from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
-* dataAbsentReason.coding[FhirDefault].code 1..
-* dataAbsentReason.coding[FhirDefault].code = #unknown (exactly)
+* dataAbsentReason.coding contains TimeFault 0..1
+* dataAbsentReason.coding[TimeFault] 
+  * ^short = "Time Fault: The PHD has a time fault"
+  * ^definition = "This element is populated when the PHD has a time fault and the current time of the PHD cannot be obtained."
+* dataAbsentReason.coding[TimeFault] = http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown 
+
+// * dataAbsentReason ^short = "Populated when the PHD has a time fault"
+// * dataAbsentReason ^definition = "In this profile this element indicates that the current time of the PHD for the measurements reported is not known and is unable to be obtained"
+// * dataAbsentReason ^comment = "This situation arises when the PHD has a time fault, perhaps by battery change. The sensor device may have stored data with timestamps taken at a time when the clock was running but after the fault the original timeline was not able to be recovered. Thus the current timeline, if any, has an unknown relationship to the previous timeline."
+// * dataAbsentReason.coding = http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown 
+// * dataAbsentReason.coding ^slicing.discriminator.type = #value
+// * dataAbsentReason.coding ^slicing.discriminator.path = "code"
+// * dataAbsentReason.coding ^slicing.rules = #open
+// * dataAbsentReason.coding contains FhirDefault 1..1
+// * dataAbsentReason.coding[FhirDefault].code from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
+// * dataAbsentReason.coding[FhirDefault].code 1..
+// * dataAbsentReason.coding[FhirDefault].code = #unknown (exactly)
+* component ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "code"
+  * ^slicing.rules = #open
+* component contains clockSyncMethod 0..1
+* component[clockSyncMethod] ^short = "Clock Synchronization Method: The method used to synchronize the clock."
+  * ^definition = "The method used to synchronize the clock of the PHD. This element is populated if the PHD supports clock synchronization."
+  * ^comment = "Clock synchronization methods may include NTP, PTP, or other mechanisms."
+  * code = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
+  * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
+    * ^short = "The clock synchronization method last used by the PHD/PHG to synchronize the clock of the PHD"
+  * dataAbsentReason ..0
 * device 1..
 * device only Reference(PhgDevice)
   * ^comment = "This field will reference the PHG Device."

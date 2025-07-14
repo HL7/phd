@@ -10,7 +10,7 @@ Description: "Profile for the Device Resource for a PHG"
 * ^meta.lastUpdated = "2017-10-16T05:10:49.894-04:00"
 * ^version = "1.0.0"
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
-* ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any 11073 Objects or attributes though it is required to have a system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it can provide system information, clock and power source information. For compliance with this IG, the quantities that are required to be reported are the system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), and the PCHA certified interfaces."
+* ^purpose = "This resource describes the primary features of the Personal Health Gateway (PHG). A PHG does not have any IEEE 11073-10206 Objects or attributes though it is required to have a system identifier. However, for the purposes of reporting the information about the PHG entity, it is treated as if it can provide system information, clock and power source information. For compliance with this IG, the quantities that are required to be reported are the system identifier, the time synchronization method, the manufacturer and model number (of the software, not necessarily the hardware on which the application resides), and the PCHA certified interfaces."
 * . ^definition = "The characteristics, operational status and capabilities of the PHG."
 * identifier ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type.coding.system"
@@ -183,13 +183,13 @@ Description: "Profile for the Device Resource for a PHG"
       * system = "urn:iso:std:iso:11073:10101" (exactly)
       * code 1..
         * ^definition = "The MDC code representing the property"
-        * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS\r\n       Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS\r\n"
+        * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs\r\n       Certified HFS interfaces  532355   MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST   http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS\r\n"
     * text ^definition = "It is recommended to display at least the MDC reference identifier for the code"
   * valueQuantity ..0
   * valueCode 1..
     * ^short = "There shall be one valueCode entry for every item supported by the PHG in the list"
     * coding 1..
       * system 1..
-        * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS or urn:iso:std:iso:11073:10101 code systems"
+        * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS or urn:iso:std:iso:11073:10101 code systems"
       * code 1..
         * ^definition = "One of the Continua interface certification codes"
