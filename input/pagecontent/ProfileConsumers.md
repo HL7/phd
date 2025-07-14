@@ -256,7 +256,7 @@ Each Observation.component entry will have the following:
 
 The 'independent living' example mentioned above does not currently exist in any specialization but it is illustrative of the concept. However, a pulse oximeter device sensor status measurement containing several different events does exist. An example of such a measurement can be found [here](Observation-bits-observation.html)
 
-All of the entries are events in this example so the values are always "Y" indicting the event occurred. One might note that the ANS1ToHL7 code 150604.*x* in all cases contains the MDC code of the measurement 150604. That relationship will always be true for all event and state measurement value types. In addition, the MDC code of the overall measurement will never have a partition (the upper 16 bits) value of 1.
+All of the entries are events in this example so the values are always "Y" indicating the event occurred. One might note that the ANS1ToHL7 code 150604.*x* in all cases contains the MDC code of the measurement 150604. That relationship will always be true for all event and state measurement value types. In addition, the MDC code of the overall measurement will never have a partition (the upper 16 bits) value of 1.
 
 ### Periodic measurements
 Periodic measurements are typically waveforms like ECG traces and are a sequence of scalars.
