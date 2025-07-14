@@ -124,7 +124,7 @@
                 {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS",
+                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
                             "code": "4"
                         }
                     ]

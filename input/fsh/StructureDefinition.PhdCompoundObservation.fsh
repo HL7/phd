@@ -1,4 +1,3 @@
-Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
 Alias: $MDCnotObject = http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject
 Alias: $DataAbsentReason = http://hl7.org/fhir/ValueSet/data-absent-reason
 

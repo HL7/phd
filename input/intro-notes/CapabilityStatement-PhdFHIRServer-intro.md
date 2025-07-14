@@ -1,7 +1,7 @@
-Specifies the capabilities of a server supporting the Continua FHIR Observation Server class.
+Specifies the capabilities of a FHIR server supporting the PHG uploading FHIR data from PHDs as defined by this IG.
 
-The Continua FHIR Observation Server supports the Continua FHIR Observation Client as specified in the Continua H.812-5 Design Guidelines. This class of uploaders transcodes data from medical devices following the IEEE 11073-10206 data model to FHIR as profiled in the Personal Health Device Implementation Guide with the authentication, security, and transaction protocols specified in H.812-5. 
-The Continua FHIR Observation Server is a RESTFul FHIR server subject to the additional requirements of H.812-5. This capability statement specifies only those capabilities needed to receive data from a Continua FHIR Observation Client.
+Such PHGs transcode data from PHDs following the IEEE 11073-10206 data model to FHIR resources as profiled in this Implementation Guide and upload these resources to a FHIR server with adequate authentication, security, and reliable transaction protocols. 
+This capability statement specifies only those capabilities needed for a FHIR server to receive data from a PHG following this IG.
 
 ### Patient Upload
 A server may refuse the upload of a Patient resource to protect Personal Health Information (PHI). Administrators of such servers provide the uploader the logical id of the Patient resource by an unspecified means. The client uses the logical id in its Observation resources as needed. The Patient resource may or may not exist on the server but the Observation resource shall not be rejected by the server due to a resource not found error if it uses the provided logical id. In those situations where the Patient resource is uploaded by the client the resource is only required to contain an opaque identifier. In this manner, PHI is still protected as only the service provider has the key linking the identifier to an actual patient.

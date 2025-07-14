@@ -30,9 +30,9 @@ Every PHD generated measurement Observation resource contains the following info
 |IEEE 11073-10206 Observation attribute|FHIR Observation data element|Description|
 |---|---|---|
 |type|`code`|This element tells you what the measurement is. There should be a coding element using the MDC coding system.<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes](https://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html).| 
-||`category`|The category element is present with at least the value `"phd"`. For vital signs, there will also be another element with value `"vital-signs"` as demanded by the vital signs profile.
-|measurement-status|Observation.status, Observation.data-absent-reason|This element tells what the status of the measurements is and has usually the value `final`. In error cases the data-absent-reason element is filled with an appropriate value.
-|timestamp|Observation.effectiveDateTime<br/>Observation.effectivePeriod|This element tells when the measurement occured, and is a point in time or a period with a start- and end-time.|
+||`category`|The category element is present with at least the value `"phd"`. For vital signs, there will also be another element with value `"vital-signs"` as required by the vital signs profile.
+|measurement-status|Observation.status,<br> Observation.data-absent-reason|This element tells what the status of the measurements is and has usually the value `final`. In error cases the data-absent-reason element is filled with an appropriate value.
+|timestamp|Observation.effectiveDateTime,<br/>Observation.effectivePeriod|This element tells when the measurement occurred, and is a point in time or a period with a start- and end-time.|
 |PHG reference|Observation.extension.valueReference|This element points to the PHG Device that generated the FHIR resources. The gateway extension is identified by Observation.extension.url=["http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"](http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice.html)|
 |patient reference|Observation.subject|Points to the Patient to whom this measurement refers|
 |PHD reference|Observation.device|Points to the PHD Device that took the measurement|
@@ -42,7 +42,7 @@ In this section each of the fields summarized above is discussed.
 ##### The Measurement Type: Observation.code.coding.code
 The measurement type tells what the measurement is. In HL7 such information is typically done through codes and it is no different here. However, one must understand the coding system in order to interpret what the code means. Consumers of the PHD profiles must understand the MDC code system to interpret the measurement. One can find more information about the MDC code system [here](https://terminology.hl7.org/MDC.html). 
 
-MDC codes are available st the [Rosetta Terminology Mapping Management Service (RTMMS)](https://rtmms.nist.gov/).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. Equaivalent LOINC codes are also provided. The Rosetta system is updated on a regular basis with new codes and corrections. 
+MDC codes are available from the [Rosetta Terminology Mapping Management Service (RTMMS)](https://rtmms.nist.gov/).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. Equivalent LOINC codes are also provided. The Rosetta system is updated on a regular basis with new codes and corrections. 
 
 For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, a mapping table between MDC and LOINC is also included in LOINC since v2.54 [available here](https://loinc.org/news/loinc-version-2-54-and-relma-version-6-12-available/). The FHIR MDC to LOINC concept map is available [here](https://fhir.loinc.org/ConceptMap/?url=http://loinc.org/cm/loinc-to-ieee-device-codes). One may freely download and use this material as needed in an implementation, but it does require a (free) login account. A mapping from MDC to SNOMED CT for some of the more common codes is available in the somewhat outdated Continua Design Guidelines [H.813 HIS Interface](https://www.itu.int/rec/T-REC-H.813-201911-I) document. The guidelines are freely available for download, however [licensing requirements](https://www.snomed.org/licensing) for the use of the SNOMED CT code system apply.
 
@@ -88,7 +88,7 @@ In addition to the elements that are always present, the following set of elemen
 A PHD profile element may identifiy what type of measurement value the Observation has. For example, if Observation.meta.profile entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
 
 ##### The Coincident Timestamp extension
-The consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation identified by the profile value ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"](StructureDefinition-PhdCoincidentTimeStampObservation.html). This reference may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a timestamp, and the PHG used the time of reception as the timestamp. PHDs that send stored data shall include timestamps in their measurements.
+When present, the consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation that adheres to the PhdCoincidentTimeStampObservation profile. This reference may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a timestamp and the PHG used the time of reception as the timestamp or that the PHG determined that the PHD timestamp is reliable and can be used as is. PHDs that send stored data shall include timestamps in their measurements.
 
 The Coincident Timestamp Observation can be used to determine the PHD's timeline and clock status. It can also be used to see if the PHG needed to correct the timestamp, and if it did, by how much. 
 An example of the Coincident Timestamp extension is shown below:
@@ -111,7 +111,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 
 |Type of additional information|When it can occur|FHIR data element|Description|
 |-
-|supplemental type|Can occur with all measurement values|valueCodebaleConcept| provides a further description of the measurement type. Can be multiple supplemental type component entries.|
+|supplemental type|Can occur with all measurement values|valueCodeableConcept| provides a further description of the measurement type. Can be multiple supplemental type component entries.|
 |Accuracy|Only with Quantities|extension.valueQuantity| Gives the accuracy of the measurement value in the units of the measurement value|
 |Measurement Confidence 95|Only with Quantities|extension.valueRange| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
 |Simple Alerting|Only with Quantities|complex extension| Gives the parameters for alerting and thresholding on a quantity.|
@@ -156,7 +156,7 @@ An Observation resource following the Phd Numeric Observation Profile will have 
 When there is no special value the Observation.valueQuantity is populated with the scalar value, the units, and the system. The units and system are UCUM unless the PHG does not know the UCUM translation for the MDC unit code. The latter can happen if a new specialization, written after the PHG was implemented, introduces a new MDC unit code not previously used in PHDs. The scalar value is reported with the precision indicated by the PHD. Thus 2 and 2.00 represent the same value but measured to a different precision.
 
 |FHIR element|Description|
-|-
+|---|---|
 |Observation.valueQuantity.value|Measurement value: It will have the precision reported by the PHD, thus the numerical value 2 could be reported as 2, 2.0, or 2.00 depending upon the sensor precision|
 |Observation.valueQuantity.code|units in UCUM|
 |Observation.valueQuantity.system="http://unitsofmeasure.org"|code system is UCUM|
@@ -174,13 +174,8 @@ The Observation.dataAbsentReason.coding.system in the above cases is always
 
 IEEE 11073-20601 defines two other special values that are not translated to FHIR which are encoded as "error". To date, there has been no market PHD which reports the other two special values.
 
-An example of the valueQuantity in the Phd Numeric Observation Profile for a thermometer reporting a value of 35.6 &deg;C is as follows:
-
-    "valueQuantity": {
-        "value": 35.6,
-        "system": "http://unitsofmeasure.org",
-        "code": "Cel"
-    }
+An example of the valueQuantity in the Phd Numeric Observation Profile for a thermometer reporting a value in &deg;C is as follows:
+{% fragment Observation/temperature-observation JSON EXCEPT:valueQuantity %}
 
 ### Measurement Values that are Compounds
 IEEE 11073-10206 (ACOM) supports compound observations where the components can have a numeric, a string, a code or a sample array value. This type of observation is mapped to the "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation" profile.
@@ -193,7 +188,7 @@ Compound Observations will have a code indicating what the 'entire' measurement 
 Each Observation.component will have the following:
 
 |FHIR element|Description|
-|-
+|---|---|
 |Observation.component.code.coding.code|MDC code telling what the entry is|
 |Observation.component.code.coding.system="urn:iso:std:iso:11073:10101"|MDC code system identifier|
 |Observation.component.value[x]|contains the value of the component being a Quantity, CodeableConcept, string or SampledData|
@@ -203,7 +198,7 @@ Each Observation.component will have the following:
 IEEE 11073-20601 does only support compound measurements with numeric components. These observations adhere to the Phd Compound Numeric Observation Profile ("http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"). For the numeric components the following applies:
 
 |FHIR element|Description|
-|-
+|---|---|
 |Observation.component.valueQuantity.value|the scalar value of the given entry with the precision indicated by the PHD|
 |Observation.component.valueQuantity.code|the units (as UCUM)|
 |Observation.component.valueQuantity.system="http://unitsofmeasure.org"|UCUM code system identifier|
@@ -254,7 +249,7 @@ In structure the states and/or events measurements are similar to compound or ve
 Each Observation.component entry will have the following:
 
 |FHIR element|Description|
-|-
+|---|---|
 |Observation.component.code.coding.code|ASN1ToHL7 code telling what the entry is|
 |Observation.component.code.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"|ASN1ToHL7 code system identifier|
 |Observation.component.valueBoolean
@@ -270,7 +265,7 @@ Measurement values that fall into this category are mapped to an Observation fol
 Periodic measurements are reported in Observation.valueSampledData and Observation.referenceRange elements as follows:
 
 |FHIR element|Description|
-|-
+|---|---|
 |Observation.valueSampledData.data[i]|Contains the scaled samples separated by spaces|
 |Observation.valueSampledData.origin.code<br/>Observation.valueSampledData.origin.system|Contains the units (as UCUM) <br/>"http://unitsofmeasure.org"|
 |Observation.valueSampledData.origin.value|Contains the intercept value in the rescaling equation|
@@ -331,7 +326,7 @@ The coincident timestamp follows the Phd Coincident Timestamp Observation Profil
 All readers should check whether or not there is a time fault. Otherwise the information provided by this Observation is mostly for auditing.
 
 ### The PHD Device Resource
-The PHD Device resource follows the Phd Device Profile. It is identified by the Device.meta.profile element containing the entry "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice". Its structure definition is found [here](StructureDefinition-PhdDevice.html).
+The PHD Device resource follows the Phd Device Profile. Its structure definition is found [here](StructureDefinition-PhdDevice.html).
 
 The PHD Device resource contains the following information about the PHD in the following elements:
 
@@ -393,7 +388,7 @@ This field states that the device is a PHD. There is no code in the list of devi
 
 
 #### Versions
-The Device.versions entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, and even the Continua or ACOM version their communication software supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions and those PHDs that are ACOM or Continua compliant will expose their ACOM or Continua version.
+The Device.versions entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, and even the Continua or ACOM version their communication software supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions.
 
  The [MDC Device Version Type codes ValueSet](ValueSet-MDCDeviceVersionTypes.html) has a code to identify each one of these version types. The version itself it just a simple alpha-numeric string. The versions can be helpful identifying different PHD behaviors.
 
@@ -420,7 +415,7 @@ There are two types of properties, one that is described by a list of codes, and
 The Device.property.type is a CodeableConcept which tells what the property is. There are [MDC](https://terminology.hl7.org/MDC.html) or [ASN1ToHL7](CodeSystem-ASN1ToHL7.html) codes for each property type a PHD can expose. They are as follows:
 
 |description|Code|Reference identifier|
-|-
+|--|--|--|
 |Time Synchronization|68220|MDC_TIME_SYNC_PROTOCOL|
 |Time capabilities|68219.x|ASN1ToHL7 name|
 |High resolution relative time resolution|68224|MDC_TIME_RES_REL_HI_RES|
@@ -436,6 +431,7 @@ The Device.property.type is a CodeableConcept which tells what the property is. 
 There will always be a time synchronization entry. It is identified by a property.type.coding.code="68220". It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](StructureDefinition-PhdDevice.html). This value is always TIME_SYNC_NONE (532224) if the PHD is not synchronized or has no time clock at all. To date ALL PHDs have no external time synchronization capabilities and this entry is always TIME_SYNC_NONE.
 
 An example of time synchronization property entry is shown below:
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[0] %}
 
     {
       "type" : {
@@ -477,7 +473,7 @@ The resolution value is a valueQuantity and it gives the time interval between c
 The property is indicated by the Device.property.type.coding.code having one of four MDC codes "68222, 68223, 68224, and 68226". The value is a valueQuantity.
 
 An example of a time resolution property for an absolute time clock with a time resolution of of one second is shown below:
-
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[0] %}
     {
         "type": {
             "coding": [
@@ -561,7 +557,7 @@ An example of an entry for an FDA regulated device is shown below:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') %}
 
 #### Continua Certified PHD Interfaces
-This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device.specialization entries indicate what the PHD supports. Certified means the PHD has been independently placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
+This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device specialization entries indicate what the PHD supports. Certified means the PHD has been (independently) placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
 
 The property is indicated by the Device.property.type.coding.code having the MDC code "532353". The value is a code from the [ValueSet for PHD Interfaces](ValueSet-ContinuaPHDInterfaces.html) code system.
 

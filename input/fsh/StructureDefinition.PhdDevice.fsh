@@ -1,5 +1,4 @@
 Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
-Alias: $Quantity11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/Quantity11073MDC
 Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 
 Profile: PhdDevice
@@ -10,8 +9,8 @@ Description: "Profile for the Device Resource for a PHD"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
 // * ^status = #draft
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
-* ^purpose = "This resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
-* . ^definition = "The characteristics, operational status and capabilities of a medical-related component of a medical device. A PHD is JUST the medical-related component."
+* ^purpose = "This resource describes the primary features of a Personal Health Device (PHD)."
+* . ^definition = "his resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
   * ^comment = "This profile applies to PHDs that adhere to the IEEE 11073-10206 ACOM standard or that can be mapped to it. The profile is based on the Device resource and contains additional elements that are specific to PHDs."
 * identifier 1..
 * identifier ^slicing.discriminator[0].type = #value
@@ -163,7 +162,7 @@ Description: "Profile for the Device Resource for a PHD"
     * system 1..
     * system = "http://unitsofmeasure.org" (exactly)
     * code = UCUM#us
-      * ^definition = "The UCUM code (for microseconds it is 'us')"
+      * ^definition = "The UCUM code for microseconds is 'us'."
 
 * property[isRegulatedProperty] ^short = "Regulatory status of the PHD"
   * ^definition = "This element represents the regulatory status of the PHD."
@@ -216,14 +215,14 @@ Description: "Profile for the Device Resource for a PHD"
 //       * system = "urn:iso:std:iso:11073:10101" (exactly)
 //       * code 1..
 //         * ^definition = "The MDC code representing the property"
-//         * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS\r\n"
+//         * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs\r\n"
 //     * text ^definition = "It is recommended to display at least the MDC reference identifier for the code"
 //   * valueQuantity ..0
 //   * valueCode 1..
 //     * ^short = "There shall be one valueCode entry for every item supported by the PHG in the list"
 //     * coding 1..
 //       * system 1..
-//         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDCS or urn:iso:std:iso:11073:10101 code systems"
+//         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs or urn:iso:std:iso:11073:10101 code systems"
 //       * code 1..
 //         * ^definition = "One of the Continua interface certification codes"
 

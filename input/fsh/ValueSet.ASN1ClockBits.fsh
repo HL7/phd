@@ -1,6 +1,6 @@
 ValueSet: ASN1ClockBits
 Id: ASN1ClockBits
-Title: "ANS1ToHL7 codes defined for non-measurement attributes"
+Title: "ANS1ToHL7 codes defined for Boolean Clock attributes"
 Description: "ValueSet for the ANS1ToHL7 codes that are not derived from enumeration measurements."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1ClockBits"
