@@ -79,7 +79,6 @@
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
-<artifact id="CodeSystem/PhdReferenceRangeMeaning" key="CodeSystem-PhdReferenceRangeMeaning" name="PHD Reference Range Meaning Code System"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>
 <artifact id="StructureDefinition/PhdBitsEnumerationObservation" key="StructureDefinition-PhdBitsEnumerationObservation" name="PhdBitsEnumerationObservation"/>
 <artifact id="StructureDefinition/PhdCodedEnumerationObservation" key="StructureDefinition-PhdCodedEnumerationObservation" name="PhdCodedEnumerationObservation"/>
