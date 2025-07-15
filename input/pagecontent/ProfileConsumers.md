@@ -288,7 +288,7 @@ The Observation.referenceRange element is for convenience and is not necessary f
 It is possible that the periodic measurement is a vital sign, for example, a heart rate. If it is a vital sign, the same FHIR-required LOINC magic value rules apply as they do for scalar and vector measurements.
 
 ### String measurements
-PHDs can send a measurement value that is normally a human readable string. An example of such a measurement might be the name of a customized exercise program on a piece of gym equipment.
+PHDs can send a measurement value that is a human readable string. An example of such a measurement might be the name of a customized exercise program on a piece of gym equipment.
 
 String measurement values are mapped to an Observation following the [PhdStringObservation profile](StructureDefinition-PhdStringObservation.html).
 
