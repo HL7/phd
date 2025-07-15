@@ -76,19 +76,20 @@ There is a dedicated profile for the PHD device that is used to capture the syst
 #### Other Observation Element Fields
 In addition to the elements that are always present, the following set of elements may be present.
 
-|IEEE 11073-10206 Observation attribute|FHIR data element|Description|
+|IEEE 11073-10206 attribute|FHIR data element|Description|
 |----|---|---|
-|profile|Observation.meta.profile|This element may contain the URL to the structure definition identifying the profile this Observation belongs to.|
-|coincident timestamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Timestamp Observation profile. For time quality auditing purposes. May be present only when the PHD provides a timestamp. The timestamp extension is identified by Observation.extension.url=["http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"](StructureDefinition-CoincidentTimeStampReference.html) |
-|related measurement|Observation.derivedFrom Observation.hasMember|Points to a PHD Observation that is related to this Observation. An example would be an activity session measurement that has a miles run measurement member. Only present if the measurement references an additional measurement.|
+|Observation class|Observation.meta.profile|When present this element  contains canonical URL of structure definitions of the profiles this Observation conforms to.|
+|clock.current-time |Observation.extension.valueReference|Points to Observation following the Coincident Timestamp Observation profile that records the PHD's current time. This is used for time quality auditing purposes. May be present only when the PHD provides a timestamp. |
+|related observations|Observation.derivedFrom Observation.hasMember|Points to a PHD Observation that is related to this Observation. An example would be an activity session that has a miles run measurement member. Only present if the observation references another observation.|
 |additional descriptions|Observation.component or Observation.extension|Sometimes a measurement is sent containing additional information such as the technique used to obtain the measurement. These elements are placed in a component or an extension.|
 ||Observation.identifier|This element is used to prevent data duplication during uploads.|
 
 ##### The Profile: Observation.meta.profile
-A PHD profile element may identify what type of measurement value the Observation has. For example, if Observation.meta.profile entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. Note that there is no requirement that the profile element be present. If it is not present, the consumer can determine the type of measurement value by looking at the Observation.value[x] element.
+An Observation may contain a meta.profile element that can help to identify the type of the Observation. For example, if Observation.meta.profile entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
+Note that there is no requirement that the profile element be present. If it is not present, the consumer can determine the type of measurement value by looking at the Observation.value[x] element.
 
 ##### The Coincident Timestamp extension
-When present, the consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation that adheres to the PhdCoincidentTimeStampObservation profile. This reference may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a timestamp and the PHG used the time of reception as the timestamp or that the PHG determined that the PHD timestamp is reliable and can be used as is. PHDs that send stored data shall include timestamps in their measurements.
+When present, the consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation that adheres to the [PhdCoincidentTimeStampObservation profile](StructureDefinition-PhdCoincidentTimeStampObservation.html). This reference may be present in the [CoincidentTimeStampReference extension](StructureDefinition-CoincidentTimeStampReference.html). If the reference is NOT present, it means that the PHD did not provide a timestamp and the PHG used the time of reception as the timestamp or that the PHG determined that the PHD timestamp is reliable and can be used as is. PHDs that send stored data shall include timestamps in their measurements.
 
 The Coincident Timestamp Observation can be used to determine the PHD's timeline and clock status. It can also be used to see if the PHG needed to correct the timestamp, and if it did, by how much. 
 An example of the Coincident Timestamp extension is shown below:
