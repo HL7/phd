@@ -44,8 +44,8 @@
 <artifact id="Observation/bits-observation" key="Observation-bits-observation" name="Example of a ASN1 BITs measurement from a Pulse Oximeter"/>
 <artifact id="Observation/bpm-status" key="Observation-bpm-status" name="Example of a BPM status report"/>
 <artifact id="Device/phd-711000FEFF5F49B0.B0495F001071" key="Device-phd-711000FEFF5F49B0.B0495F001071" name="Example of a Blood Pressure PHD"/>
-<artifact deprecated="true" id="Observation/coin-1234" key="Observation-coin-1234" name="Example of a Coincident Time Stamp referenced by the Glucose Meal Context Observation"/>
-<artifact deprecated="true" id="Observation/coin-fault20" key="Observation-coin-fault20" name="Example of a Coincident Time Stamp with a Time Fault"/>
+<artifact deprecated="true" id="Observation/coin-1234" key="Observation-coin-1234" name="Example of a Coincident Timestamp referenced by the Glucose Meal Context Observation"/>
+<artifact deprecated="true" id="Observation/coin-fault20" key="Observation-coin-fault20" name="Example of a Coincident Timestamp with a Time Fault"/>
 <artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Example of a Coincident Timestamp"/>
 <artifact id="Observation/coin-20181119202022" key="Observation-coin-20181119202022" name="Example of a Coincident Timestamp PHG better synchronized"/>
 <artifact id="Observation/coin-20181119174911" key="Observation-coin-20181119174911" name="Example of a Coincident Timestamp referenced from BP observation"/>
@@ -118,8 +118,8 @@
 <page key="changes" name="Change Log"/>
 <page key="CodeableConcepts" name="Codeable Concepts"/>
 <page deprecated="true" key="glucoseEnum" name="Coded Enumeration"/>
-<page deprecated="true" key="coinFault" name="Coincident Time Stamp with a time fault"/>
-<page deprecated="true" key="coincidentTime" name="Coincident Time Stamp: PHG best synchronized"/>
+<page deprecated="true" key="coinFault" name="Coincident Timestamp with a time fault"/>
+<page deprecated="true" key="coincidentTime" name="Coincident Timestamp: PHG best synchronized"/>
 <page key="CoincidentTimeStamp" name="Coincident Timestamp"/>
 <page deprecated="true" key="bloodPress" name="Compound Measurement"/>
 <page key="ProfileConsumers" name="Consuming the PHD Profile FHIR Resources"/>
@@ -147,7 +147,7 @@
 <page deprecated="true" key="overview" name="Overview"/>
 <page deprecated="true" key="BITsEnumerationObservationProfile" name="PHD BITs Coded Enumeration Observation Profile"/>
 <page deprecated="true" key="CodedEnumerationObservationProfile" name="PHD Coded Enumeration Observation Profile"/>
-<page deprecated="true" key="CoincidentTimeStampObservationProfile" name="PHD Coincident Time Stamp Observation Profile"/>
+<page deprecated="true" key="CoincidentTimeStampObservationProfile" name="PHD Coincident Timestamp Observation Profile"/>
 <page deprecated="true" key="CompoundNumericObservationProfile" name="PHD Compound Numeric Observation Profile"/>
 <page deprecated="true" key="PhdDeviceProfile" name="PHD Device Profile"/>
 <page deprecated="true" key="NumericObservationProfile" name="PHD Numeric Observation Profile"/>
