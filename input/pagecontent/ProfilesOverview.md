@@ -19,7 +19,7 @@ This IG defines the following profiles:
  - [Patient Profile](StructureDefinition-PhdPatient.html): reports the patient data
  
 ### Measurement Observation Profiles
-The measurement observation profiles mirror more or less the measurement 'value-types' of that a IEEE 11073-10206 ACOM PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
+The measurement observation profiles mirror more or less the measurement 'value-types' of what an IEEE 11073-10206 ACOM PHD can report. The measurement value-types and their mapping to FHIR Observation elements are shown in the following table:
 
 |Measurement value-type |IEEE 11073-10206 ACOM Observation type|IG Profile                                                                                         |FHIR Observation element|
 |---|---|---|---|
