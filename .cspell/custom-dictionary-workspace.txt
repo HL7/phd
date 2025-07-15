@@ -3,7 +3,10 @@ codeable
 FHIR
 LOINC
 oximeters
+oximetry
 PCHA
+pleth
+plethysmograph
 RTMMS
 SNOMED
 timestamping

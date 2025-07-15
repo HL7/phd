@@ -20,8 +20,8 @@ PHDs measurements are encoded into Observation resources. There are different ty
  - **numeric** such as a temperature, weight, glucose concentration, pulse rate, blood oxygen saturation, or miles run. 
  - **coded** such as the meal context and health status in a glucose monitor. A coded measurement is used when there is a limited set of options and each option is specified by a code. 
  - **sample array** (often waveforms) such as an ECG trace, a forced exhalation flow rate from a spirometer, a pleth wave of a pulse oximeter, or a sequence of heart rates. 
- - **string** measurements which are just arbitrary human-readable strings.  
- - **discrete state or event** measurements report multiple conditions that can occur at the same time. For example, a room status measurement in an independent living facility might include whether the patient is in the room, the door is closed, the window is closed, climate control is off, and video monitoring is off. Each of these conditions is represented as a separate component with a boolean value (in the `Observation.component.value[x]` element).
+ - **string** measurements which are normally human-readable strings.  
+ - **discrete state or event** measurements report multiple related boolean conditions that can occur at the same time. They are typically used for reporting device status conditions such as for an ECG "Loss of 1st lead signal" and "Loss of 3rd lead wire or electrode connection". Each of the reported conditions is represented as a separate component with a boolean value (in the `Observation.component.value[x]` element).
  - **compound** where multiple measurements at a single point in time need to be taken together to represent the value, such as the systolic, diastolic, and mean components of the blood pressure or x-, y-, and z- components of an acceleration.
 
 #### Common Observation Element Fields
@@ -77,7 +77,7 @@ There is a dedicated profile for the PHD device that is used to capture the syst
 In addition to the elements that are always present, the following set of elements may be present.
 
 |IEEE 11073-10206 Observation attribute|FHIR data element|Description|
-|-
+|----|---|---|
 |profile|Observation.meta.profile|This element may contain the URL to the structure definition identifying the profile this Observation belongs to.|
 |coincident timestamp reference|Observation.extension.valueReference|Points to Observation following the Coincident Timestamp Observation profile. For time quality auditing purposes. May be present only when the PHD provides a timestamp. The timestamp extension is identified by Observation.extension.url=["http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"](StructureDefinition-CoincidentTimeStampReference.html) |
 |related measurement|Observation.derivedFrom Observation.hasMember|Points to a PHD Observation that is related to this Observation. An example would be an activity session measurement that has a miles run measurement member. Only present if the measurement references an additional measurement.|
@@ -85,7 +85,7 @@ In addition to the elements that are always present, the following set of elemen
 ||Observation.identifier|This element is used to prevent data duplication during uploads.|
 
 ##### The Profile: Observation.meta.profile
-A PHD profile element may identifiy what type of measurement value the Observation has. For example, if Observation.meta.profile entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
+A PHD profile element may identify what type of measurement value the Observation has. For example, if Observation.meta.profile entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. Note that there is no requirement that the profile element be present. If it is not present, the consumer can determine the type of measurement value by looking at the Observation.value[x] element.
 
 ##### The Coincident Timestamp extension
 When present, the consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation that adheres to the PhdCoincidentTimeStampObservation profile. This reference may be present in the [CoincidentTimeStampReference](StructureDefinition-CoincidentTimeStampReference.html) extension. If the reference is NOT present, it means that the PHD did not provide a timestamp and the PHG used the time of reception as the timestamp or that the PHG determined that the PHD timestamp is reliable and can be used as is. PHDs that send stored data shall include timestamps in their measurements.
@@ -105,7 +105,7 @@ An example of a reference to another Observation is shown below:
 {% fragment Observation/bpm-status JSON EXCEPT:derivedFrom %}
 
 #### Additional Descriptive Data
-In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#measurement-values-that-are-single-number-or-scalar) and return to this section when relevant.
+In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#numerics) and return to this section when relevant.
 
 PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. This additional information is reported in an Observation.component element. The type of additional information is given by the Observation.component.code element. The value of such additional information is given by an Observation.component or an Observation.extension element. PHDs support the following types of additional information:
 
@@ -148,10 +148,9 @@ In addition to the conditions listed above, when the measurement value is a quan
 #### Identifier
 To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Other systems may add further identifiers.
 
-### Measurement Values that are Single-Number or Scalar
-Scalar numeric measurements are the most common type of measurement reported by PHDs. Temperature, weight, height, miles run, pulse rate, etc. are examples. Scalar numeric measurements are reported in Observation resources following the Phd Numeric Observation Profile. The scalar values are reported in the Observation.valueQuantity element. If the PHD reports a special value; Not a number, Positive infinity, Negative infinity, and two other possible values unknown to FHIR, an Observation.dataAbsentReason element replaces the valueQuantity and there is no value[x] element.
-
-An Observation resource following the Phd Numeric Observation Profile will have an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation".
+<a id="numerics"></a>
+### Measurement Values that are numeric or scalar
+Scalar numeric measurements are the most common type of measurement reported by PHDs. Temperature, weight, height, miles run, pulse rate, etc. are examples. Scalar numeric measurements are reported in Observation resources following the [Phd Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html). The scalar values are reported in the Observation.valueQuantity element. If the PHD reports a special value; Not a number, Positive infinity, Negative infinity, and two other possible values unknown to FHIR, an Observation.dataAbsentReason element replaces the valueQuantity and there is no value[x] element.
 
 When there is no special value the Observation.valueQuantity is populated with the scalar value, the units, and the system. The units and system are UCUM unless the PHG does not know the UCUM translation for the MDC unit code. The latter can happen if a new specialization, written after the PHG was implemented, introduces a new MDC unit code not previously used in PHDs. The scalar value is reported with the precision indicated by the PHD. Thus 2 and 2.00 represent the same value but measured to a different precision.
 
@@ -178,7 +177,7 @@ An example of the valueQuantity in the Phd Numeric Observation Profile for a the
 {% fragment Observation/temperature-observation JSON EXCEPT:valueQuantity %}
 
 ### Measurement Values that are Compounds
-IEEE 11073-10206 (ACOM) supports compound observations where the components can have a numeric, a string, a code or a sample array value. This type of observation is mapped to the "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation" profile.
+IEEE 11073-10206 (ACOM) supports compound observations where the components can have a numeric, a string, a code or a sample array value. This type of observation is mapped to the [Phd Compound Observation](StructureDefinition-PhdCompoundObservation.html) profile.
 
 There is no primary Observation.value[x] entry and there is no Observation.dataAbsentReason unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an Observation.component.dataAbsentReason element. All Observation.component entries could have dataAbsentReason entry but that does NOT mean the entire measurement has an Observation.dataAbsentReason entry. It is also possible that a component will have its own interpretation element of the same type as shown in the Measurement Status section. Currently there are no market PHDs that generate an Observation.component.interpretation element.
 There is no primary Observation.value[x] entry and there is no Observation.dataAbsentReason unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an Observation.component.dataAbsentReason element. All Observation.component entries could have dataAbsentReason entry but that does NOT mean the entire measurement has an Observation.dataAbsentReason entry. 
@@ -221,7 +220,7 @@ The Phd Compound Numeric Profile can contain additional entries as noted in the 
 The decision to report a compound observation versus independent observations is made by the designers of the IEEE PHD device specialization standards. The IEEE PHD and FHIR policies to choose between these options are similar. This IG maps an ACOM compound observation to a FHIR Observation resource with multiple components.
 
 ### Measurement Values that are Codes
-Sometimes the PHD measurement value is a code. The code comes from the MDC code system. Measurements that are codes follow the Phd Coded Enumeration Observation profile. Observations following that profile may have an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation".
+Sometimes the PHD measurement value is a code. The code comes from the MDC code system. Measurements that are codes follow the [Phd Coded Enumeration Observation profile](StructureDefinition-PhdCodedEnumerationObservation.html).
 
 The measurement value is reported in an Observation.valueCodeableConcept element. Coded measurements are usually 'context' measurements that provide extra information about another measurement. They will often have an Observation.derivedFrom reference pointing to the Observation resource they support. There are no coded enumeration measurements that are vital signs.
 
@@ -234,7 +233,7 @@ This measurement indicates that the glucose concentration measurement was taken 
 ### Measurement Values that are Events or States
 PHDs support a measurement value type that indicate a set of states or events, for example, an independent living monitor may be surveilling an elderly patient's room and report its current state 'door closed', 'window closed', 'climate control on', 'patient in room', and 'lights off'. The report may have been triggered by an event like 'patient entered room'. (There is no such measurement type as a current room state but it illustrates the concept.) PHDs have an efficient way to package such reports into a single integer. This type of reporting is done when more than one state and/or event can occur simultaneously. In order to understand such a report one has to know what the state or event is, and its value. States and events are binary. A state is either on or off and an event either happens or it doesn't. There is no corresponding HL7 data type for this kind of measurement thus the [ASN1ToHL7](CodeSystem-ASN1ToHL7.html) code system has been developed to express these states and events as codes. The V2 binary "Y"/"N" code system is used to express the corresponding values.
 
-Measurement values that fall into this category are mapped to an Observation following the Phd Bits Enumeration Observation profile. An Observation following this profile is indicated by an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation".
+Measurement values that fall into this category are mapped to an Observation following the [Phd Bits Enumeration Observation profile](StructureDefinition-PhdBitsEnumerationObservation.html).
 
 Each event or state is reported in a component element. The Observation.component.code will be the ASN1ToHL7 code indicating what the state or event is. The value of the state or event will be in an Observation.component.valueCodeableConcept entry using the V2 binary code system. It should be noted that 'state' values must be reported for either state. It is as important to know whether the door is opened or closed. Events are only required to be reported when they happen.
 
@@ -260,9 +259,9 @@ All of the entries are events in this example so the values are always "Y" indic
 
 ### Periodic measurements
 Periodic measurements are typically waveforms like ECG traces and are a sequence of scalars.
-Measurement values that fall into this category are mapped to an Observation following the Phd Rtsa Observation profile. An Observation following this profile is indicated by an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdRtsaObservation". 'Rtsa' means real time sample array.
+Measurement values that fall into this category are mapped to an Observation following the [Phd Rtsa Observation profile](StructureDefinition-PhdRtsaObservation.html). 'Rtsa' means real time sample array.
 
-Periodic measurements are reported in Observation.valueSampledData and Observation.referenceRange elements as follows:
+Periodic measurements are reported in Observation.valueSampledData data elements as follows:
 
 |FHIR element|Description|
 |---|---|
@@ -272,10 +271,9 @@ Periodic measurements are reported in Observation.valueSampledData and Observati
 |Observation.valueSampledData.scaleFactor|Contains the scale factor in the rescaling equation|
 |Observation.valueSampledData.period|gives the time interval between samples in milliseconds|
 |Observation.valueSampledData.dimensions|Always 1 in PHD (multi-dimensional arrays are not supported)|
-|Observation.referenceRange.high.value|Upper value that the original sequence can obtain|
-|Observation.referenceRange.high.code<br/>Observation.referenceRange.high.system|the units of the upper value (as UCUM) which shall be the same as the units in the valueSampledData element <br/>"http://unitsofmeasure.org"|
-|Observation.referenceRange.low.value|Lower value that the original sequence can obtain|
-|Observation.referenceRange.low.code<br/>Observation.referenceRange.low.system|the units of the lower value (as UCUM) which shall be the same as the units in the valueSampledData element <br/>"http://unitsofmeasure.org"|
+|Observation.valueSampledData.upperLimit |Upper value that the original sequence can obtain|
+|Observation.valueSampledData.lowerLimit |Lower value that the original sequence can obtain|
+
 
 To obtain the original values of the measured sequence one uses the following equation:
 
@@ -290,7 +288,7 @@ The Observation.referenceRange element is for convenience and is not necessary f
 It is possible that the periodic measurement is a vital sign, for example, a heart rate. If it is a vital sign, the same FHIR-required LOINC magic value rules apply as they do for scalar and vector measurements.
 
 ### String measurements
-PHDs can send a measurement value that is just an arbitrary human readable string. An example of such a measurement might be the name of a customized exercise program on a piece of gym equipment.
+PHDs can send a measurement value that is normally a human readable string. An example of such a measurement might be the name of a customized exercise program on a piece of gym equipment.
 
 String measurement values are mapped to an Observation following the [PhdStringObservation profile](StructureDefinition-PhdStringObservation.html).
 
@@ -298,7 +296,7 @@ The measurement is reported in an Observation.valueString element which has the 
 
 An example of this measurement is as follows:
 
-    "valueString": "Test Strip Buckled"
+{% fragment Observation/string-observation-1 JSON EXCEPT:valueString %}
 
 String measurements are rare in PHDs.
 
@@ -321,12 +319,12 @@ The following core information is available from the coincident timestamp observ
 
 If the Observation containing the measurement has no reference to a coincident timestamp, it means the PHD provided no measurement timestamp and the PHG used the time of reception as the current timestamp.
 
-The coincident timestamp follows the Phd Coincident Timestamp Observation Profile. An Observation following this profile is indicated by an Observation.meta.profile entry containing "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation".
+The coincident timestamp follows the [Phd Coincident Timestamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html).
 
 All readers should check whether or not there is a time fault. Otherwise the information provided by this Observation is mostly for auditing.
 
 ### The PHD Device Resource
-The PHD Device resource follows the Phd Device Profile. Its structure definition is found [here](StructureDefinition-PhdDevice.html).
+The PHD Device resource follows the [Phd Device Profile](StructureDefinition-PhdDevice.html).
 
 The PHD Device resource contains the following information about the PHD in the following elements:
 
