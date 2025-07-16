@@ -8,9 +8,9 @@ Description: "Observations from a PHD where the measurement is a human readable 
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"
 // * ^status = #draft
 * ^date = "2017-06-02T14:29:52.39367-04:00"
-* . ^short = "Reports measurements that are enumerated human-readable strings"
-* . ^definition = "The PhdStringObservation reports PHD measurements that contain a Enum-Observed-Value-Simple-Str attribute."
-* . ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an arbitrary text string. An example would be the program name of an exercise option on a piece of cardio equipment. These strings are not generically processable by machine and only for human consumption."
+* . ^short = "Reports observations that are human-readable strings"
+* . ^definition = "The PhdStringObservation reports PHD observations that contain a string as the observation value."
+* . ^comment = "This type of observation is used when the Personal Health Device reports an arbitrary text string as the observation value. An example would be the program name of an exercise option on a piece of cardio equipment."
 * value[x] only string
 * value[x] ^short = "Human readable text string"
 

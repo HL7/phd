@@ -1,1 +1,4 @@
-TBD.
+Changes to this IG are tracked in the HL7 Jira system.
+- A list of changes published in this version of the IG can be retrieved via [this link](https://jira.hl7.org/issues/?jql=Specification%20%3D%20FHIR-phd%20AND%20project%20in%20(CDA%2C%20FHIR%2C%20OTHER%2C%20V2)%20AND%20status%20%3D%20Published%20%20ORDER%20BY%20resolutiondate%20%20DESC).
+
+- A list of changes applied to the current, not yet published version of the IG can be retrieved via [this link](https://jira.hl7.org/issues/?jql=Specification%20%3D%20FHIR-phd%20AND%20project%20in%20(CDA%2C%20FHIR%2C%20OTHER%2C%20V2)%20AND%20status%20%3D%20Applied%20%20ORDER%20BY%20updatedDate%20%20DESC).
