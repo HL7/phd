@@ -52,7 +52,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <valueCode value="trial-use" />
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="3" />
+    <valueInteger value="1" />
   </extension>
   <experimental value="false"/>
   <publisher value="HL7 International / Health Care Devices"/>

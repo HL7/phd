@@ -12,6 +12,7 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
 * . ^definition = "The PhdCompoundObservation reports PHD measurements that contain one or more components with a numeric, string, codeable concepts or sample array value."
   * ^comment = "Used for compound observations from Personal Health Devices"
 * value[x] ..0
+* component.value[x] only Quantity or CodeableConcept or string or SampledData
 * component contains
   measurement 0..*
 * component[measurement] ^short = "Compound measurement entry component"
