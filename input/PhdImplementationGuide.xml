@@ -552,11 +552,6 @@ In this example there are only xml structure definitions, value sets, code syste
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="terminology.html"/>
-          <title value="Terminology"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
           <nameUrl value="Organizations.html"/>
           <title value="Organizations"/>
           <generation value="markdown"/>

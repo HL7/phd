@@ -5,7 +5,7 @@ All IEEE 11073-10206 PHDs are required to have a system identifier. This usually
 
 In order to discriminate between an identifier that is a system id and that which is a transport address the identifier.type element is used. A dedicated CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the identifier.type.coding.code element.
 
-When in the future other system identifiers such as ETSI-ICCID (International Circuit Card Identifier) or other identifiers are used, this coding scheme will need to be extended.
+When in the future other system identifiers such as ETSI-ICCID (International Circuit Card Identifier) are used, this coding scheme will need to be extended.
 
 The transport addresses are as follows:
 
@@ -19,6 +19,8 @@ padding: 6px;}</style>
 |System Identifier|EUI-64|SYSID|urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680|FE-ED-AB-EE-DE-AD-77-C3|
 |Bluetooth|EUI-48|BTMAC|http://hl7.org/fhir/sid/eui-48/bluetooth|00-E5-DE-AD-77-C3|
 |ZigBee|EUI-64|ZIGBEE|http://hl7.org/fhir/sid/eui-64/zigbee|36-ED-9A-EE-DE-AD-77-C3|
+
+The URIs used for the system can be found in the [External Identifier Systems](https://terminology.hl7.org/identifiers.html).
 
 An example of a system identifier is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}

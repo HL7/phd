@@ -3,7 +3,7 @@ The Observation.code element is populated as follows:
 
 * if the application wishes to transcode this MDC code into other coding systems the application is free to do so but
   * the MDC code shall be present in a coding element
-  * if the code matches one of the [FHIR observation-vitalsigns codes]( https://www.hl7.org/fhir/observation-vitalsigns.html)), the observation-vitalsigns code shall be present in a coding element
+  * if the code matches one of the [FHIR observation-vitalsigns codes](https://hl7.org/fhir/R4/observation-vitalsigns.html), the observation-vitalsigns code shall be present in a coding element
   * any other coding translations desired may be placed in an additional coding element.
 * for the MDC code the mapping is as follows:
   * Observation.code.coding.code = *value*

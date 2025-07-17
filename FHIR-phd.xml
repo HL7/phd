@@ -166,7 +166,7 @@
 <page deprecated="true" key="Scope" name="Scope"/>
 <page deprecated="true" key="spotNumeric" name="Simple numeric with supplemental types"/>
 <page key="toc" name="Table of Contents"/>
-<page key="terminology" name="Terminology"/>
+<page deprecated="true" key="terminology" name="Terminology"/>
 <page key="ObservationIdentifier" name="The Unique Observation Identifier"/>
 <page key="UseCases" name="Use Cases"/>
 <page deprecated="true" key="languages" name="languages" url="languages"/>
