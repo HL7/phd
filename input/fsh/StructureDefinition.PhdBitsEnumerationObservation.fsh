@@ -23,10 +23,14 @@ Description: "Observations from a PHD where the measurement is an ASN1 BITS valu
     // * coding.system = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" (exactly)
   * value[x] only boolean
   * dataAbsentReason 0..1
+  * dataAbsentReason.coding ^slicing.discriminator.type = #value
+  * dataAbsentReason.coding ^slicing.discriminator.path = "$this"
+  * dataAbsentReason.coding ^slicing.rules = #open
+  * dataAbsentReason.coding contains unsupported 0..1
+  * dataAbsentReason.coding[unsupported]
     * ^short = "For the optional reporting of unsupported bits"
     * ^definition = "Provides a reason why the expected value in the element Observation.component.value[x] is missing. In this profile for this component that happens if the PHD does not support this bit and the uploader wishes to report that situation."
-    * coding ^short = "FHIR code for reporting 'unsupported'"
-    * coding = http://terminology.hl7.org/CodeSystem/data-absent-reason#unsupported
+  * dataAbsentReason.coding[unsupported] = http://terminology.hl7.org/CodeSystem/data-absent-reason#unsupported
   * valueBoolean ^short = "The value of the bit"
     * ^definition = "The value of the bit. If the bit is set the value is `true` and if the bit is cleared the value is `false`."
 

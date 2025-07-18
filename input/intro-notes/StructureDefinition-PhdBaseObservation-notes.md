@@ -55,14 +55,14 @@ The PHG can work with the assumption that the PHD and the PHG are always in the 
 
 For IEEE 11073-10206 timestamps the following table can be used: 
 
-| Time type    | Current | Synced | Offset | Recommended Mapping                                                     |
-| ------------ | ------- | ------ | ------ | ----------------------------------------------------------------------- |
-| UTC          | Yes     | Yes    | Yes    | Keep as is with optional correction to PHG timeline, keep offset as is  |
-| UTC          | Yes     | Yes    | No     | Keep as is , with optional correction and optionally include PHG offset |
-| UTC          | Yes     | No     | Yes    | Map to PHG timeline, including PHG offset                               |
-| UTC          | Yes     | No     | No     | Map to PHG UTC timeline, optionally include PHG offset                  |
+| Time type    | Current | Synced | Offset | Recommended Mapping                                                     | Coincident Timestamp Observation |
+| ------------ | ------- | ------ | ------ | ----------------------------------------------------------------------- | --------------------------------- |
+| UTC          | Yes     | Yes    | Yes    | Keep as is with optional correction to PHG timeline, keep offset as is  | Yes                               |
+| UTC          | Yes     | Yes    | No     | Keep as is, with optional correction and include PHG offset             | Yes                               |
+| UTC          | Yes     | No     | Yes    | Map to PHG timeline, including PHG offset                               | Yes                               |
+| UTC          | Yes     | No     | No     | Map to PHG UTC timeline, include PHG offset                             | Yes                               |
 | UTC          | No      | Yes    | Yes    | Keep as is                                                              |
-| UTC          | No      | Yes    | No     | Keep as is, optionally include PHG offset                               |
+| UTC          | No      | Yes    | No     | Keep as is, include PHG offset                                          |
 | UTC          | No      | No     | Yes    | Throw away                                                              |
 | UTC          | No      | No     | No     | Throw away                                                              |
 | Local        | Yes     | Yes    | Yes    | Map to UTC+offset with optional correction                              |
@@ -70,7 +70,7 @@ For IEEE 11073-10206 timestamps the following table can be used:
 | Local        | Yes     | No     | Yes    | Map to PHG timeline, including PHG offset                               |
 | Local        | Yes     | No     | No     | Map to PHG timeline, including PHG offset                               |
 | Local        | No      | Yes    | Yes    | Map to UTC+offset                                                       |
-| Local        | No      | Yes    | No     | Map to UTC, optionally include PHG offset                                            |
+| Local        | No      | Yes    | No     | Map to UTC, include PHG offset                                          |
 | Local        | No      | No     | Yes    | Throw away                                                              |
 | Local        | No      | No     | No     | Throw away                                                              |
 | Tick counter | Yes     | n.a.   | n.a.   | Map to PHG timeline, including PHG offset                               |

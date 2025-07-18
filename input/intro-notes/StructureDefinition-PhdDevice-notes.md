@@ -26,7 +26,7 @@ An example of a system identifier is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
 
 ### UDI &rarr; Device.udiCarrier
-The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard (and the older IEEE 11073-20601 standard). It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. There is no appropriate entryType code for this sourcing of the UDI in FHIR R4 and the code `unknown` should be used. In FHIR R5 the code `electronic-transmission` can be used.
+The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard (and the older IEEE 11073-20601 standard). It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. The entryType code for this sourcing of the UDI `electronic-transmission` is used as the UDI is transmitted electronically.
 
 The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
