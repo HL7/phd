@@ -99,7 +99,7 @@ Description: "Common base profile with the elements that are common to the PHD I
       * system = "urn:iso:std:iso:11073:10101" (exactly)
       * code 1..
       * code = #68193 (exactly)
-        * ^definition = "68193 is the 32-bit nomenclature code indicating a 'Supplemental-Types' value"
+        * ^definition = "68193 is the MDC code indicating a 'Supplemental-Types' value"
       * display ^definition = "It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES"
 //  * value[x] 1..
 //  * valueCodeableConcept 1..1

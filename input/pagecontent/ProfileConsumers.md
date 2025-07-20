@@ -399,7 +399,7 @@ In IEEE 11073-10206 ACOM specializations are, in addition to a general descripti
 A table of some of the most common specializations can be found in the specialization section [here](StructureDefinition-PhdDevice.html).
 
 The example below shows an example of a PHD following the Glucose specialization:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:specialization %}
+{% fragment Device/phd-00601900010E9234.F45EABA80832 JSON EXCEPT:specialization %}
 
 
 #### Property
@@ -426,30 +426,8 @@ The `Device.type` is a CodeableConcept which tells what the property is. There a
 There will always be a time synchronization entry. It is identified by a property.type.coding.code="68220". It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](StructureDefinition-PhdDevice.html). This value is always TIME_SYNC_NONE (532224) if the PHD is not synchronized or has no time clock at all. To date ALL PHDs have no external time synchronization capabilities and this entry is always TIME_SYNC_NONE.
 
 An example of time synchronization property entry is shown below:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[0] %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[4] %}
 
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "urn:iso:std:iso:11073:10101",
-            "code" : "68220"
-          }
-        ],
-        "text": "MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol"
-      },
-      "valueCode" : [
-        {
-          "coding" : [
-            {
-              "system" : "urn:iso:std:iso:11073:10101",
-              "code" : "532224"
-            }
-          ],
-          "text": "MDC_TIME_SYNC_NONE: No time synchronization"
-        }
-      ]
-    }
 
 ##### Time Capabilities
 The time capabilities defines the types of real time clocks supported, whether the time can be set, whether external time synchronization is possible, etc. Each capability is treated as an event, so most PHGs will only report the capability if the PHD indicates it has the capability. The value is a single valueCode which will be either "Y" if the PHD has the capability or "N" if not. Most PHGs will not report the "N" case as that would significantly increase the size of the resource on the wire.  There may be several such time capability property entries.
@@ -458,7 +436,7 @@ The time capabilities property is indicated by the `Device.code` having one of t
 
 The example below gives the time capabilities of a market pulse oximeter:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[2]|property[3]|property[4]|property[5] %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[5]|property[6]|property[7] %}
 
 #### Time Clock Resolutions
 The time clock resolutions is given by one of four MDC codes for each of the possible types of time clocks. Note that a PHD can only simultaneously support an absolute time (wall clock time with no offset) or base offset time (wall clock time with offset). A PHD may support both relative time clocks thus there could be up to three separate time resolution property entries though in most cases there is only one clock.
@@ -467,55 +445,13 @@ The resolution value is a valueQuantity and it gives the time interval between c
 
 The property is indicated by the `Device.code` having one of four MDC codes "68222, 68223, 68224, and 68226". The value is a valueQuantity.
 
-An example of a time resolution property for an absolute time clock with a time resolution of of one second is shown below:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[0] %}
-    {
-        "type": {
-            "coding": [
-                {
-                    "system": "urn:iso:std:iso:11073:10101",
-                    "code": "68222"
-                }
-            ],
-            "text": "MDC_TIME_RES_ABS: absolute time clock resolution"
-        },
-        "valueQuantity": [
-            {
-                "value": 1000000,
-                "system": "http://unitsofmeasure.org",
-                "code": "us"
-            }
-        ]
-    }
+An example of a time resolution property for a relative time clock with a time resolution of of one second is shown below:
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[8] %}
+
 
 #### Time Tick Resolution for R-R Intervals
 This section is only relevant for PHDs that support the Heart Rate or ECG specializations based on IEEE 11073-20601. It is not used for measurement timestamps but for measuring R-R intervals (time between electrocardiogram R-wave peaks) in ECG and Heart Rate specializations. The time tick resolution is a high frequency clock that is used to measure the time between R-wave peaks in an ECG trace.
 The number of ticks is reported in the `valueQuantity.value` element in Observations, not the effective[x] which is the time the measurement is taken. These special clocks typically have a resolution of 1024 Hz or better. When R-R intervals are reported, they are reported in units of these ticks, so one must know what the frequency of the clock is. The reason for this special clock is that R-R intervals have been traditionally timed using dedicated crystal oscillators.
-
-The time tick is given as a property and its units are Hertz. However, the R-R interval is given in the number of these ticks and many PHGs will not make the conversion as there is no UCUM code for the MDC dimension code of Ticks and therefore the units reported will be the MDC unit of ticks. Thus the reader will have to obtain the R-R interval using the R-R reported tick value and the tick frequency given in the Device property element.
-
-The property is indicated by the `Device.code` having the MDC code "68229". The value is a valueQuantity.
-
-An example of the Tick resolution property entry for a 1024 Hz clock is given below.
-
-    {
-        "type": {
-            "coding": [
-                {
-                    "system": "urn:iso:std:iso:11073:10101",
-                    "code": "68229"
-                }
-            ],
-            "text": "MDC_ATTR_TICK_RES: Frequency of ticks"
-        },
-        "valueQuantity": [
-            {
-                "value": 976.5625,
-                "system": "http://unitsofmeasure.org",
-                "code": "us"    // microseconds
-            }
-        ]
-    }
 
 ACOM-based ECGs do not use the time tick resolution to report R-R intervals.
 
@@ -526,7 +462,7 @@ The property is indicated by the `Device.code` having the ASN1ToHL7 code "532354
 
 An example of an entry for an FDA regulated device is shown below:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[3] %}
 
 #### Continua Certified PHD Interfaces
 This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device specialization entries indicate what the PHD supports. Certified means the PHD has been (independently) placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
@@ -535,7 +471,7 @@ The property is indicated by the `Device.code` having the MDC code "532353". The
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532353') %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[0] %}
 
 ### The PHG Device Resource
 The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
@@ -549,7 +485,7 @@ Only the entries that are different from the PHD are discussed in the following 
 #### Device Type
 This field states that the device is a PHG. This IG uses the MDC code MDC_MOC_VMS_MDS_AHD that indicates a gateway. "AHD" stands for Application Hosting Device and is the name Continua gave to what is commonly known as a PHG. 
 
-#### Certified Health and Fitness Interfaces
+#### Continua Certified Health and Fitness Interfaces
 This property is a list of codes that indicate which Health and Fitness interfaces the PHG has been *certified* for. There is no certification body active for this IG, so this entry can be populated with interfaces the PHG supports.
 
 The property is indicated by the `Device.code` having the MDC code "532355". The value is a list of valueCodes where the codes come from the [ContinuaHFS](CodeSystem-ContinuaHFS.html) code system. The code system is simple and limited to only eight values at the current time.
@@ -559,7 +495,7 @@ An example of a PHG resource is given [here](Device-phg-example.html).
 ### Patient Resource
 It is assumed here that the reader has access to the Patient resource uploaded by the PHG and that the PHG uploaded a Patient resource. There is a special case where the PHG will not upload a Patient resource.
 
-The Patient resource is following the Phd Patient Profile as defined [here](StructureDefinition-PhdPatient.html).
+The uploaded Patient resource is following the Phd Patient Profile as defined [here](StructureDefinition-PhdPatient.html).
 
 There is only one additional required entry in the Phd Patient Profile; the Patient.identifier.
 

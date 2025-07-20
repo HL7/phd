@@ -6,7 +6,7 @@ border-collapse:collapse;
 padding: 6px;}</style>
 
 |Measurement Attribute|Description|
-|-
+|---|---|
 |Basic-Nu-Observed-Value|Contains a single number encoded as an Mder SFLOAT\*|
 |Simple-Nu-Observed-Value|Contains a single number encoded as a Mder FLOAT\*|
 |Compound-Basic-Nu-Observed-Value|Contains multiple numbers encoded as Mder SFLOATs\*|

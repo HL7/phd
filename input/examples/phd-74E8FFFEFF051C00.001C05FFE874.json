@@ -295,6 +295,24 @@
                     "text": "relative time supported"
                 }
             ]
-        }
+        },
+            {
+        "type": {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:11073:10101",
+                    "code": "68223"
+                }
+            ],
+            "text": "MDC_TIME_RES_REL: relative time clock resolution"
+        },
+        "valueQuantity": [
+            {
+                "value": 1000,
+                "system": "http://unitsofmeasure.org",
+                "code": "us"
+            }
+        ]
+    }
     ]
 }
