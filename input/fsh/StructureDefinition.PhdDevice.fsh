@@ -153,7 +153,7 @@ Description: "Profile for the Device Resource for a PHD"
         * ^definition = "If bit is set, code contains Y if cleared, N"
 
 * property[clockResolutionProperty] ^short = "Clock Resolution as reported by the PHD"
-  * ^definition = "For each Boolean clock capability reported by a PHD a property element is used."
+  * ^definition = "The clock resolution as reported by the PHD in microseconds."
   * type from MDCClockResolutionTypes (required)
     * ^short = "Tells what the clock resolution type is"
     * ^definition = "The resolution of the clock as reported by the PHD."

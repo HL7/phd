@@ -627,12 +627,7 @@ In this example there are only xml structure definitions, value sets, code syste
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="ObservationIdentifier.html"/>
-            <title value="The Unique Observation Identifier"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="GeneratingtheReportedTimeStampIdentifier.html"/>
+            <nameUrl value="GeneratingtheTimeStampPartIdentifier.html"/>
             <title value="Generating the PHD Reported Timestamp Identifier"/>
             <generation value="markdown"/>
           </page>

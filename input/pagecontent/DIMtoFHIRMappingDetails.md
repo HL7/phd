@@ -8,8 +8,7 @@ In this section the details of the mapping of the IEEE 11073-20601 Metric object
  - [Obtaining the Observation.code]({{ output }}ObtainObservationCode.html)
  - [Obtaining the Unit code]({{ output }}ObtainUnitCode.html)
  - [ASN1 BITS Code System]({{ output }}CodeSystem-ASN1ToHL7.html)
- - [The Observation Identifier]({{ output }}ObservationIdentifier.html)
- - [Generating the Reported Timestamp Observation Identifier]({{ output }}GeneratingtheReportedTimeStampIdentifier.html)
+ - [Generating the Timestamp part of the Observation Identifier]({{ output }}GeneratingtheTimeStampPartIdentifier.html)
  
 
  

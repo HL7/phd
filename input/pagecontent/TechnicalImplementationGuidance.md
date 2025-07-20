@@ -13,7 +13,6 @@ The mapping sections require knowledge of the IEEE 11073-10206 model and are int
    - [FHIR's Codeable Concepts](CodeableConcepts.html)
    - [Obtaining the Observation.code](ObtainObservationCode.html)
    - [Obtaining the Unit code](ObtainUnitCode.html)
-   - [The Observation Identifier](ObservationIdentifier.html)
-   - [Generating the Reported Timestamp Observation Identifier](GeneratingtheReportedTimeStampIdentifier.html)
+   - [Generating the Timestamp part of the Observation Identifier](GeneratingtheTimeStampPartIdentifier.html)
  - [Coincident Timestamp](CoincidentTimeStamp.html) 
  - [Non-IEEE 11073-10206 PHD Devices](Non11073PHDDevices.html)

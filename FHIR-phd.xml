@@ -130,7 +130,8 @@
 <page deprecated="true" key="phdExample" name="Device example from a Blood Pressure PHD"/>
 <page deprecated="true" key="downloads" name="Downloads"/>
 <page deprecated="true" key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
-<page key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
+<page deprecated="true" key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Time Stamp Identifier"/>
+<page key="GeneratingtheTimeStampPartIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
 <page deprecated="true" key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
 <page key="GenericModel" name="Generic and Extensible Model"/>
 <page key="Glossary" name="Glossary"/>
@@ -167,7 +168,7 @@
 <page deprecated="true" key="spotNumeric" name="Simple numeric with supplemental types"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="terminology" name="Terminology"/>
-<page key="ObservationIdentifier" name="The Unique Observation Identifier"/>
+<page deprecated="true" key="ObservationIdentifier" name="The Observation Identifier"/>
 <page key="UseCases" name="Use Cases"/>
 <page deprecated="true" key="languages" name="languages" url="languages"/>
 </specification>

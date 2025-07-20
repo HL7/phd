@@ -1,7 +1,7 @@
 This profile is used to map ACOM Numeric Observations.  The measured value is reported as a floating number with an optional accuracy. In GHS the value is encoded as an IEEE 11073 FLOAT that indicates both precision and the number of significant digits. The `Observation.valueQuantity.value` element is required to honor the reported precision. See [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling S/FLOATs and their encoding to the valueQuantity .
 
 ### Mapping the unit code to FHIR
-The MDC unit code as provided by the PHD needs to be mapped to UCUM. In most cases this mapping is straight forward, but there can be some examples which are tricky. The MDC_DIM_TICK for the RR interval is just the number of ticks. However, the tick unit is given by the Clock.time-resolution attribute which is the number of ticks per second. So if clock resolution is 0.5 ms and the RR measurement is 3000, that means the RR interval is 1.5 seconds. One could also express the measurement in Hertz. When the units are converted in this manner, the value must be converted appropriately.
+The MDC unit code as provided by the PHD needs to be mapped to UCUM. See [Obtaining the Unit code]({{ output }}ObtainUnitCode.html) for details on how to obtain the unit code.
 
 <style>table, th, td {
 border: 1px solid black;
@@ -60,17 +60,3 @@ The consumer of this profile does not need to concern itself with the mapping co
 | Sensor device                 | `Observation.device`                    | Points to the Device resource.                                                                                 |
 
 
-### Try out of Jekyll/Liquid variables:
-
-| Variable Name | Liquid | Value |
-|---------------|-------|--|
-| path          | page.path | {{ page.path }} |
-| FHIR path     | site.data.fhir.path | {{ site.data.fhir.path }} |
-| FHIR version  | site.data.fhir.version | {{ site.data.fhir.version }} |
-| canonical     | site.data.fhir.canonical | {{ site.data.fhir.canonical }} |
-| ig            | site.data.fhir.ig | {{ site.data.fhir.ig }} |
-| igId          | site.data.fhir.igId | {{ site.data.fhir.igId }} |
-| ig.version    | site.data.fhir.ig.version | {{ site.data.fhir.ig.version }} |
-| ig.name       | site.data.fhir.ig.name | {{ site.data.fhir.ig.name }} |
-| ig.title      | site.data.fhir.ig.title | {{ site.data.fhir.ig.title }} |
-| ig.tx-server  | site.data.fhir.ig.tx-server | {{ site.data.fhir.ig.tx-server }} |

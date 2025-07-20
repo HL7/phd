@@ -113,9 +113,9 @@ PHDs can send measurements that have additional descriptive information. An exam
 |Type of additional information|When it can occur|FHIR data element|Description|
 |----|---|---|---|
 |supplemental type|Can occur with all measurement values|`valueCodeableConcept`| provides a further description of the measurement type. Can be multiple supplemental type component entries.|
-|Accuracy|Only with Quantities|`extension.valueQuantity`| Gives the accuracy of the measurement value in the units of the measurement value|
-|Measurement Confidence 95|Only with Quantities|`extension.valueRange`| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
-|Simple Alerting|Only with Quantities|`complex extension`| Gives the parameters for alerting and thresholding on a quantity.|
+|Accuracy|Only with Quantities|(Accuracy) `extension.valueQuantity`| Gives the accuracy of the measurement value in the units of the measurement value|
+|Measurement Confidence 95|Only with Quantities|(Confidence95) `extension.valueRange`| Gives a range that the manufacturer is 95% confident that the actual reported measurement is within that bounds|
+|Simple Alerting|Only with Quantities|(SimpleAlerting) `extension.*`| Gives the parameters for alerting and thresholding on a quantity.|
 
 More details on the extensions that can be used with quantities can be found in the [PhdNumericObservation profile](StructureDefinition-PhdNumericObservation.html).
 
@@ -274,8 +274,8 @@ Periodic measurements are reported in `Observation.valueSampledData` data elemen
 |`Observation.valueSampledData.scaleFactor`|Contains the scale factor in the rescaling equation|
 |`Observation.valueSampledData.period`|gives the time interval between samples in milliseconds|
 |`Observation.valueSampledData.dimensions`|Always 1 in PHD (multi-dimensional arrays are not supported)|
-|`Observation.valueSampledData.upperLimit`|Upper value that the original sequence can obtain|
-|`Observation.valueSampledData.lowerLimit`|Lower value that the original sequence can obtain|
+|`Observation.valueSampledData.upperLimit`|Scaled upper value that the sequence can obtain|
+|`Observation.valueSampledData.lowerLimit`|Scaled lower value that the sequence can obtain|
 
 
 To obtain the original values of the measured sequence one uses the following equation:
@@ -286,7 +286,7 @@ or the familiar equation of a line
 
      y(i) = mx(i) + b
 
-The `Observation.referenceRange` element is for convenience and is not necessary for decoding the data. It was designed for plotting as it gives the upper and lower bounds of the trace at any time (it does not mean that either value is obtained in the transmitted sequence). One can create a graph with such limits without examining the sequence.
+The `upperLimit` and `lowerLimit` elements are for convenience and are not necessary for decoding the data. They can be used when plotting the data as they give the upper and lower bounds of the trace at any time. One can create a graph with these limits without examining the sequence.
 
 It is possible that the periodic measurement is a vital sign, for example, a heart rate. If it is a vital sign, the same FHIR-required LOINC code requirements apply as they do for scalar and vector measurements.
 
@@ -489,13 +489,14 @@ An example of a time resolution property for an absolute time clock with a time 
     }
 
 #### Time Tick Resolution for R-R Intervals
-The Time Tick resolution is not used for measurement timestamps but for measuring R-R intervals (time between electrocardiogram R-wave peaks) in ECG and Heart Rate specializations. The number of ticks is reported in the `valueQuantity.value` element in Observations, not the effective[x] which is the time the measurement is taken. These special clocks typically have a resolution of 1024 Hz or better. When R-R intervals are reported, they are reported in units of these ticks, so one must know what the frequency of the clock is. The reason for this special clock is that R-R intervals have been traditionally timed using dedicated crystal oscillators.
+This section is only relevant for PHDs that support the Heart Rate or ECG specializations based on IEEE 11073-20601. It is not used for measurement timestamps but for measuring R-R intervals (time between electrocardiogram R-wave peaks) in ECG and Heart Rate specializations. The time tick resolution is a high frequency clock that is used to measure the time between R-wave peaks in an ECG trace.
+The number of ticks is reported in the `valueQuantity.value` element in Observations, not the effective[x] which is the time the measurement is taken. These special clocks typically have a resolution of 1024 Hz or better. When R-R intervals are reported, they are reported in units of these ticks, so one must know what the frequency of the clock is. The reason for this special clock is that R-R intervals have been traditionally timed using dedicated crystal oscillators.
 
 The time tick is given as a property and its units are Hertz. However, the R-R interval is given in the number of these ticks and many PHGs will not make the conversion as there is no UCUM code for the MDC dimension code of Ticks and therefore the units reported will be the MDC unit of ticks. Thus the reader will have to obtain the R-R interval using the R-R reported tick value and the tick frequency given in the Device property element.
 
 The property is indicated by the `Device.code` having the MDC code "68229". The value is a valueQuantity.
 
-An example of the Tick resolution property entry is given below.
+An example of the Tick resolution property entry for a 1024 Hz clock is given below.
 
     {
         "type": {
@@ -509,38 +510,14 @@ An example of the Tick resolution property entry is given below.
         },
         "valueQuantity": [
             {
-                "value": 1024,
+                "value": 976.5625,
                 "system": "http://unitsofmeasure.org",
-                "code": "s-1"    // 1/seconds or Hz
+                "code": "us"    // microseconds
             }
         ]
     }
 
-#### Time Synchronization Accuracy
-The time synchronization accuracy is the accumulated difference between the PHD's internal clock and external reference source since last synchronization. It is reported in units of microseconds. To date no PHD is externally time synchronized so no PHD reports this attribute value.
-
-The property is indicated by the `Device.code` having the MDC code "68221". The value is a valueQuantity.
-
-An example of the time synchronization accuracy property entry is given below.
-
-    {
-        "type": {
-            "coding": [
-                {
-                    "system": "urn:iso:std:iso:11073:10101",
-                    "code": "68221"
-                }
-            ],
-            "text": "MDC_TIME_SYNC_ACCURACY: Time synchronization accuracy"
-        },
-        "valueQuantity": [
-            {
-                "value": 1005,
-                "system": "http://unitsofmeasure.org",
-                "code": "us"
-            }
-        ]
-    }
+ACOM-based ECGs do not use the time tick resolution to report R-R intervals.
 
 #### Regulation Status
 The Regulation status is a set of states where only one state is defined. Regulation Status is used to indicate which regulation body the PHD is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated.
