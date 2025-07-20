@@ -152,7 +152,21 @@
                     "display": "observation-upload-soap"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "532355",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
+                }
+              ],
+              "text": "Each element of the certified interfaces list as a separate property"
+            },
+            "valueCode": [
               {
                 "coding": [
                   {
@@ -161,7 +175,21 @@
                     "display": "observation-upload-hdata"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "532355",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
+                }
+              ],
+              "text": "Each element of the certified interfaces list as a separate property"
+            },
+            "valueCode": [
               {
                 "coding": [
                   {
@@ -170,7 +198,21 @@
                     "display": "observation-upload-fhir"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "532355",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
+                }
+              ],
+              "text": "Each element of the certified interfaces list as a separate property"
+            },
+            "valueCode": [
               {
                 "coding": [
                   {
@@ -179,7 +221,21 @@
                     "display": "capabilities"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "532355",
+                  "display": "MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_LIST"
+                }
+              ],
+              "text": "Each element of the certified interfaces list as a separate property"
+            },
+            "valueCode": [
               {
                 "coding": [
                   {

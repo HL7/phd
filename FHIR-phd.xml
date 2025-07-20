@@ -26,6 +26,7 @@
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="Continua Device Identifiers"/>
 <artifact id="CodeSystem/ContinuaPHDInterfaceIDs" key="CodeSystem-ContinuaPHDInterfaceIDs" name="Continua Device Interface Identifiers"/>
 <artifact id="ValueSet/ContinuaPHDInterfaces" key="ValueSet-ContinuaPHDInterfaces" name="Continua Device Interfaces ValueSet"/>
+<artifact id="ValueSet/ContinuaPHGInterfaces" key="ValueSet-ContinuaPHGInterfaces" name="Continua Device Interfaces ValueSet"/>
 <artifact id="CodeSystem/ContinuaHFS" key="CodeSystem-ContinuaHFS" name="Continua Health and Fitness Service Interfaces"/>
 <artifact deprecated="true" id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
 <artifact deprecated="true" key="Device" name="Device"/>
