@@ -125,6 +125,11 @@ Description: "Profile for the Device Resource for a PHD"
     //clockTypeProperty 0..1 and
     //powerSourceProperty 0..1 and
 
+* parent ..0
+  * ^short = "No reference to a parent device in PHD. PHDs are not part of a device hierarchy."
+
+
+
 * property[timeSyncProperty] ^short = "Time synchronization method"
   * ^definition = "This element represents the time synchronization method used by the PHD. It is an MDC coded value."
   * ^comment = "The clock set method is a required attribute in the IEEE 11073-10206 standard. It is also supported by Bluetooth Low Energy ETS and GHS specifications. Strictly speaking, the time synchronization method is not a property of the PHD but rather a property of the PHG. However, it is included here as it is a required attribute in the IEEE 11073-10206 standard and is often used by the PHG to determine how to set the time on the PHD. In most cases it reflects the time synchronization method used to set the PHG's clock and strictly speaking it should not be reported as a static device property, but as part of a coincident timestamp."

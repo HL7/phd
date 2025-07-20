@@ -68,3 +68,15 @@ Description: "Observations containing a coincident timestamp."
   * reference 1..1
     * ^short = "Reference to the PHG device responsible for the coincident timestamp measurement"
     * ^definition = "Reference to the PHG device responsible for the coincident timestamp measurement. This element will point to a Device resource following the Phg Device Profile."
+* derivedFrom 0..0
+  * ^short = "No reference to a source observation in PHD. The coincident timestamp is not derived from another observation."
+  * ^definition = "This element is not used in PHD as the coincident timestamp is not derived from another observation."
+* hasMember 0..0
+  * ^short = "No reference to a group observation in PHD. The coincident timestamp is not part of a group observation."
+  * ^definition = "This element is not used in PHD as the coincident timestamp is not part of a group observation."
+* specimen 0..0
+  * ^short = "No specimen in PHD. The coincident timestamp is not associated with a specimen."
+  * ^definition = "This element is not used in PHD as the coincident timestamp is not associated with a specimen."
+* focus 0..0
+  * ^short = "No focus in PHD. The coincident timestamp is not associated with a focus."
+  * ^definition = "This element is not used in PHD as the coincident timestamp is not associated with a focus."

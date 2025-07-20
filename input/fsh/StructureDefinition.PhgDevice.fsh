@@ -193,3 +193,6 @@ Description: "Profile for the Device Resource for a PHG"
         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs or http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS or urn:iso:std:iso:11073:10101 code systems"
       * code 1..
         * ^definition = "One of the Continua interface certification codes"
+
+* parent ..0
+  * ^short = "No reference to a parent device in PHD. PHDs/PHGs are not part of a device hierarchy."

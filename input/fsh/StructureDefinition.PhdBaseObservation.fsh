@@ -114,6 +114,13 @@ Description: "Common base profile with the elements that are common to the PHD I
 * dataAbsentReason ^comment = "The Measurement-Status/status flags indicating invalid, not available, or msmt ongoing will generate this element and cause the value[x] to be absent. The remaining settings of the status values are reported in the meta.security element or interpretation element. Also populated when a numeric value is in error."
 * dataAbsentReason.coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
 
+* derivedFrom ^short = "A source the measurement data is derived from."
+* derivedFrom only Reference(PhdBaseObservation)
+  * ^definition = "Reference to another PHD Observation resource that was used to create this Observation."
+* hasMember ^short = "Other PHD Observations that are part of this group observation."
+* hasMember only Reference(PhdBaseObservation)
+  * ^definition = "Reference to other PHD Observation resources that are part of this group observation; used for training sessions and other grouped measurements."  
+
 Invariant: mdc-1
 Description: "A published MDC Code is preferred but private MDC codes are allowed as well."
 * severity = #warning
