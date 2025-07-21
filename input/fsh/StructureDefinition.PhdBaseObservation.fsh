@@ -1,4 +1,3 @@
-Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 Alias: $MDCValueSet = http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet
 
 Profile: PhdBaseObservation
@@ -93,16 +92,17 @@ Description: "Common base profile with the elements that are common to the PHD I
 * component[supplementalTypesComponent] ^short = "Supplemental Type: A further description of the measurement type."
   * ^definition = "For each code  contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
   * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes. Each code describes an aspect of the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average."
-  * code from $CodeableConcept11073MDC (required)
+//  * code from $CodeableConcept11073MDC (required)
+  * code = Mdc#68193 // from $CodeableConcept11073MDC (required)
     * coding 1..
       * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
       * code 1..
       * code = #68193 (exactly)
-        * ^definition = "68193 is the MDC code indicating a 'Supplemental-Types' value"
+        * ^definition = "68193 is the 32-bit nomenclature code indicating a 'Supplemental-Types' value"
       * display ^definition = "It is recommended to display at least the reference identifier for the Supplemental-Types which is MDC_ATTR_SUPPLEMENTAL_TYPES"
-//  * value[x] 1..
-//  * valueCodeableConcept 1..1
+
+  * value[x] only CodeableConcept
   * valueCodeableConcept // only CodeableConcept
     * coding
       * system 1..

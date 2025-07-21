@@ -120,7 +120,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 More details on the extensions that can be used with quantities can be found in the [PhdNumericObservation profile](StructureDefinition-PhdNumericObservation.html).
 
 ##### Supplemental Types
-Supplemental type information is indicated by the `Observation.code` element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by Observation.component.valueCodeableConcept.coding.code. There may be more than one `Observation.component` entry containing supplemental type information. An example of a supplemental types component entry is as follows:
+Supplemental type information is indicated by the `Observation.code` element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by `Observation.component.valueCodeableConcept.coding.code`. There may be more than one `Observation.component` entry containing supplemental type information. An example of a supplemental types component entry is as follows:
 
 {% fragment Observation/numeric-spotnumeric JSON EXCEPT:component[0] %}
 
@@ -163,7 +163,7 @@ When there is no special value the `Observation.valueQuantity` is populated with
 |`Observation.valueQuantity.code`|units in UCUM|
 |`Observation.valueQuantity.system="http://unitsofmeasure.org"`|code system is UCUM|
 
-If a special value is reported an `Observation.dataAbsentReason` replaces the valueQuantity. The dataAbsentReason is a CodeableConcept and will have the following possible codes from the data absent reason coding system "http://terminology.hl7.org/CodeSystem/data-absent-reason":
+If a special value is reported an `Observation.dataAbsentReason` then this replaces the valueQuantity. The dataAbsentReason is a CodeableConcept and will have the following possible codes from the data absent reason coding system "http://terminology.hl7.org/CodeSystem/data-absent-reason":
 
  - `Observation.dataAbsentReason.coding.code="not-a-number"`
  - `Observation.dataAbsentReason.coding.code="positive-infinity"`
@@ -173,8 +173,6 @@ If a special value is reported an `Observation.dataAbsentReason` replaces the va
 The `Observation.system` in the above cases is always
 
  - `Observation.dataAbsentReason.coding.system="http://terminology.hl7.org/CodeSystem/data-absent-reason"`
-
-IEEE 11073-20601 defines two other special values that are not translated to FHIR which are encoded as "error". To date, there has been no market PHD which reports the other two special values.
 
 An example of the valueQuantity in the Phd Numeric Observation Profile for a thermometer reporting a value in &deg;C is as follows:
 {% fragment Observation/temperature-observation JSON EXCEPT:valueQuantity %}
@@ -217,7 +215,7 @@ and the individual `Observation.component` entries describing each compound entr
 
 {% fragment Observation/compound-numeric-blood-pressure-no-mean JSON EXCEPT:component %}
 
-The Phd Compound Numeric Profile can contain additional entries as noted in the [Additional Descriptive Data](#additional-descriptive-data) section above. However, the codes of all `Observation.component` entries that are part of a compound measurement will always have an MDC entry (not ASN1ToHL7) and the MDC entry will ***never*** have a partition value (the upper 16 bits) equal to 1.
+The Phd Compound Numeric Profile can contain additional entries as noted in the [Additional Descriptive Data](#additional-descriptive-data) section above. However, the codes of all `Observation.component` entries that are part of a compound measurement will always have an MDC code and not a code from the ASN1ToHL7 code system.
 
 #### Remark on compound observations
 The decision to report a compound observation versus independent observations is made by the designers of the IEEE PHD device specialization standards. The IEEE PHD and FHIR policies to choose between these options are similar. This IG maps an ACOM compound observation to a FHIR Observation resource with multiple components.
@@ -258,7 +256,7 @@ Each `Observation.component` entry will have the following:
 
 The 'independent living' example mentioned above does not currently exist in any specialization but it is illustrative of the concept. However, a pulse oximeter device sensor status measurement containing several different events does exist. An example of such a measurement can be found [here](Observation-bits-observation.html)
 
-All of the entries are events in this example so the values are always "Y" indicating the event occurred. One might note that the ANS1ToHL7 code 150604.*x* in all cases contains the MDC code of the measurement 150604. That relationship will always be true for all event and state measurement value types. In addition, the MDC code of the overall measurement will never have a partition (the upper 16 bits) value of 1.
+All of the entries are events in this example so the values are always `true` indicating the event occurred. One might note that the ANS1ToHL7 code 150604.*x* in all cases contains the MDC code of the measurement 150604. That relationship will always be true for all event and state measurement value types. 
 
 ### Periodic measurements
 Periodic measurements are typically waveforms like ECG traces and are a sequence of scalars.

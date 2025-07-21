@@ -26,7 +26,7 @@ An example of a system identifier is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
 
 ### UDI &rarr; `Device.udiCarrier`
- The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard (and the older IEEE 11073-20601 standard). It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. The entryType code for this sourcing of the UDI `electronic-transmission` is used as the UDI is transmitted electronically.
+ The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard. It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. The entryType code for this sourcing of the UDI `electronic-transmission` is used as the UDI is transmitted electronically.
 
 The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
@@ -55,7 +55,7 @@ The ACOM Manufacturer, System-Model and Serial Number attributes contains string
  The revision information provided by the PHD, such as the hardware-revision, is encoded in the `Device.version` element. The version information is provided as a list of versions, where each version has a type and a value. The type is encoded as an MDC code and the value is a string. The type codes are defined in the [MDC Device Version Type Codes ValueSet](ValueSet-MDCDeviceVersionTypes.html).
 
 ### Reg-Cert-Data-List 
-The Reg-Cert-Data-List can be provided by PHDs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. 
+The Reg-Cert-Data-List can be provided by older PHDs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. 
 It contains the Continua version, list of certified PHD interfaces, and the regulation status. The Continua version is mapped to an additional `Device.version` element and the other two fields are mapped to a `Device.property` element.
 
 #### Reg-Cert-Data-List Certified PHD interfaces &rarr; `Device.property`

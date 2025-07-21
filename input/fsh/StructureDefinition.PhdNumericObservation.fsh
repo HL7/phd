@@ -1,4 +1,3 @@
-Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
 
 Profile: PhdNumericObservation
@@ -16,8 +15,8 @@ Description: "Observations from a PHD where the measurement is number"
   * ^comment = "Used for non-compound numeric observations from Personal Health Devices."
 * value[x] only Quantity
   * value 1..
-    * ^definition = "The decoded Mder FLOAT or SFLOAT value from a PHD measurement containing either a\r\nBasic-Nu-Observed-Value\r\nSimple-Nu-Observed-Value or\r\nNu_observed-Value attribute."
-    * ^comment = "The implicit precision in the value shall be honored. The Mder encoding used in the above attributes provides this precision. The translating software shall honor that precision when generating this value.\r\nThis element shall be present unless there is an error reported in the Measurement-Status attribute or the Nu-Observed-Value.status field or the Mder encoding represents one of the special values. In that case there is a dataAbsentReason element and the valueQuantity element is not present. Note that not all measurement status values are errors resulting in no measurement being reported here; for example the preliminary or verified status."
+    * ^definition = "The decoded FLOAT or SFLOAT value from a PHD measurement containing either a\r\nBasic-Nu-Observed-Value\r\nSimple-Nu-Observed-Value or\r\nNu_observed-Value attribute."
+    * ^comment = "The implicit precision in the value shall be honored. The MDER encoding used in the above attributes provides this precision. The translating software shall honor that precision when generating this value.\r\nThis element shall be present unless there is an error reported in the Measurement-Status attribute or the Nu-Observed-Value.status field or the Mder encoding represents one of the special values. In that case there is a dataAbsentReason element and the valueQuantity element is not present. Note that not all measurement status values are errors resulting in no measurement being reported here; for example the preliminary or verified status."
   * system 1..
   * system = "http://unitsofmeasure.org" (exactly)
   * code 1..

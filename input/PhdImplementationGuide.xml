@@ -230,24 +230,6 @@ In this example there are only xml structure definitions, value sets, code syste
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/CodeableConcept11073MDC"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/Quantity11073MDC"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/Range11073MDC"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/MDCnotObject"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -545,7 +527,7 @@ In this example there are only xml structure definitions, value sets, code syste
           <nameUrl value="UseCases.html"/>
           <title value="Use Cases"/>
           <generation value="markdown"/>
-        </page>        
+        </page>
         <page>
           <nameUrl value="ProfilesOverview.html"/>
           <title value="Profiles Overview"/>
@@ -584,46 +566,17 @@ In this example there are only xml structure definitions, value sets, code syste
         </page>
         <page>
           <nameUrl value="DIMtoFHIRMapping.html"/>
-          <title value="DIM to FHIR Mapping: Basics"/>
+          <title value="DIM to FHIR Mapping"/>
           <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="DIMtoFHIRMappingDetails.html"/>
-          <title value="DIM to FHIR Mapping: Details"/>
-          <generation value="markdown"/>
-          <page>
-            <nameUrl value="DefinitionMetricMsmt.html"/>
-            <title value="Definition of a Metric Measurement"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="MetricAttributesofNoInterest.html"/>
-            <title value="Metric Protocol-Only Attributes"/>
-            <generation value="markdown"/>
-          </page>
+
           <page>
             <nameUrl value="MderFLOATsandSFLOATs.html"/>
-            <title value="Mder FLOATs and SFLOATs"/>
+            <title value="IEEE 11073 FLOATs and SFLOATs"/>
             <generation value="markdown"/>
           </page>
           <page>
             <nameUrl value="Nomenclaturecodes.html"/>
-            <title value="Nomenclature codes"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="CodeableConcepts.html"/>
-            <title value="Codeable Concepts"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="ObtainObservationCode.html"/>
-            <title value="Obtaining the Observation Code"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="ObtainUnitCode.html"/>
-            <title value="Obtaining the Unit Code"/>
+            <title value="IEEE 11073-10101 MDC Nomenclature codes"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -631,6 +584,7 @@ In this example there are only xml structure definitions, value sets, code syste
             <title value="Generating the PHD Reported Timestamp Identifier"/>
             <generation value="markdown"/>
           </page>
+
         </page>
         <page>
           <nameUrl value="CoincidentTimeStamp.html"/>

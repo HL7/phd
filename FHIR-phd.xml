@@ -20,7 +20,7 @@
 <artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
 <artifact deprecated="true" id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>
 <artifact deprecated="true" id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
-<artifact id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept IEEE 11073-20601 Attributes"/>
+<artifact deprecated="true" id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept11073MDC"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="StructureDefinition/Confidence95" key="StructureDefinition-Confidence95" name="Confidence 95 range"/>
 <artifact id="CodeSystem/ContinuaDeviceIdentifiers" key="CodeSystem-ContinuaDeviceIdentifiers" name="Continua Device Identifiers"/>
@@ -96,8 +96,8 @@
 <artifact deprecated="true" id="StructureDefinition/PhdStringEnumerationObservation" key="StructureDefinition-PhdStringEnumerationObservation" name="PhdStringEnumerationObservation"/>
 <artifact id="StructureDefinition/PhdStringObservation" key="StructureDefinition-PhdStringObservation" name="PhdStringObservation"/>
 <artifact id="StructureDefinition/PhgDevice" key="StructureDefinition-PhgDevice" name="PhgDevice"/>
-<artifact id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity IEEE 11073-20601 Attributes"/>
-<artifact id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range 11073-20601 Attributes"/>
+<artifact deprecated="true" id="ValueSet/Quantity11073MDC" key="ValueSet-Quantity11073MDC" name="Quantity11073MDC"/>
+<artifact deprecated="true" id="ValueSet/Range11073MDC" key="ValueSet-Range11073MDC" name="Range11073MDC"/>
 <artifact id="ValueSet/SimpleAlertOperationalStates" key="ValueSet-SimpleAlertOperationalStates" name="Simple Alert Operational States Value Set"/>
 <artifact id="StructureDefinition/SimpleAlerting" key="StructureDefinition-SimpleAlerting" name="Simple Alerting"/>
 <artifact id="CodeSystem/SimpleAlertOperationalStatesCS" key="CodeSystem-SimpleAlertOperationalStatesCS" name="SimpleAlertOperationalStates CodeSystem"/>
@@ -117,16 +117,16 @@
 <page deprecated="true" key="BaseObservationProfile" name="Base Observation Profile"/>
 <page deprecated="true" key="bundleExample" name="Bundled upload of Patient, Device, and Observation resources"/>
 <page key="changes" name="Change Log"/>
-<page key="CodeableConcepts" name="Codeable Concepts"/>
+<page deprecated="true" key="CodeableConcepts" name="Codeable Concepts"/>
 <page deprecated="true" key="glucoseEnum" name="Coded Enumeration"/>
 <page deprecated="true" key="coinFault" name="Coincident Time Stamp with a time fault"/>
 <page deprecated="true" key="coincidentTime" name="Coincident Time Stamp: PHG best synchronized"/>
 <page key="CoincidentTimeStamp" name="Coincident Timestamp"/>
 <page deprecated="true" key="bloodPress" name="Compound Measurement"/>
 <page key="ProfileConsumers" name="Consuming the PHD Profile FHIR Resources"/>
-<page key="DIMtoFHIRMapping" name="DIM to FHIR Mapping: Basics"/>
-<page key="DIMtoFHIRMappingDetails" name="DIM to FHIR Mapping: Details"/>
-<page key="DefinitionMetricMsmt" name="Definition of a Metric Measurement"/>
+<page key="DIMtoFHIRMapping" name="DIM to FHIR Mapping"/>
+<page deprecated="true" key="DIMtoFHIRMappingDetails" name="DIM to FHIR Mapping: Details"/>
+<page deprecated="true" key="DefinitionMetricMsmt" name="Definition of a Metric Measurement"/>
 <page deprecated="true" key="DeviceIdentifierCodes" name="Device Identifier codes"/>
 <page deprecated="true" key="phdExample" name="Device example from a Blood Pressure PHD"/>
 <page deprecated="true" key="downloads" name="Downloads"/>
@@ -136,14 +136,14 @@
 <page deprecated="true" key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
 <page key="GenericModel" name="Generic and Extensible Model"/>
 <page key="Glossary" name="Glossary"/>
-<page key="MderFLOATsandSFLOATs" name="Mder FLOATs and SFLOATs"/>
-<page key="MetricAttributesofNoInterest" name="Metric Protocol-Only Attributes"/>
+<page key="MderFLOATsandSFLOATs" name="IEEE 11073 FLOATs and SFLOATs"/>
+<page key="Nomenclaturecodes" name="IEEE 11073-10101 MDC Nomenclature codes"/>
+<page deprecated="true" key="MetricAttributesofNoInterest" name="Metric Protocol-Only Attributes"/>
 <page deprecated="true" key="NumericNaN" name="NaN Example"/>
-<page key="Nomenclaturecodes" name="Nomenclature codes"/>
 <page deprecated="true" key="Non11073PHDDevices" name="Non IEEE 11073 PHD Devices"/>
 <page deprecated="true" key="Non1107320601Devices" name="Non IEEE 11073-20601 Devices"/>
-<page key="ObtainObservationCode" name="Obtaining the Observation Code"/>
-<page key="ObtainUnitCode" name="Obtaining the Unit Code"/>
+<page deprecated="true" key="ObtainObservationCode" name="Obtaining the Observation Code"/>
+<page deprecated="true" key="ObtainUnitCode" name="Obtaining the Unit Code"/>
 <page deprecated="true" key="Organization" name="Organization"/>
 <page key="Organizations" name="Organizations"/>
 <page deprecated="true" key="overview" name="Overview"/>

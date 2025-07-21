@@ -9,7 +9,7 @@ PHGs are required to have a system identifier.  This identifier follows the same
 The PHG `Device.type` is given by the MDC code 531981. The reference identifier for this code is `MDC_MOC_VMS_MDS_AHD`. "AHD" stands for Application Hosting Device and is the name Continua gave to what is commonly known as a PHG.
 
 #### **Time synchronization**
-The time synchronization is mapped to a device property element with as type the MDC code 68220. The possible codes for the time synchronization method come from the [MDC Time Synchronization Methods value set](ValueSet-MDCTimeSyncMethodCodes.html).
+The time synchronization is mapped to a device property element with as type the MDC code 68220. The possible codes for the time synchronization method come from the [MDC Time Synchronization Methods value set](ValueSet-MDCTimeSyncMethods.html).
 
 #### **Remaining Optional Data**
 The treatment of further optional information in a mock SystemInfo object is similar as in the Phd Device Profile.
@@ -39,12 +39,12 @@ The PHG product information is reported in the same way as in the Phd Device Pro
 
 
 ##### **Continua Certified PHD interfaces**
-The list of Continua Certified PHD interfaces can be provided by PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. It is the complement of the same attribute in the Phd Device Profile and encoded in `property` elements in the same way.
+The list of Continua Certified PHD interfaces can be provided by older PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. It is the complement of the same attribute in the Phd Device Profile and encoded in `property` elements in the same way.
 
 ##### **Continua Certified Health & Fitness interfaces**
-The list of Continua Certified PHD interfaces can be provided by PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. 
+The list of Continua Certified PHD interfaces can be provided by older PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard.
 
-The Health and Fitness codes are mapped to a list of `property` elements. The codes are from the [MDC Health and Fitness Codes value set](ValueSet-MDCHealthFitnessCodes.html). 
+The Health and Fitness codes are mapped to a list of `property` elements. The codes are from the [MDC Health and Fitness Codes value set](ValueSet-ContinuaPHGInterfaces.html). 
 
 ##### **Regulation Status**
 The PHG regulation status is reported in the same way as in the Phd Device Profile. 

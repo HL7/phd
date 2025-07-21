@@ -14,7 +14,7 @@ Additionally a globally unique identifier can be used in combination with a cond
 |---|---|---|
 |device|`PHD Device.identifier.value`|This value is a hexadecimal representation of the PHD system identifier (16 hexadecimal characters for the IEEE EUI-64 identifier, 12 for the EUI-48 transport address identifier)|
 |patient|`Patient.identifier.value`-`Patient.identifier.system` or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that situation the provided logical id is used|
-|type|`Observation.code.coding.code`|See [Obtaining the Observation.code](ObtainObservationCode.html) (decimal number)|
+|type|`Observation.code.coding.code`|See [MDC Nomenclature codes](NomenclatureCodes.html) (decimal number)|
 |timestamp|`Observation.effectiveDateTime` or `Observation.effectivePeriod.start`|The reported PHD timestamp. See [Generating the PHD Reported Timestamp](GeneratingtheTimeStampPartIdentifier.html)|
 |duration|the length of `Observation.effectivePeriod`| See [Generating the PHD Reported Timestamp](GeneratingtheTimeStampPartIdentifier.html)|
 |Supplemental Information|`Observation.component.valueCodeableConcept.coding.code` |A sequence of MDC codes (decimal number) separated by a dash from the "supplemental information" components.|
@@ -28,7 +28,7 @@ An example of the this identifier from [this example](Observation-numeric-spotnu
 {% fragment Observation/numeric-spotnumeric JSON EXCEPT:identifier %}
 
 ### Obtaining the Type of observation
-One obtains the IEEE 11073-10101 observation type for the code element in the same manner for all metric observations. See the section [Obtaining the Observation.code](ObtainObservationCode.html) for the details of this mapping.
+One obtains the IEEE 11073-10101 observation type for the code element in the same manner for all metric observations. See the section [MDC Nomenclature codes](NomenclatureCodes.html) for the details of this mapping.
 
 ### Subject
 The subject element normally points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'. For device settings known to the PHG it should point to the PHD.
