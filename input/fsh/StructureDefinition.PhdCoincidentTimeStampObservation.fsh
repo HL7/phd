@@ -40,17 +40,6 @@ Description: "Observations containing a coincident timestamp."
   * ^definition = "This element is populated when the PHD has a time fault and the current time of the PHD cannot be obtained."
 * dataAbsentReason.coding[TimeFault] = http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown 
 
-// * dataAbsentReason ^short = "Populated when the PHD has a time fault"
-// * dataAbsentReason ^definition = "In this profile this element indicates that the current time of the PHD for the measurements reported is not known and is unable to be obtained"
-// * dataAbsentReason ^comment = "This situation arises when the PHD has a time fault, perhaps by battery change. The sensor device may have stored data with timestamps taken at a time when the clock was running but after the fault the original timeline was not able to be recovered. Thus the current timeline, if any, has an unknown relationship to the previous timeline."
-// * dataAbsentReason.coding = http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown 
-// * dataAbsentReason.coding ^slicing.discriminator.type = #value
-// * dataAbsentReason.coding ^slicing.discriminator.path = "code"
-// * dataAbsentReason.coding ^slicing.rules = #open
-// * dataAbsentReason.coding contains FhirDefault 1..1
-// * dataAbsentReason.coding[FhirDefault].code from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
-// * dataAbsentReason.coding[FhirDefault].code 1..
-// * dataAbsentReason.coding[FhirDefault].code = #unknown (exactly)
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"
   * ^slicing.rules = #open

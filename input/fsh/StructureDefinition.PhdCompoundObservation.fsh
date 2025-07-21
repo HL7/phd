@@ -58,16 +58,10 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
       * ^definition = "A series of data points which are the sampled values."
   * valueString ^short = "The value of the string component"
     * ^definition = "The value of the string component"
-// * component
-//   * dataAbsentReason ^short = "Populated when the component value is invalid or unavailable for some reason"
-//     * ^definition = "Provides a reason why the expected value in the component is missing. For numeric components this could be not-a-number, negative-infinity or similar."
-//     * coding ^slicing.discriminator[0].type = #value
-//       * ^slicing.discriminator[=].path = "code"
-//       * ^slicing.rules = #open
-//     * coding contains FhirDefault 1..1
-//     * coding[FhirDefault]
-//       * code from $DataAbsentReason (required)
-//       * code 1..
+  * dataAbsentReason ^short = "Populated when the component is missing or invalid"
+    * ^definition = "Provides a reason why the expected value in the nth element component.value[x] is missing. This happens a.o. when a FLOAT component reports a special value."
+    * coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
+
 * component
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
