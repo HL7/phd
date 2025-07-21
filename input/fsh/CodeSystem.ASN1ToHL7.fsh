@@ -19,7 +19,6 @@ Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeabl
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^property[0].code = #eventOrState
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#eventOrState"
