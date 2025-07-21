@@ -507,9 +507,3 @@ An example of a `Patient.identifier` following the XDS.b notation is given below
 {% fragment Patient/patientExample-1 JSON EXCEPT:identifier %}
 
 An example of an unknown patient using the `identifier.type` "U" is given [here](Patient-patientExample-2.html)
-
-
-
-
-
- 
