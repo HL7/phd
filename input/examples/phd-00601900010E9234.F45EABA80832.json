@@ -148,6 +148,21 @@
                     "text": "None"
                 }
             ]
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers",
+                        "code": "USB"
+                    }
+                ]
+            },
+            "valueCode": [
+                {
+                    "text": "VID_1234:PID_5678"
+                }
+            ]
         }
     ]
 }

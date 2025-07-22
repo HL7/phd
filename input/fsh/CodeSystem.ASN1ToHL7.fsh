@@ -19,7 +19,6 @@ Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeabl
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * ^property[0].code = #eventOrState
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#eventOrState"
@@ -33,7 +32,7 @@ Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeabl
 * ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#MDCCode"
 * ^property[=].description = "The decimal code for the MDC code of the bits observation"
 * ^property[=].type = #Coding
-// values for properties are defined here for FHIR R4, although that is not the best way to do it
+// values for properties are defined here, although that is probably not the best way to do it
 * #source "Source" "The source of the bit"
 * #eventOrState "Event or State" "Whether the bit represents an event or a state"
 * #device "Attribute" "The bit represents a device attribute"

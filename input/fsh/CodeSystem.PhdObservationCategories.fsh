@@ -10,7 +10,6 @@ Description: "Codes used for tagging observations coming from PHD devices. More 
 * ^date = "2024-04-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * #phd "PHD generated Observation" "An observation coming from a personal health device, either directly or via a personal health gateway that maps the data received from the PHD into a FHIR Observation resource."
 

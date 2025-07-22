@@ -6,7 +6,7 @@ The Observation.code element comes from the Type attribute and gives the general
 
 There is no Observation.value[x] entry. There may still be an Observation.dataAbsentReason element if, say, the Measurement-Status attribute indicates an invalid or otherwise overall failure value. If there is such an overall failure of the measurement, then there is no need to report the components.
 
-The FLOAT encoding of the numeric components indicates both precision and the number of significant digits. The Observation.component.valueQuantity.value element is required to honor the reported precision as indicated by the  FLOAT. See the section [Mder FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling FLOATs and their encoding to the valueQuantity.
+The FLOAT encoding of the numeric components indicates both precision and the number of significant digits. The Observation.component.valueQuantity.value element is required to honor the reported precision as indicated by the  FLOAT. See the section [FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling FLOATs and their encoding to the valueQuantity.
 
 The structure definition is given [here](StructureDefinition-PhdCompoundObservation.html)
 

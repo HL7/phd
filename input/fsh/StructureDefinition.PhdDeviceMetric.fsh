@@ -29,6 +29,8 @@ Description: "Profile for the DeviceMetric for a PHD"
   * ^comment = "When the category can be derived from the type of the DeviceMetric it can be filled in on creation. Otherwise it can be filled in by updating the DeviceMetric resource when the PHD generates an observation of that type. It can be set to #unspecified until known."
 * measurementPeriod
   * ^comment = "when this information is provided by a GHS device in an Observation Schedule descriptor, it should be filled in here as well."
+* parent ..0
+  * ^short = "No reference to a parent device in PHD. PHDs are not part of a device hierarchy."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1

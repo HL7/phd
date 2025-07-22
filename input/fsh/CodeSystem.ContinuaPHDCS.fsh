@@ -10,7 +10,6 @@ Description: "Codes used to describe the PHD types and interfaces supported by a
 * ^date = "2018-11-24"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * #4 "Pulse Oximeter certified" "The PHG has been  certified for the Pulse Oximeter"
 * #6 "ECG certified" "The PHG has been  certified for the minimal ECG"

@@ -41,15 +41,9 @@ Description: "Observations coming from a PHD where the measurement is a set of n
       * ^definition = "The unit code shall use the UCUM system"
     * code 1..
       * ^definition = "The MDC code must be translated to the UCUM code."
-  * dataAbsentReason ^short = "Populated when a special value or status in Compound-Nu-Observed-Value indicates invalid, not unavailable, or msmt ongoing"
-    * ^definition = "Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This could be a NaN (Not a Number), PINF (Positive infinity), NINF (Negative infinity) or the reserved and not-at-this-resolution special values. It can also be indicated by the (measurement) status field of the Compound-Nu-Observed-Value. Note that the FHIR codes for NAN are no longer 'NAN' but 'not-a-number'. Similar changes have been made for NINF and PINF."
-    * coding ^slicing.discriminator[0].type = #value
-      * ^slicing.discriminator[=].path = "code"
-      * ^slicing.rules = #open
-    * coding contains FhirDefault 1..1
-    * coding[FhirDefault]
-      * code from $DataAbsentReason (required)
-      * code 1..
+  * dataAbsentReason ^short = "Populated when the component reports a special FLOAT value"
+    * ^definition = "Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This happens when the FLOAT reports a special value."
+    * coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
   * interpretation
     * coding ^slicing.discriminator[0].type = #value
       * ^slicing.discriminator[=].path = "system"

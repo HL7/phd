@@ -10,7 +10,6 @@ Description: "Codes used to describe the Continua Health and Fitness interfaces 
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
-// * ^hierarchyMeaning = #grouped-by
 * ^content = #complete
 * #0 "observation-upload-soap" "The PHG has been certified for the PCD-01 upload using Web services"
 * #1 "consent-enabled-soap" "The PHG has been certified for the PCD-01 upload using Web services with patient consent"

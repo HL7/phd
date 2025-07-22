@@ -33,7 +33,7 @@ Context: Observation, DeviceMetric, Observation.component
 * extension[alertOperationalText]
   * value[x] 0..
   * value[x] only string
-  * valueString ^definition = "A human readable description of the operational state of the alerting system ()."
+  * valueString ^definition = "A human readable description of the operational state of the alerting system."
 * extension[thresholdNotificationText]
   * value[x] 0..
   * value[x] only string

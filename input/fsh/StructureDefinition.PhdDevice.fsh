@@ -1,5 +1,4 @@
 Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
-Alias: $CodeableConcept11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/CodeableConcept11073MDC
 
 Profile: PhdDevice
 Parent: Device
@@ -112,6 +111,9 @@ Description: "Profile for the Device Resource for a PHD"
   * type from MDCDeviceVersionTypes (required)
   * value ^short = "The version"
   * component ..0
+* parent ..0
+  * ^short = "No reference to a parent device in PHD. PHDs are not part of a device hierarchy."
+
 * property ^slicing.discriminator[0].type = #value
   // * ^slicing.discriminator[=].path = "type.coding.code"
   * ^slicing.discriminator[=].path = "type"
@@ -121,7 +123,9 @@ Description: "Profile for the Device Resource for a PHD"
     continuaCertProperty 0..* and
     clockBitProperty 0..* and
     isRegulatedProperty 0..1 and
-    clockResolutionProperty 0..1 //and
+    clockResolutionProperty 0..1 and
+    timeSyncAccuracyProperty 0..1 and
+    USB-VID-PID 0..1 // and
     //clockTypeProperty 0..1 and
     //powerSourceProperty 0..1 and
 
@@ -153,10 +157,22 @@ Description: "Profile for the Device Resource for a PHD"
         * ^definition = "If bit is set, code contains Y if cleared, N"
 
 * property[clockResolutionProperty] ^short = "Clock Resolution as reported by the PHD"
-  * ^definition = "For each Boolean clock capability reported by a PHD a property element is used."
+  * ^definition = "The clock resolution as reported by the PHD in microseconds."
   * type from MDCClockResolutionTypes (required)
     * ^short = "Tells what the clock resolution type is"
     * ^definition = "The resolution of the clock as reported by the PHD."
+  * valueQuantity 1..1
+    * ^definition = "The value. All the time fields are scaled to microseconds"
+    * system 1..
+    * system = "http://unitsofmeasure.org" (exactly)
+    * code = UCUM#us
+      * ^definition = "The UCUM code for microseconds is 'us'."
+
+* property[timeSyncAccuracyProperty] ^short = "Time Synchronization Accuracy as reported by the PHD"
+  * ^definition = "The time synchronization accuracy as reported by the PHD in microseconds."
+  * type = Mdc#68221 // MDC_TIME_SYNC_ACCURACY
+    * ^short = "Tells what the time synchronization accuracy is"
+    * ^definition = "The time synchronization accuracy of the clock as reported by the PHD."
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
@@ -177,54 +193,18 @@ Description: "Profile for the Device Resource for a PHD"
       * code 1..
         * ^definition = "If bit is set, the device is not regulated. If cleared, the device is regulated."
 
-// * property[quantitiesProperty] ^short = "The device properties represented by quantities such as clock resolution"
-//   * ^definition = "This element represents all those time properties that are a quantity such as the various clock resolutions and synchronization accuracy."
-//   * ^comment = "If the PHD reports that one of these given properties are unknown, this element shall not be populated for that property."
-//   * type from $Quantity11073MDC (required)
-//     * ^short = "The type of time quantity"
-//     * coding ^slicing.discriminator[0].type = #value
-//       * ^slicing.discriminator[=].path = "system"
-//       * ^slicing.rules = #open
-//     * coding contains MDCType 1..1
-//     * coding[MDCType] ^short = "The 11073-10101 MDC code for the type"
-//       * system 1..
-//       * system = "urn:iso:std:iso:11073:10101" (exactly)
-//       * code 1..
-//         * ^definition = "The MDC code representing the property"
-//         * ^comment = "Currently PHDs support the reporting of the time quantities as shown in the Table. More may be added in the future\r\n\r\n       Description                        CODE            Reference Identifier\r\n       ------------------------------------------------------------------------------------\r\n       Absolute clock resolution         68222            MDC_TIME_RES_ABS\r\n       Base-offset clock resolution      68226            MDC_TIME_RES_BO\r\n       Relative time resolution          68223            MDC_TIME_RES_REL\r\n       Hi Res relative time resolution   68224            MDC_TIME_RES_REL_HI_RES\r\n       Time sync accuracy                68221            MDC_TIME_SYNC_ACCURACY\r\n       Tick Resolution                   68229            MDC_ATTR_TICK_RES\r\n"
-//     * text ^definition = "It is recommended to display at least the MDC reference identifier for the MDC code"
-//   * valueQuantity 1..1
-//     * ^definition = "The value. All the time fields are scaled to microseconds"
-//     * system 1..
-//     * system = "http://unitsofmeasure.org" (exactly)
-//       * ^definition = "The unit code shall use the UCUM system"
-//     * code 1..
-//     * code = #us (exactly)
-//       * ^definition = "The UCUM code (for microseconds it is 'us')"
-//   * valueCode ..0
-
-
-// * property[codedListProperties] ^short = "The device properties represented by a list of codes such as the list of certified PHD or H-FS interfaces"
-//   * ^definition = "This element represents all those properties that are a list of codes. At the moment there is only certified PHD interfaces."
-//   * ^comment = "Continua certified PHDs are required to have these entries."
-//   * type from $CodeableConcept11073MDC (required)
-//     * ^short = "What the coded list is"
-//     * coding 1..
-//       * ^short = "Required MDC code system entry"
-//       * system 1..
-//       * system = "urn:iso:std:iso:11073:10101" (exactly)
-//       * code 1..
-//         * ^definition = "The MDC code representing the property"
-//         * ^comment = "Currently PHDs support the reporting of one of the coded lists as shown in the Table. More may be added in the future\r\n\r\n       Description                CODE    Reference Identifier                           Code System\r\n       -----------------------------------------------------------------------------------------------------------------------------------\r\n    Time synchronization      68220    MDC_TIME_SYNC_PROTOCOL\r       Certified PHD interfaces  532353   MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST       http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs\r\n"
-//     * text ^definition = "It is recommended to display at least the MDC reference identifier for the code"
-//   * valueQuantity ..0
-//   * valueCode 1..
-//     * ^short = "There shall be one valueCode entry for every item supported by the PHG in the list"
-//     * coding 1..
-//       * system 1..
-//         * ^definition = "Either the http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs or urn:iso:std:iso:11073:10101 code systems"
-//       * code 1..
-//         * ^definition = "One of the Continua interface certification codes"
+* property[USB-VID-PID] ^short = "USB Vendor and Product ID"
+  * ^definition = "The USB Vendor and Product ID as reported by the PHD."
+  * type = ContinuaDeviceIdentifiers#USB
+    * ^short = "USB Vendor and Product ID"
+    * ^definition = "The USB Vendor and Product ID as reported by the PHD."
+  * valueQuantity ..0
+  * valueCode.coding.system 
+    * ^short = "USB Vendor and Product ID code system"
+    * ^definition = "The USB Vendor and Product ID naming system id is http://hl7.org/fhir/sid/usb-vid-pid, but that cannot be used here as this is not a code system in FHIR."
+  * valueCode.text 1..1
+    * ^definition = "The USB Vendor and Product ID as reported by the PHD in the form of a coded string such as '1234:56AB'."
+    * ^comment = "The USB Vendor and Product ID is not a required attribute in the IEEE 11073-10206 standard but is often reported by PHDs that support USB transport."
 
 Mapping: IEEE-11073-10206-PhdDevice
 Id: IEEE-11073-10206-PhdDevice

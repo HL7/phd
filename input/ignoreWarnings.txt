@@ -41,8 +41,5 @@ Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.29.0
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.30.0
 
-# This is a fake/example OID for a hospital and this warning can be ignored safely.
-URL value 'urn:oid:1.2.3.4.5.6.7.8.10' does not resolve
-
 # Publisher process choice - can safely be ignored
 The value set expansion is too large, and only a subset has been displayed

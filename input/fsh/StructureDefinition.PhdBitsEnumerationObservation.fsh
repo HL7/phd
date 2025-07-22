@@ -13,20 +13,24 @@ Description: "Observations from a PHD where the measurement is an ASN1 BITS valu
 * . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a bitstring attribute."
   * ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073-10101 BITs value."
 * value[x] ..0
-* component ^slicing.discriminator[1].type = #value
-  * ^slicing.discriminator[=].path = "code"
-  * ^slicing.rules = #open
+// * component ^slicing.discriminator[1].type = #value
+//   * ^slicing.discriminator[=].path = "code"
+//   * ^slicing.rules = #open
 * component contains bitsComponent 0..*
 * component[bitsComponent] ^short = "BITs measurements entry components"
   * ^definition = "Each ASN1 component entrant contains one of the reported BITs settings. These entries are NOT present if the Measurement-Status attribute field indicates an error."
   * code from $ASN1MeasurementBits (required)  
-    * coding.system = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" (exactly)
+    // * coding.system = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" (exactly)
   * value[x] only boolean
   * dataAbsentReason 0..1
+  * dataAbsentReason.coding ^slicing.discriminator.type = #value
+  * dataAbsentReason.coding ^slicing.discriminator.path = "$this"
+  * dataAbsentReason.coding ^slicing.rules = #open
+  * dataAbsentReason.coding contains unsupported 0..1
+  * dataAbsentReason.coding[unsupported]
     * ^short = "For the optional reporting of unsupported bits"
     * ^definition = "Provides a reason why the expected value in the element Observation.component.value[x] is missing. In this profile for this component that happens if the PHD does not support this bit and the uploader wishes to report that situation."
-    * coding ^short = "FHIR code for reporting 'unsupported'"
-      * code = #unsupported (exactly)
+  * dataAbsentReason.coding[unsupported] = http://terminology.hl7.org/CodeSystem/data-absent-reason#unsupported
   * valueBoolean ^short = "The value of the bit"
     * ^definition = "The value of the bit. If the bit is set the value is `true` and if the bit is cleared the value is `false`."
 
