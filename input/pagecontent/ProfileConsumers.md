@@ -136,6 +136,8 @@ In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. 
 Input is welcome!
 </blockquote>
 
+#### Identifier
+To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Details can be found in the [Identifier section](StructureDefinition-PhdBaseObservation.html#ccidentifier). Other systems may add further identifiers.
 
 ### Measurement Status
 In normal situations PHD reported Observation resources have a `Observation.status` element set to "final". However, every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG supports a PHG to report any measurement it receives from a PHD including error states and let downstream consumers address it.
@@ -148,11 +150,9 @@ The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is c
 
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
-#### Identifier
-To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Details can be found in the [Identifier section](StructureDefinition-PhdBaseObservation.html#ccidentifier). Other systems may add further identifiers.
 
-<a id="numerics"></a>
 ### Measurement Values that are numeric or scalar
+<a id="numerics"></a>
 Scalar numeric measurements are the most common type of measurement reported by PHDs. Temperature, weight, height, miles run, pulse rate, etc. are examples. Scalar numeric measurements are reported in Observation resources following the [Phd Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html). The scalar values are reported in the `Observation.valueQuantity` element. If the PHD reports a special FLOAT value; Not a number, Positive infinity, Negative infinity or Not at this resolution, an `Observation.dataAbsentReason` element replaces the valueQuantity and there is no value[x] element.
 
 When there is no special value the `Observation.valueQuantity` is populated with the scalar value, the units, and the system. The units and system are UCUM unless the PHG does not know the UCUM translation for the MDC unit code. The latter can happen if a new specialization, written after the PHG was implemented, introduces a new MDC unit code not previously used in PHDs. The scalar value is reported with the precision indicated by the PHD. Thus 2 and 2.00 represent the same value but measured to a different precision.
