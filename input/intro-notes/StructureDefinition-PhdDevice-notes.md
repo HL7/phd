@@ -1,11 +1,13 @@
 The section below describe the profiled elements in more detail.
 
 ### System Identifier → `Device.identifier`
- All IEEE 11073-10206 PHDs are required to have a system identifier. This usually is an EUI-64 consisting of 8 bytes. The EUI-64 is mapped to the FHIR `Device.identifier.value` element as a sequence of 8 2-digit bytes as HEX separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required by IEEE 11073-10206, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall provide a transport address as a means of uniquely identifying the PHD. Supported transport addresses are Bluetooth and ZigBee. The Bluetooth address is an EUI-48, and the ZigBee address is an EUI-64. These will be encoded as strings just as the EUI-64. Note that USB.vid (vendor id) and USB.pid (product id) are not unique and cannot be used as system identifiers. 
+ All IEEE 11073-10206 PHDs are required to have a system identifier. This usually is an EUI-64 consisting of 8 bytes. The EUI-64 is mapped to the FHIR `Device.identifier.value` element as a sequence of 8 2-digit capitalized HEX characters separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required by IEEE 11073-10206, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall provide a transport address as a means of uniquely identifying the PHD. Supported transport addresses are Bluetooth and ZigBee. The Bluetooth address is an EUI-48, and the ZigBee address is an EUI-64. These will be encoded as strings just as the EUI-64. 
 
 In order to discriminate between an identifier that is a system id and that which is a transport address the `identifier.type` element is used. A dedicated CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the `identifier.type.coding.code` element.
 
 When in the future other system identifiers such as ETSI-ICCID (International Circuit Card Identifier) are used, this coding scheme will need to be extended.
+
+Note that USB.vid (vendor id) and USB.pid (product id) pair identifies a product type from a vendor and cannot be used as system identifier. This information can be represented in a property element of the Device resource. 
 
 The transport addresses are as follows:
 
@@ -73,15 +75,19 @@ A fragment:
 ### Clock information 
 The ACOM clock information is encoded in a set of `Device.property` elements. 
 
-#### Clock resolution &rarr; `Device.property`
- The ACOM clock type and resolution is encoded as a `Device.property` element with the type code indicating the type of the clock. This is a code from [MDCClockResolutionTypes](ValueSet-MDCClockResolutionTypes.html). The value is scaled to a valueQuantity with microseconds `us` as unit. The system is `http://unitsofmeasure.org` (UCUM).
+#### Clock type and resolution &rarr; `Device.property`
+ The ACOM clock type and resolution are encoded as a `Device.property` element with the type code indicating the type of the clock. 
+ 
+ The clock type is encoded in a  property with an ASN1toHL7 code from [value set MDCClockResolutionTypes](ValueSet-MDCClockResolutionTypes.html) and a value "Y".
+
+ The clock resolution is encoded as a property with a code from [MDCClockResolutionTypes](ValueSet-MDCClockResolutionTypes.html). The property value is scaled to a valueQuantity with microseconds `us` as unit. The system is `http://unitsofmeasure.org` (UCUM).
 
 The table below shows the types of clocks that ACOM supports and the codes used to indicate them. 
-|Clock Type|MDC Code|
-|---|---|
-|Wall Clock with DST and Time Zone offset (Base Offset Time)|68226|
-|Wall Clock without DST and Time Zone offset (Absolute Time)|68222|
-|Time Counter (Relative Time)|68223|
+|Clock Type|MDC Code|ASN1toHL7 code (for resolution)|
+|---|---|---|
+|Wall Clock with offset (Base Offset Time)|68226|68219.7|
+|Wall Clock without offset (Absolute Time)|68222|68219.0|
+|Time Counter (Relative Time)|68223|68219.2 or 68219.3|
 
 In devices implementing the Bluetooth GHS profile specification the clock information is provided in the Elapsed Time characteristic. In other Bluetooth Low Energy devices the clock information may be inferred from the Current Time Service. 
 
@@ -91,7 +97,6 @@ In devices implementing the Bluetooth GHS profile specification the clock inform
 |ACOM time capability|`Device.property.type.coding.code`| 
 |---|---|
 |Set Clock is supported|68219.1|
-|Base Offset Time is supported|68219.7|
 |DST Rules are supported|68219.15|
 
 Other codes from the valueSet are not used in ACOM, but are present to support the older IEEE 1103-20601 model. The value of the property is a Boolean value indicating whether the capability is supported or not.

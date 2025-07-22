@@ -124,7 +124,8 @@ Description: "Profile for the Device Resource for a PHD"
     clockBitProperty 0..* and
     isRegulatedProperty 0..1 and
     clockResolutionProperty 0..1 and
-    timeSyncAccuracyProperty 0..1 // and
+    timeSyncAccuracyProperty 0..1 and
+    USB-VID-PID 0..1 // and
     //clockTypeProperty 0..1 and
     //powerSourceProperty 0..1 and
 
@@ -192,6 +193,18 @@ Description: "Profile for the Device Resource for a PHD"
       * code 1..
         * ^definition = "If bit is set, the device is not regulated. If cleared, the device is regulated."
 
+* property[USB-VID-PID] ^short = "USB Vendor and Product ID"
+  * ^definition = "The USB Vendor and Product ID as reported by the PHD."
+  * type = ContinuaDeviceIdentifiers#USB
+    * ^short = "USB Vendor and Product ID"
+    * ^definition = "The USB Vendor and Product ID as reported by the PHD."
+  * valueQuantity ..0
+  * valueCode.coding.system 
+    * ^short = "USB Vendor and Product ID code system"
+    * ^definition = "The USB Vendor and Product ID naming system id is http://hl7.org/fhir/sid/usb-vid-pid, but that cannot be used here as this is not a code system in FHIR."
+  * valueCode.text 1..1
+    * ^definition = "The USB Vendor and Product ID as reported by the PHD in the form of a coded string such as '1234:56AB'."
+    * ^comment = "The USB Vendor and Product ID is not a required attribute in the IEEE 11073-10206 standard but is often reported by PHDs that support USB transport."
 
 Mapping: IEEE-11073-10206-PhdDevice
 Id: IEEE-11073-10206-PhdDevice

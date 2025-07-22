@@ -4,6 +4,7 @@ The following sections give more details on the data elements in a PHDBaseObserv
 HL7 has defined an extension for the Observation resource to reference a gateway device. This extension is used to reference the Device resource representing the Personal Health Gateway (PHG) device.
 
 ### Conditional-create Identifier - prevention of data duplication
+<a name="ccidentifier"></a>
 The *Conditional-create Identifier* is defined to prevent data duplication. It can be used as the selection criterion in the conditional create when uploading observations.
 
 Ideally the PHG will implement a duplication detection mechanism and filter out any observations that have already been uploaded. One possible mechanism is to record the latest timestamp of any observation received during a connection. Then for a given device and patient and upload destination, on a subsequent connection the PHG can filter out any observations with a timestamp earlier than the recorded latest timestamp of the previous connection. The latest timestamp is then updated given the information received during the current connection. This filter not only saves the server from handling the conditional update transaction but saves bandwidth and upload costs.
@@ -12,7 +13,7 @@ Additionally a globally unique identifier can be used in combination with a cond
 
 |Entry|value|Additional information|
 |---|---|---|
-|device|`PHD Device.identifier.value`|This value is a hexadecimal representation of the PHD system identifier (16 hexadecimal characters for the IEEE EUI-64 identifier, 12 for the EUI-48 transport address identifier)|
+|device|`PHD Device.identifier.value`|This value is a hexadecimal representation of the PHD system identifier (16 hexadecimal characters for the IEEE EUI-64 identifier, 12 for the EUI-48 transport address identifier) all capitals and without dashes|
 |patient|`Patient.identifier.value`-`Patient.identifier.system` or<br/>provided logical id|The dashes are part of the identifier. <br/>When the service provider gives the PHG a pre-determined patient logical id the PHG creates no Patient resource and has no patient information. In that situation the provided logical id is used|
 |type|`Observation.code.coding.code`|See [MDC Nomenclature codes](NomenclatureCodes.html) (decimal number)|
 |timestamp|`Observation.effectiveDateTime` or `Observation.effectivePeriod.start`|The reported PHD timestamp. See [Generating the PHD Reported Timestamp](GeneratingtheTimeStampPartIdentifier.html)|
@@ -28,7 +29,7 @@ An example of the this identifier from [this example](Observation-numeric-spotnu
 {% fragment Observation/numeric-spotnumeric JSON EXCEPT:identifier %}
 
 ### Obtaining the Type of observation
-One obtains the IEEE 11073-10101 observation type for the code element in the same manner for all metric observations. See the section [MDC Nomenclature codes](NomenclatureCodes.html) for the details of this mapping.
+One obtains the IEEE 11073-10101 observation type for the code element in the same manner for all metric observations. See the section [MDC Nomenclature codes](NomenclatureCodes.html) for the details.
 
 ### Subject
 The subject element normally points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'. For device settings known to the PHG it should point to the PHD.
@@ -44,36 +45,36 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-IEEE 11073-10206 timestamps represent a UTC time or a local time, that is synchronised with an external time source or not and can come with or without a TZ/DST offset or the timestamp represents a Tick Counter value. These timestamps can come from the current timeline of the PHD or not. In order to map a timestamp for the PHD's current timeline, the PHG needs the PHD's current time. 
+IEEE 11073-10206 timestamps represent a UTC time or a local time, that is synchronized with an external time source or not and can come with or without a TZ/DST offset or the timestamp represents a Tick Counter value. These timestamps can come from the current timeline of the PHD or not. In order to map a timestamp for the PHD's current timeline, the PHG needs the PHD's current time. 
 
 A timestamp comes from the current timeline of the PHD if the PHD's clock progressed naturally without discontinuities since the time reported in the timestamp. This information is included in the timestamp reported by an IEEE 11073-10206 compliant PHD, such as Bluetooth devices following the GHS specification. More information can be found in the IEEE 11073-10206 ACOM and Bluetooth GHS specifications.
 
-Observations with a timestamp that is not from the current timeline of the PHD and that are not from a timeline synchronised with an external time source should be thrown away since there is no way to give them a correct timestamp.
+Observations with a timestamp that is not from the current timeline of the PHD and that are not from a timeline synchronized with an external time source should be thrown away since there is no way to give them a correct timestamp.
 
 The PHG can work with the assumption that the PHD and the PHG are always in the same time zone. This allows the PHG to set the offset of the timestamp to its offset.
 
 For IEEE 11073-10206 timestamps the following table can be used: 
 
-| Time type    | Current | Synced | Offset | Recommended Mapping                                                     | Coincident Timestamp Observation |
+| Time type    | Current | Synced | Offset | Recommended Mapping                                                     | Coincident Timestamp Observation required |
 | ------------ | ------- | ------ | ------ | ----------------------------------------------------------------------- | --------------------------------- |
-| UTC          | Yes     | Yes    | Yes    | Keep as is with optional correction to PHG timeline, keep offset as is  | Yes                               |
-| UTC          | Yes     | Yes    | No     | Keep as is, with optional correction and include PHG offset             | Yes                               |
+| UTC          | Yes     | Yes    | Yes    | Keep as is                                                              | No                               |
+| UTC          | Yes     | Yes    | No     | Keep as is, but include PHG offset                                      | No                               |
 | UTC          | Yes     | No     | Yes    | Map to PHG timeline, including PHG offset                               | Yes                               |
 | UTC          | Yes     | No     | No     | Map to PHG UTC timeline, include PHG offset                             | Yes                               |
-| UTC          | No      | Yes    | Yes    | Keep as is                                                              |
-| UTC          | No      | Yes    | No     | Keep as is, include PHG offset                                          |
-| UTC          | No      | No     | Yes    | Throw away                                                              |
-| UTC          | No      | No     | No     | Throw away                                                              |
-| Local        | Yes     | Yes    | Yes    | Map to UTC+offset with optional correction                              |
-| Local        | Yes     | Yes    | No     | Map to UTC+offset, including PHG offset                                 |
-| Local        | Yes     | No     | Yes    | Map to PHG timeline, including PHG offset                               |
-| Local        | Yes     | No     | No     | Map to PHG timeline, including PHG offset                               |
-| Local        | No      | Yes    | Yes    | Map to UTC+offset                                                       |
-| Local        | No      | Yes    | No     | Map to UTC, include PHG offset                                          |
-| Local        | No      | No     | Yes    | Throw away                                                              |
-| Local        | No      | No     | No     | Throw away                                                              |
-| Tick counter | Yes     | n.a.   | n.a.   | Map to PHG timeline, including PHG offset                               |
-| Tick counter | No      | n.a.   | n.a.   | Throw away                                                              |
+| UTC          | No      | Yes    | Yes    | Keep as is                                                              | No                               |
+| UTC          | No      | Yes    | No     | Keep as is, include PHG offset                                          | No                               |
+| UTC          | No      | No     | Yes    | Throw away                                                              | n.a.                 |
+| UTC          | No      | No     | No     | Throw away                                                              | n.a.                               |
+| Local        | Yes     | Yes    | Yes    | Map to UTC+offset                                                       | Yes                               |
+| Local        | Yes     | Yes    | No     | Map to UTC+offset, including PHG offset                                 | Yes                               |
+| Local        | Yes     | No     | Yes    | Map to PHG timeline, including PHG offset                               | Yes                               |
+| Local        | Yes     | No     | No     | Map to PHG timeline, including PHG offset                               | Yes                               |
+| Local        | No      | Yes    | Yes    | Map to UTC+offset                                                       | No                               |
+| Local        | No      | Yes    | No     | Map to UTC+offset, include PHG offset                                   | No                               |
+| Local        | No      | No     | Yes    | Throw away                                                              | n.a.                               |
+| Local        | No      | No     | No     | Throw away                                                              | n.a.                               |
+| Tick counter | Yes     | n.a.   | n.a.   | Map to PHG timeline, including PHG offset                               | Yes                               |
+| Tick counter | No      | n.a.   | n.a.   | Throw away                                                              | n.a.                               |
 
 The PHG maps the 'converted' timestamp to either an `Observation.effectiveDateTime` element or an `Observation.effectivePeriod` element. The second situation occurs when the metric observation includes a Measurement-Duration (duration) attribute. Then the timestamp attribute gives the start of the period and the end of the period is obtained by adding the Measurement-Duration value to it. If no timestamp is provided, the PHG, using the time of reception of the observation as its timestamp must then do the reverse; the time of reception is the end time and the start time is given by subtracting the Measurement-Duration value from it.
 When the PHG modifies an Observation's timestamp as received from the PHD it shall also generate a Coincident Timestamp observation that records how the Observation.effective[x] element is generated.
@@ -89,7 +90,7 @@ The derivedFrom element references Observation resources that are in some manner
 
 The hasMember element is used when the PHD Observation reports a group of related observations. In GHS an Observation can have an Is Member Of attribute that references a group observation. When uploading to a FHIR server the gateway should report the group observation with a hasMember reference to all member Observations.
 
-In GHS the sensor device related Observations are identified using a 32-bit Observation Id that is unique in the set of observations transferred during a connection.  
+In GHS the sensor related Observations are identified using a 32-bit Observation Id that is unique in the set of observations transferred during a connection.  
 Related observations are best uploaded in a single FHIR Bundle with logical ids assigned.
 
 #### Source-Handle-Reference case (concept from IEEE 11073-20601 - deprecated)

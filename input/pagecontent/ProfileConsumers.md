@@ -82,7 +82,7 @@ In addition to the elements that are always present, the following set of elemen
 |clock.current-time |`Observation.extension.valueReference`|Points to Observation following the Coincident Timestamp Observation profile that records the PHD's current time. This is used for time quality auditing purposes. May be present only when the PHD provides a timestamp. |
 |related observations|`Observation.derivedFrom` `Observation.hasMember`|Points to a PHD Observation that is related to this Observation. An example would be an activity session that has a miles run measurement member. Only present if the observation references another observation.|
 |additional descriptions|`Observation.component` or `Observation.extension`|Sometimes a measurement is sent containing additional information such as the technique used to obtain the measurement. These elements are placed in a component or an extension.|
-||`Observation.identifier`|This element is used to prevent data duplication during uploads.|
+||`Observation.identifier`|A unique identifier can be generated and used by a PHG and to prevent data duplication during uploads.|
 
 ##### The Profile: `Observation.meta.profile`
 An Observation may contain a `meta.profile` element that can help to identify the type of the Observation. For example, if `Observation.profile` entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
@@ -149,7 +149,7 @@ The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is c
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 #### Identifier
-To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Other systems may add further identifiers.
+To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Details can be found in the [Identifier section](StructureDefinition-PhdBaseObservation.html#ccidentifier). Other systems may add further identifiers.
 
 <a id="numerics"></a>
 ### Measurement Values that are numeric or scalar
@@ -361,7 +361,7 @@ The **bold** items are required to be reported by all PHDs and the italicized it
 The UDI (Unique Device Identifier) is supported by the PHD Device profile as an optional element. It is supported by the IEEE 11073-10206 standard and the Bluetooth GHS specifications. When provided by the PHD the actual UDI string will be in human readable form and comes with metadata identifying the issuer and the regulatory authority
 
 #### Device identifier
-The identifier contains elements that (are intended to) uniquely identify the PHD. To distinguish one identifier type from another a code from the [ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) code system is used in the Device.identifier.type. Supported codes include the IEEE EUI-64 System Identifier and transport-based identifiers. See the [CodeSystem-ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) for the complete list of codes. 
+The identifier contains elements that (are intended to) uniquely identify the PHD. To distinguish one identifier type from another a code from the [ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) code system is used in the Device.identifier.type. Supported codes include the IEEE EUI-64 System Identifier and transport-based identifiers. See the [CodeSystem-ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) for the complete list of codes. These identifiers are formatted as hexadecimal strings with each pair of characters separated by dashes and using capitals.
 
 An example is shown below:
 

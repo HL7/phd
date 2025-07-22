@@ -19,7 +19,7 @@ The accuracy is reported in the same unit as the measurement itself. An example 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[3] %}
 
 ##### Simple Alerting
-The simple alerting extension supports monitoring a numerical value (quantities in FHIR) and provisioning of an alarm if the value is outside a defined threshold or limiting range. The extension includes the range, the operational state of the monitoring and text strings desribing these. See [Simple Alerting](StructureDefinition-SimpleAlerting.html). The PHD pulse oximeter and the continuous glucose monitor specialization support this.
+The simple alerting extension supports monitoring a numerical value (quantities in FHIR) and provisioning of an alarm if the value is outside a defined threshold or limiting range. The extension includes the range, the operational state of the monitoring and text strings describing these. See [Simple Alerting](StructureDefinition-SimpleAlerting.html). The PHD pulse oximeter and the continuous glucose monitor specialization support this.
 The extension defines a current limits range for the quantity, an operational state and optional strings for the operational state  and the semantics of the quantity being outside the range. 
 
 This mechanism is used in combination with the `Observation.interpretation` value being set to "in-alarm" when the quantity is outside the limits. 
@@ -43,7 +43,7 @@ A basic simple numeric observation with a timestamp and a supplemental types att
 An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a dataAbsentReason element.
 
 ### Consumer of the PHD Numeric Observation Profile
-The consumer of this profile does not need to concern itself with the mapping complexities or the PHD-related entry for the `Observation.identifier` which is used by the uploader to prevent data duplication. There are some extensions introduced by this profile but the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
+The consumer of this profile does not need to concern itself with the complexities or the PHD-related entry for the `Observation.identifier` which is used by the uploader to prevent data duplication. There are some extensions introduced by this profile but the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
 
 | **Measurement Item**         | **Element**                              | **Additional Information**                                                                                     |
 |-------------------------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------|

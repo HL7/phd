@@ -4,7 +4,7 @@ PHGs may be implemented on a mobile phone, a personal computer, or in a dedicate
 
 A PHG does not have an System-Information and Clock object, but for the purposes of reporting the PHG information, like its system identifier, time synchronization, and serial number, these values are treated *as if* they came from these objects. 
 
-Unlike the PHD where one reports the information if delivered, in the PHG case far fewer fields are required to be reported. The following table summarizes the required fields and their mappings:
+Unlike the PHD where one reports the information if delivered, in the PHG case far fewer fields are required to be reported. The following table summarizes the required fields and their FHIR representation:
 
 <style>table, th, td {
 border: 1px solid black;

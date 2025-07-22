@@ -16,7 +16,7 @@ The `currentLimits` element specifies the acceptable range for the monitored par
 - **Units**: The limits are expressed in a specific unit (e.g., `%` for percentages) using the Unified Code for Units of Measure (UCUM) and should match the unit of the monitored parameter.
 
 ## Alert Operational State
-The IEEE 11073-10206 Alert Operational State attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When `SET`, the alerts are off. This is a state-type measurement, and when this attribute is present, both the set and cleared states are reported. The MDC code of the attribute is `MDC_ATTR_AL_OP_STAT`.
+The IEEE 11073-10206 Alert Operational State attribute uses an ASN1-BITs field to indicate whether the alerts on a given limit (upper or lower) are on or off. When `SET`, the alerts are off. This is a state-type measurement, and when this attribute is present, both the set and cleared states are reported. The MDC reference Identifier of the attribute is `MDC_ATTR_AL_OP_STAT`.
 
 The `alertOperationalState` element indicates the current operational state of the alerting system. It is represented as a `valueCodeableConcept` with codes from the `SimpleAlertOperationalStates` ValueSet. Examples of operational states include:
 - **`On`**: The alerting system is active and monitoring the parameter.
@@ -25,7 +25,7 @@ The `alertOperationalState` element indicates the current operational state of t
 - **`LimitsOff`**: Both upper and lower limit monitoring are disabled.
 
 ## Alert Operational Text
-The IEEE 11073-10206 Alert Operational Text attribute consists of a pair of strings that describe the operational state of the lower and upper threshold monitoring.
+The IEEE 11073-10206 Alert Operational Text attribute consists of a pair of strings that describe the operational state of the lower and upper threshold monitoring. The MDC reference Identifier is `MDC_ATTR_AL_OP_TEXT_STRING`.
 
 The `alertOperationalText` element provides a single human-readable string describing the operational state of the lower and upper threshold monitoring.
 
