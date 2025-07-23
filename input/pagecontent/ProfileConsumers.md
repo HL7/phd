@@ -97,7 +97,7 @@ An example of the Coincident Timestamp extension is shown below:
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[1] %} 
 
 #### References to Other Observations
-There are situations where a given Observation is an important part of another Observation such as a glucose meal context measurement giving additional information about a glucose concentration measurement. In that case the context measurement will have an `Observation.reference` element that points to the Observation resource containing the glucose measurement. Another common case where an Observation references another Observation is in an activity monitor. Results of an exercise session such as miles run, calories burned, average and maximum heart rates, etc. are reported as Observations where each Observation points to the master session Observation with a `Observation.reference` which has the activity type and duration (period).
+There are situations where a given Observation is derived from or part of another Observation such as a BMI observation being derived from a height and weight measurement. In that case the Observation will have `Observation.derivedFrom` elements that point to the Observation resources containing the height and weight measurement. Another common case where an Observation references another Observation is in an activity monitor. Results of an exercise session such as miles run, calories burned, average and maximum heart rates, etc. are reported as Observations where each Observation is referenced from  the master session Observation in an `Observation.hasMember` element.
 
 An example of a reference to another Observation is shown below:
 
@@ -317,7 +317,7 @@ If the Observation containing the measurement has no reference to a coincident t
 
 The coincident timestamp follows the [Phd Coincident Timestamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html).
 
-All readers should check whether or not there is a time fault. Otherwise the information provided by this Observation is mostly for auditing.
+ The information provided by this Observation is mostly for auditing, but readers could check whether or not there is a time fault.
 
 ### The PHD Device Resource
 The PHD Device resource follows the [Phd Device Profile](StructureDefinition-PhdDevice.html).
