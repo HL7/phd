@@ -59,7 +59,7 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
   * valueString ^short = "The value of the string component"
     * ^definition = "The value of the string component"
   * dataAbsentReason ^short = "Populated when the component is missing or invalid"
-    * ^definition = "Provides a reason why the expected value in the nth element component.value[x] is missing. This happens a.o. when a FLOAT component reports a special value."
+    * ^definition = "Provides a reason why the expected value in the nth element component.value[x] is missing. This happens a.o. when a component reports a special FLOAT value."
     * coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
 
 * component

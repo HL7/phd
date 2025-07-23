@@ -1,23 +1,23 @@
 The sections below describe the profiled elements in more detail.
 
-#### **System Identifier**
+#### System Identifier
 PHGs are required to have a system identifier.  This identifier follows the same rules as the [PHD system identifier](StructureDefinition-PhdDevice.html#system-identifier--deviceidentifier). The system identifier is a unique identifier for the PHG and is used to identify the PHG in the FHIR server. The system identifier is represented as a `Device.identifier` element.
  
  An example of a gateway reporting both its Bluetooth and MAC addresses is shown [here](Device-phg-ecde3d4e58532d31.000000000000.html)
 
-#### **Device type**
-The PHG `Device.type` is given by the MDC code 531981. The reference identifier for this code is `MDC_MOC_VMS_MDS_AHD`. "AHD" stands for Application Hosting Device and is the name Continua gave to what is commonly known as a PHG.
+#### Device type
+The PHG `Device.type` is given by the MDC code 531981. The reference identifier for this code is `MDC_MOC_VMS_MDS_AHD`. "AHD" stands for Application Hosting Device and is an old  name for what is commonly known as a PHG.
 
-#### **Time synchronization**
+#### Time synchronization
 The time synchronization is mapped to a device property element with as type the MDC code 68220. The possible codes for the time synchronization method come from the [MDC Time Synchronization Methods value set](ValueSet-MDCTimeSyncMethods.html).
 
-#### **Remaining Optional Data**
+#### Remaining Optional Data
 The treatment of further optional information in a mock SystemInfo object is similar as in the Phd Device Profile.
 
 If these fields are present they shall be encoded as follows:
 
 ##### **Specializations**
-The specializations supported by the PHG may be reported. If reported, they shall be reported in the Device.specializations element for each specialization in the same way as in the Phd Device Profile. The `specialization.systemType` element is populated with the MDC code for the specialization and the `specialization.version` element is populated with the version of the specialization.
+The specializations supported by the PHG may be reported. If reported, they shall be reported in the `Device.specializations` element for each specialization in the same way as in the Phd Device Profile. The `specialization.systemType` element is populated with the MDC code for the specialization and the `specialization.version` element is populated with the version of the specialization.
 
 If the PHG supports multiple versions of the specialization and the uploader wants to report this information, additional specializations entries for the additional versions are made. Alternatively the uploader can leave the version field empty.
 
@@ -29,7 +29,7 @@ An example of generic code use would be as follows
 
 All defined IEEE PHD device specializations can be found in the [MDC Device Types value set](ValueSet-DeviceTypes11073MDC.html).
 
-##### **PHG Product Information**
+##### PHG Product Information
 The PHG product information is reported in the same way as in the Phd Device Profile for the following elements:
 
  - `Device.manufacturer` = *manufacturer name*
@@ -38,15 +38,15 @@ The PHG product information is reported in the same way as in the Phd Device Pro
  - `Device.version` = *version* (optional)
 
 
-##### **Continua Certified PHD interfaces**
+##### Certified PHD interfaces
 The list of Continua Certified PHD interfaces can be provided by older PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard. It is the complement of the same attribute in the Phd Device Profile and encoded in `property` elements in the same way.
 
-##### **Continua Certified Health & Fitness interfaces**
-The list of Continua Certified PHD interfaces can be provided by older PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard.
+##### Certified Health & Fitness interfaces
+Similar to the Certified PHD interfaces, the list of Continua Certified Health & Fitness interfaces can be provided by older PHGs based on the IEEE 11073-20601 standard. It is not supported by the IEEE 11073-10206 ACOM standard.
 
 The Health and Fitness codes are mapped to a list of `property` elements. The codes are from the [MDC Health and Fitness Codes value set](ValueSet-ContinuaPHGInterfaces.html). 
 
-##### **Regulation Status**
+##### Regulation Status
 The PHG regulation status is reported in the same way as in the Phd Device Profile. 
 
 ##### **Further time capabilities**

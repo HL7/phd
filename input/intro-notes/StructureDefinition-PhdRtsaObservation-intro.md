@@ -18,8 +18,8 @@ IEEE 11073-10206 ACOM and GHS support the concept of multi-dimensional arrays. R
 |Unit-code|UCUM code|The unit of the samples|
 |Samples|array of integer|The scaled measured samples|
 
-When mapping the samples directly to FHIR SampledData.data, the FHIR scale factor and origin can be derived from this:
- - SampledData.factor = (B-A)/(J-I)
- - SampledData.origin = (A\*J - B\*I)/ (J-I)
+When mapping the samples directly to FHIR `SampledData.data`, the FHIR scale factor and origin can be derived from this:
+ - `SampledData.factor` = (B-A)/(J-I)
+ - `SampledData.origin` = (A\*J - B\*I)/ (J-I)
 
-A graphing application could use the Actual-range limits to define the upper and lower ranges of a graph and be assured that the waveform would never go above or below those boundaries. These upper and lower boundaries are scaled and placed in the SampledData.lowerLimit and SampledData.upperLimit elements, respectively.
+A graphing application could use the Actual-range limits to define the upper and lower ranges of a graph and be assured that the waveform would never go above or below those boundaries. These upper and lower boundaries are scaled and placed in the `SampledData.lowerLimit` and `SampledData.upperLimit` elements, respectively.

@@ -119,9 +119,9 @@
 <page key="changes" name="Change Log"/>
 <page deprecated="true" key="CodeableConcepts" name="Codeable Concepts"/>
 <page deprecated="true" key="glucoseEnum" name="Coded Enumeration"/>
+<page deprecated="true" key="CoincidentTimeStamp" name="Coincident Time Stamp"/>
 <page deprecated="true" key="coinFault" name="Coincident Time Stamp with a time fault"/>
 <page deprecated="true" key="coincidentTime" name="Coincident Time Stamp: PHG best synchronized"/>
-<page key="CoincidentTimeStamp" name="Coincident Timestamp"/>
 <page deprecated="true" key="bloodPress" name="Compound Measurement"/>
 <page key="ProfileConsumers" name="Consuming the PHD Profile FHIR Resources"/>
 <page key="DIMtoFHIRMapping" name="DIM to FHIR Mapping"/>
