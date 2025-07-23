@@ -77,6 +77,7 @@
 <artifact id="ValueSet/MDCTimeSyncMethods" key="ValueSet-MDCTimeSyncMethods" name="MDC Time Synchronization Methods"/>
 <artifact id="ValueSet/MDCValueSet" key="ValueSet-MDCValueSet" name="MDC Value Set"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
+<artifact id="CodeSystem/MissingMDCCodes" key="CodeSystem-MissingMDCCodes" name="Missing MDC Codes"/>
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
