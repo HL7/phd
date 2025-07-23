@@ -303,15 +303,16 @@ In the PHD-PHG exchange, the PHG retrieves the PHD's current time, time synchron
 
 If the PHD is better synchronized than the PHG, the PHG reports the PHD's times unaltered.
 
-The coincident timestamp also indicates whether there is a time fault. In the case of relative times, the coincident timestamp provides the 'anchor' that allows the PHG to create wall clock times from the PHD's 'tick' values.
+The coincident timestamp also indicates whether there is a time fault. In the case of relative times, the coincident timestamp provides the 'anchor' that allows the PHG to create wall clock times from the PHD's 'tick' values. PHDs use  tick counters or relative time as they are much simpler to implement than a civil-time or UTC clock that needs to track day, month and year boundaries and possibly needs to handle DST adjustments.
 
 The following core information is available from the coincident timestamp observation:
 
 |FHIR element|Description|
 |----|---|
-|`Observation.code.coding.code`|MDC code that indicates what type of time clock is used by PHD. It is one of:<br/>absolute time (local time with no offset to UTC)<br/>base offset time (local time with offset to UTC)<br/>relative time (a tick count)<br/>high resolution relative time (a tick count with high resolution)|
+|`Observation.code.coding.code`|MDC code that indicates what type of time clock is used by PHD. It is one of:<br/>- absolute time (local time with no offset to UTC)<br/>- base offset time (local time with offset to UTC)<br/>- relative time (a tick count)|
 |`Observation.effectiveDateTime`|the PHG's current time - absent if the PHD is better synchronized than the PHG|
-|`Observation.valueDateTime`<br/>`Observation.valueQuantity`<br/>`Observation.dateAbsentReason.coding.code="unknown"`|the PHD's current time if base offset or absolute time<br/>the PHD's current time if a relative time<br/>PHD has a time fault|
+|`Observation.valueDateTime`<br/>`Observation.valueQuantity`<br/>`Observation.dateAbsentReason.coding.code="unknown"`|- the PHD's current time if base offset or absolute time<br/>- the PHD's current time if a relative time<br/>- the PHD has a time fault|
+
 
 If the Observation containing the measurement has no reference to a coincident timestamp, it means the PHD provided no measurement timestamp and the PHG used the time of reception as the current timestamp.
 
@@ -324,27 +325,31 @@ The PHD Device resource follows the [Phd Device Profile](StructureDefinition-Phd
 
 The PHD Device resource contains the following information about the PHD in the following elements:
 
- - `Device.identifier`
-   -  **IEEE EUI-64 System identifier**
+ - **`Device.identifier`**
+   - IEEE EUI-64 System identifier
    - IEEE EUI-48 Bluetooth Address if the PHD uses Bluetooth transports
    - EUI-64 ZigBee address if the PHD uses ZigBee transports
- - `Device.manufacturer`
+ - `Device.udiCarrier`
+    - UDI (Unique Device Identifier) string
+    - UDI issuer
+    - UDI regulatory authority
+ - **`Device.manufacturer`**
    - **Manufacturer name**
- - `Device.modelNumber`
+ - **`Device.modelNumber`**
    - **Model number**
  - `Device.serialNumber`
    - serial number
  - `Device.partNumber`
    - part number
- - `Device.type`
-   - **PHD (Simple MDS)**
+ - **`Device.type`**
+   - **PHD (Simple MDS)** (fixed value)
  - `Device.version`
    - firmware version
    - hardware version
    - software version
    - protocol version
    - Continua version
- - `Device.specialization`
+ - **`Device.specialization`**
    - **Specialization (Blood pressure, thermometer, etc.)**
    - **Specialization version**
  - `Device.property`
@@ -357,15 +362,15 @@ The PHD Device resource contains the following information about the PHD in the 
 
 The **bold** items are required to be reported by all PHDs and the italicized items are exposed by most PHDs. The transport addresses are only exposed in the transport protocol and are, of course, only applicable to PHDs using that transport. It is encouraged by the PHG implementer to add the wireless transport address identifiers since these numbers are often available on the device whereas the system id is not. However, obtaining these addresses may not always be possible on certain platforms.
 
-#### UDI
-The UDI (Unique Device Identifier) is supported by the PHD Device profile as an optional element. It is supported by the IEEE 11073-10206 standard and the Bluetooth GHS specifications. When provided by the PHD the actual UDI string will be in human readable form and comes with metadata identifying the issuer and the regulatory authority
-
 #### Device identifier
 The identifier contains elements that (are intended to) uniquely identify the PHD. To distinguish one identifier type from another a code from the [ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) code system is used in the Device.identifier.type. Supported codes include the IEEE EUI-64 System Identifier and transport-based identifiers. See the [CodeSystem-ContinuaDeviceIdentifiers](CodeSystem-ContinuaDeviceIdentifiers.html) for the complete list of codes. These identifiers are formatted as hexadecimal strings with each pair of characters separated by dashes and using capitals.
 
 An example is shown below:
 
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
+
+#### UDI
+The UDI (Unique Device Identifier) is supported by the PHD Device profile as an optional element. It is supported by the IEEE 11073-10206 standard and the Bluetooth GHS specifications. When provided by the PHD the actual UDI string will be in human readable form and comes with metadata identifying the issuer and the regulatory authority
 
 #### Simple String Entries
 There are several Device elements that are just basic strings. Their meanings are straight forward. In the Phd Device profile they are the following:
