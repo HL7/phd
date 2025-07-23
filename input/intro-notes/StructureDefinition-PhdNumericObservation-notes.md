@@ -1,4 +1,4 @@
-This profile is used to map ACOM Numeric Observations.  The measured value is reported as a floating number with an optional accuracy. In GHS the value is encoded as an IEEE 11073 FLOAT that indicates both precision and the number of significant digits. The `Observation.valueQuantity.value` element is required to honor the reported precision. See [FLOATs and SFLOATs](MderFLOATsandSFLOATs.html) for instructions on handling S/FLOATs and their encoding to the valueQuantity .
+This profile is used to map ACOM Numeric Observations.  The measured value is reported as a floating number with an optional accuracy. In GHS the value is encoded as an IEEE 11073 FLOAT that indicates both precision and the number of significant digits. The `Observation.valueQuantity.value` element is required to honor the reported precision. See [FLOATs and SFLOATs](MDERFLOATsandSFLOATs.html) for instructions on handling S/FLOATs and their encoding to the valueQuantity .
 
 ### Mapping the unit code to FHIR
 The MDC unit code as provided by the PHD needs to be mapped to UCUM. See [MDC Nomenclature Codes](Nomenclaturecodes.html) for more details.

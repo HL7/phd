@@ -587,11 +587,6 @@ In this example there are only xml structure definitions, value sets, code syste
 
         </page>
         <page>
-          <nameUrl value="CoincidentTimeStamp.html"/>
-          <title value="Coincident Timestamp"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
           <nameUrl value="Non11073PHDDevices.html"/>
           <title value="Non IEEE 11073 PHD Devices"/>
           <generation value="markdown"/>

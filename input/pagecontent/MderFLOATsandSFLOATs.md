@@ -39,13 +39,16 @@ In the SFLOAT case the above values would be encoded as follows:
 |0x04D2|1234|0|1234|1234|
 |0x0B2E|2862|0|-1234|-1234|
 
-#### Special Values
-The Mder encoding also has a set of 5 reserved special values which represent some type of error condition. The table shows these values and how they shall be encoded in FHIR. The FHIR `Observation.dataAbsentReason` is used to indicate the meaning of the special value.
+#### Special FLOAT and SFLOAT Values
+The special values are used to indicate that the sensor was unable to acquire a valid measurement. The `Observation.dataAbsentReason` element is used to indicate the meaning of the special value. The `Observation.value[x]` element is not populated when a special value is reported.
 
-|FLOAT Case|SFLOAT case|meaning|FHIR mapping|
+|FLOAT |SFLOAT |meaning|FHIR mapping|
 |---|-|-|-|
 |0x007FFFFF|0x7FF|Not a Number (NaN)|`not-a-number`|
 |0x007FFFFE|0x7FE|Positive Infinity (+Inf)|`positive-infinity`|
 |0x00800002|0x802|Negative Infinity (-Inf)|`negative-infinity`|
 |0x00800000|0x800|Not at this resolution (NRes)|`error`|
 |0x00800001|0x801|Reserved for future use (RFU)|`error`|
+
+NaN is used to indicate an invalid result from the measurement process used by the PHD. 
+Nres is used to indicate that the value cannot be represented with the supported range and resolution of the PHD. This can happen when, e.g., a body thermometer that supports values between 30 and 45 C is used in freezing or boiling water.

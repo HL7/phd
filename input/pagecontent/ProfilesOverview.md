@@ -23,15 +23,15 @@ The measurement observation profiles mirror more or less the measurement 'value-
 
 |Measurement value-type |IEEE 11073-10206 ACOM Observation type|IG Profile                                                                                         |FHIR Observation element|
 |---|---|---|---|
-|scalar                 |Numeric                          |[Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)                      |valueQuantity|
+|scalar                 |Numeric                          |[Numeric Observation Profile](StructureDefinition-PhdNumericObservation.html)                      |`valueQuantity`|
 |discrete               |Discrete                         |                                                                                                   ||
-|                       |Single Event                     |[Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)   |valueCodeableConcept|
-|                       |Multiple Event                   |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.valueCodeableConcept(s)|
-|                       |Multiple Booleans (Bitstring)    |[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)     |component.code<br/>component.valueCodeableConcepts|
-|string                 |String                |[String Observation Profile](StructureDefinition-PhdStringObservation.html) |valueString|
-|peridoic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |valueSampledData|
-|compound               |Compound                         |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |component.value[x]|
-|compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |component.valueQuantity|
+|                       |Single Event                     |[Coded Enumeration Observation Profile](StructureDefinition-PhdCodedEnumerationObservation.html)   |`valueCodeableConcept`|
+|                       |Multiple Event                   |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |`component.valueCodeableConcept(s)`|
+|                       |Multiple Booleans (Bitstring)    |[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)     |`component.code`<br/>`component.valueCodeableConcepts`|
+|string                 |String                |[String Observation Profile](StructureDefinition-PhdStringObservation.html) |`valueString`|
+|peridoic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |`valueSampledData`|
+|compound               |Compound                         |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |`component.value[x]`|
+|compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |`component.valueQuantity`|
 
 Further information on the mapping of the ACOM Observation types to FHIR Observation elements can be found in the [DIM to FHIR Mapping section](DIMtoFHIRMapping.html). An UML diagram of the Observation profiles for measurements is shown below:
 

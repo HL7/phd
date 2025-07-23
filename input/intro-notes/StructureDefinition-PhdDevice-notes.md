@@ -61,7 +61,7 @@ The Reg-Cert-Data-List can be provided by older PHDs based on the IEEE 11073-206
 It contains the Continua version, list of certified PHD interfaces, and the regulation status. The Continua version is mapped to an additional `Device.version` element and the other two fields are mapped to a `Device.property` element.
 
 #### Reg-Cert-Data-List Certified PHD interfaces &rarr; `Device.property`
- The Reg-Cert-Data-List attribute reports the list of Continua certified PHD (Personal Area Network) interfaces as a list interface codes. The codes obtained from the Reg-Cert-Data-List are a combination of a transport code and a device specialization code. See [the PHD Interface codes](CodeSystem-ContinuaPHDInterfaceIDs.html) for the list of possible codes.
+ The Reg-Cert-Data-List attribute reports the list of certified PHD (Personal Area Network) interfaces as a list interface codes. The codes obtained from the Reg-Cert-Data-List are a combination of a transport code and a device specialization code. See [the PHD Interface codes](CodeSystem-ContinuaPHDInterfaceIDs.html) for the list of possible codes.
 
 The interface codes are mapped to a list of properties where the `property.valueCode` element carries a single PHD interface code. The `property.type` element, which identifies the property, is given by the MDC code `532353`. Its reference id is `MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST`. 
 

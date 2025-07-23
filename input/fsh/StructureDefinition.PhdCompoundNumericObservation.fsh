@@ -35,14 +35,14 @@ Description: "Observations coming from a PHD where the measurement is a set of n
   * value[x] only Quantity
   * valueQuantity
     * value 1..
-      * ^definition = "The value of nth element of the compound attribute. The value element for the nth compoundComponent is missing if the attribute sends a special value or the Compound-Nu-Observed-Value status element indicates an error."
+      * ^definition = "The value of nth element of the compound attribute."
     * system 1..
     * system = "http://unitsofmeasure.org" (exactly)
       * ^definition = "The unit code shall use the UCUM system"
     * code 1..
       * ^definition = "The MDC code must be translated to the UCUM code."
   * dataAbsentReason ^short = "Populated when the component reports a special FLOAT value"
-    * ^definition = "Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This happens when the FLOAT reports a special value."
+    * ^definition = "Provides a reason why the expected value in the nth element Observation.compoundComponent.valueQuantity is missing. This happens when the value sent by the PHD is a special FLOAT value."
     * coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)
   * interpretation
     * coding ^slicing.discriminator[0].type = #value

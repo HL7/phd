@@ -66,7 +66,7 @@ Description: "Profile for the Device Resource for a PHG"
     * ^slicing.rules = #open
   * coding contains MDCType 1..1
   * coding[MDCType] ^short = "Required MDC code system entry"
-    * ^definition = "The MDC code for the PHG is a special value defined for V2 PCD-01."
+    * ^definition = "The MDC code for the PHG"
     * system 1..
     * system = "urn:iso:std:iso:11073:10101" (exactly)
       * ^short = "Identifies IEEE 11073-10101 coding system"

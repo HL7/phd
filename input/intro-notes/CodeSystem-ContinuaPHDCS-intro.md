@@ -1,4 +1,4 @@
-These codes are used to express the Continua Personal Area Network (PHD) interfaces. The codes express both the transport (Bluetooth, USB, etc.) and the device specialization (Blood pressure, thermometer, glucose, etc.).
+These codes are used to express the certified Personal Area Network (PHD) interfaces. The codes express both the transport (Bluetooth, USB, etc.) and the device specialization (Blood pressure, thermometer, glucose, etc.).
 
 <style>table, th, td {
 border: 1px solid black;
@@ -14,7 +14,7 @@ The transport code has the following values:
 
 |Transport Code|Transport|
 |--|--|
-|0|Continua version 1.0|
+|0|no transport specified|
 |1|USB|
 |2|Bluetooth HDP|
 |3|ZigBee|
