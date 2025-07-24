@@ -5,7 +5,7 @@ The mapping sections require knowledge of the IEEE 11073-10206 model and are int
  - [Remote Patient Monitoring Considerations](RemotePatientMonitoringConsiderations.html)
  - [Generic and Extensible Modelling Approach](GenericModel.html)
  - [DIM to FHIR Mapping](DIMtoFHIRMapping.html)
-   - [IEEE 11073 FLOATs and SFLOATs](MDERFLOATsandSFLOATs.html)
+   - [IEEE 11073 FLOATs and SFLOATs](FLOATS.html)
    - [IEEE 11073-10101 Nomenclature Codes](Nomenclaturecodes.html)
    - [Generating the Timestamp part of the Observation Identifier](GeneratingtheTimeStampPartIdentifier.html)
  - [Non-IEEE 11073-10206 PHD Devices](Non11073PHDDevices.html)

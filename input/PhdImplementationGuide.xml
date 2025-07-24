@@ -570,7 +570,7 @@ In this example there are only xml structure definitions, value sets, code syste
           <generation value="markdown"/>
 
           <page>
-            <nameUrl value="MderFLOATsandSFLOATs.html"/>
+            <nameUrl value="FLOATS.html"/>
             <title value="IEEE 11073 FLOATs and SFLOATs"/>
             <generation value="markdown"/>
           </page>
