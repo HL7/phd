@@ -42,13 +42,18 @@ In the SFLOAT case the above values would be encoded as follows:
 #### Special FLOAT and SFLOAT Values
 The special values are used to indicate that the sensor was unable to acquire a valid measurement. The `Observation.dataAbsentReason` element is used to indicate the meaning of the special value. The `Observation.value[x]` element is not populated when a special value is reported.
 
-|FLOAT |SFLOAT |meaning|FHIR mapping|
-|---|-|-|-|
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
+|FLOAT Hex|SFLOAT Hex|Meaning|FHIR Mapping|
+|---|---|---|---|
 |0x007FFFFF|0x7FF|Not a Number (NaN)|`not-a-number`|
 |0x007FFFFE|0x7FE|Positive Infinity (+Inf)|`positive-infinity`|
 |0x00800002|0x802|Negative Infinity (-Inf)|`negative-infinity`|
 |0x00800000|0x800|Not at this resolution (NRes)|`error`|
 |0x00800001|0x801|Reserved for future use (RFU)|`error`|
 
-NaN is used to indicate an invalid result from the measurement process used by the PHD. 
-Nres is used to indicate that the value cannot be represented with the supported range and resolution of the PHD. This can happen when, e.g., a body thermometer that supports values between 30 and 45 C is used in freezing or boiling water.
+**Explanation of Special Values:**
+- **NaN (Not a Number)**: Indicates an invalid result from the measurement process used by the PHD.
+- **NRes (Not at this resolution)**: Indicates that the value cannot be represented with the supported range and resolution of the PHD. For example, a body thermometer supporting values between 30°C and 45°C may report NRes if used in freezing or boiling water.
