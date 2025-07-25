@@ -1,4 +1,4 @@
-### Plain Language Summary 
+<!-- ### Plain Language Summary 
 HL7 (Health Level Seven International) is a global organization that develops standards for the exchange of health information. These standards ensure that healthcare systems can communicate effectively, enabling better care for patients.
 
 This **Personal Health Device Implementation Guide (PHD IG)** is based on the IEEE 11073-10206 standard, which defines a generic and extensible model for observations and ensures consistent time management. The guide explains how data from Personal Health Devices (PHDs)—like blood pressure monitors, glucose meters, and fitness trackers—can be represented in a standardized format called FHIR (Fast Healthcare Interoperability Resources). FHIR is a modern standard that makes it easier to share health data between devices, apps, and healthcare systems.
@@ -10,7 +10,7 @@ The guide is designed for two main audiences:
 
 The guide ensures that data from PHDs is mapped to FHIR in a consistent way, regardless of the device or protocol used. It supports devices using the Bluetooth Generic Health Sensor (GHS) profile, which follows the IEEE 11073-10206 model. This ensures compatibility with a broad range of Bluetooth-enabled health devices, facilitating interoperability and consistent data exchange across different platforms and ecosystems.
 
-By following this guide, developers can ensure that PHD data is accurate, interoperable, and ready for use in modern healthcare systems.
+By following this guide, developers can ensure that PHD data is accurate, interoperable, and ready for use in modern healthcare systems. -->
 
 ### Overview
 
