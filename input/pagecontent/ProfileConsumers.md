@@ -251,7 +251,7 @@ Each `Observation.component` entry will have the following:
 |FHIR element|Description|
 |---|---|
 |`Observation.component.code.coding.code`|ASN1ToHL7 code telling what the entry is|
-|`Observation.component.code.coding.system="http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"`|ASN1ToHL7 code system identifier|
+|`Observation.component.code.coding.system="http://terminology.hl7.org/CodeSystem/ASN1ToHL7"`|ASN1ToHL7 code system identifier|
 |`Observation.component.valueBoolean`|contains the value of the state or event being true or false|
 
 The 'independent living' example mentioned above does not currently exist in any specialization but it is illustrative of the concept. However, a pulse oximeter device sensor status measurement containing several different events does exist. An example of such a measurement can be found [here](Observation-bits-observation.html)

@@ -20,7 +20,7 @@ Description: "Observations from a PHD where the measurement is an ASN1 BITS valu
 * component[bitsComponent] ^short = "BITs measurements entry components"
   * ^definition = "Each ASN1 component entrant contains one of the reported BITs settings. These entries are NOT present if the Measurement-Status attribute field indicates an error."
   * code from $ASN1MeasurementBits (required)  
-    // * coding.system = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7" (exactly)
+    // * coding.system = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7" (exactly)
   * value[x] only boolean
   * dataAbsentReason 0..1
   * dataAbsentReason.coding ^slicing.discriminator.type = #value
