@@ -171,7 +171,7 @@
 			"type": {
 				"coding": [
 					{
-						"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+						"system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
 						"code": "532354.0",
 						"display": "negated-regulation-status"
 					}

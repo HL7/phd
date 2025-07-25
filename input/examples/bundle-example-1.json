@@ -251,7 +251,7 @@
             "type": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                  "system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
                   "display": "negated-regulation-status"
                 }
@@ -446,7 +446,7 @@
             "type": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                  "system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
                   "code": "532354.0",
                   "display": "negated-regulation-status"
                 }
@@ -493,7 +493,7 @@
             "type": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                  "system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
                   "code": "68219.0",
                   "display": "mds-time-capab-real-time-clock"
                 }
@@ -516,7 +516,7 @@
             "type": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                  "system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
                   "code": "68219.1",
                   "display": "mds-time-capab-set-clock"
                 }
@@ -539,7 +539,7 @@
             "type": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+                  "system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
                   "code": "68219.2",
                   "display": "mds-time-capab-relative-time"
                 }

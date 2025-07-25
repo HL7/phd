@@ -61,7 +61,7 @@
 			"code": {
 				"coding": [
 					{
-						"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+						"system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
 						"code": "8410608.0",
 						"display": "body-movement"
 					}
@@ -73,7 +73,7 @@
 			"code": {
 				"coding": [
 					{
-						"system": "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7",
+						"system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
 						"code": "8410608.5",
 						"display": "improper-body-position"
 					}

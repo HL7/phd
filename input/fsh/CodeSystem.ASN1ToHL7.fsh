@@ -12,24 +12,30 @@ Id: ASN1ToHL7
 Title: "ASN1 bits to HL7 enumerated values"
 Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeable Concepts"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
-* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
-//* ^version = "2.1.0"
+//* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
+* ^url = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7"
 //* ^status = #active
 * ^experimental = false
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^content = #complete
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #trial-use
+* ^extension[=].valueCode.extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"
+* ^extension[=].valueCode.extension.valueCanonical = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7"
+
+
 * ^property[0].code = #eventOrState
-* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#eventOrState"
+* ^property[=].uri = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7#eventOrState"
 * ^property[=].description = "The code type is an event or state"
 * ^property[=].type = #code
 * ^property[+].code = #source
-* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#source"
+* ^property[=].uri = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7#source"
 * ^property[=].description = "The code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #code
 * ^property[+].code = #MDCCode
-* ^property[=].uri = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7#MDCCode"
+* ^property[=].uri = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7#MDCCode"
 * ^property[=].description = "The decimal code for the MDC code of the bits observation"
 * ^property[=].type = #Coding
 // values for properties are defined here, although that is probably not the best way to do it
