@@ -7,7 +7,7 @@ In order to discriminate between an identifier that is a system id and that whic
 
 When in the future other system identifiers such as ETSI-ICCID (International Circuit Card Identifier) are used, this coding scheme will need to be extended.
 
-Note that USB.vid (vendor id) and USB.pid (product id) pair identifies a product type from a vendor and cannot be used as system identifier. This information can be represented in a property element of the Device resource. 
+Note that USB.vid (vendor id) and USB.pid (product id) pair identifies a product type from a vendor and cannot be used as system identifier. This information can be represented in a `property` element of the Device resource.
 
 The transport addresses are as follows:
 
@@ -28,7 +28,7 @@ An example of a system identifier is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
 
 ### UDI &rarr; `Device.udiCarrier`
- The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard. It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI elements supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The udiCarrier does have elements for each of these entries. The entryType code for this sourcing of the UDI `electronic-transmission` is used as the UDI is transmitted electronically.
+ The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard. It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI attributes supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The `udiCarrier` does have elements for each of these entries. The entryType code for this sourcing of the UDI `electronic-transmission` is used as the UDI is transmitted electronically.
 
 The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
@@ -66,7 +66,7 @@ It contains the Continua version, list of certified PHD interfaces, and the regu
 The interface codes are mapped to a list of properties where the `property.valueCode` element carries a single PHD interface code. The `property.type` element, which identifies the property, is given by the MDC code `532353`. Its reference id is `MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST`. 
 
 #### Reg-Cert-Data-List Regulation Status
-The regulation status element has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. The regulation status is mapped to an additional `Device.property.valueCode` element. 
+The regulation status attribute has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. The regulation status is mapped to an additional `Device.property.valueCode` element. 
 
 A fragment:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354') %}

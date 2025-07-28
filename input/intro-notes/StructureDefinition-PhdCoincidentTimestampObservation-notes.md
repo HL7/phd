@@ -1,7 +1,7 @@
-Further notes on the elements of the PhdCoincidentTimeObservation resource:
+Further notes on elements and the use of the PhdCoincidentTimeObservation resource:
 
 ### Code
-The code element is used to report the type of time clock used by the PHD. The PHG obtains the type of time clock and its current setting by inspecting the PHD measurement timestamp and current time. The ACOM clock types are mapped as follows:
+The `code` element is used to report the type of time clock used by the PHD. The PHG obtains the type of time clock and its current setting by inspecting the PHD's measurement timestamp and the PHD's clock. The ACOM clock types are mapped as follows:
 
 <style>table, th, td {border: 1px solid black; border-collapse:collapse; padding: 6px;}</style>
 |ACOM clock type|`Observation.code.coding`|

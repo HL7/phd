@@ -25,7 +25,7 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 |IEEE 11073-10206 Sample Array Observation Attribute|FHIR Observation element|
 |--|--|
 |samples[i]     |`valueSampledData.data[i]`|
-|Unit-Code      |`valueSampledData.origin.code` (as UCUM when available)|
+|Unit-Code      |`valueSampledData.origin.code` (mapped to UCUM when available)|
 |See calculation of 'b' above|`valueSampledData.origin.value` = b|
 |See calculation of 's' above|`valueSampledData.scaleFactor` = s|
 |Sample-period|`valueSampledData.period` (milliseconds)|
