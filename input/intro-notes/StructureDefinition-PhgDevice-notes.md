@@ -9,7 +9,7 @@ PHGs are required to have a system identifier.  This identifier follows the same
 The PHG `Device.type` is given by the MDC code 531981. The reference identifier for this code is `MDC_MOC_VMS_MDS_AHD`. "AHD" stands for Application Hosting Device and is an old  name for what is commonly known as a PHG.
 
 #### Time synchronization
-The time synchronization is mapped to a device property element with as type the MDC code 68220. The possible codes for the time synchronization method come from the [MDC Time Synchronization Methods value set](ValueSet-MDCTimeSyncMethods.html).
+The time synchronization is mapped to a `property` element with as type the MDC code 68220. The possible codes for the time synchronization method come from the [MDC Time Synchronization Methods value set](ValueSet-MDCTimeSyncMethods.html).
 
 #### Remaining Optional Data
 The treatment of further optional information in a mock SystemInfo object is similar as in the Phd Device Profile.
@@ -21,7 +21,7 @@ The specializations supported by the PHG may be reported. If reported, they shal
 
 If the PHG supports multiple versions of the specialization and the uploader wants to report this information, additional specializations entries for the additional versions are made. Alternatively the uploader can leave the version field empty.
 
-A PHG is often designed to support all current and future PHDs that support a given version of the IEEE 11073-10206 standard. Instead of listing all the specializations individually (which could greatly increase the size of the message) one can use the 'generic' device code. In this case, the `specialization.version` element, if populated, indicates the version of the IEEE 11073-10206 standard. If multiple versions of the IEEE 11073-10206 standard are supported and the uploader wants to report this information, a separate 'generic' entries for each version are reported. Alternatively, the version element can be left empty.
+A PHG is often designed to support all current and future PHDs that support a given version of the IEEE 11073-10206 standard. Instead of listing all the specializations individually (which could greatly increase the size of the message) one can use the 'generic' device code. In this case, the `specialization.version` element, if populated, indicates the version of the IEEE 11073-10206 standard. If multiple versions of the IEEE 11073-10206 standard are supported and the uploader wants to report this information, a separate 'generic' entries for each version are reported. Alternatively, the `version` element can be left empty.
 
 An example of generic code use would be as follows
 

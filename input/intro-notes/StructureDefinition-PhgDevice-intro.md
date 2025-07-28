@@ -13,7 +13,7 @@ padding: 6px;}</style>
 
 |Required field|Device element|
 |--|---|
-|System Identifier|identifier|
-|Time sync protocol|property|
+|System Identifier|`identifier`|
+|Time sync protocol|`property`|
 
-A transport address is not required. It is still strongly recommended that the transport address is reported as it is often beneficial to consumers. Most PHD-PHG transports provide a means of obtaining a transport address or an equivalent identifier such as a MAC address. In addition, it may be beneficial to report the transport address of the H&FS interface as well.
+A transport address is not required. It is recommended that the transport address is reported as it is often useful to consumers. Most PHD-PHG transports provide a means of obtaining a transport address or an equivalent identifier such as a MAC address. In addition, it may be beneficial to report the transport address of the H&FS interface as well.
