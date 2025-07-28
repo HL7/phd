@@ -29,7 +29,7 @@ The measurement observation profiles mirror more or less the measurement 'value-
 |                       |Multiple Event                   |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |`component.valueCodeableConcept(s)`|
 |                       |Multiple Booleans (Bitstring)    |[BITs Enumeration Observation Profile](StructureDefinition-PhdBitsEnumerationObservation.html)     |`component.code`<br/>`component.valueCodeableConcepts`|
 |string                 |String                |[String Observation Profile](StructureDefinition-PhdStringObservation.html) |`valueString`|
-|peridoic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |`valueSampledData`|
+|periodic samples       |Sample array                     |[Rtsa Observation Profile](StructureDefinition-PhdRtsaObservation.html)                            |`valueSampledData`|
 |compound               |Compound                         |[Compound Observation Profile](StructureDefinition-PhdCompoundObservation.html)                    |`component.value[x]`|
 |compoundNumeric        |Compound Numeric                 |[Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html)     |`component.valueQuantity`|
 
@@ -43,7 +43,7 @@ Further information on the mapping of the ACOM Observation types to FHIR Observa
 The value-type of the measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
 
 ### PHD Device Profile
-The PHD Device profile for the IEEE 11073-10206 ACOM System Information object supports the static device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that can support the UDI attribute.  
+The PHD Device profile for the IEEE 11073-10206 ACOM System Information object supports the static device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that supports the UDI attribute.
 
 ### PHG Device Profile
 A PHG is not part of IEEE 11073-10206 ACOM, but it is still software on a device and to work with a PHD it must support certain time features. The PHG is also responsible for correcting measurement timestamp data from the PHD if necessary. Thus, reporting the properties of the PHG, especially those properties that may have an influence on the reported measurement data, are considered important for this IG. To accomplish this task, the PHG is treated as if it has similar system information attributes as a PHD. In this manner a PHG can report its equivalent values of the information that would be in the PHD System Information. There is, however, no System-Type-Spec-List. It is clear that any measurement type a PHG decodes and maps it must support. Only the system-identifier and time synchronization values are required to be reported for a PHG.

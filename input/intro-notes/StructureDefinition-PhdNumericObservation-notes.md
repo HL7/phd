@@ -40,16 +40,16 @@ The above states that the Continuous Glucose Monitor PHG is 95% sure that the re
 ### Examples:
 A basic simple numeric observation with a timestamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](Observation-numeric-spotnumeric.html). Simple numeric measurements are common in PHDs.
 
-An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a dataAbsentReason element.
+An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a `dataAbsentReason` element.
 
 ### Consumer of the PHD Numeric Observation Profile
 The consumer of this profile does not need to concern itself with the complexities or the PHD-related entry for the `Observation.identifier` which is used by the uploader to prevent data duplication. There are some extensions introduced by this profile but the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
 
 | **Measurement Item**         | **Element**                              | **Additional Information**                                                                                     |
 |-------------------------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Measurement type              | `Observation.code.coding.code`          | There shall be one coding element using the MDC coding system.<br>If a vital sign, there will be an additional coding element using one of the LOINC vital-signs codes. |
+| Measurement type              | `Observation.code.coding.code`          | There shall be one `coding` element using the MDC coding system.<br>If a vital sign, there will be an additional `coding` element using one of the LOINC vital-signs codes. |
 | Measurement value             | `Observation.valueQuantity.value`       | The value has the precision of the original. measurement.                                                               |
-| Measurement units             | `Observation.valueQuantity.code`        | FHIR uses UCUM coding. system.                                                                                       |
+| Measurement units             | `Observation.valueQuantity.code`        | FHIR uses the UCUM coding system.                                                                                       |
 | Error                         | `Observation.dataAbsentReason`          | Contains error code. If present, no `Observation.valueQuantity` is present.                                    |
 | Timestamp                    | `Observation.effectiveDateTime`<br>`Observation.effectivePeriod` | If the measurement is a point in time.<br>If the measurement has a duration.                                   |
 | Coincident timestamp reference | `Observation.extension.valueReference` | Points to an Observation following the Coincident Timestamp Observation profile. For time quality auditing purposes. Not present if the sensor provides no timestamp. |

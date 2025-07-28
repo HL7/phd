@@ -13,5 +13,5 @@ A Patient resource for a known or an unknown patient shall be created by the PHG
 ### Examples:
 An example of a PHD generated patient for a known patient is given [here](Patient-patientExample-1.html). 
 An example of a PHD generated patient for an unknown patient is given [here](Patient-patientExample-2.html). 
-These examples contain an optional name element.
+These examples contain an optional `name` element.
 

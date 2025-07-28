@@ -30,8 +30,8 @@ Every PHD generated measurement Observation resource contains the following info
 |IEEE 11073-10206 Observation attribute|FHIR Observation data element|Description|
 |---|---|---|
 |type|`code`|This element tells you what the measurement is. There should be a coding element using the MDC coding system.<br>If a vital sign, there will be an additional coding element using one of the [LOINC vital sign codes]({{ site.data.fhir.path }}valueset-observation-vitalsignresult.html).| 
-||`category`|The category element is present with at least the value `"phd"`. For vital signs, there will also be another element with value `"vital-signs"` as required by the vital signs profile.
-|measurement-status|`Observation.status`,<br> `Observation.dataAbsentReason`|This element tells what the status of the measurements is and has usually the value `final`. In error cases the data-absent-reason element is filled with an appropriate value.
+||`category`|The `category` element is present with at least the value `"phd"`. For vital signs, there will also be another element with value `"vital-signs"` as required by the vital signs profile.
+|measurement-status|`Observation.status`,<br> `Observation.dataAbsentReason`|This element tells what the status of the measurements is and has usually the value `final`. In error cases the `dataAbsentReason` element is filled with an appropriate value.
 |timestamp|`Observation.effectiveDateTime`,<br/>`Observation.effectivePeriod`|This element tells when the measurement occurred, and is a point in time or a period with a start- and end-time.|
 |PHG reference|`Observation.extension.valueReference`|This element points to the PHG Device that generated the FHIR Observation. The gateway extension is identified by `Observation.extension.url="http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice"`|
 |patient reference|`Observation.subject`|Points to the Patient to whom this measurement refers|
@@ -86,7 +86,7 @@ In addition to the elements that are always present, the following set of elemen
 
 ##### The Profile: `Observation.meta.profile`
 An Observation may contain a `meta.profile` element that can help to identify the type of the Observation. For example, if `Observation.profile` entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
-Note that there is no requirement that the profile element be present. If it is not present, the consumer can determine the type of measurement value by looking at the Observation.value[x] element.
+Note that there is no requirement that the `profile` element be present. If it is not present, the consumer can determine the type of measurement value by looking at the Observation.value[x] element.
 
 ##### The Coincident Timestamp extension
 When present, the consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation that adheres to the [PhdCoincidentTimeStampObservation profile](StructureDefinition-PhdCoincidentTimeStampObservation.html). This reference may be present in the [CoincidentTimeStampReference extension](StructureDefinition-CoincidentTimeStampReference.html). If the reference is NOT present, it means that the PHD did not provide a timestamp and the PHG used the time of reception as the timestamp or that the PHG determined that the PHD timestamp is reliable and can be used as is. PHDs that send stored data shall include timestamps in their measurements.
@@ -142,11 +142,11 @@ In normal situations PHD reported Observation resources have a `Observation.stat
 
 There are other non-error special conditions that may also be reported, such as the measurement is test or demo data.
 
-Depending upon what the special condition is, it is reported in either the dataAbsentReason, interpretation, or `meta.security` element. All of these entries are CodeableConcepts. When the condition is reported in the dataAbsentReason, there will be no measurement value entry in accord with the FHIR specification, even if the PHD reports a measurement value. Note that there may be multiple interpretation entries but only one dataAbsentReason element.
+Depending upon what the special condition is, it is reported in either the `dataAbsentReason`, interpretation, or `meta.security` element. All of these entries are CodeableConcepts. When the condition is reported in the `dataAbsentReason`, there will be no measurement value entry in accord with the FHIR specification, even if the PHD reports a measurement value. Note that there may be multiple interpretation entries but only one `dataAbsentReason` element.
 
 The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is covered in the [PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html).
 
-In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special FLOAT values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the dataAbsentReason element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
+In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special FLOAT values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the `dataAbsentReason` element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 
 ### Measurement Values that are numeric or scalar
@@ -163,7 +163,7 @@ If the PHD reports a special FLOAT value an `Observation.dataAbsentReason` eleme
 |`Observation.valueQuantity.code`|units in UCUM|
 |`Observation.valueQuantity.system="http://unitsofmeasure.org"`|code system is UCUM|
 
-If a special FLOAT value is reported an `Observation.dataAbsentReason` then this replaces the valueQuantity. The dataAbsentReason is a CodeableConcept and will have the following possible codes from the data absent reason coding system "http://terminology.hl7.org/CodeSystem/data-absent-reason":
+If a special FLOAT value is reported an `Observation.dataAbsentReason` then this replaces the valueQuantity. The `dataAbsentReason` is a CodeableConcept and will have the following possible codes from the data absent reason coding system "http://terminology.hl7.org/CodeSystem/data-absent-reason":
 
  - `Observation.dataAbsentReason.coding.code="not-a-number"`
  - `Observation.dataAbsentReason.coding.code="positive-infinity"`
@@ -180,8 +180,7 @@ An example of the valueQuantity in the Phd Numeric Observation Profile for a the
 ### Measurement Values that are Compounds
 IEEE 11073-10206 (ACOM) supports compound observations where the components can have a numeric, a string, a code or a sample array value. This type of observation is mapped to the [Phd Compound Observation](StructureDefinition-PhdCompoundObservation.html) profile.
 
-There is no primary Observation.value[x] entry and there is no `Observation.dataAbsentReason` unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an `Observation.dataAbsentReason` element. All `Observation.component` entries could have dataAbsentReason entry but that does NOT mean the entire measurement has an `Observation.dataAbsentReason` entry. It is also possible that a component will have its own interpretation element of the same type as shown in the Measurement Status section. Currently there are no market PHDs that generate an `Observation.interpretation` element.
-There is no primary Observation.value[x] entry and there is no `Observation.dataAbsentReason` unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an `Observation.dataAbsentReason` element. All `Observation.component` entries could have dataAbsentReason entry but that does NOT mean the entire measurement has an `Observation.dataAbsentReason` entry. 
+There is no primary `Observation.value[x]` entry and there is no `Observation.dataAbsentReason` unless the *entire* measurement had an error, in which case there will be no compound entries either. It is possible for each compound entry to have its own error and that will be reported in an `Observation.component.dataAbsentReason` element. All `Observation.component` entries could have `dataAbsentReason` entry but that does NOT mean the entire measurement has an `Observation.dataAbsentReason` entry. It is also possible that a component will have its own interpretation element of the same type as shown in the Measurement Status section. Currently there are no market PHDs that generate an `Observation.component.interpretation` element.
 
 Compound Observations will have a code indicating what the 'entire' measurement is, for example, non-invasive blood pressure or acceleration. Each `Observation.component` element will have its own code describing each individual compound or vector entry, for example, the systolic, diastolic, and mean pressures for the blood pressure or x-, y-, and z-projections of an acceleration.
 
@@ -234,7 +233,7 @@ This measurement indicates that the glucose concentration measurement was taken 
 ### Measurement Values that are Events or States
 PHDs support a measurement value type that indicate a set of states or events, for example, an independent living monitor may be surveilling an elderly patient's room and report its current state 'door closed', 'window closed', 'climate control on', 'patient in room', and 'lights off'. The report may have been triggered by an event like 'patient entered room'. (There is no such measurement type as a current room state but it illustrates the concept.) PHDs have an efficient way to package such reports into a single integer. This type of reporting is done when more than one state and/or event can occur simultaneously. In order to understand such a report one has to know what the state or event is, and its value. States and events are binary. A state is either on or off and an event either happens or it doesn't. There is no corresponding HL7 data type for this kind of measurement thus the [ASN1ToHL7](CodeSystem-ASN1ToHL7.html) code system has been developed to express these states and events as codes. A Boolean is used to express the corresponding values.
 
-Measurement values that fall into this category are mapped to an Observation following the [Phd Bits Enumeration Observation profile](StructureDefinition-PhdBitsEnumerationObservation.html).
+Measurement values of this type are mapped to an Observation following the [Phd Bits Enumeration Observation profile](StructureDefinition-PhdBitsEnumerationObservation.html).
 
 Each event or state is reported in a component element. The `Observation.code` will be the ASN1ToHL7 code indicating what the state or event is. The value of the state or event will be a Boolean value. It should be noted that 'state' values must be reported for either state. It is as important to know whether the door is opened or closed. Events are only required to be reported when they happen.
 
@@ -406,11 +405,11 @@ The example below shows an example of a PHD following the Glucose specialization
 
 
 #### Property
-The property element contains time clock information and certification information. There will be at least one property entry for every PHD and that is the time synchronization information. The entry will be present even if the PHD supports no time clock, and that will be 'no time synchronization'.
+`property` elements contain time clock information and certification information. There will be at least one `property` entry for every PHD and that reports the time synchronization information. The entry will be present even if the PHD supports no time clock, and in that case the value will be 'no time synchronization'.
 
-There are two types of properties, one that is described by a list of codes, and one that is described by a list of quantities. The list often contains only one entry. Though not obvious from the FHIR specification, a property cannot contain *both* a quantity and coded element.
+There are two types of properties, one that is described by a list of codes, and one that is described by a list of quantities. The list often contains only one entry. Though not obvious from the FHIR {{site.data.fhir.version}} specification, a `property` cannot contain *both* a quantity and coded element.
 
-The `Device.type` is a CodeableConcept which tells what the property is. There are [MDC](https://terminology.hl7.org/MDC.html) or [ASN1ToHL7](CodeSystem-ASN1ToHL7.html) codes for each property type a PHD can expose. They are as follows:
+The `property.type` is a CodeableConcept which tells what the property is. There are [MDC](https://terminology.hl7.org/MDC.html) or [ASN1ToHL7](CodeSystem-ASN1ToHL7.html) codes for each property type a PHD can expose. They are as follows:
 
 |description|Code|Reference identifier|
 |--|--|--|
@@ -426,7 +425,7 @@ The `Device.type` is a CodeableConcept which tells what the property is. There a
 |Continua Certified Device List|532353|MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST|
 
 ##### Time Synchronization
-There will always be a time synchronization entry. It is identified by a property.type.coding.code="68220". It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](StructureDefinition-PhdDevice.html). This value is TIME_SYNC_NONE (532224) if the PHD does not support a synchronization protocol or has no time clock at all. 
+There will always be a time synchronization entry. It is identified by a `property.type.coding.code="68220"`. It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](StructureDefinition-PhdDevice.html). This value is TIME_SYNC_NONE (532224) if the PHD does not support a synchronization protocol or has no time clock at all.
 
 An example of time synchronization property entry is shown below:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[4] %}
@@ -435,7 +434,7 @@ An example of time synchronization property entry is shown below:
 ##### Time Capabilities
 The time capabilities defines the types of real time clocks supported, whether the time can be set, whether external time synchronization is possible, etc. Each capability is treated as an event, so most PHGs will only report the capability if the PHD indicates it has the capability. The value is a single valueCode which will be either "Y" if the PHD has the capability or "N" if not. Most PHGs will not report the "N" case as that would significantly increase the size of the resource on the wire.  There may be several such time capability property entries.
 
-The time capabilities property is indicated by the `Device.code` having one of the ASN1ToHL7 codes of "68219.x" which is NOT a decimal number! The value is a valueCode with codes "Y" or "N".
+The time capabilities property is indicated by the `property.type.code` having one of the ASN1ToHL7 codes of "68219.x" which is NOT a decimal number! The value is a valueCode with codes "Y" or "N".
 
 The example below gives the time capabilities of a market pulse oximeter:
 
@@ -446,7 +445,7 @@ The time clock resolutions is given by one of four MDC codes for each of the pos
 
 The resolution value is a valueQuantity and it gives the time interval between clock 'pulses', regardless of the type of time clock, in units of microseconds.
 
-The property is indicated by the `Device.code` having one of four MDC codes "68222, 68223, 68224, and 68226". The value is a valueQuantity.
+The property is indicated by the `property.type.code` having one of four MDC codes "68222, 68223, 68224, and 68226". The value is a valueQuantity.
 
 An example of a time resolution property for a relative time clock with a time resolution of of one second is shown below:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[8] %}
@@ -461,7 +460,7 @@ ACOM-based ECGs do not use the time tick resolution to report R-R intervals.
 #### Regulation Status
 The Regulation status is a set of states where only one state is defined. Regulation Status is used to indicate which regulation body the PHD is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated.
 
-The property is indicated by the `Device.code` having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
+The property is indicated by the `property.type.code` having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
 
 An example of an entry for an FDA regulated device is shown below:
 
@@ -470,7 +469,7 @@ An example of an entry for an FDA regulated device is shown below:
 #### Continua Certified PHD Interfaces
 This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device specialization entries indicate what the PHD supports. Certified means the PHD has been (independently) placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
 
-The property is indicated by the `Device.code` having the MDC code "532353". The value is a code from the [ValueSet for PHD Interfaces](ValueSet-ContinuaPHDInterfaces.html) code system.
+The property is indicated by the `property.type.code` having the MDC code "532353". The value is a code from the [ValueSet for PHD Interfaces](ValueSet-ContinuaPHDInterfaces.html) code system.
 
 An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
 
@@ -489,9 +488,10 @@ Only the entries that are different from the PHD are discussed in the following 
 This field states that the device is a PHG. This IG uses the MDC code MDC_MOC_VMS_MDS_AHD that indicates a gateway. "AHD" stands for Application Hosting Device and is an older name for what is commonly known as a PHG.
 
 #### Continua Certified Health and Fitness Interfaces
-This property is a list of codes that indicate which Health and Fitness interfaces the PHG has been (self-)certified for. There is no certification body active for this IG, so this entry can be populated with Health and Fitness interfaces the PHG supports.
 
-The property is indicated by the `Device.code` having the MDC code "532355". The value is a list of valueCodes where the codes come from the [ContinuaHFS](CodeSystem-ContinuaHFS.html) code system. 
+The PHG can report the list of its certified Health and Fitness interfaces as a list of properties. Each of these properties report a code that indicates a Health and Fitness interface the PHG has been (self-)certified for. 
+
+The property is indicated by the `property.type.code` having the MDC code "532355". The  `valueCode` comes from the [ContinuaHFS](CodeSystem-ContinuaHFS.html) code system.
 
 An example of a PHG resource is given [here](Device-phg-example.html).
 
