@@ -40,7 +40,7 @@ Further information on the mapping of the ACOM Observation types to FHIR Observa
 <figcaption><i>IEEE 11073-10206 ACOM Observation classes</i></figcaption>
 </figure>
 
-The value-type of the measurement is the main difference between the observation-related profiles. The remaining attributes in the metric objects are common to all measurements and are thus mapped in the same way to FHIR.
+The value-type of the measurement is the main difference between the observation-related profiles. The other attributes in the Observation objects are common to all types of Observations and are thus mapped in the same way to FHIR.
 
 ### PHD Device Profile
 The PHD Device profile for the IEEE 11073-10206 ACOM System Information object supports the static device information like manufacturer name, model number, serial number, time properties, device type (blood pressure cuff, pulse oximeter, etc.), system identifier, transport address, etc. There is also a udiCarrier element that supports the UDI attribute.

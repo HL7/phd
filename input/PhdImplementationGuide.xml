@@ -43,7 +43,7 @@ In this example there are only xml structure definitions, value sets, code syste
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
   <id value="hl7.fhir.uv.phd"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
-  <version value="2.1.0"/>
+  <version value="2.0.0-ballot2"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="active"/>
@@ -244,7 +244,7 @@ In this example there are only xml structure definitions, value sets, code syste
       <reference>
         <reference value="ValueSet/ASN1MeasurementBits"/>
       </reference>
-      <description value="Value set for those Asn1ToHL7 codes whose source is a measurement attribute; one of the Enum-observed-value attributes."/>
+      <description value="Value set for those Asn1ToHL7 codes whose source is a measurement attribute."/>
       <exampleBoolean value="false"/>
     </resource>
     <!--    these value sets were missing -->
@@ -450,7 +450,7 @@ In this example there are only xml structure definitions, value sets, code syste
         <reference value="Device/phd-711000FEFF5F49B0.B0495F001071"/>
       </reference>
       <name value="Example of a Blood Pressure PHD"/>
-      <description value="This example maps the MDS data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information." />
+      <description value="This example maps the System Information data from a Blood Pressure PHD. This device did not report Reg-Cert-Data-List information." />
       <exampleCanonical value="http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"/>
     </resource>
     <resource>
@@ -627,5 +627,10 @@ In this example there are only xml structure definitions, value sets, code syste
       <code value="special-url"/>
       <value value="http://terminology.hl7.org/CodeSystem/ASN1ToHL7"/>
     </parameter>
+        <parameter>
+      <code value="special-url"/>
+      <value value="http://terminology.hl7.org/ValueSet/ASN1ClockBits"/>
+    </parameter>
   </definition>
+  
 </ImplementationGuide>

@@ -42,9 +42,9 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-### Scalar Numeric Metric Object Mapping Example
+### Numeric Observation Mapping Example
 
-The simplest example of a mapping of a Numeric Metric object to a FHIR Observation resource is as follows
+The simplest example of a mapping of an ACOM Numeric Observation to a FHIR Observation resource is as follows
 
 |ACOM Numeric Observation Attribute|Meaning|FHIR Observation element|
 |-|---|---|
@@ -53,9 +53,9 @@ The simplest example of a mapping of a Numeric Metric object to a FHIR Observati
 |Value|Gives the value of the measurement|`valueQuantity.value`|
 |Unit-Code|Gives the units of the measurement as an IEEE 11073-10101 code. Shall be translated to the equivalent UCUM code and system when available.|`valueQuantity.code`|
 
-This mapping applies to several simple types of PHD measurements that are scalars, for example body temperature, body mass, body height, glucose concentration, among many others. This Implementation Guide specifies a structure definition profile that applies to all scalar Numeric Metric measurements.
+This mapping applies to several simple types of PHD measurements that are scalars, for example body temperature, body mass, body height, glucose concentration, among many others. This Implementation Guide specifies a structure definition profile that applies to all scalar Numeric observations.
 
-Scalar numeric measurements are the most common type of PHD measurement.
+Numerical observations are the most common type of PHD measurement.
 
 ### Compound (Numeric) Observation Mapping Example
 

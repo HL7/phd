@@ -15,6 +15,7 @@ This glossary lists abbreviations and acronyms used throughout this Implementati
 | IG           | Implementation Guide                                                                        |
 | LOINC        | Logical Observation Identifiers Names and Codes                                             |
 | MDC          | Medical Device Communication (nomenclature codes, IEEE 11073-10101)                         |
+| MDS          | Medical Device System (from IEEE 11073-20601)                                               |
 | MRN          | Medical Record Number                                                                       |
 | PCHA         | Personal Connected Health Alliance                                                          |
 | PHD          | Personal Health Device                                                                      |
