@@ -29,7 +29,7 @@ An example of the this identifier from [this example](Observation-numeric-spotnu
 {% fragment Observation/numeric-spotnumeric JSON EXCEPT:identifier %}
 
 ### Obtaining the Type of observation
-One obtains the IEEE 11073-10101 observation type for the `code` element in the same manner for all metric observations. See the section [MDC Nomenclature codes](Nomenclaturecodes.html) for the details.
+One obtains the IEEE 11073-10101 observation type for the `code` element in the same manner for all types of observations. See the section [MDC Nomenclature codes](Nomenclaturecodes.html) for the details.
 
 ### Subject
 The `subject` element normally points to the PhdPatient resource using the logical id of the Patient resource, for example 'Patient/123546'. For device settings known to the PHG it should point to the PHD.
@@ -76,7 +76,7 @@ For IEEE 11073-10206 timestamps the following table can be used:
 | Tick counter | Yes     | n.a.   | n.a.   | Map to PHG timeline, including PHG offset                               | Yes                               |
 | Tick counter | No      | n.a.   | n.a.   | Throw away                                                              | n.a.                               |
 
-The PHG maps the 'converted' timestamp to either an `Observation.effectiveDateTime` element or an `Observation.effectivePeriod` element. The second situation occurs when the metric observation includes a Measurement-Duration (duration) attribute. Then the timestamp attribute gives the start of the period and the end of the period is obtained by adding the Measurement-Duration value to it. If no timestamp is provided, the PHG, using the time of reception of the observation as its timestamp must then do the reverse; the time of reception is the end time and the start time is given by subtracting the Measurement-Duration value from it.
+The PHG maps the 'converted' timestamp to either an `Observation.effectiveDateTime` element or an `Observation.effectivePeriod` element. The second situation occurs when the observation includes a Measurement-Duration (duration) attribute. Then the timestamp attribute gives the start of the period and the end of the period is obtained by adding the Measurement-Duration value to it. If no timestamp is provided, the PHG, using the time of reception of the observation as its timestamp must then do the reverse; the time of reception is the end time and the start time is given by subtracting the Measurement-Duration value from it.
 When the PHG modifies an Observation's timestamp as received from the PHD it shall also generate a Coincident Timestamp observation that records how the `Observation.effective[x]` element is generated.
 
 ### extension: Coincident timestamp reference

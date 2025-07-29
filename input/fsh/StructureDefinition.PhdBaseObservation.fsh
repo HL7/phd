@@ -52,8 +52,8 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^slicing.rules = #open
 * identifier contains conditionalCreate 0..1
 * identifier[conditionalCreate] ^short = "Unique identifier of this measurement for a given patient and device"
-  * ^definition = "An identifier created from a combination of the measurement parameters like sensor timestamp, type code, unit code, patient and device identifiers, and selected elements of any component elements."
-  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is required unless the metric measurement contains no timestamp or is a measurement containing a timestamp that is real time. By real time the timestamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observations from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
+  * ^definition = "An identifier created from a combination of the measurement parameters like sensor timestamp, type code, unit code, patient and device identifier."
+  * ^comment = "This value is used in the conditional create to prevent data duplication. PHDs will often re-send already sent data for a variety of reasons. This element is recommended unless the observation contains no timestamp or is a measurement containing a timestamp that is real time. By real time the timestamp reported by the PHD must be later than the current time reported by the PHD before any measurements are received. There might be other means to ascertain whether the data is real time. Temporarily stored data from IEEE 11073-10206 compliant devices, which are required to be deleted the data after sending, can be considered real time. An example of this are temporarily stored observations from a device implementing the Bluetooth SIG GHS profile or implementing another Bluetooth SIG medical sensor device profile."
   * ^requirements = "Allows observations to be distinguished in a selective enough manner to prevent resource duplication."
   * type ..0
   * system = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation" (exactly)
@@ -68,7 +68,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^short = "Reference to the patient or the PhdDevice that is the subject of the observation"
 * effective[x] 1..
 * effective[x] only dateTime or Period
-  * ^definition = "The time or time-period the observed value is asserted as being true. It is a time period if a Measure-Active-Period (duration) attribute is part of the metric measurement sent by the PHD. Otherwise it is the timestamp sent by the PHD or the time of reception by the PHG if the PHD sent no timestamp."
+  * ^definition = "The time or time-period the observed value is asserted as being true. This can be a dateTime or a period. The value is based on the timestamp sent by the PHD or the time of reception by the PHG if the PHD sent no timestamp."
 * interpretation
   * coding ^slicing.discriminator[0].type = #value
     * ^slicing.discriminator[=].path = "system"
@@ -90,7 +90,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^slicing.rules = #open
 * component contains supplementalTypesComponent 0..*
 * component[supplementalTypesComponent] ^short = "Supplemental Type: A further description of the measurement type."
-  * ^definition = "For each code  contained in the Supplemental-Types attribute, a separate supplementalTypesComponent element is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
+  * ^definition = "For each code  contained in the Supplemental-Types attribute, a separate component is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
   * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes. Each code describes an aspect of the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average."
 //  * code from $CodeableConcept11073MDC (required)
   * code = Mdc#68193 // from $CodeableConcept11073MDC (required)

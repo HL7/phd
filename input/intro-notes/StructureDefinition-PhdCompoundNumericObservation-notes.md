@@ -10,5 +10,5 @@ The structure definition is given [here](StructureDefinition-PhdCompoundNumericO
 ### Additional Numerical Measurement Information
 IEEE 11073-20601 numeric measurement values may have some additional optional attributes that are used only for numerics. An example of such a numeric-only additional attribute is one that describes the accuracy of the measurement value. 
 
-In FHIR these attributes are reported in extensions. The same extensions that are used as for [non-compoud numeric measurements](StructureDefinition-PhdNumericObservation.html) can be used for the numeric components. 
+In FHIR these attributes are reported in extensions. The same extensions that are used as for [non-compound numeric measurements](StructureDefinition-PhdNumericObservation.html) can be used for the numeric components. 
 

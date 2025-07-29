@@ -134,7 +134,7 @@ Description: "Profile for the Device Resource for a PHG"
   * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHGInterfaces (extensible)
 
 * property[clockBitProperty] ^short = "Boolean Properties reported by the Clock"
-  * ^definition = "For each Boolean clock capability reported a property element is used."
+  * ^definition = "For each Boolean clock capability reported a `property` element is used."
   * type from ASN1ClockBits (required)
     * ^short = "Tells what the clock capability item is"
     * ^definition = "One of the capabilities of the clock as reportedD."

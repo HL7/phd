@@ -1,4 +1,4 @@
-The Coded Enumeration Observation Profile is used when the PHD metric measurement is represented by one of a limited set of codes. This corresponds to the Single Event Observation class in IEEE 11073-10206 ACOM and the Simple Discrete Observation in GHS.  
+The Coded Enumeration Observation Profile is used when the PHD observation value is represented by one of a limited set of codes. This corresponds to the Single Event Observation class in IEEE 11073-10206 ACOM and the Simple Discrete Observation in GHS.  
 
 The MDC code of the value in this observation resource corresponds to the value attribute in these ACOM and GHS observation classes.
 

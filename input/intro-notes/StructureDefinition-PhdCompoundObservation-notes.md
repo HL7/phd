@@ -1,4 +1,4 @@
-The Phd Compound Observation Profile can be used when the PHD metric measurement is a vector or a set of related numeric concepts. Examples would be the x, y, and z components of the acceleration, the systolic, diastolic, and mean components of a blood pressure measurement, or the set of package positions and associated questions in the Advanced Medication Monitor.
+The Phd Compound Observation Profile can be used when the PHD observation value is a vector or a set of related numeric concepts. Examples would be the x, y, and z components of the acceleration, the systolic, diastolic, and mean components of a blood pressure measurement, or the set of package positions and associated questions in the Advanced Medication Monitor.
 
 The IEEE 11073-10206 model supports more generic compounds where the components can be numeric, codeable concepts, sample arrays or strings. Each individual entry of the compound value is reported in an `Observation.component` element.
 
