@@ -18,7 +18,7 @@ d[i] = x[i] if
 and
  - b = `SampledData.origin.value` = A –(A-B)I/(I-J) = (B\*I-A\*J)/(I-J)
 
-Using these scale factor and origin values allows to map the SampleArray.samples[i] values directly to the SampledData.data[i] values unchanged. It is recommended that the uploader maps the samples to the `Observation.valueSampledData` element using the above scaling as it is assumed the PHD chose this scaling for a good reason. However, that does not restrict the uploader using another scaling. As an example, the uploader could decode the scaled values and report the unscaled original sensor values in the `Observation.valueSampledData.data` element and set the `Observation.valueSampledData.scaleFactor` to 1.0 and the `Observation.valueSampledData.origin.value` to 0. This approach is used in IHE PCD-01.
+Using these scale factor and origin values allows to map the SampleArray.samples[i] values directly to the `SampledData.data[i]` values unchanged. It is recommended that the uploader maps the samples to the `Observation.valueSampledData` element using the above scaling as it is assumed the PHD chose this scaling for a good reason. However, that does not restrict the uploader using another scaling. As an example, the uploader could decode the scaled values and report the unscaled original sensor values in the `Observation.valueSampledData.data` element and set the `Observation.valueSampledData.scaleFactor` to 1.0 and the `Observation.valueSampledData.origin.value` to 0. This approach is used in IHE PCD-01.
 
 Using the variables 'b' and 's' as defined above the mapping to the FHIR Observation resource is as follows:
 

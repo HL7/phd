@@ -4,7 +4,7 @@ The IEEE 11073-10206 model supports more generic compounds where the components 
 
 The `Observation.code` –element comes from the Type attribute and gives the general type of measurement. For example, the Type attribute might indicate "acceleration" or "non-invasive blood pressure". For each component the `Observation.component.code` –element is obtained from the Component-type attribute.
 
-There is no Observation.value[x] entry. There may still be an `Observation.dataAbsentReason` element if, say, the Measurement-Status attribute indicates an invalid or otherwise overall failure value. If there is such an overall failure of the measurement, then there is no need to report the components.
+There is no `Observation.value[x]` entry. There may still be an `Observation.dataAbsentReason` element if, say, the Measurement-Status attribute indicates an invalid or otherwise overall failure value. If there is such an overall failure of the measurement, then there is no need to report the components.
 
 The FLOAT encoding of the numeric components indicates both precision and the number of significant digits. The `Observation.component.valueQuantity.value` element is required to honor the reported precision as indicated by the  FLOAT. See the section [FLOATs and SFLOATs](FLOATS.html) for instructions on handling FLOATs and their encoding to the valueQuantity.
 
@@ -16,4 +16,4 @@ IEEE 11073-10206 ACOM numeric measurement values may have some additional option
 In FHIR these attributes are reported in extensions. The same extensions that are used as for [non-compound numeric measurements](StructureDefinition-PhdNumericObservation.html) can be used for the numeric components. 
 
 ### Examples:
-This example shows a [blood pressure](Observation-compound-numeric-blood-pressure.html) measurement. Note that there is no value[x] element in the 'primary' measurement. The set of values describing the compound are in the value[x] elements of the `Observation.component` elements.
+This example shows a [blood pressure](Observation-compound-numeric-blood-pressure.html) measurement. Note that there is no `value[x]` element in the 'primary' measurement. The set of values describing the compound are in the `value[x]` elements of the `Observation.component` elements.

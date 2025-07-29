@@ -50,7 +50,7 @@ FHIR requires that a LOINC code is present if the measurement is one of the vita
 
 In addition to the LOINC code, FHIR requires an `Observation.code` element with value "vital-signs" when the measurement is a vital sign.
 
-#### The Timestamp: Observation.effective[x]
+#### The Timestamp: `Observation.effective[x]`
 All measurements contain a time stamp which is either an instant in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
 
 All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even though the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
@@ -86,7 +86,7 @@ In addition to the elements that are always present, the following set of elemen
 
 ##### The Profile: `Observation.meta.profile`
 An Observation may contain a `meta.profile` element that can help to identify the type of the Observation. For example, if `Observation.profile` entry contains ["http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"](StructureDefinition-PhdNumericObservation.html) the measurement is a scalar. 
-Note that there is no requirement that the `profile` element be present. If it is not present, the consumer can determine the type of measurement value by looking at the Observation.value[x] element.
+Note that there is no requirement that the `profile` element be present. If it is not present, the consumer can determine the type of measurement value by looking at the `Observation.value[x]` element.
 
 ##### The Coincident Timestamp extension
 When present, the consumer can obtain further information about the timestamp from a referenced coincident timestamp Observation that adheres to the [PhdCoincidentTimeStampObservation profile](StructureDefinition-PhdCoincidentTimeStampObservation.html). This reference may be present in the [CoincidentTimeStampReference extension](StructureDefinition-CoincidentTimeStampReference.html). If the reference is NOT present, it means that the PHD did not provide a timestamp and the PHG used the time of reception as the timestamp or that the PHG determined that the PHD timestamp is reliable and can be used as is. PHDs that send stored data shall include timestamps in their measurements.
@@ -241,7 +241,7 @@ Implementers should not make any assumption about the state assignment. For exam
 
 In future PHD versions the PHD will be able to indicate that is does not support certain state or event flags in a given measurement report. This situation is expressed by replacing the `Observation.valueCodeableConcept` element with an `Observation.dataAbentReason` element with reason "unsupported". Currently there are no market PHDs that support this feature.
 
-Event and/or state measurements have no primary Observation.value[x] entry and there is no `Observation.dataAbsentReason` unless the *entire* measurement has an error, in which case there will be no state of event entries either. It is possible for each state or event entry to be unsupported and that will be reported with a `Observation.dataAbsentReason` element. Even if every `Observation.component` entry reports 'unsupported' that does not have the same meaning as the entire measurement being in error.
+Event and/or state measurements have no primary `Observation.value[x]` entry and there is no `Observation.dataAbsentReason` unless the *entire* measurement has an error, in which case there will be no state of event entries either. It is possible for each state or event entry to be unsupported and that will be reported with a `Observation.dataAbsentReason` element. Even if every `Observation.component` entry reports 'unsupported' that does not have the same meaning as the entire measurement being in error.
 
 In structure the states and/or events measurements are similar to compound or vector measurements. It is also possible that state and/or event measurements have '*additional descriptions*' as discussed in the [Additional Descriptive Data](#additional-descriptive-data) section. To distinguish the measurement component entries from the additional description component entries one only needs to examine the Observation.component.code.coding.system. If it is ASN1ToHL7, it is part of the measurement. 
 

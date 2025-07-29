@@ -100,7 +100,7 @@ Description: "Profile for the Device Resource for a PHD"
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
   * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
-    * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate Device.specialization entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (using MDC_DEV_SPEC_PROFILE_HYDRA or MDC_DEV_SPEC_PROFILE_GENERIC), the version is the 11073-10206 version."
+    * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate `Device.specialization` entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (using MDC_DEV_SPEC_PROFILE_HYDRA or MDC_DEV_SPEC_PROFILE_GENERIC), the version is the 11073-10206 version."
 * version ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
   * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not IEEE 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
 * version ^slicing.discriminator[0].type = #value
@@ -144,7 +144,7 @@ Description: "Profile for the Device Resource for a PHD"
   * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
 * property[clockBitProperty] ^short = "Boolean Properties reported by the Clock"
-  * ^definition = "For each Boolean clock capability reported by a PHD a property element is used."
+  * ^definition = "For each Boolean clock capability reported by a PHD a `property` element is used."
   * type from ASN1ClockBits (required)
     * ^short = "Tells what the clock capability item is"
     * ^definition = "One of the capabilities of the clock as reported by the PHD."
