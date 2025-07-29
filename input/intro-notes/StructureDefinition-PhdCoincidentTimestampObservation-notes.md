@@ -13,8 +13,8 @@ The `code` element is used to report the type of time clock used by the PHD. The
 ### PHG Current Time &rarr; `Observation.effectiveDateTime`
 The PHG is required to have the capability to report local time and offset to UTC. The PHG records its current time in the `Observation.effectiveDateTime` element regardless of the type of time clock used by the PHD unless the PHD has superior time synchronization than the PHG. In that case, the `Observation.effective[x]` element is not populated.
 
-### PHD Current Time &rarr; Observation.value[x]
-If the PHD uses a wall clock, the current time of the PHD is reported in an `Observation.valueDateTime` element. FHIR requires the presence of an offset to UTC, so if the PHD does not provide that, the PHG adds its offset to the value. It is reasonable to assume that the PHD and PHG are in the same time zone and thus have the same offset to UTC. However, PHDs can be mobile, and if the PHD is reporting an offset, the offset reported by the PHD is used even if it is NOT the offset of the PHG.
+### PHD Current Time &rarr; `Observation.value[x]`
+ If the PHD uses a wall clock, the current time of the PHD is reported in an `Observation.valueDateTime` element. FHIR requires the presence of an offset to UTC, so if the PHD does not provide that, the PHG adds its offset to the value. It is reasonable to assume that the PHD and PHG are in the same time zone and thus have the same offset to UTC. However, PHDs can be mobile, and if the PHD is reporting an offset, the offset reported by the PHD is used even if it is NOT the offset of the PHG.
 
 If the PHD uses a time counter, the current tick time is reported in an `Observation.valueQuantity` element scaled to microseconds or milliseconds as appropriate for the resolution of the counter.
 

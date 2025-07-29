@@ -27,10 +27,10 @@ Description: "Observations containing a coincident timestamp."
   * ^definition = "Reference to the PHD device for which the coincident timestamp measurement is reported. This element will point to a Device resource following the Phd Device Profile."
 * effective[x] ^short = "The current time of the PHG at the current time of the PHD. Absent if PHD is better synchronized"
 * effective[x] ^definition = "The time of the PHG at the time the current time of the PHD is ascertained."
-* effective[x] ^comment = "This element is absent if the PHD has superior time synchronization relative to the PHG. Wnen this element is absent it indicates that the PHG reported the measurement timestamps of the PHD without modification."
+* effective[x] ^comment = "This element is absent if the PHD has superior time synchronization relative to the PHG. When this element is absent it indicates that the PHG reported the measurement timestamps of the PHD without modification."
 * value[x] only dateTime or Quantity
 * value[x] ^short = "The current time of the PHD as a wallclock time (dateTime), relative time (Quantity), or if a time fault a dataAbsentReason"
-* value[x] ^definition = "The current time of the PHD. It will be either a valueDateTime if a wallclock time or a valueQuantity if a relative time or a dataAbsentReason if there is a time fault. The relative time is expressed in microseconds"
+* value[x] ^definition = "The current time of the PHD. It will be either a `valueDateTime` if a wallclock time or a `valueQuantity` if a relative time or a `dataAbsentReason` if there is a time fault. The relative time is expressed in microseconds"
 * dataAbsentReason.coding ^slicing.discriminator.type = #value
 * dataAbsentReason.coding ^slicing.discriminator.path = "$this"
 * dataAbsentReason.coding ^slicing.rules = #open
