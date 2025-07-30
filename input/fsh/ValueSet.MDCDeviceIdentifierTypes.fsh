@@ -9,4 +9,4 @@ Description: "ValueSet for the MDC Device Identifier Types"
 * ^experimental = false
 * ^date = "2021-09-25"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
-* include codes from system http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers
+* include codes from system http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers

@@ -32,7 +32,7 @@ This means, following the mapping above, that the `Observation.code` element is 
   * `Observation.code.coding.display` optional
   * `Observation.code.text` optional
 
-If the code matches one of the [FHIR observation-vitalsigns codes]({{ site.data.fhir.path }}observation-vitalsigns.html), the corresponding LOINC code shall be present in an additional coding element.
+If the Type corresponds to one of the [FHIR Observation Vital Signs Profiles]({{ site.data.fhir.path }}observation-vitalsigns.html), the corresponding LOINC code shall be present in an additional coding element.
 
 If the application wishes to transcode the MDC code into other coding systems the application is free to do so but:
   * the MDC code shall be present in a coding element,

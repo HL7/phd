@@ -27,7 +27,7 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "This entry contains the IEEE EUI-64."
   * ^alias = "11073-10206 System id"
   * type 1..
-  * type = http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers#SYSID
+  * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#SYSID
     * ^short = "Required IEEE 11073-10206 System Id code system coding"
   * system 1..
   * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" (exactly)
@@ -41,7 +41,7 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "This entry contains the Bluetooth MAC transport address."
   * ^alias = "Bluetooth MAC Transport address"
   * type 1..
-  * type = http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers#BTMAC
+  * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#BTMAC
     * ^short = "Required Bluetooth MAC address code system coding"
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/bluetooth" (exactly)
@@ -52,7 +52,7 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "This entry contains the MAC transport address."
   * ^alias = "MAC Transport address"
   * type 1..
-  * type = http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaDeviceIdentifiers#ETHMAC
+  * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#ETHMAC
     * ^short = "Required Ethernet MAC address code system coding"
   * system 1..
   * system = "http://hl7.org/fhir/sid/eui-48/ethernet" (exactly)
