@@ -1,4 +1,6 @@
 # Custom Dictionary Words
+bitstring
+bitstrings
 codeable
 FHIR
 LOINC
@@ -11,6 +13,7 @@ plethysmograph
 RTMMS
 SFLOAT
 SNOMED
+thresholding
 timestamping
 UCUM
 unsynchronized

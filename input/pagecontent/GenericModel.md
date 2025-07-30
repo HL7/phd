@@ -6,5 +6,5 @@ This Implementation Guide specifies how one maps the IEEE 11073-10206 ACOM objec
 
 In the IEEE 11073-10206 Abstract information Content Model (ACOM), IEEE 11073-10101 nomenclature codes are used to indicate what the items are. Thus, a reader of FHIR resources mapped from these ACOM objects can decode any of these resources if it knows what the codes are. If a future device is deployed the reader will only need an update of its code dictionary to interpret the resource. A PHG uploader will not even need to update its dictionary to perform the mapping to FHIR as the codes are provided by the PHD through protocol. These features eliminate the need for remote updating and/or servicing of PHGs when new IEEE 11073-10206 ACOM PHDs are used.
 
-Note -- IEEE 11073-10206 ACOM does not define a protocol, but requires protocols that support it to support a representation of the objects defined in the model. The Bluetooth SIG Generic Health Sensor Profile (GHSP) defines an ACOM compliant protocol.
+Note -- IEEE 11073-10206 ACOM does not define a protocol, but requires protocols that support it to support a representation of the objects defined in the model. The Bluetooth SIG Generic Health Sensor (GHS) Profile defines an ACOM compliant protocol.
 
