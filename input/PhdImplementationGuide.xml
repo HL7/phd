@@ -617,7 +617,7 @@ In this example there are only xml structure definitions, value sets, code syste
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU 2.0"/>
+      <value value="STU 2 - Ballot"/>
     </parameter>
     <parameter>
       <code value="shownav"/>

@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Jul 29, 2025 04:15+0000 for FHIR v6.0.0-ballot2 
+  Generated on Wed, Jul 30, 2025 00:46+0000 for FHIR v6.0.0-ballot2 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot2">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -30984,12 +30984,12 @@ The actual author of the section when it is not the author of the composition. I
   </xs:complexType>
   <xs:element name="DeviceAssociation" type="DeviceAssociation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of association or dissociation of a device with a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of association or dissociation of a device with a subject (e.g. patient) and/or operator.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="DeviceAssociation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of association or dissociation of a device with a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of association or dissociation of a device with a subject (e.g. patient) and/or operator.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -31046,7 +31046,7 @@ The actual author of the section when it is not the author of the composition. I
   </xs:complexType>
   <xs:complexType name="DeviceAssociation.Operation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of association or dissociation of a device with a patient.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of association or dissociation of a device with a subject (e.g. patient) and/or operator.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
