@@ -202,17 +202,9 @@ IEEE 11073-20601 does only support compound measurements with numeric components
 |`Observation.component.valueQuantity.code`|the units (as UCUM)|
 |`Observation.component.valueQuantity.system="http://unitsofmeasure.org"`|UCUM code system identifier|
 
-Note that the `Observation.code` element is subject to the same FHIR LOINC code requirement as the `Observation.code` element if the component is one of the vital signs [here]({{ site.data.fhir.path }}observation-vitalsigns.html). The Systolic and Diastolic pressures are in that list, but the MEAN component is not.
+Note that the `Observation.component.code` element is subject to the same FHIR LOINC code requirement as the `Observation.code` element if the component is one of the vital signs [here]({{ site.data.fhir.path }}observation-vitalsigns.html). The Systolic and Diastolic pressures are in that list, but the MEAN component is not.
 
-An example of a Blood Pressure measurement would be as follows:
-
-The `Observation.code` and `Observation.category` (since the measurement is a vital sign) entries describing the 'entire' measurement:
-
-{% fragment Observation/compound-numeric-blood-pressure-no-mean JSON EXCEPT:code|category %}
-
-and the individual `Observation.component` entries describing each compound entry where the MEAN entry was unable to be determined and reported a NaN (Not a Number):
-
-{% fragment Observation/compound-numeric-blood-pressure-no-mean JSON EXCEPT:component %}
+See the [blood pressure observation example](Observation-compound-numeric-blood-pressure-no-mean.html) for details on `Observation.code`, `Observation.category`, and `Observation.component` entries.
 
 The Phd Compound Numeric Profile can contain additional entries as noted in the [Additional Descriptive Data](#additional-descriptive-data) section above. However, the codes of all `Observation.component` entries that are part of a compound measurement will always have an MDC code and not a code from the ASN1ToHL7 code system.
 
@@ -462,9 +454,7 @@ The Regulation status is a set of states where only one state is defined. Regula
 
 The property is indicated by the `property.type.code` having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
 
-An example of an entry for an FDA regulated device is shown below:
-
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[3] %}
+An example of a regulated device is given [here](Device-phd-74E8FFFEFF051C00.001C05FFE874.html).
 
 #### Continua Certified PHD Interfaces
 This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device specialization entries indicate what the PHD supports. Certified means the PHD has been (independently) placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
