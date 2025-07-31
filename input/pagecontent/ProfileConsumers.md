@@ -419,18 +419,10 @@ The `property.type` is a CodeableConcept which tells what the property is. There
 ##### Time Synchronization
 There will always be a time synchronization entry. It is identified by a `property.type.coding.code="68220"`. It indicates the method the PHD uses to externally synchronize to a time reference. The value is a single valueCode entry. MDC codes express the possible synchronization methods. A table of the possible codes can be found in the time synchronization section [here](StructureDefinition-PhdDevice.html). This value is TIME_SYNC_NONE (532224) if the PHD does not support a synchronization protocol or has no time clock at all.
 
-An example of time synchronization property entry is shown below:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[4] %}
-
-
 ##### Time Capabilities
 The time capabilities defines the types of real time clocks supported, whether the time can be set, whether external time synchronization is possible, etc. Each capability is treated as an event, so most PHGs will only report the capability if the PHD indicates it has the capability. The value is a single valueCode which will be either "Y" if the PHD has the capability or "N" if not. Most PHGs will not report the "N" case as that would significantly increase the size of the resource on the wire.  There may be several such time capability property entries.
 
 The time capabilities property is indicated by the `property.type.code` having one of the ASN1ToHL7 codes of "68219.x" which is NOT a decimal number! The value is a valueCode with codes "Y" or "N".
-
-The example below gives the time capabilities of a market pulse oximeter:
-
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[5]|property[6]|property[7] %}
 
 #### Time Clock Resolutions
 The time clock resolutions is given by one of four MDC codes for each of the possible types of time clocks. Note that a PHD can only simultaneously support an absolute time (wall clock time with no offset) or base offset time (wall clock time with offset). A PHD may support both relative time clocks thus there could be up to three separate time resolution property entries though in most cases there is only one clock.
@@ -438,10 +430,6 @@ The time clock resolutions is given by one of four MDC codes for each of the pos
 The resolution value is a valueQuantity and it gives the time interval between clock 'pulses', regardless of the type of time clock, in units of microseconds.
 
 The property is indicated by the `property.type.code` having one of four MDC codes "68222, 68223, 68224, and 68226". The value is a valueQuantity.
-
-An example of a time resolution property for a relative time clock with a time resolution of of one second is shown below:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property[8] %}
-
 
 #### Time Tick Resolution for R-R Intervals
 This section is only relevant for PHDs that support the Heart Rate or ECG specializations based on IEEE 11073-20601. It is not used for measurement timestamps but for measuring R-R intervals (time between electrocardiogram R-wave peaks) in ECG and Heart Rate specializations. The time tick resolution is a high frequency clock that is used to measure the time between R-wave peaks in an ECG trace.
@@ -454,16 +442,14 @@ The Regulation status is a set of states where only one state is defined. Regula
 
 The property is indicated by the `property.type.code` having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
 
-An example of a regulated device is given [here](Device-phd-74E8FFFEFF051C00.001C05FFE874.html).
-
 #### Continua Certified PHD Interfaces
 This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device specialization entries indicate what the PHD supports. Certified means the PHD has been (independently) placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
 
 The property is indicated by the `property.type.code` having the MDC code "532353". The value is a code from the [ValueSet for PHD Interfaces](ValueSet-ContinuaPHDInterfaces.html) code system.
 
-An example of a property entry where a PHD is certified for the pulse oximeter specialization over both Bluetooth Low Energy, USB, and Continua version 1.0 where there was no transport indicated, is given below:
-
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON ELIDE:property[0] %}
+#### Example of a PHD Device Resource properties
+The fragment below shows the set of properties of an example PHD. Note that the time synchronization protocol is "none" and the time resolution is "relative" with a resolution of 1 second. The PHD is regulated and has certified interfaces.
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property %}
 
 ### The PHG Device Resource
 The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
@@ -479,7 +465,7 @@ This field states that the device is a PHG. This IG uses the MDC code MDC_MOC_VM
 
 #### Continua Certified Health and Fitness Interfaces
 
-The PHG can report the list of its certified Health and Fitness interfaces as a list of properties. Each of these properties report a code that indicates a Health and Fitness interface the PHG has been (self-)certified for. 
+In addition to the certified PHD interfaces the PHG can report its certified Health and Fitness interfaces as a list of properties. Each of these properties reports a code that indicates a Health and Fitness interface the PHG has been (self-)certified for.
 
 The property is indicated by the `property.type.code` having the MDC code "532355". The  `valueCode` comes from the [ContinuaHFS](CodeSystem-ContinuaHFS.html) code system.
 
@@ -498,7 +484,5 @@ The `identifier.value` and `identifier.system` entries are used to quantify the 
 
 Note that a medical record number is considered PHI in some jurisdictions and use cases. Even when the medical record number is not in itself PHI, the fact that the PHG's communication will convey both the MRN and health data could put the whole communication into the realm of PHI.
 
-An example of a `Patient.identifier` following the XDS.b notation is given below:
-{% fragment Patient/patientExample-1 JSON EXCEPT:identifier %}
-
-An example of an unknown patient using the `identifier.type` "U" is given [here](Patient-patientExample-2.html)
+An example of a `Patient.identifier` following the XDS.b notation is given [here](Patient-patientExample-1.html).
+An example of an unknown patient using the `identifier.type` "U" is given [here](Patient-patientExample-2.html).

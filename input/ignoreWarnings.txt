@@ -11,26 +11,26 @@ The property 'partition' is not known for the system 'urn:iso:std:iso:11073:1010
 # These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# When a vital signs observation is also checked against the vital signs profile these warnings are generated. These are no real problems.
+# When a vital signs observation is also checked against the vital signs profile these warnings are generated. The vitals sign category element does not match the slice for the `phd` category. These are no real problems.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bodytemp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# When a Phd compound observation is also a vital sign this warning is generated, but this is not a real problem.
+# When a Phd compound observation is also a vital sign this warning is generated. The LOINC coding does not match the slice for the MDC coding. This is not a real problem.
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
 
-# With FHIR R4 there is no supported way to indicate the valueset for a property
+# Will be resolved after the ballot.
 The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
-# This is generated for all observations that use the vital signs category. This warning can be ignored safely.
+# This is generated for all observations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# This informational message is out of our control.
+# This informational message is due to inheriting this extension from the core specification.
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
