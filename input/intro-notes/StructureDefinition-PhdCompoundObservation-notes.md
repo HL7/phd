@@ -2,7 +2,7 @@ The Phd Compound Observation Profile can be used when the PHD observation value 
 
 The IEEE 11073-10206 model supports more generic compounds where the components can be numeric, codeable concepts, sample arrays or strings. Each individual entry of the compound value is reported in an `Observation.component` element.
 
-The `Observation.code` –element comes from the Type attribute and gives the general type of measurement. For example, the Type attribute might indicate "acceleration" or "non-invasive blood pressure". For each component the `Observation.component.code` –element is obtained from the Component-type attribute.
+The `Observation.code` element comes from the Type attribute and gives the general type of measurement. For example, the Type attribute might indicate "acceleration" or "non-invasive blood pressure". For each component the `Observation.component.code` element is obtained from the Component-type attribute.
 
 There is no `Observation.value[x]` entry. There may still be an `Observation.dataAbsentReason` element if, say, the Measurement-Status attribute indicates an invalid or otherwise overall failure value. If there is such an overall failure of the measurement, then there is no need to report the components.
 
