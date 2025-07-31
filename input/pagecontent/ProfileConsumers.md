@@ -118,7 +118,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 More details on the extensions that can be used with quantities can be found in the [PhdNumericObservation profile](StructureDefinition-PhdNumericObservation.html).
 
 ##### Supplemental Types
-Supplemental type information is indicated by the `Observation.code` element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by `Observation.component.valueCodeableConcept.coding.code`. There may be more than one `Observation.component` entry containing supplemental type information. An example of a supplemental types component entry is as follows:
+Supplemental type information is indicated by the `Observation.component.code` element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by `Observation.component.valueCodeableConcept.coding.code`. There may be more than one `Observation.component` entry containing supplemental type information. An example of a supplemental types component entry is as follows:
 
 {% fragment Observation/numeric-spotnumeric JSON EXCEPT:component[0] %}
 
