@@ -48,7 +48,7 @@ For those consumer applications that would like to have the codes as LOINC and t
 
 FHIR requires that a LOINC code is present if the measurement is one of the vital signs given [here]({{ site.data.fhir.path }}observation-vitalsigns.html). In that case, the `Observation.code` shall have at least a second coding element containing a LOINC code. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the LOINC code (8867-4). A PHG may map these MDC codes also to more specific LOINC codes. 
 
-In addition to the LOINC code, FHIR requires an `Observation.code` element with value "vital-signs" when the measurement is a vital sign.
+In addition to the LOINC code, FHIR requires an `Observation.category` element with value "vital-signs" when the measurement is a vital sign.
 
 #### The Timestamp: `Observation.effective[x]`
 All measurements contain a time stamp which is either an instant in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
@@ -106,7 +106,7 @@ An example of a reference to another Observation is shown below:
 #### Additional Descriptive Data
 In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#numerics) and return to this section when relevant.
 
-PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. This additional information is reported in an `Observation.component` element. The type of additional information is given by the `Observation.code` element. The value of such additional information is given by an `Observation.component` or an `Observation.extension` element. PHDs support the following types of additional information:
+PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. This additional information is reported in an `Observation.component` or an `Observation.extension` element. The type of additional information is given by the `Observation.component.code` or `Observation.extension.url` element. The value of such additional information is given by an `Observation.component.value[x]` or an `Observation.extension.value[x]` element. PHDs support the following types of additional information:
 
 |Type of additional information|When it can occur|FHIR data element|Description|
 |----|---|---|---|
