@@ -50,7 +50,18 @@ FHIR requires that a LOINC code is present if the measurement is one of the vita
 
 In addition to the LOINC code, FHIR requires an `Observation.category` element with value "vital-signs" when the measurement is a vital sign.
 
-#### The Timestamp: `Observation.effective[x]`
+##### Measurement Status
+In normal situations PHD reported Observation resources have a `Observation.status` element set to "final". However, every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG supports a PHG to report any measurement it receives from a PHD including error states and let downstream consumers address it.
+
+There are other non-error special conditions that may also be reported, such as the measurement is test or demo data.
+
+Depending upon what the special condition is, it is reported in either the `dataAbsentReason`, interpretation, or `meta.security` element. All of these entries are CodeableConcepts. When the condition is reported in the `dataAbsentReason`, there will be no measurement value entry in accord with the FHIR specification, even if the PHD reports a measurement value. Note that there may be multiple interpretation entries but only one `dataAbsentReason` element.
+
+The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is covered in the [PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html).
+
+In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special FLOAT values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the `dataAbsentReason` element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
+
+##### The Timestamp: `Observation.effective[x]`
 All measurements contain a time stamp which is either an instant in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
 
 All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even though the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
@@ -59,17 +70,17 @@ Below is an example of the `effective[x]` when the timestamp is an instant in ti
 
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
-#### The PHG reference extension
+##### The PHG reference extension
 The reference to the Device resource containing the PHG properties is encoded in an extension element.  An example of the PHG extension is shown below:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[0] %}
 
 
-#### The Patient reference: `Observation.subject`:
+##### The Patient reference: `Observation.subject`:
 The reference to the Patient resource containing information about the patient upon whom the measurement was taken is placed in the `Observation.subject` element.
 In many cases the patient is also the person that is taking the measurement. In other cases a general physician may be using a PHD in his clinic. When known to the gateway a reference to the performer may be present in an `Observation.performer` element.
 
-#### The PHD reference
+##### The PHD reference
 The reference to the PHD device is placed in the `Observation.device` element.
 There is a dedicated profile for the PHD device that is used to capture the system information, clock and power information that the PHG receives from the PHD.
 
@@ -96,14 +107,14 @@ An example of the Coincident Timestamp extension is shown below:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[1] %} 
 
-#### References to Other Observations
+##### Related Observations
 There are situations where a given Observation is derived from or part of another Observation such as a BMI observation being derived from a height and weight measurement. In that case the Observation will have `Observation.derivedFrom` elements that point to the Observation resources containing the height and weight measurement. Another common case where an Observation references another Observation is in an activity monitor. Results of an exercise session such as miles run, calories burned, average and maximum heart rates, etc. are reported as Observations where each Observation is referenced from  the master session Observation in an `Observation.hasMember` element.
 
 An example of a reference to another Observation is shown below:
 
 {% fragment Observation/bpm-status JSON EXCEPT:derivedFrom %}
 
-#### Additional Descriptive Data
+##### Additional Descriptive Data
 In this section we further define Observation details that a PHD may provide but are uncommon. The reader may wish to skip to to the description of the measurement values sections [here](#numerics) and return to this section when relevant.
 
 PHDs can send measurements that have additional descriptive information. An example would be a pulse oximeter indicating the modality used when taking the measurement. Some of the additional information reported can only occur if the measurement value is a of a specific value type such as a quantity. This additional information is reported in an `Observation.component` or an `Observation.extension` element. The type of additional information is given by the `Observation.component.code` or `Observation.extension.url` element. The value of such additional information is given by an `Observation.component.value[x]` or an `Observation.extension.value[x]` element. PHDs support the following types of additional information:
@@ -117,7 +128,7 @@ PHDs can send measurements that have additional descriptive information. An exam
 
 More details on the extensions that can be used with quantities can be found in the [PhdNumericObservation profile](StructureDefinition-PhdNumericObservation.html).
 
-##### Supplemental Types
+###### Supplemental Types
 Supplemental type information is indicated by the `Observation.component.code` element having the value 68193. The value type of a supplemental type entry is always a CodeableConcept and is therefore given by `Observation.component.valueCodeableConcept.coding.code`. There may be more than one `Observation.component` entry containing supplemental type information. An example of a supplemental types component entry is as follows:
 
 {% fragment Observation/numeric-spotnumeric JSON EXCEPT:component[0] %}
@@ -134,20 +145,8 @@ In the PHD IG v1.0 an attempt was made to avoid extensions as much as possible. 
 Input is welcome!
 </blockquote>
 
-#### Identifier
+##### Identifier
 To prevent data duplication during uploads, and enable use of conditional create transactions, identifiers are provided for the Observations described in this IG. No additional meaning is associated with those identifiers. Details can be found in the [Identifier section](StructureDefinition-PhdBaseObservation.html#ccidentifier). Other systems may add further identifiers.
-
-### Measurement Status
-In normal situations PHD reported Observation resources have a `Observation.status` element set to "final". However, every real device is going to experience challenges at some time. These challenges can interfere with the measurement and therefore need to be reported. One could argue that measurements with errors should not be delivered, but in a scenario where the PHG might be headless and one is happy that the patient can even take the measurement, it may be important to know that the measurement attempt was made. Therefore this IG supports a PHG to report any measurement it receives from a PHD including error states and let downstream consumers address it.
-
-There are other non-error special conditions that may also be reported, such as the measurement is test or demo data.
-
-Depending upon what the special condition is, it is reported in either the `dataAbsentReason`, interpretation, or `meta.security` element. All of these entries are CodeableConcepts. When the condition is reported in the `dataAbsentReason`, there will be no measurement value entry in accord with the FHIR specification, even if the PHD reports a measurement value. Note that there may be multiple interpretation entries but only one `dataAbsentReason` element.
-
-The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is covered in the [PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html).
-
-In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special FLOAT values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the `dataAbsentReason` element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
-
 
 ### Measurement Values that are numeric or scalar
 <a id="numerics"></a>
