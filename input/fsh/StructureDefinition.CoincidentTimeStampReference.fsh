@@ -9,8 +9,8 @@ Context: Observation
 * ^extension[=].valueCode = #dev
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
 * ^extension[=].valueInteger = 1
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
+// * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+// * ^extension[=].valueCode = #trial-use
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"
 * ^extension[=].valueCode = #can-bind
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"

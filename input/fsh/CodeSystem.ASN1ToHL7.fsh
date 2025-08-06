@@ -20,10 +20,10 @@ Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeabl
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true
 * ^content = #complete
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
-* ^extension[=].valueCode.extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"
-* ^extension[=].valueCode.extension.valueCanonical = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7"
+// * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+// * ^extension[=].valueCode = #trial-use
+// * ^extension[=].valueCode.extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"
+// * ^extension[=].valueCode.extension.valueCanonical = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7"
 
 
 * ^property[0].code = #eventOrState

@@ -31,7 +31,10 @@ The type of property 'code' is 'code', but no ValueSet information was found, so
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This informational message is due to inheriting this extension from the core specification.
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note Use additionalBinding extension or element instead
+
+# We will switch to the new Device Gateway extension in the next version of the PHD IG. 
+The extension http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice|5.3.0-ballot-tc1 is deprecated with the note Use Device Gateway (device-gateway) extension which allows codeableReference (Device) in R6 and requires cross version extension for codeable reference.
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
 Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well.' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
