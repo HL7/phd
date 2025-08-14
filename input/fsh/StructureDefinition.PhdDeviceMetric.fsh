@@ -34,3 +34,13 @@ Description: "Profile for the DeviceMetric for a PHD"
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
+
+Mapping: IEEE-11073-10206-PhdDeviceMetric
+Title: "IEEE-11073-10206 ACOM to FHIR PhdDeviceMetric"
+Source: PhdDeviceMetric
+Target: "https://sagroups.ieee.org/11073/phd-wg"
+* -> "ACOM"
+* type.coding.code -> "SystemInfo.observation-type-list[i]"
+* type.coding.system -> "urn:iso:std:iso:11073:10101"
+* unit -> "UCUM unit used for SystemInfo.observation-type-list[i] observations"
+* category -> "filled in when this can be derived from the SystemInfo.observation-type-list[i]"
