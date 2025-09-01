@@ -73,7 +73,7 @@ In this example there are only xml structure definitions, value sets, code syste
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="dev"/>
   </extension>
-  <fhirVersion value="4.0.1"/>
+  <fhirVersion value="5.0.0"/>
   <!-- declare dependency on PoCD IG for measurement status CodeSystem -->
   <dependsOn id="pocd">
     <uri value="http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd"/>

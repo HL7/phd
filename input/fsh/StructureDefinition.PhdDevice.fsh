@@ -85,29 +85,29 @@ Description: "Profile for the Device Resource for a PHD"
 * type.coding contains PhdCode 1..1
 * type.coding[PhdCode] ^short = "Indicates the device is a PHD."
 * type.coding[PhdCode] = Mdc#65573
-* specialization 1..
-* specialization ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "systemType.coding"
+* conformsTo 1..
+* conformsTo ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "specification.coding"
   * ^slicing.rules = #open
-* specialization contains MDCType 1..
-* specialization[MDCType] ^short = "The specialization(s) of the PHD"
+* conformsTo contains MDCType 1..
+* conformsTo[MDCType] ^short = "The specialization(s) of the PHD"
   * ^definition = "The specialization(s) of the PHD. This element contains an entry for each supported specialization."
   * ^short = "This element contains an entry for each supported specialization"
   * ^comment = "There shall be a specialization entry for each specialization reported in the required System-Type-Spec-List attribute. A specialization in this case defines not only what type of measurements the PHD reports but that the PHD reports these measurements according to one of the 11073-114xx specialization standards. Most PHDs support only a single specialization such as the Blood Pressure or Pulse Oximeter specialization."
-  * systemType ^short = "The specialization standard supported by the PHD."
+  * specification ^short = "The specialization standard supported by the PHD."
     * ^comment = "The IEEE 11073-10101 specialization code from a System-Type-Spec-List[i].type."
     * coding 1..
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
-  * version 1..
+  * deviceVersion 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
     * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate `Device.specialization` entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (using MDC_DEV_SPEC_PROFILE_HYDRA or MDC_DEV_SPEC_PROFILE_GENERIC), the version is the 11073-10206 version."
-* version ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
+* deviceVersion ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
   * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not IEEE 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
-* version ^slicing.discriminator[0].type = #value
+* deviceVersion ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
-* version contains MDCType 1..*
-* version[MDCType] ^short = "Required MDC device version type entry"
+* deviceVersion contains MDCType 1..*
+* deviceVersion[MDCType] ^short = "Required MDC device version type entry"
   * type from MDCDeviceVersionTypes (required)
   * value ^short = "The version"
   * component ..0
@@ -213,16 +213,16 @@ Source: PhdDevice
 Target: "https://sagroups.ieee.org/11073/phd-wg"
 * -> "ACOM PHD"
 * identifier.value -> "SystemInfo.system-identifier"
-* specialization[MDCType].systemType.coding.code -> "System-Type-Spec-List[i].type"
-* specialization[MDCType].version -> "System-Type-Spec-List[i].version"
+* conformsTo[MDCType].specification.coding.code -> "System-Type-Spec-List[i].type"
+* conformsTo[MDCType].version -> "System-Type-Spec-List[i].version"
 * manufacturer -> "SystemInfo.system-manufacturer"
 * serialNumber -> "SystemInfo.serial-number"
 * modelNumber -> "SystemInfo.system-model-number"
-* version[MDCType].type -> "MDC Device Version Type code for Firmware-, Hardware-, Software-, Continua-version"
-* version[MDCType].value -> "SystemInfo.firmware-, hardware-, software-revision, Continua-version"
-* property[timeSyncProperty].valueCode.coding.code -> "Clock.clock-set-method"
-* property[continuaCertProperty].valueCode.coding.code -> "Continua-cert-dev-list (from IEEE 11073-20601)"
+* deviceVersion[MDCType].type -> "MDC Device Version Type code for Firmware-, Hardware-, Software-, Continua-version"
+* deviceVersion[MDCType].value -> "SystemInfo.firmware-, hardware-, software-revision, Continua-version"
+* property[timeSyncProperty].valueCodeableConcept.coding.code -> "Clock.clock-set-method"
+* property[continuaCertProperty].valueCodeableConcept.coding.code -> "Continua-cert-dev-list (from IEEE 11073-20601)"
 * property[clockBitProperty].type -> "clock-capability as ASN1ToHL7 code"
-* property[clockBitProperty].valueCode.coding.code -> "Y if supported, N if not supported"
+* property[clockBitProperty].valueCodeableConcept.coding.code -> "Y if supported, N if not supported"
 * udiCarrier[PhdProvidedUdi].carrierHRF -> "SystemInfo.udi-label"
 
