@@ -75,23 +75,23 @@ Description: "Profile for the Device Resource for a PHG"
     * code = #531981 (exactly)
       * ^short = "Indicates PHG"
       * ^definition = "MDC code indicating that this unit is a personal health gateway (PHG)."
-* specialization ^slicing.discriminator[0].type = #value
+* conformsTo ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "systemType.coding"
   * ^slicing.rules = #open
   * ^short = "This element contains an entry for each supported specialization or a generic representation."
-* specialization contains MDCType 1..*
-* specialization[MDCType] ^short = "The specialization(s) supported by the PHG."
+* conformsTo contains MDCType 1..*
+* conformsTo[MDCType] ^short = "The specialization(s) supported by the PHG."
   * ^definition = "The specialization(s) supported by the PHG. This element contains an entry for each supported specialization."
-  * systemType ^short = "The specialization standard supported by the PHG."
+  * specification ^short = "The specialization standard supported by the PHG."
     * coding 1..
     * coding from $DeviceTypes11073MDC (required)
-* version ^short = "A PHG may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
+* deviceVersion ^short = "A PHG may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
   * ^comment = "There are several versions that may be reported by a PHG. PHGs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHG."
-* version ^slicing.discriminator[0].type = #value
+* deviceVersion ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type.coding"
   * ^slicing.rules = #open
-* version contains MDCType 1..*
-* version[MDCType] ^short = "Required MDC device version type entry"
+* deviceVersion contains MDCType 1..*
+* deviceVersion[MDCType] ^short = "Required MDC device version type entry"
   * type.coding from MDCDeviceVersionTypes
   * value ^short = "The version"
   * component ..0
@@ -117,29 +117,28 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "This element represents the time synchronization method used by the PHG. It is an MDC coded value."
   * ^comment = "This element reflects the time synchronization method used to set the PHG's clock."
   * type = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
-  * valueCode ..1
+  * valueCodeableConcept ..1
     * coding 1..*
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
 
 * property[continuaCertPHDProperty] ^short = "Continua certified PHD interfaces (from IEEE 11073-20601)"
   * ^definition = "This element represents a Continua certified PHD interface that is supported by the PHG. It is an MDC coded value."
   * type = Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
-  * valueCode ..1
-  * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
+  * valueCodeableConcept ..1
+  * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
 * property[continuaCertPHGProperty] ^short = "Continua certified PHG interfaces"
   * ^definition = "This element represents a Continua certified PHG to HFS interface that is supported by the PHG. It is an MDC coded value."
   * type = Mdc#532355 // MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST
-  * valueCode ..1
-  * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHGInterfaces (extensible)
+  * valueCodeableConcept ..1
+  * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHGInterfaces (extensible)
 
 * property[clockBitProperty] ^short = "Boolean Properties reported by the Clock"
   * ^definition = "For each Boolean clock capability reported a `property` element is used."
   * type from ASN1ClockBits (required)
     * ^short = "Tells what the clock capability item is"
     * ^definition = "One of the capabilities of the clock as reportedD."
-  * valueQuantity ..0
-  * valueCode 1..1
+  * valueCodeableConcept 1..1
     * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
       * system 1..
       * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
@@ -175,10 +174,5 @@ Description: "Profile for the Device Resource for a PHG"
   * type = ASN1ToHL7#532354.0
     * ^short = "Negated regulatory status of the PHG"
     * ^definition = "This element represents the negated regulatory status of the PHG."
-  * valueQuantity ..0
-  * valueCode 1..1
-    * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
-      * code 1..
-        * ^definition = "If bit is set, the device is not regulated. If cleared, the device is regulated."
+  * valueBoolean 1..1
+    * ^definition = "If true, the device is not regulated. If false, the device is regulated."

@@ -2,4 +2,4 @@ FSHOnly: true
 canonical: http://hl7.org/fhir/uv/phd
 status: active
 version: 1.0.0
-fhirVersion: 5.0.0
+fhirVersion: 6.0.0-ballot3

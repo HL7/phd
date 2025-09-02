@@ -125,7 +125,7 @@ Invariant: mdc-1
 Description: "A published MDC Code is preferred but private MDC codes are allowed as well."
 * severity = #warning
 * expression = "coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists()"
-* xpath = "@value|f:*|h:div"
+//* xpath = "@value|f:*|h:div"
 
 Mapping: IEEE-11073-10206-PhdBaseObservation
 Id: IEEE-11073-10206-PhdBaseObservation

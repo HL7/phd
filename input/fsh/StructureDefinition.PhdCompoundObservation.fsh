@@ -44,7 +44,7 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
   * valueSampledData
     * origin 1..1
       * ^definition = "The base quantity that a measured value of zero represents. In addition, this provides the calibration information for the measurement."
-    * period 1..
+    * interval 1..
       * ^definition = "The time interval between samples."
     * factor 1..
       * ^definition = "A correction factor that is applied to the sampled data points before they are added to the origin."

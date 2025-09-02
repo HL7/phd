@@ -98,10 +98,11 @@ Description: "Profile for the Device Resource for a PHD"
     * ^comment = "The IEEE 11073-10101 specialization code from a System-Type-Spec-List[i].type."
     * coding 1..
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
-  * deviceVersion 1..
+  * version 1..
     * ^short = "The version of the specialization standard supported by the PHD from the System-Type-Spec-List[i].version"
     * ^comment = "The version of the specialization comes from the System-Type-Spec-List specialization entry. If a PHD supports multiple versions of the same specialization a separate `Device.specialization` entry is needed where the systemType elements are repeated. If the PHD reports a generic specialization (using MDC_DEV_SPEC_PROFILE_HYDRA or MDC_DEV_SPEC_PROFILE_GENERIC), the version is the 11073-10206 version."
-* deviceVersion ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
+* deviceVersion 
+  * ^short = "A PHD may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
   * ^comment = "There are several versions that are reported from a PHD. Firmware, Hardware, Protocol (internal, not IEEE 11073-10206), and Software versions come from the System Information object. The nomenclature and ACOM version comes from the ACOM base class. PHDs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHD."
 * deviceVersion ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type"
@@ -133,28 +134,23 @@ Description: "Profile for the Device Resource for a PHD"
   * ^definition = "This element represents the time synchronization method used by the PHD. It is an MDC coded value."
   * ^comment = "The clock set method is a required attribute in the IEEE 11073-10206 standard. It is also supported by Bluetooth Low Energy ETS and GHS specifications. Strictly speaking, the time synchronization method is not a property of the PHD but rather a property of the PHG. However, it is included here as it is a required attribute in the IEEE 11073-10206 standard and is often used by the PHG to determine how to set the time on the PHD. In most cases it reflects the time synchronization method used to set the PHG's clock and strictly speaking it should not be reported as a static device property, but as part of a coincident timestamp."
   * type = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
-  * valueCode ..1
+  * valueCodeableConcept ..1
     * coding 1..*
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
 
 * property[continuaCertProperty] ^short = "Continua certified PHD interfaces (from IEEE 11073-20601)"
   * ^definition = "This element represents a Continua certified interface that is supported by the PHD. It is an MDC coded value."
   * type = Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
-  * valueCode ..1
-  * valueCode from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
+  * valueCodeableConcept ..1
+  * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
 * property[clockBitProperty] ^short = "Boolean Properties reported by the Clock"
   * ^definition = "For each Boolean clock capability reported by a PHD a `property` element is used."
   * type from ASN1ClockBits (required)
     * ^short = "Tells what the clock capability item is"
     * ^definition = "One of the capabilities of the clock as reported by the PHD."
-  * valueQuantity ..0
-  * valueCode 1..1
-    * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
-      * code 1..
-        * ^definition = "If bit is set, code contains Y if cleared, N"
+  * valueBoolean 1..1
+    * ^definition = "The value of the clock capability item as reported by the PHD."
 
 * property[clockResolutionProperty] ^short = "Clock Resolution as reported by the PHD"
   * ^definition = "The clock resolution as reported by the PHD in microseconds."
@@ -185,24 +181,19 @@ Description: "Profile for the Device Resource for a PHD"
   * type = ASN1ToHL7#532354.0
     * ^short = "Negated regulatory status of the PHD"
     * ^definition = "This element represents the negated regulatory status of the PHD."
-  * valueQuantity ..0
-  * valueCode 1..1
-    * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
-      * code 1..
-        * ^definition = "If bit is set, the device is not regulated. If cleared, the device is regulated."
+  * valueBoolean
+    * ^definition = "If true, the device is not regulated. If false, the device is regulated."
 
 * property[USB-VID-PID] ^short = "USB Vendor and Product ID"
   * ^definition = "The USB Vendor and Product ID as reported by the PHD."
   * type = ContinuaDeviceIdentifiers#USB
     * ^short = "USB Vendor and Product ID"
     * ^definition = "The USB Vendor and Product ID as reported by the PHD."
-  * valueQuantity ..0
-  * valueCode.coding.system 
+  * valueCodeableConcept 1..1
+  * valueCodeableConcept.coding.system 
     * ^short = "USB Vendor and Product ID code system"
     * ^definition = "The USB Vendor and Product ID naming system id is http://hl7.org/fhir/sid/usb-vid-pid, but that cannot be used here as this is not a code system in FHIR."
-  * valueCode.text 1..1
+  * valueCodeableConcept.text 1..1
     * ^definition = "The USB Vendor and Product ID as reported by the PHD in the form of a coded string such as '1234:56AB'."
     * ^comment = "The USB Vendor and Product ID is not a required attribute in the IEEE 11073-10206 standard but is often reported by PHDs that support USB transport."
 

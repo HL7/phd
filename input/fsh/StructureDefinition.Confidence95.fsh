@@ -19,4 +19,4 @@ Invariant: confidence-range-units
 Description: "The units used should be equal."
 * severity = #warning
 * expression = "low.unit.exists() and high.unit.exists() and low.unit = high.unit"
-* xpath = "@value|f:*|h:div"
+//* xpath = "@value|f:*|h:div"

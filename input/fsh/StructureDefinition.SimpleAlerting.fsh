@@ -42,5 +42,5 @@ Invariant: alerting-range-units
 Description: "The units used should be equal."
 * severity = #warning
 * expression = "low.code.exists() and high.code.exists() and low.code = high.code"
-* xpath = "@value|f:*|h:div"
+//* xpath = "@value|f:*|h:div"
 
