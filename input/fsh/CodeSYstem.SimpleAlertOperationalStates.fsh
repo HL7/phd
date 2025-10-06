@@ -1,6 +1,6 @@
 CodeSystem: SimpleAlertOperationalStatesCS
 Id: SimpleAlertOperationalStatesCS
-Title: "Simple Alert Operational States"
+Title: "Simple Alert Operational States Code System"
 Description: "The operational states for the simple alerting system."
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS"
 * ^experimental = false

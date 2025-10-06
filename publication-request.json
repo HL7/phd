@@ -1,11 +1,11 @@
 {
     "package-id" : "hl7.fhir.uv.phd",
-    "version" : "2.0.0-ballot2",
+    "version" : "3.0.0-draft1",
     "path" : "http://hl7.org/fhir/uv/phd/2025Sep",
     "mode" : "working",
     "status": "ballot",
-    "sequence": "STU 2",
-    "desc": "STU 2 - 2nd ballot. This version is based on IEEE 11073-10206 - ACOM with Bluetooth GHS support.",
+    "sequence": "STU 3",
+    "desc": "STU 3 - draft1. This version is based on IEEE 11073-10206 - ACOM with Bluetooth GHS support and FHIR R6.",
     "changes" : "input/pagecontent/changes.md",
     "first" : false
   }

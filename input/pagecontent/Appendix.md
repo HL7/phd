@@ -39,6 +39,10 @@ Reported issues can be found on the [HL7 FHIR PHD JIRA Dashboard](https://jira.h
 New issues can be reported there as well.
 
 ### Used Jekyll/Liquid variables:
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
 
 | Variable Name | Liquid | Value |
 |---------------|-------|--|

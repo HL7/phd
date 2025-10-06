@@ -149,7 +149,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type from ASN1ClockBits (required)
     * ^short = "Tells what the clock capability item is"
     * ^definition = "One of the capabilities of the clock as reported by the PHD."
-  * valueBoolean 1..1
+  * valueBoolean //1..1
     * ^definition = "The value of the clock capability item as reported by the PHD."
 
 * property[clockResolutionProperty] ^short = "Clock Resolution as reported by the PHD"

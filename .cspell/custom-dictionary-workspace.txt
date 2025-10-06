@@ -11,6 +11,7 @@ PCHA
 pleth
 plethysmograph
 RTMMS
+RTSA
 SFLOAT
 SNOMED
 thresholding
