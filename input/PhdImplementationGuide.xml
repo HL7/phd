@@ -43,7 +43,7 @@ In this example there are only xml structure definitions, value sets, code syste
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir/src-generated/schemas/fhir-single.xsd">
   <id value="hl7.fhir.uv.phd"/>
   <url value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
-  <version value="2.0.0-ballot2"/>
+  <version value="2.0.0-draft3"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
   <status value="active"/>
@@ -270,14 +270,14 @@ In this example there are only xml structure definitions, value sets, code syste
       <exampleBoolean value="false"/>
     </resource>
     <!--    end of missing value sets -->
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/PhdFHIRServer"/>
-      </reference>
-      <name value="PhdFHIRServer"/>
-      <exampleBoolean value="false"/>
+    <!-- <resource> -->
+      <!-- <reference> -->
+        <!-- <reference value="CapabilityStatement/PhdFHIRServerR4"/> -->
+      <!-- </reference> -->
+      <!-- <name value="PhdFHIRServerR4"/> -->
+      <!-- <exampleBoolean value="false"/> -->
       <!-- <groupingId value="capabilities" /> -->
-    </resource>
+    <!-- </resource> -->
     <resource>
       <reference>
         <reference value="Bundle/bundle-example-1"/>

@@ -1,5 +1,5 @@
 FSHOnly: true
 canonical: http://hl7.org/fhir/uv/phd
-status: active
-version: 1.0.0
+# status: active
+# version: 1.0.0
 fhirVersion: 4.0.1
