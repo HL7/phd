@@ -81,7 +81,7 @@
 <artifact id="CodeSystem/MissingMDCCodes" key="CodeSystem-MissingMDCCodes" name="Missing MDC Codes"/>
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
-<artifact id="CapabilityStatement/PhdFHIRServerR4" key="CapabilityStatement-PhdFHIRServerR4" name="PHD IG FHIR Observation Server requirements"/>
+<artifact id="CapabilityStatement/PhdFHIRServer" key="CapabilityStatement-PhdFHIRServer" name="PHD IG FHIR Observation Server requirements"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>
 <artifact id="StructureDefinition/PhdBitsEnumerationObservation" key="StructureDefinition-PhdBitsEnumerationObservation" name="PhdBitsEnumerationObservation"/>
@@ -91,7 +91,6 @@
 <artifact id="StructureDefinition/PhdCompoundObservation" key="StructureDefinition-PhdCompoundObservation" name="PhdCompoundObservation"/>
 <artifact id="StructureDefinition/PhdDevice" key="StructureDefinition-PhdDevice" name="PhdDevice"/>
 <artifact id="StructureDefinition/PhdDeviceMetric" key="StructureDefinition-PhdDeviceMetric" name="PhdDeviceMetric"/>
-<artifact deprecated="true" id="CapabilityStatement/PhdFHIRServer" key="CapabilityStatement-PhdFHIRServer" name="PhdFHIRServer"/>
 <artifact id="StructureDefinition/PhdNumericObservation" key="StructureDefinition-PhdNumericObservation" name="PhdNumericObservation"/>
 <artifact id="StructureDefinition/PhdPatient" key="StructureDefinition-PhdPatient" name="PhdPatient"/>
 <artifact id="StructureDefinition/PhdRtsaObservation" key="StructureDefinition-PhdRtsaObservation" name="PhdRtsaObservation"/>

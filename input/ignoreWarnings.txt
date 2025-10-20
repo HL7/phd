@@ -18,8 +18,8 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bodytemp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # When a Phd compound observation is also a vital sign this warning is generated. The LOINC coding does not match the slice for the MDC coding. This is not a real problem.
-This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|2.0.0-draft3 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|2.0.0-draft3 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
@@ -28,20 +28,30 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
 # This is generated for all observations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.0.0-draft3 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This informational message is due to inheriting this extension from the core specification.
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note Use additionalBinding extension or element instead
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
 # We will switch to the new Device Gateway extension in the next version of the PHD IG. 
-The extension http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice|5.3.0-ballot-tc1 is deprecated with the note Use Device Gateway (device-gateway) extension which allows codeableReference (Device) in R6 and requires cross version extension for codeable reference.
+The extension http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice|5.2.0 is deprecated with the note Use Device Gateway (device-gateway) extension which allows codeableReference (Device) in R6 and requires cross version extension for codeable reference.
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
 Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well.' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.30.0
+Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.31.0
+
+# Reference to draft code system...
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers|2.0.0-draft3
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ASN1ToHL7|2.0.0-draft3
+Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS|2.0.0-draft3
+Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs|2.0.0-draft3
+Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS|2.0.0-draft3
 
 # Publisher process choice - can safely be ignored
 The value set expansion is too large, and only a subset has been displayed
+
+# "SHALL" is generated by Publisher
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause

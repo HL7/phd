@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Oct 8, 2025 16:15+0000 for FHIR v6.0.0-ballot3 
+  Generated on Mon, Oct 20, 2025 13:04+0000 for FHIR v6.0.0-ballot3 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot3">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -14535,7 +14535,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
   </xs:complexType>
   <xs:complexType name="RelatedArtifact">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
+      <xs:documentation xml:lang="en">Related artifacts such as dependencies, components, additional documentation, justification, or bibliographic references.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -14544,11 +14544,6 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           <xs:element name="type" type="RelatedArtifactType" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="classifier" type="CodeableConcept" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Provides additional classifiers of the related artifact.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="label" type="string" minOccurs="0" maxOccurs="1">
@@ -14563,34 +14558,33 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           </xs:element>
           <xs:element name="citation" type="markdown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.</xs:documentation>
+              <xs:documentation xml:lang="en">Deprecated in favor of the new artifact[x] element. A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="document" type="Attachment" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The document being referenced, represented as an attachment. This is exclusive with the resource element.</xs:documentation>
+              <xs:documentation xml:lang="en">Deprecated in favor of the new artifact[x] element. The document being referenced, represented as an attachment. This is exclusive with the resource element.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="resource" type="canonical" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The related artifact, such as a library, value set, profile, or other knowledge resource.</xs:documentation>
+              <xs:documentation xml:lang="en">Deprecated in favor of the new artifact[x] element. The related artifact, such as a library, value set, profile, or other knowledge resource.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="resourceReference" type="Reference" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The related artifact, if the artifact is not a canonical resource, or a resource reference to a canonical resource.</xs:documentation>
+              <xs:documentation xml:lang="en">Deprecated in favor of the new artifact[x] element. The related artifact, if the artifact is not a canonical resource, or a resource reference to a canonical resource.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="publicationStatus" type="code" minOccurs="0" maxOccurs="1">
+          <xs:choice minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The publication status of the artifact being referred to.</xs:documentation>
+              <xs:documentation xml:lang="en">The related artifact represented as a canonical or direct reference to a FHIR resource, an Attachment, or directly inline as markdown.</xs:documentation>
             </xs:annotation>
-          </xs:element>
-          <xs:element name="publicationDate" type="date" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date of publication of the artifact being referred to.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
+           <xs:element name="artifactMarkdown" type="markdown"  maxOccurs="1"/>
+           <xs:element name="artifactAttachment" type="Attachment"  maxOccurs="1"/>
+           <xs:element name="artifactCanonical" type="canonical"  maxOccurs="1"/>
+           <xs:element name="artifactReference" type="Reference"  maxOccurs="1"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -14640,141 +14634,6 @@ The type is the Canonical URL of Resource Definition that is the type this refer
       <xs:enumeration value="part-of">
         <xs:annotation>
           <xs:documentation xml:lang="en">Part Of</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="amends">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Amends</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="amended-with">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Amended With</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="appends">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Appends</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="appended-with">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Appended With</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="cites">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Cites</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="cited-by">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Cited By</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="comments-on">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Is Comment On</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="comment-in">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Has Comment In</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="contains">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Contains</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="contained-in">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Contained In</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="corrects">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Corrects</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="correction-in">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Correction In</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="replaces">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Replaces</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="replaced-with">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Replaced With</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="retracts">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Retracts</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="retracted-by">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Retracted By</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="signs">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Signs</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="similar-to">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Similar To</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="supports">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Supports</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="supported-with">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Supported With</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="transforms">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Transforms</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="transformed-into">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Transformed Into</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="transformed-with">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Transformed With</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="documents">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Documents</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="specification-of">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Specification Of</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="created-with">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Created With</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="cite-as">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Cite As</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -15671,6 +15530,21 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">Reference to a specific Account belonging to the guarantor to use.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="responsibility" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The amount (as a percentage) of the charges the guarantor is responsible.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="limit" minOccurs="0" maxOccurs="1" type="Money">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The maximum amount the guarantee will pay.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="rank" minOccurs="0" maxOccurs="1" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The order in which guarantors will be held responsible.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -15938,12 +15812,12 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the activity definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the activity definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -16422,12 +16296,12 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the actor definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the actor definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the actor definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the actor definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="ActorDefinitionActorType">
@@ -17883,7 +17757,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the artifact assessment and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the artifact assessment.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the artifact assessment and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the artifact assessment.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -17922,7 +17796,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
            </xs:annotation>
@@ -18636,9 +18510,14 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Healthcare professional who is performing the collection.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="source" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="sourcePatient" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The patient or entity, such as a hospital or vendor in the case of a processed/manipulated/manufactured product, providing the product.</xs:documentation>
+              <xs:documentation xml:lang="en">The patient providing the product.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="sourceOrganization" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The entity, such as a hospital or vendor in the case of a processed/manipulated/manufactured product, providing the product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -20174,12 +20053,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the capability statement and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the capability statement.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="kind" minOccurs="1" maxOccurs="1" type="CapabilityStatementKind">
@@ -21780,12 +21659,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the charge item definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the charge item definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the charge item definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the charge item definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -21966,12 +21845,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Use and/or publishing restrictions for the citation record, not for the cited artifact.</xs:documentation>
+              <xs:documentation xml:lang="en">Notice about intellectual property ownership, can include restrictions on use for the citation record, not for the cited artifact.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -22123,7 +22002,7 @@ of the resource representation.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
            </xs:annotation>
@@ -22344,7 +22223,7 @@ of the resource representation.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
            </xs:annotation>
@@ -22708,6 +22587,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The category of claim, e.g. oral, pharmacy, vision, institutional, professional.</xs:documentation>
@@ -22980,6 +22864,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The general class of the information supplied: information; exception; accident, employment; onset, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="subCategory" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A finer classification within the more general category.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.</xs:documentation>
@@ -22996,12 +22885,60 @@ of the resource representation.</xs:documentation>
             <xs:annotation>
               <xs:documentation xml:lang="en">Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.</xs:documentation>
             </xs:annotation>
+            <xs:element name="valueBase64Binary" type="base64Binary"/>
             <xs:element name="valueBoolean" type="boolean"/>
+            <xs:element name="valueCanonical" type="canonical"/>
+            <xs:element name="valueCode" type="code"/>
+            <xs:element name="valueDate" type="date"/>
+            <xs:element name="valueDateTime" type="dateTime"/>
+            <xs:element name="valueDecimal" type="decimal"/>
+            <xs:element name="valueId" type="id"/>
+            <xs:element name="valueInstant" type="instant"/>
+            <xs:element name="valueInteger" type="integer"/>
+            <xs:element name="valueInteger64" type="integer64"/>
+            <xs:element name="valueMarkdown" type="markdown"/>
+            <xs:element name="valueOid" type="oid"/>
+            <xs:element name="valuePositiveInt" type="positiveInt"/>
             <xs:element name="valueString" type="string"/>
-            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueTime" type="time"/>
+            <xs:element name="valueUnsignedInt" type="unsignedInt"/>
+            <xs:element name="valueUri" type="uri"/>
+            <xs:element name="valueUrl" type="url"/>
+            <xs:element name="valueUuid" type="uuid"/>
+            <xs:element name="valueAddress" type="Address"/>
+            <xs:element name="valueAge" type="Age"/>
+            <xs:element name="valueAnnotation" type="Annotation"/>
             <xs:element name="valueAttachment" type="Attachment"/>
-            <xs:element name="valueReference" type="Reference"/>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="valueCodeableReference" type="CodeableReference"/>
+            <xs:element name="valueCoding" type="Coding"/>
+            <xs:element name="valueContactPoint" type="ContactPoint"/>
+            <xs:element name="valueCount" type="Count"/>
+            <xs:element name="valueDistance" type="Distance"/>
+            <xs:element name="valueDuration" type="Duration"/>
+            <xs:element name="valueHumanName" type="HumanName"/>
             <xs:element name="valueIdentifier" type="Identifier"/>
+            <xs:element name="valueMoney" type="Money"/>
+            <xs:element name="valuePeriod" type="Period"/>
+            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueRange" type="Range"/>
+            <xs:element name="valueRatio" type="Ratio"/>
+            <xs:element name="valueRatioRange" type="RatioRange"/>
+            <xs:element name="valueReference" type="Reference"/>
+            <xs:element name="valueSampledData" type="SampledData"/>
+            <xs:element name="valueSignature" type="Signature"/>
+            <xs:element name="valueTiming" type="Timing"/>
+            <xs:element name="valueContactDetail" type="ContactDetail"/>
+            <xs:element name="valueDataRequirement" type="DataRequirement"/>
+            <xs:element name="valueExpression" type="Expression"/>
+            <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
+            <xs:element name="valueRelatedArtifact" type="RelatedArtifact"/>
+            <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
+            <xs:element name="valueUsageContext" type="UsageContext"/>
+            <xs:element name="valueAvailability" type="Availability"/>
+            <xs:element name="valueExtendedContactDetail" type="ExtendedContactDetail"/>
+            <xs:element name="valueDosage" type="Dosage"/>
+            <xs:element name="valueMeta" type="Meta"/>
           </xs:choice>
           <xs:element name="reason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -23589,6 +23526,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.</xs:documentation>
@@ -23674,6 +23616,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">A package billing code or bundle code used to group products and services to a particular health condition (such as heart attack) which is based on a predetermined grouping code system.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="supportingInfo" type="ClaimResponse.SupportingInfo" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="item" type="ClaimResponse.Item" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.</xs:documentation>
@@ -23681,7 +23628,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="addItem" type="ClaimResponse.AddItem" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The first-tier service adjudications for payor added product or service lines.</xs:documentation>
+              <xs:documentation xml:lang="en">The first-tier service adjudications for payer added product or service lines.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="adjudication" type="ClaimResponse.Adjudication" minOccurs="0" maxOccurs="unbounded">
@@ -23761,6 +23708,103 @@ of the resource representation.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="ClaimResponse.SupportingInfo">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This resource provides the adjudication details from the processing of a Claim resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="sequence" minOccurs="1" maxOccurs="1" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A number to uniquely identify supporting information entries.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="category" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The general class of the information supplied: information; exception; accident, employment; onset, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date when or period to which this information refers.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="timingDate" type="date"/>
+            <xs:element name="timingPeriod" type="Period"/>
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="valueBase64Binary" type="base64Binary"/>
+            <xs:element name="valueBoolean" type="boolean"/>
+            <xs:element name="valueCanonical" type="canonical"/>
+            <xs:element name="valueCode" type="code"/>
+            <xs:element name="valueDate" type="date"/>
+            <xs:element name="valueDateTime" type="dateTime"/>
+            <xs:element name="valueDecimal" type="decimal"/>
+            <xs:element name="valueId" type="id"/>
+            <xs:element name="valueInstant" type="instant"/>
+            <xs:element name="valueInteger" type="integer"/>
+            <xs:element name="valueInteger64" type="integer64"/>
+            <xs:element name="valueMarkdown" type="markdown"/>
+            <xs:element name="valueOid" type="oid"/>
+            <xs:element name="valuePositiveInt" type="positiveInt"/>
+            <xs:element name="valueString" type="string"/>
+            <xs:element name="valueTime" type="time"/>
+            <xs:element name="valueUnsignedInt" type="unsignedInt"/>
+            <xs:element name="valueUri" type="uri"/>
+            <xs:element name="valueUrl" type="url"/>
+            <xs:element name="valueUuid" type="uuid"/>
+            <xs:element name="valueAddress" type="Address"/>
+            <xs:element name="valueAge" type="Age"/>
+            <xs:element name="valueAnnotation" type="Annotation"/>
+            <xs:element name="valueAttachment" type="Attachment"/>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="valueCodeableReference" type="CodeableReference"/>
+            <xs:element name="valueCoding" type="Coding"/>
+            <xs:element name="valueContactPoint" type="ContactPoint"/>
+            <xs:element name="valueCount" type="Count"/>
+            <xs:element name="valueDistance" type="Distance"/>
+            <xs:element name="valueDuration" type="Duration"/>
+            <xs:element name="valueHumanName" type="HumanName"/>
+            <xs:element name="valueIdentifier" type="Identifier"/>
+            <xs:element name="valueMoney" type="Money"/>
+            <xs:element name="valuePeriod" type="Period"/>
+            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueRange" type="Range"/>
+            <xs:element name="valueRatio" type="Ratio"/>
+            <xs:element name="valueRatioRange" type="RatioRange"/>
+            <xs:element name="valueReference" type="Reference"/>
+            <xs:element name="valueSampledData" type="SampledData"/>
+            <xs:element name="valueSignature" type="Signature"/>
+            <xs:element name="valueTiming" type="Timing"/>
+            <xs:element name="valueContactDetail" type="ContactDetail"/>
+            <xs:element name="valueDataRequirement" type="DataRequirement"/>
+            <xs:element name="valueExpression" type="Expression"/>
+            <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
+            <xs:element name="valueRelatedArtifact" type="RelatedArtifact"/>
+            <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
+            <xs:element name="valueUsageContext" type="UsageContext"/>
+            <xs:element name="valueAvailability" type="Availability"/>
+            <xs:element name="valueExtendedContactDetail" type="ExtendedContactDetail"/>
+            <xs:element name="valueDosage" type="Dosage"/>
+            <xs:element name="valueMeta" type="Meta"/>
+          </xs:choice>
+          <xs:element name="reason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Provides the reason in the situation where a reason code is required in addition to the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="ClaimResponse.Item">
     <xs:annotation>
       <xs:documentation xml:lang="en">This resource provides the adjudication details from the processing of a Claim resource.</xs:documentation>
@@ -23776,6 +23820,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="traceNumber" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="informationSequence" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Exceptions, special conditions and supporting information applicable for this service or product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="noteNumber" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
@@ -23968,6 +24017,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="informationSequence" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Exceptions, special conditions and supporting information applicable for this service or product.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="provider" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The providers who are authorized for the services rendered to the patient.</xs:documentation>
@@ -23976,6 +24030,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="revenue" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of revenue or cost center providing the product and/or service.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Code to identify the general type of benefits under which products and services are provided.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="productOrService" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -24065,7 +24124,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="detail" type="ClaimResponse.Detail1" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The second-tier service adjudications for payor added services.</xs:documentation>
+              <xs:documentation xml:lang="en">The second-tier service adjudications for payer added services.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -24167,7 +24226,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="subDetail" type="ClaimResponse.SubDetail1" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The third-tier service adjudications for payor added services.</xs:documentation>
+              <xs:documentation xml:lang="en">The third-tier service adjudications for payer added services.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -24319,6 +24378,11 @@ of the resource representation.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="class" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code to indicate the business purpose of the note.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="number" minOccurs="0" maxOccurs="1" type="positiveInt">
             <xs:annotation>
               <xs:documentation xml:lang="en">A number to uniquely identify a note entry.</xs:documentation>
@@ -24329,7 +24393,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The business purpose of the note text.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="text" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="text" minOccurs="1" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The explanation or description associated with the processing.</xs:documentation>
            </xs:annotation>
@@ -25060,12 +25124,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the code system and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the code system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -26398,12 +26462,12 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the concept map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the concept map.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the concept map and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the concept map.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -27949,7 +28013,7 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to Contract precursor content. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the Contract precursor content.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -28778,6 +28842,11 @@ The actual author of the section when it is not the author of the composition. I
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="kind" minOccurs="1" maxOccurs="1" type="Kind">
             <xs:annotation>
               <xs:documentation xml:lang="en">The nature of the coverage be it insurance, or cash payment such as self-pay.</xs:documentation>
@@ -28825,7 +28894,7 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.</xs:documentation>
+              <xs:documentation xml:lang="en">Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force. When non-contiguous periods of coverage need to be documented it is recommended that this is accomplished through the use of an extension,rather than complicating coverage period calculations for many users of the Coverage resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="insurer" minOccurs="0" maxOccurs="1" type="Reference">
@@ -29039,6 +29108,11 @@ The actual author of the section when it is not the author of the composition. I
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="FinancialResourceStatusCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -29324,6 +29398,11 @@ The actual author of the section when it is not the author of the composition. I
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="purpose" minOccurs="1" maxOccurs="unbounded" type="EligibilityResponsePurpose">
             <xs:annotation>
               <xs:documentation xml:lang="en">Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.</xs:documentation>
@@ -29356,7 +29435,7 @@ The actual author of the section when it is not the author of the composition. I
               <xs:documentation xml:lang="en">The provider which is responsible for the request.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="request" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="request" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Reference to the original request resource.</xs:documentation>
            </xs:annotation>
@@ -30304,7 +30383,7 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The who or what the alert is about.</xs:documentation>
+              <xs:documentation xml:lang="en">Who or what the alert is about.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
@@ -30325,6 +30404,11 @@ The actual author of the section when it is not the author of the composition. I
           <xs:element name="device" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A top-level or component Device (such as a MDS, VMD, or Channel) that detected the alert condition; or, within such a Device, the specific DeviceMetric (e.g. a heart rate reading) that was in an alert condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The location of the subject of the alert at the time that the alert was raised.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="derivedFrom" type="DeviceAlert.DerivedFrom" minOccurs="0" maxOccurs="unbounded">
@@ -30638,12 +30722,12 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the DeviceDefinition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the DeviceDefinition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the DeviceDefinition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the DeviceDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="udiDeviceIdentifier" type="DeviceDefinition.UdiDeviceIdentifier" minOccurs="0" maxOccurs="unbounded">
@@ -31660,16 +31744,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Identifiers assigned to this order by the orderer or by the receiver.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="instantiatesCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesUri" minOccurs="0" maxOccurs="unbounded" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Plan/proposal/order fulfilled by this request.</xs:documentation>
@@ -31705,7 +31779,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">If true, indicates that the provider is asking for the patient to either stop using or to not start using the specified device or category of devices. For example, the patient has undergone surgery and the provider is indicating that the patient should not wear contact lenses.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableReference">
+          <xs:element name="product" minOccurs="1" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The details of the device to be used.</xs:documentation>
            </xs:annotation>
@@ -31751,6 +31825,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="performer" minOccurs="0" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The desired individual or entity to provide the device to the subject of the request (e.g., patient, location).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="location" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The preferred location(s) where the device should actually be used in coded or free text form. E.g. at home or nursing day care center.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
@@ -33589,12 +33668,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the event definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the event definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the event definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the event definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -33837,7 +33916,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
            </xs:annotation>
@@ -34111,7 +34190,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Description and definition of the variable.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="handling" minOccurs="0" maxOccurs="1" type="EvidenceVariableHandling">
+          <xs:element name="handling" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">How the variable is classified for use in adjusted analysis.</xs:documentation>
            </xs:annotation>
@@ -34208,56 +34287,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="EvidenceVariableRoleEnum" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="EvidenceVariableHandlingEnum">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="boolean">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">boolean variable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="continuous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">continuous variable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="dichotomous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">dichotomous variable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ordinal">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">ordinal variable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="polychotomous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">polychotomous variable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="time-to-event">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">time-to-event</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="not-specified">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">not-specified</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="EvidenceVariableHandling">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="EvidenceVariableHandlingEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -34494,7 +34523,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
            </xs:annotation>
@@ -34762,12 +34791,12 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the example scenario and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the example scenario.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the example scenario and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the example scenario.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actor" type="ExampleScenario.Actor" minOccurs="0" maxOccurs="unbounded">
@@ -35122,6 +35151,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The category of claim, e.g. oral, pharmacy, vision, institutional, professional.</xs:documentation>
@@ -35309,7 +35343,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           </xs:element>
           <xs:element name="addItem" type="ExplanationOfBenefit.AddItem" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The first-tier service adjudications for payor added product or service lines.</xs:documentation>
+              <xs:documentation xml:lang="en">The first-tier service adjudications for payer added product or service lines.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="adjudication" type="ExplanationOfBenefit.Adjudication" minOccurs="0" maxOccurs="unbounded">
@@ -35495,12 +35529,60 @@ See guidance around (not) making local changes to elements [here](canonicalresou
             <xs:annotation>
               <xs:documentation xml:lang="en">Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.</xs:documentation>
             </xs:annotation>
+            <xs:element name="valueBase64Binary" type="base64Binary"/>
             <xs:element name="valueBoolean" type="boolean"/>
+            <xs:element name="valueCanonical" type="canonical"/>
+            <xs:element name="valueCode" type="code"/>
+            <xs:element name="valueDate" type="date"/>
+            <xs:element name="valueDateTime" type="dateTime"/>
+            <xs:element name="valueDecimal" type="decimal"/>
+            <xs:element name="valueId" type="id"/>
+            <xs:element name="valueInstant" type="instant"/>
+            <xs:element name="valueInteger" type="integer"/>
+            <xs:element name="valueInteger64" type="integer64"/>
+            <xs:element name="valueMarkdown" type="markdown"/>
+            <xs:element name="valueOid" type="oid"/>
+            <xs:element name="valuePositiveInt" type="positiveInt"/>
             <xs:element name="valueString" type="string"/>
-            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueTime" type="time"/>
+            <xs:element name="valueUnsignedInt" type="unsignedInt"/>
+            <xs:element name="valueUri" type="uri"/>
+            <xs:element name="valueUrl" type="url"/>
+            <xs:element name="valueUuid" type="uuid"/>
+            <xs:element name="valueAddress" type="Address"/>
+            <xs:element name="valueAge" type="Age"/>
+            <xs:element name="valueAnnotation" type="Annotation"/>
             <xs:element name="valueAttachment" type="Attachment"/>
-            <xs:element name="valueReference" type="Reference"/>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="valueCodeableReference" type="CodeableReference"/>
+            <xs:element name="valueCoding" type="Coding"/>
+            <xs:element name="valueContactPoint" type="ContactPoint"/>
+            <xs:element name="valueCount" type="Count"/>
+            <xs:element name="valueDistance" type="Distance"/>
+            <xs:element name="valueDuration" type="Duration"/>
+            <xs:element name="valueHumanName" type="HumanName"/>
             <xs:element name="valueIdentifier" type="Identifier"/>
+            <xs:element name="valueMoney" type="Money"/>
+            <xs:element name="valuePeriod" type="Period"/>
+            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueRange" type="Range"/>
+            <xs:element name="valueRatio" type="Ratio"/>
+            <xs:element name="valueRatioRange" type="RatioRange"/>
+            <xs:element name="valueReference" type="Reference"/>
+            <xs:element name="valueSampledData" type="SampledData"/>
+            <xs:element name="valueSignature" type="Signature"/>
+            <xs:element name="valueTiming" type="Timing"/>
+            <xs:element name="valueContactDetail" type="ContactDetail"/>
+            <xs:element name="valueDataRequirement" type="DataRequirement"/>
+            <xs:element name="valueExpression" type="Expression"/>
+            <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
+            <xs:element name="valueRelatedArtifact" type="RelatedArtifact"/>
+            <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
+            <xs:element name="valueUsageContext" type="UsageContext"/>
+            <xs:element name="valueAvailability" type="Availability"/>
+            <xs:element name="valueExtendedContactDetail" type="ExtendedContactDetail"/>
+            <xs:element name="valueDosage" type="Dosage"/>
+            <xs:element name="valueMeta" type="Meta"/>
           </xs:choice>
           <xs:element name="reason" minOccurs="0" maxOccurs="1" type="Coding">
             <xs:annotation>
@@ -35786,6 +35868,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:element name="detail" type="ExplanationOfBenefit.Detail" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Second-tier of goods and services.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="informationSequence" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Exceptions, special conditions and supporting information applicable for this service or product.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -36119,6 +36206,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">The type of revenue or cost center providing the product and/or service.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Code to identify the general type of benefits under which products and services are provided.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="productOrService" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">When the value is a group code then this item collects a set of related item details, otherwise this contains the product, service, drug or other billing code for the item. This element may be the start of a range of .productOrService codes used in conjunction with .productOrServiceEnd or it may be a solo element where .productOrServiceEnd is not used.</xs:documentation>
@@ -36211,7 +36303,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           </xs:element>
           <xs:element name="detail" type="ExplanationOfBenefit.Detail1" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The second-tier service adjudications for payor added services.</xs:documentation>
+              <xs:documentation xml:lang="en">The second-tier service adjudications for payer added services.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -36318,7 +36410,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           </xs:element>
           <xs:element name="subDetail" type="ExplanationOfBenefit.SubDetail1" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The third-tier service adjudications for payor added services.</xs:documentation>
+              <xs:documentation xml:lang="en">The third-tier service adjudications for payer added services.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -36475,6 +36567,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="class" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code to indicate the business purpose of the note.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="number" minOccurs="0" maxOccurs="1" type="positiveInt">
             <xs:annotation>
               <xs:documentation xml:lang="en">A number to uniquely identify a note entry.</xs:documentation>
@@ -36485,7 +36582,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">The business purpose of the note text.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="text" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="text" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The explanation or description associated with the processing.</xs:documentation>
            </xs:annotation>
@@ -37408,6 +37505,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">Captures the reason for the current lifecycle status.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="recorder" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Individual who recorded the record and takes responsibility for its content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="source" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates whose goal this is - patient goal, practitioner goal, etc.</xs:documentation>
@@ -37670,12 +37772,12 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the graph definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the graph definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the graph definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the graph definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="start" minOccurs="0" maxOccurs="1" type="id">
@@ -38975,12 +39077,12 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the Group and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the Group.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the Group and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the Group.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="GroupType">
@@ -39211,9 +39313,19 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           <xs:documentation xml:lang="en">Medication</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="medicinalproductdefinition">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">MedicinalProductDefinition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="substance">
         <xs:annotation>
           <xs:documentation xml:lang="en">Substance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="substancedefinition">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">SubstanceDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="biologicallyDerivedProduct">
@@ -39619,12 +39731,12 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
   </xs:complexType>
   <xs:element name="ImagingSelection" type="ImagingSelection">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances within a single Study and Series. This might include additional specifics such as a set of frames or an image region, allowing linkage to an Observation Resource.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="ImagingSelection">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances within a single Study and Series. This might include additional specifics such as a set of frames or an image region, allowing linkage to an Observation Resource.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -39632,7 +39744,7 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Unique identifiers assigned to this imaging selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this imaging selection by the performer and/or other systems.  These identifiers remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="ImagingSelectionStatus">
@@ -39657,22 +39769,22 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           </xs:element>
           <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The patient, or group of patients, location, device, organization, procedure or practitioner this imaging selection is about and into whose or what record the imaging selection is placed.</xs:documentation>
+              <xs:documentation xml:lang="en">The subject, typically a patient, of the imaging selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="issued" minOccurs="0" maxOccurs="1" type="instant">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date and time this imaging selection was created.</xs:documentation>
+              <xs:documentation xml:lang="en">Date and time the imaging selection was created.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="performer" type="ImagingSelection.Performer" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Selectors of the instances – human or machine.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates who or what performed the imaging selection and how they were involved.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A list of the diagnostic requests that resulted in this imaging selection being performed.</xs:documentation>
+              <xs:documentation xml:lang="en">A plan or order that is fulfilled in whole or in part by this imaging selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="derivedFrom" minOccurs="0" maxOccurs="1" type="Reference">
@@ -39687,22 +39799,22 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           </xs:element>
           <xs:element name="seriesUid" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Series Instance UID for the DICOM Series from which the images were selected.</xs:documentation>
+              <xs:documentation xml:lang="en">The DICOM Series Instance UID of the selected series.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="seriesNumber" minOccurs="0" maxOccurs="1" type="unsignedInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Series Number for the DICOM Series from which the images were selected.</xs:documentation>
+              <xs:documentation xml:lang="en">The numeric identifier of the selected series in the study.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="frameOfReferenceUid" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Uniquely identifies groups of composite instances that have the same coordinate system that conveys spatial and/or temporal information.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifier used to group composite instances that have the same coordinate system that conveys spatial and/or temporal information.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="bodySite" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The anatomic structures examined. See [DICOM Part 16 Annex L](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings.</xs:documentation>
+              <xs:documentation xml:lang="en">The anatomic structures selected. See [DICOM Part 16 Annex L](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite MAY include the laterality of body part imaged.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="focus" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -39722,7 +39834,7 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           </xs:element>
           <xs:element name="imageRegion3D" type="ImagingSelection.ImageRegion3D" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Each imaging selection might includes a 3D image region, specified by a region type and a set of 3D coordinates.</xs:documentation>
+              <xs:documentation xml:lang="en">Specifies a 3D image region, defined by a region type and a set of 3D coordinates.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -39731,19 +39843,19 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
   </xs:complexType>
   <xs:complexType name="ImagingSelection.Performer">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances within a single Study and Series. This might include additional specifics such as a set of frames or an image region, allowing linkage to an Observation Resource.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="function" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Distinguishes the type of involvement of the performer.</xs:documentation>
+              <xs:documentation xml:lang="en">Distinguishes the type of involvement of the performer in the imaging selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="actor" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="actor" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Author - human or machine.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates who or what performed the imaging selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -39752,39 +39864,55 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
   </xs:complexType>
   <xs:complexType name="ImagingSelection.Instance">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances within a single Study and Series. This might include additional specifics such as a set of frames or an image region, allowing linkage to an Observation Resource.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="uid" minOccurs="1" maxOccurs="1" type="id">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The SOP Instance UID for the selected DICOM instance.</xs:documentation>
+              <xs:documentation xml:lang="en">The SOP Instance UID for the selected DICOM this image or other DICOM content.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="number" minOccurs="0" maxOccurs="1" type="unsignedInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Instance Number for the selected DICOM instance.</xs:documentation>
+              <xs:documentation xml:lang="en">TThe number of the instance assigned by the creator of the series. MAY or MAY NOT correspond to intended display order.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="sopClass" minOccurs="0" maxOccurs="1" type="oid">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The SOP Class UID for the selected DICOM instance.</xs:documentation>
+              <xs:documentation xml:lang="en">DICOM instance type.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subset" minOccurs="0" maxOccurs="unbounded" type="string">
+          <xs:element name="frameNumber" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Selected subset of the SOP Instance. The type of the subset item is determined by the `instance.sopClass` value.
-May be one of:
-- A list of frame numbers selected from a multiframe SOP Instance (See [DICOM PS 3.3 Table 10.3](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3)).
-- A list of Referenced Content Item Identifier values selected from a DICOM SR or other structured document SOP Instance (See [DICOM PS 3.3 C.17.3.2.5](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.2.5.html)).
-- A list of segment numbers selected from a segmentation SOP Instance (See [DICOM PS 3.3 Table C.8.20-4](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.20.4.html#table_C.8.20-4)).
-- A list of Region of Interest (ROI) numbers selected from a radiotherapy structure set SOP Instance (See [DICOM PS 3.3 C.8.8.5](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.5.html)).</xs:documentation>
+              <xs:documentation xml:lang="en">A list of frame numbers selected from a multiframe SOP Instance (See [DICOM PS 3.3 Table 10.3](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3)).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="referencedContentItemIdentifier" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of Referenced Content Item Identifier values selected from a DICOM SR or other structured document SOP Instance (See [DICOM PS 3.3 C.17.3.2.5](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.2.5.html)).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="segmentNumber" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of segment numbers selected from a segmentation SOP Instance (See [DICOM PS 3.3 Table C.8.20-4](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.20.4.html#table_C.8.20-4)).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="regionOfInterest" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of Region of Interest (ROI) numbers selected from a radiotherapy structure set SOP Instance (See [DICOM PS 3.3 C.8.8.5](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.5.html)).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="waveFormChannel" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of channels in a Waveform selected from an instance of a waveform SOP Class.
+Each channel is specified as a pair of values where the first value is the Multiplex Group Number, and the second value is the Channel Number within the multiplex group (See [DICOM PS 3.3 C.18.5.1.1](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.5.html#sect_C.18.5.1.1)).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="imageRegion2D" type="ImagingSelection.ImageRegion2D" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Each imaging selection instance or frame list might includes an image region, specified by a region type and a set of 2D coordinates.</xs:documentation>
+              <xs:documentation xml:lang="en">Specifies an image region, defined by a region type and a set of 2D coordinates in pixel space.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -39793,19 +39921,19 @@ May be one of:
   </xs:complexType>
   <xs:complexType name="ImagingSelection.ImageRegion2D">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances within a single Study and Series. This might include additional specifics such as a set of frames or an image region, allowing linkage to an Observation Resource.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="regionType" minOccurs="1" maxOccurs="1" type="ImagingSelectionDGraphicType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the type of image region.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of image region.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="coordinate" minOccurs="1" maxOccurs="unbounded" type="decimal">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The coordinates describing the image region. Encoded as a set of (column, row) pairs that denote positions in the selected image / frames specified with sub-pixel resolution.
+              <xs:documentation xml:lang="en">The coordinates defining the image region. Encoded as a set of (column, row) pairs that denote positions in the selected image / frames specified with sub-pixel resolution.
 The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel is 1.0\1.0, and the BRHC of the BRHC pixel is the number of columns\rows in the image / frames. The values SHALL be within the range 0\0 to the number of columns\rows in the image / frames.</xs:documentation>
            </xs:annotation>
           </xs:element>
@@ -39815,7 +39943,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
   </xs:complexType>
   <xs:complexType name="ImagingSelection.ImageRegion3D">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances within a single Study and Series. This might include additional specifics such as a set of frames or an image region, allowing linkage to an Observation Resource.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -39827,7 +39955,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="coordinate" minOccurs="1" maxOccurs="unbounded" type="decimal">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The coordinates describing the image region. Encoded as an ordered set of (x,y,z) triplets (in mm and MAY be negative) that define a region of interest in the patient-relative Reference Coordinate System defined by ImagingSelection.frameOfReferenceUid element.</xs:documentation>
+              <xs:documentation xml:lang="en">The coordinates defining the image region. Encoded as an ordered set of (x,y,z) triplets (in mm and MAY be negative) that define a region of interest in the patient-relative Reference Coordinate System defined by ImagingSelection.frameOfReferenceUid element.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -39962,7 +40090,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
               <xs:documentation xml:lang="en">A plan or order that is fulfilled in whole or in part by this imaging study.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="procedure" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The performed procedure(s) during which the data associated with this imaging study was created.</xs:documentation>
            </xs:annotation>
@@ -40055,12 +40183,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="bodySite" minOccurs="0" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The anatomic structures examined. See [DICOM Part 16 Annex L](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite MAY indicate the laterality of body part imaged; if so, it SHALL be consistent with any content of ImagingStudy.series.laterality.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="laterality" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, SHALL be consistent with any laterality information indicated in ImagingStudy.series.bodySite.</xs:documentation>
+              <xs:documentation xml:lang="en">The anatomic structures examined. See [DICOM Part 16 Annex L](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite MAY include the laterality of body part imaged.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="specimen" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -40096,12 +40219,12 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
         <xs:sequence>
           <xs:element name="function" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Distinguishes the type of involvement of the performer in the series.</xs:documentation>
+              <xs:documentation xml:lang="en">Distinguishes the type of involvement of the performer in the imaging study..</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actor" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates who or what performed the series.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates who or what performed the imaging study.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -40306,7 +40429,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Describes why the immunization occurred in coded or textual form, or Indicates another resource (Condition, Observation or DiagnosticReport) whose existence justifies this immunization.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes why the immunization occurred in coded or textual form, or indicates another resource (Condition, Observation or DiagnosticReport) whose existence justifies this immunization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="isSubpotent" minOccurs="0" maxOccurs="1" type="boolean">
@@ -40326,7 +40449,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="fundingSource" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publicly purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reaction" type="Immunization.Reaction" minOccurs="0" maxOccurs="unbounded">
@@ -40373,12 +40496,12 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
         <xs:sequence>
           <xs:element name="program" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates which program the patient had their eligility evaluated for.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates which program the patient had their eligibility evaluated for.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="programStatus" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the patient's eligility status for for a specific payment program.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the patient's eligibility status for a specific payment program.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -40810,12 +40933,12 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the implementation guide and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the implementation guide.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="packageId" minOccurs="1" maxOccurs="1" type="id">
@@ -44769,12 +44892,12 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the library and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the library.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the library and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the library.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -45566,12 +45689,12 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the measure and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the measure.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the measure and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the measure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -48759,12 +48882,12 @@ The primary difference between a medicationstatement and a medicationadministrat
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the message definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the message definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="base" minOccurs="0" maxOccurs="1" type="canonical">
@@ -49857,12 +49980,12 @@ The primary difference between a medicationstatement and a medicationadministrat
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the naming system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the naming system.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the naming system and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the naming system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -50299,11 +50422,6 @@ The primary difference between a medicationstatement and a medicationadministrat
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifiers assigned to this order by the order sender or by the order receiver.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -50966,13 +51084,6 @@ The primary difference between a medicationstatement and a medicationadministrat
               <xs:documentation xml:lang="en">A unique identifier assigned to this observation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The reference to a FHIR ObservationDefinition resource that provides the definition that is adhered to in whole or in part by this Observation instance.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="instantiatesCanonical" type="canonical"/>
-            <xs:element name="instantiatesReference" type="Reference"/>
-          </xs:choice>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.</xs:documentation>
@@ -51438,12 +51549,12 @@ Reflex | Repeat | Re-run.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Copyright statement relating to the ObservationDefinition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the ObservationDefinition.</xs:documentation>
+              <xs:documentation xml:lang="en">Copyright statement relating to the ObservationDefinition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the ObservationDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -51854,12 +51965,12 @@ Reflex | Repeat | Re-run.</xs:documentation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the operation definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the operation definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the operation definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the operation definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="affectsState" minOccurs="0" maxOccurs="1" type="boolean">
@@ -53249,6 +53360,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="request" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Reference of resource for which payment is being made.</xs:documentation>
@@ -53329,6 +53445,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="FinancialResourceStatusCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to indicate why the status has changed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="kind" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -53436,7 +53557,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The amount returned by the receiver which is excess to the amount payable, often referred to as 'change'.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="amount" minOccurs="1" maxOccurs="1" type="Money">
+          <xs:element name="amount" minOccurs="0" maxOccurs="1" type="Money">
             <xs:annotation>
               <xs:documentation xml:lang="en">Total payment amount as indicated on the financial instrument.</xs:documentation>
            </xs:annotation>
@@ -53556,7 +53677,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The business purpose of the note text.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="text" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="text" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The explanation or description associated with the processing.</xs:documentation>
            </xs:annotation>
@@ -54252,12 +54373,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the plan definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the plan definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the plan definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the plan definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -55778,12 +55899,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the questionnaire and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the questionnaire.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -57168,12 +57289,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the Requirements and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the Requirements.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the Requirements and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the Requirements.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="derivedFrom" minOccurs="0" maxOccurs="unbounded" type="canonical">
@@ -57605,7 +57726,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of relationship to the related artifact.</xs:documentation>
            </xs:annotation>
@@ -58308,12 +58429,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the search parameter and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the search parameter.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the search parameter and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the search parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
@@ -58607,16 +58728,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifiers assigned to this order instance by the orderer and/or the receiver and/or order fulfiller.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesUri" minOccurs="0" maxOccurs="unbounded" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -59355,12 +59466,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Copyright statement relating to the SpecimenDefinition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the SpecimenDefinition.</xs:documentation>
+              <xs:documentation xml:lang="en">Copyright statement relating to the SpecimenDefinition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the SpecimenDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -59687,12 +59798,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.  The short copyright declaration (e.g. (c) '2015+ xyz organization' should be sent in the copyrightLabel element.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the structure definition and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the structure definition.  The short copyright declaration (e.g. (c) '2015+ xyz organization') should be sent in the copyrightLabel element without the copyright prefix (i.e., do not include '(c)' or the symbol).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="keyword" minOccurs="0" maxOccurs="unbounded" type="Coding">
@@ -60025,12 +60136,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the structure map and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the structure map.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="structure" type="StructureMap.Structure" minOccurs="0" maxOccurs="unbounded">
@@ -61128,12 +61239,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the SubscriptionTopic and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the SubscriptionTopic.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the SubscriptionTopic and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the SubscriptionTopic.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -62572,7 +62683,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="recipient" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">For requests that are targeted to more than one potential recipient/target, to identify who is fulfillment is sought for.</xs:documentation>
+              <xs:documentation xml:lang="en">For requests directed at multiple potential recipients or targets, this is used to specify the individual or entity from whom fulfillment is being sought.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -62956,12 +63067,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the terminology capabilities.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="kind" minOccurs="1" maxOccurs="1" type="CapabilityStatementKind">
@@ -63628,12 +63739,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the value set and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the value set.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the value set and/or its contents. Copyright statements are notices of intellectual property ownership and can include restrictions on the use and publishing of the value set.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are restricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
