@@ -38,7 +38,12 @@ A downloadable version of this IG is available so it can be hosted locally:
 Reported issues can be found on the [HL7 FHIR PHD JIRA Dashboard](https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17103).
 New issues can be reported there as well.
 
-### Used Jekyll/Liquid variables:
+<!-- ### Used Jekyll/Liquid variables:
+
+<style>table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+padding: 6px;}</style>
 
 | Variable Name | Liquid | Value |
 |---------------|-------|--|
@@ -47,8 +52,10 @@ New issues can be reported there as well.
 | FHIR version  | site.data.fhir.version | {{ site.data.fhir.version }} |
 | canonical     | site.data.fhir.canonical | {{ site.data.fhir.canonical }} |
 | ig            | site.data.fhir.ig | {{ site.data.fhir.ig }} |
+| ig.url        | site.data.fhir.ig.url | {{ site.data.fhir.ig.url }} |
 | igId          | site.data.fhir.igId | {{ site.data.fhir.igId }} |
 | ig.version    | site.data.fhir.ig.version | {{ site.data.fhir.ig.version }} |
 | ig.name       | site.data.fhir.ig.name | {{ site.data.fhir.ig.name }} |
 | ig.title      | site.data.fhir.ig.title | {{ site.data.fhir.ig.title }} |
 | ig.tx-server  | site.data.fhir.ig.tx-server | {{ site.data.fhir.ig.tx-server }} |
+| page          | page | {{ page }} | -->

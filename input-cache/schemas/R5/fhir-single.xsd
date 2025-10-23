@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Oct 20, 2025 13:04+0000 for FHIR v6.0.0-ballot3 
+  Generated on Tue, Oct 21, 2025 20:59+0000 for FHIR v6.0.0-ballot3 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot3">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -28059,7 +28059,7 @@ The actual author of the section when it is not the author of the composition. I
               <xs:documentation xml:lang="en">A specialized legal clause or condition based on overarching contract type.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="text" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="text" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Statement of a provision in a policy or a contract.</xs:documentation>
            </xs:annotation>
@@ -28839,7 +28839,7 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="FinancialResourceStatusCodes">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
+              <xs:documentation xml:lang="en">The status of the resource instance. The status element does not indicate whether the policy reflected in the instance is in-force at any particular point in time, that would be conveyed via the 'period' element.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusReason" minOccurs="0" maxOccurs="1" type="string">
@@ -29570,7 +29570,7 @@ The actual author of the section when it is not the author of the composition. I
               <xs:documentation xml:lang="en">A short name or tag for the benefit.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A richer description of the benefit or services covered.</xs:documentation>
            </xs:annotation>
@@ -35870,11 +35870,6 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">Second-tier of goods and services.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="informationSequence" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Exceptions, special conditions and supporting information applicable for this service or product.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -36194,6 +36189,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:element name="traceNumber" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="informationSequence" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Exceptions, special conditions and supporting information applicable for this service or product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="provider" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -39759,7 +39759,7 @@ For example, it is possible for a 'family' Group to be a performer of an Observa
           </xs:element>
           <xs:element name="modality" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The distinct modality for this selected series. This may be either an acquisition modality (e.g. CT, MR) or a non-acquisition modality (e.g. segmentation, presentation state).</xs:documentation>
+              <xs:documentation xml:lang="en">The distinct modality for this selected series. This MAY be either an acquisition modality (e.g. CT, MR) or a non-acquisition modality (e.g. segmentation, presentation state).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
@@ -40044,12 +40044,12 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
   </xs:complexType>
   <xs:element name="ImagingStudy" type="ImagingStudy">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modality values.</xs:documentation>
+      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study can have multiple series of different modality values.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="ImagingStudy">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modality values.</xs:documentation>
+      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study can have multiple series of different modality values.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -40067,7 +40067,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="modality" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">All the distinct values of series.modality. This may be either an acquisition or a non-acquisition modality.</xs:documentation>
+              <xs:documentation xml:lang="en">All the distinct values of series.modality. This MAY be either an acquisition or a non-acquisition modality.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
@@ -40146,7 +40146,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
   </xs:complexType>
   <xs:complexType name="ImagingStudy.Series">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modality values.</xs:documentation>
+      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study can have multiple series of different modality values.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -40163,7 +40163,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="modality" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The distinct modality for this series. This may be either an acquisition modality (e.g., CT, MR) or a non-acquisition modality (e.g., segmentation, presentation state).</xs:documentation>
+              <xs:documentation xml:lang="en">The distinct modality for this series. This MAY be either an acquisition modality (e.g., CT, MR) or a non-acquisition modality (e.g., segmentation, presentation state).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -40212,7 +40212,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
   </xs:complexType>
   <xs:complexType name="ImagingStudy.Performer">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modality values.</xs:documentation>
+      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study can have multiple series of different modality values.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -40233,7 +40233,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
   </xs:complexType>
   <xs:complexType name="ImagingStudy.Instance">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modality values.</xs:documentation>
+      <xs:documentation xml:lang="en">Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study can have multiple series of different modality values.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -45642,11 +45642,6 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
             <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
             <xs:element name="subjectReference" type="Reference"/>
           </xs:choice>
-          <xs:element name="basis" minOccurs="0" maxOccurs="1" type="FHIRTypes">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The population basis specifies the type of elements in the population. For a subject-based measure, this is boolean (because the subject and the population basis are the same, and the population criteria define yes/no values for each individual in the population). For measures that have a population basis that is different than the subject, this element specifies the type of the population basis. For example, an encounter-based measure has a subject of Patient and a population basis of Encounter, and the population criteria all return lists of Encounters.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date  (and optionally time) when the measure was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.</xs:documentation>
@@ -45757,26 +45752,6 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
               <xs:documentation xml:lang="en">Notices and disclaimers regarding the use of the measure or related to intellectual property (such as code systems) referenced by the measure.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="scoring" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Deprecated, use group.scoring. Indicates how the calculation is performed for the measure, including proportion, ratio, continuous-variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="scoringUnit" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Deprecated, use group.scoringUnit. Defines the expected units of measure for the measure score. This element SHOULD be specified as a UCUM unit.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="scoringPrecision" minOccurs="0" maxOccurs="1" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Deprecated, use group.scoringPrecision) When the score is a decimal value this should be used to specify the expected minimum number of digits after the decimal point to use for the precision of the value. When a scoringUnit is also specified, this value is the expected minimum number of digits after the decimal point when the score is expressed in the units specified.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="compositeScoring" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Deprecated, use group.compositeScoring. If this is a composite measure, the scoring method used to combine the component measures to determine the composite score.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Deprecated, use group.type. Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.</xs:documentation>
@@ -45800,16 +45775,6 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           <xs:element name="clinicalRecommendationStatement" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Provides a summary of relevant clinical guidelines or other clinical recommendations supporting the measure.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="improvementNotation" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Deprecated, use group.improvementNotation. Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="improvementNotationGuidance" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Deprecated, use group.improvementNotationGuidance. Narrative text to explain the improvement notation and how to interpret it.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="term" type="Measure.Term" minOccurs="0" maxOccurs="unbounded">
@@ -46345,6 +46310,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
             <xs:element name="measureScoreRange" type="Range"/>
             <xs:element name="measureScoreDuration" type="Duration"/>
             <xs:element name="measureScoreBoolean" type="boolean"/>
+            <xs:element name="measureScoreRatio" type="Ratio"/>
           </xs:choice>
           <xs:element name="stratifier" type="MeasureReport.Stratifier" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
@@ -46475,6 +46441,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
             <xs:element name="measureScoreRange" type="Range"/>
             <xs:element name="measureScoreDuration" type="Duration"/>
             <xs:element name="measureScoreBoolean" type="boolean"/>
+            <xs:element name="measureScoreRatio" type="Ratio"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>

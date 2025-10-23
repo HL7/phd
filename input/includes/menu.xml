@@ -4,7 +4,7 @@
   <li><a href="ProfileConsumers.html">Profile Consumers</a></li>
   <li><a href="TechnicalImplementationGuidance.html">Implementation Guidance</a></li>
   <li><a href="artifacts.html">Artifacts</a></li>
-  <li><a href="Appendix.html">Appendix</a></li>
   <li><a href="changes.html">Changes</a></li>
+  <li><a href="Appendix.html">Appendix</a></li>
   <li><a href="{{site.data.fhir.path}}index.html">FHIR Specification</a></li>
 </ul>      
