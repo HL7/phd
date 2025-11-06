@@ -1,5 +1,6 @@
 canonical: http://hl7.org/fhir/uv/phd
 fhirVersion: 6.0.0-ballot3  # Revert back to R6
+#fhirVersion: 5.0.0
 id: hl7.fhir.uv.phd
 name: PhdImplementationGuide
 title: Personal Health Device Implementation Guide
@@ -22,15 +23,19 @@ extension:
     valueCode: dev
 
 # Jurisdiction
-jurisdiction: urn:iso:std:iso:3166#001
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 
 dependencies:
   hl7.terminology.r5:
     version: 6.5.0
     reason: R6 terminology package not yet available
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
   hl7.fhir.uv.extensions.r5:
-    version: 5.2.0
+    version: 5.3.0-ballot-tc1
     reason: R6 extensions package not yet available
+    uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+
+
 # Note: R6 terminology and extension packages are not yet available
 # You'll get version mismatch warnings, but the build should still work
 
@@ -40,11 +45,6 @@ dependencies:
 #   hl7.fhir.uv.pocd:
 #     uri: http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd
 #     version: 0.3.0
-
-# Special URLs
-special-url:
-  - http://terminology.hl7.org/CodeSystem/ASN1ToHL7
-  - http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers
 
 # Resource descriptions and metadata
 resources:
@@ -348,6 +348,9 @@ pages:
 # Additional parameters
 parameters:
   shownav: true
+  special-url:
+    - http://terminology.hl7.org/CodeSystem/ASN1ToHL7
+    - http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers
   # fhir-extensions-path: "https://hl7.org/fhir/extensions/5.3.0-ballot-tc1/"
 
 

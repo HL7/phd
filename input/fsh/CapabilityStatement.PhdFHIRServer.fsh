@@ -1,4 +1,4 @@
-Alias: $restful-security-service = http://terminology.hl7.org/CodeSystem/restful-security-service
+Alias: $restful-security-service = http://hl7.org/fhir/restful-security-service
 
 Instance: PhdFHIRServer
 InstanceOf: CapabilityStatement
