@@ -18,11 +18,11 @@ Context: Observation
 * ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.5.1460"
 * ^version = "5.2.0-ballot"
 * ^experimental = false
-* ^date = "2015-03-02"
-* ^publisher = "HL7 International / Devices"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/orders"
-* ^jurisdiction = $m49.htm#001
+// * ^date = "2015-03-02"
+// * ^publisher = "HL7 International / Devices"
+// * ^contact.telecom.system = #url
+// * ^contact.telecom.value = "http://www.hl7.org/Special/committees/orders"
+// * ^jurisdiction = $m49.htm#001
 * . 0..1
 * . ^short = "Coincident Timestamp Reference"
 * . ^definition = "Reference to a coincident timestamp observation that relates the gateway timeline to the PHD timeline"

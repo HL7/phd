@@ -18,9 +18,11 @@
 	  ],
 	"extension": [
 		{
-			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-			"valueReference": {
-				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+			"url": "http://hl7.org/fhir/StructureDefinition/device-gateway",
+			"valueCodeableReference": {
+				"reference": {
+					"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+				}
 			}
 		},
 		{
@@ -57,7 +59,8 @@
 			"code": "1",
 			"unit": "{unitless} 1"
 		},
-		"period": 2.000,
+		"interval": 2.000,
+		"intervalUnit": "s",
 		"factor": 3.0,
 		"dimensions": 1,
 		"data": "123 110 97 99 112 118"

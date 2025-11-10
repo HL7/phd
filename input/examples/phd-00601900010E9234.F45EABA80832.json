@@ -35,19 +35,21 @@
     "manufacturer": "Diabetes Care",
     "serialNumber": "20130200002A",
     "modelNumber": "Gluc-23",
-    "type": {
-        "coding": [
-            {
-                "system": "urn:iso:std:iso:11073:10101",
-                "code": "65573",
-                "display": "MDC_MOC_VMS_MDS_SIMP"
-            }
-        ],
-        "text": "Simple PHD"
-    },
-    "specialization": [
+    "type": [
         {
-            "systemType": {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:11073:10101",
+                    "code": "65573",
+                    "display": "MDC_MOC_VMS_MDS_SIMP"
+                }
+            ],
+            "text": "Simple PHD"
+        }
+    ],
+    "conformsTo": [
+        {
+            "specification": {
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
@@ -60,7 +62,7 @@
             "version":"1"
         }
     ],
-    "version": [
+    "deviceVersion": [
         {
             "type": {
                 "coding": [
@@ -113,17 +115,15 @@
                 ],
                 "text": "Certified device list as transport-specialization combo"
             },
-            "valueCode": [
-                {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
-                            "code": "16401",
-                            "display": "HDP BT Glucose Monitor certified"
-                        }
-                    ]
-                }
-            ]
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
+                        "code": "16401",
+                        "display": "HDP BT Glucose Monitor certified"
+                    }
+                ]
+            }
         },
         {
             "type": {
@@ -136,18 +136,16 @@
                 ],
                 "text": "Time synchronization protocol"
             },
-            "valueCode": [
-                {
-                    "coding": [
-                        {
-                            "system": "urn:iso:std:iso:11073:10101",
-                            "code": "532224",
-                            "display": "MDC_TIME_SYNC_NONE"
-                        }
-                    ],
-                    "text": "None"
-                }
-            ]
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532224",
+                        "display": "MDC_TIME_SYNC_NONE"
+                    }
+                ],
+                "text": "None"
+            }
         },
         {
             "type": {
@@ -158,11 +156,9 @@
                     }
                 ]
             },
-            "valueCode": [
-                {
-                    "text": "VID_1234:PID_5678"
-                }
-            ]
+            "valueCodeableConcept": {
+                "text": "VID_1234:PID_5678"
+            }
         }
     ]
 }

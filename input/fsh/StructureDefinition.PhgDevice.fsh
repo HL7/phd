@@ -18,6 +18,9 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "An assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address."
   * ^alias = "11073-10206 System id, transport address, etc."
 * identifier.type from http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes (extensible)
+  * ^binding.description = "MDC Device Identifier Types"
+  * ^binding.additional.purpose = #extensible
+  * ^binding.additional.valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes"
   * ^short = "The type of identifier"
 * identifier contains
     systemIdIdentifier 0..1 and
@@ -30,7 +33,7 @@ Description: "Profile for the Device Resource for a PHG"
   * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#SYSID
     * ^short = "Required IEEE 11073-10206 System Id code system coding"
   * system 1..
-  * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" (exactly)
+  * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"
     * ^short = "EUI-64 system identifier"
     * ^definition = "Identifies the system as an IEEE EUI."
   * value 1..
@@ -44,7 +47,7 @@ Description: "Profile for the Device Resource for a PHG"
   * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#BTMAC
     * ^short = "Required Bluetooth MAC address code system coding"
   * system 1..
-  * system = "http://hl7.org/fhir/sid/eui-48/bluetooth" (exactly)
+  * system = "http://hl7.org/fhir/sid/eui-48/bluetooth"
   * value 1..
     * ^definition = "The Bluetooth MAC as an EUI-48 such as 00-E5-DE-AD-77-C3. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
@@ -55,7 +58,7 @@ Description: "Profile for the Device Resource for a PHG"
   * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#ETHMAC
     * ^short = "Required Ethernet MAC address code system coding"
   * system 1..
-  * system = "http://hl7.org/fhir/sid/eui-48/ethernet" (exactly)
+  * system = "http://hl7.org/fhir/sid/eui-48/ethernet"
   * value 1..
     * ^definition = "The MAC as an EUI-48 such as 00-E5-DE-AD-77-C8. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
@@ -68,15 +71,15 @@ Description: "Profile for the Device Resource for a PHG"
   * coding[MDCType] ^short = "Required MDC code system entry"
     * ^definition = "The MDC code for the PHG"
     * system 1..
-    * system = "urn:iso:std:iso:11073:10101" (exactly)
+    * system = "urn:iso:std:iso:11073:10101"
       * ^short = "Identifies IEEE 11073-10101 coding system"
       * ^definition = "This value identifies the IEEE 11073-10101 coding system"
     * code 1..
-    * code = #531981 (exactly)
+    * code = #531981
       * ^short = "Indicates PHG"
       * ^definition = "MDC code indicating that this unit is a personal health gateway (PHG)."
 * conformsTo ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "systemType.coding"
+  * ^slicing.discriminator[=].path = "specification"
   * ^slicing.rules = #open
   * ^short = "This element contains an entry for each supported specialization or a generic representation."
 * conformsTo contains MDCType 1..*
@@ -137,13 +140,9 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "For each Boolean clock capability reported a `property` element is used."
   * type from ASN1ClockBits (required)
     * ^short = "Tells what the clock capability item is"
-    * ^definition = "One of the capabilities of the clock as reportedD."
-  * valueCodeableConcept 1..1
-    * coding // from http://terminology.hl7.org/ValueSet/v2-0136 (required)
-      * system 1..
-      * system = "http://terminology.hl7.org/CodeSystem/v2-0136" (exactly)
-      * code 1..
-        * ^definition = "If bit is set, code contains Y if cleared, N"
+    * ^definition = "One of the capabilities of the clock as reported."
+  * valueBoolean //1..1
+    * ^definition = "The value of the clock capability item as reported by the PHG."
 
 * property[clockResolutionProperty] ^short = "Clock Resolution as reported"
   * ^definition = "The clock resolution in microseconds."
@@ -153,7 +152,7 @@ Description: "Profile for the Device Resource for a PHG"
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
     * code = UCUM#us
       * ^definition = "The UCUM code for microseconds is 'us'."
 
@@ -165,7 +164,7 @@ Description: "Profile for the Device Resource for a PHG"
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
     * code = UCUM#us
       * ^definition = "The UCUM code for microseconds is 'us'."
 

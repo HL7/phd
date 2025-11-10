@@ -18,9 +18,11 @@
 	  ],
 	"extension": [
 		{
-			"url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-			"valueReference": {
-				"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+			"url": "http://hl7.org/fhir/StructureDefinition/device-gateway",
+			"valueCodeableReference": {
+				"reference": {
+					"reference": "Device/phg-ecde3d4e58532d31.000000000000"
+				}
 			}
 		},
 		{
@@ -57,7 +59,8 @@
 			"code": "mV",
 			"unit": "mV"
 		},
-		"period": 10,
+		"interval": 10,
+		"intervalUnit": "s",
 		"factor": 1.612,
 		"lowerLimit": -500,
 		"upperLimit": 500,

@@ -68,19 +68,21 @@
             "value": "4C-4E-49-12-34-56-FF-FF"
           }
         ],
-        "type": {
-          "coding": [
-            {
-              "system": "urn:iso:std:iso:11073:10101",
-              "code": "531981",
-              "display": "MDC_MOC_VMS_MDS_AHD"
-            }
-          ],
-          "text": "Application Hosting Device, a.k.a. PHG"
-        },
-        "specialization": [
+        "type": [
           {
-            "systemType": {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:11073:10101",
+                "code": "531981",
+                "display": "MDC_MOC_VMS_MDS_AHD"
+              }
+            ],
+            "text": "Application Hosting Device, a.k.a. PHG"
+          }
+        ],
+        "conformsTo": [
+          {
+            "specification": {
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
@@ -93,7 +95,7 @@
             "version": "2"
           }
         ],
-        "version": [
+        "deviceVersion": [
           {
             "type": {
               "coding": [
@@ -120,17 +122,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
-                    "code": "4",
-                    "display": "Pulse Oximeter certified"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
+                  "code": "4",
+                  "display": "Pulse Oximeter certified"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -143,17 +143,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "0",
-                    "display": "observation-upload-soap"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
+                  "code": "0",
+                  "display": "observation-upload-soap"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -166,17 +164,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "3",
-                    "display": "observation-upload-hdata"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
+                  "code": "3",
+                  "display": "observation-upload-hdata"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -189,17 +185,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "7",
-                    "display": "observation-upload-fhir"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
+                  "code": "7",
+                  "display": "observation-upload-fhir"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -212,17 +206,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "2",
-                    "display": "capabilities"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
+                  "code": "2",
+                  "display": "capabilities"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -235,17 +227,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
-                    "code": "6",
-                    "display": "aps"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS",
+                  "code": "6",
+                  "display": "aps"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -257,18 +247,7 @@
                 }
               ]
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y",
-                    "display": "Yes"
-                  }
-                ],
-                "text": "Device is not regulated"
-              }
-            ]
+            "valueBoolean": true
           },
           {
             "type": {
@@ -280,17 +259,15 @@
                 }
               ]
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "urn:iso:std:iso:11073:10101",
-                    "code": "532226",
-                    "display": "MDC_TIME_SYNC_NTPV4"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "532226",
+                  "display": "MDC_TIME_SYNC_NTPV4"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -302,13 +279,11 @@
                 }
               ]
             },
-            "valueQuantity": [
-              {
-                "value": 120000000,
-                "system": "http://unitsofmeasure.org",
-                "code": "us"
-              }
-            ]
+            "valueQuantity": {
+              "value": 120000000,
+              "system": "http://unitsofmeasure.org",
+              "code": "us"
+            }
           }
         ]
       },
@@ -365,19 +340,21 @@
           }
         ],
         "modelNumber": "Model 3150",
-        "type": {
-          "coding": [
-            {
-              "system": "urn:iso:std:iso:11073:10101",
-              "code": "65573",
-              "display": "MDC_MOC_VMS_MDS_SIMP"
-            }
-          ],
-          "text": "Personal Health Device"
-        },
-        "specialization": [
+        "type": [
           {
-            "systemType": {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:11073:10101",
+                "code": "65573",
+                "display": "MDC_MOC_VMS_MDS_SIMP"
+              }
+            ],
+            "text": "Personal Health Device"
+          }
+        ],
+        "conformsTo": [
+          {
+            "specification": {
               "coding": [
                 {
                   "system": "urn:iso:std:iso:11073:10101",
@@ -390,7 +367,7 @@
             "version": "1"
           }
         ],
-        "version": [
+        "deviceVersion": [
           {
             "type": {
               "coding": [
@@ -430,17 +407,15 @@
               ],
               "text": "Each element of the certified interfaces list as a separate property"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
-                    "code": "4",
-                    "display": "Pulse Oximeter certified"
-                  }
-                ]
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs",
+                  "code": "4",
+                  "display": "Pulse Oximeter certified"
+                }
+              ]
+            }
           },
           {
             "type": {
@@ -452,18 +427,7 @@
                 }
               ]
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "N",
-                    "display": "No"
-                  }
-                ],
-                "text": "Device is regulated"
-              }
-            ]
+            "valueBoolean": false
           },
           {
             "type": {
@@ -476,18 +440,16 @@
               ],
               "text": "Time synchronization protocol"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "urn:iso:std:iso:11073:10101",
-                    "code": "532224",
-                    "display": "MDC_TIME_SYNC_NONE"
-                  }
-                ],
-                "text": "No time synchronization"
-              }
-            ]
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:11073:10101",
+                  "code": "532224",
+                  "display": "MDC_TIME_SYNC_NONE"
+                }
+              ],
+              "text": "No time synchronization"
+            }
           },
           {
             "type": {
@@ -500,17 +462,7 @@
               ],
               "text": "real time clock supported"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y",
-                    "display": "Yes"
-                  }
-                ]
-              }
-            ]
+            "valueBoolean": true
           },
           {
             "type": {
@@ -523,17 +475,7 @@
               ],
               "text": "setting the time supported"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y",
-                    "display": "Yes"
-                  }
-                ]
-              }
-            ]
+            "valueBoolean": true
           },
           {
             "type": {
@@ -546,17 +488,7 @@
               ],
               "text": "relative time supported"
             },
-            "valueCode": [
-              {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-                    "code": "Y",
-                    "display": "Yes"
-                  }
-                ]
-              }
-            ]
+            "valueBoolean": true
           },
           {
             "type": {
@@ -569,14 +501,12 @@
               ],
               "text": "Resolution of absolute time clock"
             },
-            "valueQuantity": [
-              {
-                "value": 1000000,
-                "system": "http://unitsofmeasure.org",
-                "code": "us",
-                "unit": "us"
-              }
-            ]
+            "valueQuantity": {
+              "value": 1000000,
+              "system": "http://unitsofmeasure.org",
+              "code": "us",
+              "unit": "us"
+            }
           }
         ]
       },
@@ -632,9 +562,11 @@
         },
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-            "valueReference": {
-              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
+            "url": "http://hl7.org/fhir/StructureDefinition/device-gateway",
+            "valueCodeableReference": {
+              "reference": {
+                "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
+              }
             }
           },
           {
@@ -733,9 +665,11 @@
         },
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice",
-            "valueReference": {
-              "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
+            "url": "http://hl7.org/fhir/StructureDefinition/device-gateway",
+            "valueCodeableReference": {
+              "reference": {
+                "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
+              }
             }
           },
           {

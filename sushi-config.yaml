@@ -1,6 +1,6 @@
 canonical: http://hl7.org/fhir/uv/phd
 fhirVersion: 6.0.0-ballot3  # Revert back to R6
-#fhirVersion: 5.0.0
+#fhirVersion: 5.0.0 # revert back to R5
 id: hl7.fhir.uv.phd
 name: PhdImplementationGuide
 title: Personal Health Device Implementation Guide
@@ -30,19 +30,17 @@ dependencies:
     version: 6.5.0
     reason: R6 terminology package not yet available
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-  hl7.fhir.uv.extensions.r5:
+  hl7.fhir.uv.extensions:
     version: 5.3.0-ballot-tc1
     reason: R6 extensions package not yet available
     uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+  hl7.fhir.uv.pocd:
+    version: 0.3.0
+    uri: http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd
 
 
 # Note: R6 terminology and extension packages are not yet available
 # You'll get version mismatch warnings, but the build should still work
-
-# Dependencies - Remove R5 dependencies since R6 packages don't exist yet
-# Comment out or remove these until R6 versions are available:
-# dependencies:
-#   hl7.fhir.uv.pocd:
 #     uri: http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd
 #     version: 0.3.0
 

@@ -8,7 +8,7 @@ Description: "Observations containing a coincident timestamp."
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCoincidentTimeStampObservation reports the current time of the PHD sensor at the current time of the PHG."
 * . ^comment = "Used to record the correction the PHG applied to the PHD measurement timestamps (if any) and to be able to recover the original timestamps reported by the PHD should that be needed."
-* status = #final (exactly)
+* status = #final
 * status ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint"
 * status ^extension.valueString = "default: final"
 * status ^definition = "The status of the result value. Always 'final'"
@@ -20,6 +20,9 @@ Description: "Observations containing a coincident timestamp."
 * code.coding[MDCType] 
   * ^short = "The type of time clock used by the PHD"
 * code.coding[MDCType] from http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes (required)
+  * ^binding.description = "MDC codes for PHD clock types"
+  * ^binding.additional.purpose = #required
+  * ^binding.additional.valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes"
 * subject 1..
 * subject.reference 1..
 * subject only Reference(PhdDevice)
@@ -38,7 +41,7 @@ Description: "Observations containing a coincident timestamp."
 * dataAbsentReason.coding[TimeFault] 
   * ^short = "Time Fault: The PHD has a time fault"
   * ^definition = "This element is populated when the PHD has a time fault and the current time of the PHD cannot be obtained."
-* dataAbsentReason.coding[TimeFault] = http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown 
+  * ^patternCoding = http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown
 
 * component ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "code"

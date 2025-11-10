@@ -35,19 +35,21 @@
     "manufacturer": "OMRONHEALTHCARE",
     "serialNumber": "20150200002A",
     "modelNumber": "HEM-9200T",
-    "type": {
-        "coding": [
-            {
-                "system": "urn:iso:std:iso:11073:10101",
-                "code": "65573",
-                "display": "MDC_MOC_VMS_MDS_SIMP"
-            }
-        ],
-        "text": "Simple PHD"
-    },
-    "specialization": [
+    "type": [
         {
-            "systemType": {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:11073:10101",
+                    "code": "65573",
+                    "display": "MDC_MOC_VMS_MDS_SIMP"
+                }
+            ],
+            "text": "Simple PHD"
+        }
+    ],
+    "conformsTo": [
+        {
+            "specification": {
                 "coding": [
                     {
                         "system": "urn:iso:std:iso:11073:10101",
@@ -60,7 +62,7 @@
             "version":"1"
         }
     ],
-    "version": [
+    "deviceVersion": [
         {
             "type": {
                 "coding": [
@@ -72,7 +74,7 @@
                 ],
                 "text": "Firmware revision"
             },
-            "value": "C.00.7AJ-02"
+            "value": "GLU.7AJ-02"
         },
         {
             "type": {
@@ -113,18 +115,16 @@
                 ],
                 "text": "Time synchronization protocol"
             },
-            "valueCode": [
-                {
-                    "coding": [
-                        {
-                            "system": "urn:iso:std:iso:11073:10101",
-                            "code": "532224",
-                            "display": "MDC_TIME_SYNC_NONE"
-                        }
-                    ],
-                    "text": "None"
-                }
-            ]
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:iso:std:iso:11073:10101",
+                        "code": "532224",
+                        "display": "MDC_TIME_SYNC_NONE"
+                    }
+                ],
+                "text": "None"
+            }
         }
     ]
 }

@@ -24,15 +24,21 @@
       }
     ]
   },
-  "source": {
+  "device": {
     "reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
   },
-  "category": "measurement",
-  "measurementPeriod": {
-    "repeat": {
-      "frequency": 1,
-      "period": 15,
-      "periodUnit": "min"
-    }
+  "category": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/metric-category",
+        "code": "measurement"
+      }
+    ]
+  },
+  "measurementFrequency": {
+    "value": 0.067,
+    "unit": "Hz",
+    "system": "http://unitsofmeasure.org",
+    "code": "Hz"
   }
 }
