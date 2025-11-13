@@ -18,7 +18,9 @@
 <artifact id="ValueSet/ASN1ClockBits" key="ValueSet-ASN1ClockBits" name="ANS1ToHL7 codes defined for Boolean Clock attributes"/>
 <artifact id="ValueSet/ASN1DeviceBits" key="ValueSet-ASN1DeviceBits" name="ANS1ToHL7 codes defined for non-measurement attributes"/>
 <artifact id="Observation/bits-observation" key="Observation-bits-observation" name="ASN1 BITs measurement from a Pulse Oximeter"/>
+<artifact id="ValueSet/ASN1EventOrStateValues" key="ValueSet-ASN1EventOrStateValues" name="ASN1 Event or State Values"/>
 <artifact id="ValueSet/ASN1MeasurementBits" key="ValueSet-ASN1MeasurementBits" name="ASN1 Measurement Bits"/>
+<artifact id="ValueSet/ASN1SourceValues" key="ValueSet-ASN1SourceValues" name="ASN1 Source Values"/>
 <artifact id="CodeSystem/ASN1ToHL7" key="CodeSystem-ASN1ToHL7" name="ASN1 to HL7 Mapping"/>
 <artifact deprecated="true" id="CodeSystem/ASN1ToHL7Concepts" key="CodeSystem-ASN1ToHL7Concepts" name="ASN1ToHL7Concepts"/>
 <artifact deprecated="true" id="ValueSet/ASN1attribute" key="ValueSet-ASN1attribute" name="ASN1attribute"/>

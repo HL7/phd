@@ -6,7 +6,7 @@ Description: "Observations coming from a PHD where the measurement value is a co
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCodedEnumerationObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^short = "Reports measurements with values that are single MDC codes."
 * . ^definition = "The PhdCodedEnumerationObservation reports PHD observations that contain a single MDC code from a finite set as their value."

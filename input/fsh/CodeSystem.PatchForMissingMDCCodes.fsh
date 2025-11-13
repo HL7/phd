@@ -5,7 +5,7 @@ Description: "Codes that are missing from the MDC (Medical Device Communication)
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/MissingMDCCodes"
 * ^version = "0.3.0"
-// * ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^publisher = "Health Level Seven International (Devices Work Group)"
 * ^caseSensitive = true

@@ -99,6 +99,14 @@
 					"code": "phd"
 				}
 			]
+		},
+		{
+			"coding": [
+				{
+					"system": "http://loinc.org",
+					"code": "2708-6"
+				}
+			]
 		}
 	],
 	"code": {

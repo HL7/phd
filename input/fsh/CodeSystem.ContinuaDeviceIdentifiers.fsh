@@ -5,7 +5,7 @@ Description: "Codes used to describe the Device (PHD or PHG) Identifiers, such a
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers"
 * ^version = "current"
-// * ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^version = "0.3.0"
 * ^experimental = false

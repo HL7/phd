@@ -333,10 +333,17 @@
         ],
         "manufacturer": "Nonin Medical, Inc.",
         "serialNumber": "0400007825",
-        "deviceName": [
+        "name": [
           {
-            "name": "Nonin_Medical_Inc._323552",
-            "type": "user-friendly-name"
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/device-nametype",
+                  "code": "user-friendly-name"
+                }
+              ]
+            },
+            "value": "Nonin_Medical_Inc._323552"
           }
         ],
         "modelNumber": "Model 3150",
@@ -595,6 +602,14 @@
                 "display": "Vital Signs"
               }
             ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "2708-6"
+              }
+            ]
           }
         ],
         "code": {
@@ -695,6 +710,14 @@
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
                 "code": "vital-signs"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "8867-4"
               }
             ]
           }

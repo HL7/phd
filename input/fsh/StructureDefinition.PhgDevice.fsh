@@ -19,8 +19,8 @@ Description: "Profile for the Device Resource for a PHG"
   * ^alias = "11073-10206 System id, transport address, etc."
 * identifier.type from http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes (extensible)
   * ^binding.description = "MDC Device Identifier Types"
-  * ^binding.additional.purpose = #extensible
-  * ^binding.additional.valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes"
+  // * ^binding.additional.purpose = #extensible  
+  // * ^binding.additional.key = PHD-MDC-DEVICE-IDENTIFIER-TYPES   
   * ^short = "The type of identifier"
 * identifier contains
     systemIdIdentifier 0..1 and
@@ -79,7 +79,7 @@ Description: "Profile for the Device Resource for a PHG"
       * ^short = "Indicates PHG"
       * ^definition = "MDC code indicating that this unit is a personal health gateway (PHG)."
 * conformsTo ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "specification"
+  * ^slicing.discriminator[=].path = "specification.coding"
   * ^slicing.rules = #open
   * ^short = "This element contains an entry for each supported specialization or a generic representation."
 * conformsTo contains MDCType 1..*
@@ -87,7 +87,7 @@ Description: "Profile for the Device Resource for a PHG"
   * ^definition = "The specialization(s) supported by the PHG. This element contains an entry for each supported specialization."
   * specification ^short = "The specialization standard supported by the PHG."
     * coding 1..
-    * coding from $DeviceTypes11073MDC (required)
+    * coding from http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC (required)
 * deviceVersion ^short = "A PHG may report firmware, hardware, software, internal protocol, nomenclature and ACOM versions."
   * ^comment = "There are several versions that may be reported by a PHG. PHGs compliant to this IG report at least one of these versions. A separate version entry is needed for each of the versions reported by the PHG."
 * deviceVersion ^slicing.discriminator[0].type = #value

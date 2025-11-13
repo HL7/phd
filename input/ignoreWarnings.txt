@@ -21,24 +21,14 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# numeric slicing messages - can be ignored safely
+# This is generated for PhdNumericObservations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
 None of the codings provided are in the value set 'Vital Signs Category' (http://hl7.org/fhir/ValueSet/observation-vitalsign-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
-
-# Will be resolved after the ballot.
-The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
-
-# This is generated for all observations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.0.0-ballot2 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# This informational message is due to inheriting this extension from the core specification.
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note Use additionalBinding extension or element instead
-
-# We will switch to the new Device Gateway extension in the next version of the PHD IG. 
-The extension http://hl7.org/fhir/StructureDefinition/observation-gatewayDevice|5.3.0-ballot-tc1 is deprecated with the note Use Device Gateway (device-gateway) extension which allows codeableReference (Device) in R6 and requires cross version extension for codeable reference.
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#2708-6)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#8867-4)
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
 Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well.' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
@@ -61,11 +51,20 @@ This element does not match any known slice defined in the profile http://hl7.or
 The value set expansion is too large, and only a subset has been displayed
 
 # R6 packages not yet available - using R5 packages as interim solution
-The ImplementationGuide is based on FHIR version 6.0.0-ballot3 but package hl7.terminology.r5#6.5.0 is based on FHIR version 5.0.0
-The ImplementationGuide is based on FHIR version 6.0.0-ballot3 but package hl7.fhir.uv.extensions.r5#5.3.0-ballot-tc1 is based on FHIR version 5.0.0
+WARNING: ImplementationGuide/hl7.fhir.uv.phd: ImplementationGuide.dependsOn[0]: The ImplementationGuide is based on FHIR version 6.0.0-ballot3 but package hl7.terminology.r5#6.5.0 is based on FHIR version 5.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+ERROR: ImplementationGuide/hl7.fhir.uv.phd: ImplementationGuide.dependsOn[1]: The ImplementationGuide is based on FHIR version 6.0.0-ballot3 but package hl7.fhir.uv.extensions#5.3.0-ballot-tc1 is based on FHIR version 5.0.0. Use the package hl7.fhir.uv.extensions.r6 instead
+WARNING: ImplementationGuide/hl7.fhir.uv.phd: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.uv.extensions#5.3.0-ballot-tc1 released on 2025-08-03, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.uv.phd: ImplementationGuide.dependsOn[2]: The ImplementationGuide is based on FHIR version 6.0.0-ballot3 but package hl7.fhir.uv.pocd#0.3.0 is based on FHIR version 4.0.1. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
 # Best practice recommendation for R6 - fixed[x] vs pattern[x]. Using (exactly) is intentional for strict matching.
 # Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]'
 
+# Best practice recommendation for R6 - additionalBindings inherited from base FHIR R6 resources should have keys. This is a FHIR R6 core issue that will be resolved upstream.
+WARNING: StructureDefinition/PhdCodedEnumerationObservation: StructureDefinition.snapshot.element[13].binding.additional[0]: Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+
 # R6 artefact
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablevalueset|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# This applies to text generated by Publisher - warning can safely be ignored
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause

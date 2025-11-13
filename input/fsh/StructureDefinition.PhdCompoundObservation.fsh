@@ -7,7 +7,7 @@ Id: PhdCompoundObservation
 Description: "Observations from a PHD where the measurement is a set of numbers such as the x, y, and z components of an acceleration."
 * ^meta.lastUpdated = "2017-12-08T06:07:29.764-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCompoundObservation reports PHD measurements that contain one or more components with a numeric, string, codeable concepts or sample array value."
   * ^comment = "Used for compound observations from Personal Health Devices"
@@ -24,7 +24,7 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
     * value 1..
       * ^definition = "The value of the numeric component. The value element is missing if a special FLOAT value is reported."
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
       * ^definition = "The unit code shall use the UCUM system"
     * code 1..
       * ^definition = "The MDC code must be translated to the UCUM code."
@@ -38,7 +38,7 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
     * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
       * ^definition = "This MDC code expresses what the measurement is"
       * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
+      * system = "urn:iso:std:iso:11073:10101"
       * code 1.. 
     * text ^definition = "It is recommended to display at least the reference identifier describing the compound sub-element"
   * valueSampledData

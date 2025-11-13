@@ -4,7 +4,7 @@ Id: PhdPatient
 Description: "The patient information reported from personal health gateways (PHG)"
 * ^meta.lastUpdated = "2017-10-16T05:10:41.036-04:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-08-04T06:04:53.838-04:00"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type.coding.system"

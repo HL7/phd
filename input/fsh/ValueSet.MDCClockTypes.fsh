@@ -5,7 +5,7 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature Codes for Clock
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes"
 * ^version = "current"
-// * ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2021-09-25"
 * ^publisher = "Health Level Seven International (Devices Work Group)"

@@ -6,10 +6,6 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
 		]
 	},
-	"text": {
-		"status": "additional",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>The BPM reports issues with a measurement.</p></div>"
-	},
 	"category": [
 		{
 			"coding": [

@@ -6,7 +6,7 @@ Id: PhdBaseObservation
 Description: "Common base profile with the elements that are common to the PHD IG Observation profiles."
 * ^meta.lastUpdated = "2017-12-14T04:17:26.671-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-11-24T15:17:35.385-05:00"
 * . ^comment = "This profile is the base profile for the PHD Observation profiles. This profile is abstract and is not intended to be instantiated directly."
 * meta
@@ -49,10 +49,11 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
 * code from http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject (extensible)
   * ^binding.description = "IEEE 11073-10101 Nomenclature codes for PHD measurements"
-  * ^binding.additional.purpose = #preferred
-  * ^binding.additional.valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"
+  * ^binding.additional[0].purpose = #extensible
+  * ^binding.additional[0].valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"
+  * ^binding.additional[0].shortDoco = "PHD MDC codes"
+  * ^binding.additional[0].key = "1234567890"
 * code obeys mdc-1
-
 * subject 1.. 
 * subject only Reference(Patient or PhdDevice)
   * ^short = "Reference to the patient or the PhdDevice that is the subject of the observation"

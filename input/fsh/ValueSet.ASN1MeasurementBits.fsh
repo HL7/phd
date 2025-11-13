@@ -5,7 +5,7 @@ Description: "ValueSet for the ANS1ToHL7 codes that are derived from enumeration
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1MeasurementBits"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^date = "2018-09-17"
-// * ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^version = "current"
 * ^publisher = "Health Level Seven International (Devices Work Group)"

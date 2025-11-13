@@ -17,7 +17,7 @@ Description: "Observations from a PHD where the measurement is a sample array."
       * ^short = "Intercept value (with implicit precision)"
       * ^definition = "The intercept value with the precision of the data as determined by the device."
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
       * ^short = "The UCUM coding system"
       * ^definition = "The identification of the UCUM coding system that provides the coded form of the unit."
     * code 1..

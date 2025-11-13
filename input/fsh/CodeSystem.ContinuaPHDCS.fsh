@@ -5,7 +5,7 @@ Description: "Codes used to describe the PHD types and interfaces supported by a
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs"
 * ^version = "0.3.0"
-// * ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2018-11-24"
 * ^publisher = "Health Level Seven International (Devices Work Group)"

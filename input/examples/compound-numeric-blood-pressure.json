@@ -4,7 +4,8 @@
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation",
-			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation",
+			"http://hl7.org/fhir/StructureDefinition/bp"
 		]
 	},
 	"extension": [
@@ -35,14 +36,22 @@
 			"text": "Vital Signs"
 		},
 		{
-		  "coding" : [
-			{
-			  "system" : "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-			  "code" : "phd"
-			}
-		  ]
+			"coding": [
+				{
+					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+					"code": "phd"
+				}
+			]
+		},
+		{
+			"coding": [
+				{
+					"system": "http://loinc.org",
+					"code": "85354-9"
+				}
+			]
 		}
-	  ],
+	],
 	"code": {
 		"coding": [
 			{
@@ -74,20 +83,20 @@
 			"code": {
 				"coding": [
 					{
+						"system": "http://loinc.org",
+						"code": "8480-6"
+					},
+					{
 						"system": "urn:iso:std:iso:11073:10101",
 						"code": "150021",
 						"display": "MDC_PRESS_BLD_NONINV_SYS"
-					},
-					{
-						"system": "http://loinc.org",
-						"code": "8480-6"
 					}
 				],
 				"text": "Systolic blood pressure"
 			},
 			"valueQuantity": {
 				"value": 116,
-				"unit" : "mm[Hg]",
+				"unit": "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}
@@ -96,20 +105,20 @@
 			"code": {
 				"coding": [
 					{
-						"system": "urn:iso:std:iso:11073:10101",
-						"code": "150022",
-						"display":"MDC_PRESS_BLD_NONINV_DIA"
-					},
-					{
 						"system": "http://loinc.org",
 						"code": "8462-4"
+					},					
+					{
+						"system": "urn:iso:std:iso:11073:10101",
+						"code": "150022",
+						"display": "MDC_PRESS_BLD_NONINV_DIA"
 					}
 				],
 				"text": "Diastolic blood pressure"
 			},
 			"valueQuantity": {
 				"value": 71,
-				"unit" : "mm[Hg]",
+				"unit": "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}
@@ -127,7 +136,7 @@
 			},
 			"valueQuantity": {
 				"value": 86,
-				"unit" : "mm[Hg]",
+				"unit": "mm[Hg]",
 				"system": "http://unitsofmeasure.org",
 				"code": "mm[Hg]"
 			}

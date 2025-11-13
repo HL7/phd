@@ -9,7 +9,7 @@ Description: "Observations coming from a PHD where the measurement is a set of n
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCompoundNumericObservation reports PHD measurements that contain one of either a Compound-Basic-Nu-Observed-Value, Compound-Simple-Nu-Observed-Value, or Compound-Nu-Observed-Value attribute."
   * ^comment = "Used for compound numeric observations from Personal Health Devices"
@@ -29,7 +29,7 @@ Description: "Observations coming from a PHD where the measurement is a set of n
     * coding[MdcType] ^short = "The 11073-10101 MDC code for the measurement"
       * ^definition = "This MDC code expresses what the measurement is"
       * system 1..
-      * system = "urn:iso:std:iso:11073:10101" (exactly)
+      * system = "urn:iso:std:iso:11073:10101"
       * code 1.. 
     * text ^definition = "It is recommended to display at least the reference identifier describing the compound sub-element"
   * value[x] only Quantity
@@ -37,7 +37,7 @@ Description: "Observations coming from a PHD where the measurement is a set of n
     * value 1..
       * ^definition = "The value of nth element of the compound attribute."
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
       * ^definition = "The unit code shall use the UCUM system"
     * code 1..
       * ^definition = "The MDC code must be translated to the UCUM code."
@@ -51,7 +51,7 @@ Description: "Observations coming from a PHD where the measurement is a set of n
     * coding contains MsmtStatusInterpretation 1..1
     * coding[MsmtStatusInterpretation] ^short = "Measurement status interpretation when questionable, calibration-ongoing, validated, early-indication, threshold exceeded, alarm inhibited"
       * system 1..
-      * system = "http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status" (exactly)
+      * system = "http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status"
       * code 1..
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1

@@ -4,7 +4,7 @@ Id: PhdCoincidentTimeStampObservation
 Description: "Observations containing a coincident timestamp."
 * ^meta.lastUpdated = "2017-12-14T09:41:34.341-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdCoincidentTimeStampObservation reports the current time of the PHD sensor at the current time of the PHG."
 * . ^comment = "Used to record the correction the PHG applied to the PHD measurement timestamps (if any) and to be able to recover the original timestamps reported by the PHD should that be needed."
@@ -21,8 +21,8 @@ Description: "Observations containing a coincident timestamp."
   * ^short = "The type of time clock used by the PHD"
 * code.coding[MDCType] from http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes (required)
   * ^binding.description = "MDC codes for PHD clock types"
-  * ^binding.additional.purpose = #required
-  * ^binding.additional.valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes"
+  // * ^binding.additional.purpose = #required  
+  // * ^binding.additional.key = PHD-MDC-CLOCK-TYPE 
 * subject 1..
 * subject.reference 1..
 * subject only Reference(PhdDevice)

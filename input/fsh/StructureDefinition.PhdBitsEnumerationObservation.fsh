@@ -8,7 +8,7 @@ Description: "Observations from a PHD where the measurement is an ASN1 BITS valu
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBitsEnumerationObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^definition = "The PhdBitsEnumerationObservation reports PHD measurements that contain a bitstring attribute."
   * ^comment = "This type of measurement is used when the Personal Health Device reports a measurement as an IEEE 11073-10101 BITs value."

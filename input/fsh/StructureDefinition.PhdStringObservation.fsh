@@ -6,7 +6,7 @@ Description: "Observations from a PHD where the measurement is a human readable 
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdStringObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^short = "Reports observations that are human-readable strings"
 * . ^definition = "The PhdStringObservation reports PHD observations that contain a string as the observation value."

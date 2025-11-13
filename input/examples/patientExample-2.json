@@ -6,7 +6,7 @@
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdPatient"
 		]
 	},
-    "identifier": [
+	"identifier": [
 		{
 			"type": {
 				"coding": [
@@ -15,7 +15,14 @@
 						"code": "U"
 					}
 				]
-			}
+			},
+			"value": "unknown",
+			"extension": [
+				{
+					"url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+					"valueCode": "unknown"
+				}
+			]
 		}
 	],
 	"name": [

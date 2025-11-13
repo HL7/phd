@@ -4,7 +4,8 @@
 	"meta": {
 		"profile": [
 			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation",
-			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation"
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation",
+			"http://hl7.org/fhir/StructureDefinition/bp"
 		]
 	},
 	"extension": [
@@ -38,6 +39,14 @@
 				{
 					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
 					"code": "phd"
+				}
+			]
+		},
+		{
+			"coding": [
+				{
+					"system": "http://loinc.org",
+					"code": "85354-9"
 				}
 			]
 		}

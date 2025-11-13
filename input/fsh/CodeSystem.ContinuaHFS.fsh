@@ -5,7 +5,7 @@ Description: "Codes used to describe the Continua Health and Fitness interfaces 
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS"
 * ^version = "0.3.0"
-// * ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"

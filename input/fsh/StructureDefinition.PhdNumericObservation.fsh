@@ -8,7 +8,7 @@ Description: "Observations from a PHD where the measurement is number"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-06-02T14:29:52.39367-04:00"
 * . ^short = "Simple Numeric measurement"
   * ^definition = "The PhdNumericObservation reports PHD measurements that contain one of either a Basic-Nu-Observed-Value, Simple-Nu_observed-Value, or Nu_observed-Value attribute."
@@ -18,7 +18,7 @@ Description: "Observations from a PHD where the measurement is number"
     * ^definition = "The decoded FLOAT or SFLOAT value from a PHD Observation."
     * ^comment = "The implicit precision in the value shall be honored. The MDER encoding used in the above attributes provides this precision. The translating software shall honor that precision when generating this value.\r\nThis element shall be present unless there is an error reported in the Measurement-Status attribute or the MDER encoding represents one of the special FLOAT values. In that case there is a `dataAbsentReason` element and the `valueQuantity` element is not present. Note that not all measurement status values are errors resulting in no measurement being reported here; for example the preliminary or verified status."
   * system 1..
-  * system = "http://unitsofmeasure.org" (exactly)
+  * system = "http://unitsofmeasure.org"
   * code 1..
     * ^short = "The UCUM code for the units of this measurement."
     * ^comment = "The UCUM code needs to be translated from  the 11073-10101 code from the device. This translation means that the reporting of units is not future proof."

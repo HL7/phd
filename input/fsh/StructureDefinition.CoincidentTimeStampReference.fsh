@@ -26,6 +26,5 @@ Context: Observation
 * . 0..1
 * . ^short = "Coincident Timestamp Reference"
 * . ^definition = "Reference to a coincident timestamp observation that relates the gateway timeline to the PHD timeline"
-* url = "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference" (exactly)
 * value[x] 1..
 * value[x] only Reference(PhdCoincidentTimeStampObservation)

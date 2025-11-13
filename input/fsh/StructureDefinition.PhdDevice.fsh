@@ -6,7 +6,7 @@ Id: PhdDevice
 Description: "Profile for the Device Resource for a PHD"
 * ^meta.lastUpdated = "2017-10-16T05:03:37.38-04:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice"
-// * ^status = #draft
+* ^status = #active
 * ^date = "2017-07-07T11:39:51.3383228-04:00"
 * ^purpose = "This resource describes the primary features of a Personal Health Device (PHD)."
 * . ^definition = "his resource describes the primary features of a Personal Health Device (PHD). It contains the properties, production specification, specializations, and overall type of the PHD."
@@ -19,6 +19,7 @@ Description: "Profile for the Device Resource for a PHD"
   * ^definition = "The assigned unique identification of the device that is semantically meaningful outside of the FHIR resource context. An example would be the IEEE EUI-64 System-Id or transport address. For PHDs the systemIdentifier is highly recommended and also a transportAddressIdentifier is recommended as this is what most end users see and can obtain from the device itself or device packaging."
   * ^alias = "11073-10206 System id, transport address, etc."
 * identifier.type from http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes (extensible)
+  * ^binding.description = "MDC Device Identifier Types"
   * ^short = "The type of identifier"
 * identifier contains
     systemIdIdentifier 0..1 and
@@ -31,7 +32,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#SYSID
     * ^short = "Required IEEE 11073-10206 System Id code system coding"
   * system 1..
-  * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" (exactly)
+  * system = "urn:oid:1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"
     * ^short = "EUI-64 system identifier"
     * ^definition = "Identifies the system as an IEEE EUI."
   * value 1..
@@ -45,7 +46,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#BTMAC
     * ^short = "Required Bluetooth MAC address code system coding"
   * system 1..
-  * system = "http://hl7.org/fhir/sid/eui-48/bluetooth" (exactly)
+  * system = "http://hl7.org/fhir/sid/eui-48/bluetooth"
   * value 1..
     * ^definition = "The Bluetooth MAC as an EUI-48 such as 00-E5-DE-AD-77-C3. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
@@ -56,7 +57,7 @@ Description: "Profile for the Device Resource for a PHD"
   * type = http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers#ETHMAC
     * ^short = "Required Ethernet MAC address code system coding"
   * system 1..
-  * system = "http://hl7.org/fhir/sid/eui-48/ethernet" (exactly)
+  * system = "http://hl7.org/fhir/sid/eui-48/ethernet"
   * value 1..
     * ^definition = "The MAC as an EUI-48 such as 00-E5-DE-AD-77-C8. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
@@ -160,7 +161,7 @@ Description: "Profile for the Device Resource for a PHD"
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
     * code = UCUM#us
       * ^definition = "The UCUM code for microseconds is 'us'."
 
@@ -172,7 +173,7 @@ Description: "Profile for the Device Resource for a PHD"
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
-    * system = "http://unitsofmeasure.org" (exactly)
+    * system = "http://unitsofmeasure.org"
     * code = UCUM#us
       * ^definition = "The UCUM code for microseconds is 'us'."
 

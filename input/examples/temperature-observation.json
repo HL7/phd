@@ -64,6 +64,14 @@
                     "code": "phd"
                 }
             ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "8310-5"
+                }
+            ]
         }
     ],
     "code": {
