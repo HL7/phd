@@ -25,13 +25,13 @@ Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeabl
 * ^property[=].description = "The code type is an event or state"
 * ^property[=].type = #code
 * ^property[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-* ^property[=].extension[0].valueUrl = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1EventOrStateValues"
+* ^property[=].extension[0].valueCanonical = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1EventOrStateValues"
 * ^property[+].code = #source
 * ^property[=].uri = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7#source"
 * ^property[=].description = "The code originates from a measurement or an attribute that further describes a measurement or the sensor device."
 * ^property[=].type = #code
 * ^property[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-* ^property[=].extension[0].valueUrl = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1SourceValues"
+* ^property[=].extension[0].valueCanonical = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1SourceValues"
 * ^property[+].code = #MDCCode
 * ^property[=].uri = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7#MDCCode"
 * ^property[=].description = "The decimal code for the MDC code of the bits observation"
