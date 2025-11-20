@@ -1,3 +1,5 @@
+Alias: $Mdc = urn:iso:std:iso:11073:10101
+
 ValueSet: MDCnotObject
 Id: MDCnotObject
 Title: "MDC Non-Object codes"
@@ -8,4 +10,4 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature excluding Objec
 * ^status = #active
 * ^experimental = false
 * ^publisher = "Health Level Seven International (Devices Work Group)"
-* include codes from system Mdc where partition in "2,3,4,5,7,8,127,128,258"
+* include codes from system $Mdc where partition in "2,3,4,5,7,8,127,128,258"

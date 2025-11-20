@@ -27,6 +27,7 @@
 <artifact deprecated="true" id="ValueSet/ASN1measurement" key="ValueSet-ASN1measurement" name="ASN1measurement"/>
 <artifact deprecated="true" id="Observation/coin-example-1" key="Observation-coin-example-1" name="Another Coincident Timestamp example"/>
 <artifact id="Observation/bpm-status" key="Observation-bpm-status" name="BPM status report"/>
+<artifact id="ObservationDefinition/bp-observation-definition-example" key="ObservationDefinition-bp-observation-definition-example" name="Blood Pressure ObservationDefinition"/>
 <artifact id="Device/phd-711000FEFF5F49B0.B0495F001071" key="Device-phd-711000FEFF5F49B0.B0495F001071" name="Blood Pressure PHD"/>
 <artifact id="Observation/glucose-observation" key="Observation-glucose-observation" name="Blood glucose observation."/>
 <artifact deprecated="true" id="Observation/compound-numeric-blood-pressure" key="Observation-compound-numeric-observation" name="Blood pressure compound (numeric) observation"/>

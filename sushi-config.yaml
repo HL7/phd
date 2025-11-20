@@ -27,7 +27,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 
 dependencies:
   hl7.terminology.r5:
-    version: 6.5.0
+    version: 7.0.0
     reason: R6 terminology package not yet available
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
   hl7.fhir.uv.extensions:
@@ -110,6 +110,11 @@ resources:
   DeviceMetric/bp-devicemetric-example:
     name: Phd Device Metric for Blood Pressure 
     description: This example is a PhdDeviceMetric for a Blood Pressure measurement.
+  
+  # Example ObservationDefinition
+  ObservationDefinition/bp-observation-definition-example:
+    name: Blood Pressure ObservationDefinition
+    description: This example defines the structure for blood pressure observations, including systolic (60-279 mmHg) and diastolic (40-200 mmHg) components with absolute ranges, using both IEEE 11073 MDC and LOINC codes.
   
   # Example Patients
   Patient/patientExample-1:
@@ -218,7 +223,6 @@ groups:
     description: Profiles for personal health devices and gateways
     resources:
       - StructureDefinition/PhdDevice
-      - StructureDefinition/PhdDeviceMetric
       - StructureDefinition/PhgDevice
 
   PatientProfile:
@@ -227,31 +231,49 @@ groups:
     resources:
       - StructureDefinition/PhdPatient
 
+  OtherProfiles:
+    name: Other Profiles
+    description: Additional profiles used in the PHD implementation guide
+    resources:
+      - StructureDefinition/PhdDeviceMetric
+
   Extensions:
     name: Extensions
     description: Extensions used by the PHD profiles
     resources:
       - StructureDefinition/Accuracy
       - StructureDefinition/Confidence95
+      - StructureDefinition/CoincidentTimeStampReference
       - StructureDefinition/SimpleAlerting
 
   Terminology:
     name: Terminology
     description: Code systems and value sets for personal health device data
     resources:
-      - CodeSystem/ContinuaDeviceIdentifiers
-      - CodeSystem/SimpleAlertOperationalStatesCS
       - CodeSystem/ASN1ToHL7
+      - CodeSystem/ContinuaDeviceIdentifiers
       - CodeSystem/ContinuaHFS
       - CodeSystem/ContinuaPHDInterfaceIDs
+      - CodeSystem/MissingMDCCodes
       - CodeSystem/PhdObservationCategories
-      - ValueSet/MDCValueSet
-      - ValueSet/MDCnotObject
+      - CodeSystem/SimpleAlertOperationalStatesCS
+      - ValueSet/ASN1ClockBits
       - ValueSet/ASN1DeviceBits
+      - ValueSet/ASN1EventOrStateValues
       - ValueSet/ASN1MeasurementBits
+      - ValueSet/ASN1SourceValues
+      - ValueSet/ContinuaPHDInterfaces
+      - ValueSet/ContinuaPHGInterfaces
       - ValueSet/DeviceTypes11073MDC
-      - ValueSet/SimpleAlertOperationalStates
+      - ValueSet/MDCClockResolutionTypes
+      - ValueSet/MDCClockTypes
+      - ValueSet/MDCDeviceIdentifierTypes
+      - ValueSet/MDCDeviceVersionTypes
+      - ValueSet/MDCnotObject
       - ValueSet/MDCobject
+      - ValueSet/MDCTimeSyncMethods
+      - ValueSet/MDCValueSet
+      - ValueSet/SimpleAlertOperationalStates
 
   Capability:
     name: Capability Statement
@@ -307,6 +329,12 @@ groups:
       - Observation/coin-example-timefault
       - Observation/coin-20181119174911
       - Observation/coin-example-1
+
+  OtherExamples:
+    name: Other Examples
+    description: Additional example resources
+    resources:
+      - ObservationDefinition/bp-observation-definition-example
 
 # Page structure
 pages:

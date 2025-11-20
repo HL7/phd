@@ -1,4 +1,5 @@
 Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
+Alias: $Mdc = urn:iso:std:iso:11073:10101
 
 Profile: PhdDevice
 Parent: Device
@@ -85,7 +86,7 @@ Description: "Profile for the Device Resource for a PHD"
   * ^slicing.rules = #open
 * type.coding contains PhdCode 1..1
 * type.coding[PhdCode] ^short = "Indicates the device is a PHD."
-* type.coding[PhdCode] = Mdc#65573
+* type.coding[PhdCode] = $Mdc#65573
 * conformsTo 1..
 * conformsTo ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "specification.coding"
@@ -134,14 +135,14 @@ Description: "Profile for the Device Resource for a PHD"
 * property[timeSyncProperty] ^short = "Time synchronization method"
   * ^definition = "This element represents the time synchronization method used by the PHD. It is an MDC coded value."
   * ^comment = "The clock set method is a required attribute in the IEEE 11073-10206 standard. It is also supported by Bluetooth Low Energy ETS and GHS specifications. Strictly speaking, the time synchronization method is not a property of the PHD but rather a property of the PHG. However, it is included here as it is a required attribute in the IEEE 11073-10206 standard and is often used by the PHG to determine how to set the time on the PHD. In most cases it reflects the time synchronization method used to set the PHG's clock and strictly speaking it should not be reported as a static device property, but as part of a coincident timestamp."
-  * type = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
+  * type = $Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
   * valueCodeableConcept ..1
     * coding 1..*
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
 
 * property[continuaCertProperty] ^short = "Continua certified PHD interfaces (from IEEE 11073-20601)"
   * ^definition = "This element represents a Continua certified interface that is supported by the PHD. It is an MDC coded value."
-  * type = Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
+  * type = $Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
   * valueCodeableConcept ..1
   * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
@@ -162,19 +163,19 @@ Description: "Profile for the Device Resource for a PHD"
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
     * system = "http://unitsofmeasure.org"
-    * code = UCUM#us
+    * code = #us
       * ^definition = "The UCUM code for microseconds is 'us'."
 
 * property[timeSyncAccuracyProperty] ^short = "Time Synchronization Accuracy as reported by the PHD"
   * ^definition = "The time synchronization accuracy as reported by the PHD in microseconds."
-  * type = Mdc#68221 // MDC_TIME_SYNC_ACCURACY
+  * type = $Mdc#68221 // MDC_TIME_SYNC_ACCURACY
     * ^short = "Tells what the time synchronization accuracy is"
     * ^definition = "The time synchronization accuracy of the clock as reported by the PHD."
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
     * system = "http://unitsofmeasure.org"
-    * code = UCUM#us
+    * code = #us
       * ^definition = "The UCUM code for microseconds is 'us'."
 
 * property[isRegulatedProperty] ^short = "Regulatory status of the PHD"

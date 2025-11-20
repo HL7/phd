@@ -1,3 +1,5 @@
+Alias: $Mdc = urn:iso:std:iso:11073:10101
+
 Profile: PhdCoincidentTimeStampObservation
 Parent: Observation
 Id: PhdCoincidentTimeStampObservation
@@ -50,7 +52,7 @@ Description: "Observations containing a coincident timestamp."
 * component[clockSyncMethod] ^short = "Clock Synchronization Method: The method used to synchronize the clock."
   * ^definition = "The method used to synchronize the clock of the PHD. This element is populated if the PHD supports clock synchronization."
   * ^comment = "Clock synchronization methods may include NTP, PTP, or other mechanisms."
-  * code = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
+  * code = $Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
   * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
     * ^short = "The clock synchronization method last used by the PHD/PHG to synchronize the clock of the PHD"
   * dataAbsentReason ..0

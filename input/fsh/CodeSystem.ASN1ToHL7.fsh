@@ -1,3 +1,5 @@
+Alias: $Mdc = urn:iso:std:iso:11073:10101
+
 RuleSet: Bitcode(concept, define, description, eventOrState, source, mdcmapping)
 * {concept} {define} {description}
   * ^property[0].code = #eventOrState
@@ -5,7 +7,7 @@ RuleSet: Bitcode(concept, define, description, eventOrState, source, mdcmapping)
   * ^property[+].code = #source
   * ^property[=].valueCode = #{source}
   * ^property[+].code = #MDCCode
-  * ^property[=].valueCoding = Mdc#{mdcmapping}
+  * ^property[=].valueCoding = $Mdc#{mdcmapping}
 
 CodeSystem: ASN1ToHL7
 Id: ASN1ToHL7

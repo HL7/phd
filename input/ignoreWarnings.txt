@@ -60,7 +60,7 @@ WARNING: ImplementationGuide/hl7.fhir.uv.phd: ImplementationGuide.dependsOn[2]: 
 # Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]'
 
 # Best practice recommendation for R6 - additionalBindings inherited from base FHIR R6 resources should have keys. This is a FHIR R6 core issue that will be resolved upstream.
-WARNING: StructureDefinition/PhdCodedEnumerationObservation: StructureDefinition.snapshot.element[13].binding.additional[0]: Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 
 # R6 artefact
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3

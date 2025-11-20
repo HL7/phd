@@ -1,3 +1,5 @@
+Alias: $Mdc = urn:iso:std:iso:11073:10101
+
 ValueSet: MDCobject
 Id: MDCobject
 Title: "MDC Object and Device nomenclature"
@@ -8,4 +10,4 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature filtered by & D
 * ^status = #active
 * ^experimental = false
 * ^publisher = "Health Level Seven International (Devices Work Group)"
-* include codes from system Mdc where partition = "1"
+* include codes from system $Mdc where partition = "1"

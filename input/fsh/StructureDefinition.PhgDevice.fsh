@@ -1,5 +1,6 @@
 Alias: $DeviceTypes11073MDC = http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC
 Alias: $ASN1DeviceBits = http://hl7.org/fhir/uv/phd/ValueSet/ASN1DeviceBits
+Alias: $Mdc = urn:iso:std:iso:11073:10101
 
 Profile: PhgDevice
 Parent: Device
@@ -119,20 +120,20 @@ Description: "Profile for the Device Resource for a PHG"
 * property[timeSyncProperty] ^short = "Time synchronization method"
   * ^definition = "This element represents the time synchronization method used by the PHG. It is an MDC coded value."
   * ^comment = "This element reflects the time synchronization method used to set the PHG's clock."
-  * type = Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
+  * type = $Mdc#68220 // MDC_TIME_SYNC_PROTOCOL
   * valueCodeableConcept ..1
     * coding 1..*
     * coding from http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods (extensible)
 
 * property[continuaCertPHDProperty] ^short = "Continua certified PHD interfaces (from IEEE 11073-20601)"
   * ^definition = "This element represents a Continua certified PHD interface that is supported by the PHG. It is an MDC coded value."
-  * type = Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
+  * type = $Mdc#532353 // MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST
   * valueCodeableConcept ..1
   * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHDInterfaces (extensible)
 
 * property[continuaCertPHGProperty] ^short = "Continua certified PHG interfaces"
   * ^definition = "This element represents a Continua certified PHG to HFS interface that is supported by the PHG. It is an MDC coded value."
-  * type = Mdc#532355 // MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST
+  * type = $Mdc#532355 // MDC_REG_CERT_DATA_CONTINUA_AHD_CERT_DEV_LIST
   * valueCodeableConcept ..1
   * valueCodeableConcept from http://hl7.org/fhir/uv/phd/ValueSet/ContinuaPHGInterfaces (extensible)
 
@@ -153,19 +154,19 @@ Description: "Profile for the Device Resource for a PHG"
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
     * system = "http://unitsofmeasure.org"
-    * code = UCUM#us
+    * code = #us
       * ^definition = "The UCUM code for microseconds is 'us'."
 
 * property[timeSyncAccuracyProperty] ^short = "Time Synchronization Accuracy"
   * ^definition = "The time synchronization accuracy in microseconds."
-  * type = Mdc#68221 // MDC_TIME_SYNC_ACCURACY
+  * type = $Mdc#68221 // MDC_TIME_SYNC_ACCURACY
     * ^short = "Tells what the time synchronization accuracy is"
     * ^definition = "The time synchronization accuracy of the clock."
   * valueQuantity 1..1
     * ^definition = "The value. All the time fields are scaled to microseconds"
     * system 1..
     * system = "http://unitsofmeasure.org"
-    * code = UCUM#us
+    * code = #us
       * ^definition = "The UCUM code for microseconds is 'us'."
 
 * property[isRegulatedProperty] ^short = "Regulatory status of the PHG"
