@@ -18,10 +18,12 @@ Description: "Observations from a PHD where the measurement is number"
     * ^definition = "The decoded FLOAT or SFLOAT value from a PHD Observation."
     * ^comment = "The implicit precision in the value shall be honored. The MDER encoding used in the above attributes provides this precision. The translating software shall honor that precision when generating this value.\r\nThis element shall be present unless there is an error reported in the Measurement-Status attribute or the MDER encoding represents one of the special FLOAT values. In that case there is a `dataAbsentReason` element and the `valueQuantity` element is not present. Note that not all measurement status values are errors resulting in no measurement being reported here; for example the preliminary or verified status."
   * system 1..
-  * system = "http://unitsofmeasure.org"
+    * ^short = "The code system for the units of this measurement (UCUM or MDC)."
+    * ^comment = "The unit code needs to be translated from the 11073-10101 code from the device. This can be represented as either a UCUM code or an MDC code system. UCUM is preferred but MDC codes are also supported."
+    * obeys system-is-mdc-or-ucum
   * code 1..
-    * ^short = "The UCUM code for the units of this measurement."
-    * ^comment = "The UCUM code needs to be translated from  the 11073-10101 code from the device. This translation means that the reporting of units is not future proof."
+    * ^short = "The UCUM or MDC code for the units of this measurement."
+    * ^comment = "The unit code needs to be translated from the 11073-10101 code from the device. This translation means that the reporting of units is not future proof."
 * dataAbsentReason ^short = "This element is populated for numeric observations when a special FLOAT value is reported that is not a real number."
   * ^definition = "Provides a reason why the expected value in the element `Observation.valueQuantity` is missing. In this case this could also be 'not-a-number', 'positive-infinity', 'negative-infinity' or 'error'."
   * ^comment = "The values in the http://terminology.hl7.org/CodeSystem/data-absent-reason system do not provide a code that matches the 'not at this resolution' and 'reserved'. In those cases one uses the generic 'error' code. If both a special FLOAT value and a Measurement-Status indicating invalid, not available, or measurement ongoing are received, the Measurement-Status mapping takes precedence."
@@ -38,3 +40,8 @@ Target: "https://sagroups.ieee.org/11073/phd-wg"
 * valueQuantity.value -> "NumericObservation.value"
 * valueQuantity.unit -> "NumericObservation.unit" 
 * extension[Accuracy].valueQuantity.value -> "NumericObservation.accuracy"
+
+Invariant: system-is-mdc-or-ucum
+Description: "system SHALL be either the MDC or UCUM URI"
+Expression: "$this = 'urn:iso:std:iec:61853:2:2017' or $this = 'http://unitsofmeasure.org'"
+Severity: #error
