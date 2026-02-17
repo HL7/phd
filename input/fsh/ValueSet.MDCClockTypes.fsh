@@ -1,3 +1,5 @@
+Alias: $Mdc = urn:iso:std:iso:11073:10101
+
 ValueSet: MDCClockTypes
 Id: MDCClockTypes
 Title: "MDC Clock Types"
@@ -9,7 +11,7 @@ Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature Codes for Clock
 * ^experimental = false
 * ^date = "2021-09-25"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
-* Mdc#67975
-* Mdc#68226
-* Mdc#67983
-* Mdc#68072
+* $Mdc#67975
+* $Mdc#68226
+* $Mdc#67983
+* $Mdc#68072

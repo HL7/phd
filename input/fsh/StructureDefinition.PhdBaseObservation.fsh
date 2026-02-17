@@ -1,3 +1,4 @@
+Alias: $Mdc = urn:iso:std:iso:11073:10101
 Alias: $MDCValueSet = http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet
 
 Profile: PhdBaseObservation
@@ -93,7 +94,7 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^definition = "For each code  contained in the Supplemental-Types attribute, a separate component is generated. The component is not generated if the attribute is absent or empty. The component shall be generated otherwise."
   * ^comment = "A PHD may send a Supplemental-Types attribute as part of the measurement. This attribute consists of a set of MDC nomenclature codes. Each code describes an aspect of the measurement, such as MDC_MODALITY_SPOT in the pulse oximeter which indicates that the provided measurement is a stable average."
 //  * code from $CodeableConcept11073MDC (required)
-  * code = Mdc#68193 // from $CodeableConcept11073MDC (required)
+  * code = $Mdc#68193 // from $CodeableConcept11073MDC (required)
     * coding 1..
       * system 1..
       * system = "urn:iso:std:iso:11073:10101" (exactly)
