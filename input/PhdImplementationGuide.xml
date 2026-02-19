@@ -55,7 +55,7 @@ In this example there are only xml structure definitions, value sets, code syste
     <valueInteger value="1" />
   </extension>
   <experimental value="false"/>
-  <publisher value="HL7 International / Health Care Devices"/>
+  <publisher value="HL7 International / Devices"/>
   <contact>
     <telecom>
       <system value="url"/>

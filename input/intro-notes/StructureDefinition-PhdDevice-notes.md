@@ -24,27 +24,17 @@ padding: 6px;}</style>
 
 The URIs used for the system can be found in the [External Identifier Systems](https://terminology.hl7.org/identifiers.html).
 
-An example of a system identifier is:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:identifier %}
-
 ### UDI &rarr; `Device.udiCarrier`
  The UDI is included as an optional attribute of a PHD in the IEEE 11073-10206 ACOM standard. It is also supported in the Bluetooth SIG Device Information Service and the GHS Profile. The UDI attributes supported are issuer, jurisdiction, Device Identifier, and the Human Readable Barcode String. The `udiCarrier` does have elements for each of these entries. The entryType code for this sourcing of the UDI `electronic-transmission` is used as the UDI is transmitted electronically.
 
 The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
 ### `Device.type`
- The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the `Device.specialization` element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In IEEE 11073-10201 this code is described as indicating "a single-purpose medical device".
-
-An example of a `Device.type` encoding is:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:type %}
-
-The `display` element is optional but is recommended.
+ The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the `Device.specialization` element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In IEEE 11073-10201 this code is described as indicating "a single-purpose medical device". The `display` element with value "MDC_MOC_VMS_MDS_SIMP" is optional but is recommended.
 
 ### System Type Spec List &rarr; `Device.specialization`
  The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
-The specialization is an MDC code for a PHD device specialization. The version is encoded as a integer number. In FHIR the code and version are encoded in the `Device.specialization` element as follows:
-
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:specialization %}
+The specialization is an MDC code for a PHD device specialization. The version is encoded as a integer number. In FHIR the code and version are encoded in the `Device.specialization` element. 
 
 The `display` element containing the reference Id is optional, but is recommended. The `text` element is optional as well and could contain a human-readable description of the specialization.
 
@@ -67,10 +57,6 @@ The interface codes are mapped to a list of properties where the `property.value
 
 #### Reg-Cert-Data-List Regulation Status
 The regulation status attribute has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. The regulation status is mapped to an additional `Device.property.valueCode` element. 
-
-A fragment:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354') %}
-
 
 ### Clock information 
 The ACOM clock information is encoded in a set of `Device.property` elements. 
