@@ -6,7 +6,7 @@
 Best Practice Recommendation: In general, all observations should have a performer
 
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
-No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
+# No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
 
 # These code systems are PHD specific
@@ -39,7 +39,7 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.32.0
+# Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.32.0
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05
 
 # Reference to draft code system...
@@ -48,7 +48,7 @@ Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ASN1ToHL7|2.
 Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS|2.0.0-draft3
 Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs|2.0.0-draft3
 Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS|2.0.0-draft3
-Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/MissingMDCCodes|2.0.0-draft3
+# Reference to draft CodeSystem http://hl7.org/fhir/uv/phd/CodeSystem/MissingMDCCodes|2.0.0-draft3
 
 # Publisher process choice - can safely be ignored
 The value set expansion is too large, and only a subset has been displayed
@@ -58,5 +58,5 @@ The link 'http://terminology.hl7.org/6.5.0/CodeSystem-v3-mdc.html#v3-mdc-266016'
 The link 'http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html#v3-ucum-mm.91Hg.93' for "UCUM: mm[Hg]" cannot be resolved
 
 # HAPI uses old name for dev work group - can be ignored safely
-The nominated WG 'dev' means that the publisher should be 'HL7 International / Health Care Devices' but 'HL7 International / Devices' was found
+# The nominated WG 'dev' means that the publisher should be 'HL7 International / Health Care Devices' but 'HL7 International / Devices' was found
 
