@@ -25,7 +25,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
 
-# Will be resolved after the ballot.
+# The code property codes are defined as internal codes in the code system, so this warning can be safely ignored.
 The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
 # This is generated for all observations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
