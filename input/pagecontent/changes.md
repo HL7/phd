@@ -36,7 +36,7 @@
 The changes focus on improving documentation quality, clarifying the relationship between IEEE 11073 standards and FHIR profiles, and ensuring terminology consistency. The updates make the IG more consumable for implementers while expanding support for both IEEE 11073-10206 ACOM and Bluetooth GHS specifications.
 
 ### Issue Tracking
-Issues reported against this IG are tracked in the HL7 Jira system.
-- A list of resolved issues and agreed changes published in this version of the IG can be retrieved via [this link](https://jira.hl7.org/issues/?jql=Specification%20%3D%20FHIR-phd%20AND%20project%20in%20(CDA%2C%20FHIR%2C%20OTHER%2C%20V2)%20AND%20status%20%3D%20Published%20%20ORDER%20BY%20resolutiondate%20%20DESC).
+Issues reported against this IG are tracked in the HL7 Jira system. Issues with a status of "Published" indicate resolved issues that have been included in the latest published version of the IG. Issues with a status of "Applied" indicate changes that have been applied to the current, not yet published version of the IG.
+- The list of issues with "published" status for the PHD IG can be retrieved via <a href="https://jira.hl7.org/issues/?jql=Specification%20%3D%20FHIR-phd%20AND%20project%20in%20(CDA%2C%20FHIR%2C%20OTHER%2C%20V2)%20AND%20status%20%3D%20Published%20%20ORDER%20BY%20resolutiondate%20%20DESC" target="_blank">this link</a>.
 
-- A list of changes applied to the current, not yet published version of the IG can be retrieved via [this link](https://jira.hl7.org/issues/?jql=Specification%20%3D%20FHIR-phd%20AND%20project%20in%20(CDA%2C%20FHIR%2C%20OTHER%2C%20V2)%20AND%20status%20%3D%20Applied%20%20ORDER%20BY%20updatedDate%20%20DESC)
+- The list of issues with "applied" status for the PHD IG can be retrieved via <a href="https://jira.hl7.org/issues/?jql=Specification%20%3D%20FHIR-phd%20AND%20project%20in%20(CDA%2C%20FHIR%2C%20OTHER%2C%20V2)%20AND%20status%20%3D%20Applied%20%20ORDER%20BY%20updatedDate%20%20DESC" target="_blank">this link</a>

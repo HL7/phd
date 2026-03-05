@@ -1,8 +1,8 @@
 {
     "package-id" : "hl7.fhir.uv.phd",
     "version" : "2.0.0",
-    "path" : "http://hl7.org/fhir/uv/phd/2025Sep",
-    "mode" : "working",
+    "path" : "http://hl7.org/fhir/uv/phd/STU2",
+    "mode" : "milestone",
     "status": "ballot",
     "sequence": "STU 2",
     "desc": "STU 2. This version is based on IEEE 11073-10206 - ACOM with Bluetooth GHS support.",
