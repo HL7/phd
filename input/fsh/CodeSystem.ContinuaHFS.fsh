@@ -9,6 +9,7 @@ Description: "Codes used to describe the Continua Health and Fitness interfaces 
 * ^experimental = false
 * ^date = "2018-09-18"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
+* ^copyright = "Continua Terminology Content is copyright © Healthcare Information and Management Systems Society. Used with permission of Healthcare Information and Management Systems Society. All rights reserved."
 * ^caseSensitive = true
 * ^content = #complete
 * #0 "observation-upload-soap" "The PHG has been certified for the PCD-01 upload using Web services"

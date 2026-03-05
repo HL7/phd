@@ -7,4 +7,5 @@ Description: "ValueSet containing all codes from the ContinuaPHDInterfaceIDs Cod
 * ^version = "current"
 * ^experimental = false
 * ^publisher = "Health Level Seven International (Devices Work Group)"
+* ^copyright = "Continua Terminology Content is copyright © Healthcare Information and Management Systems Society. Used with permission of Healthcare Information and Management Systems Society. All rights reserved."
 * ^compose.include.system = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs"
