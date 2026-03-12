@@ -6,7 +6,7 @@ Usage: #definition
 * name = "PhdFHIRServer"
 * title = "PHD IG FHIR Observation Server requirements"
 * description = "Capability statement. This statement indicates what the server must support and accept to work with this Guide. Though the CapabilityStatement indicates, for example, that the server must support the Device resource, it does not mean the server must save the Device resource. The use case may only be interested in the Observation and Patient resources. What it does mean is that the server cannot generate an error when the PHG uploads a Device resource or references a Device resource that it has uploaded."
-* status = #draft
+* status = #active
 * date = "2018-10-27"
 * contact.telecom.system = #url
 * contact.telecom.value = "http://hl7.org/fhir"

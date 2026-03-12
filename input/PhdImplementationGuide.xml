@@ -46,13 +46,13 @@ In this example there are only xml structure definitions, value sets, code syste
   <version value="2.0.0"/>
   <name value="PhdImplementationGuide"/>
   <title value="Personal Health Device Implementation Guide"/>
-  <status value="draft"/>
+  <status value="active"/>
   <language value="en-US"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="draft" />
+    <valueCode value="trial-use" />
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="1" />
+    <valueInteger value="2" />
   </extension>
   <experimental value="false"/>
   <publisher value="HL7 International / Devices"/>

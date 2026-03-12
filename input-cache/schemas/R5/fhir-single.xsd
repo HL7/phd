@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Mar 10, 2026 17:33+0000 for FHIR v6.0.0-ballot4 
+  Generated on Wed, Mar 11, 2026 21:06+0000 for FHIR v6.0.0-ballot4 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot4">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -17047,6 +17047,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Unique instance identifiers assigned to a biologically derived product. Note: This is a business identifier, not a resource identifier.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="therapyIdentifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A shared identifier common to multiple independent BiologicallyDerivedProduct instances that are intended to be administered in the course of the same given therapy. The presence of the same identifier on each BiologicallyDerivedProduct ties those products together.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="biologicalSourceEvent" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">An identifier that supports traceability to the event during which material in this product from one or more biological entities was obtained or pooled.</xs:documentation>
@@ -27792,7 +27797,7 @@ The actual author of the section when it is not the author of the composition. I
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="DeviceDefinitionRegulatoryIdentifierType">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of identifier itself.</xs:documentation>
            </xs:annotation>
@@ -28183,36 +28188,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="DeviceDefinitionRegulatoryIdentifierTypeEnum">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="basic">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Basic</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="master">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Master</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="license">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">License</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DeviceDefinitionRegulatoryIdentifierType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="DeviceDefinitionRegulatoryIdentifierTypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -43837,9 +43812,9 @@ Reflex | Repeat | Re-run.</xs:documentation>
               <xs:documentation xml:lang="en">An absolute URL that is used to identify this ObservationDefinition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this ObservationDefinition is (or will be) published. The URL SHOULD include the major version of the ObservationDefinition. For more information see Technical and Business Versions.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Business identifiers assigned to this ObservationDefinition. by the performer and/or other systems. These identifiers remain constant as the resource is updated and propagates from server to server.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this ObservationDefinition by the performer and/or other systems. These identifiers remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
