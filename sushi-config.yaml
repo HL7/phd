@@ -110,7 +110,12 @@ resources:
   DeviceMetric/bp-devicemetric-example:
     name: Phd Device Metric for Blood Pressure 
     description: This example is a PhdDeviceMetric for a Blood Pressure measurement.
-  
+
+  # Example DeviceAlert
+  DeviceAlert/bp-device-alert:
+    name: Phd Device Alert for Blood Pressure
+    description: This example is a PhdDeviceAlert for a Blood Pressure measurement alert condition. 
+   
   # Example ObservationDefinition
   ObservationDefinition/bp-observation-definition-example:
     name: Blood Pressure ObservationDefinition
@@ -236,6 +241,7 @@ groups:
     description: Additional profiles used in the PHD implementation guide
     resources:
       - StructureDefinition/PhdDeviceMetric
+      - StructureDefinition/PhdDeviceAlert
 
   Extensions:
     name: Extensions
@@ -244,7 +250,7 @@ groups:
       - StructureDefinition/Accuracy
       - StructureDefinition/Confidence95
       - StructureDefinition/CoincidentTimeStampReference
-      - StructureDefinition/SimpleAlerting
+      #- StructureDefinition/SimpleAlerting
 
   Terminology:
     name: Terminology
@@ -335,6 +341,7 @@ groups:
     description: Additional example resources
     resources:
       - ObservationDefinition/bp-observation-definition-example
+      - DeviceAlert/bp-device-alert
 
 # Page structure
 pages:
