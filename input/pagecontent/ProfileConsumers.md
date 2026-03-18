@@ -62,11 +62,11 @@ The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is c
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special FLOAT values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the `dataAbsentReason` element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 ##### The Timestamp: `Observation.effective[x]`
-All measurements contain a time stamp which is either an instant in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
+All measurements contain a time stamp which is either a point in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
 
-All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even though the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
+All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even if the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
 
-Below is an example of the `effective[x]` when the timestamp is an instant in time:
+Below is an example of the `effective[x]` when the timestamp is a point in time:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
