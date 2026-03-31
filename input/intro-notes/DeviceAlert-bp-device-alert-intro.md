@@ -48,8 +48,8 @@ This example represents a common scenario in remote patient monitoring where:
 1. A blood pressure monitor takes a measurement
 2. The systolic blood pressure value (116 mm[Hg] in the referenced observation) would normally be within range
 3. However, if the measurement exceeded 140 mm[Hg], this alert would be generated
-4. The alert is represented as a separate DeviceAlert resource that references the source observation
-5. Healthcare providers can query for active alerts to identify patients requiring attention
+4. The Personal Health Gateway (PHG) receives this alert condition and generates the DeviceAlert resource, which references the source observation
+5. The alert signal will trigger the caretaker's attention, enabling prompt identification of patients requiring intervention
 
 ## Separation from Measurement Data
 Unlike older approaches where alert information was embedded within the measurement observation (using extensions), this example demonstrates the newer pattern of representing alerts as separate DeviceAlert resources. This provides:
@@ -57,10 +57,3 @@ Unlike older approaches where alert information was embedded within the measurem
 - **Flexible Querying**: Alerts can be searched and filtered independently
 - **Multiple Alerts**: A single observation can trigger multiple different alert types
 - **Component-Specific Alerts**: For compound observations, alerts can reference specific components
-
-## IEEE 11073 Mapping
-This alert structure maps to IEEE 11073-10206 ACOM (Alerting Communication Model) concepts:
-- **type** → Simple-Sa-Observed-Value.metric-id
-- **derivedFrom.limit** → Simple-Sa-Observed-Value.current-limits  
-- **signal** → Simple-Sa-Observed-Value.state and alert-op-text-string
-- **label** → Simple-Sa-Observed-Value.nu-val-obs-simp-str

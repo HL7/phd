@@ -15,7 +15,7 @@ Description: "Profile for device alert that capture alert conditions from person
 // ------------------------------------------------------------
 // Alert Type
 // ------------------------------------------------------------
-* type from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet
+* type from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (required)
   * ^short = "Type of alert"
   * ^definition = "MDC nomenclature code indicating the type of alert being reported - which can be MDC_EVT_RANGE_xxxx - value set to be defined"
   * ^comment = "The code identifies the specific alert type from the IEEE 11073 medical device communication nomenclature."
@@ -51,7 +51,7 @@ Description: "Profile for device alert that capture alert conditions from person
   * ^short = "Reference to the observation(s) this alert is associated with"
   * ^definition = "References to the PhdNumericObservation, PhdCompoundNumericObservation, PhdCompoundObservation, or other observations that this alert condition is derived from or associated with."
   * ^comment = "The alert is now represented as a separate resource that references the source measurement observation(s) via derivedFrom. The component element can be used to identify a specific component in case of an alert on a compound observation, e.g. on systolic blood pressure in a blood pressure observation."
-* derivedFrom only Reference(PhdNumericObservation or PhdCompoundNumericObservation or PhdCompoundObservation or PhdBaseObservation)
+* derivedFrom only Reference(PhdNumericObservation or PhdCompoundNumericObservation or PhdCompoundObservation)
 
 // ------------------------------------------------------------
 // Mapping
@@ -62,7 +62,7 @@ Title: "IEEE-11073-10206 ACOM Alert to FHIR"
 Source: PhdDeviceAlert
 * -> "Simple-Sa-Observed-Value"
 * type -> "Simple-Sa-Observed-Value.metric-id"
-* condition.limit -> "Simple-Sa-Observed-Value.current-limits"
+* condition.limit -> "Not directly used for alerting - alert triggered by observation status code msmt-value-exceeded-boundaries"
 * signal -> "Simple-Sa-Observed-Value.state and alert-op-text-string"
 * label -> "Simple-Sa-Observed-Value.nu-val-obs-simp-str"
 * derivedFrom -> "Associated with metric observations via logical linkage"

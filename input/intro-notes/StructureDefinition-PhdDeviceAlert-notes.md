@@ -1,36 +1,11 @@
 ## Implementation Notes
 
-### Alert Representation Model
-The PHD Device Alert profile represents a significant architectural change from earlier approaches to device alerting in FHIR. Previously, alert information was embedded within measurement observations using extensions (such as the SimpleAlerting extension). The DeviceAlert resource provides a cleaner separation of concerns:
-
-- **Measurement observations** (PhdNumericObservation, PhdCompoundNumericObservation, etc.) contain the actual measurement data
-- **DeviceAlert resources** contain the alert conditions, thresholds, and signaling information
-- The two are linked via the `derivedFrom` element
-
-This separation allows:
-1. Observations to remain focused on measurement data
-2. Multiple different alerts to reference the same observation
-3. Alerts to be queried, filtered, and managed independently
-4. Clearer data model that aligns with FHIR R5 architecture
-
-### IEEE 11073 Mapping
-The profile maps data elements from IEEE 11073-10206 ACOM (Alerting Communication Model) to FHIR DeviceAlert elements:
-
-| IEEE 11073-10206 Element | FHIR DeviceAlert Element | Notes |
-|---------------------------|--------------------------|-------|
-| Simple-Sa-Observed-Value.metric-id | type | Alert event code (e.g., MDC_EVT_RANGE_HI) |
-| Simple-Sa-Observed-Value.current-limits | derivedFrom.limit | Threshold range that triggers the alert |
-| Simple-Sa-Observed-Value.state | signal.activationState, signal.presence | Alert operational state |
-| alert-op-text-string | signal.type.text | Operational text describing alerting behavior |
-| nu-val-obs-simp-str | label | Human-readable notification text |
-| Metric observation association | derivedFrom.observation | Reference to source measurement |
-
 ### Understanding derivedFrom Structure
 The `derivedFrom` element is a backbone element with three key sub-elements:
 
 #### observation (required)
 - References the measurement observation that triggered the alert
-- Must reference a PhdNumericObservation, PhdCompoundNumericObservation, PhdCompoundObservation, or PhdBaseObservation
+- Must reference a PhdNumericObservation, PhdCompoundNumericObservation, or PhdCompoundObservation
 - The actual measured value that exceeded limits is found in the referenced observation's `value[x]` or `component.value[x]`
 
 #### component (optional)
@@ -46,46 +21,6 @@ The `derivedFrom` element is a backbone element with three key sub-elements:
 - The actual measured value (from the referenced observation) is compared against these limits
 - May be omitted if the device doesn't report current limit settings
 
-### Alert Types and Codes
-The `type` element should contain IEEE 11073-10101 MDC alert event codes. Common codes include:
-
-- **MDC_EVT_RANGE** (196614): General out-of-range condition
-- **MDC_EVT_RANGE_LO** (196616): Value below lower threshold
-- **MDC_EVT_RANGE_HI** (196618): Value above upper threshold
-- **MDC_EVT_ALARM** (196612): General alarm condition
-
-The `code` element contains a more specific description of what triggered the alert and may be the same as `type` or provide additional context.
-
-### Signal Element Usage
-The `signal` element describes the annunciation or notification of the alert. Key aspects:
-
-#### activationState (required)
-Indicates whether the signaling system is active:
-- **on**: Alert signaling is active
-- **paused**: Alert has been temporarily silenced ("snoozed")
-- **off**: Alert signaling is not active
-
-#### presence (optional)
-Indicates current annunciation status:
-- **on**: Signal is currently being annunciated
-- **off**: Signal is not being annunciated
-- **latched**: Signal continues even though the condition has ended
-- **acknowledged**: Signal stopped because user acknowledged it
-
-#### type (optional, 0..*)
-Can contain multiple codings describing the signal characteristics:
-- Operational state codes (e.g., "Limits-On" from SimpleAlertOperationalStatesCS)
-- Signal details (e.g., visual indicator range, auditory characteristics)
-- Descriptive text explaining the alerting behavior
-
-### Status Values
-The DeviceAlert `status` element has specific meanings:
-
-- **in-progress**: Alert condition is currently active and ongoing
-- **completed**: Alert condition has ended (no longer present)
-- **entered-in-error**: Alert was created in error and should be ignored
-- **unknown**: Alert status cannot be determined
-
 ### Presence vs Status
 Two elements track alert state:
 
@@ -96,43 +31,6 @@ These work together:
 - Active alert: `presence=true`, `status=in-progress`
 - Resolved alert: `presence=false`, `status=completed`
 - Alert acknowledged but still present: `presence=true`, `status=in-progress`, `signal.presence=acknowledged`
-
-### Label Construction
-The `label` element provides human-readable text describing the alert. Good practices:
-
-- Include measurement type: "Systolic BP", "SpO2", "Heart Rate"
-- Include comparison operator: ">", "<", "outside"
-- Include threshold value(s): "140 mm[Hg]", "80%"
-- Keep concise: "Systolic BP > 140 mm[Hg]" or "SpO2 < 80%"
-- Don't duplicate information better represented in coded elements
-
-### Device References
-The `device` element can reference:
-- The top-level PHD device (PhdDevice) that detected the alert
-- A component device (MDS, VMD, Channel in IEEE 11073 terminology)
-- A DeviceMetric representing the specific metric in an alert state
-
-Choose the most specific appropriate reference based on what information is available from the device.
-
-### Category Values
-Include appropriate categories for filtering and access control:
-
-```json
-"category": [
-  {
-    "coding": [{
-      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-      "code": "vital-signs"
-    }]
-  },
-  {
-    "coding": [{
-      "system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-      "code": "phd"
-    }]
-  }
-]
-```
 
 ### Occurrence Time
 Use `occurrenceDateTime` for a specific point in time when the alert occurred, or `occurrencePeriod` for alerts that span a time range. This represents when the condition was detected, which should match or be very close to the `effectiveDateTime` of the referenced observation.
