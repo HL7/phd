@@ -1,7 +1,7 @@
 ## Implementation Notes
 
 ### Understanding derivedFrom Structure
-The `derivedFrom` element is a backbone element with three key sub-elements:
+The `derivedFrom` element is a backbone element with two key sub-elements:
 
 #### observation (required)
 - References the measurement observation that triggered the alert
@@ -13,13 +13,6 @@ The `derivedFrom` element is a backbone element with three key sub-elements:
 - Contains a Coding that matches one of the `Observation.component.code` values in the referenced observation
 - Example: For a blood pressure observation with systolic, diastolic, and mean components, this identifies which component (e.g., systolic) triggered the alert
 - If omitted, the alert applies to the overall observation value
-
-#### limit (optional)
-- Defines the threshold range that triggered the alert
-- Contains low and/or high Quantity values
-- Represents the current limit settings on the device
-- The actual measured value (from the referenced observation) is compared against these limits
-- May be omitted if the device doesn't report current limit settings
 
 ### Presence vs Status
 Two elements track alert state:

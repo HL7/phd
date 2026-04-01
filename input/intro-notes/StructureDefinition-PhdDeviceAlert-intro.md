@@ -26,8 +26,8 @@ Device alerts enable important clinical use cases:
 
 ## Profile Structure
 
-### Alert Type (`type`)
-The `type` element identifies the kind of alert using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. Common alert event codes include:
+### Alert Code (`code`)
+The `code` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. Common alert event codes include:
 - **MDC_EVT_RANGE_HI** (196618): Value exceeds upper threshold
 - **MDC_EVT_RANGE_LO** (196616): Value below lower threshold
 - **MDC_EVT_RANGE** (196614): Value outside acceptable range
@@ -41,7 +41,6 @@ The alert condition is defined by two related elements:
 
 - **observation** (required): Reference to the source observation (PhdNumericObservation, PhdCompoundNumericObservation, or PhdCompoundObservation)
 - **component** (optional): For compound observations, identifies which specific component triggered the alert (e.g., systolic vs. diastolic blood pressure)
-- **limit** (optional): The threshold range defining when the alert is triggered
 
 This structure allows precise identification of which measurement observation caused the alert condition.
 

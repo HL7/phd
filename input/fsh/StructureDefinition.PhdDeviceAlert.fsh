@@ -13,23 +13,12 @@ Description: "Profile for device alert that capture alert conditions from person
 * ^abstract = false
 
 // ------------------------------------------------------------
-// Alert Type
+// Alert Code
 // ------------------------------------------------------------
-* type from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (required)
-  * ^short = "Type of alert"
-  * ^definition = "MDC nomenclature code indicating the type of alert being reported - which can be MDC_EVT_RANGE_xxxx - value set to be defined"
-  * ^comment = "The code identifies the specific alert type from the IEEE 11073 medical device communication nomenclature."
-
-// ------------------------------------------------------------
-// Alert Condition and Limits
-// ------------------------------------------------------------
-* condition 1..1
-  * ^short = "Alert condition details"
-  * ^definition = "The condition that defines when this alert is triggered."
-  * limit 0..1
-    * ^short = "Threshold range for alert triggering"
-    * ^definition = "The range of values that define the alert threshold limits."
-    * ^comment = "Represents the current limit settings for the alert condition."
+* code from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (required)
+  * ^short = "Code for the alert condition"
+  * ^definition = "MDC nomenclature code indicating the alert condition being reported"
+  * ^comment = "The code identifies the specific alert condition from the IEEE 11073 medical device communication nomenclature."
 
 // ------------------------------------------------------------
 // Alert Label/Notification Text
@@ -61,8 +50,7 @@ Id: IEEE-11073-10206-PhdDeviceAlert
 Title: "IEEE-11073-10206 ACOM Alert to FHIR"
 Source: PhdDeviceAlert
 * -> "Simple-Sa-Observed-Value"
-* type -> "Simple-Sa-Observed-Value.metric-id"
-* condition.limit -> "Not directly used for alerting - alert triggered by observation status code msmt-value-exceeded-boundaries"
+* code -> "Simple-Sa-Observed-Value.metric-id"
 * signal -> "Simple-Sa-Observed-Value.state and alert-op-text-string"
 * label -> "Simple-Sa-Observed-Value.nu-val-obs-simp-str"
 * derivedFrom -> "Associated with metric observations via logical linkage"
