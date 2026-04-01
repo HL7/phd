@@ -13,9 +13,9 @@ Description: "Profile for device alert that capture alert conditions from person
 * ^abstract = false
 
 // ------------------------------------------------------------
-// Alert Code
+// Alert Type
 // ------------------------------------------------------------
-* code from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (required)
+* type from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (required)
   * ^short = "Code for the alert condition"
   * ^definition = "MDC nomenclature code indicating the alert condition being reported"
   * ^comment = "The code identifies the specific alert condition from the IEEE 11073 medical device communication nomenclature."
@@ -50,7 +50,7 @@ Id: IEEE-11073-10206-PhdDeviceAlert
 Title: "IEEE-11073-10206 ACOM Alert to FHIR"
 Source: PhdDeviceAlert
 * -> "Simple-Sa-Observed-Value"
-* code -> "Simple-Sa-Observed-Value.metric-id"
+* type -> "Simple-Sa-Observed-Value.metric-id"
 * signal -> "Simple-Sa-Observed-Value.state and alert-op-text-string"
 * label -> "Simple-Sa-Observed-Value.nu-val-obs-simp-str"
 * derivedFrom -> "Associated with metric observations via logical linkage"

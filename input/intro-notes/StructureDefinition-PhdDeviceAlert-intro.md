@@ -26,16 +26,16 @@ Device alerts enable important clinical use cases:
 
 ## Profile Structure
 
-### Alert Code (`code`)
-The `code` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. Common alert event codes include:
+### Alert Type (`type`)
+The `type` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. The binding is required, meaning a code must always be provided. Common alert event codes include:
 - **MDC_EVT_RANGE_HI** (196618): Value exceeds upper threshold
 - **MDC_EVT_RANGE_LO** (196616): Value below lower threshold
 - **MDC_EVT_RANGE** (196614): Value outside acceptable range
 
-### Alert Condition (`code` and `derivedFrom`)
+### Alert Condition (`type` and `derivedFrom`)
 The alert condition is defined by two related elements:
 
-**Code (`code`)**: The `code` element specifies the specific condition that triggered the alert, providing a coded representation of what alert condition is being reported.
+**Type (`type`)**: The `type` element specifies the specific condition that triggered the alert with a required binding, providing a coded representation of what alert condition is being reported.
 
 **Cause of Condition (`derivedFrom`)**: The profile requires one or more `derivedFrom` elements to reference the source measurement observation(s) that caused this alert condition. Each derivedFrom element contains:
 
