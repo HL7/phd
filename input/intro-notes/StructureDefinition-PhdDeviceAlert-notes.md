@@ -10,9 +10,9 @@ The `derivedFrom` element is a backbone element with two key sub-elements:
 
 #### component (optional)
 - Used when the alert applies to a specific component of a compound observation
-- Contains a Coding that matches one of the `Observation.component.code` values in the referenced observation
+- Contains a Coding that matches one of the `Observation.component.code` values in the referenced observation (which will be an MDC code in the context of this IG)
 - Example: For a blood pressure observation with systolic, diastolic, and mean components, this identifies which component (e.g., systolic) triggered the alert
-- If omitted, the alert applies to the overall observation value
+- If omitted, the alert applies to the overall compound observation 
 
 ### Presence vs Status
 Two elements track alert state:
@@ -25,8 +25,8 @@ These work together:
 - Resolved alert: `presence=false`, `status=completed`
 - Alert acknowledged but still present: `presence=true`, `status=in-progress`, `signal.presence=acknowledged`
 
-### Occurrence Time
-Use `occurrenceDateTime` for a specific point in time when the alert occurred, or `occurrencePeriod` for alerts that span a time range. This represents when the condition was detected, which should match or be very close to the `effectiveDateTime` of the referenced observation.
+### When did the alert occur
+In the `occurence[x]` element use `occurrenceDateTime` for a specific point in time when the alert occurred, or `occurrencePeriod` for alerts that span a time range. This represents when the condition was detected, is typically close to the `effectiveDateTime` of the referenced observation.
 
 ### Query Patterns
 Common queries for DeviceAlert resources:
