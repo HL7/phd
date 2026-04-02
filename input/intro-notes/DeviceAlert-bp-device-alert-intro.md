@@ -13,6 +13,7 @@ The resource conforms to the `PhdDeviceAlert` profile, which is based on the FHI
 - Indicates a "high range" alert event, meaning the measured value exceeded the upper threshold limit
 
 ### 3. **Alert Categories**
+<!-- TODO: Adefine appropriate categories for PHD Alerts -->
 The alert is categorized as:
 - **Vital Signs**: Standard FHIR observation category
 - **PHD**: Personal Health Device category specific to the PHD implementation guide
