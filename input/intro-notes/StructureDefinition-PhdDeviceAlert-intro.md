@@ -26,6 +26,7 @@ Device alerts enable important clinical use cases:
 
 ## Profile Structure
 
+<!-- TODO: double check for each element if this part provides additional information or is already or better covered in th formal definition of the profile - the .fsh file -->
 ### Alert Type (`type`)
 The `type` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. The binding is required, meaning a code must always be provided. Common alert event codes include:
 
