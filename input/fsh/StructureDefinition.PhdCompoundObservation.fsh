@@ -65,7 +65,7 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
 * component
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
   * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
-  * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
+ // * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
 
 Mapping: IEEE-11073-10206-PhdCompoundObservation
 Id: IEEE-11073-10206-PhdCompoundObservation

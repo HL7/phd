@@ -1,0 +1,118 @@
+{
+	"resourceType": "DeviceAlert",
+	"id": "bp-device-alert",
+	"meta": {
+		"profile": [
+			"http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceAlert"
+		]
+	},
+	"status": "in-progress",
+	"category": [
+		{
+			"coding": [
+				{
+					"system": "http://terminology.hl7.org/CodeSystem/observation-category",
+					"code": "vital-signs"
+				}
+			],
+			"text": "Vital Signs"
+		},
+		{
+			"coding": [
+				{
+					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
+					"code": "phd"
+				}
+			]
+		}
+	],
+	"type": {
+		"coding": [
+			{
+				"system": "urn:iso:std:iso:11073:10101",
+				"code": "196618",
+				"display": "MDC_EVT_RANGE_HI"
+			}
+		],
+		"text": "High Range Alert"
+	},
+	"code": {
+		"coding": [
+			{
+				"system": "urn:iso:std:iso:11073:10101",
+				"code": "196618",
+				"display": "MDC_EVT_RANGE_HI"
+			}
+		],
+		"text": "Systolic blood pressure high alert"
+	},
+	"subject": {
+		"reference": "Patient/patientExample-1"
+	},
+	"presence": true,
+	"occurrenceDateTime": "2018-11-11T11:38:15-05:00",
+	"device": {
+		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
+	},
+	"derivedFrom": [
+		{
+			"observation": {
+				"reference": "Observation/compound-numeric-blood-pressure"
+			},
+			"component": {
+				"system": "urn:iso:std:iso:11073:10101",
+				"code": "150021",
+				"display": "MDC_PRESS_BLD_NONINV_SYS"
+			},
+			"limit": {
+				"low": {
+					"value": 90,
+					"unit": "mm[Hg]",
+					"system": "http://unitsofmeasure.org",
+					"code": "mm[Hg]"
+				},
+				"high": {
+					"value": 140,
+					"unit": "mm[Hg]",
+					"system": "http://unitsofmeasure.org",
+					"code": "mm[Hg]"
+				}
+			}
+		}
+	],
+	"label": "Systolic BP > 140 mm[Hg]",
+	"signal": [
+		{
+			"activationState": {
+				"coding": [
+					{
+						"system": "http://hl7.org/fhir/device-alert-activation-state",
+						"code": "on",
+						"display": "On"
+					}
+				]
+			},
+			"presence": {
+				"coding": [
+					{
+						"system": "http://hl7.org/fhir/device-alert-signal-presence",
+						"code": "on",
+						"display": "On"
+					}
+				]
+			},
+			"type": [
+				{
+					"coding": [
+						{
+							"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS",
+							"code": "Limits-On",
+							"display": "Limits On"
+						}
+					],
+					"text": "Alerting when systolic BP > 140 mm[Hg]"
+				}
+			]
+		}
+	]
+}

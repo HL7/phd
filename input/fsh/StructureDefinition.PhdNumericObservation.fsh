@@ -29,7 +29,7 @@ Description: "Observations from a PHD where the measurement is number"
   * ^comment = "The values in the http://terminology.hl7.org/CodeSystem/data-absent-reason system do not provide a code that matches the 'not at this resolution' and 'reserved'. In those cases one uses the generic 'error' code. If both a special FLOAT value and a Measurement-Status indicating invalid, not available, or measurement ongoing are received, the Measurement-Status mapping takes precedence."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
-* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
+//* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
 
 Mapping: IEEE-11073-10206-PhdNumericObservation
 Id: IEEE-11073-10206-PhdNumericObservation

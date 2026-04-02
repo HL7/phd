@@ -15,6 +15,7 @@ This IG defines the following profiles:
    - [Compound Numeric Observation Profile](StructureDefinition-PhdCompoundNumericObservation.html): reports multiple numeric values
  - [Coincident Timestamp Observation Profile](StructureDefinition-PhdCoincidentTimeStampObservation.html): reports the PHD device time as observed by the PHG for time auditing purposes
  - [Phd Device Profile](StructureDefinition-PhdDevice.html): reports the PHD features and properties
+ - [Phd Device Alerts Profile](StructureDefinition-PhdDeviceAlert.html): reports the PHD Device Alerts properties
  - [Phg Device Profile](StructureDefinition-PhgDevice.html): reports the PHG properties
  - [Patient Profile](StructureDefinition-PhdPatient.html): reports the patient data
  
