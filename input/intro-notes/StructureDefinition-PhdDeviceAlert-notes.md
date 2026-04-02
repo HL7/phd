@@ -1,5 +1,7 @@
 ## Implementation Notes
 
+<!-- TODO: double check if this information is not already covered in FHIR Core, the formal profile definition or in the intro. -->
+
 ### Understanding derivedFrom Structure
 The `derivedFrom` element is a backbone element with two key sub-elements:
 
