@@ -20,7 +20,7 @@ This Implementation Guide (IG) defines the use of FHIR resources to convey measu
 <img src="PHD-context-complete.jpg" alt="PHD IG context diagram" style="width:90%" class="center">
 <figcaption><i>Context diagram of the PHD IG</i></figcaption>
 </figure>
-
+<br>
 A partner IG is the [Point of Care Devices (PoCD) Implementation Guide](https://hl7.org/fhir/uv/pocd/2021Sep/index.html). PoCDs focus on acute care and are operated by medical professionals. PoCDs are more complex than PHDs but both are based upon the IEEE 11073-10201 Domain Information Model (DIM) and use the same coding system, [IEEE 11073-10101](https://standards.ieee.org/ieee/11073-10101/5034/). The PoCD DIM is defined by the IEEE 11073-10201 standard while the PHD DIM is based upon the subset defined by the IEEE 11073-10206 Abstract Content Information Model (ACOM) standard. The purpose of both the PHD and PoCD IGs is to ensure that the DIM is mapped to FHIR in a complete, standardized, and consistent manner. Since both IGs are based on the IEEE 11073-10201 DIM, they are harmonized as much as possible. Neither IG provides any interpretation of the mapped data or guidance on actions to be taken with the data once it has been uploaded to a FHIR server.
 
 ### Profile Consumers

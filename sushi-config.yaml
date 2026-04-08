@@ -10,7 +10,7 @@ copyrightYear: 2016+
 releaseLabel: STU 3 - R6  # Change back to R6
 version: 3.0.0-draft
 publisher:
-  name: HL7 International / Health Care Devices
+  name: HL7 International / Devices
   url: http://www.hl7.org/Special/committees/healthcaredevices
 
 # Extensions (IG-level metadata)
@@ -27,7 +27,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 
 dependencies:
   hl7.terminology.r5:
-    version: 7.0.0
+    version: 7.1.0
     reason: R6 terminology package not yet available
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
   hl7.fhir.uv.extensions:
@@ -51,9 +51,6 @@ resources:
     name: Continua Device Identifiers
     description: Codes that identify the device 'identifier', such as whether an EUI is a system id, Bluetooth address, or Ethernet MAC address
   
-  CodeSystem/SimpleAlertOperationalStatesCS:
-    name: SimpleAlertOperationalStates CodeSystem
-  
   CodeSystem/ASN1ToHL7:
     name: ASN1 to HL7 Mapping
     description: Codes for the IEEE 11073-10206 BITs measurement bit values. For example, 150604.0 is the code for bit 0 in measurement type 150604 which is a pulse oximeter status. The description of that code is 'Indicates the device is not connected with the sensor'.
@@ -65,9 +62,6 @@ resources:
   
   ValueSet/DeviceTypes11073MDC:
     name: Device Type Specialization IEEE 11073-10101 Nomenclature Codes
-  
-  ValueSet/SimpleAlertOperationalStates:
-    name: Simple Alert Operational States Value Set
   
   ValueSet/MDCobject:
     name: IEEE 11073 MDC Object infrastructure and Device nomenclature
@@ -250,7 +244,6 @@ groups:
       - StructureDefinition/Accuracy
       - StructureDefinition/Confidence95
       - StructureDefinition/CoincidentTimeStampReference
-      #- StructureDefinition/SimpleAlerting
 
   Terminology:
     name: Terminology
@@ -262,7 +255,6 @@ groups:
       - CodeSystem/ContinuaPHDInterfaceIDs
       - CodeSystem/MissingMDCCodes
       - CodeSystem/PhdObservationCategories
-      - CodeSystem/SimpleAlertOperationalStatesCS
       - ValueSet/ASN1ClockBits
       - ValueSet/ASN1DeviceBits
       - ValueSet/ASN1EventOrStateValues
@@ -279,7 +271,6 @@ groups:
       - ValueSet/MDCobject
       - ValueSet/MDCTimeSyncMethods
       - ValueSet/MDCValueSet
-      - ValueSet/SimpleAlertOperationalStates
 
   Capability:
     name: Capability Statement

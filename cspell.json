@@ -5,7 +5,8 @@
     "dictionaries": [],
     "words": [],
     "ignoreWords": [
-        "Bitcode"
+        "Bitcode",
+        "NONINV"
     ],
     "import": []
 }

@@ -28,7 +28,7 @@ These work together:
 - Alert acknowledged but still present: `presence=true`, `status=in-progress`, `signal.presence=acknowledged`
 
 ### When did the alert occur
-In the `occurence[x]` element use `occurrenceDateTime` for a specific point in time when the alert occurred, or `occurrencePeriod` for alerts that span a time range. This represents when the condition was detected, is typically close to the `effectiveDateTime` of the referenced observation.
+In the `occurrence[x]` element use `occurrenceDateTime` for a specific point in time when the alert occurred, or `occurrencePeriod` for alerts that span a time range. This represents when the condition was detected, is typically close to the `effectiveDateTime` of the referenced observation.
 
 ### Query Patterns
 Common queries for DeviceAlert resources:

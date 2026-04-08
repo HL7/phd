@@ -18,15 +18,7 @@ The accuracy is reported in the same unit as the measurement itself. An example 
 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[3] %}
 
-##### Simple Alerting
-The simple alerting extension supports monitoring a numerical value (quantities in FHIR) and provisioning of an alarm if the value is outside a defined threshold or limiting range. The extension includes the range, the operational state of the monitoring and text strings describing these. See [Simple Alerting](StructureDefinition-SimpleAlerting.html). The PHD pulse oximeter and the continuous glucose monitor specialization support this.
-The extension defines a current limits range for the quantity, an operational state and optional strings for the operational state  and the semantics of the quantity being outside the range. 
 
-This mechanism is used in combination with the `Observation.interpretation` value being set to "in-alarm" when the quantity is outside the limits. 
-
-The presence of the extension in an Observation with a numeric quantity informs the consumer of the use of the alerting mechanism.
-
-An example of an observation with an alert can be found [here](Observation-numeric-spo2-alarm.json.html).
 
 ##### Measurement Confidence 95
 The Measurement-Confidence-95 gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. It is supported by the IEEE 11073-20601 specification, but not by the IEEE 11073-10206 ACOM specification. 

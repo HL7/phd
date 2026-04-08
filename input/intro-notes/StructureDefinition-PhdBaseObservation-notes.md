@@ -139,8 +139,8 @@ The table below lists the error conditions and the FHIR data elements to which t
 | Early-estimate         | `interpretation` = PoCDStatus#early-indication<br/> `status` = HL7Status#preliminary| \-                                                                                                                          |
 | Manually-entered       | \-                                                                              | Add a note to the Observation resource that it was manually entered.                                                        |
 | Setting                | \-                                                                              | For device settings, the Observation resource should reference the PHD Device as the subject and not the Patient.           |
-| Threshold error        | `interpretation` = PoCDStatus#in-alarm                                            | Applies to numeric data. Add a note to the Observation resource that it is outside its boundaries. Should be used in combination with the SimpleAlerting Extension.                                         |
-| Thresholding disabled  | `interpretation` = PoCDStatus#alarm-inhibited                                     | Applies to numeric data. Add a note to the Observation resource that its boundaries are not checked. Should be used in combination with the SimpleAlerting Extension.                                      |
+| Threshold error        | `interpretation` = PoCDStatus#in-alarm                                            | Applies to numeric data. Add a note to the Observation resource that it is outside its boundaries.                                         |
+| Thresholding disabled  | `interpretation` = PoCDStatus#alarm-inhibited                                     | Applies to numeric data. Add a note to the Observation resource that its boundaries are not checked.                                      |
 
 DAR: [Data Absent Reason CodeSystem](http://terminology.hl7.org/CodeSystem/data-absent-reason)
 HL7Status: [Observation Status CodeSystem]({{ site.data.fhir.path }}observation-status)

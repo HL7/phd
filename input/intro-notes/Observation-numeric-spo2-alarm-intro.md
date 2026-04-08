@@ -8,10 +8,10 @@ This example demonstrates the use of the FHIR `Observation` resource to represen
    - The resource conforms to the `PhdNumericObservation` profile, ensuring compatibility with the FHIR Personal Health Device (PHD) implementation guide.
 
 2. **Alerting System**:
-   - The `SimpleAlerting` extension is used to define the alerting behavior:
-     - **Current Limits**: Specifies the acceptable range for SpO2 values (80% to 100%).
-     - **Operational State**: Indicates that the alerting system is active and monitoring the defined limits (`Limits-On`).
-     - **Alert Texts**: Provides human-readable descriptions for the alerting behavior and threshold notifications.
+<! to do: think of how this is supposed to work in PHD/PHG/FHIR server context.>
+   - Current limits specify the acceptable range for SpO2 values (80% to 100%).
+   - The operational state indicates that the alerting system is active and monitoring the defined limits (`Limits-On`).
+   - Human-readable descriptions are provided for the alerting behavior and threshold notifications.
 
 3. **Interpretation**:
    - The `interpretation` element indicates that the measurement is currently in an alarm state (`in-alarm`).
