@@ -382,12 +382,12 @@ This field states that the device is a PHD. There is no code in the list of devi
 
 
 #### Versions
-The `Device.versions` entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, etc. the PHD supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions.
+The `Device.deviceVersion` entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, etc. the PHD supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions.
 
  The [MDC Device Version Type codes ValueSet](ValueSet-MDCDeviceVersionTypes.html) has a code to identify each one of these version types. The version itself it just a simple alpha-numeric string. The versions can be helpful identifying different PHD behaviors.
 
 Below is an example of the different versions exposed by a PHD:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:version %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:deviceVersion %}
 
 
 #### Specializations
@@ -398,7 +398,7 @@ In IEEE 11073-10206 ACOM specializations are, in addition to a general descripti
 A table of some of the most common specializations can be found in the specialization section [here](StructureDefinition-PhdDevice.html).
 
 The example below shows an example of a PHD following the Glucose specialization:
-{% fragment Device/phd-00601900010E9234.F45EABA80832 JSON EXCEPT:specialization %}
+{% fragment Device/phd-00601900010E9234.F45EABA80832 JSON EXCEPT:conformsTo %}
 
 
 #### Property

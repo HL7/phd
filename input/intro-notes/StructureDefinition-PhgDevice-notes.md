@@ -25,7 +25,7 @@ A PHG is often designed to support all current and future PHDs that support a gi
 
 An example of generic code use would be as follows
 
-{% fragment Device/phg-example JSON EXCEPT:specialization %}
+{% fragment Device/phg-example JSON EXCEPT:conformsTo %}
 
 All defined IEEE PHD device specializations can be found in the [MDC Device Types value set](ValueSet-DeviceTypes11073MDC.html).
 

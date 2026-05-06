@@ -27,18 +27,15 @@ Device alerts enable important clinical use cases:
 ## Profile Structure
 
 <!-- TODO: double check for each element if this part provides additional information or is already or better covered in th formal definition of the profile - the .fsh file -->
-### Alert Type (`type`)
-The `type` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. The binding is required, meaning a code must always be provided. Common alert event codes include:
+### Alert Condition code (`condition.code`(ballot3) or `code`(ballot4))
+The `condition.code` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from partition 3 as defined in the [Device Alert Condition valueset](http://hl7.org/fhir/ValueSet/devicealert-condition). The binding is made required in this IG, meaning a code must always be provided. Common alert codes include:
 
-<!-- TODO: the codes below are fake. We need a proper set of MDC codes suitable for PHD/PHG generated alerts->
-- **MDC_EVT_RANGE_HI** (196618): Value exceeds upper threshold
-- **MDC_EVT_RANGE_LO** (196616): Value below lower threshold
-- **MDC_EVT_RANGE** (196614): Value outside acceptable range
+- **MDC_EVT_ALARM** (196616): Alarm
+- **MDC_EVT_DEFECT** (196624): Defect is detected in a device, sensor, etc.
+- **MDC_EVT_HI** (196648): {numeric observation} > high limit
 
-### Alert Condition (`type` and `derivedFrom`)
-The alert condition is defined by two related elements:
 
-**Type (`type`)**: The `type` element specifies the specific condition that triggered the alert with a required binding, providing a coded representation of what alert condition is being reported.
+**Type (`type`)**: The `type` element specifies the type of condition that triggered the alert with a required binding. Supported types are physiological conditions (e.g., high blood pressure) and technical conditions (e.g., device malfunction).
 
 **Cause of Condition (`derivedFrom`)**: The profile requires one or more `derivedFrom` elements to reference the source measurement observation(s) that caused this alert condition. Each derivedFrom element contains:
 

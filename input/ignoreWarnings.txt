@@ -31,14 +31,11 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#8867-4)
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
-Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well.' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
+Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well. (coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists())' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
 Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.36.0
-
-# ignore...
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.32.0
 
 # Reference to experimental code system...
 Reference to experimental CodeSystem http://hl7.org/fhir/restful-interaction|6.0.0-ballot3
@@ -71,3 +68,10 @@ This element does not match any known slice defined in the profile http://hl7.or
 
 # This applies to 
 # The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
+
+# error in vital signs profiles for R6 - should be fixed in FHIR core before next ballot
+Slice 'Observation.component:DiastolicBP': a matching slice is required, but not found (from http://hl7.org/fhir/StructureDefinition/bp|6.0.0-ballot3). Note that other slices are allowed in addition to this required slice
+Slice 'Observation.component:SystolicBP': a matching slice is required, but not found (from http://hl7.org/fhir/StructureDefinition/bp|6.0.0-ballot3). Note that other slices are allowed in addition to this required slice
+
+# snapshot.element[13] is Observation.language — an element inherited from the base FHIR Observation resource. Its additional binding has purpose: starter but no key, which triggers eld-31. Cannot be fixed in the IG.
+Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)

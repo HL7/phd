@@ -44,7 +44,7 @@ The `display` element is optional but is recommended.
  The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
 The specialization is an MDC code for a PHD device specialization. The version is encoded as a integer number. In FHIR the code and version are encoded in the `Device.specialization` element as follows:
 
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:specialization %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:conformsTo %}
 
 The `display` element containing the reference Id is optional, but is recommended. The `text` element is optional as well and could contain a human-readable description of the specialization.
 
@@ -69,7 +69,7 @@ The interface codes are mapped to a list of properties where the `property.value
 The regulation status attribute has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. The regulation status is mapped to an additional `Device.property.valueCode` element. 
 
 A fragment:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354') %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') %}
 
 
 ### Clock information 

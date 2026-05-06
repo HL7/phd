@@ -37,6 +37,9 @@ dependencies:
   hl7.fhir.uv.pocd:
     version: 0.3.0
     uri: http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd
+  # hl7.fhir.uv.phd:
+  #   version: 2.0.0
+  #   uri: http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd
 
 
 # Note: R6 terminology and extension packages are not yet available
@@ -371,6 +374,7 @@ pages:
 
 # Additional parameters
 parameters:
+#  pin-canonicals: pin-all
   shownav: true
   special-url:
     - http://terminology.hl7.org/CodeSystem/ASN1ToHL7

@@ -8,25 +8,6 @@
 	},
 	"status": "in-progress",
 	"type": "physiological",
-	"category": [
-		{
-			"coding": [
-				{
-					"system": "http://terminology.hl7.org/CodeSystem/observation-category",
-					"code": "vital-signs"
-				}
-			],
-			"text": "Vital Signs"
-		},
-		{
-			"coding": [
-				{
-					"system": "http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories",
-					"code": "phd"
-				}
-			]
-		}
-	],
 	"subject": {
 		"reference": "Patient/patientExample-1"
 	},
@@ -38,8 +19,8 @@
 			"coding": [
 				{
 					"system": "urn:iso:std:iso:11073:10101",
-					"code": "196618",
-					"display": "MDC_EVT_RANGE_HI"
+					"code": "196648",
+					"display": "MDC_EVT_HI"
 				}
 			],
 			"text": "Systolic blood pressure high alert"

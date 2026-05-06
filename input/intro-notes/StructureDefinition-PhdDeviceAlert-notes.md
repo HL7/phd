@@ -37,7 +37,7 @@ Common queries for DeviceAlert resources:
 - Unacknowledged alerts: `GET /DeviceAlert?acknowledged=false&status=in-progress`
 - High priority alerts: `GET /DeviceAlert?priority=high&status=in-progress`
 - Alerts for specific device: `GET /DeviceAlert?device=Device/456`
-- Alerts by type: `GET /DeviceAlert?type=urn:iso:std:iso:11073:10101|196618` (high range alerts)
+- Alerts by type: `GET /DeviceAlert?type=urn:iso:std:iso:11073:10101|196648` (high range alerts)
 
 ### Compatibility Considerations
 For systems transitioning from the earlier SimpleAlerting extension approach:
