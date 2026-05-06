@@ -481,9 +481,9 @@ It is assumed here that the reader has access to the Patient resource uploaded b
 
 The uploaded Patient resource is following the Phd Patient Profile as defined [here](StructureDefinition-PhdPatient.html).
 
-There is only one additional required entry in the Phd Patient Profile; the Patient.identifier.
+There is only one additional required entry in the Phd Patient Profile; the Patient.identifier. Note that some systems do not send patient identifiable information, but instead map the device id to the patient at the backend.
 
-The required `Patient.identifier` entry contains an `identifier.type` using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
+When a Patient resource is uploaded, the `Patient.identifier` entry is required and contains an `identifier.type` using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
 
 The `identifier.value` and `identifier.system` entries are used to quantify the entries of the given identifier.type. For example, the `identifier.system` might be the institution's XDS.b assigning authority and the `identifier.value` the patient record number (also known as the patient identifier). See [IHE Cross-Enterprise Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html).
 
