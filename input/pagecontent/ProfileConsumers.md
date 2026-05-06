@@ -457,7 +457,7 @@ The fragment below shows the set of properties of an example PHD. Note that the 
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property %}
 
 ### The PHG Device Resource
-The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
+The PHG Device Resource can, in theory, have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
 
 However, the only required PHG entries are the time synchronization protocol and the system id identifier. For compliance with this IG, PHGs must also report the list of certified PHD interfaces and the list of certified Health & Fitness interfaces.
 
