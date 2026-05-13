@@ -112,6 +112,10 @@ resources:
   DeviceAlert/bp-device-alert:
     name: Phd Device Alert for Blood Pressure
     description: This example is a PhdDeviceAlert for a Blood Pressure measurement alert condition. 
+
+  DeviceAlert/spo2-device-alert:
+    name: Phd Device Alert for SpO2
+    description: This example is a PhdDeviceAlert generated from a pulse oximeter observation alert condition.
    
   # Example ObservationDefinition
   ObservationDefinition/bp-observation-definition-example:

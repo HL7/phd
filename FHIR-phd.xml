@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/phd/2025Sep" ciUrl="https://build.fhir.org/ig/HL7/phd" defaultVersion="2.0.0" defaultWorkgroup="dev" gitUrl="https://github.com/HL7/PHD" url="http://hl7.org/fhir/uv/phd">
 <version code="current" url="https://build.fhir.org/ig/HL7/phd"/>
-<version code="3.0.0-draft1" url="http://hl7.org/fhir/uv/phd/2025Sep"/>
+<version code="3.0.0-draft" url="http://hl7.org/fhir/uv/phd/2025Sep"/>
 <version code="2.0.0" url="http://hl7.org/fhir/uv/phd/STU2"/>
 <version code="2.0.0-ballot2" deprecated="true" url="http://hl7.org/fhir/uv/phd/2025Sep"/>
 <version code="1.1.0" url="http://hl7.org/fhir/uv/phd/STU1.1"/>
@@ -80,6 +80,7 @@
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="PHD Device Example"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
 <artifact id="DeviceAlert/bp-device-alert" key="DeviceAlert-bp-device-alert" name="Phd Device Alert for Blood Pressure"/>
+<artifact id="DeviceAlert/spo2-device-alert" key="DeviceAlert-spo2-device-alert" name="Phd Device Alert for SpO2"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Phd Device Metric for Blood Pressure"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>
 <artifact id="StructureDefinition/PhdBitsEnumerationObservation" key="StructureDefinition-PhdBitsEnumerationObservation" name="PhdBitsEnumerationObservation"/>
@@ -112,7 +113,6 @@
 <artifact deprecated="true" id="ValueSet/String11073MDC" key="ValueSet-String11073MDC" name="String11073MDC"/>
 <artifact deprecated="true" key="StructureDefinition" name="StructureDefinition"/>
 <artifact id="Patient/patientExample-2" key="Patient-patientExample-2" name="Unknown Patient"/>
-<artifact id="DeviceAlert/spo2-device-alert" key="DeviceAlert-spo2-device-alert" name="spo2-device-alert"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="EnumString" name="A measurement that is a human readable string (Enumeration String)"/>

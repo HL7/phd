@@ -15,7 +15,7 @@ Description: "Profile for device alert that capture alert conditions from person
 // ------------------------------------------------------------
 // Alert Type
 // ------------------------------------------------------------
-* condition.code from http://hl7.org/fhir/ValueSet/devicealert-condition (required)
+* condition.code from http://hl7.org/fhir/ValueSet/devicealert-condition|6.0.0-ballot3 (required)
   * ^short = "Code for the alert condition"
   * ^definition = "MDC nomenclature code from partition 3 indicating the alert condition being reported"
   * ^comment = "The code identifies the specific alert condition from the IEEE 11073 medical device communication nomenclature."
