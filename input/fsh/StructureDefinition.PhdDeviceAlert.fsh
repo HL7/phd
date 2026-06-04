@@ -54,3 +54,4 @@ Source: PhdDeviceAlert
 * signal -> "Simple-Sa-Observed-Value.state and alert-op-text-string"
 * label -> "Simple-Sa-Observed-Value.nu-val-obs-simp-str"
 * derivedFrom -> "Associated with metric observations via logical linkage"
+// Note: limit element is not reported by ACOM (IEEE 11073-10206); populated by PHG from device configuration or local settings
