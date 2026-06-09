@@ -30,18 +30,18 @@
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "196618",
-				"display": "MDC_EVT_RANGE_HI"
+				"code": "196648",
+				"display": "MDC_EVT_HI"
 			}
 		],
-		"text": "High Range Alert"
+		"text": "High Alert"
 	},
 	"code": {
 		"coding": [
 			{
 				"system": "urn:iso:std:iso:11073:10101",
-				"code": "196618",
-				"display": "MDC_EVT_RANGE_HI"
+				"code": "196648",
+				"display": "MDC_EVT_HI"
 			}
 		],
 		"text": "Systolic blood pressure high alert"

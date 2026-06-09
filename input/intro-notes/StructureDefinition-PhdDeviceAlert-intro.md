@@ -30,10 +30,9 @@ Device alerts enable important clinical use cases:
 ### Alert Type (`type`)
 The `type` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. The binding is required, meaning a code must always be provided. Common alert event codes include:
 
-<!-- TODO: the codes below are fake. We need a proper set of MDC codes suitable for PHD/PHG generated alerts->
-- **MDC_EVT_RANGE_HI** (196618): Value exceeds upper threshold
-- **MDC_EVT_RANGE_LO** (196616): Value below lower threshold
-- **MDC_EVT_RANGE** (196614): Value outside acceptable range
+- **MDC_EVT_HI** (196648): Value exceeds upper threshold
+- **MDC_EVT_LO** (196670): Value below lower threshold
+- **MDC_EVT_SIG_OUT_OF_RANGE** (197054): Value/signal outside acceptable range
 
 ### Alert Condition (`type` and `derivedFrom`)
 The alert condition is defined by two related elements:
