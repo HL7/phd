@@ -14,6 +14,7 @@ Description: "Observations from a PHD where the measurement is number"
   * ^definition = "The PhdNumericObservation reports PHD measurements that contain one of either a Basic-Nu-Observed-Value, Simple-Nu_observed-Value, or Nu_observed-Value attribute."
   * ^comment = "Used for non-compound numeric observations from Personal Health Devices."
 * value[x] only Quantity
+* valueQuantity obeys unit-system-code-coherent
   * value 1..
     * ^definition = "The decoded FLOAT or SFLOAT value from a PHD Observation."
     * ^comment = "The implicit precision in the value shall be honored. The MDER encoding used in the above attributes provides this precision. The translating software shall honor that precision when generating this value.\r\nThis element shall be present unless there is an error reported in the Measurement-Status attribute or the MDER encoding represents one of the special FLOAT values. In that case there is a `dataAbsentReason` element and the `valueQuantity` element is not present. Note that not all measurement status values are errors resulting in no measurement being reported here; for example the preliminary or verified status."
@@ -22,6 +23,8 @@ Description: "Observations from a PHD where the measurement is number"
     * ^comment = "The unit code needs to be translated from the 11073-10101 code from the device. This can be represented as either a UCUM code or an MDC code system. UCUM is preferred but MDC codes are also supported."
     * obeys system-is-mdc-or-ucum
   * code 1..
+  * code from PhdUnitCodeVS (required)
+  * code
     * ^short = "The UCUM or MDC code for the units of this measurement."
     * ^comment = "The unit code needs to be translated from the 11073-10101 code from the device. This translation means that the reporting of units is not future proof."
 * dataAbsentReason ^short = "This element is populated for numeric observations when a special FLOAT value is reported that is not a real number."
@@ -38,9 +41,13 @@ Target: "https://sagroups.ieee.org/11073/phd-wg"
 * -> "ACOM"
 * valueQuantity.value -> "NumericObservation.value"
 * valueQuantity.unit -> "NumericObservation.unit" 
-* extension[Accuracy].valueQuantity.value -> "NumericObservation.accuracy"
 
 Invariant: system-is-mdc-or-ucum
 Description: "system SHALL be either the MDC or UCUM URI"
-Expression: "$this = 'urn:iso:std:iec:61853:2:2017' or $this = 'http://unitsofmeasure.org'"
+Expression: "$this = 'urn:iso:std:iso:11073:10101' or $this = 'http://unitsofmeasure.org'"
+Severity: #error
+
+Invariant: unit-system-code-coherent
+Description: "system and code SHALL be coherent: UCUM system uses UCUM code, MDC system uses MDC code"
+Expression: "(system = 'http://unitsofmeasure.org' implies code.memberOf('http://hl7.org/fhir/ValueSet/ucum-units')) and (system = 'urn:iso:std:iso:11073:10101' implies code.memberOf('http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet'))"
 Severity: #error

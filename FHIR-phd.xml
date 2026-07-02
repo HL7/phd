@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/phd/2025Sep" ciUrl="https://build.fhir.org/ig/HL7/phd" defaultVersion="2.0.0" defaultWorkgroup="dev" gitUrl="https://github.com/HL7/PHD" url="http://hl7.org/fhir/uv/phd">
 <version code="current" url="https://build.fhir.org/ig/HL7/phd"/>
-<version code="3.0.0-draft" url="http://hl7.org/fhir/uv/phd/2025Sep"/>
 <version code="2.0.0" url="http://hl7.org/fhir/uv/phd/STU2"/>
 <version code="2.0.0-ballot2" deprecated="true" url="http://hl7.org/fhir/uv/phd/2025Sep"/>
 <version code="1.1.0" url="http://hl7.org/fhir/uv/phd/STU1.1"/>
@@ -79,6 +78,7 @@
 <artifact id="Observation/numeric-observation-not-a-number" key="Observation-nan-1.0.0.42" name="Observation with NaN measurement"/>
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="PHD Device Example"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
+<artifact id="ValueSet/PhdUnitCodeVS" key="ValueSet-PhdUnitCodeVS" name="PHD Unit Codes"/>
 <artifact id="DeviceAlert/bp-device-alert" key="DeviceAlert-bp-device-alert" name="Phd Device Alert for Blood Pressure"/>
 <artifact id="DeviceAlert/spo2-device-alert" key="DeviceAlert-spo2-device-alert" name="Phd Device Alert for SpO2"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Phd Device Metric for Blood Pressure"/>

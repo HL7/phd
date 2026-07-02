@@ -33,14 +33,14 @@ Description: "Observations coming from a PHD where the measurement is a set of n
       * code 1.. 
     * text ^definition = "It is recommended to display at least the reference identifier describing the compound sub-element"
   * value[x] only Quantity
-  * valueQuantity
+  * valueQuantity obeys unit-system-code-coherent
     * value 1..
       * ^definition = "The value of nth element of the compound attribute."
     * system 1..
-    * system = "http://unitsofmeasure.org"
-      * ^definition = "The unit code shall use the UCUM system"
+      * obeys system-is-mdc-or-ucum
     * code 1..
-      * ^definition = "The MDC code must be translated to the UCUM code."
+    * code from PhdUnitCodeVS (required)
+    * code ^definition = "The UCUM or MDC code for the units of this component measurement."
   * dataAbsentReason ^short = "Populated when the component reports a special FLOAT value"
     * ^definition = "Provides a reason why the expected value in the nth element `Observation.compoundComponent.valueQuantity` is missing. This happens when the value sent by the PHD is a special FLOAT value."
     * coding from http://hl7.org/fhir/ValueSet/data-absent-reason (required)

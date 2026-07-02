@@ -20,14 +20,14 @@ Description: "Observations from a PHD where the measurement is a set of numbers 
   * ^comment = "A compound measurement is a measurement that requires more than one value to represent it, such as an acceleration which has an x, y, and z components. The Blood pressure is also represented as a compound measurement, containing systolic, diastolic and MAP components. One combines all the compound elements together to describe the measurement."
   * code from http://hl7.org/fhir/uv/phd/ValueSet/MDCValueSet (required)
   * value[x] only Quantity or CodeableConcept or string or SampledData
-  * valueQuantity
+  * valueQuantity obeys unit-system-code-coherent
     * value 1..
       * ^definition = "The value of the numeric component. The value element is missing if a special FLOAT value is reported."
     * system 1..
-    * system = "http://unitsofmeasure.org"
-      * ^definition = "The unit code shall use the UCUM system"
+      * obeys system-is-mdc-or-ucum
     * code 1..
-      * ^definition = "The MDC code must be translated to the UCUM code."
+    * code from PhdUnitCodeVS (required)
+    * code ^definition = "The UCUM or MDC code for the units of this component measurement."
   * valueCodeableConcept
     * coding 1..1
       * ^slicing.discriminator[0].type = #value

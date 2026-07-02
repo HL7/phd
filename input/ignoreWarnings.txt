@@ -82,3 +82,6 @@ The link '../StructureDefinition-SimpleAlerting.sch' for "Schematron" cannot be 
 The link '../StructureDefinition-SimpleAlerting.xlsx' for "Excel" cannot be resolved
 The link '../StructureDefinition-SimpleAlerting.csv' for "CSV" cannot be resolved
 The <script> containing the javascript '// 45ac99b6-92fa-49e'... is illegal and not allowed on the HL7 ci-build - put the script in a .js file in a trusted template (if it is justified and needed)
+
+# MDC terminology server/package gap in current R6 workflow. URI is correct and intentionally used throughout PHD profiles/examples.
+A definition for CodeSystem 'urn:iso:std:iso:11073:10101' could not be found, so the code cannot be validated
