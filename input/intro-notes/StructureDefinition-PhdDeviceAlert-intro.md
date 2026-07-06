@@ -27,7 +27,7 @@ Device alerts enable important clinical use cases:
 ## Profile Structure
 
 <!-- TODO: double check for each element if this part provides additional information or is already or better covered in th formal definition of the profile - the .fsh file -->
-### Alert Condition code (`condition.code`(ballot3) or `code`(ballot4))
+### Alert Condition code (`condition.code`(ballot4) or `code`(ballot4))
 The `condition.code` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from partition 3 as defined in the [Device Alert Condition valueset](http://hl7.org/fhir/ValueSet/devicealert-condition). The binding is made required in this IG, meaning a code must always be provided. Common alert codes include:
 
 - **MDC_EVT_ALARM** (196616): Alarm

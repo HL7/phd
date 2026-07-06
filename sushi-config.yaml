@@ -1,5 +1,5 @@
 canonical: http://hl7.org/fhir/uv/phd
-fhirVersion: 6.0.0-ballot3  # Revert back to R6
+fhirVersion: 6.0.0-ballot3
 #fhirVersion: 5.0.0 # revert back to R5
 id: hl7.fhir.uv.phd
 name: PhdImplementationGuide
@@ -27,11 +27,11 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 
 dependencies:
   hl7.terminology.r5:
-    version: 7.1.0
+    version: 7.2.0
     reason: R6 terminology package not yet available
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
   hl7.fhir.uv.extensions:
-    version: 5.3.0-ballot-tc1
+    version: 5.3.0
     reason: R6 extensions package not yet available
     uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
   hl7.fhir.uv.pocd:
