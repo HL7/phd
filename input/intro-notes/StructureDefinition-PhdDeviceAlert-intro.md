@@ -30,9 +30,9 @@ Device alerts enable important clinical use cases:
 ### Alert Condition code (`condition.code`(ballot4) or `code`(ballot4))
 The `condition.code` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from partition 3 as defined in the [Device Alert Condition valueset](http://hl7.org/fhir/ValueSet/devicealert-condition). The binding is made required in this IG, meaning a code must always be provided. Common alert codes include:
 
-- **MDC_EVT_ALARM** (196616): Alarm
-- **MDC_EVT_DEFECT** (196624): Defect is detected in a device, sensor, etc.
-- **MDC_EVT_HI** (196648): {numeric observation} > high limit
+- **MDC_EVT_HI** (196648): Value exceeds upper threshold
+- **MDC_EVT_LO** (196670): Value below lower threshold
+- **MDC_EVT_SIG_OUT_OF_RANGE** (197054): Value/signal outside acceptable range
 
 
 **Type (`type`)**: The `type` element specifies the type of condition that triggered the alert with a required binding. Supported types are physiological conditions (e.g., high blood pressure) and technical conditions (e.g., device malfunction).
@@ -41,6 +41,7 @@ The `condition.code` element identifies the alert condition using IEEE 11073-101
 
 - **observation** (required): Reference to the source observation (PhdNumericObservation, PhdCompoundNumericObservation, or PhdCompoundObservation)
 - **component** (optional): For compound observations, identifies which specific component triggered the alert (e.g., systolic vs. diastolic blood pressure)
+- **limit** (optional): The threshold range that was exceeded. Note: ACOM (IEEE 11073-10206 Alert Communication Model) does not report limit values; the Personal Health Gateway (PHG) populates this element from device configuration or locally maintained threshold settings.
 
 This structure allows precise identification of which measurement observation caused the alert condition.
 
