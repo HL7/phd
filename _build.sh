@@ -69,6 +69,7 @@ function update_scripts_prompt() {
 function build_ig() {
   if [ "$jar_location" != "not_found" ]; then
     args=()
+    args+=("-authorise-non-conformant-tx-servers")
     if [ "$online" = "false" ]; then
       args+=("-tx" "n/a")
     fi
@@ -81,7 +82,7 @@ function build_ig() {
 
 function build_nosushi() {
   if [ "$jar_location" != "not_found" ]; then
-    java -Dfile.encoding=UTF-8 -jar "$jar_location" -ig . -no-sushi "$@"
+    java -Dfile.encoding=UTF-8 -jar "$jar_location" -ig . -authorise-non-conformant-tx-servers -no-sushi "$@"
   else
     echo "publisher.jar not found. Please run update."
   fi
@@ -89,7 +90,7 @@ function build_nosushi() {
 
 function build_notx() {
   if [ "$jar_location" != "not_found" ]; then
-    java -Dfile.encoding=UTF-8 -jar "$jar_location" -ig . -tx n/a "$@"
+    java -Dfile.encoding=UTF-8 -jar "$jar_location" -ig . -authorise-non-conformant-tx-servers -tx n/a "$@"
   else
     echo "publisher.jar not found. Please run update."
   fi
@@ -117,13 +118,17 @@ check_internet_connection
 
 # Handle command-line argument or menu
 case "$1" in
-  update) update_publisher ;;
-  build) build_ig ;;
-  nosushi) build_nosushi ;;
-  notx) build_notx ;;
-  jekyll) jekyll_build ;;
-  clean) cleanup ;;
+  update) shift; update_publisher "$@" ;;
+  build) shift; build_ig "$@" ;;
+  nosushi) shift; build_nosushi "$@" ;;
+  notx) shift; build_notx "$@" ;;
+  jekyll) shift; jekyll_build "$@" ;;
+  clean) shift; cleanup "$@" ;;
   exit) exit 0 ;;
+  -*)
+    # If first argument is a flag (starts with -), pass all args to build_ig
+    build_ig "$@"
+    ;;
   *)
     # Compute default choice
     default_choice=2 # Build by default

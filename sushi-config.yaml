@@ -379,8 +379,8 @@ pages:
 # Additional parameters
 parameters:
 #  pin-canonicals: pin-all
-  # TODO: Replace auto-oid-root with the official assigned OID root when it becomes available.
-  auto-oid-root: 2.16.840.1.113883.4.642.40.999
+  # the official assigned OID root from Grahame
+  auto-oid-root: 2.16.840.1.113883.4.642.40.73
   shownav: true
   special-url:
     - http://terminology.hl7.org/CodeSystem/ASN1ToHL7
