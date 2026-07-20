@@ -20,48 +20,6 @@
 			"valueReference": {
 				"reference": "Observation/coin-20181119202022"
 			}
-		},
-		{
-			"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting",
-			"extension": [
-				{
-					"url": "currentLimits",
-					"valueRange": {
-						"low": {
-							"value": 80.0,
-							"system": "http://unitsofmeasure.org",
-							"code": "%",
-							"unit": "%"
-						},
-						"high": {
-							"value": 100.0,
-							"system": "http://unitsofmeasure.org",
-							"code": "%",
-							"unit": "%"
-						}
-					}
-				},
-				{
-					"url": "alertOperationalState",
-					"valueCodeableConcept": {
-						"coding": [
-							{
-								"system": "http://hl7.org/fhir/uv/phd/CodeSystem/SimpleAlertOperationalStatesCS",
-								"code": "Limits-On",
-								"display": "Limits On"
-							}
-						]
-					}
-				},
-				{
-					"url": "alertOperationalText",
-					"valueString": "Alerting when SpO2 < 80%"
-				},
-				{
-					"url": "thresholdNotificationText",
-					"valueString": "SpO2 is below 80%"
-				}
-			]
 		}
 	],
 	"interpretation": [

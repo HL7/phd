@@ -18,6 +18,8 @@ The IEEE 11073-10101 nomenclature codes are mapped to FHIR using the `CodeableCo
  - `CodeableConcept.coding.display` = reference identifier (*optional*)
  - `CodeableConcept.text` = additional information about the code (*optional*)
 
+PHGs are not required to populate `CodeableConcept.coding.display` or `CodeableConcept.text` when uploading PHD data. Consumers shall not rely on either element being present and shall interpret the coding from `CodeableConcept.coding.system` and `CodeableConcept.coding.code`.
+
 The reference identifier in the `display` element is optional since the uploader may not know what the code means; for example, if the uploader works with a PHD specialization developed after the uploader had been released. However, this guide encourages that the `display` element contains at least the reference identifier for the MDC code if it is known.
 
 The `display` element itself is also optional for future compatibility. Any `display` element entry requires that the uploader have previous knowledge of the code as display information is not provided by protocol.
