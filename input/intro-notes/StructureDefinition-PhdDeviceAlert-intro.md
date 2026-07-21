@@ -27,17 +27,15 @@ Device alerts enable important clinical use cases:
 ## Profile Structure
 
 <!-- TODO: double check for each element if this part provides additional information or is already or better covered in th formal definition of the profile - the .fsh file -->
-### Alert Type (`type`)
-The `type` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from the MDCValueSet. The binding is required, meaning a code must always be provided. Common alert event codes include:
+### Alert Condition code (`condition.code`(ballot4) or `code`(ballot4))
+The `condition.code` element identifies the alert condition using IEEE 11073-10101 MDC nomenclature codes from partition 3 as defined in the [Device Alert Condition valueset](http://hl7.org/fhir/ValueSet/devicealert-condition). The binding is made required in this IG, meaning a code must always be provided. Common alert codes include:
 
 - **MDC_EVT_HI** (196648): Value exceeds upper threshold
 - **MDC_EVT_LO** (196670): Value below lower threshold
 - **MDC_EVT_SIG_OUT_OF_RANGE** (197054): Value/signal outside acceptable range
 
-### Alert Condition (`type` and `derivedFrom`)
-The alert condition is defined by two related elements:
 
-**Type (`type`)**: The `type` element specifies the specific condition that triggered the alert with a required binding, providing a coded representation of what alert condition is being reported.
+**Type (`type`)**: The `type` element specifies the type of condition that triggered the alert with a required binding. Supported types are physiological conditions (e.g., high blood pressure) and technical conditions (e.g., device malfunction).
 
 **Cause of Condition (`derivedFrom`)**: The profile requires one or more `derivedFrom` elements to reference the source measurement observation(s) that caused this alert condition. Each derivedFrom element contains:
 

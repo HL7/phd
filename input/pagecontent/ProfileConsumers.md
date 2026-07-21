@@ -42,6 +42,8 @@ In this section each of the fields summarized above is discussed.
 ##### The Measurement Type: `Observation.code.coding.code`
 The measurement type tells what the measurement is. In HL7 such information is typically done through codes and it is no different here. However, one must understand the coding system in order to interpret what the code means. Consumers of the PHD profiles must understand the MDC code system to interpret the measurement. One can find more information about the MDC code system [here](https://terminology.hl7.org/MDC.html). 
 
+PHGs are not required to populate `Observation.code.coding.display` or `Observation.code.text`. Consumers should not rely on these fields being present and should interpret the measurement from `Observation.code.coding.system` and `Observation.code.coding.code`.
+
 MDC codes are available from the [Rosetta Terminology Mapping Management Service (RTMMS)](https://rtmms.nist.gov/).  It provides descriptions and, if applicable, the units associated with the measurement in both MDC and UCUM. Equivalent LOINC codes are also provided. The Rosetta system is updated on a regular basis with new codes and corrections. 
 
 For those consumer applications that would like to have the codes as LOINC and the uploader did not provide them, a mapping table between MDC and LOINC is also included in LOINC since v2.54 [available here](https://loinc.org/news/loinc-version-2-54-and-relma-version-6-12-available/). The FHIR MDC to LOINC concept map is available [here](https://fhir.loinc.org/ConceptMap/?url=http://loinc.org/cm/loinc-to-ieee-device-codes). One may freely download and use this material as needed in an implementation, but it does require a (free) login account. A mapping from MDC to SNOMED CT for some of the more common codes is available in the somewhat outdated Continua Design Guidelines [H.813 HIS Interface](https://www.itu.int/rec/T-REC-H.813-201911-I) document. The guidelines are freely available for download, however [licensing requirements](https://www.snomed.org/licensing) for the use of the SNOMED CT code system apply.
@@ -62,11 +64,11 @@ The exact mapping of IEEE 11073-10206 Observation status conditions to FHIR is c
 In addition to the conditions listed above, when the measurement value is a quantity, PHDs may also report one of a set of special FLOAT values, "Not a Number", "Not at this resolution", "Positive infinity", or "Negative infinity". These errors can results from a failure of the floating point software or hardware, or the inability of the sensor to completely acquire a value. These errors are reported in the `dataAbsentReason` element and will be discussed in the sections discussing the measurement values. "Not a Number" is the most common special condition reported by PHDs currently on the market. Reporting of the other special situations listed above are, in practice, rare.
 
 ##### The Timestamp: `Observation.effective[x]`
-All measurements contain a time stamp which is either an instant in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
+All measurements contain a time stamp which is either a point in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
 
-All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even though the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
+All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even if the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
 
-Below is an example of the `effective[x]` when the timestamp is an instant in time:
+Below is an example of the `effective[x]` when the timestamp is a point in time:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
@@ -382,12 +384,12 @@ This field states that the device is a PHD. There is no code in the list of devi
 
 
 #### Versions
-The `Device.versions` entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, etc. the PHD supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions.
+The `Device.deviceVersion` entry is an array of CodeableConcepts. A single version is unable to represent a PHD as they have a version for the sensor hardware, the internal protocol they may be using, the communication software, sensor firmware, etc. the PHD supports. Not all devices will expose all this information but most PHDs expose their firmware and software versions.
 
  The [MDC Device Version Type codes ValueSet](ValueSet-MDCDeviceVersionTypes.html) has a code to identify each one of these version types. The version itself it just a simple alpha-numeric string. The versions can be helpful identifying different PHD behaviors.
 
 Below is an example of the different versions exposed by a PHD:
-{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:version %}
+{% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:deviceVersion %}
 
 
 #### Specializations
@@ -398,7 +400,7 @@ In IEEE 11073-10206 ACOM specializations are, in addition to a general descripti
 A table of some of the most common specializations can be found in the specialization section [here](StructureDefinition-PhdDevice.html).
 
 The example below shows an example of a PHD following the Glucose specialization:
-{% fragment Device/phd-00601900010E9234.F45EABA80832 JSON EXCEPT:specialization %}
+{% fragment Device/phd-00601900010E9234.F45EABA80832 JSON EXCEPT:conformsTo %}
 
 
 #### Property
@@ -457,7 +459,7 @@ The fragment below shows the set of properties of an example PHD. Note that the 
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:property %}
 
 ### The PHG Device Resource
-The PHG Device Resource, can, in theory have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
+The PHG Device Resource can, in theory, have all the same entries as in the PHD Device Resource plus one additional property that gives the list of certified Health and Fitness interfaces (to downstream servers). A PHG can be certified for both proper operation with PHD specializations as well as proper operation with downstream servers. One of those 'Health and Fitness' interfaces is the upload to RESTFul FHIR servers. Some PHGs also support uploads of the data as PCD-01 and some support questionnaires.
 
 However, the only required PHG entries are the time synchronization protocol and the system id identifier. For compliance with this IG, PHGs must also report the list of certified PHD interfaces and the list of certified Health & Fitness interfaces.
 
@@ -481,9 +483,9 @@ It is assumed here that the reader has access to the Patient resource uploaded b
 
 The uploaded Patient resource is following the Phd Patient Profile as defined [here](StructureDefinition-PhdPatient.html).
 
-There is only one additional required entry in the Phd Patient Profile; the Patient.identifier.
+There is only one additional required entry in the Phd Patient Profile; the Patient.identifier. Note that some systems do not send patient identifiable information, but instead map the device id to the patient at the backend.
 
-The required `Patient.identifier` entry contains an `identifier.type` using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
+When a Patient resource is uploaded, the `Patient.identifier` entry is required and contains an `identifier.type` using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
 
 The `identifier.value` and `identifier.system` entries are used to quantify the entries of the given identifier.type. For example, the `identifier.system` might be the institution's XDS.b assigning authority and the `identifier.value` the patient record number (also known as the patient identifier). See [IHE Cross-Enterprise Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html).
 

@@ -31,7 +31,6 @@ Description: "Profile for the DeviceMetric for a PHD"
   * ^comment = "when this information is provided by a GHS device in an Observation Schedule descriptor, it should be filled in here as well."
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Accuracy named Accuracy 0..1
 * extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/Confidence95 named Confidence95 0..1
-//* extension contains http://hl7.org/fhir/uv/phd/StructureDefinition/SimpleAlerting named SimpleAlerting 0..1
 
 Mapping: IEEE-11073-10206-PhdDeviceMetric
 Title: "IEEE-11073-10206 ACOM to FHIR PhdDeviceMetric"

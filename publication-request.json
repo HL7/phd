@@ -1,6 +1,6 @@
 {
     "package-id" : "hl7.fhir.uv.phd",
-    "version" : "3.0.0-draft1",
+    "version" : "3.0.0-draft",
     "path" : "http://hl7.org/fhir/uv/phd/2025Sep",
     "mode" : "working",
     "status": "ballot",

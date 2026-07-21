@@ -49,10 +49,6 @@ Description: "Common base profile with the elements that are common to the PHD I
   * ^comment = "The value shall be set to 'final' unless a Measurement-Status attribute indicates that the measurement is preliminary. In that case this field shall be set to 'preliminary'"
 * code from http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject (extensible)
   * ^binding.description = "IEEE 11073-10101 Nomenclature codes for PHD measurements"
-  * ^binding.additional[0].purpose = #extensible
-  * ^binding.additional[0].valueSet = "http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"
-  * ^binding.additional[0].shortDoco = "PHD MDC codes"
-  * ^binding.additional[0].key = "1234567890"
 * code obeys mdc-1
 * subject 1.. 
 * subject only Reference(Patient or PhdDevice)
