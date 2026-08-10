@@ -80,6 +80,7 @@
 <artifact id="Observation/numeric-observation-not-a-number" key="Observation-nan-1.0.0.42" name="Observation with NaN measurement"/>
 <artifact id="Device/phd-74E8FFFEFF051C00.001C05FFE874" key="Device-phd-74E8FFFEFF051C00.001C05FFE874" name="PHD Device Example"/>
 <artifact id="CodeSystem/PhdObservationCategories" key="CodeSystem-PhdObservationCategories" name="PHD Observation Categories Code System"/>
+<artifact id="ValueSet/PhdUnitCodeVS" key="ValueSet-PhdUnitCodeVS" name="PHD Unit Codes"/>
 <artifact id="DeviceAlert/bp-device-alert" key="DeviceAlert-bp-device-alert" name="Phd Device Alert for Blood Pressure"/>
 <artifact id="DeviceAlert/spo2-device-alert" key="DeviceAlert-spo2-device-alert" name="Phd Device Alert for SpO2"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Phd Device Metric for Blood Pressure"/>
