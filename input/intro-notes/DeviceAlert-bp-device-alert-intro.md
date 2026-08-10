@@ -9,8 +9,8 @@ This example demonstrates a PHD Device Alert resource that represents a high sys
 The resource conforms to the `PhdDeviceAlert` profile, which is based on the FHIR R6 DeviceAlert resource type. This ensures compatibility with the FHIR Personal Health Device (PHD) implementation guide for device alert conditions.
 
 ### 2. **Alert Type**
-- **Type Code**: MDC_EVT_RANGE_HI (196618) from IEEE 11073-10101 nomenclature
-- Indicates a "high range" alert event, meaning the measured value exceeded the upper threshold limit
+- **Type Code**: MDC_EVT_HI (196648) from IEEE 11073-10101 nomenclature
+- Indicates a "high" alert event, meaning the measured value exceeded the upper threshold limit
 
 ### 3. **Alert Categories**
 <!-- TODO: define appropriate categories for PHD Alerts -->

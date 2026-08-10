@@ -1,9 +1,14 @@
 {
     "version": "0.2",
-    "ignorePaths": [],
+    "ignorePaths": [
+        "**/*.sh",
+        "**/*.yaml"
+    ],
     "dictionaryDefinitions": [],
     "dictionaries": [],
-    "words": [],
+    "words": [
+        "pagecontent"
+    ],
     "ignoreWords": [
         "Bitcode",
         "NONINV"
