@@ -7,6 +7,10 @@ Best Practice Recommendation: In general, all observations should have a perform
 
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
 # The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
+No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem.
+
+# MDC codes are used alongside UCUM codes for units - the MDC code alone triggering this info message is expected
+The code provided (urn:iso:std:iso:11073:10101#266016) is not in the value set 'UCUM Codes' (http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-ballot3), and a code is recommended to come from this value set
 
 # These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -29,6 +33,8 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 None of the codings provided are in the value set 'Vital Signs Category' (http://hl7.org/fhir/ValueSet/observation-vitalsign-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#2708-6)
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#8867-4)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#85354-9)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#8310-5)
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
 Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well. (coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists())' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
@@ -47,7 +53,7 @@ Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-typ
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # Publisher process choice - can safely be ignored
-# The value set expansion is too large, and only a subset has been displayed
+The value set expansion is too large, and only a subset has been displayed
 
 # R6 packages not yet available - using R5 packages as interim solution
 ERROR: ImplementationGuide/hl7.fhir.uv.phd: This IG is version 6.0.0-ballot3, while the IG 'hl7.terminology.r5' is from version 5.0.0

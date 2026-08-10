@@ -21,6 +21,11 @@
         "system": "urn:iso:std:iso:11073:10101",
         "code": "266016",
         "display": "MDC_DIM_MMHG"
+      },
+      {
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]",
+        "display": "mmHg"
       }
     ]
   },
