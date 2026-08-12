@@ -247,10 +247,12 @@ groups:
     name: Terminology
     description: Code systems and value sets for personal health device data
     resources:
+      - CodeSystem/ACMEIncPrivateMDCCodes
       - CodeSystem/ASN1ToHL7
       - CodeSystem/ContinuaDeviceIdentifiers
       - CodeSystem/ContinuaHFS
       - CodeSystem/ContinuaPHDInterfaceIDs
+      - CodeSystem/DeviceAlertCategoryCS
       - CodeSystem/MissingMDCCodes
       - CodeSystem/PhdObservationCategories
       - ValueSet/ASN1ClockBits
@@ -331,7 +333,8 @@ groups:
     resources:
       - ObservationDefinition/bp-observation-definition-example
       - DeviceAlert/bp-device-alert
-
+      - DeviceAlert/spo2-device-alert
+      
 # Page structure
 pages:
   index.md:

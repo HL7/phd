@@ -6,8 +6,7 @@
 Best Practice Recommendation: In general, all observations should have a performer
 
 # partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
-# The property 'partition' is not known for the system 'urn:iso:std:iso:11073:10101', so may not be understood by the terminology ecosystem. Known properties for this system: concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
-No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem.
+No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
 # MDC codes are used alongside UCUM codes for units - the MDC code alone triggering this info message is expected
 The code provided (urn:iso:std:iso:11073:10101#266016) is not in the value set 'UCUM Codes' (http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-ballot3), and a code is recommended to come from this value set
@@ -41,9 +40,6 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.36.0
-Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2024-12-05 from fhir.tx.support.r4#0.36.0 (from https://tx.fhir.org/r5 - see the servers logic)
 
 # Reference to experimental code system...
 Reference to experimental CodeSystem http://hl7.org/fhir/restful-interaction|6.0.0-ballot3
@@ -52,7 +48,7 @@ Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-typ
 # weird slicing message for each code system defined in this IG. Can be ignored safely.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# Publisher process choice - can safely be ignored
+# IG Publisher choice - can be ignored safely.
 The value set expansion is too large, and only a subset has been displayed
 
 # R6 packages not yet available - using R5 packages as interim solution
