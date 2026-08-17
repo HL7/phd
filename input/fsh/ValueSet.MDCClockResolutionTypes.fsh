@@ -4,7 +4,7 @@ ValueSet: MDCClockResolutionTypes
 Id: MDCClockResolutionTypes
 Title: "MDC Clock Resolution Types"
 Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature Codes for Clock Resolution types"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCClockResolutionTypes"
 * ^version = "current"
 * ^status = #active

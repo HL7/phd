@@ -4,7 +4,7 @@ ValueSet: MDCnotObject
 Id: MDCnotObject
 Title: "MDC Non-Object codes"
 Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature excluding Object partition."
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCnotObject"
 * ^version = "current"
 * ^status = #active

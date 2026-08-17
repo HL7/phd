@@ -4,7 +4,7 @@ ValueSet: MDCDeviceVersionTypes
 Id: MDCDeviceVersionTypes
 Title: "MDC Device Version Type codes"
 Description: "ValueSet for the MDC Device Version Type codes. ToDo: We still need to define a code for the ACOM version."
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceVersionTypes"
 * ^version = "current"
 * ^status = #active

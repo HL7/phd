@@ -13,7 +13,7 @@ CodeSystem: ASN1ToHL7
 Id: ASN1ToHL7
 Title: "ASN1 bits to HL7 enumerated values"
 Description: "CodeSystem for mapping IEEE 11073-10206 bitstrings to FHIR Codeable Concepts"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem" // hack to build for R6 ballot5
 //* ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ASN1ToHL7"
 * ^url = "http://terminology.hl7.org/CodeSystem/ASN1ToHL7"
 //* ^status = #active

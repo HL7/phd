@@ -2,7 +2,7 @@ CodeSystem: DeviceAlertCategoryCS
 Id: DeviceAlertCategoryCS
 Title: "Device Alert Category Code System"
 Description: "Codes used to categorize device alerts coming from PHD devices."
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "http://terminology.hl7.org/CodeSystem/devicealert-category"
 * ^version = "0.1.0"
 * ^status = #active

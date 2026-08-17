@@ -2,23 +2,24 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
+# The spdx-license CodeSystem is draft in FHIR 6.0.0-ballot5 core; not a problem with this IG
+Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7
+
 # Example observation in this IG are supposed to be device generated with often an unknown performer. There is text in the IG to explain this. The affected example observations / bundles are: bits-observation.json, bundle-continuousnonin.json, bundle-example-1.json, coin-20181119174911.json, coin-20181119202022.json, coin-example-1.json, coin-example-timefault.json, glucose-1.0.0.4.json, numeric-observation-not-a-number.json, numeric-spotnumeric.json, stringenum-1234.json
 Best Practice Recommendation: In general, all observations should have a performer
-
-# partition is a known IEEE 11073-10101 concept - discussion on Zulip how to fix this: https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Why.20is.20the.20ISO.2FIEEE.2011073.20Codesystem.20seen.20as.20draft.3F/near/456526001
-No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
+Constraint failed: obs-12: 'All observations SHOULD have a performer (performer.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Observation)
 
 # MDC codes are used alongside UCUM codes for units - the MDC code alone triggering this info message is expected
-The code provided (urn:iso:std:iso:11073:10101#266016) is not in the value set 'UCUM Codes' (http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-ballot3), and a code is recommended to come from this value set
+The code provided (urn:iso:std:iso:11073:10101#266016) is not in the value set 'UCUM Codes' (http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-ballot5), and a code is recommended to come from this value set
 
 # These code systems are PHD specific
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # When a vital signs observation is also checked against the vital signs profile these warnings are generated. The vitals sign category element does not match the slice for the `phd` category. These are no real problems.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bodytemp|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|6.0.0-ballot5 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|6.0.0-ballot5 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|6.0.0-ballot5 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bodytemp|6.0.0-ballot5 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # When a Phd compound observation is also a vital sign this warning is generated. The LOINC coding does not match the slice for the MDC coding. This is not a real problem.
 This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -28,52 +29,33 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
-None of the codings provided are in the value set 'Vital Signs Category' (http://hl7.org/fhir/ValueSet/observation-vitalsign-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#2708-6)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#8867-4)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#85354-9)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://loinc.org#8310-5)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot5), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot5), and a coding is recommended to come from this value set (codes = http://loinc.org#2708-6)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot5), and a coding is recommended to come from this value set (codes = http://loinc.org#8867-4)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot5), and a coding is recommended to come from this value set (codes = http://loinc.org#85354-9)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot5), and a coding is recommended to come from this value set (codes = http://loinc.org#8310-5)
 
 # This warning is generated on purpose in two examples that use a private code on purpose. This warning can hence safely be ignored.
 Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well. (coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists())' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
+
+# PocD is not available yet for R6. This warning can be ignored for now. The actual code system dependency will move to FHIR terminology.
+This IG is version 6.0.0-ballot5, while the IG 'hl7.fhir.uv.pocd' is from version 4.0.1
 
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
 
 # Reference to experimental code system...
-Reference to experimental CodeSystem http://hl7.org/fhir/restful-interaction|6.0.0-ballot3
-Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-ballot3
-
-# weird slicing message for each code system defined in this IG. Can be ignored safely.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
+Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-ballot5
 
 # IG Publisher choice - can be ignored safely.
 The value set expansion is too large, and only a subset has been displayed
 
-# R6 packages not yet available - using R5 packages as interim solution
-ERROR: ImplementationGuide/hl7.fhir.uv.phd: This IG is version 6.0.0-ballot3, while the IG 'hl7.terminology.r5' is from version 5.0.0
-ERROR: ImplementationGuide/hl7.fhir.uv.phd: This IG is version 6.0.0-ballot3, while the IG 'hl7.fhir.uv.extensions' is from version 5.0.0
-ERROR: ImplementationGuide/hl7.fhir.uv.phd: This IG is version 6.0.0-ballot3, while the IG 'hl7.fhir.uv.pocd' is from version 4.0.1
-ERROR: ImplementationGuide/hl7.fhir.uv.phd: This IG is version 6.0.0-ballot3, while the IG 'hl7.fhir.uv.tools.r5' is from version 5.0.0
-
-
-# Best practice recommendation for R6 - fixed[x] vs pattern[x]. Using (exactly) is intentional for strict matching.
-# Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]'
-
-# Best practice recommendation for R6 - additionalBindings inherited from base FHIR R6 resources should have keys. This is a FHIR R6 core issue that will be resolved upstream.
-# Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
-
-# R6 artefact
-Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablevalueset|6.0.0-ballot3 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# This applies to 
-# The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
-
-# error in vital signs profiles for R6 - should be fixed in FHIR core before next ballot
-Slice 'Observation.component:DiastolicBP': a matching slice is required, but not found (from http://hl7.org/fhir/StructureDefinition/bp|6.0.0-ballot3). Note that other slices are allowed in addition to this required slice
-Slice 'Observation.component:SystolicBP': a matching slice is required, but not found (from http://hl7.org/fhir/StructureDefinition/bp|6.0.0-ballot3). Note that other slices are allowed in addition to this required slice
-
 # snapshot.element[13] is Observation.language — an element inherited from the base FHIR Observation resource. Its additional binding has purpose: starter but no key, which triggers eld-31. Cannot be fixed in the IG.
 Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+
+# R6 dependency/availability issues - can be ignored for now
+The ImplementationGuide is based on FHIR version 6.0.0-ballot5 but package hl7.fhir.uv.extensions#5.3.0 is based on FHIR version 5.0.0. Use the package hl7.fhir.uv.extensions.r6 instead
+The ImplementationGuide is based on FHIR version 6.0.0-ballot5 but package hl7.fhir.uv.pocd#0.3.0 is based on FHIR version 4.0.1. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+
+# partition is a known property of the MDC nomenclature. The IG publisher does not know about it and hence generates this warning. It can be ignored safely.
+No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight

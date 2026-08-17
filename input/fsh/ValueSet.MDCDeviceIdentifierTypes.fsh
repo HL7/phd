@@ -2,7 +2,7 @@ ValueSet: MDCDeviceIdentifierTypes
 Id: MDCDeviceIdentifierTypes
 Title: "MDC Device Identifier Types"
 Description: "ValueSet for the MDC Device Identifier Types"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCDeviceIdentifierTypes"
 * ^version = "current"
 * ^status = #active

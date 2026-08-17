@@ -16,7 +16,6 @@ Context: Observation
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/CoincidentTimeStampReference"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.5.1460"
-* ^version = "5.2.0-ballot"
 * ^experimental = false
 // * ^date = "2015-03-02"
 // * ^publisher = "HL7 International / Devices"

@@ -7,57 +7,77 @@
 		]
 	},
 	"status": "in-progress",
-	"type": "physiological",
+	"type": {
+		"coding": [
+			{
+				"system": "http://terminology.hl7.org/CodeSystem/devicealert-type",
+				"code": "physiological"
+			}
+		]
+	},
+	"code": {
+		"coding": [
+			{
+				"system": "urn:iso:std:iso:11073:10101",
+				"code": "196648",
+				"display": "MDC_EVT_HI"
+			}
+		],
+		"text": "Systolic blood pressure high alert"
+	},
 	"subject": {
 		"reference": "Patient/patientExample-1"
 	},
-	"source": {
-		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
+	"occurrence": {
+		"start": "2018-11-11T11:38:15-05:00"
 	},
-	"condition": {
-		"code": {
-			"coding": [
-				{
-					"system": "urn:iso:std:iso:11073:10101",
-					"code": "196648",
-					"display": "MDC_EVT_HI"
-				}
-			],
-			"text": "Systolic blood pressure high alert"
-		},
-		"presence": true,
-		"timing": {
-			"start": "2018-11-11T11:38:15-05:00"
-		},
-		"limit": {
-			"low": {
-				"value": 90,
-				"unit": "mm[Hg]",
-				"system": "http://unitsofmeasure.org",
-				"code": "mm[Hg]"
-			},
-			"high": {
-				"value": 140,
-				"unit": "mm[Hg]",
-				"system": "http://unitsofmeasure.org",
-				"code": "mm[Hg]"
-			}
-		}
+	"device": {
+		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
 	},
 	"derivedFrom": [
 		{
-			"reference": "Observation/compound-numeric-blood-pressure"
+			"observation": {
+				"reference": "Observation/compound-numeric-blood-pressure"
+			},
+			"limit": {
+				"low": {
+					"value": 90,
+					"unit": "mm[Hg]",
+					"system": "http://unitsofmeasure.org",
+					"code": "mm[Hg]"
+				},
+				"high": {
+					"value": 140,
+					"unit": "mm[Hg]",
+					"system": "http://unitsofmeasure.org",
+					"code": "mm[Hg]"
+				}
+			}
 		}
 	],
 	"label": "Systolic BP > 140 mm[Hg]",
 	"signal": [
 		{
-			"activationState": "on",
-			"presence": "on",
+			"activationState": {
+				"coding": [
+					{
+						"system": "http://terminology.hl7.org/CodeSystem/devicealert-activation-state",
+						"code": "on"
+					}
+				]
+			},
+			"presence": {
+				"coding": [
+					{
+						"system": "http://terminology.hl7.org/CodeSystem/devicealert-presence",
+						"code": "on"
+					}
+				]
+			},
 			"manifestation": {
 				"coding": [
 					{
-						"system": "http://hl7.org/fhir/devicealert-manifestation",
+						"system": "http://terminology.hl7.org/CodeSystem/devicealert-manifestation",
 						"code": "aud",
 						"display": "Auditory"
 					}
