@@ -2,7 +2,7 @@ CodeSystem: MissingMDCCodes
 Id: MissingMDCCodes
 Title: "Missing MDC Codes"
 Description: "Codes that are missing from the MDC (Medical Device Communication) standard."
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/MissingMDCCodes"
 * ^version = "0.3.0"
 * ^status = #active

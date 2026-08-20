@@ -37,6 +37,10 @@ dependencies:
   hl7.fhir.uv.pocd:
     version: 0.3.0
     uri: http://hl7.org/fhir/uv/pocd/ImplementationGuide/hl7.fhir.uv.pocd
+  # hl7.fhir.uv.crmi:
+  #   version: current
+  #   reason: Common Registry and Metadata Infrastructure profiles - does not support FHIR R6 yet
+  #   uri: https://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi
 
 # Resource descriptions and metadata
 resources:

@@ -2,7 +2,7 @@ CodeSystem: ContinuaHFS
 Id: ContinuaHFS
 Title: "Continua Health and Fitness Service Interfaces"
 Description: "Codes used to describe the Continua Health and Fitness interfaces supported by a Personal Health Gateway. More codes maybe added to this list in the future."
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaHFS"
 * ^version = "0.3.0"
 * ^status = #active

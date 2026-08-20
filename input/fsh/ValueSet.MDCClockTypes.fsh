@@ -4,7 +4,7 @@ ValueSet: MDCClockTypes
 Id: MDCClockTypes
 Title: "MDC Clock Types"
 Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature Codes for Clock Types"
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCClockTypes"
 * ^version = "current"
 * ^status = #active

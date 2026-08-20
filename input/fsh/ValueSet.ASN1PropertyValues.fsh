@@ -2,7 +2,7 @@ ValueSet: ASN1EventOrStateValues
 Id: ASN1EventOrStateValues
 Title: "ASN1 Event or State Values"
 Description: "ValueSet for the eventOrState property values in the ASN1ToHL7 CodeSystem"
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1EventOrStateValues"
 * ^status = #active
 * ^experimental = false
@@ -15,7 +15,7 @@ ValueSet: ASN1SourceValues
 Id: ASN1SourceValues
 Title: "ASN1 Source Values"
 Description: "ValueSet for the source property values in the ASN1ToHL7 CodeSystem"
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/ASN1SourceValues"
 * ^status = #active
 * ^experimental = false

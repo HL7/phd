@@ -2,7 +2,7 @@ CodeSystem: ContinuaPHDInterfaceIDs
 Id: ContinuaPHDInterfaceIDs
 Title: "Continua Device Interface Identifiers"
 Description: "Codes used to describe the PHD types and interfaces supported by a Personal Health Gateway. More codes maybe added to this list in the future."
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/CodeSystem/ContinuaPHDInterfaceIDs"
 * ^version = "0.3.0"
 * ^status = #active

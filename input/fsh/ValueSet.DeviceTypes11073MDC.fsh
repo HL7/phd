@@ -3,7 +3,7 @@ ValueSet: DeviceTypes11073MDC
 Id: DeviceTypes11073MDC
 Title: "MDC Device Specialization codes"
 Description: "ValueSet for the ISO/IEEE 11073-10101 Nomenclature Codes for Device Specialization types"
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/DeviceTypes11073MDC"
 * ^version = "current"
 * ^status = #active

@@ -4,7 +4,7 @@ ValueSet: MDCTimeSyncMethods
 Id: MDCTimeSyncMethods
 Title: "MDC Time Synchronization Methods"
 Description: "ValueSet for the MDC codes representing time synchronization methods such as NTP, GPS, and others."
-// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset" // from CRMI
 * ^url = "http://hl7.org/fhir/uv/phd/ValueSet/MDCTimeSyncMethods"
 * ^version = "current"
 * ^experimental = false
