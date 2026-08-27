@@ -9,7 +9,7 @@ This algorithm shows how a gateway generates the timestamp as reported by the PH
    - For example, when a Bluetooth GHS sensor reports a local or UTC time of 2021-11-22 11:56:30 with a milliseconds resolution this will be encoded as "690897360.567"
 
 - If the PHD timestamp reports a TZ/DST offset the reported value will be appended as a decimal value, including a + or - sign.
-   - For example, when a Bluetooth GHS timestamp reports an offset of +4 (1 hour) this will be appended as "+4". Combined with the previous examples, this becomes "690897360.567+4"
+   - For example, when a Bluetooth GHS timestamp reports an offset of +4 (1 hour) this will be appended as "+4". Combined with the previous examples, this becomes "690897360.567+4". If the timezone includes quarters these will be encoded as decimal fractions; 15 minutes will be encoded as 0.25, 30 minutes as 0.5.
 
 - If the PHD Observation also includes a Measurement-duration attribute this will be appended to the encoded timestamp as a ".." followed by the duration encoded according to the timestamp resolution.
    - For example a duration of 1 second with a millisecond resolution will be appended as "..1.000". Combined with the previous example this becomes "690897360.567+4..1.000"
