@@ -52,6 +52,10 @@ resources:
   CodeSystem/ASN1ToHL7:
     name: ASN1 to HL7 Mapping
     description: Codes for the IEEE 11073-10206 BITs measurement bit values. For example, 150604.0 is the code for bit 0 in measurement type 150604 which is a pulse oximeter status. The description of that code is 'Indicates the device is not connected with the sensor'.
+
+  CodeSystem/DeviceAlertCategoryCS:
+    name: Device Alert Category Code System
+    description: Categories used to classify device alerts for operational filtering and routing.
   
   # Value Sets
   ValueSet/ASN1MeasurementBits:
@@ -258,6 +262,7 @@ groups:
       - CodeSystem/ContinuaPHDInterfaceIDs
       - CodeSystem/DeviceAlertCategoryCS
       - CodeSystem/MissingMDCCodes
+      - CodeSystem/DeviceAlertCategoryCS
       - CodeSystem/PhdObservationCategories
       - ValueSet/ASN1ClockBits
       - ValueSet/ASN1DeviceBits
