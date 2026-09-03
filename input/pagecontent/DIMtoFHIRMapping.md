@@ -5,6 +5,10 @@ Observation objects in ACOM can represent different types of measurements, inclu
 
 The static attributes of the System object are mapped to the FHIR Device resource, while the measurement-related attributes of the Observation objects are mapped to FHIR Observation resources. 
 
+The static attributes of the System object are mapped to the FHIR Device resource, while the measurement-related attributes of the Observation objects are mapped to FHIR Observation resources. 
+
+**Note:** Across all profiles in this IG, populating `code.coding.display` and `code.text` is not required. Most examples include these fields for readability and explanatory purposes.
+
 ## The Observation Model
 The IEEE 11073-10206 model describes an Observation using a type (to indicate what the measurement is) and a value and optional attributes including timestamp, status, related observations and supplemental information.
 
