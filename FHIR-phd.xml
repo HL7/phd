@@ -143,7 +143,7 @@
 <page deprecated="true" key="downloads" name="Downloads"/>
 <page deprecated="true" key="GeneralNotestoConsumers" name="General Notes to Consumers of FHIR Data"/>
 <page deprecated="true" key="GeneratingtheReportedTimeStampIdentifier" name="Generating the PHD Reported Time Stamp Identifier"/>
-<page key="GeneratingtheTimeStampPartIdentifier" name="The timestamp part of the Conditional-create Identifier"/>
+<page key="GeneratingtheTimeStampPartIdentifier" name="Generating the PHD Reported Timestamp Identifier"/>
 <page deprecated="true" key="ContinuaPersonalAreaNetworkCodes" name="Generating the PHD codes"/>
 <page key="GenericModel" name="Generic and Extensible Model"/>
 <page key="Glossary" name="Glossary"/>
