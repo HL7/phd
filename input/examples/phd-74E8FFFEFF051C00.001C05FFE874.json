@@ -47,6 +47,16 @@
                 }
             ],
             "text": "Simple PHD"
+        },
+                {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:11073:10101",
+                    "code": "528388",
+                    "display": "MDC_DEV_SPEC_PROFILE_PULS_OXIM"
+                }
+            ],
+            "text": "Pulse Oximeter"
         }
     ],
     "conformsTo": [
