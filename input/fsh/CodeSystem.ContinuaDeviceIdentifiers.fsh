@@ -11,6 +11,7 @@ Description: "Codes used to describe the Device (PHD or PHG) Identifiers, such a
 * ^experimental = false
 * ^date = "2018-11-25"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
+* ^copyright = "Continua Terminology Content is copyright © Healthcare Information and Management Systems Society. Used with permission of Healthcare Information and Management Systems Society. All rights reserved."
 * ^caseSensitive = true
 * ^content = #complete
 * #SYSID "IEEE 11073 System Identifier" "This code indicates that the identifier is the IEEE 11073 SystemId from the equivalent of the System-Id attribute"

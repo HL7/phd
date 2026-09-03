@@ -9,6 +9,7 @@ Description: "Codes used to describe the PHD types and interfaces supported by a
 * ^experimental = false
 * ^date = "2018-11-24"
 * ^publisher = "Health Level Seven International (Devices Work Group)"
+* ^copyright = "Continua Terminology Content is copyright © Healthcare Information and Management Systems Society. Used with permission of Healthcare Information and Management Systems Society. All rights reserved."
 * ^caseSensitive = true
 * ^content = #complete
 * #4 "Pulse Oximeter certified" "The PHG has been  certified for the Pulse Oximeter"
