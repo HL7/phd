@@ -4,6 +4,7 @@ Profile: PhdCoincidentTimeStampObservation
 Parent: Observation
 Id: PhdCoincidentTimeStampObservation
 Description: "Observations containing a coincident timestamp."
+* obeys phd-local-time-required
 * ^meta.lastUpdated = "2017-12-14T09:41:34.341-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 * ^status = #active
@@ -36,6 +37,7 @@ Description: "Observations containing a coincident timestamp."
 * value[x] only dateTime or Quantity
 * value[x] ^short = "The current time of the PHD as a wallclock time (dateTime), relative time (Quantity), or if a time fault a dataAbsentReason"
 * value[x] ^definition = "The current time of the PHD. It will be either a `valueDateTime` if a wallclock time or a `valueQuantity` if a relative time or a `dataAbsentReason` if there is a time fault. The relative time is expressed in microseconds"
+* modifierExtension contains PhdLocalTime named PhdLocalTime 0..1
 * dataAbsentReason.coding ^slicing.discriminator.type = #value
 * dataAbsentReason.coding ^slicing.discriminator.path = "$this"
 * dataAbsentReason.coding ^slicing.rules = #open
@@ -74,3 +76,8 @@ Description: "Observations containing a coincident timestamp."
 * focus 0..0
   * ^short = "No focus in PHD. The coincident timestamp is not associated with a focus."
   * ^definition = "This element is not used in PHD as the coincident timestamp is not associated with a focus."
+
+Invariant: phd-local-time-required
+Description: "PHGs SHALL include PhdLocalTime=true when an absolute-time PHD reports a valueDateTime."
+Severity: #error
+Expression: "(code.coding.where(system = 'urn:iso:std:iso:11073:10101' and code = '67975').exists() and value.ofType(dateTime).exists()) implies modifierExtension.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/phd-local-time').value.ofType(boolean) = true"

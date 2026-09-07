@@ -65,6 +65,7 @@
 <artifact id="Device/phd-00601900010E9234.F45EABA80832" key="Device-phd-00601900010E9234.F45EABA80832" name="Glucose Monitor PHD"/>
 <artifact id="ValueSet/MDCobject" key="ValueSet-MDCobject" name="IEEE 11073 MDC Object infrastructure and Device nomenclature"/>
 <artifact id="Patient/patientExample-1" key="Patient-patientExample-1" name="Known Patient 1"/>
+<artifact id="StructureDefinition/phd-local-time" key="StructureDefinition-phd-local-time" name="Local Time"/>
 <artifact id="ValueSet/MDCClockResolutionTypes" key="ValueSet-MDCClockResolutionTypes" name="MDC Clock Resolution Types"/>
 <artifact id="ValueSet/MDCClockTypes" key="ValueSet-MDCClockTypes" name="MDC Clock Types"/>
 <artifact id="ValueSet/MDCDeviceIdentifierTypes" key="ValueSet-MDCDeviceIdentifierTypes" name="MDC Device Identifier Types"/>

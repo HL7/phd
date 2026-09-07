@@ -22,6 +22,12 @@
 	},
 	"effectiveDateTime": "2017-06-02T18:02:35-04:00",
 	"valueDateTime": "2017-06-02T18:02:30-04:00",
+	"modifierExtension": [
+		{
+			"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/phd-local-time",
+			"valueBoolean": true
+		}
+	],
 	"device": {
 		"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 	}

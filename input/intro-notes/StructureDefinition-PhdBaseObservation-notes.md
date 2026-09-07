@@ -38,7 +38,7 @@ The `subject` element normally points to the PhdPatient resource using the logic
 In situations where the gateway knows that the patient is the person performing the measurement, a `Observation.performer` element can also point to the PhdPatient resource. However, in most situations this is unknown and the `performer` is not filled in. And for coincident timestamp observations, the `performer` should not be provided. This profile puts no constraints on the `performer` element.
 
 ### Timestamp: `effective[x]`
-PHDs report timestamps in various methods and may not report timestamps at all. The PHG will include a timestamp in every observation that is uploaded using a conversion as needed based on the timestamp data received from the PHD. The timestamp types and corresponding PHG conversions are summarized below:
+PHDs report timestamps in various methods and may not report timestamps at all. The PHG will include a timestamp in every observation that is uploaded using a conversion as needed based on the timestamp data received from the PHD. 
 
 <style>table, th, td {
 border: 1px solid black;
@@ -77,7 +77,7 @@ For IEEE 11073-10206 timestamps the following table can be used:
 | Tick counter | No      | n.a.   | n.a.   | Throw away                                                              | n.a.                               |
 
 The PHG maps the 'converted' timestamp to either an `Observation.effectiveDateTime` element or an `Observation.effectivePeriod` element. The second situation occurs when the observation includes a Measurement-Duration (duration) attribute. Then the timestamp attribute gives the start of the period and the end of the period is obtained by adding the Measurement-Duration value to it. If no timestamp is provided, the PHG, using the time of reception of the observation as its timestamp must then do the reverse; the time of reception is the end time and the start time is given by subtracting the Measurement-Duration value from it.
-When the PHG modifies an Observation's timestamp as received from the PHD it shall also generate a Coincident Timestamp observation that records how the `Observation.effective[x]` element is generated.
+When the PHG modifies an Observation's timestamp as received from the PHD it shall also generate a [Coincident Timestamp Observation](StructureDefinition-PhdCoincidentTimeStampObservation.html) that records how the `Observation.effective[x]` element is generated.
 
 ### extension: Coincident timestamp reference
 This extension references Coincident Timestamp Observation resource that relates the PHD and PHG timelines. This occurs whenever the observation reported by the PHD has a timestamp. The Coincident Timestamp Observation reports how this `Observation.effective[x]` element is generated.

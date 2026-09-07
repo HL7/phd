@@ -73,6 +73,8 @@ Below is an example of the `effective[x]` when the timestamp is a point in time:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
+When a PHD reports a timestamp, the PHG may adjust it. When the PHG adjusts a PHD timestamp, it generates a [Coincident Timestamp Observation](StructureDefinition-PhdCoincidentTimeStampObservation.html) that records how the `Observation.effective[x]` value was derived. When the PHD reports an absolute-time `valueDateTime`, this Coincident Timestamp Observation includes the [PhdLocalTime modifier extension](StructureDefinition-phd-local-time.html) with `valueBoolean=true`. Consumers should interpret this flag as identifying source-reported local time; it does not provide a time-zone offset or identify a time zone.
+
 ##### The PHG reference extension
 The reference to the Device resource containing the PHG properties is encoded in an extension element.  An example of the PHG extension is shown below:
 
