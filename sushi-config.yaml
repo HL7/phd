@@ -246,6 +246,7 @@ groups:
       - StructureDefinition/Accuracy
       - StructureDefinition/Confidence95
       - StructureDefinition/CoincidentTimeStampReference
+      - StructureDefinition/phd-local-time
 
   Terminology:
     name: Terminology
@@ -369,10 +370,11 @@ pages:
         title: Generating the PHD Reported Timestamp Identifier
     Non11073PHDDevices.md:
       title: Non IEEE 11073 PHD Devices
-  changes.md:
-    title: Change Log
   Appendix.md:
     title: Appendix
+  changes.md:
+    title: Change Log
+
 
 # Additional parameters
 parameters:
