@@ -16,7 +16,7 @@ The PHG is required to have the capability to report local time and offset to UT
 ### PHD Current Time &rarr; `Observation.value[x]`
  If the PHD uses a wall clock, the current time of the PHD is reported in an `Observation.valueDateTime` element. FHIR requires the presence of an offset to UTC, so if the PHD does not provide that, the PHG adds its offset to the value. It is reasonable to assume that the PHD and PHG are in the same time zone and thus have the same offset to UTC. However, PHDs can be mobile, and if the PHD is reporting an offset, the offset reported by the PHD is used even if it is NOT the offset of the PHG.
 
-When the PHD reports an absolute-time `valueDateTime`, the PHG SHALL include the [PhdLocalTime modifier extension](StructureDefinition-phd-local-time.html) with `valueBoolean=true`. This identifies the source value as local time; the extension does not provide a time-zone offset or identify a time zone.
+§When the PHD reports an absolute-time `valueDateTime`, the PHG SHALL include the [PhdLocalTime modifier extension](StructureDefinition-phd-local-time.html) on the containing Observation with `valueBoolean=true`.§ This identifies the source value as local time; the extension does not provide a time-zone offset or identify a time zone.
 
 If the PHD uses a time counter, the current tick time is reported in an `Observation.valueQuantity` element scaled to microseconds or milliseconds as appropriate for the resolution of the counter.
 

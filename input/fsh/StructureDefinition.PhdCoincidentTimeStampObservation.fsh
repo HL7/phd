@@ -38,6 +38,8 @@ Description: "Observations containing a coincident timestamp."
 * value[x] ^short = "The current time of the PHD as a wallclock time (dateTime), relative time (Quantity), or if a time fault a dataAbsentReason"
 * value[x] ^definition = "The current time of the PHD. It will be either a `valueDateTime` if a wallclock time or a `valueQuantity` if a relative time or a `dataAbsentReason` if there is a time fault. The relative time is expressed in microseconds"
 * modifierExtension contains PhdLocalTime named PhdLocalTime 0..1
+* modifierExtension[PhdLocalTime] ^short = "Local time indicator"
+* modifierExtension[PhdLocalTime] ^definition = "Indicates that the valueDateTime represents source-reported local time"
 * dataAbsentReason.coding ^slicing.discriminator.type = #value
 * dataAbsentReason.coding ^slicing.discriminator.path = "$this"
 * dataAbsentReason.coding ^slicing.rules = #open
