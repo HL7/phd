@@ -80,13 +80,12 @@ Description: "Profile for the Device Resource for a PHD"
   * carrierAIDC 0..0
   * carrierHRF 1..1
     * ^short = "The UDI Human Readable Barcode String form is supported in ACOM and GHS."
-* type 1..
-* type.coding ^slicing.discriminator[0].type = #value
+* type ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "$this"
   * ^slicing.rules = #open
-* type.coding contains PhdCode 1..1
-* type.coding[PhdCode] ^short = "Indicates the device is a PHD."
-* type.coding[PhdCode] = $Mdc#65573
+* type contains PhdType 1..1
+* type[PhdType] ^short = "Indicates the device is a PHD."
+* type[PhdType] = $Mdc#65573
 * conformsTo 1..
 * conformsTo ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "specification.coding"
