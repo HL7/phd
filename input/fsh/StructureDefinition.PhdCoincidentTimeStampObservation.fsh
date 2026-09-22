@@ -4,7 +4,7 @@ Profile: PhdCoincidentTimeStampObservation
 Parent: Observation
 Id: PhdCoincidentTimeStampObservation
 Description: "Observations containing a coincident timestamp."
-* obeys phd-local-time-required
+* obeys phd-local-time-string-required and phd-local-time-string-only and phd-local-time-format
 * ^meta.lastUpdated = "2017-12-14T09:41:34.341-05:00"
 * ^url = "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCoincidentTimeStampObservation"
 * ^status = #active
@@ -34,12 +34,9 @@ Description: "Observations containing a coincident timestamp."
 * effective[x] ^short = "The current time of the PHG at the current time of the PHD. Absent if PHD is better synchronized"
 * effective[x] ^definition = "The time of the PHG at the time the current time of the PHD is ascertained."
 * effective[x] ^comment = "This element is absent if the PHD has superior time synchronization relative to the PHG. When this element is absent it indicates that the PHG reported the measurement timestamps of the PHD without modification."
-* value[x] only dateTime or Quantity
-* value[x] ^short = "The current time of the PHD as a wallclock time (dateTime), relative time (Quantity), or if a time fault a dataAbsentReason"
-* value[x] ^definition = "The current time of the PHD. It will be either a `valueDateTime` if a wallclock time or a `valueQuantity` if a relative time or a `dataAbsentReason` if there is a time fault. The relative time is expressed in microseconds"
-* modifierExtension contains PhdLocalTime named PhdLocalTime 0..1
-* modifierExtension[PhdLocalTime] ^short = "Local time indicator"
-* modifierExtension[PhdLocalTime] ^definition = "Indicates that the valueDateTime represents source-reported local time"
+* value[x] only dateTime or string or Quantity
+* value[x] ^short = "The current time of the PHD as a wallclock time (dateTime or local-time string), relative time (Quantity), or if a time fault a dataAbsentReason"
+* value[x] ^definition = "The current time of the PHD. It will be a `valueDateTime` for a wallclock time with a UTC offset, a `valueString` for a local wallclock time without a UTC offset, a `valueQuantity` for a relative time, or a `dataAbsentReason` if there is a time fault. The relative time is expressed in microseconds."
 * dataAbsentReason.coding ^slicing.discriminator.type = #value
 * dataAbsentReason.coding ^slicing.discriminator.path = "$this"
 * dataAbsentReason.coding ^slicing.rules = #open
@@ -79,7 +76,17 @@ Description: "Observations containing a coincident timestamp."
   * ^short = "No focus in PHD. The coincident timestamp is not associated with a focus."
   * ^definition = "This element is not used in PHD as the coincident timestamp is not associated with a focus."
 
-Invariant: phd-local-time-required
-Description: "PHGs SHALL include PhdLocalTime=true when an absolute-time PHD reports a valueDateTime."
+Invariant: phd-local-time-string-required
+Description: "An absolute-time PHD clock value SHALL be represented as a string because it has no time-zone offset."
 Severity: #error
-Expression: "(code.coding.where(system = 'urn:iso:std:iso:11073:10101' and code = '67975').exists() and value.ofType(dateTime).exists()) implies modifierExtension.where(url = 'http://hl7.org/fhir/uv/phd/StructureDefinition/phd-local-time').value.ofType(boolean) = true"
+Expression: "(code.coding.where(system = 'urn:iso:std:iso:11073:10101' and code = '67975').exists() and value.exists()) implies value.ofType(string).exists()"
+
+Invariant: phd-local-time-string-only
+Description: "A string value SHALL only be used for an absolute-time PHD clock without a time-zone offset."
+Severity: #error
+Expression: "value.ofType(string).exists() implies code.coding.where(system = 'urn:iso:std:iso:11073:10101' and code = '67975').exists()"
+
+Invariant: phd-local-time-format
+Description: "A local-time string SHALL use the format YYYY-MM-DDThh:mm:ss with optional fractional seconds and no time-zone offset."
+Severity: #error
+Expression: "value.ofType(string).empty() or value.ofType(string).matches('^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)([.][0-9]+)?$')"

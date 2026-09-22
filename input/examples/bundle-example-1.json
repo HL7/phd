@@ -548,13 +548,7 @@
           "reference": "urn:uuid:c87cc91b-8b31-4e6f-b636-75e52891d10a"
         },
         "effectiveDateTime": "2019-09-20T12:40:07.936-04:00",
-        "valueDateTime": "2019-09-20T12:40:09.000-04:00",
-        "modifierExtension": [
-          {
-            "url": "http://hl7.org/fhir/uv/phd/StructureDefinition/phd-local-time",
-            "valueBoolean": true
-          }
-        ],
+        "valueString": "2019-09-20T12:40:09.000",
         "device": {
           "reference": "urn:uuid:d44b0315-947e-4da5-bb6d-533eceb7a294"
         }

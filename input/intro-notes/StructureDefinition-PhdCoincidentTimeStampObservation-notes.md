@@ -14,9 +14,7 @@ The `code` element is used to report the type of time clock used by the PHD. The
 The PHG is required to have the capability to report local time and offset to UTC. The PHG records its current time in the `Observation.effectiveDateTime` element regardless of the type of time clock used by the PHD unless the PHD has superior time synchronization than the PHG. In that case, the `Observation.effective[x]` element is not populated.
 
 ### PHD Current Time &rarr; `Observation.value[x]`
- If the PHD uses a wall clock, the current time of the PHD is reported in an `Observation.valueDateTime` element. FHIR requires the presence of an offset to UTC, so if the PHD does not provide that, the PHG adds its offset to the value. It is reasonable to assume that the PHD and PHG are in the same time zone and thus have the same offset to UTC. However, PHDs can be mobile, and if the PHD is reporting an offset, the offset reported by the PHD is used even if it is NOT the offset of the PHG.
-
-§When the PHD reports an absolute-time `valueDateTime`, the PHG SHALL include the [PhdLocalTime modifier extension](StructureDefinition-phd-local-time.html) on the containing Observation with `valueBoolean=true`.§ This identifies the source value as local time; the extension does not provide a time-zone offset or identify a time zone.
+If the PHD uses a wall clock and provides an offset to UTC, the current time of the PHD is reported in an `Observation.valueDateTime` element using the offset reported by the PHD. If the PHD reports local time without an offset (`MDC_ATTR_TIME_ABS`, code `67975`), the current time is reported in `Observation.valueString` using the format `YYYY-MM-DDThh:mm:ss` with optional fractional seconds and no time-zone suffix.
 
 If the PHD uses a time counter, the current tick time is reported in an `Observation.valueQuantity` element scaled to microseconds or milliseconds as appropriate for the resolution of the counter.
 
@@ -56,16 +54,16 @@ The PHG may use the following logic to report Coincident Timestamps and adjust P
 - If the PHD measurement timestamp contains a UTC or local time and reports being externally synchronized:
   - If the PHG is better synchronized than the PHD:
     - The PHG's current time is reported in the `Observation.effectiveDateTime` element.
-    - The PHD's current time is reported in the `Observation.valueDateTime` element.
+    - The PHD's current time is reported in `Observation.valueDateTime` when it includes a UTC offset or `Observation.valueString` when it is local time without an offset.
     - *The PHG adjusts the measurement timestamps from the PHD's current timeline by the difference.*
   - If the PHD is better synchronized than the PHG:
     - The PHG's current time is not reported, leaving the `Observation.effectiveDateTime` element empty.
-    - The PHD's current time is reported in the `Observation.valueDateTime` element.
+    - The PHD's current time is reported in `Observation.valueDateTime` when it includes a UTC offset or `Observation.valueString` when it is local time without an offset.
     - *The PHG reports the PHD measurement timestamps, correcting for time zone and DST offset as needed.*
 - Otherwise:
   - If the PHD observation contains a tick counter (relative time) or is not externally synchronized:
     - The PHG's current time is reported in the `Observation.effectiveDateTime` element.
-    - The PHD's corresponding time is reported in the `Observation.valueDateTime` or `Observation.valueQuantity` element.
+    - The PHD's corresponding time is reported in the `Observation.valueDateTime`, `Observation.valueString`, or `Observation.valueQuantity` element.
     - *The PHG maps the PHD measurement timestamp to its own timeline using the Coincident Timestamp as an anchor point.*
 
 #### Example

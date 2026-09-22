@@ -21,13 +21,7 @@
 		"reference": "Device/phd-711000FEFF5F49B0.B0495F001071"
 	},
 	"effectiveDateTime": "2018-11-11T19:07:36-05:00",
-	"valueDateTime": "2018-11-11T19:07:35-05:00",
-	"modifierExtension": [
-		{
-			"url": "http://hl7.org/fhir/uv/phd/StructureDefinition/phd-local-time",
-			"valueBoolean": true
-		}
-	],
+	"valueString": "2018-11-11T19:07:35",
 	"device": {
 		"reference": "Device/phg-ecde3d4e58532d31.000000000000"
 	}

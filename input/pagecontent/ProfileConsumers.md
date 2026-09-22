@@ -73,7 +73,7 @@ Below is an example of the `effective[x]` when the timestamp is a point in time:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:effectiveDateTime %}
 
-When a PHD reports a timestamp, the PHG may adjust it. When the PHG adjusts a PHD timestamp, it generates a [Coincident Timestamp Observation](StructureDefinition-PhdCoincidentTimeStampObservation.html) that records how the `Observation.effective[x]` value was derived. When the PHD reports an absolute-time `valueDateTime`, this Coincident Timestamp Observation includes the [PhdLocalTime modifier extension](StructureDefinition-phd-local-time.html) on the containing Observation with `valueBoolean=true`. Consumers should interpret this flag as identifying source-reported local time; it does not provide a time-zone offset or identify a time zone.
+When a PHD reports a timestamp, the PHG may adjust it. When the PHG adjusts a PHD timestamp, it generates a [Coincident Timestamp Observation](StructureDefinition-PhdCoincidentTimeStampObservation.html) that records how the `Observation.effective[x]` value was derived. When the PHD reports local time without a UTC offset, the Coincident Timestamp Observation records it in `Observation.valueString` using the format `YYYY-MM-DDThh:mm:ss` with optional fractional seconds and no time-zone suffix.
 
 ##### The PHG reference extension
 The reference to the Device resource containing the PHG properties is encoded in an extension element.  An example of the PHG extension is shown below:
@@ -312,7 +312,7 @@ The following core information is available from the coincident timestamp observ
 |----|---|
 |`Observation.code.coding.code`|MDC code that indicates what type of time clock is used by PHD. It is one of:<br/>- absolute time (local time with no offset to UTC)<br/>- base offset time (local time with offset to UTC)<br/>- relative time (a tick count)|
 |`Observation.effectiveDateTime`|the PHG's current time - absent if the PHD is better synchronized than the PHG|
-|`Observation.valueDateTime`<br/>`Observation.valueQuantity`<br/>`Observation.dateAbsentReason.coding.code="unknown"`|- the PHD's current time if base offset or absolute time<br/>- the PHD's current time if a relative time<br/>- the PHD has a time fault|
+|`Observation.valueDateTime`<br/>`Observation.valueString`<br/>`Observation.valueQuantity`<br/>`Observation.dateAbsentReason.coding.code="unknown"`|- the PHD's current time if it includes a UTC offset<br/>- the PHD's local time if it has no UTC offset<br/>- the PHD's current time if it is a relative time<br/>- the PHD has a time fault|
 
 
 If the Observation containing the measurement has no reference to a coincident timestamp, it means the PHD provided no measurement timestamp and the PHG used the time of reception as the current timestamp.

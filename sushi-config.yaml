@@ -246,7 +246,6 @@ groups:
       - StructureDefinition/Accuracy
       - StructureDefinition/Confidence95
       - StructureDefinition/CoincidentTimeStampReference
-      - StructureDefinition/phd-local-time
 
   Terminology:
     name: Terminology
