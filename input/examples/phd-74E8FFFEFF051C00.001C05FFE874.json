@@ -261,6 +261,18 @@
             },
             "valueBoolean": true
         },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/ASN1ToHL7",
+                        "code": "68219.15",
+                        "display": "mds-time-dst-rules-enabled"
+                    }
+                ]
+            },
+            "valueBoolean": false
+        },
             {
         "type": {
             "coding": [
