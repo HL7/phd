@@ -434,6 +434,8 @@ The time capabilities defines the types of real time clocks supported, whether t
 
 The time capabilities property is indicated by the `property.type.code` having one of the ASN1ToHL7 codes of "68219.x" which is NOT a decimal number! The value is a valueCode with codes "Y" or "N".
 
+For guidance on how the PHD's clock capabilities and status affect the interpretation and mapping of measurement timestamps, see the [Timestamp guidance in the PhdBaseObservation profile](StructureDefinition-PhdBaseObservation.html) and the [Coincident Timestamp Observation profile](StructureDefinition-PhdCoincidentTimeStampObservation.html).
+
 #### Time Clock Resolutions
 The time clock resolutions is given by one of four MDC codes for each of the possible types of time clocks. Note that a PHD can only simultaneously support an absolute time (wall clock time with no offset) or base offset time (wall clock time with offset). A PHD may support both relative time clocks thus there could be up to three separate time resolution property entries though in most cases there is only one clock.
 
