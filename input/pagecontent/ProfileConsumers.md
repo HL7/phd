@@ -314,6 +314,8 @@ The following core information is available from the coincident timestamp observ
 |`Observation.effectiveDateTime`|the PHG's current time - absent if the PHD is better synchronized than the PHG|
 |`Observation.valueDateTime`<br/>`Observation.valueString`<br/>`Observation.valueQuantity`<br/>`Observation.dateAbsentReason.coding.code="unknown"`|- the PHD's current time if it includes a UTC offset<br/>- the PHD's local time if it has no UTC offset<br/>- the PHD's current time if it is a relative time<br/>- the PHD has a time fault|
 
+For a relative-time PHD, `Observation.valueQuantity` preserves the PHD's current tick-counter value and resolution as the anchor for conversion. The PHG maps relative timestamps in measurements to its UTC-based timeline; the converted timestamp is reported in the measurement's `Observation.effective[x]`.
+
 
 If the Observation containing the measurement has no reference to a coincident timestamp, it means the PHD provided no measurement timestamp and the PHG used the time of reception as the current timestamp.
 
