@@ -67,7 +67,7 @@ In addition to the conditions listed above, when the measurement value is a quan
 ##### The Timestamp: `Observation.effective[x]`
 All measurements contain a time stamp which is either a point in time (a `dateTime` data type), or a period of time (a `Period` data type). A period reported by a PHD has both a start and an end. Results of a workout session are a common type of measurement with a period. The `dateTime` data type is chosen as it is permissible for PHDs to report time at resolutions greater than a day in which case there is no time zone. An activity monitor reporting only daily summaries could be an example of a PHD using such a time resolution.
 
-All timestamps with resolutions finer than a day contain the offset to UTC. If the offset is -00:00, it means that the offset to local time is not known, and what is being reported is UTC time, even if the measurement is taken in Japan. If the offset is +00:00, it means the offset IS known; the measurement just happens to be in a time zone that is UTC. 
+FHIR requires a UTC offset for the `Observation.effective[x]` `dateTime` whenever the resolution is finer than a day. The PHG therefore always supplies this offset in the FHIR-encoded timestamp, even when the PHD itself reports only UTC, only local time, or no offset. When the true offset is not known, the PHG uses `-00:00`, which means the value is UTC but the local offset is unknown, even if the measurement is taken in Japan. An offset of `+00:00` means the offset IS known; the measurement just happens to be in a time zone that is UTC.
 
 Below is an example of the `effective[x]` when the timestamp is a point in time:
 
