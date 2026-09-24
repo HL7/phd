@@ -28,6 +28,8 @@ The PHD synchronization method is reported in the `Observation.component.valueCo
 
 If the PHD has a time fault, the `Observation.value[x]` element is absent, and an `Observation.dataAbsentReason.coding.code` element is present with the code "unknown". A time fault is reported when the PHD reports its clock is unsynchronized and when a PHD measurement indicates an unsynchronized clock.
 
+Together, the `code`, `value[x]`, synchronization-method `component`, and `dataAbsentReason` elements convey the status of the PHD clock (its type, current time, synchronization method, and whether it is faulted). These elements are populated when the PHD provides the corresponding timestamp-status information and are otherwise omitted; PHDs that do not report such information are not required to provide it. The PHG clock has no separate status representation because a conformant PHG is required to be externally synchronized to UTC.
+
 ### Device
 The `Observation.device` element is a reference to the Device resource representing the PHG that generated the coincident timestamp.
 

@@ -2,6 +2,8 @@ The Coincident Timestamp Observation Profile is used to compare the timelines of
 
 In remote patient monitoring, data can arrive from any location on the planet. Given that PHDs can be unsynchronized, have time clocks set by the user, default factory times, or no time clock at all, providing accurate timestamps in the Observation resources is a challenge. The Coincident Timestamp Observation provides a mechanism to report the PHD clock status and links it to the timeline of the PHG.
 
+The status of the PHD clock is conveyed by this observation: the clock type (`code`), the PHD's current time (`value[x]`), the synchronization method (`component`), and, when the PHD clock is unsynchronized, a time fault (`dataAbsentReason = unknown`). This information is preserved and made available to consumers whenever the PHD provides it; it is not required of PHDs that do not report timestamp-status information. The PHG clock is not reported separately because a conformant PHG is required to be externally synchronized to UTC, and to report its local offset when it is known; its status is its current time in `effectiveDateTime`, which is omitted only when the PHD is better synchronized than the PHG.
+
 For more details on the interpretation of the Coincident Timestamp, see the notes section below.
 
 A PHD Observation may reference a Coincident Timestamp Observation if the measurement reported from the PHD contains a timestamp and is from the current timeline of the PHD and needed correction. It will not reference a Coincident Timestamp Observation if the measurement reported from the PHD contains no timestamp or is from an older timeline after which a time adjustment occurred.
