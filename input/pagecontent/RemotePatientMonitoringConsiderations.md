@@ -1,4 +1,4 @@
-The design of this mapping is influenced by the needs of remote patient monitoring. In this case patients are typically at home using personal health devices (PHDs) to take medical measurements on themselves and uploading that data in digitized form with a personal health gateway (PHG) to a repository where the health care provider can examine that data. There are variations on this basic theme but in general it is assumed that:
+The design of this mapping is influenced by the needs of remote patient monitoring. In this case patients are typically at home using personal health devices (PHDs) to take medical measurements on themselves and uploading that data in digitized form with a personal health gateway (PHG) to a repository where the health care provider can examine that data. There are variations on this basic theme. The following are examples of characteristics that may occur in remote patient monitoring deployments:
 
 * Patients are at home or outside of the Health Care Provider Enterprise.
 * Non-medical professionals, typically the patient, are taking the measurements using PHDs and PHGs that comply with this IG.
@@ -20,7 +20,7 @@ The design of this mapping is influenced by the needs of remote patient monitori
 * Data will be transferred over the public network
   * Patients may be paying for data rates
 
-Based upon these assumptions it is advantageous to design an infrastructure which needs as little maintenance as possible and a mapping algorithm which handles as many types of PHD specializations as possible including specializations developed in the future.
+Based upon these considerations it is advantageous to design an infrastructure which needs as little maintenance as possible and a mapping algorithm which handles as many types of PHD specializations as possible including specializations developed in the future.
 
 
 
