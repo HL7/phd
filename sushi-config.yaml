@@ -203,6 +203,10 @@ resources:
     name: Another Coincident Timestamp example
     description: This Coincident Timestamp observation is referenced by other Observation examples.
 
+  Observation/coin-relative-example:
+    name: Coincident Timestamp from a relative-time device
+    description: This example is a Coincident Timestamp where the PHD uses a relative time (tick counter) clock; the current time of the PHD is reported as a valueQuantity in microseconds.
+
 # Resource grouping for organized artifact list
 groups:
   ObservationProfiles:
@@ -330,6 +334,7 @@ groups:
       - Observation/coin-example-timefault
       - Observation/coin-20181119174911
       - Observation/coin-example-1
+      - Observation/coin-relative-example
 
   OtherExamples:
     name: Other Examples

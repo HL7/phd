@@ -36,6 +36,7 @@
 <artifact deprecated="true" id="ValueSet/CodeableConcept11073MDC" key="ValueSet-CodeableConcept11073MDC" name="CodeableConcept11073MDC"/>
 <artifact id="StructureDefinition/CoincidentTimeStampReference" key="StructureDefinition-CoincidentTimeStampReference" name="Coincident Timestamp Reference"/>
 <artifact id="Observation/coin-20181119174911" key="Observation-coin-20181119174911" name="Coincident Timestamp from a BP device"/>
+<artifact id="Observation/coin-relative-example" key="Observation-coin-relative-example" name="Coincident Timestamp from a relative-time device"/>
 <artifact id="Observation/coin-example-timefault" key="Observation-coin-example-timefault" name="Coincident Timestamp with a Time Fault"/>
 <artifact id="Observation/coin-20181119202022" key="Observation-coin-20181119202022" name="Coincident Timestamp with the gateway better synchronized then the"/>
 <artifact id="Observation/compound-numeric-blood-pressure-no-mean" key="Observation-compound-numeric-blood-pressure-no-mean" name="Compound numeric observation with one component value absent"/>
