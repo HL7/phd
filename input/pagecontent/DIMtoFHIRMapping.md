@@ -105,6 +105,8 @@ The simplest example of a mapping of an ASN1 BITs enumeration object to a FHIR O
 This implementation guide specifies a structure definition profile that applies to all Multiple Boolean Observation measurements.
 
 ## List of supported Observation Types
-The IEEE 11073-10206 ACOM specification and the Bluetooth SIG GHS specifications require a compliant device to publish the list of supported observation types. This list of observation types can be mapped to a set of [PhdDeviceMetric resources](StructureDefinition-PhdDeviceMetric.html). The GHS specifications also support an optional Observation Schedule descriptor. The information in this descriptor can be mapped to the DeviceMetric.measurementPeriod. 
+The IEEE 11073-10206 ACOM specification and the Bluetooth SIG GHS specifications require a compliant device to publish the list of supported observation types. This list of observation types can be mapped to a set of [PhdDeviceMetric resources](StructureDefinition-PhdDeviceMetric.html), one DeviceMetric per supported observation type or sensor metric.
+
+GHS may also provide optional Observation Schedule descriptors. Each schedule descriptor applies to exactly one observation type, identified by its MDC code, and is mapped to the `DeviceMetric.measurementFrequency` of the DeviceMetric for that observation type.
 
 
