@@ -84,6 +84,7 @@
 <artifact id="DeviceAlert/bp-device-alert" key="DeviceAlert-bp-device-alert" name="Phd Device Alert for Blood Pressure"/>
 <artifact id="DeviceAlert/spo2-device-alert" key="DeviceAlert-spo2-device-alert" name="Phd Device Alert for SpO2"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Phd Device Metric for Blood Pressure"/>
+<artifact id="DeviceMetric/pulse-rate-ucum-devicemetric-example" key="DeviceMetric-pulse-rate-ucum-devicemetric-example" name="Phd Device Metric for Pulse Rate with UCUM"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>
 <artifact id="StructureDefinition/PhdBitsEnumerationObservation" key="StructureDefinition-PhdBitsEnumerationObservation" name="PhdBitsEnumerationObservation"/>
 <artifact id="StructureDefinition/PhdCodedEnumerationObservation" key="StructureDefinition-PhdCodedEnumerationObservation" name="PhdCodedEnumerationObservation"/>

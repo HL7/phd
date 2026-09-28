@@ -27,7 +27,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 
 dependencies:
   hl7.terminology.r5:
-    version: 7.3.0
+    version: 7.4.0
     reason: R6 terminology package not yet available
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
   hl7.fhir.uv.extensions:
@@ -102,6 +102,10 @@ resources:
   DeviceMetric/bp-devicemetric-example:
     name: Phd Device Metric for Blood Pressure 
     description: This example is a PhdDeviceMetric for a Blood Pressure measurement.
+
+  DeviceMetric/pulse-rate-ucum-devicemetric-example:
+    name: Phd Device Metric for Pulse Rate with UCUM
+    description: This example demonstrates a UCUM unit coding with a human-readable unit text.
 
   # Example DeviceAlert
   DeviceAlert/bp-device-alert:
@@ -295,7 +299,7 @@ groups:
 
   ExampleDevices:
     name: Example Devices
-    description: Device and gateway examples
+    description: PHD, PHG and device metric examples
     resources:
       - Device/phd-74E8FFFEFF051C00.001C05FFE874
       - Device/phd-711000FEFF5F49B0.B0495F001071
@@ -303,6 +307,7 @@ groups:
       - Device/phg-ecde3d4e58532d31.000000000000
       - Device/phg-example
       - DeviceMetric/bp-devicemetric-example
+      - DeviceMetric/pulse-rate-ucum-devicemetric-example
 
   ExamplePatients:
     name: Example Patients

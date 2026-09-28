@@ -1,0 +1,44 @@
+{
+  "resourceType": "DeviceMetric",
+  "id": "pulse-rate-ucum-devicemetric-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDeviceMetric"
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "system": "urn:iso:std:iso:11073:10101",
+        "code": "149530",
+        "display": "MDC_PULS_OXIM_PULS_RATE"
+      }
+    ]
+  },
+  "unit": {
+    "coding": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      },
+      {
+        "system": "urn:iso:std:iso:11073:10101",
+        "code": "264864",
+        "display": "MDC_DIM_BEAT_PER_MIN"
+      }
+    ],
+    "text": "beats per minute"
+  },
+  "device": {
+    "reference": "Device/phd-74E8FFFEFF051C00.001C05FFE874"
+  },
+  "status": "active",
+  "category": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/metric-category",
+        "code": "measurement"
+      }
+    ]
+  }
+}
