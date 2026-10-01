@@ -66,7 +66,7 @@ It contains the Continua version, list of certified PHD interfaces, and the regu
 The interface codes are mapped to a list of properties where the `property.valueCode` element carries a single PHD interface code. The `property.type` element, which identifies the property, is given by the MDC code `532353`. Its reference id is `MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST`. 
 
 #### Reg-Cert-Data-List Regulation Status
-The regulation status attribute has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. In fact, it is the cleared state which represents that the device is regulated. The regulation status is mapped to an additional `Device.property.valueCode` element. 
+The regulation status attribute has MDC code `532354` and carries a 16-bit ASN1 BITs 'state' value (see [ASN1 To HL7 CodeSystem](CodeSystem-ASN1ToHL7.html)). Only bit 0 is defined. Being a state value, both set and cleared states are reported. The regulation status is mapped to an additional `Device.property.valueBoolean` element using negative logic: `true` represents the set state and means that the device is not regulated, while `false` represents the cleared state and means that the device is regulated.
 
 A fragment:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON BASE:property.where(type.coding.code='532354.0') %}
@@ -78,7 +78,7 @@ The ACOM clock information is encoded in a set of `Device.property` elements.
 #### Clock type and resolution &rarr; `Device.property`
  The ACOM clock type and resolution are encoded as a `Device.property` element with the type code indicating the type of the clock. 
  
- The clock type is encoded in a  property with an ASN1toHL7 code from [value set MDCClockResolutionTypes](ValueSet-MDCClockResolutionTypes.html) and a value "Y".
+ The clock type is identified by the `property.type` code from the [MDC Clock Resolution Types](ValueSet-MDCClockResolutionTypes.html) value set.
 
  The clock resolution is encoded as a property with a code from [MDCClockResolutionTypes](ValueSet-MDCClockResolutionTypes.html). The property value is scaled to a valueQuantity with microseconds `us` as unit. The system is `http://unitsofmeasure.org` (UCUM).
 

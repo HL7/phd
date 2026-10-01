@@ -426,7 +426,7 @@ The `property.type` is a CodeableConcept which tells what the property is. There
 |Base offset time resolution|68226|MDC_TIME_RES_BO|
 |RR-interval Ticks. This clock is NOT used for timestamps.|68229|MDC_ATTR_TICK_RES|
 |Time synchronization accuracy|68221|MDC_TIME_SYNC_ACCURACY|
-|Regulation status|532354.x|ASN1ToHL7 name|
+|Regulation status|532354.0|ASN1ToHL7 name|
 |Continua Certified Device List|532353|MDC_REG_CERT_DATA_CONTINUA_CERT_DEV_LIST|
 
 ##### Time Synchronization
@@ -451,9 +451,9 @@ The number of ticks is reported in the `valueQuantity.value` element in Observat
 ACOM-based ECGs do not use the time tick resolution to report R-R intervals.
 
 #### Regulation Status
-The Regulation status is a set of states where only one state is defined. Regulation Status is used to indicate which regulation body the PHD is regulated by. At the moment, the single defined state is assumed to be FDA. All market devices that currently report a regulated state are FDA regulated.
+The Regulation Status property indicates whether the PHD is considered regulated under an applicable regulatory framework. Regulatory requirements may vary by jurisdiction and can include, for example, FDA requirements in the United States, CE marking requirements in the European Union, and other applicable national or regional regulatory requirements.
 
-The property is indicated by the `property.type.code` having the ASN1ToHL7 code "532354.x" where the only currently defined entry is x=0. The value is a valueCode which can have a value "Y" or "N". The twist here is that the state has been defined in the negative. ***Thus a code value of "N" means regulated.***  Note that since this is a state, the PHG is required to report both the "Y" and "N" values *if* the PHD reports a regulation status.
+The property is indicated by the `property.type.code` having the ASN1ToHL7 code "532354.0". The value is a `valueBoolean`. The state is defined using negative logic: `true` means that the device is not regulated, while `false` means that the device is regulated. The PHG is required to report the value if the PHD reports a regulation status.
 
 #### Continua Certified PHD Interfaces
 This property contains a code that indicates a specialization and transport the PHD has been (self-)certified for. Note there is a difference between 'support' and 'certified' support. The Device specialization entries indicate what the PHD supports. Certified means the PHD has been (independently) placed through a set of extensive tests for the specialization and the transport over which the specialization operates. In the past, the Continua organization certified PHDs for compliance to its guidelines that referenced this IG.
