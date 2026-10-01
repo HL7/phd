@@ -276,6 +276,7 @@ Periodic measurements are reported in `Observation.valueSampledData` data elemen
 |`Observation.valueSampledData.upperLimit`|Scaled upper value that the sequence can obtain|
 |`Observation.valueSampledData.lowerLimit`|Scaled lower value that the sequence can obtain|
 
+Measurements derived from an ECG waveform, such as PQ, QT, or RR intervals, should reference the source ECG waveform Observation using `Observation.derivedFrom`. Derive these intervals from the ECG waveform's sample timeline and sampling information, not from differences between UTC-mapped timestamps. The reference preserves the relationship to the ECG waveform from which the measurement was calculated.
 
 To obtain the original values of the measured sequence one uses the following equation:
 

@@ -23,12 +23,34 @@ PHDs may also use tick counters of a specified resolution that report a tick cou
 
 A relative timestamp value in a measurement is mapped to UTC plus offset by taking the difference between the measurement timestamp and the synchronization point's relative time. That difference is added to the synchronization point's UTC time plus offset.
 
+For measurements derived from ECG waveform data, such as PQ, QT, or RR intervals, the derived Observation should reference the source ECG waveform Observation using `Observation.derivedFrom`. Calculate these intervals from the ECG waveform's original sampling timeline. The Coincident Timestamp relates that timeline to UTC for correlation and auditing; it does not replace the sampling timeline used for ECG waveform analysis.
+
 ### PHD synchronization method &rarr; `Observation.component.valueCodeableConcept`
 The PHD synchronization method is reported in the `Observation.component.valueCodeableConcept` element. The code is a code from the [MDC Time Synchronization Methods](ValueSet-MDCTimeSyncMethods.html) value set. The synchronization method is present in the timestamps supported by GHS and ACOM.
 
 If the PHD has a time fault, the `Observation.value[x]` element is absent, and an `Observation.dataAbsentReason.coding.code` element is present with the code "unknown". A time fault is reported when the PHD reports its clock is unsynchronized and when a PHD measurement indicates an unsynchronized clock.
 
 Together, the `code`, `value[x]`, synchronization-method `component`, and `dataAbsentReason` elements convey the status of the PHD clock (its type, current time, synchronization method, and whether it is faulted). These elements are populated when the PHD provides the corresponding timestamp-status information and are otherwise omitted; PHDs that do not report such information are not required to provide it. The PHG clock has no separate status representation because a conformant PHG is required to be externally synchronized to UTC.
+
+### Timestamp Mapping Execution Models
+For the general timestamp-mapping guidance, see [The Observation Model Timestamp](DIMtoFHIRMapping.html#the-observation-model-timestamp).
+
+There are two supported execution models. A PHG that has sufficient clock and source-timeline information may map timestamps and generate the Coincident Timestamp Observation itself. Alternatively, timestamp and clock-status information may be preserved and propagated through intermediary systems. The first system with both a trustworthy UTC-referenced clock and sufficient information about the source timeline may then perform the mapping and generate the Coincident Timestamp Observation. This distributed processing model is an additional supported architecture; it does not redefine the PHG. Intermediaries must preserve the information needed to perform and explain the mapping.
+
+```mermaid
+flowchart LR
+  PHD["PHD<br/>measurement timestamp and clock information"]
+  PHG["PHG with sufficient clock and<br/>source-timeline information"]
+  Relay["Intermediary system or systems<br/>preserve timestamp and clock status"]
+  UTC["First system with UTC reference<br/>and source-timeline information"]
+  FHIR["FHIR resources"]
+
+  PHD -->|PHD data and source-time information| PHG
+  PHG -->|mapping and Coincident Timestamp| FHIR
+  PHD -->|PHD data and source-time information| Relay
+  Relay -->|preserved timestamp and clock information| UTC
+  UTC -->|mapping and Coincident Timestamp| FHIR
+```
 
 ### Device
 The `Observation.device` element is a reference to the Device resource representing the PHG that generated the coincident timestamp.
