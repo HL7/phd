@@ -1,3 +1,8 @@
+### Updates in version 2.0.1 since version 2.0.0
+
+- Restored publication of the introduction and notes for the PhdCoincidentTimeStampObservation.
+- Added OID assignments for the IG's CodeSystems, ValueSets, StructureDefinitions, and PhdFHIRServer CapabilityStatement.
+
 ### Major Updates in version 2.0.0 since version 1.1.0
 
 #### Standards Foundation Updates

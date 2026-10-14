@@ -624,6 +624,10 @@ In this example there are only xml structure definitions, value sets, code syste
       <value value="true"/>
     </parameter>
     <parameter>
+      <code value="auto-oid-root"/>
+      <value value="2.16.840.1.113883.4.642.40.73"/>
+    </parameter>
+    <parameter>
       <code value="special-url"/>
       <value value="http://terminology.hl7.org/CodeSystem/ASN1ToHL7"/>
     </parameter>

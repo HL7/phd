@@ -54,7 +54,16 @@ The IEEE 11073-20601 specification is a predecessor of the IEEE 11073-10206 ACOM
 - ACOM - [IEEE 11073-10206: Health Informatics—Device Interoperability Part 10206: Personal Health Device Communication—Abstract Content Information Model](https://standards.ieee.org/ieee/1107-10206/11702/11073-10206/10311/)
 - GHS - [Bluetooth SIG Generic Health Sensor profile and service specifications](https://www.bluetooth.com/specifications/specs/?types=adopted&keyword=GHS&filter=)
 - MDC - [IEEE 11073-10101: Health informatics — Device interoperability — Part 10101: Point-of-care medical device communication — Nomenclature](https://standards.ieee.org/ieee/11073-10101/5034/)
+- MDC in HL7 - [Using MDC codes in HL7 standards](https://terminology.hl7.org/MDC.html)
 
 For a list of organizations referenced in this guide and their relevance, see the [Organizations](Organizations.html) page.
 
 For definitions of abbreviations used in this guide, see the [Glossary](Glossary.html) page.
+
+### Used with Permission
+
+IEEE 11073-10101 nomenclature codes used in this IG are used with permission from IEEE. All rights remain with their respective rights holders.
+
+Continua terminology content used in this IG is copyright © Healthcare Information and Management Systems Society. Used with permission of Healthcare Information and Management Systems Society. All rights reserved.
+
+The Devices Work Group recorded confirmation from HIMSS that the Continua code systems may be used in this IG in the [February 9, 2026 meeting notes](https://confluence.hl7.org/spaces/HCD/pages/413253459/2026-02-09+Devices+Additional+Call+Agenda+and+Minutes).
