@@ -3,6 +3,7 @@
 - Restored publication of the introduction and notes for the PhdCoincidentTimeStampObservation.
 - Added OID assignments for the IG's CodeSystems, ValueSets, StructureDefinitions, and PhdFHIRServer CapabilityStatement.
 - Documented permission to use the IEEE 11073-10101 and Continua code systems.
+- Corrected various page heading hierarchy and duplicate title issues as detected by the updated IG Publisher version - a purely editorial improvement.
 
 ### Major Updates in version 2.0.0 since version 1.1.0
 
