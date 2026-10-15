@@ -11,7 +11,7 @@ Best Practice Recommendation: In general, all observations should have a perform
 # This informational message is due to inheriting this extension from the core specification.
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
 
-# These six code systems are PHD specific. A TSMG exemption is not yet required due to the IG maturity level being less than 3, but will be requested for the next update of this IG.
+# These six code systems are PHD specific. A TSMG exemption is not yet required due to the IG maturity level being less than 3, but will be requested together with a next update of this IG.
 INFORMATION: CodeSystem/ACMEIncPrivateMDCCodes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/ContinuaHFS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/MissingMDCCodes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -32,8 +32,9 @@ This element does not match any known slice defined in the profile http://hl7.or
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
 
-# The code property codes are defined as internal codes in the code system, so this warning can be safely ignored.
-The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
+# The eventOrState and source property values in CodeSystem/ASN1ToHL7 are concepts in that code system, so validating them as internal codes is appropriate.
+INFORMATION: CodeSystem/ASN1ToHL7: CodeSystem.property[0]: The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
+INFORMATION: CodeSystem/ASN1ToHL7: CodeSystem.property[1]: The type of property 'code' is 'code', but no ValueSet information was found, so the codes will be validated as internal codes
 
 # This is generated for all observations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|2.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)

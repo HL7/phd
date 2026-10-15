@@ -65,5 +65,3 @@ For definitions of abbreviations used in this guide, see the [Glossary](Glossary
 IEEE 11073-10101 nomenclature codes used in this IG are used with permission from IEEE. All rights remain with their respective rights holders.
 
 Continua terminology content used in this IG is copyright © Healthcare Information and Management Systems Society. Used with permission of Healthcare Information and Management Systems Society. All rights reserved.
-
-The Devices Work Group recorded confirmation from HIMSS that the Continua code systems may be used in this IG in the [February 9, 2026 meeting notes](https://confluence.hl7.org/spaces/HCD/pages/413253459/2026-02-09+Devices+Additional+Call+Agenda+and+Minutes).
