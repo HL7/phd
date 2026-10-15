@@ -38,11 +38,11 @@
 
 9. **Improved Examples**: Updated observation examples with better documentation and clarifications about identifier usage in real implementations.
 
-### Content Quality Improvements
+#### Content Quality Improvements
 
 The changes focus on improving documentation quality, clarifying the relationship between IEEE 11073 standards and FHIR profiles, and ensuring terminology consistency. The updates make the IG more consumable for implementers while expanding support for both IEEE 11073-10206 ACOM and Bluetooth GHS specifications.
 
-### Resolved Issues
+#### Resolved Issues
 Issues reported against this IG are tracked in the HL7 Jira system. The following table lists the issues that have been "resolved" and "applied" in this release of the PHD IG:
 
 | Key | Summary |
