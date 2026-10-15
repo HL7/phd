@@ -1,6 +1,6 @@
 This profile is used to map ACOM Numeric Observations.  The measured value is reported as a floating number with an optional accuracy. In GHS the value is encoded as an IEEE 11073 FLOAT that indicates both precision and the number of significant digits. The `Observation.valueQuantity.value` element is required to honor the reported precision. See [FLOATs and SFLOATs](FLOATS.html) for instructions on handling S/FLOATs and their encoding to the valueQuantity .
 
-### Mapping the unit code to FHIR
+#### Mapping the unit code to FHIR
 The MDC unit code as provided by the PHD needs to be mapped to UCUM. See [MDC Nomenclature Codes](Nomenclaturecodes.html) for more details.
 
 <style>table, th, td {
@@ -8,7 +8,7 @@ border: 1px solid black;
 border-collapse:collapse;
 padding: 6px;}</style>
 
-### Additional Numerical Measurement Information
+#### Additional Numerical Measurement Information
 IEEE 11073-10206 numeric observations have some additional optional attributes that are used only for numerics and provide further information about the measurement. 
 These optional attributes are seldom used directly by PHDs and are mapped to FHIR extensions. 
 
@@ -28,7 +28,7 @@ The presence of the extension in an Observation with a numeric quantity informs 
 
 An example of an observation with an alert can be found [here](Observation-numeric-spo2-alarm.json.html).
 
-##### Measurement Confidence 95
+#### Measurement Confidence 95
 The Measurement-Confidence-95 gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. It is supported by the IEEE 11073-20601 specification, but not by the IEEE 11073-10206 ACOM specification. 
 It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation. See [Confidence95 extension](StructureDefinition-Confidence95.html). The range is encoded in an `Extension.valueRange` element. The ranges have the same units as the primary measurement.
 The IEEE 11073-20601 Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization.  An example of a Measurement Confidence 95 entry is shown below:
@@ -37,12 +37,12 @@ The IEEE 11073-20601 Measurement-Confidence-95 component is currently used only 
 
 The above states that the Continuous Glucose Monitor PHG is 95% sure that the reported measurement of (say 99 mg/dL) lies between 98 and 100 mg/dL.
 
-### Examples:
+#### Examples:
 A basic simple numeric observation with a timestamp and a supplemental types attribute is shown in [Pulse Rate Spot Measurement](Observation-numeric-spotnumeric.html). Simple numeric measurements are common in PHDs.
 
 An example of a NaN (not a number) measurement is shown in [NaN Example](Observation-numeric-observation-not-a-number.html). Note that the value element is absent and replaced by a `dataAbsentReason` element.
 
-### Consumer of the PHD Numeric Observation Profile
+#### Consumer of the PHD Numeric Observation Profile
 The consumer of this profile does not need to concern itself with the complexities or the PHD-related entry for the `Observation.identifier` which is used by the uploader to prevent data duplication. There are some extensions introduced by this profile but the resource is consumable by any reader that understands the Observation resource. The following table summarizes the elements used describing the measurement:
 
 | **Measurement Item**         | **Element**                              | **Additional Information**                                                                                     |

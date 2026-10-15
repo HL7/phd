@@ -1,5 +1,3 @@
-# Glossary of Abbreviations
-
 This glossary lists abbreviations and acronyms used throughout this Implementation Guide.
 
 | Abbreviation | Meaning                                                                                     |

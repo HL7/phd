@@ -535,7 +535,7 @@ In this example there are only xml structure definitions, value sets, code syste
         </page>
         <page>
           <nameUrl value="Organizations.html"/>
-          <title value="Organizations"/>
+          <title value="Referenced Organizations"/>
           <generation value="markdown"/>
         </page>
         <page>

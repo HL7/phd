@@ -12,7 +12,7 @@ A bit can only have two values, set or cleared. Thus the value is reported in th
 
  - As an example, the continuous glucose monitor specialization has a Device status measurement whose type is given by the code 8418060. If the value reported is 0001 1000 0000 0000 the bits set are bits 3 and 4. Note that bit 0 is the HIGH order bit. Bit 3 means 'sensor malfunction' and bit 4 means 'device specific alert'. This measurement would require two `component` elements and one with code 8418060.3 and the other with code 8418060.4. Note these are alpha-numeric strings and not decimal numbers. If one took the code 8418060.3 and looked it up in the ASN.1 Bits vocabulary one would find it meant 'sensor malfunctioned'.
 
-## Reporting Requirements
+### Reporting Requirements
 If the ASN.1 bit represents an event, only the set condition needs to be reported. If the ASN.1 bit represents a state, both the set and cleared conditions need to be reported. If the device does not support the bit, it is not required to report the value. If the uploader would, nevertheless, desire to report the unsupported situation it is done in an `Observation.component.dataAbsentReason.coding.code` –element with code "unsupported". The `Observation.component.value[x]` element is absent. Undefined bits are never reported.
 
 This code system is used to report IEEE 11073-10206 Multiple Boolean State observations, where each bit represents a state and for Bluetooth GHS Compound state/event observations that come with a mask to indicate per bit if it is a state or an event and whether it is supported by the device or not.

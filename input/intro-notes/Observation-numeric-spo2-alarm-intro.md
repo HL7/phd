@@ -1,6 +1,3 @@
-# Numeric SpO2 Alarm Example
-
-## Purpose
 This example demonstrates the use of the FHIR `Observation` resource to represent a numeric SpO2 (oxygen saturation) measurement with an associated alarm system. The resource is designed to monitor SpO2 levels and trigger alerts when the measurement falls outside predefined limits.
 
 ### Key Features:

@@ -43,7 +43,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC codes are allowed as well. (coding.exists() and coding.where(system = 'urn:iso:std:iso:11073:10101').exists())' (defined in http://hl7.org/fhir/uv/phd/StructureDefinition/PhdBaseObservation)
 
 # Reference to external draft code system...
-Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
+Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0 from active ValueSet http://hl7.org/fhir/ValueSet/observation-interpretation|4.0.1
 
 # Publisher process choice - can safely be ignored
 The value set expansion is too large, and only a subset has been displayed

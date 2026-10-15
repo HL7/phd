@@ -6,7 +6,7 @@ Thus, it is possible in this encoding to distinguish between the value 2, 2.0, 2
 
 The Bluetooth GHS specifications only use FLOATs to encode quantitative values; the IEEE 11073-20601 specification uses both FLOATs and SFLOATs.
 
-#### FLOAT Encoding
+### FLOAT Encoding
 The table below gives some examples of FLOAT values and how they shall be encoded into the FHIR valueQuantity.value:
 
 <style>table, th, td {
@@ -25,7 +25,7 @@ padding: 6px;}</style>
 |0x00FFFB2E|16775982|0|-1234|-1234|
 
 
-#### SFLOAT Encoding
+### SFLOAT Encoding
 In the SFLOAT case the above values would be encoded as follows:
 
 |SFLOAT Hex|SFLOAT decimal|exponent|mantissa|FHIR encoding|
@@ -39,7 +39,7 @@ In the SFLOAT case the above values would be encoded as follows:
 |0x04D2|1234|0|1234|1234|
 |0x0B2E|2862|0|-1234|-1234|
 
-#### Special FLOAT and SFLOAT Values
+### Special FLOAT and SFLOAT Values
 The special values are used to indicate that the sensor was unable to acquire a valid measurement. The `Observation.dataAbsentReason` element is used to indicate the meaning of the special value. The `Observation.value[x]` element is not populated when a special value is reported.
 
 <style>table, th, td {

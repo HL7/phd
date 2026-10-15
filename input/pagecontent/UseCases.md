@@ -12,11 +12,11 @@ The scope of the remote patient monitoring includes:
 * Interoperability between PHD, PHG and backend server.
 
 
-Use Case: Diabetes monitoring
+### Use Case: Diabetes monitoring
 -
 A person can self-monitor and manage lifestyle aspects that affect his diabetes condition. Recording details of his lifestyle can enhance the value of the glucose readings from a portable glucose meter. This self-monitoring and management process is facilitated by one or more wearable monitors and interactions with one or more PHGs and back-end servers. The feedback the person receives is a function of continuous measurements collected by the monitor(s) they wear, periodic measurements about their physiological state from a portable glucose meter or from the wearable monitor itself, and from manual entry of additional details. Also, the person may receive feedback about these measurements from a healthcare provider to support the treatment of that person’s diabetic condition. The purpose is both to ensure continued adherence to health monitoring and improvements in the relevant end-points such as quality of life, average measured glucose levels, etc.
 
-Use Case: Healthcare with OTC sensors
+### Use Case: Healthcare with OTC sensors
 -
 Individuals can proactively manage their health and fitness outside of traditional clinical settings by using Over-the-Counter (OTC) sensors and wearable devices. These devices, which include weighing scales, health thermometers, heart-rate monitors, blood pressure monitors, glucose meters, and pulse oximeters, are designed for consumer use and typically require minimal training. They enable users to self-monitor and manage various health and fitness conditions such as obesity, insomnia, hypertension, diabetes, respiratory issues, and general physical fitness.
 
@@ -24,6 +24,6 @@ Other types of wearable sensors continuously track metrics like body activity, b
 
 Depending on the service, data privacy requirements may vary—from strict protection of Personal Health Information (PHI) for medical monitoring (e.g., Automated Insulin Delivery systems) to more open sharing for fitness tracking or coaching purposes. This use case highlights the growing role of connected health and fitness services in empowering individuals to take charge of their well-being outside of hospital environments.
 
-Use Case: Medical research
+### Use Case: Medical research
 -
 Another use case is participation in medical research. For example, a medical center associated with a large university is conducting a study on memory impairment interventions in the elderly. The study involves the patients participating in adaptive on-line memory ‘games’. The data is collected in association with a home healthcare service. The use of remote monitoring allows the study to collect a large set of data with minimal impact on the involved patients. The automated approach reduces cost, increases sample size, allows the collection of larger amounts of data from each participant, and the minimal impact is likely to result in longer participation times. Data anonymity is often important in such studies. 
