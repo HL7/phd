@@ -83,9 +83,11 @@ Description: "Profile for the Device Resource for a PHD"
 * type ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "$this"
   * ^slicing.rules = #open
-* type contains PhdType 1..1
+* type contains PhdType 1..1 and MainFunction 0..1
 * type[PhdType] ^short = "Indicates the device is a PHD."
 * type[PhdType] = $Mdc#65573
+* type[MainFunction] ^short = "MDC profile code matching the PHD's main function."
+* type[MainFunction] from $DeviceTypes11073MDC (required)
 * conformsTo 1..
 * conformsTo ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "specification.coding"

@@ -63,22 +63,13 @@ Description: "Profile for the Device Resource for a PHG"
   * value 1..
     * ^definition = "The MAC as an EUI-48 such as 00-E5-DE-AD-77-C8. "
     * ^comment = "Transport addresses are supposed to be unique for a given device."
-* type 1..
-  * ^short = "Indicates the device is a PHG."
-  * coding ^slicing.discriminator[0].type = #value
-    * ^slicing.discriminator[=].path = "system"
-    * ^slicing.rules = #open
-  * coding contains MDCType 1..1
-  * coding[MDCType] ^short = "Required MDC code system entry"
-    * ^definition = "The MDC code for the PHG"
-    * system 1..
-    * system = "urn:iso:std:iso:11073:10101"
-      * ^short = "Identifies IEEE 11073-10101 coding system"
-      * ^definition = "This value identifies the IEEE 11073-10101 coding system"
-    * code 1..
-    * code = #531981
-      * ^short = "Indicates PHG"
-      * ^definition = "MDC code indicating that this unit is a personal health gateway (PHG)."
+* type ^slicing.discriminator[0].type = #value
+  * ^slicing.discriminator[=].path = "$this"
+  * ^slicing.rules = #open
+* type contains PhgType 1..1
+* type[PhgType] ^short = "Indicates the device is a PHG."
+* type[PhgType] ^definition = "A codeable concept indicating that the device is a personal health gateway (PHG)."
+* type[PhgType] = $Mdc#531981
 * conformsTo ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "specification.coding"
   * ^slicing.rules = #open
