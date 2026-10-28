@@ -14,6 +14,8 @@ Description: "Observations from a PHD where the measurement is number"
   * ^definition = "The PhdNumericObservation reports PHD measurements that contain one of either a Basic-Nu-Observed-Value, Simple-Nu_observed-Value, or Nu_observed-Value attribute."
   * ^comment = "Used for non-compound numeric observations from Personal Health Devices."
 * value[x] only Quantity
+* value[x] ^binding.strength = #required
+* value[x] ^binding.valueSet = Canonical(PhdUnitCodeVS)
 * valueQuantity obeys unit-system-code-coherent and phd-dim-code
   * value 1..
     * ^definition = "The decoded FLOAT or SFLOAT value from a PHD Observation."

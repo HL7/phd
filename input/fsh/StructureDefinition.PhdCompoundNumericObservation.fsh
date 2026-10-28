@@ -33,6 +33,8 @@ Description: "Observations coming from a PHD where the measurement is a set of n
       * code 1.. 
     * text ^definition = "It is recommended to display at least the reference identifier describing the compound sub-element"
   * value[x] only Quantity
+  * value[x] ^binding.strength = #required
+  * value[x] ^binding.valueSet = Canonical(PhdUnitCodeVS)
   * valueQuantity obeys unit-system-code-coherent and phd-dim-code
     * value 1..
       * ^definition = "The value of nth element of the compound attribute."

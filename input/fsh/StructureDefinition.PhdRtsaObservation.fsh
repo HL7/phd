@@ -11,6 +11,7 @@ Description: "Observations from a PHD where the measurement is a sample array."
   * ^comment = "Used for sample array (waveform) observations from Personal Health Devices"
 * value[x] only SampledData
   * ^comment = "The PhdRtsaObservation is typically used for reporting waveform type data such as an ECG trace, spirometer exhalation rates, pulse oximetry pleth (plethysmograph) waves, etc., though it can be used to report any set of numeric measurements that are periodic. The periodicity is important as the timestamps of each individual entry is known from the start time and the period. Since the amount of data to be transmitted can be large, the data is scaled in such a way to minimize the number of bits taken up by each entry (in practice limited to 8, 16 or 32 bits). This scaling information is sent along with the start time and period in order for the receiver to recover the original data and to obtain the timestamp of each data point. In theory, this data could be sent using a large phdNumericObservation type resources at a much greater cost in bandwidth."
+  * origin from PhdUnitCodeVS (required)
   * origin obeys unit-system-code-coherent and phd-dim-code
     * ^comment = "The data sent in the ACOM sample array is also scaled. Thus with the proper setting of the `valueSampledData.origin.value` and `valueSampledData.factor`, the data from the IEEE PHD device can be placed into the `data[i]` array without modification."
     * value 1..

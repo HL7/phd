@@ -283,6 +283,7 @@ groups:
       - ValueSet/MDCobject
       - ValueSet/MDCTimeSyncMethods
       - ValueSet/MDCValueSet
+      - ValueSet/PhdUnitCodeVS
 
   Capability:
     name: Capability Statement
