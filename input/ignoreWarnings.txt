@@ -44,6 +44,9 @@ This IG is version 6.0.0-ballot5, while the IG 'hl7.fhir.uv.pocd' is from versio
 # Reference to external draft code system...
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
 
+# The core UCUM units ValueSet is draft in FHIR 6.0.0-ballot5; referencing it from PhdUnitCodeVS is expected and not a problem.
+Reference to draft ValueSet http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-ballot5 from active ValueSet http://hl7.org/fhir/uv/phd/ValueSet/PhdUnitCodeVS|3.0.0-draft
+
 # Reference to experimental code system...
 Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-ballot5
 
@@ -54,7 +57,7 @@ The value set expansion is too large, and only a subset has been displayed
 Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 
 # R6 dependency/availability issues - can be ignored for now
-The ImplementationGuide is based on FHIR version 6.0.0-ballot5 but package hl7.fhir.uv.extensions#5.3.0 is based on FHIR version 5.0.0. Use the package hl7.fhir.uv.extensions.r6 instead
+The ImplementationGuide is based on FHIR version 6.0.0-ballot5 but package hl7.fhir.uv.extensions#5.4.0 is based on FHIR version 5.0.0. Use the package hl7.fhir.uv.extensions.r6 instead
 The ImplementationGuide is based on FHIR version 6.0.0-ballot5 but package hl7.fhir.uv.pocd#0.3.0 is based on FHIR version 4.0.1. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
 # partition is a known property of the MDC nomenclature. The IG publisher does not know about it and hence generates this warning. It can be ignored safely.
