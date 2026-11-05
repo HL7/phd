@@ -106,10 +106,12 @@ jobs:
           path: output
 
   # Publishes the built site to GitHub Pages. Runs only on push/manual dispatch
-  # (not on pull_request, to avoid overwriting the live site from a PR).
+  # (not on pull_request, to avoid overwriting the live site from a PR), and only
+  # when Pages is enabled + opted in via the repo variable DEPLOY_PAGES=true.
+  # (Set it under Settings > Secrets and variables > Actions > Variables.)
   deploy-pages:
     needs: build
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && vars.DEPLOY_PAGES == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
