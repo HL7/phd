@@ -15,11 +15,18 @@ Description: "Profile for device alert that capture alert conditions from person
 // ------------------------------------------------------------
 // Alert Type
 // ------------------------------------------------------------
-* code from http://terminology.hl7.org/ValueSet/devicealert-condition|2.0.0 (required) // for 6.0.0-ballot4 or later; moved from hl7.org/fhir to terminology.hl7.org in ballot 5.
-// * condition.code from http://hl7.org/fhir/ValueSet/devicealert-condition|6.0.0-ballot3 (required) // for 6.0.0-ballot3
+* code from DeviceAlertConditionVS (required) // MDC partition-3 condition code OR an ASN1ToHL7 device/sensor status code
+// * condition.code from DeviceAlertConditionVS (required) // for 6.0.0-ballot3
   * ^short = "Code for the alert condition"
   * ^definition = "MDC nomenclature code from partition 3 indicating the alert condition being reported"
   * ^comment = "The code identifies the specific alert condition from the IEEE 11073 medical device communication nomenclature."
+
+// ------------------------------------------------------------
+// Alert Category
+// ------------------------------------------------------------
+* category from DeviceAlertCategoryVS (extensible)
+  * ^short = "High-level category of the alert"
+  * ^definition = "Coarse grouping of the alert for filtering and routing (e.g. battery/power, communication/connectivity)."
 
 // ------------------------------------------------------------
 // Alert Label/Notification Text
@@ -29,20 +36,14 @@ Description: "Profile for device alert that capture alert conditions from person
   * ^definition = "Notification message displayed when the threshold is crossed."
 
 // ------------------------------------------------------------
-// Signal - for operational state and text
-// ------------------------------------------------------------
-* signal ^slicing.discriminator[0].type = #value
-  * ^slicing.discriminator[=].path = "type"
-  * ^slicing.rules = #open
-// ------------------------------------------------------------
 // derivedFrom: Link to source observations
 // ------------------------------------------------------------
 * derivedFrom 1..*
   * ^short = "Reference to the observation(s) this alert is associated with"
-  * ^definition = "References to the PhdNumericObservation, PhdCompoundNumericObservation, PhdCompoundObservation, or other observations that this alert condition is derived from or associated with."
-  * ^comment = "The alert is now represented as a separate resource that references the source measurement observation(s) via derivedFrom. The component element can be used to identify a specific component in case of an alert on a compound observation, e.g. on systolic blood pressure in a blood pressure observation."
-* derivedFrom.observation only Reference(PhdNumericObservation or PhdCompoundNumericObservation or PhdCompoundObservation) // for 6.0.0-ballot4 or later
-// * derivedFrom only Reference(PhdNumericObservation or PhdCompoundNumericObservation or PhdCompoundObservation) // for 6.0.0-ballot3
+  * ^definition = "References to the PhdNumericObservation, PhdCompoundNumericObservation, PhdCompoundObservation, PhdBitsEnumerationObservation, or other observations that this alert condition is derived from or associated with."
+  * ^comment = "The alert is now represented as a separate resource that references the source measurement observation(s) via derivedFrom. The component element can be used to identify a specific component in case of an alert on a compound observation, e.g. on systolic blood pressure in a blood pressure observation. A PhdBitsEnumerationObservation can be referenced when the alert is derived from a device/sensor status bit, e.g. a device-specific alert."
+* derivedFrom.observation only Reference(PhdNumericObservation or PhdCompoundNumericObservation or PhdCompoundObservation or PhdBitsEnumerationObservation) // for 6.0.0-ballot4 or later
+// * derivedFrom only Reference(PhdNumericObservation or PhdCompoundNumericObservation or PhdCompoundObservation or PhdBitsEnumerationObservation) // for 6.0.0-ballot3
 
 // ------------------------------------------------------------
 // Mapping

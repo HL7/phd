@@ -50,6 +50,8 @@
 <artifact deprecated="true" id="CodeSystem/ContinuaPHD" key="CodeSystem-ContinuaPHD" name="ContinuaPHD"/>
 <artifact deprecated="true" key="Device" name="Device"/>
 <artifact id="CodeSystem/DeviceAlertCategoryCS" key="CodeSystem-DeviceAlertCategoryCS" name="Device Alert Category Code System"/>
+<artifact id="ValueSet/DeviceAlertCategoryVS" key="ValueSet-DeviceAlertCategoryVS" name="Device Alert Category Value Set"/>
+<artifact id="ValueSet/DeviceAlertConditionVS" key="ValueSet-DeviceAlertConditionVS" name="Device Alert Condition Codes (MDC or ASN1ToHL7)"/>
 <artifact deprecated="true" id="ValueSet/DeviceSystemIdIdentifier" key="ValueSet-DeviceSystemIdIdentifier" name="Device System Id Identifier"/>
 <artifact deprecated="true" id="ValueSet/DeviceTransportIdentifiers" key="ValueSet-DeviceTransportIdentifiers" name="Device Transport Address Identifiers"/>
 <artifact id="ValueSet/DeviceTypes11073MDC" key="ValueSet-DeviceTypes11073MDC" name="Device Type Specialization IEEE 11073-10101 Nomenclature Codes"/>
@@ -84,6 +86,7 @@
 <artifact id="ValueSet/PhdUnitCodeVS" key="ValueSet-PhdUnitCodeVS" name="PHD Unit Codes"/>
 <artifact id="DeviceAlert/bp-device-alert" key="DeviceAlert-bp-device-alert" name="Phd Device Alert for Blood Pressure"/>
 <artifact id="DeviceAlert/spo2-device-alert" key="DeviceAlert-spo2-device-alert" name="Phd Device Alert for SpO2"/>
+<artifact id="DeviceAlert/sensor-displaced-alert" key="DeviceAlert-sensor-displaced-alert" name="Phd Device Alert for a displaced sensor"/>
 <artifact id="DeviceMetric/bp-devicemetric-example" key="DeviceMetric-bp-devicemetric-example" name="Phd Device Metric for Blood Pressure"/>
 <artifact id="DeviceMetric/pulse-rate-ucum-devicemetric-example" key="DeviceMetric-pulse-rate-ucum-devicemetric-example" name="Phd Device Metric for Pulse Rate with UCUM"/>
 <artifact id="StructureDefinition/PhdBaseObservation" key="StructureDefinition-PhdBaseObservation" name="PhdBaseObservation"/>

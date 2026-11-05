@@ -1,43 +1,44 @@
 ## Implementation Notes
+The base [DeviceAlert resource]({{site.data.fhir.path}}devicealert.html) defines the
+general element semantics, the condition/signal state machine, and the search parameters. These
+notes cover only PHD-specific behavior.
 
-<!-- TODO: double check if this information is not already covered in FHIR Core, the formal profile definition or in the intro. -->
+### derivedFrom in this IG
+- `derivedFrom.observation` is restricted to a PhdNumericObservation, PhdCompoundNumericObservation,
+  PhdCompoundObservation, or PhdBitsEnumerationObservation. For a bits observation the triggering
+  status bit is the `component` carrying an ASN1ToHL7 code.
+- `derivedFrom.component` is a Coding matching one of the referenced `Observation.component.code`
+  values — an MDC code for a compound numeric component (e.g. systolic BP), or an ASN1ToHL7 code for
+  a status bit. Omit it when the alert applies to the whole observation.
+- `derivedFrom.limit` is populated by the PHG (from device configuration or patient-specific
+  settings), because ACOM does not transmit limit values.
 
-### Understanding derivedFrom Structure
-The `derivedFrom` element is a backbone element with two key sub-elements:
+### Alert generation pathways
+PhdDeviceAlert resources are produced by the PHG in two ways:
 
-#### observation (required)
-- References the measurement observation that triggered the alert
-- Must reference a PhdNumericObservation, PhdCompoundNumericObservation, or PhdCompoundObservation
-- The actual measured value that exceeded limits is found in the referenced observation's `value[x]` or `component.value[x]`
+- **Limit (threshold) alerts** — the PHG compares a numeric measurement against the applicable
+  limits and, when the value is out of range, creates an alert with an MDC `MDC_EVT_HI`/`MDC_EVT_LO`
+  condition code and a `derivedFrom.limit`. Limits may be device-reported or **patient-specific**
+  values the PHG holds for the subject; because ACOM does not transmit limits, the PHG is the source
+  of the `limit` range. For compound observations, `derivedFrom.component` identifies which component
+  (e.g. systolic BP) breached its limit.
+- **Status-bit alerts** — the PHG inspects the device/sensor status bits reported on a
+  PhdBitsEnumerationObservation. When a bit denotes an alert condition (e.g. `sensor-displaced`,
+  `device-battery-low`, `device-specific-alert`), the PHG creates a `type = technical` alert whose
+  `code` is the ASN1ToHL7 bit code and whose `derivedFrom.component` points at that bit. No `limit`
+  applies.
 
-#### component (optional)
-- Used when the alert applies to a specific component of a compound observation
-- Contains a Coding that matches one of the `Observation.component.code` values in the referenced observation (which will be an MDC code in the context of this IG)
-- Example: For a blood pressure observation with systolic, diastolic, and mean components, this identifies which component (e.g., systolic) triggered the alert
-- If omitted, the alert applies to the overall compound observation 
+### Alert state and timing
+The relationship between `occurrence` (condition timing), `signal.presence`/`signal.activationState`
+(annunciation), and `status` (resource workflow) follows the base resource state machine; see the
+[DeviceAlert resource]({{site.data.fhir.path}}devicealert.html). For PHD,
+`occurrence.start` is typically close to the source observation's `effectiveDateTime`, and a source
+numeric observation in alarm carries `interpretation = in-alarm`.
 
-### Presence vs Status
-Two elements track alert state:
-
-- **presence** (boolean): Is the alert condition currently occurring? (true/false)
-- **status**: Workflow state of the alert resource (in-progress, completed, etc.)
-
-These work together:
-- Active alert: `presence=true`, `status=in-progress`
-- Resolved alert: `presence=false`, `status=completed`
-- Alert acknowledged but still present: `presence=true`, `status=in-progress`, `signal.presence=acknowledged`
-
-### When did the alert occur
-In the `occurrence[x]` element use `occurrenceDateTime` for a specific point in time when the alert occurred, or `occurrencePeriod` for alerts that span a time range. This represents when the condition was detected, is typically close to the `effectiveDateTime` of the referenced observation.
-
-### Query Patterns
-Common queries for DeviceAlert resources:
-
-- Active alerts for a patient: `GET /DeviceAlert?subject=Patient/123&status=in-progress&presence=true`
-- Unacknowledged alerts: `GET /DeviceAlert?acknowledged=false&status=in-progress`
-- High priority alerts: `GET /DeviceAlert?priority=high&status=in-progress`
-- Alerts for specific device: `GET /DeviceAlert?device=Device/456`
-- Alerts by type: `GET /DeviceAlert?type=urn:iso:std:iso:11073:10101|196648` (high range alerts)
+### Querying
+The standard DeviceAlert search parameters apply. A PHD-specific use is searching by condition code,
+e.g. `GET /DeviceAlert?code=urn:iso:std:iso:11073:10101|196648` (high range alerts), or by an
+ASN1ToHL7 status code.
 
 ### Compatibility Considerations
 For systems transitioning from the earlier SimpleAlerting extension approach:
@@ -48,7 +49,10 @@ For systems transitioning from the earlier SimpleAlerting extension approach:
    - Extension `currentLimits` → DeviceAlert `derivedFrom.limit`
    - Extension `alertOperationalState` → DeviceAlert `signal.activationState` and `signal.type`
    - Extension `thresholdNotificationText` → DeviceAlert `label`
-   - Observation `interpretation` (in-alarm) → DeviceAlert `presence=true`
+   - Observation `interpretation` (in-alarm) → DeviceAlert `signal.presence=on`
+4. **ASN.1 status bits**: Measurement-embedded alert bits from the ASN1ToHL7 code system map as follows:
+   - `lim-alert-off`, `lim-low-off`, `lim-high-off` (limit alerting disabled) → no DeviceAlert is generated while disabled; an existing DeviceAlert for that limit has `signal.activationState = off`.
+   - `device-specific-alert` (a device-specific alert condition is present) → generate a DeviceAlert with the appropriate partition-3 condition `code` and a `derivedFrom` reference to the source observation.
 
 ### Best Practices
 

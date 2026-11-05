@@ -9,3 +9,5 @@ The mapping sections require knowledge of the IEEE 11073-10206 model and are int
    - [IEEE 11073-10101 Nomenclature Codes](Nomenclaturecodes.html)
    - [Generating the Timestamp part of the Observation Identifier](GeneratingtheTimeStampPartIdentifier.html)
  - [Non-IEEE 11073-10206 PHD Devices](Non11073PHDDevices.html)
+
+PHG implementers that generate device alerts should follow the two alert-generation pathways — threshold/limit alerts on numeric observations and device/sensor status-bit alerts — described in the [PhdDeviceAlert profile](StructureDefinition-PhdDeviceAlert.html).

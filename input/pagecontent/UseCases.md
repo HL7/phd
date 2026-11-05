@@ -27,3 +27,8 @@ Depending on the service, data privacy requirements may vary—from strict prote
 Use Case: Medical research
 -
 Another use case is participation in medical research. For example, a medical center associated with a large university is conducting a study on memory impairment interventions in the elderly. The study involves the patients participating in adaptive on-line memory ‘games’. The data is collected in association with a home healthcare service. The use of remote monitoring allows the study to collect a large set of data with minimal impact on the involved patients. The automated approach reduces cost, increases sample size, allows the collection of larger amounts of data from each participant, and the minimal impact is likely to result in longer participation times. Data anonymity is often important in such studies. 
+
+Use Case: Alert-driven monitoring
+-
+A remote patient monitoring dashboard surfaces active device alerts so that out-of-range values and device problems are flagged without a clinician having to scan every measurement. The Personal Health Gateway (PHG) raises a [PhdDeviceAlert](StructureDefinition-PhdDeviceAlert.html) when a numeric measurement crosses a configured or patient-specific limit (e.g. high blood pressure, low SpO2), or when a device or sensor reports a technical condition (e.g. sensor displaced, low battery). The dashboard queries for current alerts (for example `GET /DeviceAlert?patient=Patient/123&status=in-progress`), lets staff triage by priority and acknowledge them, and links each alert back to the measurement that triggered it. This allows a small care team to monitor many remotely located patients and respond only when attention is actually needed.
+

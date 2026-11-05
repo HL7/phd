@@ -19,6 +19,7 @@ The design of this mapping is influenced by the needs of remote patient monitori
 * Patients may have more than one PHD and may change PHDs
 * Data will be transferred over the public network
   * Patients may be paying for data rates
+* Alerting is often central to remote patient monitoring. The PHG may hold per-patient thresholds (ACOM does not transmit limit values), evaluate measurements against them, and raise [PhdDeviceAlert](StructureDefinition-PhdDeviceAlert.html) resources when a value is out of range; device and sensor status conditions (e.g. sensor displaced, low battery) become technical alerts.
 
 Based upon these considerations it is advantageous to design an infrastructure which needs as little maintenance as possible and a mapping algorithm which handles as many types of PHD specializations as possible including specializations developed in the future.
 

@@ -1,5 +1,5 @@
 canonical: http://hl7.org/fhir/uv/phd
-# fhirVersion: 6.0.0-ballot4 // not yet available in the IG publisher
+# fhirVersion: 6.0.0-snapshot1 // not yet available in the IG publisher
 fhirVersion: 6.0.0-ballot5
 id: hl7.fhir.uv.phd
 name: PhdImplementationGuide
@@ -115,6 +115,10 @@ resources:
   DeviceAlert/spo2-device-alert:
     name: Phd Device Alert for SpO2
     description: This example is a PhdDeviceAlert generated from a pulse oximeter observation alert condition.
+
+  DeviceAlert/sensor-displaced-alert:
+    name: Phd Device Alert for a displaced sensor
+    description: This example is a technical PhdDeviceAlert derived from a pulse oximeter device-status bit (ASN1ToHL7 sensor-displaced), illustrating a status-bit alert rather than a threshold alert.
    
   # Example ObservationDefinition
   ObservationDefinition/bp-observation-definition-example:
@@ -349,6 +353,7 @@ groups:
       - ObservationDefinition/bp-observation-definition-example
       - DeviceAlert/bp-device-alert
       - DeviceAlert/spo2-device-alert
+      - DeviceAlert/sensor-displaced-alert
       
 # Page structure
 pages:
@@ -395,6 +400,7 @@ parameters:
   special-url:
     - http://terminology.hl7.org/CodeSystem/ASN1ToHL7
     - http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers
-    - http://terminology.hl7.org/CodeSystem/devicealert-category
+    - http://terminology.hl7.org/CodeSystem/phd-devicealert-category
+    - http://terminology.hl7.org/ValueSet/phd-devicealert-category
 
 

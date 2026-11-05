@@ -12,11 +12,12 @@ The resource conforms to the `PhdDeviceAlert` profile, which is based on the FHI
 - **Type Code**: MDC_EVT_HI (196648) from IEEE 11073-10101 nomenclature
 - Indicates a "high" alert event, meaning the measured value exceeded the upper threshold limit
 
-### 3. **Alert Categories**
-<!-- TODO: define appropriate categories for PHD Alerts -->
-The alert is categorized as:
-- **Vital Signs**: Standard FHIR observation category
-- **PHD**: Personal Health Device category specific to the PHD implementation guide
+### 3. **Alert Category**
+The optional `category` element provides a coarse, high-level grouping of the alert for
+filtering and routing, bound to the [Device Alert Category Value Set](ValueSet-DeviceAlertCategoryVS.html)
+(e.g. battery/power, communication/connectivity, measurement-validity). The physiological
+vs. technical distinction is carried separately by `type`. Because this example is a
+physiological threshold alert, no operational `category` is set.
 
 ### 4. **Alert Derivation**
 The alert references the source measurement observation via the `derivedFrom` element:
@@ -26,9 +27,8 @@ The alert references the source measurement observation via the `derivedFrom` el
 
 This structure allows the alert to be associated with a specific component of a compound observation, making it clear that the alert applies to systolic BP rather than diastolic or mean BP.
 
-### 5. **Alert Status and Presence**
-- **Status**: "in-progress" - indicates the alert is currently active
-- **Presence**: true - confirms the alert condition is currently occurring
+### 5. **Alert Status**
+- **Status**: "in-progress" - the alert resource is currently active; the condition is ongoing (`occurrence` has no end)
 
 ### 6. **Alert Label**
 The `label` element provides a human-readable description: "Systolic BP > 140 mm[Hg]", which combines information about the measurement type, the threshold, and the alert condition.
