@@ -7,9 +7,9 @@ name: IG Build (pinned IG Publisher)
 
 on:
   push:
-    branches: [ R6 ]
+    branches: [ FHIR-R6 ]
   pull_request:
-    branches: [ R6 ]
+    branches: [ FHIR-R6 ]
   workflow_dispatch:
     inputs:
       publisher_version:
