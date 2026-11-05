@@ -1,0 +1,89 @@
+name: IG Build (pinned IG Publisher)
+
+# Builds the IG with a PINNED IG Publisher version (default 2.3.4, which still
+# accepts fhirVersion 6.0.0-ballot5). This is a self-hosted pipeline — it does
+# NOT replace the official HL7 auto-ig-builder (which always uses the latest
+# publisher and cannot be pinned).
+
+on:
+  push:
+    branches: [ R6 ]
+  pull_request:
+    branches: [ R6 ]
+  workflow_dispatch:
+    inputs:
+      publisher_version:
+        description: "IG Publisher release tag to use"
+        default: "2.3.4"
+      tx:
+        description: 'Terminology server: "default" or "n/a" to skip tx'
+        default: "default"
+
+env:
+  # On push/PR there are no inputs, so this falls back to the pinned default.
+  PUBLISHER_VERSION: ${{ github.event.inputs.publisher_version || '2.3.4' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Node (for SUSHI)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Set up Ruby (for Jekyll)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+
+      - name: Install Jekyll
+        run: gem install jekyll bundler
+
+      - name: Download pinned IG Publisher ${{ env.PUBLISHER_VERSION }}
+        run: |
+          mkdir -p input-cache
+          curl -fL -o input-cache/publisher.jar \
+            "https://github.com/HL7/fhir-ig-publisher/releases/download/${PUBLISHER_VERSION}/publisher.jar"
+          java -jar input-cache/publisher.jar -version 2>/dev/null \
+            | grep -i "IG Publisher Version" || true
+
+      - name: Build IG
+        # The R6 extensions/terminology .r6 packages are not yet published, so the
+        # publisher exits non-zero on that unavoidable dependency-version error.
+        # Keep going so the QA report and output are still uploaded.
+        continue-on-error: true
+        run: |
+          TXARG=""
+          if [ "${{ github.event.inputs.tx }}" = "n/a" ]; then TXARG="-tx n/a"; fi
+          java -Xmx4g -jar input-cache/publisher.jar -ig ig.ini $TXARG
+
+      - name: Upload QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa
+          path: |
+            output/qa.html
+            output/qa.txt
+          if-no-files-found: ignore
+
+      - name: Upload full IG output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-output
+          path: output
+          if-no-files-found: ignore
