@@ -23,6 +23,17 @@ env:
   # On push/PR there are no inputs, so this falls back to the pinned default.
   PUBLISHER_VERSION: ${{ github.event.inputs.publisher_version || '2.3.4' }}
 
+# Needed for the GitHub Pages deployment job.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; don't cancel an in-flight one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -87,3 +98,23 @@ jobs:
           name: ig-output
           path: output
           if-no-files-found: ignore
+
+      - name: Package output for GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  # Publishes the built site to GitHub Pages. Runs only on push/manual dispatch
+  # (not on pull_request, to avoid overwriting the live site from a PR).
+  deploy-pages:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
