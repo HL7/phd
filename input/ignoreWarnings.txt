@@ -9,7 +9,7 @@ Best Practice Recommendation: In general, all observations should have a perform
 # No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
 # This informational message is due to inheriting this extension from the core specification.
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.4.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
 
 # These six code systems are PHD specific. A TSMG exemption is not yet required due to the IG maturity level being less than 3, but will be requested together with a next update of this IG.
 INFORMATION: CodeSystem/ACMEIncPrivateMDCCodes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
