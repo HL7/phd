@@ -36,7 +36,7 @@
   "category": {
     "coding": [
       {
-        "system": "http://hl7.org/fhir/metric-category",
+        "system": "http://terminology.hl7.org/CodeSystem/metric-category",
         "code": "measurement"
       }
     ]

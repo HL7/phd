@@ -10,7 +10,7 @@ padding: 6px;}</style>
 |ACOM PHD attribute|FHIR Device element|
 |---|---|
 |SystemInfo.System-identifier and/or *transport address* |`identifier`|
-|*Friendly name*|`deviceName`|
+|*Friendly name*|`name`|
 |System-Type-Spec-List|`specializations`|
 |SystemInfo.serial-number|`serialNumber`|
 |SystemInfo.firmware-revision|`version.value`, `version.type` = MDC_ID_PROD_SPEC_FW|
@@ -18,6 +18,8 @@ padding: 6px;}</style>
 |SystemInfo.software-revision|`version.value`, `version.type` = MDC_ID_PROD_SPEC_SW|
 |Clock attributes|`property` elements|
 |Power source attributes|`property` elements|
+
+In FHIR R6, a PHD's friendly name is represented by `Device.name`. Its `name.type` coding uses the THO Device Name Type code system, `http://terminology.hl7.org/CodeSystem/device-nametype`; use `user-friendly-name` for a name intended to help users identify the device. The earlier core URL `http://hl7.org/fhir/device-nametype` is not defined in FHIR 6.0.0-snapshot1.
 
 The transport address and friendly name are not provided by the SystemInfo but come from the transport protocols. They may not be available and are therefore optional. However, if the PHD does not report a System-identifier, which may happen if one needs to map non-certified and/or proprietary devices, a transport address should be reported. It is anyway recommended that the transport address is reported as it is often beneficial to the data consumers. Transport addresses of wireless devices are often printed on the device or the device packaging whereas the System-identifier is not. Most PHD transports provide a means of obtaining a transport address or an equivalent identifier such as a Bluetooth device address. 
 

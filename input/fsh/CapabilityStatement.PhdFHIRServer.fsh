@@ -12,7 +12,7 @@ Usage: #definition
 * contact.telecom.value = "http://hl7.org/fhir"
 // * description = "Specifies the capabilities of a FHIR server supporting the PHD IG."
 * kind = #requirements
-* fhirVersion = #6.0.0-ballot5
+* fhirVersion = #6.0.0-snapshot1
 * format[0] = #json
 * format[+] = #xml
 * rest.mode = #server

@@ -1,6 +1,6 @@
 canonical: http://hl7.org/fhir/uv/phd
-# fhirVersion: 6.0.0-snapshot1 // not yet available in the IG publisher
-fhirVersion: 6.0.0-ballot5
+fhirVersion: 6.0.0-snapshot1
+# fhirVersion: 6.0.0-ballot5
 id: hl7.fhir.uv.phd
 name: PhdImplementationGuide
 title: Personal Health Device Implementation Guide
@@ -27,7 +27,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 
 dependencies:
   hl7.terminology.r5:
-    version: 7.4.0
+    version: 7.5.0
     reason: R6 terminology package not yet available
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
   hl7.fhir.uv.extensions:
