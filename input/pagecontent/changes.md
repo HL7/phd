@@ -1,4 +1,32 @@
 
+## Major Updates in version 3.0.0 since version 2.0.1
+
+### FHIR R6 Migration
+
+1. **FHIR R6 Support**: Migrated the IG from FHIR R4 (4.0.1) to FHIR R6. Updated the PHD, PHG, Observation, and DeviceMetric profiles and examples to match the R6 resource model, including Device fields such as `conformsTo`, `deviceVersion`, and multiple `type` codings.
+
+2. **Updated Gateway References**: Updated PHD Observation profiles to use the R6 `device-gateway` extension with a `CodeableReference` to the PHG Device.
+
+### Alert Modeling
+
+3. **Dedicated Device Alert Profile**: Added the `PhdDeviceAlert` profile to represent alert conditions as separate FHIR `DeviceAlert` resources. It supports both threshold alerts associated with measurements and technical alerts derived from device or sensor status bits.
+
+4. **Alert Terminology and Examples**: Added alert condition and category value sets, plus examples for a blood-pressure threshold alert and a sensor-displaced alert. Alerts can reference their source observation and, where applicable, the component that triggered them.
+
+### Measurement and Time Handling
+
+5. **Explicit Unit Validation**: Added `PhdUnitCodeVS`, combining UCUM and MDC units, and profile constraints to keep the unit system and code coherent. UCUM remains preferred; MDC units are also supported.
+
+6. **Local-Time Timestamp Support**: Coincident Timestamp Observations can now carry a PHD wall-clock time as a string when it has no time-zone offset. Constraints validate that this form is used only for absolute-time clocks and follows the specified local-time format.
+
+### Examples and Guidance
+
+7. **Expanded R6 Examples and Documentation**: Updated examples and implementation guidance for R6, including a blood-pressure `ObservationDefinition`, DeviceMetric examples, and additional detail on alert generation and consumers of PHD profiles.
+
+## Updates in version 2.0.1 since version 2.0.0
+
+Restored the missing introduction and notes pages for the Coincident Timestamp Observation profile.
+
 ## Major Updates in version 2.0.0 since version 1.1.0
 
 ### Standards Foundation Updates
