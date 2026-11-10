@@ -1,9 +1,9 @@
-## Implementation Notes
+### Implementation Notes
 The base [DeviceAlert resource]({{site.data.fhir.path}}devicealert.html) defines the
 general element semantics, the condition/signal state machine, and the search parameters. These
 notes cover only PHD-specific behavior.
 
-### derivedFrom in this IG
+#### derivedFrom in this IG
 - `derivedFrom.observation` is restricted to a PhdNumericObservation, PhdCompoundNumericObservation,
   PhdCompoundObservation, or PhdBitsEnumerationObservation. For a bits observation the triggering
   status bit is the `component` carrying an ASN1ToHL7 code.
@@ -13,7 +13,7 @@ notes cover only PHD-specific behavior.
 - `derivedFrom.limit` is populated by the PHG (from device configuration or patient-specific
   settings), because ACOM does not transmit limit values.
 
-### Alert generation pathways
+#### Alert generation pathways
 PhdDeviceAlert resources are produced by the PHG in two ways:
 
 - **Limit (threshold) alerts** — the PHG compares a numeric measurement against the applicable
@@ -28,19 +28,19 @@ PhdDeviceAlert resources are produced by the PHG in two ways:
   `code` is the ASN1ToHL7 bit code and whose `derivedFrom.component` points at that bit. No `limit`
   applies.
 
-### Alert state and timing
+#### Alert state and timing
 The relationship between `occurrence` (condition timing), `signal.presence`/`signal.activationState`
 (annunciation), and `status` (resource workflow) follows the base resource state machine; see the
 [DeviceAlert resource]({{site.data.fhir.path}}devicealert.html). For PHD,
 `occurrence.start` is typically close to the source observation's `effectiveDateTime`, and a source
 numeric observation in alarm carries `interpretation = in-alarm`.
 
-### Querying
+#### Querying
 The standard DeviceAlert search parameters apply. A PHD-specific use is searching by condition code,
 e.g. `GET /DeviceAlert?code=urn:iso:std:iso:11073:10101|196648` (high range alerts), or by an
 ASN1ToHL7 status code.
 
-### Compatibility Considerations
+#### Compatibility Considerations
 For systems transitioning from the earlier SimpleAlerting extension approach:
 
 1. **Migration Path**: Existing observations with SimpleAlerting extensions can be transformed into separate DeviceAlert resources
@@ -54,7 +54,7 @@ For systems transitioning from the earlier SimpleAlerting extension approach:
    - `lim-alert-off`, `lim-low-off`, `lim-high-off` (limit alerting disabled) → no DeviceAlert is generated while disabled; an existing DeviceAlert for that limit has `signal.activationState = off`.
    - `device-specific-alert` (a device-specific alert condition is present) → generate a DeviceAlert with the appropriate partition-3 condition `code` and a `derivedFrom` reference to the source observation.
 
-### Best Practices
+#### Best Practices
 
 1. **Always provide derivedFrom**: Link alerts to their source observations for traceability
 2. **Use component for compound observations**: Be specific about which component triggered the alert
@@ -65,7 +65,7 @@ For systems transitioning from the earlier SimpleAlerting extension approach:
 7. **Use standard MDC codes**: Ensure interoperability with IEEE 11073 ecosystem
 8. **Update status appropriately**: Mark alerts as completed when conditions resolve
 
-### Limitations
+#### Limitations
 
 1. **Single component per derivedFrom**: If multiple components of the same observation trigger alerts, create separate derivedFrom entries or separate DeviceAlert resources
 2. **Limit precision**: The limit element is a Range with Quantity values, which may not capture all complexity of alert logic (e.g., rate-of-change alerts, multi-condition alerts)

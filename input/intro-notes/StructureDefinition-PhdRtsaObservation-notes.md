@@ -34,10 +34,10 @@ Using the variables 'b' and 's' as defined above the mapping to the FHIR Observa
 |Actual-range.*lower-limit*|`valueSampledData.lowerLimit`|
 
 
-### Additional Sample Array Attributes
+#### Additional Sample Array Attributes
 All additional attributes such as accuracy that may be reported in a numerical observation may also be present in a Sample Array Observation and are mapped to FHIR in the same way. See the [Additional Numerical Measurement Information](StructureDefinition-PhdNumericObservation.html#additional-numerical-measurement-information) for more information on these attributes.
 
-## Consumers of the RTSA Profile
+#### Consumers of the RTSA Profile
 About the only work a consumer of this profile needs to do is to back-scale the `valueSampledData.data` values to the original values reported by the sensor. The following table summarizes where a reader can obtain the most pertinent information.
 
 |information|Data element in Observation|

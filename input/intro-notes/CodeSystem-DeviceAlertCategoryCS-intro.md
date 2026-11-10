@@ -2,7 +2,7 @@ This code system defines high-level categories for alerts represented in the PHD
 
 The detailed list of codes, displays, and definitions is maintained in the CodeSystem content itself. This intro focuses on intended use rather than repeating terminology entries.
 
-## Implementation Notes
+### Implementation Notes
 
 - Use category for coarse grouping, filtering, and routing of alerts.
 - Use DeviceAlert.type for the specific alert condition.
