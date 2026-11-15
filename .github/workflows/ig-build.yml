@@ -1,7 +1,7 @@
 name: IG Build (pinned IG Publisher)
 
-# Builds the IG with a PINNED IG Publisher version (default 2.3.4, which still
-# accepts fhirVersion 6.0.0-ballot5). This is a self-hosted pipeline — it does
+# Builds the IG with a PINNED R6-based IG Publisher version (default 3.0.4).
+# This is a self-hosted pipeline — it does
 # NOT replace the official HL7 auto-ig-builder (which always uses the latest
 # publisher and cannot be pinned).
 
@@ -14,14 +14,14 @@ on:
     inputs:
       publisher_version:
         description: "IG Publisher release tag to use"
-        default: "2.3.4"
+        default: "3.0.4"
       tx:
         description: 'Terminology server: "default" or "n/a" to skip tx'
         default: "default"
 
 env:
   # On push/PR there are no inputs, so this falls back to the pinned default.
-  PUBLISHER_VERSION: ${{ github.event.inputs.publisher_version || '2.3.4' }}
+  PUBLISHER_VERSION: ${{ github.event.inputs.publisher_version || '3.0.4' }}
 
 # Needed for the GitHub Pages deployment job.
 permissions:
