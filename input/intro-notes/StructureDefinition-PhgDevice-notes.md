@@ -16,10 +16,10 @@ The treatment of further optional information in a mock SystemInfo object is sim
 
 If these fields are present they shall be encoded as follows:
 
-##### **Specializations**
-The specializations supported by the PHG may be reported. If reported, they shall be reported in the `Device.specializations` element for each specialization in the same way as in the Phd Device Profile. The `specialization.systemType` element is populated with the MDC code for the specialization and the `specialization.version` element is populated with the version of the specialization.
+##### **Supported Specializations: `Device.conformsTo`**
+The specializations supported by the PHG may be reported in `Device.conformsTo`. Each entry contains an MDC specialization code in `specification.coding` and may include the specialization version in `version`, following the same representation as in the PHD Device Profile.
 
-If the PHG supports multiple versions of the specialization and the uploader wants to report this information, additional specializations entries for the additional versions are made. Alternatively the uploader can leave the version field empty.
+If the PHG supports multiple versions of a specialization and the uploader wants to report them, it can use additional `conformsTo` entries. The version may be left out when it is not reported.
 
 A PHG is often designed to support all current and future PHDs that support a given version of the IEEE 11073-10206 standard. Instead of listing all the specializations individually (which could greatly increase the size of the message) one can use the 'generic' device code. In this case, the `specialization.version` element, if populated, indicates the version of the IEEE 11073-10206 standard. If multiple versions of the IEEE 11073-10206 standard are supported and the uploader wants to report this information, a separate 'generic' entries for each version are reported. Alternatively, the `version` element can be left empty.
 

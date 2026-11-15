@@ -2,9 +2,6 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
-# The spdx-license CodeSystem is draft in FHIR 6.0.0-snapshot1 core; not a problem with this IG
-Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7
-
 # Example observation in this IG are supposed to be device generated with often an unknown performer. There is text in the IG to explain this. The affected example observations / bundles are: bits-observation.json, bundle-continuousnonin.json, bundle-example-1.json, coin-20181119174911.json, coin-20181119202022.json, coin-example-1.json, coin-example-timefault.json, coin-relative-example.json, glucose-1.0.0.4.json, numeric-observation-not-a-number.json, numeric-spotnumeric.json, stringenum-1234.json
 Best Practice Recommendation: In general, all observations should have a performer
 Constraint failed: obs-12: 'All observations SHOULD have a performer (performer.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Observation)
@@ -41,9 +38,6 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 # PocD is not available yet for R6. This warning can be ignored for now. The actual code system dependency will move to FHIR terminology.
 This IG is version 6.0.0-snapshot1, while the IG 'hl7.fhir.uv.pocd' is from version 4.0.1
 
-# Reference to external draft code system...
-Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
-
 # The core UCUM units ValueSet is draft in FHIR 6.0.0-snapshot1; referencing it from PhdUnitCodeVS is expected and not a problem.
 Reference to draft ValueSet http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-snapshot1 from active ValueSet http://hl7.org/fhir/uv/phd/ValueSet/PhdUnitCodeVS|3.0.0-draft
 
@@ -68,8 +62,8 @@ The ImplementationGuide is based on FHIR version 6.0.0-snapshot1 but package hl7
 # partition is a known property of the MDC nomenclature. The IG publisher does not know about it and hence generates this warning. It can be ignored safely.
 No definition can be found for the system urn:iso:std:iso:11073:10101, and the property 'partition' is not a generally known property, so the property might not be valid, or understood by the terminology ecosystem. In case it's useful, the list of generally known properties for all systems is concept,code,status,inactive,effectiveDate,deprecationDate,retirementDate,notSelectable,synonym,comment,itemWeight
 
-# FHIR R6 has experimental features that may trigger warnings in the IG publisher. These warnings can generally be ignored for now.
-information	Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-snapshot1
-
 # Reference to draft SPDX license code system - not used in the IG itself, can be ignored for now.
 Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7 from active ValueSet http://hl7.org/fhir/ValueSet/spdx-license|6.0.0-snapshot1
+
+# The latest PoCD measurement-status CodeSystem is still draft; update this ignore entry when it matures.
+Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0 from active ValueSet http://hl7.org/fhir/ValueSet/observation-interpretation|6.0.0-snapshot1

@@ -18,7 +18,8 @@ The IEEE 11073-10101 nomenclature codes are mapped to FHIR using the `CodeableCo
  - `CodeableConcept.coding.display` = reference identifier (*optional*)
  - `CodeableConcept.text` = additional information about the code (*optional*)
 
-PHGs are not required to populate `CodeableConcept.coding.display` or `CodeableConcept.text` when uploading PHD data. Consumers shall not rely on either element being present and shall interpret the coding from `CodeableConcept.coding.system` and `CodeableConcept.coding.code`.
+PHGs are not required to populate `CodeableConcept.coding.display` or `CodeableConcept.text` when uploading PHD data.
+Consumers should not rely on either element being present and instead interpret the coding from `CodeableConcept.coding.system` and `CodeableConcept.coding.code`.
 
 The reference identifier in the `display` element is optional since the uploader may not know what the code means; for example, if the uploader works with a PHD specialization developed after the uploader had been released. However, this guide encourages that the `display` element contains at least the reference identifier for the MDC code if it is known.
 
@@ -34,10 +35,10 @@ This means, following the mapping above, that the `Observation.code` element is 
   * `Observation.code.coding.display` optional
   * `Observation.code.text` optional
 
-If the Type corresponds to one of the [FHIR Observation Vital Signs Profiles]({{ site.data.fhir.path }}observation-vitalsigns.html), the corresponding LOINC code shall be present in an additional coding element.
+If the Type corresponds to one of the [FHIR Observation Vital Signs Profiles]({{ site.data.fhir.path }}observation-vitalsigns.html), the corresponding LOINC code must be present in an additional coding element.
 
 If the application wishes to transcode the MDC code into other coding systems the application is free to do so but:
-  * the MDC code shall be present in a coding element,
+  * §The MDC code SHALL be present in a coding element.§
   * any other codings may be placed in an additional coding element.
 
 PHGs operating in certain realms may be required to provide translations to a realm-specified coding system. For example, in the United States realm, LOINC is preferred. [RTMMS](https://rtmms.nist.gov/) contains a mapping to LOINC for a subset of the MDC codes.

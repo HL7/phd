@@ -4,10 +4,8 @@ border-collapse:collapse;
 padding: 6px;}</style>
 
 ### PHG created Patient Resource
-A Patient resource for a known or an unknown patient shall be created by the PHG according to this profile. This implies:
-- The Patient resource shall have a `Patient.identifier` element from a known [HL7 v2-0203](http://terminology.hl7.org/CodeSystem/v2-0203) coding system.
-- As an example the `MR` (Medical Record) code from this coding system may be used.
-- The `Patient.identifier.value` element shall contain a value that is unique for the patient in the context of the health care provider.
+§The PHG SHALL use a `Patient.identifier` supplied by the server when one is provided.§ §If the server does not provide an identifier, the PHG SHALL generate an implementation-dependent identifier whose value is unique within its assigning system.§
+- §The type for a PHG-generated patient identifier SHOULD use a suitable code from the [HL7 v2-0203](http://terminology.hl7.org/CodeSystem/v2-0203) coding system.§ The PHG could use `MR` when the patient's medical record number is known to the PHG, or `U` when it generates an implementation-dependent unique identifier.
 
 
 ### Examples:

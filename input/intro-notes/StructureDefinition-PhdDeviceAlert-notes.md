@@ -14,7 +14,7 @@ notes cover only PHD-specific behavior.
   settings), because ACOM does not transmit limit values.
 
 #### Alert generation pathways
-PhdDeviceAlert resources are produced by the PHG in two ways:
+§PHG implementers that generate device alerts SHOULD follow the two alert-generation pathways — threshold/limit alerts on numeric observations and device/sensor status-bit alerts — described in the PhdDeviceAlert profile.§
 
 - **Limit (threshold) alerts** — the PHG compares a numeric measurement against the applicable
   limits and, when the value is out of range, creates an alert with an MDC `MDC_EVT_HI`/`MDC_EVT_LO`

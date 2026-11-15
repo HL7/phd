@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/phd/2026TBD" ciUrl="https://build.fhir.org/ig/HL7/phd" defaultVersion="2.0.0" defaultWorkgroup="dev" gitUrl="https://github.com/HL7/PHD" url="http://hl7.org/fhir/uv/phd">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/phd/2026TBD" ciUrl="https://build.fhir.org/ig/HL7/phd" defaultVersion="2.0.1" defaultWorkgroup="dev" gitUrl="https://github.com/HL7/PHD" url="http://hl7.org/fhir/uv/phd">
 <version code="current" url="https://build.fhir.org/ig/HL7/phd"/>
 <version code="3.0.0-draft" url="http://hl7.org/fhir/uv/phd/2026TBD"/>
+<version code="2.0.1" url="http://hl7.org/fhir/uv/phd/2.0.1"/>
 <version code="2.0.0" deprecated="true" url="http://hl7.org/fhir/uv/phd/STU2"/>
 <version code="2.0.0-ballot2" deprecated="true" url="http://hl7.org/fhir/uv/phd/2025Sep"/>
 <version code="1.1.0" url="http://hl7.org/fhir/uv/phd/STU1.1"/>
@@ -78,6 +79,7 @@
 <artifact id="Observation/meal-context-observation" key="Observation-glucose-1.0.0.4" name="Meal context coded enumeration observation"/>
 <artifact deprecated="true" id="CodeSystem/measurement-status" key="CodeSystem-measurement-status" name="Measurement status codes"/>
 <artifact id="CodeSystem/MissingMDCCodes" key="CodeSystem-MissingMDCCodes" name="Missing MDC Codes"/>
+<artifact id="Requirements/fromNarrative" key="Requirements-fromNarrative" name="Narrative Conformance Statements"/>
 <artifact id="StructureDefinition/Accuracy" key="StructureDefinition-Accuracy" name="Numeric Accuracy"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="Observation/numeric-observation-not-a-number" key="Observation-nan-1.0.0.42" name="Observation with NaN measurement"/>
@@ -140,6 +142,7 @@
 <page deprecated="true" key="coinFault" name="Coincident Time Stamp with a time fault"/>
 <page deprecated="true" key="coincidentTime" name="Coincident Time Stamp: PHG best synchronized"/>
 <page deprecated="true" key="bloodPress" name="Compound Measurement"/>
+<page key="Conformance" name="Conformance"/>
 <page key="ProfileConsumers" name="Consuming the PHD Profile FHIR Resources"/>
 <page key="DIMtoFHIRMapping" name="DIM to FHIR Mapping"/>
 <page deprecated="true" key="DIMtoFHIRMappingDetails" name="DIM to FHIR Mapping: Details"/>
