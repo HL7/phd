@@ -27,7 +27,7 @@
     { "key": "17", "conformance": ["SHOULD"], "requirement": "In FHIR, the session Observation SHOULD have hasMember references to all observations that are part of the session." },
     { "key": "18", "conformance": ["SHALL"], "requirement": "PHGs SHALL include a category element with a fixed coding as specified by the profile." },
     { "key": "19", "conformance": ["SHOULD"], "requirement": "Vital-sign Observations SHOULD include a category element as defined by the Vital Signs profile." },
-    { "key": "20", "conformance": ["SHOULD"], "requirement": "When encoding numeric Observation quantities in FHIR, the PHG SHOULD follow the precision indicated by the PHD's IEEE 11073 FLOAT or SFLOAT encoding." },
+    { "key": "20", "conformance": ["SHALL"], "requirement": "When encoding numeric Observation quantities in FHIR, the PHG SHALL follow the precision indicated by the PHD's IEEE 11073 FLOAT or SFLOAT encoding." },
     { "key": "21", "conformance": ["SHOULD"], "requirement": "However, if the PHD does not report a System-identifier, which may happen if one needs to map non-certified and/or proprietary devices, a transport address SHOULD be reported." },
     { "key": "22", "conformance": ["SHALL"], "requirement": "When a PHG encounters such a device it SHALL provide a transport address as a means of uniquely identifying the PHD." },
     { "key": "23", "conformance": ["SHALL"], "requirement": "The Accuracy attribute SHALL be reported if the PHD provides it." },
