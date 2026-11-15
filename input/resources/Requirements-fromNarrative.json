@@ -12,7 +12,7 @@
     { "key": "2", "conformance": ["SHALL"], "requirement": "When an equivalent UCUM code is known, this UCUM code SHALL be used." },
     { "key": "3", "conformance": ["SHALL"], "requirement": "An implementation SHALL use the MDC code if it does not know the UCUM code for the given unit." },
     { "key": "4", "conformance": ["SHALL"], "requirement": "The converted effective[x] SHALL retain fractional-second precision consistent with the PHD's tick resolution, so that time differences between observations are preserved." },
-    { "key": "5", "conformance": ["SHOULD"], "requirement": "The derived Observation SHOULD reference the source waveform Observation using Observation.derivedFrom." },
+    { "key": "5", "conformance": ["SHOULD"], "requirement": "A derived RR interval Observation SHOULD reference the source ECG waveform Observation using Observation.derivedFrom." },
     { "key": "6", "conformance": ["SHALL"], "requirement": "The MDC code SHALL be present in a coding element." },
     { "key": "7", "conformance": ["SHOULD"], "requirement": "Because PHDs often have unreliably set clocks, a PHD that generates measurements with timestamps SHOULD provide a means for the PHG to determine the PHD's current time and clock status information, such as its synchronization state." },
     { "key": "8", "conformance": ["SHOULD"], "requirement": "This measurement SHOULD contain a derived-from reference pointing to the measurement containing the glucose concentration." },
