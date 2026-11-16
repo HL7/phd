@@ -23,6 +23,8 @@
 
 7. **Expanded R6 Examples and Documentation**: Updated examples and implementation guidance for R6, including a blood-pressure `ObservationDefinition`, DeviceMetric examples, and additional detail on alert generation and consumers of PHD profiles.
 
+8. **Conformance Table**: Added a Conformance page summarizing the testable, free-text conformance statements in the Implementation Guide.
+
 ## Updates in version 2.0.1 since version 2.0.0
 
 Restored the missing introduction and notes pages for the Coincident Timestamp Observation profile.
