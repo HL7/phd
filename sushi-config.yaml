@@ -395,6 +395,8 @@ pages:
     title: Appendix
   changes.md:
     title: Change Log
+    jira-change-log.md:
+      title: Jira Change Log
 
 
 # Additional parameters
