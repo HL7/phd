@@ -5,7 +5,7 @@
     "mode" : "working",
     "status": "ballot",
     "sequence": "STU 3",
-    "desc": "STU 3 - draft1. This version is based on IEEE 11073-10206 - ACOM with Bluetooth GHS support and FHIR R6.",
+    "desc": "STU 3 - ballot. This version is based on IEEE 11073-10206 - ACOM with Bluetooth GHS support and FHIR R6.",
     "changes" : "input/pagecontent/changes.md",
     "first" : false
   }
