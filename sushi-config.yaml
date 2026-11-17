@@ -389,6 +389,8 @@ pages:
         title: Generating the PHD Reported Timestamp Identifier
     Non11073PHDDevices.md:
       title: Non IEEE 11073 PHD Devices
+  Conformance.md:
+    title: Conformance
   Appendix.md:
     title: Appendix
   changes.md:

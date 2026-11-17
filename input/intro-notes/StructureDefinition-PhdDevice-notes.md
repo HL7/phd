@@ -1,7 +1,7 @@
 The section below describe the profiled elements in more detail.
 
 ### System Identifier → `Device.identifier`
- All IEEE 11073-10206 PHDs are required to have a system identifier. This usually is an EUI-64 consisting of 8 bytes. The EUI-64 is mapped to the FHIR `Device.identifier.value` element as a sequence of 8 2-digit capitalized HEX characters separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required by IEEE 11073-10206, it is not required in the Bluetooth Low Energy health device specifications. When a PHG encounters such a device it shall provide a transport address as a means of uniquely identifying the PHD. Supported transport addresses are Bluetooth and ZigBee. The Bluetooth address is an EUI-48, and the ZigBee address is an EUI-64. These will be encoded as strings just as the EUI-64. 
+All IEEE 11073-10206 PHDs are required to have a system identifier. This usually is an EUI-64 consisting of 8 bytes. The EUI-64 is mapped to the FHIR `Device.identifier.value` element as a sequence of 8 2-digit capitalized HEX characters separated by dashes without the '0x' prefix commonly used in programming languages. An example of such a string is FE-ED-AB-EE-DE-AD-77-C3. Though required by IEEE 11073-10206, it is not required in the Bluetooth Low Energy health device specifications. §When a PHG encounters such a device it SHALL provide a transport address as a means of uniquely identifying the PHD.§ Supported transport addresses are Bluetooth and ZigBee. The Bluetooth address is an EUI-48, and the ZigBee address is an EUI-64. These will be encoded as strings just as the EUI-64.
 
 In order to discriminate between an identifier that is a system id and that which is a transport address the `identifier.type` element is used. A dedicated CodeSystem [Device Identifier Codes](CodeSystem-ContinuaDeviceIdentifiers.html) has the codes one can use to populate the `identifier.type.coding.code` element.
 
@@ -33,20 +33,21 @@ An example of a system identifier is:
 The UDI of a device consists of a Device Identifier (DI) and a Production Identifier (PI). The DI is the part of the UDI that identifies the specific model of the device. The PI is used to identify the specific instance of the device, such as its serial number or lot number. When the PI includes a serial number it identifies a specific instance of the devices of the model as specified by the DI. 
 
 ### `Device.type`
- The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does is found in the `Device.specialization` element. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In IEEE 11073-10201 this code is described as indicating "a single-purpose medical device".
+ The Device type is the same for all PHDs and it indicates that the device is a PHD. The details of what the PHD does are found in the `Device.conformsTo` entries. The MDC code being used is 65573 (reference id MDC_MOC_VMS_MDS_SIMP). In IEEE 11073-10201 this code is described as indicating "a single-purpose medical device".
 
 An example of a `Device.type` encoding is:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:type %}
 
 The `display` element is optional but is recommended.
 
-### System Type Spec List &rarr; `Device.specialization`
- The System-Type-Spec-List attribute contains a list of specializations the PHD complies to. The elements in the list indicate not only what the PHD does, but that it does so in a manner specified in the specialization documents.  Each element in the list contains the specialization and its version. In most cases there is just one entry in the list.
-The specialization is an MDC code for a PHD device specialization. The version is encoded as a integer number. In FHIR the code and version are encoded in the `Device.specialization` element as follows:
+### System-Type-Spec-List &rarr; `Device.conformsTo`
+The System-Type-Spec-List attribute contains the specializations with which the PHD complies. Each entry indicates what the PHD does and the specialization standard it follows. In most cases there is one entry.
+
+Each `Device.conformsTo` entry represents one specialization. Its `specification.coding` contains the MDC specialization code, and its `version` contains the specialization version.
 
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:conformsTo %}
 
-The `display` element containing the reference Id is optional, but is recommended. The `text` element is optional as well and could contain a human-readable description of the specialization.
+The `specification.coding.display` element containing the reference ID is optional but recommended. The `specification.text` element is also optional and can contain a human-readable description of the specialization.
 
 The MDC_DEV_SPEC_PROFILE_GENERIC 'generic' device on the PHD side indicates that the device follows the IEEE 11073-10206 ACOM standard but not any specific specialization. On the PHG side it indicates that the PHG understands anything following the IEEE 11073-10206 standard. That would include all specializations since all specializations comply with the IEEE 11073-10206 standard.
 
@@ -114,7 +115,7 @@ For the Consumer of this profile the following table gives a quick guide to the 
 
 |item|Device resource element|value
 |---|---|---|
-|Type of device|`specialization.systemType.coding.code`| MDC code for device specialization|
+|Type of device|`conformsTo.specification.coding.code`| MDC code for device specialization|
 |Manufacturer name|`manufacturer`|string
 |Model number|`modelNumber`|string
 |Serial number|`serialNumber`|string

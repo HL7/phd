@@ -13,7 +13,7 @@ IEEE 11073-10206 numeric observations have some additional optional attributes t
 These optional attributes are seldom used directly by PHDs and are mapped to FHIR extensions. 
 
 ##### Accuracy
-The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement. It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation.  See [Accuracy extension](StructureDefinition-Accuracy.html).
+The Accuracy attribute gives the maximum deviation as an absolute value of the reported measurement from the actual measurement. §The Accuracy attribute SHALL be reported if the PHD provides it.§ When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation. See [Accuracy extension](StructureDefinition-Accuracy.html).
 The accuracy is reported in the same unit as the measurement itself. An example of an accuracy entry for a thermometer is shown below:
 
 {% fragment Observation/temperature-observation JSON EXCEPT:extension[3] %}
@@ -22,7 +22,7 @@ The accuracy is reported in the same unit as the measurement itself. An example 
 
 #### Measurement Confidence 95
 The Measurement-Confidence-95 gives a lower and upper bound with which the manufacturer is 95% confident that the actual reported measurement is within that bounds. The Measurement Confidence 95 applies only to measurement values that are quantities. It is supported by the IEEE 11073-20601 specification, but not by the IEEE 11073-10206 ACOM specification. 
-It shall be reported if the PHD provides it. When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation. See [Confidence95 extension](StructureDefinition-Confidence95.html). The range is encoded in an `Extension.valueRange` element. The ranges have the same units as the primary measurement.
+§Measurement-Confidence-95 SHALL be reported if the PHD provides it.§ When static it can be reported as an extension in a Device Metric, otherwise it is reported as an extension of an Observation. See [Confidence95 extension](StructureDefinition-Confidence95.html). The range is encoded in an `Extension.valueRange` element. The ranges have the same units as the primary measurement.
 The IEEE 11073-20601 Measurement-Confidence-95 component is currently used only in the Continuous Glucose specialization.  An example of a Measurement Confidence 95 entry is shown below:
 
 {% fragment Observation/glucose-observation JSON EXCEPT:extension[2] %}
@@ -39,7 +39,7 @@ The consumer of this profile does not need to concern itself with the complexiti
 
 | **Measurement Item**         | **Element**                              | **Additional Information**                                                                                     |
 |-------------------------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Measurement type              | `Observation.code.coding.code`          | There shall be one `coding` element using the MDC coding system.<br>If a vital sign, there will be an additional `coding` element using one of the LOINC vital-signs codes. |
+| Measurement type              | `Observation.code.coding.code`          | §There SHALL be one `coding` element using the MDC coding system.§<br>§If the measurement is a vital sign, an additional `coding` element SHALL use a LOINC vital-sign code.§ |
 | Measurement value             | `Observation.valueQuantity.value`       | The value has the precision of the original. measurement.                                                               |
 | Measurement units             | `Observation.valueQuantity.code`        | FHIR uses the UCUM coding system.                                                                                       |
 | Error                         | `Observation.dataAbsentReason`          | Contains error code. If present, no `Observation.valueQuantity` is present.                                    |

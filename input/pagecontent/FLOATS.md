@@ -6,6 +6,8 @@ Thus, it is possible in this encoding to distinguish between the value 2, 2.0, 2
 
 The Bluetooth GHS specifications only use FLOATs to encode quantitative values; the IEEE 11073-20601 specification uses both FLOATs and SFLOATs.
 
+§When encoding numeric Observation quantities in FHIR, the PHG SHALL follow the precision indicated by the PHD's IEEE 11073 FLOAT or SFLOAT encoding.§ This applies to both `Observation.valueQuantity.value` and `Observation.component.valueQuantity.value`.
+
 #### FLOAT Encoding
 The table below gives some examples of FLOAT values and how they shall be encoded into the FHIR valueQuantity.value:
 

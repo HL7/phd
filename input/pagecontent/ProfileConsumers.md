@@ -356,7 +356,7 @@ The PHD Device resource contains the following information about the PHD in the 
    - software version
    - protocol version
    - Continua version
- - **`Device.specialization`**
+ - **`Device.conformsTo`**
    - **Specialization (Blood pressure, thermometer, etc.)**
    - **Specialization version**
  - `Device.property`
@@ -401,8 +401,8 @@ Below is an example of the different versions exposed by a PHD:
 {% fragment Device/phd-74E8FFFEFF051C00.001C05FFE874 JSON EXCEPT:deviceVersion %}
 
 
-#### Specializations
-The `Device.specialization` entry is probably the entry most consumers will want to inspect. This entry states what kind of measurements the PHD takes. It is this entry that tells the consumer if the PHD is a blood pressure cuff, heart rate monitor, pulse oximeter. PHDs can support multiple specializations. This element shall always be populated.
+#### Specialization Conformance: `Device.conformsTo`
+The `Device.conformsTo` entries state which specialization standards the PHD supports and help consumers understand the types of measurements it can take. PHDs can support multiple specializations. §For a PHD, `Device.conformsTo` SHALL contain at least one MDC specialization entry.§
 
 In IEEE 11073-10206 ACOM specializations are, in addition to a general description of what the PHD is, standards. The specialization standards are a refinement of the generic standard, and have versions.
 
@@ -494,7 +494,7 @@ The uploaded Patient resource is following the Phd Patient Profile as defined [h
 
 There is only one additional required entry in the Phd Patient Profile; the Patient.identifier. Note that some systems do not send patient identifiable information, but instead map the device id to the patient at the backend.
 
-When a Patient resource is uploaded, the `Patient.identifier` entry is required and contains an `identifier.type` using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
+When a Patient resource is uploaded, the `Patient.identifier` entry is required and is recommended to contain an `identifier.type` using the [Table 0203 identifierType](http://terminology.hl7.org/CodeSystem/v2-0203) code system from HL7 v2. The code entry is generally "MR" for medical record number, but other likely entries are "LR" for local registry or "U" for unspecified identifier. The "U" is also used when handling a "John or Jane Doe" unknown patient. 
 
 The `identifier.value` and `identifier.system` entries are used to quantify the entries of the given identifier.type. For example, the `identifier.system` might be the institution's XDS.b assigning authority and the `identifier.value` the patient record number (also known as the patient identifier). See [IHE Cross-Enterprise Document Sharing](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html).
 
