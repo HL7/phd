@@ -7,8 +7,8 @@ title: Personal Health Device Implementation Guide
 status: active
 language: en-US  
 copyrightYear: 2016+
-releaseLabel: STU 3 - R6  # Change back to R6
-version: 3.0.0-draft
+releaseLabel: STU 3 Ballot
+version: 3.0.0-ballot
 publisher:
   name: HL7 International / Devices
   url: http://www.hl7.org/Special/committees/healthcaredevices
@@ -18,7 +18,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-    valueInteger: 1
+    valueInteger: 2
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: dev
 
@@ -52,6 +52,10 @@ resources:
   CodeSystem/ASN1ToHL7:
     name: ASN1 to HL7 Mapping
     description: Codes for the IEEE 11073-10206 BITs measurement bit values. For example, 150604.0 is the code for bit 0 in measurement type 150604 which is a pulse oximeter status. The description of that code is 'Indicates the device is not connected with the sensor'.
+
+  CodeSystem/DeviceAlertCategoryCS:
+    name: Device Alert Category Code System
+    description: Categories used to classify device alerts for operational filtering and routing.
   
   # Value Sets
   ValueSet/ASN1MeasurementBits:
