@@ -7,8 +7,8 @@ Description: "Reference to a coincident timestamp observation that relates the g
 Context: Observation
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #dev
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-* ^extension[=].valueInteger = 1
+// * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+// * ^extension[=].valueInteger = 1
 // * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
 // * ^extension[=].valueCode = #trial-use
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"

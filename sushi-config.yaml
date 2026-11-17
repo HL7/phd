@@ -7,8 +7,8 @@ title: Personal Health Device Implementation Guide
 status: active
 language: en-US  
 copyrightYear: 2016+
-releaseLabel: STU 3 - R6  # Change back to R6
-version: 3.0.0-draft
+releaseLabel: STU 3 Ballot
+version: 3.0.0-ballot
 publisher:
   name: HL7 International / Devices
   url: http://www.hl7.org/Special/committees/healthcaredevices
@@ -18,7 +18,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-    valueInteger: 1
+    valueInteger: 2
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: dev
 
@@ -274,7 +274,6 @@ groups:
       - CodeSystem/ContinuaPHDInterfaceIDs
       - CodeSystem/DeviceAlertCategoryCS
       - CodeSystem/MissingMDCCodes
-      - CodeSystem/DeviceAlertCategoryCS
       - CodeSystem/PhdObservationCategories
       - ValueSet/ASN1ClockBits
       - ValueSet/ASN1DeviceBits

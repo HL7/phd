@@ -22,11 +22,11 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bodytemp|6.0.0-snapshot1 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # When a Phd compound observation is also a vital sign this warning is generated. The LOINC coding does not match the slice for the MDC coding. This is not a real problem.
-This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice Defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundNumericObservation|3.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdCompoundObservation|3.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This is generated for PhdNumericObservations that use the vital signs category. The vitals sign category element does not match the slice for the `phd` category. This warning can be ignored safely.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|3.0.0-draft (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/phd/StructureDefinition/PhdNumericObservation|3.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # This warning is generated when different categories are required in resources that comply with different profiles like vitals-signs and phd:
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-snapshot1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/phd/CodeSystem/PhdObservationCategories#phd)
@@ -41,11 +41,8 @@ Constraint failed: mdc-1: 'A published MDC Code is preferred but private MDC cod
 # PocD is not available yet for R6. This warning can be ignored for now. The actual code system dependency will move to FHIR terminology.
 This IG is version 6.0.0-snapshot1, while the IG 'hl7.fhir.uv.pocd' is from version 4.0.1
 
-# Reference to external draft code system...
-Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0
-
 # The core UCUM units ValueSet is draft in FHIR 6.0.0-snapshot1; referencing it from PhdUnitCodeVS is expected and not a problem.
-Reference to draft ValueSet http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-snapshot1 from active ValueSet http://hl7.org/fhir/uv/phd/ValueSet/PhdUnitCodeVS|3.0.0-draft
+Reference to draft ValueSet http://hl7.org/fhir/ValueSet/ucum-units|6.0.0-snapshot1 from active ValueSet http://hl7.org/fhir/uv/phd/ValueSet/PhdUnitCodeVS|3.0.0-ballot
 
 # Reference to experimental code system...
 Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-snapshot1
@@ -70,6 +67,3 @@ No definition can be found for the system urn:iso:std:iso:11073:10101, and the p
 
 # FHIR R6 has experimental features that may trigger warnings in the IG publisher. These warnings can generally be ignored for now.
 information	Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-snapshot1
-
-# Reference to draft SPDX license code system - not used in the IG itself, can be ignored for now.
-Reference to draft CodeSystem http://hl7.org/fhir/spdx-license|84728b7 from active ValueSet http://hl7.org/fhir/ValueSet/spdx-license|6.0.0-snapshot1
