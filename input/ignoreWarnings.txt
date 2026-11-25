@@ -67,3 +67,13 @@ Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-typ
 
 # warning due to PoCD IG being draft - can be ignored safely and will go away once PoCD IG is published
 Reference to draft CodeSystem http://hl7.org/fhir/uv/pocd/CodeSystem/measurement-status|0.3.0 from active ValueSet http://hl7.org/fhir/ValueSet/observation-interpretation|6.0.0-snapshot1
+
+# These are informational ConceptMap checks for intentional MDC and LOINC codings used together in PHD observations.
+This CodeableConcept has the codes urn:iso:std:iso:11073:10101#150020 and http://loinc.org#85354-9, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#150020 to 76533-9. Check that these codes belong together
+This CodeableConcept has the codes urn:iso:std:iso:11073:10101#150021 and http://loinc.org#8480-6, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#150021 to 76534-7. Check that these codes belong together
+This CodeableConcept has the codes urn:iso:std:iso:11073:10101#150022 and http://loinc.org#8462-4, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#150022 to 76535-4. Check that these codes belong together
+This CodeableConcept has the codes urn:iso:std:iso:11073:10101#150456 and http://loinc.org#2708-6, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#150456 to 59408-5. Check that these codes belong together
+This CodeableConcept has the codes http://loinc.org#2708-6 and urn:iso:std:iso:11073:10101#150456, but the ConceptMap http://loinc.org/cm/mdc maps http://loinc.org#2708-6 to 150324. Check that these codes belong together
+This CodeableConcept has the codes urn:iso:std:iso:11073:10101#149530 and http://loinc.org#8867-4, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#149530 to 8889-8. Check that these codes belong together
+This CodeableConcept has the codes urn:iso:std:iso:11073:10101#150364 and http://loinc.org#8310-5, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#150364 to 61008-9. Check that these codes belong together
+This CodeableConcept has the codes http://loinc.org#8310-5 and urn:iso:std:iso:11073:10101#150364, but the ConceptMap http://loinc.org/cm/mdc maps http://loinc.org#8310-5 to 150344. Check that these codes belong together
