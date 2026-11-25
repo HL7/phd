@@ -62,6 +62,11 @@
 			{
 				"system": "http://loinc.org",
 				"code": "85354-9"
+			},
+			{
+				"system": "http://loinc.org",
+				"code": "76533-9",
+				"display": "Blood pressure by Noninvasive"
 			}
 		],
 		"text": "Blood pressure"
@@ -90,6 +95,11 @@
 						"system": "urn:iso:std:iso:11073:10101",
 						"code": "150021",
 						"display": "MDC_PRESS_BLD_NONINV_SYS"
+					},
+					{
+						"system": "http://loinc.org",
+						"code": "76534-7",
+						"display": "Systolic blood pressure by Noninvasive"
 					}
 				],
 				"text": "Systolic blood pressure"
@@ -112,6 +122,11 @@
 						"system": "urn:iso:std:iso:11073:10101",
 						"code": "150022",
 						"display": "MDC_PRESS_BLD_NONINV_DIA"
+					},
+					{
+						"system": "http://loinc.org",
+						"code": "76535-4",
+						"display": "Diastolic blood pressure by Noninvasive"
 					}
 				],
 				"text": "Diastolic blood pressure"

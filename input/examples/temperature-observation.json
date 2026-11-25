@@ -84,6 +84,11 @@
             {
                 "system": "http://loinc.org",
                 "code": "8310-5"
+            },
+            {
+                "system": "http://loinc.org",
+                "code": "61008-9",
+                "display": "Body surface temperature"
             }
         ],
         "text": "Body temperature"

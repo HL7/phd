@@ -1,0 +1,1 @@
+This bundle contains repeated pulse-oximetry oxygen-saturation and heart-rate observations. Each retains the general vital-sign LOINC code for interoperability and includes a more-specific LOINC code identifying pulse oximetry as the method, so consumers can use the common vital-sign concept without losing device-method detail.

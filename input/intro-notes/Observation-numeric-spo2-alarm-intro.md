@@ -21,3 +21,5 @@ This example demonstrates the use of the FHIR `Observation` resource to represen
 
 ### Use Case:
 This example is intended for scenarios where continuous monitoring of SpO2 levels is critical, such as in hospital settings or remote patient monitoring. The alerting system ensures timely notifications when SpO2 levels fall below safe thresholds, enabling prompt intervention.
+
+The code retains the general vital-sign LOINC code and also includes the more-specific pulse-oximetry LOINC code. The general code supports interoperability across measurement methods; the specific code preserves how this device obtained the measurement.

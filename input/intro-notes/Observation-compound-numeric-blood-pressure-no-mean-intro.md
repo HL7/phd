@@ -1,0 +1,1 @@
+The blood-pressure observation and its systolic and diastolic components retain general vital-sign LOINC codes and also include more-specific noninvasive-measurement LOINC codes. This supports broad interoperability while preserving how the measurements were obtained.
