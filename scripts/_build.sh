@@ -2,16 +2,17 @@
 
 set -e
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd "${script_dir}/.." && pwd)"
+cd "$repo_root"
+
 # Variables
 dlurl="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar"
 publisher_jar="publisher.jar"
-input_cache_path="$(pwd)/input-cache/"
+input_cache_path="${repo_root}/input-cache/"
 publisher_home="${FHIR_PUBLISHER_HOME:-$HOME/.fhir/tools/publisher}"
 skipPrompts=false
 upper_path="../"
-scriptdlroot="https://raw.githubusercontent.com/HL7/ig-publisher-scripts/main"
-build_bat_url="${scriptdlroot}/_build.bat"
-build_sh_url="${scriptdlroot}/_build.sh"
 
 function check_jar_location() {
   if [ -f "${input_cache_path}${publisher_jar}" ]; then
@@ -84,25 +85,6 @@ function update_publisher() {
     echo "Skipped downloading publisher.jar"
   fi
 
-  update_scripts_prompt
-}
-
-
-function update_scripts_prompt() {
-  if [ "$skipPrompts" = "true" ]; then
-    update_confirm="Y"
-  else
-    read -p "Update scripts (_build.bat and _build.sh)? (Y/N): " update_confirm
-  fi
-  if [[ "$update_confirm" =~ ^[Yy]$ ]]; then
-    echo "Updating scripts..."
-    curl -L "$build_bat_url" -o "_build.new.bat" && mv "_build.new.bat" "_build.bat"
-    curl -L "$build_sh_url" -o "_build.new.sh" && mv "_build.new.sh" "_build.sh"
-    chmod +x _build.sh
-    echo "Scripts updated."
-  else
-    echo "Skipped updating scripts."
-  fi
 }
 
 

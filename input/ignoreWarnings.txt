@@ -77,3 +77,9 @@ This CodeableConcept has the codes http://loinc.org#2708-6 and urn:iso:std:iso:1
 This CodeableConcept has the codes urn:iso:std:iso:11073:10101#149530 and http://loinc.org#8867-4, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#149530 to 8889-8. Check that these codes belong together
 This CodeableConcept has the codes urn:iso:std:iso:11073:10101#150364 and http://loinc.org#8310-5, but the ConceptMap http://loinc.org/cm/mdc maps urn:iso:std:iso:11073:10101#150364 to 61008-9. Check that these codes belong together
 This CodeableConcept has the codes http://loinc.org#8310-5 and urn:iso:std:iso:11073:10101#150364, but the ConceptMap http://loinc.org/cm/mdc maps http://loinc.org#8310-5 to 150344. Check that these codes belong together
+
+# These are external resources already stored by the server in the transaction example; the Publisher has no server base URL to resolve them.
+The URL 'Device/phd-74E8FFFEFF051C00.001C05FFE874' cannot be resolved unless the fullURL is a RESTFul base URL, or a baseURL has been provided and the Bundle is a batch or transaction
+The URL 'Device/phg-ecde3d4e58532d31.000000000000' cannot be resolved unless the fullURL is a RESTFul base URL, or a baseURL has been provided and the Bundle is a batch or transaction
+The URL 'Observation/coin-example-1' cannot be resolved unless the fullURL is a RESTFul base URL, or a baseURL has been provided and the Bundle is a batch or transaction
+The URL 'Patient/patientExample-1' cannot be resolved unless the fullURL is a RESTFul base URL, or a baseURL has been provided and the Bundle is a batch or transaction
