@@ -62,6 +62,11 @@
 				"system": "http://loinc.org",
 				"code": "85354-9",
 				"display": "Blood pressure panel with all children optional"
+			},
+			{
+				"system": "http://loinc.org",
+				"code": "76533-9",
+				"display": "Blood pressure by Noninvasive"
 			}
 		]
 	},
@@ -90,6 +95,11 @@
 						"system": "http://loinc.org",
 						"code": "8480-6",
 						"display": "Systolic blood pressure"
+					},
+					{
+						"system": "http://loinc.org",
+						"code": "76534-7",
+						"display": "Systolic blood pressure by Noninvasive"
 					}
 				]
 			},
@@ -112,6 +122,11 @@
 						"system": "http://loinc.org",
 						"code": "8462-4",
 						"display": "Diastolic blood pressure"
+					},
+					{
+						"system": "http://loinc.org",
+						"code": "76535-4",
+						"display": "Diastolic blood pressure by Noninvasive"
 					}
 				]
 			},

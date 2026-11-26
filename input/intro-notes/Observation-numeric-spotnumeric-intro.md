@@ -5,3 +5,5 @@ Note there is no logical id needed in this resource when this resource is being 
 The logical id in the example is present due to limitations of the publishing process.
 
 The referenced resources are assumed to have been uploaded to the server before - Patient, PHD, PHG and coincident timestamp.
+
+The heart-rate code retains the general vital-sign LOINC code and also includes the more-specific pulse-oximetry LOINC code. This supports broad vital-sign interoperability while preserving the measurement method.

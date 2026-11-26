@@ -74,6 +74,11 @@
 				"system": "http://loinc.org",
 				"code": "8867-4",
 				"display": "Heart rate"
+			},
+			{
+				"system": "http://loinc.org",
+				"code": "8889-8",
+				"display": "Heart rate by Pulse oximetry"
 			}
 		]
 	},

@@ -51,6 +51,8 @@ For those consumer applications that would like to have the codes as LOINC and t
 
 FHIR requires that a LOINC code is present if the measurement is one of the vital signs given [here]({{ site.data.fhir.path }}observation-vitalsigns.html). In that case, the `Observation.code` shall have at least a second coding element containing a LOINC code. *The consumer must be aware that the MDC-to-LOINC mapping may be many to one*. For example, both the pulse rate obtained from a Blood Pressure Cuff (149546) and the pulse rate obtained from a Pulse Oximeter (149530) may be mapped to the LOINC code (8867-4). A PHG may map these MDC codes also to more specific LOINC codes. 
 
+An Observation may therefore contain both a methodless LOINC interoperability code and a more-specific LOINC code identifying the measurement method or site. Consumers should preserve all codings: use the general code for queries across devices and the more-specific code when method or site matters. Retain the MDC code as well. A mapping alone does not establish a method or site that is unknown from the source, nor does it guarantee a unique reverse mapping. The same guidance applies to vital-sign components in `Observation.component.code`.
+
 In addition to the LOINC code, FHIR requires an `Observation.category` element with value "vital-signs" when the measurement is a vital sign.
 
 ##### Measurement Status

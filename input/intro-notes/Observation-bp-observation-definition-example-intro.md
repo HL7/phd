@@ -1,0 +1,1 @@
+The blood-pressure panel and its systolic and diastolic components retain their general vital-sign LOINC codes and also include more-specific noninvasive-measurement LOINC codes. The general codes support interoperability; the additional codes preserve the measurement method.

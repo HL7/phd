@@ -1,0 +1,1 @@
+This example retains the general body-temperature LOINC code for interoperability and also includes LOINC 61008-9 for body-surface temperature, matching the more-specific MDC mapping. The additional coding preserves the measurement site while the general code supports broader vital-sign exchange.
